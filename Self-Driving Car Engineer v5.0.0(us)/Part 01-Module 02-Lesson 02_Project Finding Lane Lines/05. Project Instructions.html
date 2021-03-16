@@ -1,0 +1,393 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Project Instructions
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Finding Lane Lines
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Building a Portfolio.html">
+       01. Building a Portfolio
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Project Intro.html">
+       02. Project Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Project Cheat Sheet.html">
+       03. Project Cheat Sheet
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Project Expectations.html">
+       04. Project Expectations
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Project Instructions.html">
+       05. Project Instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Finding Lane Lines.html">
+       06. Finding Lane Lines
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Share your success - Finding Lane Lines.html">
+       07. Share your success - Finding Lane Lines
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Finding Lane Lines.html">
+       Project Description - Finding Lane Lines
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Finding Lane Lines.html">
+       Project Rubric - Finding Lane Lines
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. Project Instructions
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="local-setup-users-start-here">
+          Local Setup Users Start Here:
+         </h2>
+         <p>
+          Navigate to
+          <a href="https://github.com/udacity/CarND-LaneLines-P1" rel="noopener noreferrer" target="_blank">
+           the project repository on GitHub
+          </a>
+          and have a look at the Readme file for detailed instructions on how to get setup with Python and OpenCV and how to access the Jupyter Notebook containing the project code.  You will need to download, or
+          <code>
+           git clone
+          </code>
+          , this repository in order to complete the project.
+         </p>
+         <p>
+          If you are unfamiliar with Jupyter Notebooks, check out this quick Udacity primer on
+          <a href="https://classroom.udacity.com/courses/ud1111" rel="noopener noreferrer" target="_blank">
+           Anaconda and Jupyter Notebooks
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="workspace-users-start-here">
+          Workspace Users Start Here:
+         </h2>
+         <p>
+          In this project, you will be writing code to identify lane lines on the road, first in an image, and later in a video stream (really just a series of images).  To complete this project you will use the tools you learned about in the lesson, and build upon them.
+         </p>
+         <p>
+          Your first goal is to write code including a series of steps (pipeline) that identify and draw the lane lines on a few test images.  Once you can successfully identify the lines in an image, you can cut and paste your code into the block provided to run on a video stream.
+         </p>
+         <p>
+          You will then refine your pipeline with parameter tuning and by averaging and extrapolating the lines.
+         </p>
+         <p>
+          Finally, you'll make a brief writeup report. The workspace github repository has a
+          <code>
+           writeup_template.md
+          </code>
+          that can be used as a guide.
+         </p>
+         <p>
+          Have a look at the video clip called "P1_example.mp4" in the repository to see an example of what your final output should look like.  Two videos are provided for you to run your code on.  These are called "solidWhiteRight.mp4" and solidYellowLeft.mp4".
+         </p>
+         <p>
+          This
+          <strong>
+           workspace
+          </strong>
+          is designed to be a simple, easy to use environment in which you can code and run the Finding Lane Lines project.
+         </p>
+         <p>
+          For tips on workspace use, please review the earlier Workspaces lesson.
+         </p>
+         <h2 id="accessing-and-using-the-workspace">
+          Accessing and using the workspace:
+         </h2>
+         <ul>
+          <li>
+           Go to the workspace node and the project JUPYTER notebook will automatically load
+          </li>
+          <li>
+           Complete the project using the instructions in the notebook
+          </li>
+          <li>
+           The project repo is already in the workspace.  To see other files in the repo click on the JUPYTER icon.  This will expose the root directory.  From there click on the project folder.
+          </li>
+         </ul>
+         <h2 id="commit-to-github">
+          Commit to GitHub
+         </h2>
+         <p>
+          Students are highly encouraged to commit their project to a GitHub repo.  To do this, you must change the upstream of the current repository and add your credentials.  We have supplied a bash script to help you do this.  Please open up a terminal, navigate to the project repository, and enter:
+          <code>
+           ./set_git.sh
+          </code>
+          , then follow the prompts.  This will set the upstream remote to your own repository and add your email and username to the git configuration.  At this time we are not configuring passwords, so you will need to enter your username and password for each push.  Since credentials are not persistent, it will be necessary to run this script each time you open, refresh, or reset the workspace.
+         </p>
+         <h2 id="things-to-keep-in-mind">
+          Things to keep in mind:
+         </h2>
+         <ul>
+          <li>
+           If you leave your workspace unattended, it will time out and need to be refreshed. Your most recent work will be restored, but the list of open files or any running shell sessions will not be restored.
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="evaluation">
+          Evaluation
+         </h2>
+         <p>
+          Once you have completed your project, use the
+          <a href="https://review.udacity.com/#!/rubrics/1967/view" rel="noopener noreferrer" target="_blank">
+           <strong>
+            Project Rubric
+           </strong>
+          </a>
+          to review the project. If you have covered all of the points in the rubric, then you are ready to submit! If you see room for improvement in
+          <strong>
+           any
+          </strong>
+          category in which you do not meet specifications, keep working!
+         </p>
+         <p>
+          Your project will be evaluated by a Udacity reviewer according to the same
+          <a href="https://review.udacity.com/#!/rubrics/1967/view" rel="noopener noreferrer" target="_blank">
+           <strong>
+            Project Rubric
+           </strong>
+          </a>
+          . Your project must "meet specifications" in each category in order for your submission to pass.
+         </p>
+         <h3 id="ready-to-submit-your-project">
+          Ready to submit your project?
+         </h3>
+         <h4 id="local-setup-users">
+          Local Setup Users
+         </h4>
+         <p>
+          You can either submit your project as a link to a GitHub repository or as a ZIP file. When submitting a GitHub repository, we advise creating a new repository, specific to the project you are submitting.
+         </p>
+         <h4 id="workspace-users">
+          Workspace Users
+         </h4>
+         <p>
+          Make sure your workspace contains  at least :
+         </p>
+         <ul>
+          <li>
+           Jupyter Notebook with your project code
+          </li>
+          <li>
+           writeup report (md or pdf file)
+          </li>
+         </ul>
+         <p>
+          Click on the
+          <strong>
+           Submit Project
+          </strong>
+          button and follow the instructions to submit!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="project-support">
+          Project Support
+         </h2>
+         <p>
+          If you are stuck or having difficulties with the project, don't lose hope! Remember to talk to your mentors and fellow students in your Study Group, as well as ask (and answer!) questions on
+          <a href="https://knowledge.udacity.com" rel="noopener noreferrer" target="_blank">
+           Knowledge
+          </a>
+          tagged with the project name. We also have a previously recorded project Q&amp;A that you can watch
+          <a href="https://youtu.be/hnXkCiM2RSg" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          !
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. Finding Lane Lines.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Project Instructions')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
