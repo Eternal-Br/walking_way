@@ -1,0 +1,668 @@
+{
+  "data": {
+    "lesson": {
+      "id": 626490,
+      "key": "46e12cfd-79ad-497b-a362-da958bf64a65",
+      "title": "C++ Checkpoint",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Are you ready to build Kalman Filters with C++? Take these quizzes to find out!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/46e12cfd-79ad-497b-a362-da958bf64a65/626490/1585703709945/C%2B%2B+Checkpoint+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/46e12cfd-79ad-497b-a362-da958bf64a65/626490/1585703708305/C%2B%2B+Checkpoint+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 663240,
+          "key": "bd7eee6b-204b-4595-8ae0-7b1c9ab7b82a",
+          "title": "High Performance Computing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bd7eee6b-204b-4595-8ae0-7b1c9ab7b82a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663241,
+              "key": "1f7f7c1a-2237-47c5-b2ea-10a8be63e463",
+              "title": "04 Sensor Fusion A02 High Performance Computing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "rMGNMvjG5KA",
+                "china_cdn_id": "rMGNMvjG5KA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 229229,
+          "key": "72087112-7f6d-4ef6-9017-06476df9c8b1",
+          "title": "[Optional] Beta Test our Upcoming C++ Course",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "72087112-7f6d-4ef6-9017-06476df9c8b1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 229230,
+              "key": "1f3a354e-4dad-451b-a676-ab814f144692",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Good news!\n\nIn the time between filming the opening videos for this course and releasing it, we've begun work on a new C++ course, [C++ for Programmers](https://classroom.udacity.com/courses/ud999/lessons/1343a461-102f-41e1-b505-bf9ec62f427b/concepts/ddb51f99-8d0a-4adc-a1a2-580ecfac759e)! This course is designed to help developers who are C++ neophytes quickly spin up with the language.\n\nWe're giving you early access! We see this as a win-win - you get a C++ course and we get beta testers!\n\nIn order for you to fulfill your role as a beta tester, we need to you give us your feedback! The course is not complete, which means that you may find bugs or you may find areas where the course needs improvement. If you decide to work on [C++ for Programmers](https://classroom.udacity.com/courses/ud999/lessons/1343a461-102f-41e1-b505-bf9ec62f427b/concepts/ddb51f99-8d0a-4adc-a1a2-580ecfac759e), please email your feedback directly to Catherine Gamboa (catherine@udacity.com).\n\nThe next few quizzes in this lesson will challenge your knowledge of basic C++ to ensure that you're ready for the remaining lessons. Don't be scared, though! In the words of an early beta tester, \"the C++ is oddly approachable 👍\"\n\nReady to get started?  [Here's the link to C++ for Programmers](https://classroom.udacity.com/courses/ud999/lessons/1343a461-102f-41e1-b505-bf9ec62f427b/concepts/ddb51f99-8d0a-4adc-a1a2-580ecfac759e) [this link should open in a new tab, by the way].",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 269289,
+          "key": "1b7f68a1-722a-4ffc-96a0-f5a4513b7e5c",
+          "title": "Challenge 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1b7f68a1-722a-4ffc-96a0-f5a4513b7e5c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269292,
+              "key": "2abc0ef5-c144-40ff-96f6-40fb1d2c91db",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### stdout\n\nLet's start with an easy one. In this quiz, I'm giving you a `main` function. All I want you to do is write `no more steering wheels` to stdout.\n\nJust as a reminder, anything written to stdout will appear _below_ the code editor after you test or submit your code.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 269293,
+              "key": "e56c7077-a1d3-4dca-9401-4d85fed55b15",
+              "title": "",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e56c7077-a1d3-4dca-9401-4d85fed55b15",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "1. Write \"no more steering wheels\" to stdout."
+              ],
+              "positive_feedback": "Awesome! Try it out!",
+              "video_feedback": null,
+              "description": ""
+            },
+            {
+              "id": 269298,
+              "key": "dfb69e05-5fe8-41ef-b6f7-a60a7f344d25",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "dfb69e05-5fe8-41ef-b6f7-a60a7f344d25",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6069445790400512",
+                "initial_code_files": [
+                  {
+                    "text": "#include <iostream>\n\nint main() {\n  // write your code here!\n  // print \"no more steering wheels\" to stdout\n  return 0;\n}\n",
+                    "name": "main.cpp"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 269309,
+          "key": "5af68cf4-4cf6-475f-9881-08c0dc326846",
+          "title": "Challenge 1 Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5af68cf4-4cf6-475f-9881-08c0dc326846",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269317,
+              "key": "4b6e9456-bdee-471f-abe6-95d29e9a1fec",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here's my solution:\n\n```cpp\n#include <iostream>\n\nint main() {\n  std::cout << \"no more steering wheels\" << std::endl;\n  return 0;\n}\n```\n\n`std` refers to namespace `std` and the `<<` operator passes sequences of characters to stdout. In fact, two sequences of characters get passed to stdout: `\"no more steering wheels\"` and `std::endl`, a newline character (`std::endl` also flushes the buffer).\n\nYou may be used to adding a `using namespace std` line after your `include` statements - however, under the [Google C++ style guide](https://google.github.io/styleguide/cppguide.html#Namespaces), you should not utilize *using-directives* to make all names from a namespace available. You could instead use `using std::cout;` and `using std::endl;` near the top so that you do not have to re-write `std::` before each instance of these - it does not make much of a difference here, but could be more helpful when you use them multiple times!\n\nIt's worth noting that `\"no more steering wheels\"` is not a string like a Python string, rather it's a `char []` - a sequence of characters.\n\nTime for another! Let's control some flow.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 269318,
+          "key": "ad9aa683-f081-4492-a434-e5b62a832649",
+          "title": "Challenge 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ad9aa683-f081-4492-a434-e5b62a832649",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269319,
+              "key": "1b85b66c-34cb-4c99-96cc-f758f5b39404",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Control Flow\n\nIn this quiz, I want you to write a `for` loop. Your loop will live inside a function that will be passed an int, `n`, and a string, `str`. Your loop should print the `str` `n` times.\n\nThere's another twist here - you will **not** need to touch main.cpp this time. Instead, your code will be written inside the eponymous function in PrintString.cpp. Make note of the way that main.cpp `#include`s PrintString.h. You'll be `#include`ing files soon.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 269322,
+              "key": "0fc8e158-fcda-4fcb-924e-de397cdf5737",
+              "title": "",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0fc8e158-fcda-4fcb-924e-de397cdf5737",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Make sure the loop repeats n times.",
+                "Make sure the loop prints the string (followed by a newline) each time."
+              ],
+              "positive_feedback": "Awesome! Make sure you test it.",
+              "video_feedback": null,
+              "description": ""
+            },
+            {
+              "id": 269326,
+              "key": "1933e398-57d2-4444-921b-052a2713f706",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "1933e398-57d2-4444-921b-052a2713f706",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4583047266697216",
+                "initial_code_files": [
+                  {
+                    "text": "#include \"PrintString.h\"\n\n#include <iostream>\n#include <string>\n\nvoid PrintString(std::string str, int n) {\n  // your code goes here! print str n times. Follow each str with a newline,\n  // eg. std::cout << str << std::endl;\n}\n",
+                    "name": "PrintString.cpp"
+                  },
+                  {
+                    "text": "/**\n * No need to change this file (unless you want to change the test case below).\n */\n\n#include <iostream>\n#include \"PrintString.h\"\n\nint main() {\n  PrintString(\"This is a test.\", 10);\n}\n",
+                    "name": "main.cpp"
+                  },
+                  {
+                    "text": "/**\n * This header file defines the function signature for PrintString.\n */\n\n#ifndef PRINTSTRING_H\n#define PRINTSTRING_H\n\n#include <string>\n\nvoid PrintString(std::string, int);\n\n#endif  // PRINTSTRING_H",
+                    "name": "PrintString.h"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 269346,
+          "key": "0dd96921-dbc6-4bdb-bcc7-614754a767c3",
+          "title": "Challenge 2 Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0dd96921-dbc6-4bdb-bcc7-614754a767c3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269352,
+              "key": "c076c2f2-5411-42bb-ab94-9f54fd59a04d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here's my solution:\n\n```\n#include \"PrintString.h\"\n\n#include <iostream>\n#include <string>\n\nvoid PrintString(std::string str, int n) {\n  for (int i = 0; i < n; ++i) {\n    std::cout << str << std::endl;\n  }\n}\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 269922,
+          "key": "c7bbb259-ce6b-4b52-bcfc-6e972e06d3f7",
+          "title": "Challenge 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c7bbb259-ce6b-4b52-bcfc-6e972e06d3f7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269923,
+              "key": "25f54317-f6b1-45e3-b928-d6b33b7a731a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Functions\n\nIn this quiz, I want you to write a function called `factorial` that returns an int. A [factorial](https://en.wikipedia.org/wiki/Factorial) is a mathematical operation designated by a <span class=\"mathquill\">!</span> operator and returns the product of a number and every whole number between it and 0. For example:\n\n<span class=\"mathquill\">4! = 4 \\cdot 3 \\cdot 2 \\cdot 1 = 24</span>\n\nYou'll write your code within Factorial.cpp. Good luck!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 269925,
+              "key": "4bf17a59-7641-4784-be7e-bd227a4b2654",
+              "title": "",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4bf17a59-7641-4784-be7e-bd227a4b2654",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Make sure Factorial takes an int as an argument.",
+                "Make sure Factorial returns an int.",
+                "Make sure Factorial actually calculates the factorial of an int :)"
+              ],
+              "positive_feedback": "Cool! Test your code below!",
+              "video_feedback": null,
+              "description": ""
+            },
+            {
+              "id": 269924,
+              "key": "e0b2e437-488e-4ba7-b9f3-756f277942d9",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "e0b2e437-488e-4ba7-b9f3-756f277942d9",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4553763105931264",
+                "initial_code_files": [
+                  {
+                    "text": "#include \"Factorial.h\"\n\n// Your code goes here! \n// See Factorial.h for your method's signature (eg, its args and return value).\n\n",
+                    "name": "Factorial.cpp"
+                  },
+                  {
+                    "text": "/**\n * No need to change this file. This simply declares that Factorial returns \n *   an int and takes an int as the sole argument.\n */\n\n#ifndef FACTORIAL_H\n#define FACTORIAL_H\n\nint Factorial(int n);\n\n#endif  // FACTORIAL_H",
+                    "name": "Factorial.h"
+                  },
+                  {
+                    "text": "#include <iostream>\n#include \"Factorial.h\"\n\nint main() {\n  // feel free to change this test case!\n  int value = Factorial(6);\n  std::cout << \"6! should equal 720. Your Factorial method returned:\" \n            << std::endl;\n  std::cout << value << std::endl;\n}\n",
+                    "name": "main.cpp"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 269926,
+          "key": "d44afcc8-b78e-474a-bc5c-b4446acc43d0",
+          "title": "Challenge 3 Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d44afcc8-b78e-474a-bc5c-b4446acc43d0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269927,
+              "key": "ba8dbbd3-9b53-4100-b428-642a002be41d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here's my solution:\n\n```\n#include \"Factorial.h\"\n\nint Factorial(int n) {\n  int result = 1;\n    \n  for (int i = n; i > 0; --i) {\n    result *= i;\n  }\n    \n  return result;\n}\n```\n\nI took advantage of the `*=` operator to multiply `result` by a lower int and then reset itself to the new value simultaneously.\n\nKeep going! Only two challenges left!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 269928,
+          "key": "eaaaed5e-83c8-4049-a29f-7c0d2994bd23",
+          "title": "Challenge 4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "eaaaed5e-83c8-4049-a29f-7c0d2994bd23",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269929,
+              "key": "7205afef-d7b9-4598-9c3f-20d157f6afd8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Class Basics\n\nIn this challenge, I want to flip the tables a bit. In the previous quizzes, I've been giving you header files and asking you to implement methods from them. In this quiz, I'm going to give you a .cpp file and ask you to write the corresponding header file.\n\nIn Car.cpp, you'll find the implementation of a simple `Car` class. This is a very unreliable car that has a 50/50 chance of being broken after every drive.\n\nI want you to examine Car.cpp and write the corresponding header file, Car.h. The code you'll find below won't compile without a working header file. Check out the compiler errors and make it work!\n\n*Note:* In the below quiz, we've added comments over the top of the function definitions in the `.cpp` file, although typically these comments should be placed over the function declarations in the `.h` file instead - we've placed them here since `.h` is not implemented yet.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 269936,
+              "key": "0c947cd8-3102-4c97-858b-ed80a21719f1",
+              "title": "",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0c947cd8-3102-4c97-858b-ed80a21719f1",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Write a Car class.",
+                "Write the constructor for Car.",
+                "Write the private property of Car.",
+                "Write the public methods for Car."
+              ],
+              "positive_feedback": "Great! Test and submit your code below!",
+              "video_feedback": null,
+              "description": ""
+            },
+            {
+              "id": 269934,
+              "key": "f927aa7a-a7c5-4ad5-9836-226ea4c303bd",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "f927aa7a-a7c5-4ad5-9836-226ea4c303bd",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6534931862913024",
+                "initial_code_files": [
+                  {
+                    "text": "// Your code goes here!\n// Take a look at Car.cpp to see how to define the Car class.\n\n// Hint: you'll need to define:\n// 1. the class itself\n// 2. the class constructor\n// 3. one private property\n// 4. three public methods\n",
+                    "name": "Car.h"
+                  },
+                  {
+                    "text": "/**\n * This is how the car works. No need to make any changes here.\n */\n\n#include \"Car.h\"\n\n#include <stdlib.h>\n#include <time.h>\n#include <iostream>\n\n// Constructor.\nCar::Car() {\n  // initialize random seed for wearAndTear\n  srand(time(NULL));\n  // start off in working condition\n  in_working_condition_ = true;\n}\n\n// Determine whether or not the car is still drivable after some wear and tear.\nvoid Car::wearAndTear() {\n  // 50% chance that the car is still working after wear and tear\n  int condition = rand() % 10;\n  condition >= 5 ? in_working_condition_ = true : in_working_condition_ = false;\n}\n\n// Try to drive the car.\nbool Car::drive() {\n  bool didDrive = false;\n\n  if (in_working_condition_) {\n    std::cout << \"Driving!\" << std::endl;\n    wearAndTear();\n    didDrive = true;\n  } else {\n    std::cout << \"Broken down. Please fix.\" << std::endl;\n    didDrive = false;\n  }\n\n  return didDrive;\n}\n\n\n// Fix the car.\nvoid Car::fix() {\n  in_working_condition_ = true;\n  std::cout << \"Fixed!\" << std::endl;\n}\n",
+                    "name": "Car.cpp"
+                  },
+                  {
+                    "text": "/**\n * Here is a test of your code. Feel free to play with it but there's \n *   no need to edit this file. Remember, you're only trying to make \n *   your code compile.\n */\n\n#include \"Car.h\"\n\nint main() {\n  Car car;\n    \n  // try to drive 10 times\n  for (int i = 0; i < 10; i++) {\n    bool didDrive = car.drive();\n    if (!didDrive) {\n      // car is broken! must fix it\n      car.fix();\n    }\n  }\n    \n  return 0;\n}\n",
+                    "name": "main.cpp"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 269937,
+          "key": "8e13da5d-1831-4407-9194-972c3cc86958",
+          "title": "Challenge 4 Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8e13da5d-1831-4407-9194-972c3cc86958",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269938,
+              "key": "27cabec0-93e0-4454-a23d-f070893434d6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here's my solution:\n\n```\n#ifndef CAR_H\n#define CAR_H\n\nclass Car {    \n public:\n  Car();\n  void wearAndTear();\n  bool drive();\n  void fix();\n private:\n  bool in_working_condition_;\n};\n\n#endif  // CAR_H\n```\n\nThe `Car` class is pretty straightforward. The trickiest part, I found, was making sure that the constructor was defined.\n\nNote, the trailing `_` on `in_working_condition_` is common tactic for designating private properties in C++.\n\nOk! One more challenge to go.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 269939,
+          "key": "6cb777b6-71f2-48b3-84c8-ef31b973d017",
+          "title": "Challenge 5",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6cb777b6-71f2-48b3-84c8-ef31b973d017",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269941,
+              "key": "3f698ca8-abfe-4697-9386-5568ceb0fffb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## References\n\nLower level languages, like C++, give you control over the way your objects are stored and accessed in memory. As a comparison, let's start by looking at how Python hides memory access from you.\n\n```\ndef dict_modifier(d, key):\n  d.pop(key, None)\n\nsample_dict = {'some_key': 'some value'}\ndict_modifier(sample_dict, 'some_key')\nprint(sample_dict)  # {}\n```\n\nIn this case, `dict_modifier` removes a key from the dictionary passed to it. In effect, it treats the dictionary argument as a reference.\n\nYou may want to draw the conclusion that Python functions always treat arguments as references, but that's not true.\n\n```\ndef adder(n):\n  n += 1\n\ni = 1\nadder(i)\nprint(i)  # 1\n```\n\nPython does not pass primitives as references. As a result, `adder` receives a copy of `i` and `i` remains unchanged outside the function.\n\nTo be fair, the way Python handles arguments is perfectly reasonable. But what's happening behind the scenes is not perfectly obvious from the syntax alone.\n\nC++, on the other hand, makes you decide how you'd like to treat function arguments. It also gives you control over how you'd like to access objects in memory, whether that's by simply referring to their address in memory or by their actual value.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 269943,
+              "key": "189660b9-50e7-4d17-8808-ec53c6a15bae",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Pass by Reference\n\nIn this last challenge, I want you to finish the `doubler` function that doubles an `int` passed to it as a reference. You'll need to finish defining the function's parameters and body.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 269955,
+              "key": "9d5bc049-640c-44a8-bf17-625f7e8ef44d",
+              "title": "",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9d5bc049-640c-44a8-bf17-625f7e8ef44d",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "Finish the parameter in Doubler.h.",
+                "Finish the parameter and body in Doubler.cpp."
+              ],
+              "positive_feedback": "Awesome! Test your code below!",
+              "video_feedback": null,
+              "description": ""
+            },
+            {
+              "id": 269942,
+              "key": "ac280c64-bda2-41b7-aa37-3cb7de2cf95b",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "ac280c64-bda2-41b7-aa37-3cb7de2cf95b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6409359367208960",
+                "initial_code_files": [
+                  {
+                    "text": "/** \n * You'll need to finish the Doubler function here AND fix the parameters \n *   of its signature in Doubler.h.\n */\n\n#include \"Doubler.h\"\n\n// TODO: Add the relevant arguments into the function below\nvoid Doubler() {\n  // TODO: your code for Doubler here!\n}\n",
+                    "name": "Doubler.cpp"
+                  },
+                  {
+                    "text": "#ifndef DOUBLER_H\n#define DOUBLER_H\n\n// TODO: put the right arguments here too!\nvoid Doubler();\n\n#endif  // DOUBLER_H",
+                    "name": "Doubler.h"
+                  },
+                  {
+                    "text": "/**\n * As before, no need to change anything here, but feel free to play \n *   with the test case.\n */\n\n#include <iostream>\n#include \"Doubler.h\"\n\nint main() {\n  int value = 25;\n    \n  std::cout << \"Original value: \" << value << std::endl;\n    \n  Doubler(value);\n    \n  std::cout << \"Doubled value: \" << value << std::endl;\n    \n  return 0;\n}\n",
+                    "name": "main.cpp"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 269959,
+          "key": "82d07760-5896-4845-93d6-c9c237a873cc",
+          "title": "Challenge 5 Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82d07760-5896-4845-93d6-c9c237a873cc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269960,
+              "key": "5087096b-7656-47f6-a7d6-1f076c6b3b43",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here's my solution:\n\n`Doubler.h`\n```\n#ifndef DOUBLER_H\n#define DOUBLER_H\n\nvoid Doubler(int& n);\n\n#endif  // DOUBLER_H\n```\n\n`Doubler.cpp`\n```\n#include \"Doubler.h\"\n\nvoid Doubler(int& n) {\n  n *= 2;\n}\n```\n\nThe tricky part here was making sure to use the `&` operator to pass `n` as a reference.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 269283,
+          "key": "cd992197-7e36-4ddd-8258-bab2d4dd1b81",
+          "title": "Outro and Advice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cd992197-7e36-4ddd-8258-bab2d4dd1b81",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 269284,
+              "key": "fca93072-9701-4d69-b765-2af7128e4454",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Moving On\n\nCongratulations! If you made it through these challenges, you're ready to take on the C++ in the following lessons.\n\nGood luck!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 793380,
+              "key": "e8ce004c-960f-4c8d-8aab-c05ec7991e06",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5beb52b4_c-logo/c-logo.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e8ce004c-960f-4c8d-8aab-c05ec7991e06",
+              "caption": "",
+              "alt": "",
+              "width": 300,
+              "height": 330,
+              "instructor_notes": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

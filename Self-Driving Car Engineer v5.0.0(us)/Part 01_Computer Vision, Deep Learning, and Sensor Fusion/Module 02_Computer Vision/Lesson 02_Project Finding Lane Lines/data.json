@@ -1,0 +1,393 @@
+{
+  "data": {
+    "lesson": {
+      "id": 626029,
+      "key": "7c075239-1f65-4952-bde8-1810354d7988",
+      "title": "Project: Finding Lane Lines",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Write code to identify lane lines on the road, first in an image, and later in a video stream.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/7c075239-1f65-4952-bde8-1810354d7988/626029/1538943539117/Project%3A+Finding+Lane+Lines+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/7c075239-1f65-4952-bde8-1810354d7988/626029/1538943535182/Project%3A+Finding+Lane+Lines+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "41af8036-0195-45c1-9df8-b0bd3667238b",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 10080,
+        "semantic_type": "Project",
+        "title": "Finding Lane Lines",
+        "description": "Once you have completed your project, use the [**Project Rubric**](https://review.udacity.com/#!/rubrics/1967/view) to review the project. If you have covered all of the points in the rubric, then you are ready to submit! If you see room for improvement in **any** category in which you do not meet specifications, keep working! \n\n## Project Submission Checklist\n\n**Before submitting your project, please review and confirm the following items.** \n<input type=\"checkbox\"> I am confident all rubric items have been met and my project will pass as submitted.\n<input type=\"checkbox\"> Project builds correctly without errors and runs.\n<input type=\"checkbox\"> All required functionality exists and my project behaves as expected per the project's specifications.\n\n**Once you have checked all these items, you are ready to submit!**\n",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1967",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://s3.amazonaws.com/video.udacity-data.com/topher/2017/August/59a4d924_finding-lane-lines/finding-lane-lines.jpg",
+          "width": 960,
+          "height": 540
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 654013,
+          "key": "786c2106-c89f-4a58-8e2f-67a921d51fec",
+          "title": "Building a Portfolio",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "786c2106-c89f-4a58-8e2f-67a921d51fec",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 654014,
+              "key": "133086b4-8687-4b3f-96a6-1dcbb844c313",
+              "title": "01 Introduction A02 Building A Portfolio",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "q8ZysjEREiM",
+                "china_cdn_id": "q8ZysjEREiM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 169016,
+          "key": "11dd3959-1e4e-4131-9a19-b6ffc851ca63",
+          "title": "Project Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "11dd3959-1e4e-4131-9a19-b6ffc851ca63",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 195666,
+              "key": "51acfa9a-759e-4eda-95c2-cc37974ebed7",
+              "title": "title",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Finding Lane Lines in a Video Stream\n==",
+              "instructor_notes": ""
+            },
+            {
+              "id": 195665,
+              "key": "c80d6c90-02ef-4817-9ad7-b7a3888a2f7b",
+              "title": "Outro to Project",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LatP7XUPgIE",
+                "china_cdn_id": "LatP7XUPgIE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 950518,
+          "key": "413ccfda-4217-4965-954a-9e0a6eae1d6f",
+          "title": "Project Cheat Sheet",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "413ccfda-4217-4965-954a-9e0a6eae1d6f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "nd013 P1 lessons cheat sheet",
+                "uri": "https://video.udacity-data.com/topher/2019/October/5d97c812_nd013-sdc-p1-lessons-cheat-sheet/nd013-sdc-p1-lessons-cheat-sheet.pdf"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 953170,
+              "key": "79eefe53-79cf-4ebe-8f4b-55a38d706fc2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is a one-page cheat sheet containing some key information from the preceding lessons.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 950519,
+              "key": "4c1d8aec-c081-472a-8c6b-c5c8cee9c4da",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/October/5d97c803_nd013-sdc-p1-lessons-cheat-sheet/nd013-sdc-p1-lessons-cheat-sheet.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4c1d8aec-c081-472a-8c6b-c5c8cee9c4da",
+              "caption": "",
+              "alt": "",
+              "width": 440,
+              "height": 550,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 263113,
+          "key": "a9375401-2cf2-46e0-bd07-e1cf444e8270",
+          "title": "Project Expectations",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a9375401-2cf2-46e0-bd07-e1cf444e8270",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 263114,
+              "key": "4dbd55d8-701d-4844-ab90-f0858c979cdd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Project Expectations\n\nFor each project in Term 1, keep in mind a few key elements:\n* rubric\n* code\n* writeup\n* submission\n\n### Rubric\n\nEach project comes with a rubric detailing the requirements for passing the project. Project reviewers will check your project against the rubric to make sure that it meets specifications. \n\nBefore submitting your project, compare your submission against the rubric to make sure you've covered each rubric point. \n\nHere is an example of a project rubric:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 263126,
+              "key": "ba8bd140-fd48-45b3-9bc2-fdb9433edce0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/5894f8b9_screen-shot-2017-02-03-at-1.39.23-pm/screen-shot-2017-02-03-at-1.39.23-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ba8bd140-fd48-45b3-9bc2-fdb9433edce0",
+              "caption": "Example of a project rubric",
+              "alt": null,
+              "width": 999,
+              "height": 515,
+              "instructor_notes": null
+            },
+            {
+              "id": 263127,
+              "key": "ec551cee-527d-4ae6-9b04-3c58860b2d81",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Code\n\nEvery project in the term includes code that you will write. For some projects we provide code templates, often in a Jupyter notebook. For other projects, there are no code templates.\n\nIn either case, you'll need to submit your code files as part of the project. Each project has specific instructions about what files are required. Make sure that your code is commented and easy for the project reviewers to follow. \n\nFor the Jupyter notebooks, sometimes you must run all of the code cells and then export the notebook as an HTML file. The notebook will contain instructions for how to do this. \n\nBecause running the code can take anywhere from several minutes to a few hours, the HTML file allows project reviewers to see your notebook's output without having to run the code. \n\nEven if the project requires submission of the HTML output of your Jupyter notebook, please submit the original Jupyter notebook itself, as well.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 263128,
+              "key": "338f35a5-8c0b-447d-bcad-841e35b9df7e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Writeup\n\nAll of the projects in Term 1 require a writeup. The writeup is your chance to explain how you approached the project. \n\nIt is also an opportunity to show your understanding of key concepts in the program. \n\nWe have provided writeup templates for every project so that it is clear what information needs to be in each writeup. These templates can be found in each project repository, with the title `writeup_template.md`. \n\nYour writeup report should explain how you satisfied each requirement in the project rubric.  \n\nThe writeups can be turned in either as Markdown files (.md) or PDF files. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 263134,
+              "key": "8fcda605-13f7-407a-a835-c17fa036cc7b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### README\n\nGitHub repositories are a convenient way to organize your projects and display them to the world. A GitHub repository also has a README.md file that opens automatically when somebody visits your GitHub repository link. \n\nAs a suggestion, the README.md file for each repository can include the following information:\n- a list of files contained in the repository with a brief description of each file\n- any instructions someone might need for running your code\n- an overview of the project \n\nHere is an example of a README file:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 263136,
+              "key": "3f5aafa4-ec29-4481-8c03-19edb6b03324",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/5894ff95_screen-shot-2017-02-03-at-2.08.26-pm/screen-shot-2017-02-03-at-2.08.26-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3f5aafa4-ec29-4481-8c03-19edb6b03324",
+              "caption": "Example of a README file ",
+              "alt": null,
+              "width": 507,
+              "height": 240,
+              "instructor_notes": null
+            },
+            {
+              "id": 263137,
+              "key": "ca2956fc-30f2-4afb-bf4d-8513b18ce907",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you are unfamiliar with GitHub , Udacity has a brief [GitHub tutorial](http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html) to get you started. Udacity also provides a more detailed free [course on git and GitHub](https://www.udacity.com/course/how-to-use-git-and-github--ud775).\n\nTo learn about README files and Markdown, Udacity provides a free [course on READMEs](https://www.udacity.com/course/writing-readmes--ud777), as well. \n\nGitHub also provides a [tutorial](https://guides.github.com/features/mastering-markdown/) about creating Markdown files.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 644667,
+          "key": "c2639a27-9160-4ff0-a0fd-89812dfe6418",
+          "title": "Project Instructions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c2639a27-9160-4ff0-a0fd-89812dfe6418",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 653958,
+              "key": "7f08ffcd-7103-4040-9ea0-c9da56a50d06",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Local Setup Users Start Here:\n\nNavigate to [the project repository on GitHub](https://github.com/udacity/CarND-LaneLines-P1) and have a look at the Readme file for detailed instructions on how to get setup with Python and OpenCV and how to access the Jupyter Notebook containing the project code.  You will need to download, or `git clone`, this repository in order to complete the project.\n\nIf you are unfamiliar with Jupyter Notebooks, check out this quick Udacity primer on [Anaconda and Jupyter Notebooks](https://classroom.udacity.com/courses/ud1111).\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 644668,
+              "key": "d1e29250-86de-4e48-a3f3-be7b40588e8a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Workspace Users Start Here:\n\nIn this project, you will be writing code to identify lane lines on the road, first in an image, and later in a video stream (really just a series of images).  To complete this project you will use the tools you learned about in the lesson, and build upon them.  \n\nYour first goal is to write code including a series of steps (pipeline) that identify and draw the lane lines on a few test images.  Once you can successfully identify the lines in an image, you can cut and paste your code into the block provided to run on a video stream.  \n\nYou will then refine your pipeline with parameter tuning and by averaging and extrapolating the lines. \n\nFinally, you'll make a brief writeup report. The workspace github repository has a `writeup_template.md` that can be used as a guide.\n\nHave a look at the video clip called \"P1_example.mp4\" in the repository to see an example of what your final output should look like.  Two videos are provided for you to run your code on.  These are called \"solidWhiteRight.mp4\" and solidYellowLeft.mp4\". \n\nThis **workspace** is designed to be a simple, easy to use environment in which you can code and run the Finding Lane Lines project. \n\nFor tips on workspace use, please review the earlier Workspaces lesson.\n\n## Accessing and using the workspace:\n- Go to the workspace node and the project JUPYTER notebook will automatically load\n- Complete the project using the instructions in the notebook\n-  The project repo is already in the workspace.  To see other files in the repo click on the JUPYTER icon.  This will expose the root directory.  From there click on the project folder.\n\n\n## Commit to GitHub\nStudents are highly encouraged to commit their project to a GitHub repo.  To do this, you must change the upstream of the current repository and add your credentials.  We have supplied a bash script to help you do this.  Please open up a terminal, navigate to the project repository, and enter: `./set_git.sh`, then follow the prompts.  This will set the upstream remote to your own repository and add your email and username to the git configuration.  At this time we are not configuring passwords, so you will need to enter your username and password for each push.  Since credentials are not persistent, it will be necessary to run this script each time you open, refresh, or reset the workspace.\n\n## Things to keep in mind:\n- If you leave your workspace unattended, it will time out and need to be refreshed. Your most recent work will be restored, but the list of open files or any running shell sessions will not be restored.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 653984,
+              "key": "2348f847-08bc-4310-b893-848932e00f08",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Evaluation\n\nOnce you have completed your project, use the [**Project Rubric**](https://review.udacity.com/#!/rubrics/1967/view) to review the project. If you have covered all of the points in the rubric, then you are ready to submit! If you see room for improvement in **any** category in which you do not meet specifications, keep working! \n\nYour project will be evaluated by a Udacity reviewer according to the same [**Project Rubric**](https://review.udacity.com/#!/rubrics/1967/view). Your project must \"meet specifications\" in each category in order for your submission to pass.\n\n### Ready to submit your project?###\n#### Local Setup Users ####\nYou can either submit your project as a link to a GitHub repository or as a ZIP file. When submitting a GitHub repository, we advise creating a new repository, specific to the project you are submitting.\n#### Workspace Users ####\nMake sure your workspace contains  at least :\n* Jupyter Notebook with your project code\n* writeup report (md or pdf file)\n\nClick on the **Submit Project** button and follow the instructions to submit!\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 653961,
+              "key": "a96f256f-eff8-49b9-83fe-610559e867b1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Project Support ##\n\nIf you are stuck or having difficulties with the project, don't lose hope! Remember to talk to your mentors and fellow students in your Study Group, as well as ask (and answer!) questions on [Knowledge](https://knowledge.udacity.com) tagged with the project name. We also have a previously recorded project Q&A that you can watch [here](https://youtu.be/hnXkCiM2RSg)!\n\n\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 626043,
+          "key": "ccb577c4-2242-4739-b9c1-eb4c52291391",
+          "title": "Finding Lane Lines",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ccb577c4-2242-4739-b9c1-eb4c52291391",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626044,
+              "key": "e7365dcb-0344-477e-9e70-4ec9828461c3",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view54dc5dc0",
+              "pool_id": "jupyter",
+              "view_id": "54dc5dc0-3620-442a-9b88-7a00c7e23388",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": true,
+                    "defaultPath": "/notebooks/CarND-LaneLines-P1/"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 708559,
+          "key": "f4b4ed45-7ac3-401d-bafd-6d5db02238db",
+          "title": "Share your success - Finding Lane Lines",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f4b4ed45-7ac3-401d-bafd-6d5db02238db",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 708560,
+              "key": "433891ca-338d-4694-b63c-4d1c4f80685f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Share your project success\nPassed your project? Share the good news!\n\nWhat you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your success with your network.\n\n<iframe\n  src=\"https://platform.twitter.com/widgets/tweet_button.html?size=l&url=www.udacity.com&text=I%20completed%20Finding%20Lane%20Lines!%20I've%20just%20begun%20my%20journey%20with%20the%20Self-Driving%20Car%20Engineer%20Nanodegree%20@udacity%20\n[Insert%20your%20Github%20repository%20url%20here]&hashtags=selfdrivingudacity\"\nwidth=\"140\"\nheight=\"28\"\nscrolling=\"no\">\n</iframe>\n\n#### Facebook and LinkedIn\nMake sure to use **@Udacity** and **#selfdrivingudacity** in your posts!\n\n<html>\n\n<head>\n<style>\n.fb {color: white;\n  background-color: #4661b0;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.fb:hover {color: #4661b0;\n  background-color: white;\n  border-color: #4661b0;\n  transition: background-color 0.4s}\n.linkedin {color: white;\n  background-color: #0077B5;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.linkedin:hover {color: #0077B5;\n  background-color: white;\n  border-color: #0077B5;\n  transition: background-color 0.4s}\n</style>\n\n</head>\n\n<body>\n<form action=\"https://www.facebook.com/sharer.php?\">\n  Enter the full URL of your Github repository or Youtube video:<br>\n  <input type=\"url\" name=\"u\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"hashtag\" value=\"#selfdrivingudacity\">\n  <button class=\"fb\">Share on Facebook</button>\n</form>\n\n<form action=\"https://www.linkedin.com/shareArticle?mini=true\">\n  <input type=\"url\" name=\"url\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"title\" value=\"Finding Lane Lines\">\n  <input type=\"hidden\" name=\"summary\" value=\"I finished Finding Lane Lines in the Self-Driving Car Nanodegree @udacity #selfdrivingudacity\">\n  <button class=\"linkedin\">Share on LinkedIn</button>\n</form>\n\n</body>\n\n</html>",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

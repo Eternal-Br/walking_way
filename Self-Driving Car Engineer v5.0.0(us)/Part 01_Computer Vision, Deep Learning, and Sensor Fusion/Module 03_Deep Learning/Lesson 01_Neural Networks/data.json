@@ -1,0 +1,3337 @@
+{
+  "data": {
+    "lesson": {
+      "id": 626040,
+      "key": "5d171a72-bd11-4ea4-b138-4875a9c8d915",
+      "title": "Neural Networks",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Build and train neural networks from linear and logistic regression to backpropagation and multilayer perceptron networks.\n",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/5d171a72-bd11-4ea4-b138-4875a9c8d915/626040/1538943560223/Neural+Networks+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/5d171a72-bd11-4ea4-b138-4875a9c8d915/626040/1538943548495/Neural+Networks+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 654021,
+          "key": "25fa0072-2754-4d10-9738-640ac0175bc0",
+          "title": "Neural Network Intuition",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "25fa0072-2754-4d10-9738-640ac0175bc0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 654022,
+              "key": "2b32c5c2-3709-4292-9437-c749f8268604",
+              "title": "03 Deep Learning A01 Neural Network Intuition",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UKEIHK5IifI",
+                "china_cdn_id": "UKEIHK5IifI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 277470,
+          "key": "e19213bb-bf3e-4d16-aa8d-fe80d5e008f1",
+          "title": "Introduction to Deep Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e19213bb-bf3e-4d16-aa8d-fe80d5e008f1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 277471,
+              "key": "b296b474-ebd5-409e-8341-b6e27a49948e",
+              "title": "Module Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uyLRFMI4HkA",
+                "china_cdn_id": "uyLRFMI4HkA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 257845,
+          "key": "ed36a8de-0f4f-495d-8617-1a6d74ebdc09",
+          "title": "Starting Machine Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ed36a8de-0f4f-495d-8617-1a6d74ebdc09",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 270057,
+              "key": "c550a18c-b1bd-4d23-a36d-e9acb81729cd",
+              "title": "ND013 01 L Intro To Neural Networks",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UIycORUrPww",
+                "china_cdn_id": "UIycORUrPww.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 646367,
+          "key": "80055412-b80e-41c5-afeb-32a939d38e46",
+          "title": "A Note on Deep Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "80055412-b80e-41c5-afeb-32a939d38e46",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 646493,
+              "key": "c9f54856-9182-44a8-94b1-d7259618a450",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# A Note on Deep Learning\n\nThe following lessons contain introductory and intermediate material on neural networks, building a neural network from scratch, using TensorFlow, and Convolutional Neural Networks: \n\n- Neural Networks\n- TensorFlow\n- Deep Neural Networks\n- Convolutional Neural Networks\n\nWhile we highly suggest going through the all of the included content, if you already feel comfortable in any of these areas, feel free to skip ahead to later lessons. However, even if you have seen some of these topics before, it might be a good idea to get a refresher before you start working on the project!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 646494,
+              "key": "5a1e3739-ce5c-4259-900b-5f171abcdb80",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5ab2ed48_1-4-introduction-to-neural-networks2x/1-4-introduction-to-neural-networks2x.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5a1e3739-ce5c-4259-900b-5f171abcdb80",
+              "caption": "Already know this content in your own neural network? Feel free to skip ahead!",
+              "alt": "",
+              "width": 300,
+              "height": 300,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 439310,
+          "key": "12f6331c-0bb3-48e2-b0a2-31f852e117ca",
+          "title": "Quiz: Housing Prices",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "12f6331c-0bb3-48e2-b0a2-31f852e117ca",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461327,
+              "key": "917c5e8c-e470-4543-9a57-c50c9d20012e",
+              "title": "DLND REG 01 Quiz Housing Prices V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8CSBiVKu35Q",
+                "china_cdn_id": "8CSBiVKu35Q.mp4"
+              }
+            },
+            {
+              "id": 462406,
+              "key": "83656a98-033b-4e33-9bf8-8d2fcbba31bc",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/November/5a0a88f8_house/house.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/83656a98-033b-4e33-9bf8-8d2fcbba31bc",
+              "caption": "",
+              "alt": "",
+              "width": 1895,
+              "height": 1043,
+              "instructor_notes": null
+            },
+            {
+              "id": 439818,
+              "key": "d85f7e02-fe9e-4e77-9c21-5fa0932584c4",
+              "title": "Housing Price Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d85f7e02-fe9e-4e77-9c21-5fa0932584c4",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the best estimate for the price of the house?",
+                "answers": [
+                  {
+                    "id": "a1508882980407",
+                    "text": "$80,000",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1508882997712",
+                    "text": "$120,000",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1508882998363",
+                    "text": "$190,000",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 439311,
+          "key": "eb2ba02e-e89f-4973-825d-5eff662071fa",
+          "title": "Solution: Housing Prices",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "eb2ba02e-e89f-4973-825d-5eff662071fa",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461328,
+              "key": "dcb248c5-9667-4a9c-85ab-3c919e8c6b50",
+              "title": "Solution  Housing Prices",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uhdTulw9-Nc",
+                "china_cdn_id": "uhdTulw9-Nc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 261428,
+          "key": "8269c631-94d3-479c-bb67-0017b54d2cd0",
+          "title": "Linear to Logistic Regression",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8269c631-94d3-479c-bb67-0017b54d2cd0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 261441,
+              "key": "ab26d989-21d0-435f-8830-444bb8fafc4e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Linear to Logistic Regression\nLinear regression helps predict values on a continuous spectrum, like predicting what the price of a house will be.\n\nHow about classifying data among discrete classes?\n\nHere are examples of classification tasks:\n* Determining whether a patient has cancer \n* Identifying the species of a fish\n* Figuring out who's talking on a conference call\n\nClassification problems are important for self-driving cars. Self-driving cars might need to classify whether an object crossing the road is a car, pedestrian, and a bicycle. Or they might need to identify which type of traffic sign is coming up, or what a stop light is indicating. \n\nIn the next video, Luis will demonstrate a classification algorithm called \"logistic regression\". He'll use logistic regression to predict whether a student will be accepted to a university.  \n\nLinear regression leads to logistic regression and ultimately neural networks, a more advanced classification tool.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 301678,
+          "key": "501ce6c5-9b80-4536-8754-f7da607fc40d",
+          "title": "Classification Problems 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "501ce6c5-9b80-4536-8754-f7da607fc40d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308923,
+              "key": "83927222-7248-4f54-974e-27fb2598db5a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Classification Problems\nWe'll start by defining what we mean by classification problems, and applying it to a simple example.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 791702,
+              "key": "ec2efddc-a3a2-441a-b038-f9e99b1b274e",
+              "title": "Exemplo de classificação",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Dh625piH7Z0",
+                "china_cdn_id": "Dh625piH7Z0.mp4"
+              }
+            },
+            {
+              "id": 309228,
+              "key": "3583f4e1-51e7-4488-bec5-1b376670888d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5912bcf6_student-quiz/student-quiz.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3583f4e1-51e7-4488-bec5-1b376670888d",
+              "caption": "",
+              "alt": null,
+              "width": 2560,
+              "height": 1398,
+              "instructor_notes": null
+            },
+            {
+              "id": 307754,
+              "key": "623e87b9-7117-4771-bb0e-04efc0ad7237",
+              "title": "Classification Example",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "623e87b9-7117-4771-bb0e-04efc0ad7237",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Does the student get accepted?",
+                "answers": [
+                  {
+                    "id": "a1494006799855",
+                    "text": "Yes",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1494006825413",
+                    "text": "No",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 379485,
+          "key": "64b290a9-b38b-4a5a-859f-215eaae008d1",
+          "title": "Classification Problems 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "64b290a9-b38b-4a5a-859f-215eaae008d1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 791704,
+              "key": "240a9e6f-94f0-428f-9873-cc654a1426d6",
+              "title": "分类问题 2 ",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "46PywnGa_cQ",
+                "china_cdn_id": "46PywnGa_cQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 308853,
+          "key": "55e267a6-888b-4093-90cb-6b131ad00c6d",
+          "title": "Linear Boundaries",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "55e267a6-888b-4093-90cb-6b131ad00c6d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 791705,
+              "key": "14ae427e-5e69-4c06-b384-25bf27d0c86c",
+              "title": "Linear Boundaries",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "X-uMlsBi07k",
+                "china_cdn_id": "X-uMlsBi07k.mp4"
+              }
+            },
+            {
+              "id": 378611,
+              "key": "469c2b98-adcb-4b75-9aa6-aee701d69f95",
+              "title": "",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "469c2b98-adcb-4b75-9aa6-aee701d69f95",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Now that you know the equation for the line (2x<sub>1</sub> + x<sub>2</sub> - 18=0), and similarly the “score” (2x<sub>1</sub> + x<sub>2</sub> - 18), what is the score of the student who got 7 in the test and 6 for grades? ",
+                "matchers": [
+                  {
+                    "expression": "^([2]{1})$"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 308854,
+          "key": "3a0e2972-89dc-4b08-826a-1011b9b554ac",
+          "title": "Higher Dimensions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3a0e2972-89dc-4b08-826a-1011b9b554ac",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 791706,
+              "key": "2e169ccb-a205-49d5-9cc5-b22501fb1d90",
+              "title": "09 Higher Dimensions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "eBHunImDmWw",
+                "china_cdn_id": "eBHunImDmWw.mp4"
+              }
+            },
+            {
+              "id": 378619,
+              "key": "d4815d03-7e0b-4db9-884f-d3bc9f03ef3e",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d4815d03-7e0b-4db9-884f-d3bc9f03ef3e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Given the table in the video above, what would the dimensions be for input features (x), the weights (W), and the bias (b) to satisfy (Wx + b)?",
+                "answers": [
+                  {
+                    "id": "a1503541594791",
+                    "text": "W: (nx1), x: (1xn), b: (1x1) ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1503541617335",
+                    "text": "W: (1xn), x: (1xn), b: (nx1) ",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1503541626821",
+                    "text": "W: (1xn), x: (nx1), b: (1x1) ",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1503541635317",
+                    "text": "W: (1xn), x: (nx1), b: (1xn) ",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 308214,
+          "key": "6ba9c9eb-2e36-4b03-9bcc-01e71260a024",
+          "title": "Perceptrons",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6ba9c9eb-2e36-4b03-9bcc-01e71260a024",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 791708,
+              "key": "83ec4c80-7e00-4682-9319-054650c2ae83",
+              "title": "DL 06 Perceptron Definition Fix V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hImSxZyRiOw",
+                "china_cdn_id": "hImSxZyRiOw.mp4"
+              }
+            },
+            {
+              "id": 814306,
+              "key": "4046e81e-4461-4a62-8a90-096e1c119956",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Corrections:** \n- At 3:07 in the video, the title should read \"Step Function\", not \"Set Function\".\n- At 3:07 in the video, the definition of the Step function should be:\n   \n  y=1 if x >= 0;\n  y=0 if x<0",
+              "instructor_notes": ""
+            },
+            {
+              "id": 378612,
+              "key": "d87f6c38-4fd9-47d6-a832-37000882304a",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d87f6c38-4fd9-47d6-a832-37000882304a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Given Score = 2\\*Test + 1*Grade - 18, suppose w<sub>1</sub> was 1.5 instead of 2. Would the student who got 7 on the test and 6 on the grades be accepted or rejected?",
+                "answers": [
+                  {
+                    "id": "a1503541286843",
+                    "text": "Accepted",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1503541296314",
+                    "text": "Rejected",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 267196,
+          "key": "94a2cc6d-3dfb-4ab5-9524-c55c0c9a2565",
+          "title": "Perceptrons II",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "94a2cc6d-3dfb-4ab5-9524-c55c0c9a2565",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 267197,
+              "key": "ee734258-0159-431d-9501-d6de408278a7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a49d8a_hq-perceptron/hq-perceptron.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ee734258-0159-431d-9501-d6de408278a7",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 267198,
+              "key": "f677d51c-4f65-405d-bc51-a2697e3ed53d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Perceptron\nNow you've seen how a simple neural network makes decisions: by taking in input data, processing that information, and finally, producing an output in the form of a decision! Let's take a deeper dive into the university admission example to learn more about processing the input data.\n\nData, like test scores and grades, are fed into a network of interconnected nodes. These individual nodes are called [perceptrons](https://en.wikipedia.org/wiki/Perceptron), or artificial neurons, and they are the basic unit of a neural network. *Each one looks at input data and decides how to categorize that data.* In the example above, the input either passes a threshold for grades and test scores or doesn't, and so the two categories are: yes (passed the threshold) and no (didn't pass the threshold). These categories then combine to form a decision -- for example, if both nodes produce a \"yes\" output, then this student gains admission into the university.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267199,
+              "key": "20bb6049-0406-4106-8a87-b6fbbc328b04",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a49d9f_hq-new-plot-perceptron-combine-v2/hq-new-plot-perceptron-combine-v2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/20bb6049-0406-4106-8a87-b6fbbc328b04",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 267200,
+              "key": "99abddfb-f7b1-41a5-a2a7-bc7912121671",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's zoom in even further and look at how a single perceptron processes input data. \n\nThe perceptron above is one of the two perceptrons from the video that help determine whether or not a student is accepted to a university. It decides whether a student's grades are high enough to be accepted to the university. You might be wondering: \"How does it know whether grades or test scores are more important in making this acceptance decision?\"  Well, when we initialize a neural network, we don't know what information will be most important in making a decision. It's up to the neural network to *learn for itself* which data is most important and adjust how it considers that data. \n\nIt does this with something called **weights**. \n\n## Weights\n\nWhen input comes into a perceptron, it gets multiplied by a weight value that is assigned to this particular input. For example, the perceptron above has two inputs, `tests` for test scores and `grades`, so it has two associated weights that can be adjusted individually. These weights start out as random values, and as the neural network network learns more about what kind of input data leads to a student being accepted into a university, the network adjusts the weights based on any errors in categorization that results from the previous weights. This is called **training** the neural network.\n\nA higher weight means the neural network considers that input more important than other inputs, and lower weight means that the data is considered less important. An extreme example would be if test scores had no affect at all on university acceptance; then the weight of the test score input would be zero and it would have no affect on the output of the perceptron.\n\n## Summing the Input Data\n\nEach input to a perceptron has an associated weight that represents its importance. These weights are determined during the learning process of a neural network, called training. In the next step, the weighted input data are summed to produce a single value, that will help determine the final output - whether a student is accepted to a university or not. Let's see a concrete example of this.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267201,
+              "key": "7e99677a-a030-4653-be40-64d20d357207",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/5894d4d5_perceptron-graphics.001/perceptron-graphics.001.jpeg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7e99677a-a030-4653-be40-64d20d357207",
+              "caption": "We weight `x_test` by `w_test` and add it to `x_grades` weighted by `w_grades`.",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 267202,
+              "key": "d843d8c5-2f6b-434e-871b-b3a2d215877f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "When writing equations related to neural networks, the weights will always be represented by some type of the letter **w**. It will usually look like a <span class=\"mathquill\">W</span> when it represents a **matrix** of weights or a <span class=\"mathquill\">w</span> when it represents an **individual** weight, and it may include some additional information in the form of a subscript to specify *which* weights (you'll see more on that next). But remember, when you see the letter **w**, think **weights**.\n\nIn this example, we'll use <span class=\"mathquill\">w_{grades_{}}</span> for the weight of `grades` and <span class=\"mathquill\">w_{test}</span> for the weight of `test`.\n\nFor the image above, let's say that the weights are: <span class=\"mathquill\">w_{grades} = -1, w_{test} = -0.2</span>.  You don't have to be concerned with the actual values, but their relative values are important. <span class=\"mathquill\">w_{grades_{}}</span> is 5 times larger than <span class=\"mathquill\">w_{test}</span>, which means the neural network considers `grades` input 5 times more important than `test` in determining whether a student will be accepted into a university.\n\nThe perceptron applies these weights to the inputs and sums them in a process known as **linear combination**. In our case, this looks like <span class=\"mathquill\">w_{grades} \\cdot x_{grades} + w_{test} \\cdot x_{test} = -1 \\cdot  x_{grades} - 0.2 \\cdot x_{test} </span>.\n\nNow, to make our equation less wordy, let's replace the explicit names with numbers. Let's use <span class=\"mathquill\">1</span> for <span class=\"mathquill\">grades</span> and <span class=\"mathquill\">2</span> for <span class=\"mathquill\">tests</span>.  So now our equation becomes\n\n<span class=\"mathquill\">w_{1} \\cdot x_{1} + w_{2} \\cdot x_{2}</span>\n\nIn this example, we just have 2 simple inputs: grades and tests. Let's imagine we instead had `m` different inputs and we labeled them <span class=\"mathquill\">x_1, x_2, ..., x_m</span>. Let's also say that the weight corresponding to <span class=\"mathquill\">x_1</span> is <span class=\"mathquill\">w_1</span> and so on. In that case, we would express the linear combination succintly as:\n\n<span class=\"mathquill\"> \\sum_{i=1} ^ m w_i \\cdot x_i</span>\n\nHere, the Greek letter Sigma <span class=\"mathquill\">\\sum</span> is used to represent **summation**. It simply means to evaluate the equation to the right multiple times and add up the results. In this case, the equation it will sum is <span class=\"mathquill\"> w_i \\cdot x_i</span>\n\nBut where do we get <span class=\"mathquill\">w_i</span> and <span class=\"mathquill\">x_i</span>?\n\n<span class=\"mathquill\"> \\sum_{i=1} ^ m </span> means to iterate over all <span class=\"mathquill\">i</span> values, from <span class=\"mathquill\">1</span> to <span class=\"mathquill\">m</span>. \n\nSo to put it all together, <span class=\"mathquill\"> \\sum_{i=1} ^ m w_i \\cdot x_i</span> means the following:\n* Start at <span class=\"mathquill\">i = 1</span>\n* Evaluate <span class=\"mathquill\"> w_1 \\cdot x_1</span> and remember the results\n* Move to <span class=\"mathquill\">i = 2</span>\n* Evaluate <span class=\"mathquill\"> w_2 \\cdot x_2</span> and add these results to <span class=\"mathquill\"> w_1 \\cdot x_1</span>\n* Continue repeating that process until <span class=\"mathquill\">i = m</span>, where <span class=\"mathquill\">m</span> is the number of inputs.\n\nOne last thing: you'll see equations written many different ways, both here and when reading on your own. For example, you will often just see <span class=\"mathquill\"> \\sum_{i_{}} </span> instead of <span class=\"mathquill\"> \\sum_{i=1} ^ m </span>. The first is simply a shorter way of writing the second. That is, if you see a summation without a starting number or a defined end value, it just means perform the sum for all of the them. And _sometimes_, if the value to iterate over can be inferred, you'll see it as just <span class=\"mathquill\">\\sum</span>. Just remember they're all the same thing: <span class=\"mathquill\">  \\sum_{i=1} ^ m w_i \\cdot x_i = \\sum_{i} w_i \\cdot x_i = \\sum w_i \\cdot x_i</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267203,
+              "key": "27490cd7-1f9d-41a7-ba10-1e2aece2d6f7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Calculating the Output with an Activation Function\n\nFinally, the result of the perceptron's summation is turned into an output signal! This is done by feeding the linear combination into an **activation function**. \n\nActivation functions are functions that decide, given the inputs into the node, what should be the node's output? Because it's the activation function that decides the actual output, we often refer to the outputs of a layer as its \"activations\".\n\nOne of the simplest activation functions is the **Heaviside step function**. This function returns a **0** if the linear combination is less than 0. It returns a **1** if the linear combination is positive or equal to zero. The [Heaviside step function](https://en.wikipedia.org/wiki/Heaviside_step_function) is shown below, where h is the calculated linear combination:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267204,
+              "key": "0534423a-3497-430b-ac14-bdaee9d1e990",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/589cf7dd_heaviside-step-graph-2/heaviside-step-graph-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0534423a-3497-430b-ac14-bdaee9d1e990",
+              "caption": "",
+              "alt": null,
+              "width": 1500,
+              "height": 1200,
+              "instructor_notes": null
+            },
+            {
+              "id": 267205,
+              "key": "1d1bc535-3849-49b1-a448-74e21f528026",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/5895102f_heaviside-step-function-2/heaviside-step-function-2.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1d1bc535-3849-49b1-a448-74e21f528026",
+              "caption": "The Heaviside Step Function",
+              "alt": null,
+              "width": 214,
+              "height": 60,
+              "instructor_notes": null
+            },
+            {
+              "id": 267206,
+              "key": "6be85df0-00a3-46bb-8c16-1a17c4d98c7c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the university acceptance example above, we used the weights <span class=\"mathquill\">w_{grades} = -1, w_{test} = -0.2</span>.  Since <span class=\"mathquill\">w_{grades_{}}</span> and <span class=\"mathquill\">w_{test}</span> are negative values, the activation function will only return a <span class=\"mathquill\">1</span> if grades and test are <span class=\"mathquill\">0</span>!  This is because the range of values from the linear combination using these weights and inputs are <span class=\"mathquill\">(-\\infty, 0]</span> (i.e. negative infinity to 0, including 0 itself).\n\nIt's easiest to see this with an example in two dimensions. In the following graph, imagine any points along the line or in the shaded area represent all the possible inputs to our node. Also imagine that the value along the y-axis is the result of performing the linear combination on these inputs and the appropriate weights. It's this result that gets passed to the activation function.\n\nNow remember that the step activation function returns <span class=\"mathquill\">1</span> for any inputs greater than or equal to zero. As you can see in the image, only one point has a y-value greater than or equal to zero – the point right at the origin, <span class=\"mathquill\">(0, 0)</span>:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267207,
+              "key": "89d884e8-ce5d-4c8e-a2a7-54f08739eb22",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/589d2f7e_example-before-bias/example-before-bias.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/89d884e8-ce5d-4c8e-a2a7-54f08739eb22",
+              "caption": "",
+              "alt": null,
+              "width": 1500,
+              "height": 1200,
+              "instructor_notes": null
+            },
+            {
+              "id": 267208,
+              "key": "ffcb7d74-b1ee-43f5-b4c0-b0d92f3d7d05",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now,  we certainly want more than one possible grade/test combination to result in acceptance, so we need to adjust the results passed to our activation function so it activates – that is, returns <span class=\"mathquill\">1</span> – for more inputs. Specifically, we need to find a way so all the scores we’d like to consider acceptable for admissions produce values greater than or equal to zero when linearly combined with the weights into our node.\n\nOne way to get our function to return <span class=\"mathquill\">1</span> for more inputs is to add a value to the results of our linear combination, called a **bias**.\n\nA bias, represented in equations as <span class=\"mathquill\">b</span>, lets us move values in one direction or another. \n\nFor example, the following diagram shows the previous hypothetical function with an added bias of <span class=\"mathquill\">+3</span>. The blue shaded area shows all the values that now activate the function. But notice that these are produced with the same inputs as the values shown shaded in grey – just adjusted higher by adding the bias term:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267209,
+              "key": "b45af499-8570-4da3-9880-2657d84085eb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/589d3055_example-after-bias/example-after-bias.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b45af499-8570-4da3-9880-2657d84085eb",
+              "caption": "",
+              "alt": null,
+              "width": 1500,
+              "height": 1200,
+              "instructor_notes": null
+            },
+            {
+              "id": 267210,
+              "key": "f84159a5-883b-4edd-8295-7d73125a475b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Of course, with neural networks we won't know in advance what values to pick for biases. That’s ok, because just like the weights, the bias can also be updated and changed by the neural network during training. So after adding a bias, we now have a complete perceptron formula:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267211,
+              "key": "8fd5a62a-90cb-437d-8ccf-779c36df578e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58951180_perceptron-equation-2/perceptron-equation-2.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8fd5a62a-90cb-437d-8ccf-779c36df578e",
+              "caption": "Perceptron Formula",
+              "alt": null,
+              "width": 902,
+              "height": 120,
+              "instructor_notes": null
+            },
+            {
+              "id": 267212,
+              "key": "36fad653-ae2b-4ff1-939b-829989f329b3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This formula returns <span class=\"mathquill\">1</span> if the input (<span class=\"mathquill\">x_1, x_2, ..., x_m</span>) belongs to the accepted-to-university category or returns <span class=\"mathquill\">0</span> if it doesn't.  The input is made up of one or more [real numbers](https://en.wikipedia.org/wiki/Real_number), each one represented by <span class=\"mathquill\">x_i</span>, where <span class=\"mathquill\">m</span> is the number of inputs. \n\nThen the neural network starts to learn! Initially, the weights ( <span class=\"mathquill\">w_i</span>) and bias (<span class=\"mathquill\">b</span>) are assigned a random value, and then they are updated using a learning algorithm like gradient descent. The weights and biases change so that the next training example is more accurately categorized, and patterns in data are \"learned\" by the neural network.\n\nNow that you have a good understanding of perceptrons, let's put that knowledge to use.  In the next section, you'll create the AND perceptron from the _Neural Networks_ video by setting the values for weights and bias.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 308857,
+          "key": "a3b18b18-8496-4775-af48-921ab35bd306",
+          "title": "Why \"Neural Networks\"?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a3b18b18-8496-4775-af48-921ab35bd306",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 791709,
+              "key": "1a2e3319-7659-4df2-8563-46916b089cdc",
+              "title": "为何是神经网络",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zAkzOZntK6Y",
+                "china_cdn_id": "zAkzOZntK6Y.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 301687,
+          "key": "4d015fb7-e73c-447f-a17a-34a0a2b694a0",
+          "title": "Perceptrons as Logical Operators",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4d015fb7-e73c-447f-a17a-34a0a2b694a0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308861,
+              "key": "66e4ffdd-f84c-4b28-a379-0600ba2dcb6a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Perceptrons as Logical Operators\n\nIn this lesson, we'll see one of the many great applications of perceptrons. As logical operators! You'll have the chance to create the perceptrons for the most common of these, the **AND**, **OR**, and **NOT** operators. And then, we'll see what to do about the elusive **XOR** operator. Let's dive in!\n\n# AND Perceptron",
+              "instructor_notes": ""
+            },
+            {
+              "id": 791711,
+              "key": "004dba17-a1ca-4951-b48a-13ee1790b3dd",
+              "title": "DL 08 AND And OR Perceptrons",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Y-ImuxNpS40",
+                "china_cdn_id": "Y-ImuxNpS40.mp4"
+              }
+            },
+            {
+              "id": 966908,
+              "key": "84a0e5b2-aeca-4f29-a6d8-0bdb926c528e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Note: The second and third rows of the third column from 1:50-onward should be blue in color (they have the correct value of 1) for the OR perceptron.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 309230,
+              "key": "cd9d82d7-b53f-434f-a029-b8dc517f43e1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5912bf0e_and-quiz/and-quiz.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cd9d82d7-b53f-434f-a029-b8dc517f43e1",
+              "caption": "",
+              "alt": null,
+              "width": 1800,
+              "height": 460,
+              "instructor_notes": null
+            },
+            {
+              "id": 308240,
+              "key": "fdd28d8a-fcaf-4fc0-a222-a7199f1db55d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## What are the weights and bias for the AND perceptron?\nSet the weights (`weight1`, `weight2`)  and bias (`bias`) to values that will correctly determine the AND operation as shown above.  \nMore than one set of values will work!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 307783,
+              "key": "11c90890-7258-40ad-a29a-f7cd3593d47f",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "11c90890-7258-40ad-a29a-f7cd3593d47f",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5630399981158400",
+                "initial_code_files": [
+                  {
+                    "text": "import pandas as pd\n\n# TODO: Set weight1, weight2, and bias\nweight1 = 0.0\nweight2 = 0.0\nbias = 0.0\n\n\n# DON'T CHANGE ANYTHING BELOW\n# Inputs and outputs\ntest_inputs = [(0, 0), (0, 1), (1, 0), (1, 1)]\ncorrect_outputs = [False, False, False, True]\noutputs = []\n\n# Generate and check output\nfor test_input, correct_output in zip(test_inputs, correct_outputs):\n    linear_combination = weight1 * test_input[0] + weight2 * test_input[1] + bias\n    output = int(linear_combination >= 0)\n    is_correct_string = 'Yes' if output == correct_output else 'No'\n    outputs.append([test_input[0], test_input[1], linear_combination, output, is_correct_string])\n\n# Print output\nnum_wrong = len([output[4] for output in outputs if output[4] == 'No'])\noutput_frame = pd.DataFrame(outputs, columns=['Input 1', '  Input 2', '  Linear Combination', '  Activation Output', '  Is Correct'])\nif not num_wrong:\n    print('Nice!  You got it all correct.\\n')\nelse:\n    print('You got {} wrong.  Keep trying!\\n'.format(num_wrong))\nprint(output_frame.to_string(index=False))\n",
+                    "name": "quiz.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 309352,
+              "key": "7b7a5347-894d-45ad-95e3-8e4e76ea86f5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# OR Perceptron",
+              "instructor_notes": ""
+            },
+            {
+              "id": 309231,
+              "key": "6cfa3fe3-458e-4132-bd3f-864074da39d1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5912c102_or-quiz/or-quiz.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6cfa3fe3-458e-4132-bd3f-864074da39d1",
+              "caption": "",
+              "alt": null,
+              "width": 2523,
+              "height": 590,
+              "instructor_notes": null
+            },
+            {
+              "id": 308241,
+              "key": "33817358-f608-405c-9164-3f01ae5744b2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The OR perceptron is very similar to an AND perceptron.  In the image below, the OR perceptron has the same line as the AND perceptron, except the line is shifted down.  What can you do to the weights and/or bias to achieve this?  Use the following AND perceptron to create an OR Perceptron.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 309232,
+              "key": "90883050-5cc9-4d3f-9cd3-087edde9eaeb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5912c232_and-to-or/and-to-or.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/90883050-5cc9-4d3f-9cd3-087edde9eaeb",
+              "caption": "",
+              "alt": null,
+              "width": 2519,
+              "height": 704,
+              "instructor_notes": null
+            },
+            {
+              "id": 308242,
+              "key": "73ddcfe0-0272-4bdc-99ab-ea89f068a887",
+              "title": "OR Perceptron Quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "73ddcfe0-0272-4bdc-99ab-ea89f068a887",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What are two ways to go from an AND perceptron to an OR perceptron?",
+                "answers": [
+                  {
+                    "id": "a1494182870768",
+                    "text": "Increase the weights",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1494182883245",
+                    "text": "Decrease the weights",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494182884153",
+                    "text": "Increase a single weight",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494182884879",
+                    "text": "Decrease a single weight",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494182885650",
+                    "text": "Increase the magnitude of the bias",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494182887943",
+                    "text": "Decrease the magnitude of the bias",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 308216,
+              "key": "900788cb-de0c-45b1-9a6a-38132e814ba7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# NOT Perceptron\nUnlike the other perceptrons we looked at, the NOT operation only cares about one input.  The operation returns a `0` if the input is `1` and a `1` if it's a `0`.  The other inputs to the perceptron are ignored.\n\nIn this quiz, you'll set the weights (`weight1`, `weight2`)  and bias `bias` to the values that calculate the NOT operation on the second input and ignores the first input.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308217,
+              "key": "9c5828f7-2d28-495b-824a-1a72647c4df8",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "9c5828f7-2d28-495b-824a-1a72647c4df8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4935618422505472",
+                "initial_code_files": [
+                  {
+                    "text": "import pandas as pd\n\n# TODO: Set weight1, weight2, and bias\nweight1 = 0.0\nweight2 = 0.0\nbias = 0.0\n\n\n# DON'T CHANGE ANYTHING BELOW\n# Inputs and outputs\ntest_inputs = [(0, 0), (0, 1), (1, 0), (1, 1)]\ncorrect_outputs = [True, False, True, False]\noutputs = []\n\n# Generate and check output\nfor test_input, correct_output in zip(test_inputs, correct_outputs):\n    linear_combination = weight1 * test_input[0] + weight2 * test_input[1] + bias\n    output = int(linear_combination >= 0)\n    is_correct_string = 'Yes' if output == correct_output else 'No'\n    outputs.append([test_input[0], test_input[1], linear_combination, output, is_correct_string])\n\n# Print output\nnum_wrong = len([output[4] for output in outputs if output[4] == 'No'])\noutput_frame = pd.DataFrame(outputs, columns=['Input 1', '  Input 2', '  Linear Combination', '  Activation Output', '  Is Correct'])\nif not num_wrong:\n    print('Nice!  You got it all correct.\\n')\nelse:\n    print('You got {} wrong.  Keep trying!\\n'.format(num_wrong))\nprint(output_frame.to_string(index=False))",
+                    "name": "quiz.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 791712,
+              "key": "4f98bd55-4386-4f27-91c5-e6ed6827767f",
+              "title": "DL 09 XOR Perceptron",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-z9K49fdE3g",
+                "china_cdn_id": "-z9K49fdE3g.mp4"
+              }
+            },
+            {
+              "id": 309233,
+              "key": "79a219c6-c286-4c31-ba2a-24ea02296b37",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# XOR Perceptron",
+              "instructor_notes": ""
+            },
+            {
+              "id": 309234,
+              "key": "bcb66ae2-ee07-44a6-b131-3288b04a8a25",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5912c2f1_xor/xor.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/bcb66ae2-ee07-44a6-b131-3288b04a8a25",
+              "caption": "",
+              "alt": null,
+              "width": 1898,
+              "height": 526,
+              "instructor_notes": null
+            },
+            {
+              "id": 308220,
+              "key": "15028e9f-0aa4-4162-91cd-e507dd9ed407",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: Build an XOR Multi-Layer Perceptron\n\nNow, let's build a multi-layer perceptron from the AND, NOT, and OR perceptrons to create XOR logic!\n\nThe neural network below contains 3 perceptrons, A, B, and C. The last one (AND) has been given for you. The input to the neural network is from the first node. The output comes out of the last node.\n\nThe multi-layer perceptron below calculates XOR.  Each perceptron is a logic operation of AND, OR, and NOT.   However, the perceptrons A, B, and C don't indicate their operation.  In the following quiz, set the correct operations for the perceptrons to calculate XOR.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308677,
+              "key": "af97e020-f83a-47fb-ad7e-6c0bded2de89",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/59112a6b_xor-quiz/xor-quiz.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/af97e020-f83a-47fb-ad7e-6c0bded2de89",
+              "caption": "",
+              "alt": null,
+              "width": 1760,
+              "height": 599,
+              "instructor_notes": null
+            },
+            {
+              "id": 308225,
+              "key": "84a12a7b-ef22-4003-9528-9e44fd73d648",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "84a12a7b-ef22-4003-9528-9e44fd73d648",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Set the operations for the perceptrons in the XOR neural network."
+                },
+                "concepts_label": "Perceptron",
+                "answers_label": "Operators",
+                "concepts": [
+                  {
+                    "text": "A",
+                    "correct_answer": {
+                      "id": "a1494297409537",
+                      "text": "AND"
+                    }
+                  },
+                  {
+                    "text": "B",
+                    "correct_answer": {
+                      "id": "a1494297414036",
+                      "text": "OR"
+                    }
+                  },
+                  {
+                    "text": "C",
+                    "correct_answer": {
+                      "id": "a1494297422474",
+                      "text": "NOT"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1494297409537",
+                    "text": "AND"
+                  },
+                  {
+                    "id": "a1494297414036",
+                    "text": "OR"
+                  },
+                  {
+                    "id": "a1494297422474",
+                    "text": "NOT"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 308841,
+          "key": "8ea20904-0215-4e44-afa9-bb5a720bd028",
+          "title": "Perceptron Trick",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8ea20904-0215-4e44-afa9-bb5a720bd028",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308864,
+              "key": "e0971445-04f0-4968-ab4d-a1ebeace7bd9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Perceptron Trick\nIn the last section you used your logic and your mathematical knowledge to create perceptrons for some of the most common logical operators. In real life, though, we can't be building these perceptrons ourselves. The idea is that we give them the result, and they build themselves. For this, here's a pretty neat trick that will help us.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308844,
+              "key": "e640ff2d-fdb0-458c-b12b-d3ef72bfe93f",
+              "title": "Perceptron Algorithm",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-zhTROHtscQ",
+                "china_cdn_id": "-zhTROHtscQ.mp4"
+              }
+            },
+            {
+              "id": 308846,
+              "key": "e0640565-e4ef-420d-98b5-51d4d0eec4e0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5912022e_perceptronquiz/perceptronquiz.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e0640565-e4ef-420d-98b5-51d4d0eec4e0",
+              "caption": "",
+              "alt": null,
+              "width": 1132,
+              "height": 405,
+              "instructor_notes": null
+            },
+            {
+              "id": 308847,
+              "key": "d5bc6c8f-b9a3-4f8f-97d0-9777f6895dd2",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d5bc6c8f-b9a3-4f8f-97d0-9777f6895dd2",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Does the misclassified point want the line to be closer or farther?",
+                "answers": [
+                  {
+                    "id": "a1494352441693",
+                    "text": "Closer",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1494352459483",
+                    "text": "Farther",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 379484,
+              "key": "455adbfa-7188-4d02-8c4a-8e1dd4be6b11",
+              "title": "DL 10 S  Perceptron Algorithm",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fATmrG2hQzI",
+                "china_cdn_id": "fATmrG2hQzI.mp4"
+              }
+            },
+            {
+              "id": 379491,
+              "key": "135f4b15-5ec8-4ed6-98f7-52240c7e30f3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Time for some math!\nNow that we've learned that the points that are misclassified, want the line to move closer to them, let's do some math. The following video shows a mathematical trick that modifies the equation of the line, so that it comes closer to a particular point.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 385196,
+              "key": "84154f0f-806b-46dd-ba2d-e2031b1cae98",
+              "title": "07 Perceptron Algorithm Trick",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lif_qPmXvWA",
+                "china_cdn_id": "lif_qPmXvWA.mp4"
+              }
+            },
+            {
+              "id": 378615,
+              "key": "9ec3484a-6109-4705-a670-43846571a014",
+              "title": "",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9ec3484a-6109-4705-a670-43846571a014",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "For the second example, where the line is described by 3x<sub>1</sub>+ 4x<sub>2</sub> - 10 = 0, if the learning rate was set to 0.1, how many times would you have to apply the perceptron trick to move the line to a position where the blue point, at (1, 1), is correctly classified? \n",
+                "matchers": [
+                  {
+                    "expression": "10"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 301689,
+          "key": "dc837952-c0d8-43fc-921c-f1ffe316c795",
+          "title": "Perceptron Algorithm",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "dc837952-c0d8-43fc-921c-f1ffe316c795",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308866,
+              "key": "a60d96eb-348a-4b28-afc5-8690d2e9275e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Perceptron Algorithm\nAnd now, with the perceptron trick in our hands, we can fully develop the perceptron algorithm! The following video will show you the pseudocode, and in the quiz below, you'll have the chance to code it in Python.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 543496,
+              "key": "aa6e7c27-1f41-4664-8120-23f5d0a80622",
+              "title": "Perceptron Algorithm Pseudocode",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "There's a small error in the above video in that <span class=\"mathquill\">W_i</span> should be updated to <span class=\"mathquill\">W_i  = W_i + \\alpha x_i</span> (plus or minus depending on the situation).",
+              "video": {
+                "youtube_id": "p8Q3yu9YqYk",
+                "china_cdn_id": "p8Q3yu9YqYk.mp4"
+              }
+            },
+            {
+              "id": 308046,
+              "key": "5cde4654-e7cf-47d5-967c-ad2b91f8fe00",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Coding the Perceptron Algorithm\nTime to code! In this quiz, you'll have the chance to implement the perceptron algorithm to separate the following data (given in the file data.csv).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308043,
+              "key": "28d86cb6-c4b4-4b75-a919-bddc10c5c7c1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/590d06dd_points/points.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/28d86cb6-c4b4-4b75-a919-bddc10c5c7c1",
+              "caption": "",
+              "alt": "",
+              "width": 385,
+              "height": 260,
+              "instructor_notes": null
+            },
+            {
+              "id": 308208,
+              "key": "a5b3a99b-0299-47bd-b2fe-1a8ebf07d1d4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Recall that the perceptron step works as follows. For a point with coordinates\n<span class=\"mathquill\">(p,q)</span>, label <span class=\"mathquill\"> y</span>, and prediction given by the equation <span class=\"mathquill\">\\hat{y} = step(w_1x_1 + w_2x_2 + b)</span>:\n\n- If the point is correctly classified, do nothing.\n- If the point is classified positive, but it has a negative label, subtract\n<span class=\"mathquill\">\\alpha p, \\alpha q,</span> and\n<span class=\"mathquill\">\\alpha</span>\nfrom\n<span class=\"mathquill\">w_1, w_2,</span>\nand\n<span class=\"mathquill\">b</span>\nrespectively.\n- If the point is classified negative, but it has a positive label, add\n<span class=\"mathquill\">\\alpha p, \\alpha q,</span>\nand\n<span class=\"mathquill\">\\alpha</span>\nto\n<span class=\"mathquill\">w_1, w_2,</span>\nand\n<span class=\"mathquill\">b</span>\nrespectively.\n\nThen click on `test run` to graph the solution that the perceptron algorithm gives you. It'll actually draw a set of dotted lines, that show how the algorithm approaches to the best solution, given by the black solid line.\n\nFeel free to play with the parameters of the algorithm (number of epochs, learning rate, and even the randomizing of the initial parameters) to see how your initial conditions can affect the solution!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308040,
+              "key": "d9b6c9f8-b58d-45a4-9ea9-6dacd8fcfd7c",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "d9b6c9f8-b58d-45a4-9ea9-6dacd8fcfd7c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5660419386638336",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\n# Setting the random seed, feel free to change it and see different solutions.\nnp.random.seed(42)\n\ndef stepFunction(t):\n    if t >= 0:\n        return 1\n    return 0\n\ndef prediction(X, W, b):\n    return stepFunction((np.matmul(X,W)+b)[0])\n\n# TODO: Fill in the code below to implement the perceptron trick.\n# The function should receive as inputs the data X, the labels y,\n# the weights W (as an array), and the bias b,\n# update the weights and bias W, b, according to the perceptron algorithm,\n# and return W and b.\ndef perceptronStep(X, y, W, b, learn_rate = 0.01):\n    # Fill in code\n    return W, b\n    \n# This function runs the perceptron algorithm repeatedly on the dataset,\n# and returns a few of the boundary lines obtained in the iterations,\n# for plotting purposes.\n# Feel free to play with the learning rate and the num_epochs,\n# and see your results plotted below.\ndef trainPerceptronAlgorithm(X, y, learn_rate = 0.01, num_epochs = 25):\n    x_min, x_max = min(X.T[0]), max(X.T[0])\n    y_min, y_max = min(X.T[1]), max(X.T[1])\n    W = np.array(np.random.rand(2,1))\n    b = np.random.rand(1)[0] + x_max\n    # These are the solution lines that get plotted below.\n    boundary_lines = []\n    for i in range(num_epochs):\n        # In each epoch, we apply the perceptron step.\n        W, b = perceptronStep(X, y, W, b, learn_rate)\n        boundary_lines.append((-W[0]/W[1], -b/W[1]))\n    return boundary_lines\n",
+                    "name": "perceptron.py"
+                  },
+                  {
+                    "text": "0.78051,-0.063669,1\n0.28774,0.29139,1\n0.40714,0.17878,1\n0.2923,0.4217,1\n0.50922,0.35256,1\n0.27785,0.10802,1\n0.27527,0.33223,1\n0.43999,0.31245,1\n0.33557,0.42984,1\n0.23448,0.24986,1\n0.0084492,0.13658,1\n0.12419,0.33595,1\n0.25644,0.42624,1\n0.4591,0.40426,1\n0.44547,0.45117,1\n0.42218,0.20118,1\n0.49563,0.21445,1\n0.30848,0.24306,1\n0.39707,0.44438,1\n0.32945,0.39217,1\n0.40739,0.40271,1\n0.3106,0.50702,1\n0.49638,0.45384,1\n0.10073,0.32053,1\n0.69907,0.37307,1\n0.29767,0.69648,1\n0.15099,0.57341,1\n0.16427,0.27759,1\n0.33259,0.055964,1\n0.53741,0.28637,1\n0.19503,0.36879,1\n0.40278,0.035148,1\n0.21296,0.55169,1\n0.48447,0.56991,1\n0.25476,0.34596,1\n0.21726,0.28641,1\n0.67078,0.46538,1\n0.3815,0.4622,1\n0.53838,0.32774,1\n0.4849,0.26071,1\n0.37095,0.38809,1\n0.54527,0.63911,1\n0.32149,0.12007,1\n0.42216,0.61666,1\n0.10194,0.060408,1\n0.15254,0.2168,1\n0.45558,0.43769,1\n0.28488,0.52142,1\n0.27633,0.21264,1\n0.39748,0.31902,1\n0.5533,1,0\n0.44274,0.59205,0\n0.85176,0.6612,0\n0.60436,0.86605,0\n0.68243,0.48301,0\n1,0.76815,0\n0.72989,0.8107,0\n0.67377,0.77975,0\n0.78761,0.58177,0\n0.71442,0.7668,0\n0.49379,0.54226,0\n0.78974,0.74233,0\n0.67905,0.60921,0\n0.6642,0.72519,0\n0.79396,0.56789,0\n0.70758,0.76022,0\n0.59421,0.61857,0\n0.49364,0.56224,0\n0.77707,0.35025,0\n0.79785,0.76921,0\n0.70876,0.96764,0\n0.69176,0.60865,0\n0.66408,0.92075,0\n0.65973,0.66666,0\n0.64574,0.56845,0\n0.89639,0.7085,0\n0.85476,0.63167,0\n0.62091,0.80424,0\n0.79057,0.56108,0\n0.58935,0.71582,0\n0.56846,0.7406,0\n0.65912,0.71548,0\n0.70938,0.74041,0\n0.59154,0.62927,0\n0.45829,0.4641,0\n0.79982,0.74847,0\n0.60974,0.54757,0\n0.68127,0.86985,0\n0.76694,0.64736,0\n0.69048,0.83058,0\n0.68122,0.96541,0\n0.73229,0.64245,0\n0.76145,0.60138,0\n0.58985,0.86955,0\n0.73145,0.74516,0\n0.77029,0.7014,0\n0.73156,0.71782,0\n0.44556,0.57991,0\n0.85275,0.85987,0\n0.51912,0.62359,0\n",
+                    "name": "data.csv"
+                  },
+                  {
+                    "text": "def perceptronStep(X, y, W, b, learn_rate = 0.01):\n    for i in range(len(X)):\n        y_hat = prediction(X[i],W,b)\n        if y[i]-y_hat == 1:\n            W[0] += X[i][0]*learn_rate\n            W[1] += X[i][1]*learn_rate\n            b += learn_rate\n        elif y[i]-y_hat == -1:\n            W[0] -= X[i][0]*learn_rate\n            W[1] -= X[i][1]*learn_rate\n            b -= learn_rate\n    return W, b\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 301696,
+          "key": "dcbb24bf-3cc1-43b3-977b-b164895f357b",
+          "title": "Error Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "dcbb24bf-3cc1-43b3-977b-b164895f357b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308694,
+              "key": "6b00a6da-4895-46f7-a82c-0ea833eaa7cc",
+              "title": "Error Functions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "YfUUunxWIJw",
+                "china_cdn_id": "YfUUunxWIJw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 308868,
+          "key": "5e1f6c71-6c75-4bb2-98a9-ee40c0eb3472",
+          "title": "Log-loss Error Function",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5e1f6c71-6c75-4bb2-98a9-ee40c0eb3472",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309499,
+              "key": "86d3777f-17d5-4381-85ec-085b74bcee0f",
+              "title": "Error Functions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jfKShxGAbok",
+                "china_cdn_id": "jfKShxGAbok.mp4"
+              }
+            },
+            {
+              "id": 565343,
+              "key": "35f1a1b8-e948-4fc3-8acd-f652e97b15ad",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We pick back up on log-loss error with the gradient descent concept.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 378621,
+              "key": "3765ff07-0f4e-4610-b0af-6f2ba1a254db",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "3765ff07-0f4e-4610-b0af-6f2ba1a254db",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following conditions should be met in order to apply gradient descent? (Check all that apply.)",
+                "answers": [
+                  {
+                    "id": "a1503541771251",
+                    "text": "The error function should be discrete",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1503541789309",
+                    "text": "The error function should contain only positive values",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1503541796403",
+                    "text": "The error function should be differentiable",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1503541797713",
+                    "text": "The error function should be normalized",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1503541808617",
+                    "text": "The error function should be continuous",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 301698,
+          "key": "4b7026be-06e3-49de-a362-ce109172659e",
+          "title": "Discrete vs Continuous",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4b7026be-06e3-49de-a362-ce109172659e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308871,
+              "key": "792ca1fc-b193-4e45-aa61-5bd9651ece7a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Discrete vs Continuous Predictions\nIn the last few videos, we learned that continuous error functions are better than discrete error functions, when it comes to optimizing. For this, we need to switch from discrete to continuous predictions. The next two videos will guide us in doing that.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308696,
+              "key": "f6c52a7d-38da-4d33-ad00-bce1ba773038",
+              "title": "Discrete vs Continuous",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "rdP-RPDFkl0",
+                "china_cdn_id": "rdP-RPDFkl0.mp4"
+              }
+            },
+            {
+              "id": 328024,
+              "key": "104afa4a-2de4-4545-aa33-7b4f815a06e2",
+              "title": "Discrete vs. Continuous",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Rm2KxFaPiJg",
+                "china_cdn_id": "Rm2KxFaPiJg.mp4"
+              }
+            },
+            {
+              "id": 395737,
+              "key": "80c19fd4-8fc9-422d-8445-14b8982f7c05",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "80c19fd4-8fc9-422d-8445-14b8982f7c05",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "The sigmoid function is defined as sigmoid(x) = 1/(1+e<sup>-x</sup>). If the score is defined by 4x<sub>1</sub> + 5x<sub>2</sub> - 9 = score, then which of the following points has exactly a 50% probability of being blue or red? (Choose all that are correct.)",
+                "answers": [
+                  {
+                    "id": "a1505308853539",
+                    "text": "(1, 1)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1505308863529",
+                    "text": "(2, 4)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1505308869439",
+                    "text": "(5, -5)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1505308875210",
+                    "text": "(-4, 5)",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 301701,
+          "key": "9e1364a8-e8b4-4eac-be12-4d44a139f721",
+          "title": "Softmax",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9e1364a8-e8b4-4eac-be12-4d44a139f721",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308873,
+              "key": "4bb77d61-423f-4b74-9d69-cc2ed7bf762a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Multi-Class Classification and Softmax",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308758,
+              "key": "0bfd9bff-3a33-48cf-b60b-ccdc868aec6d",
+              "title": "Quiz - Softmax",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NNoezNnAMTY",
+                "china_cdn_id": "NNoezNnAMTY.mp4"
+              }
+            },
+            {
+              "id": 308874,
+              "key": "2a0b5a06-9388-4f47-a268-5a7381f5053f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# The Softmax Function\nIn the next video, we'll learn about the softmax function, which is the equivalent of the sigmoid activation function, but when the problem has 3 or more classes.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 309219,
+              "key": "24650f94-1030-4d1d-883f-f44f0f7de7a7",
+              "title": "DL 18 Q Softmax V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RC_A9Tu99y4",
+                "china_cdn_id": "RC_A9Tu99y4.mp4"
+              }
+            },
+            {
+              "id": 308063,
+              "key": "e905f181-a259-41a1-85b5-77ccb41dcd81",
+              "title": "Softmax Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e905f181-a259-41a1-85b5-77ccb41dcd81",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What function turns every number into a positive number?",
+                "answers": [
+                  {
+                    "id": "a1494026191658",
+                    "text": "sin",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494026206850",
+                    "text": "cos",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494026207723",
+                    "text": "log",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494026208481",
+                    "text": "exp",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 379483,
+              "key": "7d862e0b-0025-4e81-a8f9-657d2bdb5be1",
+              "title": "DL 18 S Softmax",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "n8S-v_LCTms",
+                "china_cdn_id": "n8S-v_LCTms.mp4"
+              }
+            },
+            {
+              "id": 308264,
+              "key": "1bc7f5be-9c0f-47da-990b-47becc82e1e3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: Coding Softmax\n\nAnd now, your time to shine! Let's code the formula for the Softmax function in Python.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308070,
+              "key": "b72b37b6-940b-47b4-8a2d-073f396a9853",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "b72b37b6-940b-47b4-8a2d-073f396a9853",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4839883869913088",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\n\n# Write a function that takes as input a list of numbers, and returns\n# the list of values given by the softmax function.\ndef softmax(L):\n    pass",
+                    "name": "softmax.py"
+                  },
+                  {
+                    "text": "import numpy as np\n\ndef softmax(L):\n    expL = np.exp(L)\n    sumExpL = sum(expL)\n    result = []\n    for i in expL:\n        result.append(i*1.0/sumExpL)\n    return result\n    \n    # Note: The function np.divide can also be used here, as follows:\n    # def softmax(L):\n    #     expL = np.exp(L)\n    #     return np.divide (expL, expL.sum())\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 301703,
+          "key": "cac0e3d6-38c1-4eb6-8440-4325b44703b3",
+          "title": "One-Hot Encoding",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cac0e3d6-38c1-4eb6-8440-4325b44703b3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 385922,
+              "key": "96888061-0952-4033-9b09-e11aed5ea38e",
+              "title": "One-Hot Encoding",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AePvjhyvsBo",
+                "china_cdn_id": "AePvjhyvsBo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 301705,
+          "key": "32704510-a70c-4a9b-a2c6-77ccdd389c0c",
+          "title": "Maximum Likelihood",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "32704510-a70c-4a9b-a2c6-77ccdd389c0c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308875,
+              "key": "81b2ed57-5d53-4c2d-88b7-b08cd44c954e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Maximum Likelihood\nProbability will be one of our best friends as we go through Deep Learning. In this lesson, we'll see how we can use probability to evaluate (and improve!) our models.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308701,
+              "key": "fe307f0f-f3a3-47ae-9cec-634295e6180e",
+              "title": "Maximum Likelihood 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1yJx-QtlvNI",
+                "china_cdn_id": "1yJx-QtlvNI.mp4"
+              }
+            },
+            {
+              "id": 309220,
+              "key": "aa8e3d52-fae4-4230-a5ea-77347c8f4dd6",
+              "title": "Maximum Likelihood 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6nUUeQ9AeUA",
+                "china_cdn_id": "6nUUeQ9AeUA.mp4"
+              }
+            },
+            {
+              "id": 395741,
+              "key": "ac023e08-efee-42ac-97b4-421fa31673d8",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ac023e08-efee-42ac-97b4-421fa31673d8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Based on the above video, which of the following is true for a very high value for P(all)?",
+                "answers": [
+                  {
+                    "id": "a1505309101714",
+                    "text": "The model classifies most blue points correctly.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1505309121003",
+                    "text": "The model classifies most red points correctly.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1505309133871",
+                    "text": "The model classifies most points correctly with P(all) indicating how accurate the model is.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1505309137416",
+                    "text": "The model classifies all points correctly.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 308876,
+              "key": "3f5c6b18-8533-40d6-9291-3d201b7d9e20",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The next video will show a more formal treatment of Maximum Likelihood.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 308878,
+          "key": "2098790c-e2ce-4c0e-9e39-326bf189b417",
+          "title": "Maximizing Probabilities",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2098790c-e2ce-4c0e-9e39-326bf189b417",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308883,
+              "key": "f287241f-532a-4f93-8104-03286013ceca",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Maximizing Probabilities\nIn this lesson and quiz, we will learn how to maximize a probability, using some math. Nothing more than high school math, so get ready for a trip down memory lane!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308881,
+              "key": "58d1e15e-565c-42c5-9d14-cb19b777940d",
+              "title": "Quiz - Cross 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-xxrisIvD0E",
+                "china_cdn_id": "-xxrisIvD0E.mp4"
+              }
+            },
+            {
+              "id": 308879,
+              "key": "00071f2e-37c5-405b-b00b-ed0d426a3411",
+              "title": "Quiz Cross Entropy",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "njq6bYrPqSU",
+                "china_cdn_id": "njq6bYrPqSU.mp4"
+              }
+            },
+            {
+              "id": 308882,
+              "key": "b7b9c85e-ceb5-4ad0-a80b-e09b0bba3dcd",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b7b9c85e-ceb5-4ad0-a80b-e09b0bba3dcd",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What function turns products into sums?",
+                "answers": [
+                  {
+                    "id": "a1494355420285",
+                    "text": "sin",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494355432088",
+                    "text": "cos",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1494355432746",
+                    "text": "log",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1494355433404",
+                    "text": "exp",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 379481,
+          "key": "c03e2d61-77be-4a7e-a380-b7ade8b062e5",
+          "title": "Cross-Entropy 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c03e2d61-77be-4a7e-a380-b7ade8b062e5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 379482,
+              "key": "8e27a034-8546-45f9-bc79-a8a620ee36aa",
+              "title": "Cross Entropy 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "_Correction:_ At 2:18, the top right point should be labelled `-log(0.7)` instead of `-log(0.2)`.",
+              "video": {
+                "youtube_id": "iREoPUrpXvE",
+                "china_cdn_id": "iREoPUrpXvE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 301707,
+          "key": "760235e0-a3ec-4e56-8cdb-56d762886690",
+          "title": "Cross-Entropy 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "760235e0-a3ec-4e56-8cdb-56d762886690",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308877,
+              "key": "86500a13-48d3-4650-a473-6939a11768cc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Cross-Entropy\nSo we're getting somewhere, there's definitely a connection between probabilities and error functions, and it's called **Cross-Entropy**. This concept is tremendously popular in many fields, including Machine Learning. Let's dive more into the formula, and actually code it!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308709,
+              "key": "324a017e-f426-4df8-8641-4495613e7049",
+              "title": "Formula For Cross 1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qvr_ego_d6w",
+                "china_cdn_id": "qvr_ego_d6w.mp4"
+              }
+            },
+            {
+              "id": 461569,
+              "key": "b51adbe6-783d-4fde-a727-00fc97421cea",
+              "title": "CrossEntropy V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1BnhC6e0TFw",
+                "china_cdn_id": "1BnhC6e0TFw.mp4"
+              }
+            },
+            {
+              "id": 308263,
+              "key": "56ae2acc-0eca-44d9-a202-fb080cd4e247",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quiz: Coding Cross-entropy\n\nNow, time to shine! Let's code the formula for cross-entropy in Python. As in the video, `Y` in the quiz is for the category, and `P` is the probability.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308093,
+              "key": "1b079052-6418-43a6-a7f0-bfe465d10ad3",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "1b079052-6418-43a6-a7f0-bfe465d10ad3",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6614311758856192",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\n\n# Write a function that takes as input two lists Y, P,\n# and returns the float corresponding to their cross-entropy.\ndef cross_entropy(Y, P):\n    pass",
+                    "name": "cross_entropy.py"
+                  },
+                  {
+                    "text": "import numpy as np\n\ndef cross_entropy(Y, P):\n    Y = np.float_(Y)\n    P = np.float_(P)\n    return -np.sum(Y * np.log(P) + (1 - Y) * np.log(1 - P))",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 308884,
+          "key": "a9641a7f-f6a1-4868-9bbc-77a55f8b94be",
+          "title": "Multi-Class Cross Entropy",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a9641a7f-f6a1-4868-9bbc-77a55f8b94be",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461546,
+              "key": "c4930a3b-7aa2-45ab-8ac3-b20c6748149e",
+              "title": "DL 27 Multi-Class Cross Entropy 2 Fix",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "keDswcqkees",
+                "china_cdn_id": "keDswcqkees.mp4"
+              }
+            },
+            {
+              "id": 395743,
+              "key": "df43ca79-d06f-4760-91d4-e251ef05a722",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "df43ca79-d06f-4760-91d4-e251ef05a722",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Based on what we have covered till now, which of the following is true?",
+                "answers": [
+                  {
+                    "id": "a1505309232560",
+                    "text": "A higher cross-entropy implies a lower probability for an event.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1505309241144",
+                    "text": "A higher cross-entropy implies a higher probability for an event.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1505309247922",
+                    "text": "There is no relation between the cross-entropy and the probability of an event.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 301709,
+          "key": "a5711d6e-abc1-41bc-a242-e8c8a9834f72",
+          "title": "Logistic Regression",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a5711d6e-abc1-41bc-a242-e8c8a9834f72",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308887,
+              "key": "00303cd4-2eb9-42a6-a40c-b60970a47448",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Logistic Regression\nNow, we're finally ready for one of the most popular and useful algorithms in Machine Learning, and the building block of all that constitutes Deep Learning. The **Logistic Regression** Algorithm. And it basically goes like this:\n- Take your data\n- Pick a random model\n- Calculate the error\n- Minimize the error, and obtain a better model\n- Enjoy!\n\n### Calculating the Error Function\nLet's dive into the details. The next video will show you how to calculate an error function.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 349772,
+              "key": "a5dd6cab-a85d-4d6c-bca0-34bd4360816e",
+              "title": "Error Function",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "V5kkHldUlVU",
+                "china_cdn_id": "V5kkHldUlVU.mp4"
+              }
+            },
+            {
+              "id": 308886,
+              "key": "7d52e5c8-2d73-4e71-aee3-d8e4aec1c762",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Minimizing the error function\nAnd this video will show us how to minimize the error function.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 378559,
+              "key": "96276d11-c404-4c73-87bb-1b9c572a4ff6",
+              "title": "DL 29 Logistic Regression-Minimizing The Error Function",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "KayqiYijlzc",
+                "china_cdn_id": "KayqiYijlzc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 301711,
+          "key": "0d92455b-2fa0-4eb8-ae5d-07c7834b8a56",
+          "title": "Gradient Descent",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0d92455b-2fa0-4eb8-ae5d-07c7834b8a56",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 309664,
+              "key": "f501e9d1-c412-4fc7-988b-0b0751984d0a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Gradient Descent\nIn this lesson, we'll learn the principles and the math behind the gradient descent algorithm.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 543232,
+              "key": "87dbea84-79d8-438d-8786-3cddbe544c1c",
+              "title": "Gradient Descent",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "rhVIF-nigrY",
+                "china_cdn_id": "rhVIF-nigrY.mp4"
+              }
+            },
+            {
+              "id": 308197,
+              "key": "3884d6a7-f79f-4c4e-ad0d-7d52684da239",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Gradient Calculation\nIn the last few videos, we learned that in order to minimize the error function, we need to take some derivatives. So let's get our hands dirty and actually compute the derivative of the error function. The first thing to notice is that the sigmoid function has a really nice derivative. Namely,\n\n<span class=\"mathquill\">\\sigma'(x) = \\sigma(x) (1-\\sigma(x))</span>\n\nThe reason for this is the following, we can calculate it using the quotient formula:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308584,
+              "key": "ba81c06c-40be-4ae9-b557-cc0f74cd4116",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5910e6c6_codecogseqn-49/codecogseqn-49.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ba81c06c-40be-4ae9-b557-cc0f74cd4116",
+              "caption": "",
+              "alt": null,
+              "width": 251,
+              "height": 125,
+              "instructor_notes": null
+            },
+            {
+              "id": 308199,
+              "key": "de428288-8530-4e9d-975b-a10eaa218588",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "And now, let's recall that if we have\n<span class=\"mathquill\">m</span>\npoints labelled\n<span class=\"mathquill\">x^{(1)}, x^{(2)}, \\ldots, x^{(m)},</span>\nthe error formula is:\n\n<span class=\"mathquill\">E = -\\frac{1}{m} \\sum_{i=1}^m \\left( y_i \\ln(\\hat{y_i}) + (1-y_i) \\ln (1-\\hat{y_i}) \\right)</span>\n\nwhere the prediction is given by\n<span class=\"mathquill\">\\hat{y_i} = \\sigma(Wx^{(i)} + b).</span>\n\nOur goal is to calculate the gradient of\n<span class=\"mathquill\">E,</span>\nat a point\n<span class=\"mathquill\">x = (x_1, \\ldots, x_n),</span>\ngiven by the partial derivatives\n\n<span class=\"mathquill\">\\nabla E =\\left(\\frac{\\partial}{\\partial w_1}E, \\cdots, \\frac{\\partial}{\\partial w_n}E, \\frac{\\partial}{\\partial b}E \\right)</span>\n\nTo simplify our calculations, we'll actually think of the error that each point produces, and calculate the derivative of this error. The total error, then, is the average of the errors at all the points. The error produced by each point is, simply,\n\n<span class=\"mathquill\">E = - y \\ln(\\hat{y}) - (1-y) \\ln (1-\\hat{y})</span>\n\nIn order to calculate the derivative of this error with respect to the weights, we'll first calculate\n<span class=\"mathquill\">\\frac{\\partial}{\\partial w_j} \\hat{y}.</span>\nRecall that\n<span class=\"mathquill\">\\hat{y} = \\sigma(Wx+b),</span>\nso:\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308227,
+              "key": "cfe9e171-2608-4c05-a1bb-f9a7d1a5eee1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/590eac24_codecogseqn-43/codecogseqn-43.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cfe9e171-2608-4c05-a1bb-f9a7d1a5eee1",
+              "caption": "",
+              "alt": null,
+              "width": 752,
+              "height": 205,
+              "instructor_notes": null
+            },
+            {
+              "id": 308228,
+              "key": "09ca6059-4037-43bd-ad9e-175ba27cbd01",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The last equality is because the only term in the sum which is not a constant with respect to\n<span class=\"mathquill\">w_j</span>\nis precisely\n<span class=\"mathquill\">w_j x_j,</span>\nwhich clearly has derivative\n<span class=\"mathquill\">x_j.</span>\n\nNow, we can go ahead and calculate the derivative of the error \n<span class=\"mathquill\">E</span>\nat a point\n<span class=\"mathquill\">x,</span>\nwith respect to the weight\n<span class=\"mathquill\">w_j.</span>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 527930,
+              "key": "c27c63c1-68ab-4b63-8fe0-73dc870b9b39",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a716f3e_codecogseqn-60-2/codecogseqn-60-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c27c63c1-68ab-4b63-8fe0-73dc870b9b39",
+              "caption": "",
+              "alt": "",
+              "width": 515,
+              "height": 278,
+              "instructor_notes": null
+            },
+            {
+              "id": 308231,
+              "key": "fb0e78b7-3a7a-46aa-9da2-690faba5093e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A similar calculation will show us that",
+              "instructor_notes": ""
+            },
+            {
+              "id": 394800,
+              "key": "ee078049-c5f4-4aee-b9c8-af8d15ced58c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59b75d1d_codecogseqn-58/codecogseqn-58.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ee078049-c5f4-4aee-b9c8-af8d15ced58c",
+              "caption": "",
+              "alt": "",
+              "width": 172,
+              "height": 53,
+              "instructor_notes": null
+            },
+            {
+              "id": 308265,
+              "key": "2cc65e2e-397c-4898-b0fc-61d5fef20f91",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This actually tells us something very important. For a point with coordinates\n<span class=\"mathquill\">(x_1, \\ldots, x_n),</span>\nlabel\n<span class=\"mathquill\">y,</span>\nand prediction\n<span class=\"mathquill\">\\hat{y},</span>\nthe gradient of the error function at that point is\n<span class=\"mathquill\">\\left(-(y - \\hat{y})x_1, \\cdots, -(y - \\hat{y})x_n, -(y - \\hat{y}) \\right).</span>\nIn summary, the gradient is\n\n<span class=\"mathquill\">\\nabla E = -(y - \\hat{y}) (x_1, \\ldots, x_n, 1).</span>\n\nIf you think about it, this is fascinating. The gradient is actually a scalar times the coordinates of the point! And what is the scalar? Nothing less than a multiple of the difference between the label and the prediction. What significance does this have?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 395753,
+              "key": "e7f22b97-c788-49ca-92bb-962f0d94c9c2",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e7f22b97-c788-49ca-92bb-962f0d94c9c2",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What does the scalar we obtained above signify? (Check all that are true.)",
+                "answers": [
+                  {
+                    "id": "a1505309922086",
+                    "text": "Closer the label to the prediction, larger the gradient.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1505309930925",
+                    "text": "Closer the label to the prediction, smaller the gradient.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1505309943570",
+                    "text": "Farther the label from the prediction, larger the gradient.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1505309949324",
+                    "text": "Farther the label to the prediction, smaller the gradient.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 395751,
+              "key": "ad4aa69c-884b-44cf-b03c-bc65c01a3530",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "So, a small gradient means we'll change our coordinates by a little bit, and a large gradient means we'll change our coordinates by a lot.\n\nIf this sounds anything like the perceptron algorithm, this is no coincidence! We'll see it in a bit.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 394776,
+              "key": "0a8909db-50b3-4b2f-b23c-791495d951bd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Gradient Descent Step\n\nTherefore, since the gradient descent step simply consists in subtracting a multiple of the gradient of the error function at every point, then this updates the weights in the following way:\n\n<span class=\"mathquill\">w_i' \\leftarrow w_i -\\alpha [-(y - \\hat{y}) x_i],</span>\n\nwhich is equivalent to\n\n<span class=\"mathquill\">w_i' \\leftarrow w_i + \\alpha (y - \\hat{y}) x_i.</span>\n\nSimilarly, it updates the bias in the following way:\n\n<span class=\"mathquill\">b' \\leftarrow b + \\alpha (y - \\hat{y}),</span>\n\n_Note:_ Since we've taken the average of the errors, the term we are adding should be\n<span class=\"mathquill\">\\frac{1}{m} \\cdot \\alpha</span>\ninstead of \n<span class=\"mathquill\">\\alpha,</span>\nbut as\n<span class=\"mathquill\">\\alpha</span>\nis a constant, then in order to simplify calculations, we'll just take\n<span class=\"mathquill\">\\frac{1}{m} \\cdot \\alpha</span>\nto be our learning rate, and abuse the notation by just calling it\n<span class=\"mathquill\">\\alpha.</span>\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 264663,
+          "key": "8d29a0f7-320e-4574-9f53-91067bd84ff8",
+          "title": "Gradient Descent: The Code",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8d29a0f7-320e-4574-9f53-91067bd84ff8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 264664,
+              "key": "e7b06849-e71e-4b9d-9d18-9d5a5dcebacc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Gradient Descent: The Code\n\nFrom before we saw that one weight update can be calculated as:\n\n<span class='mathquill'>\\Delta w_i = \\alpha * \\delta * x_i</span>\n\nwhere <span class='mathquill'>\\alpha</span> is the learning rate and <span class='mathquill'>\\delta</span> is the error term.\n\nPreviously, we utilized the loss (error) function for logistic regression, which was because we were performing a binary classification task. This time we'll try to get the function to learn a value instead of a class. Therefore, we'll use a simpler loss function, as defined below in the error term <span class='mathquill'>\\delta</span>.\n\n<span class='mathquill'> \\delta = (y - \\hat y) f'(h) =  (y - \\hat y) f'(\\sum w_i x_i)</span>\n\nNote that <span class='mathquill'>f'(h)</span> is the derivative of the activation function <span class='mathquill'>f(h)</span>, and <span class='mathquill'>h</span> is defined as the output, which in the case of a neural network is a sum of the weights times the inputs.\n\nNow I'll write this out in code for the case of only one output unit. We'll also be using the sigmoid as the activation function <span class='mathquill'>f(h)</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264665,
+              "key": "7f7482d2-5857-4d7a-9edd-506c1c84d62b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```\n# Defining the sigmoid function for activations\ndef sigmoid(x):\n    return 1/(1+np.exp(-x))\n\n# Derivative of the sigmoid function\ndef sigmoid_prime(x):\n    return sigmoid(x) * (1 - sigmoid(x))\n\n# Input data\nx = np.array([0.1, 0.3])\n# Target\ny = 0.2\n# Input to output weights\nweights = np.array([-0.8, 0.5])\n\n# The learning rate, eta in the weight step equation\nlearnrate = 0.5\n\n# The neural network output (y-hat)\nnn_output = sigmoid(x[0]*weights[0] + x[1]*weights[1])\n# or nn_output = sigmoid(np.dot(x, weights))\n\n# output error (y - y-hat)\nerror = y - nn_output\n\n# error term (lowercase delta)\nerror_term = error * sigmoid_prime(np.dot(x,weights))\n\n# Gradient descent step \ndel_w = [ learnrate * error_term * x[0],\n                 learnrate * error_term * x[1]]\n# or del_w = learnrate * error_term * x\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264666,
+              "key": "46d4860b-982c-4d69-a891-aef8301c147a",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "46d4860b-982c-4d69-a891-aef8301c147a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5683787343200256",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\n\ndef sigmoid(x):\n    \"\"\"\n    Calculate sigmoid\n    \"\"\"\n    return 1/(1+np.exp(-x))\n\nlearnrate = 0.5\nx = np.array([1, 2])\ny = np.array(0.5)\n\n# Initial weights\nw = np.array([0.5, -0.5])\n\n# Calculate one gradient descent step for each weight\n# TODO: Calculate output of neural network\nnn_output = None\n\n# TODO: Calculate error of neural network\nerror = None\n\n# TODO: Calculate change in weights\ndel_w = None\n\nprint('Neural Network output:')\nprint(nn_output)\nprint('Amount of Error:')\nprint(error)\nprint('Change in Weights:')\nprint(del_w)",
+                    "name": "gradient.py"
+                  },
+                  {
+                    "text": "import numpy as np\n\ndef sigmoid(x):\n    \"\"\"\n    Calculate sigmoid\n    \"\"\"\n    return 1/(1+np.exp(-x))\n\nlearnrate = 0.5\nx = np.array([1, 2])\ny = np.array(0.5)\n\n# Initial weights\nw = np.array([0.5, -0.5])\n\n# Calculate one gradient descent step for each weight\n# TODO: Calculate output of neural network\nnn_output = sigmoid(np.dot(x, w))\n\n# TODO: Calculate error of neural network\nerror = y - nn_output\n\n# TODO: Calculate change in weights\ndel_w = learnrate * error * nn_output * (1 - nn_output) * x\n\nprint('Neural Network output:')\nprint(nn_output)\nprint('Amount of Error:')\nprint(error)\nprint('Change in Weights:')\nprint(del_w)",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 309222,
+          "key": "1f6bbd8c-bb45-4e5e-b790-1ab0dad751e1",
+          "title": "Perceptron vs Gradient Descent",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1f6bbd8c-bb45-4e5e-b790-1ab0dad751e1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461547,
+              "key": "5bb30686-05e8-4b69-b903-1a6381713642",
+              "title": "Gradient Descent Vs Perceptron Algorithm",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uL5LuRPivTA",
+                "china_cdn_id": "uL5LuRPivTA.mp4"
+              }
+            },
+            {
+              "id": 737099,
+              "key": "24790aa2-e5d7-4be5-ab34-34607c92caca",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the video at 0:12 mark, the instructor said `y hat minus y`. It should be `y minus y hat` instead as stated on the slide.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 308889,
+          "key": "5e9bd75b-a419-45d4-8a2b-88ba847cc814",
+          "title": "Continuous Perceptrons",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5e9bd75b-a419-45d4-8a2b-88ba847cc814",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 310562,
+              "key": "883a7df2-5946-4a99-a953-a3c9324ab9bb",
+              "title": "Continuous Perceptrons",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "07-JJ-aGEfM",
+                "china_cdn_id": "07-JJ-aGEfM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 308891,
+          "key": "60ed34da-990f-462e-b440-33f1a96a39e3",
+          "title": "Non-linear Data",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "60ed34da-990f-462e-b440-33f1a96a39e3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308892,
+              "key": "b859abf5-851e-48df-ac17-5d6d25f745eb",
+              "title": "Non-Linear Data",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "F7ZiE8PQiSc",
+                "china_cdn_id": "F7ZiE8PQiSc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 301714,
+          "key": "24d1d59e-b66c-40b1-a555-5975fb128f3c",
+          "title": "Non-Linear Models",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "24d1d59e-b66c-40b1-a555-5975fb128f3c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 310921,
+              "key": "12049098-1cde-46e4-822f-d2446ddf884a",
+              "title": "Non-Linear Models",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HWuBKCZsCo8",
+                "china_cdn_id": "HWuBKCZsCo8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 301716,
+          "key": "7a42d26d-7d7e-4c76-a014-5bf8b4413179",
+          "title": "Neural Network Architecture",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7a42d26d-7d7e-4c76-a014-5bf8b4413179",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308895,
+              "key": "f0c39c45-c729-4256-8996-709769d7ab61",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Neural Network Architecture\nOk, so we're ready to put these building blocks together, and build great Neural Networks! (Or Multi-Layer Perceptrons, however you prefer to call them.)\n\nThis first two videos will show us how to combine two perceptrons into a third, more complicated one.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 436182,
+              "key": "072f0f84-7559-4507-9188-ccb1dee67307",
+              "title": "Combinando modelos",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Boy3zHVrWB4",
+                "china_cdn_id": "Boy3zHVrWB4.mp4"
+              }
+            },
+            {
+              "id": 385226,
+              "key": "155a9439-1b94-431c-8640-ebd0bc1d17bb",
+              "title": "29 Neural Network Architecture 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FWN3Sw5fFoM",
+                "china_cdn_id": "FWN3Sw5fFoM.mp4"
+              }
+            },
+            {
+              "id": 395756,
+              "key": "3dbaf35f-b389-4748-a2bb-f83282935f6b",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "3dbaf35f-b389-4748-a2bb-f83282935f6b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Based on the above video, let's define the combination of two new perceptrons as w<sub>1</sub>\\*0.4 + w<sub>2</sub>*0.6 + b. Which of the following values for the weights and the bias would result in the final probability of the point to be 0.88?",
+                "answers": [
+                  {
+                    "id": "a1505310098557",
+                    "text": "w<sub>1</sub>: 2, w<sub>2</sub>: 6, b: -2",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1505310111002",
+                    "text": "w<sub>1</sub>: 3, w<sub>2</sub>: 5, b: -2.2",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1505310112348",
+                    "text": "w<sub>1</sub>: 5, w<sub>2</sub>: 4, b: -3",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 308896,
+              "key": "e27b5551-e2ca-4787-b1f8-b81b15a1c3a6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Multiple layers\nNow, not all neural networks look like the one above. They can be way more complicated! In particular, we can do the following things:\n- Add more nodes to the input, hidden, and output layers.\n- Add more layers.\n\nWe'll see the effects of these changes in the next video.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 321885,
+              "key": "6f95b131-58ef-47ac-a6cc-c5ff1dd2cfac",
+              "title": "Layers",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "pg99FkXYK0M",
+                "china_cdn_id": "pg99FkXYK0M.mp4"
+              }
+            },
+            {
+              "id": 308897,
+              "key": "2f0c10e3-6a0a-4388-aed1-d5176c78c245",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Multi-Class Classification\nAnd here we elaborate a bit more into what can be done if our neural network needs to model data with more than one output.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 310924,
+              "key": "c8815c6c-549a-4916-b989-1a46f02251ec",
+              "title": "Multiclass Classification",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uNTtvxwfox0",
+                "china_cdn_id": "uNTtvxwfox0.mp4"
+              }
+            },
+            {
+              "id": 395757,
+              "key": "13a2225e-cfa1-4a6d-8ae9-0d07ba978202",
+              "title": "",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "13a2225e-cfa1-4a6d-8ae9-0d07ba978202",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "How many nodes in the output layer would you require if you were trying to classify all the letters in the English alphabet?",
+                "matchers": [
+                  {
+                    "expression": "^[2][6]\\s*$"
+                  },
+                  {
+                    "expression": "^[5][2]\\s*$"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 301718,
+          "key": "02c36864-ee71-481c-bb01-a34c35bfc581",
+          "title": "Feedforward",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "02c36864-ee71-481c-bb01-a34c35bfc581",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308898,
+              "key": "daef89a0-10d2-4857-8389-ef86f9416448",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Feedforward\nFeedforward is the process neural networks use to turn the input into an output. Let's study it more carefully, before we dive into how to train the networks.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 461533,
+              "key": "86f55e1d-d5d2-4cda-8a06-b623c25eade4",
+              "title": "DL 41 Feedforward FIX V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hVCuvMGOfyY",
+                "china_cdn_id": "hVCuvMGOfyY.mp4"
+              }
+            },
+            {
+              "id": 322621,
+              "key": "5100ebef-9f25-4487-923f-d50462cd878e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Error Function\nJust as before, neural networks will produce an error function, which at the end, is what we'll be minimizing. The following video shows the error function for a neural network.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 461532,
+              "key": "3714806e-0318-4950-ae62-fd7fa6e3836c",
+              "title": "DL 42 Neural Network Error Function (1)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SC1wEW7TtKs",
+                "china_cdn_id": "SC1wEW7TtKs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 264678,
+          "key": "ef9ec0f3-69f5-4afc-9e33-653a279debb4",
+          "title": "Multilayer Perceptrons",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ef9ec0f3-69f5-4afc-9e33-653a279debb4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 264679,
+              "key": "002a9212-9f73-4528-a053-c11aa39e3e59",
+              "title": "Multilayer perceptrons",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Rs9petvTBLk",
+                "china_cdn_id": "Rs9petvTBLk.mp4"
+              }
+            },
+            {
+              "id": 264680,
+              "key": "aed511d6-5dc2-485b-8f32-21ea5a87a768",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementing the hidden layer\n\n##### Prerequisites\n\nBelow, we are going to walk through the math of neural networks in a multilayer perceptron. With multiple perceptrons, we are going to move to using vectors and matrices. To brush up, be sure to view the following:\n\n1. Khan Academy's [introduction to vectors](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/vector-introduction-linear-algebra).\n2. Khan Academy's [introduction to matrices](https://www.khanacademy.org/math/precalculus/precalc-matrices).\n\n##### Derivation\n\nBefore, we were dealing with only one output node which made the code straightforward. However now that we have multiple input units and multiple hidden units, the weights between them will require two indices: <span class='mathquill'> w_{ij} </span> where <span class='mathquill'>i</span> denotes input units and <span class='mathquill'>j</span> are the hidden units.\n\nFor example, the following image shows our network, with its input units labeled <span class='mathquill'>x_1, x_2,</span> and <span class='mathquill'>x_3</span>, and its hidden nodes labeled <span class='mathquill'>h_1</span> and <span class='mathquill'>h_2</span>:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264681,
+              "key": "4be913b8-5666-49b8-ab68-963fc6d17037",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/589973b5_network-with-labeled-nodes/network-with-labeled-nodes.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4be913b8-5666-49b8-ab68-963fc6d17037",
+              "caption": "",
+              "alt": null,
+              "width": 900,
+              "height": 900,
+              "instructor_notes": null
+            },
+            {
+              "id": 264682,
+              "key": "5a522caa-09f7-4f8d-b2dc-dca72c2281e3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The lines indicating the weights leading to <span class='mathquill'>h_1</span> have been colored differently from those leading to <span class='mathquill'>h_2</span> just to make it easier to read.\n\nNow to index the weights, we take the input unit number for the <span class='mathquill'>_i</span> and the hidden unit number for the <span class='mathquill'>_j</span>.  That gives us \n\n<span class='mathquill'>w_{11}</span>\n\nfor the weight leading from <span class='mathquill'>x_1</span> to <span class='mathquill'>h_1</span>, and \n\n<span class='mathquill'>w_{12}</span>\n\nfor the weight leading from <span class='mathquill'>x_1</span> to <span class='mathquill'>h_2</span>.\n\nThe following image includes all of the weights between the input layer and the hidden layer, labeled with their appropriate <span class='mathquill'>w_{ij}</span> indices:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264683,
+              "key": "c1553651-3ae9-4a02-a9da-4a74431bfd4b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/589978f4_network-with-labeled-weights/network-with-labeled-weights.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c1553651-3ae9-4a02-a9da-4a74431bfd4b",
+              "caption": "",
+              "alt": null,
+              "width": 900,
+              "height": 900,
+              "instructor_notes": null
+            },
+            {
+              "id": 264684,
+              "key": "78255e03-d194-431f-9254-abe4ceaa2902",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Before, we were able to write the weights as an array, indexed as <span class='mathquill'>w_i</span>. \n\nBut now, the weights need to be stored in a **matrix**, indexed as <span class='mathquill'>w_{ij}</span>. Each **row** in the matrix will correspond to the weights **leading out** of a **single input unit**, and each **column** will correspond to the weights **leading in** to a **single hidden unit**. For our three input units and two hidden units, the weights matrix looks like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267239,
+              "key": "0a1b43fc-ddf5-4f0e-b15e-4284a7c83e89",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a49908_multilayer-diagram-weights/multilayer-diagram-weights.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0a1b43fc-ddf5-4f0e-b15e-4284a7c83e89",
+              "caption": "",
+              "alt": null,
+              "width": 600,
+              "height": 284,
+              "instructor_notes": null
+            },
+            {
+              "id": 264686,
+              "key": "3fc36fd1-ceca-4f5c-8905-354681a4c79d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Be sure to compare the matrix above with the diagram shown before it so you can see where the different weights in the network end up in the matrix.\n\nTo initialize these weights in Numpy, we have to provide the shape of the matrix. If `features` is a 2D array containing the input data:\n\n```python\n# Number of records and input units\nn_records, n_inputs = features.shape\n# Number of hidden units\nn_hidden = 2\nweights_input_to_hidden = np.random.normal(0, n_inputs**-0.5, size=(n_inputs, n_hidden))\n```\n\nThis creates a 2D array (i.e. a matrix) named `weights_input_to_hidden` with dimensions `n_inputs` by `n_hidden`. Remember how the input to a hidden unit is the sum of all the inputs multiplied by the hidden unit's weights. So for each hidden layer unit, <span class='mathquill'>h_j</span>, we need to calculate the following:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264687,
+              "key": "42e37726-9d6a-4707-9204-58f1c771efde",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/589958d5_hidden-layer-weights/hidden-layer-weights.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/42e37726-9d6a-4707-9204-58f1c771efde",
+              "caption": "",
+              "alt": null,
+              "width": 294,
+              "height": 106,
+              "instructor_notes": null
+            },
+            {
+              "id": 264688,
+              "key": "2abf80ee-da8a-48da-9606-92c43c44f41d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "To do that, we now need to use [matrix multiplication](https://en.wikipedia.org/wiki/Matrix_multiplication). \n\nIn this case, we're multiplying the inputs (a row vector here) by the weights. To do this, you take the dot (inner) product of the inputs with each column in the weights matrix. For example, to calculate the input to the first hidden unit, <span class='mathquill'>j = 1</span>, you'd take the dot product of the inputs with the first column of the weights matrix, like so:\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264689,
+              "key": "0c90b90e-6c08-4201-9c6e-ee39c98b8386",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/January/58895788_input-times-weights/input-times-weights.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0c90b90e-6c08-4201-9c6e-ee39c98b8386",
+              "caption": "Calculating the input to the first hidden unit with the first column of the weights matrix. ",
+              "alt": null,
+              "width": 623,
+              "height": 529,
+              "instructor_notes": null
+            },
+            {
+              "id": 264690,
+              "key": "3676e659-7923-4d91-966c-dc74d25369bc",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/January/588ae392_codecogseqn-2/codecogseqn-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3676e659-7923-4d91-966c-dc74d25369bc",
+              "caption": "",
+              "alt": null,
+              "width": 400,
+              "height": 30,
+              "instructor_notes": null
+            },
+            {
+              "id": 264691,
+              "key": "41fb505b-fcdc-4981-91c2-fdee6ef444f9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "And for the second hidden layer input, you calculate the dot product of the inputs with the second column. And so on and so forth.\n\nIn NumPy, you can do this for all the inputs and all the outputs at once using `np.dot`\n\n```python\nhidden_inputs = np.dot(inputs, weights_input_to_hidden)\n```\n\nYou could also define your weights matrix such that it has dimensions `n_hidden` by `n_inputs` then multiply like so where the inputs form a *column vector*:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264692,
+              "key": "09a2a113-8f1b-49ee-bde5-f2415989b0be",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/January/588b7c74_inputs-matrix/inputs-matrix.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/09a2a113-8f1b-49ee-bde5-f2415989b0be",
+              "caption": "",
+              "alt": null,
+              "width": 621,
+              "height": 179,
+              "instructor_notes": null
+            },
+            {
+              "id": 264693,
+              "key": "415247b4-0d71-4944-a46e-56806f197c73",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note:** The weight indices have changed in the above image and no longer match up with the labels used in the earlier diagrams. That's because, in matrix notation, the row index always precedes the column index, so it would be misleading to label them the way we did in the neural net diagram. Just keep in mind that this is the same weight matrix as before, but rotated so the first column is now the first row, and the second column is now the second row. If we *were* to use the labels from the earlier diagram, the weights would fit into the matrix in the following locations:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264694,
+              "key": "481e8101-f67e-4f70-bfa3-8ef3a57dd93e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/589acab9_weight-label-reference/weight-label-reference.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/481e8101-f67e-4f70-bfa3-8ef3a57dd93e",
+              "caption": "Weight matrix shown with labels matching earlier diagrams.",
+              "alt": null,
+              "width": 328,
+              "height": 120,
+              "instructor_notes": null
+            },
+            {
+              "id": 264695,
+              "key": "d518fa83-021e-4a3e-bf54-bd27f0ebffce",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Remember, the above is **not** a correct view of the **indices**, but it uses the labels from the earlier neural net diagrams to show you where each weight ends up in the matrix.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264696,
+              "key": "8fd5e31f-0123-4dc5-ab57-543e5d83631f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The important thing with matrix multiplication is that *the dimensions match*. For matrix multiplication to work, there has to be the same number of elements in the dot products. In the first example, there are three columns in the input vector, and three rows in the weights matrix. In the second example, there are three columns in the weights matrix and three rows in the input vector. If the dimensions don't match, you'll get this:\n\n```python\n# Same weights and features as above, but swapped the order\nhidden_inputs = np.dot(weights_input_to_hidden, features)\n---------------------------------------------------------------------------\nValueError                                Traceback (most recent call last)\n<ipython-input-11-1bfa0f615c45> in <module>()\n----> 1 hidden_in = np.dot(weights_input_to_hidden, X)\n\nValueError: shapes (3,2) and (3,) not aligned: 2 (dim 1) != 3 (dim 0)\n```\nThe dot product can't be computed for a 3x2 matrix and 3-element array.  That's because the 2 columns in the matrix don't match the number of elements in the array.  Some of the dimensions that could work would be the following:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264697,
+              "key": "fe607154-751a-433c-9405-a69ff0cac240",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58924a8d_matrix-mult-3/matrix-mult-3.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fe607154-751a-433c-9405-a69ff0cac240",
+              "caption": "",
+              "alt": null,
+              "width": 804,
+              "height": 870,
+              "instructor_notes": null
+            },
+            {
+              "id": 264698,
+              "key": "078aaca9-ff95-4712-938f-94b487e32ce1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The rule is that if you're multiplying an array from the left, the array must have the same number of elements as there are rows in the matrix. And if you're multiplying the *matrix* from the left, the number of columns in the matrix must equal the number of elements in the array on the right.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264699,
+              "key": "eb66b9b3-17e8-48e7-b651-1787c4008a60",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Making a column vector\n\nYou see above that sometimes you'll want a column vector, even though by default Numpy arrays work like row vectors. It's possible to get the transpose of an array like so `arr.T`, but for a 1D array, the transpose will return a row vector. Instead, use `arr[:,None]` to create a column vector:\n\n```python\n\nprint(features)\n> array([ 0.49671415, -0.1382643 ,  0.64768854])\n\nprint(features.T)\n> array([ 0.49671415, -0.1382643 ,  0.64768854])\n\nprint(features[:, None])\n> array([[ 0.49671415],\n       [-0.1382643 ],\n       [ 0.64768854]])\n```\n\nAlternatively, you can create arrays with two dimensions. Then, you can use `arr.T` to get the column vector.\n\n```python\n\nnp.array(features, ndmin=2)\n> array([[ 0.49671415, -0.1382643 ,  0.64768854]])\n\nnp.array(features, ndmin=2).T\n> array([[ 0.49671415],\n       [-0.1382643 ],\n       [ 0.64768854]])\n```\n\nI personally prefer keeping all vectors as 1D arrays, it just works better in my head.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264700,
+              "key": "8a97a303-1887-41bb-94f4-c5c5232598a8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Programming quiz\n\nBelow, you'll implement a forward pass through a 4x3x2 network, with sigmoid activation functions for both layers.\n\nThings to do:\n* Calculate the input to the hidden layer.\n* Calculate the hidden layer output.\n* Calculate the input to the output layer.\n* Calculate the output of the network.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 264701,
+              "key": "67fe9b34-9f3d-4ca8-b7c2-d7df48b0f44b",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "67fe9b34-9f3d-4ca8-b7c2-d7df48b0f44b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6594755543826432",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\n\ndef sigmoid(x):\n    \"\"\"\n    Calculate sigmoid\n    \"\"\"\n    return 1/(1+np.exp(-x))\n\n# Network size\nN_input = 4\nN_hidden = 3\nN_output = 2\n\nnp.random.seed(42)\n# Make some fake data\nX = np.random.randn(4)\n\nweights_input_to_hidden = np.random.normal(0, scale=0.1, size=(N_input, N_hidden))\nweights_hidden_to_output = np.random.normal(0, scale=0.1, size=(N_hidden, N_output))\n\n\n# TODO: Make a forward pass through the network\n\nhidden_layer_in = None\nhidden_layer_out = None\n\nprint('Hidden-layer Output:')\nprint(hidden_layer_out)\n\noutput_layer_in = None\noutput_layer_out = None\n\nprint('Output-layer Output:')\nprint(output_layer_out)",
+                    "name": "multilayer.py"
+                  },
+                  {
+                    "text": "import numpy as np\n\ndef sigmoid(x):\n    \"\"\"\n    Calculate sigmoid\n    \"\"\"\n    return 1/(1+np.exp(-x))\n\n# Network size\nN_input = 4\nN_hidden = 3\nN_output = 2\n\nnp.random.seed(42)\n# Make some fake data\nX = np.random.randn(4)\n\nweights_input_to_hidden = np.random.normal(0, scale=0.1, size=(N_input, N_hidden))\nweights_hidden_to_output = np.random.normal(0, scale=0.1, size=(N_hidden, N_output))\n\n\n# TODO: Make a forward pass through the network\n\nhidden_layer_in = np.dot(X, weights_input_to_hidden)\nhidden_layer_out = sigmoid(hidden_layer_in)\n\nprint('Hidden-layer Output:')\nprint(hidden_layer_out)\n\noutput_layer_in = np.dot(hidden_layer_out, weights_hidden_to_output)\noutput_layer_out = sigmoid(output_layer_in)\n\nprint('Output-layer Output:')\nprint(output_layer_out)",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 301721,
+          "key": "4cc13714-37d7-4705-a714-314ede5290b5",
+          "title": "Backpropagation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4cc13714-37d7-4705-a714-314ede5290b5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308901,
+              "key": "e6e62773-7797-4973-a353-0f77f19d6e17",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Backpropagation\nNow, we're ready to get our hands into training a neural network. For this, we'll use the method known as **backpropagation**. In a nutshell, backpropagation will consist of:\n- Doing a feedforward operation.\n- Comparing the output of the model with the desired output.\n- Calculating the error.\n- Running the feedforward operation backwards (backpropagation) to spread the error to each of the weights.\n- Use this to update the weights, and get a better model.\n- Continue this until we have a model that is good.\n\nSounds more complicated than what it actually is. Let's take a look in the next few videos. The first video will show us a conceptual interpretation of what backpropagation is.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 322088,
+              "key": "d81b8b53-d5b9-4955-a9f9-ec9a288f4715",
+              "title": "Backpropagation V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1SmY3TZTyUk",
+                "china_cdn_id": "1SmY3TZTyUk.mp4"
+              }
+            },
+            {
+              "id": 308902,
+              "key": "d1463a38-3338-454a-8b85-fde047452d93",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Backpropagation Math\nAnd the next few videos will go deeper into the math. Feel free to tune out, since this part gets handled by Keras pretty well. If you'd like to go start training networks right away, go to the next section. But if you enjoy calculating lots of derivatives, let's dive in!\n\nIn the video below at 1:24, the edges should be directed to the sigmoid function and not the bias at that last layer; the edges of the last layer point to the bias currently which is incorrect.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 321900,
+              "key": "d04523fa-8341-429d-8b0c-0638e9de10d5",
+              "title": "Calculating The Gradient 1 ",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "tVuZDbUrzzI",
+                "china_cdn_id": "tVuZDbUrzzI.mp4"
+              }
+            },
+            {
+              "id": 308903,
+              "key": "940013b8-b419-46a0-beca-fa4456f4dc9e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Chain Rule\nWe'll need to recall the chain rule to help us calculate derivatives.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 310925,
+              "key": "b2f1f683-c75c-46cb-9796-8f13d2c941c5",
+              "title": "Chain Rule",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "YAhIBOnbt54",
+                "china_cdn_id": "YAhIBOnbt54.mp4"
+              }
+            },
+            {
+              "id": 462390,
+              "key": "f8e117c4-4c38-467b-b271-45f437836fa3",
+              "title": "DL 46 Calculating The Gradient 2 V2 (2)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "7lidiTGIlN4",
+                "china_cdn_id": "7lidiTGIlN4.mp4"
+              }
+            },
+            {
+              "id": 394623,
+              "key": "602f0d40-c473-442c-9b10-3d88987e0371",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Calculation of the derivative of the sigmoid function\nRecall that the sigmoid function has a beautiful derivative, which we can see in the following calculation. This will make our backpropagation step much cleaner.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 394622,
+              "key": "eb986cd9-a133-470f-b066-7e92b24c75e4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59b6ffad_sigmoid-derivative/sigmoid-derivative.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/eb986cd9-a133-470f-b066-7e92b24c75e4",
+              "caption": "",
+              "alt": "",
+              "width": 251,
+              "height": 125,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 264725,
+          "key": "53583693-b76d-424d-a61e-05ce16a677cb",
+          "title": "Further Reading",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "53583693-b76d-424d-a61e-05ce16a677cb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 264726,
+              "key": "4eff54b4-d862-419a-a8c4-2ce662719d62",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Further reading\n\nBackpropagation is fundamental to deep learning. TensorFlow and other libraries will perform the backprop for you, but you should really *really* understand the algorithm. We'll be going over backprop again, but here are some extra resources for you:\n\n* From Andrej Karpathy:  [Yes, you should understand backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b#.vt3ax2kg9)\n\n* Also from Andrej Karpathy, [a lecture from Stanford's CS231n course](https://www.youtube.com/watch?v=59Hbtz7XgjM)",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

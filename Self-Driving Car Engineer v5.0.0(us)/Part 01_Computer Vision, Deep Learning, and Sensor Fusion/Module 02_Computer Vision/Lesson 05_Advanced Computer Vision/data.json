@@ -1,0 +1,832 @@
+{
+  "data": {
+    "lesson": {
+      "id": 626031,
+      "key": "626f183c-593e-41d7-a828-eda3c6122573",
+      "title": "Advanced Computer Vision",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Discover more advanced computer vision techniques to improve upon your lane lines algorithm!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://s3.amazonaws.com/zips.udacity-data.com/626f183c-593e-41d7-a828-eda3c6122573/626031/1538943930940/Advanced+Computer+Vision+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://s3.amazonaws.com/zips.udacity-data.com/626f183c-593e-41d7-a828-eda3c6122573/626031/1538943927948/Advanced+Computer+Vision+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 215918,
+          "key": "44732d48-dcfe-4b4e-9614-12422ec29306",
+          "title": "Reviewing Steps",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "44732d48-dcfe-4b4e-9614-12422ec29306",
+            "completed_at": "2019-02-25T06:59:17.696Z",
+            "last_viewed_at": "2019-06-11T09:23:58.214Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215919,
+              "key": "c679e4b5-b70b-43d8-9400-431f88279ebf",
+              "title": "Project Steps",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0lyUMJdg-PY",
+                "china_cdn_id": "0lyUMJdg-PY.mp4"
+              }
+            },
+            {
+              "id": 216678,
+              "key": "1f99731e-86d9-43ee-adaf-5d27b53a7757",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Project Steps**\n\nSteps we’ve covered so far:\n\n1. Camera calibration\n2. Distortion correction\n3. Color/gradient threshold\n4. Perspective transform\n\nAfter doing these steps, you’ll be given two additional steps for the project:\n\n5. Detect lane lines\n6. Determine the lane curvature\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 218161,
+          "key": "e6e02d4d-7c80-4bed-a79f-869ef496831b",
+          "title": "Processing Each Image",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e6e02d4d-7c80-4bed-a79f-869ef496831b",
+            "completed_at": "2019-02-25T07:00:22.150Z",
+            "last_viewed_at": "2019-06-11T09:24:49.758Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 218164,
+              "key": "1abb8e4e-c541-4d5e-9af3-e811636b0e65",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Processing Each Image\n===\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 218163,
+              "key": "14c4c93e-e4bf-48b9-afca-68a643a8b498",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58421f5b_color-shadow-example/color-shadow-example.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/14c4c93e-e4bf-48b9-afca-68a643a8b498",
+              "caption": "",
+              "alt": null,
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            },
+            {
+              "id": 218162,
+              "key": "88f6d6a4-b98d-4991-bbc6-404b20f50756",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\nIn the project at the end of this module, the first thing you'll do is to compute the camera calibration matrix and distortion coefficients.  You only need to compute these once, and then you'll apply them to undistort each new frame.   Next, you'll apply thresholds to create a binary image and then apply a perspective transform.\n\n### Thresholding\n\nYou'll want to try out various combinations of color and gradient thresholds to generate a binary image where the lane lines are clearly visible.  There's more than one way to achieve a good result, but for example, given the image above, the output you're going for should look something like this: \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 218165,
+              "key": "29ee6bd5-f7aa-4849-8bf8-fb4c30844143",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58421f8f_binary-combo-img/binary-combo-img.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/29ee6bd5-f7aa-4849-8bf8-fb4c30844143",
+              "caption": "",
+              "alt": null,
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            },
+            {
+              "id": 218166,
+              "key": "f7bc7db1-bde9-47ce-bc37-712365b2f50d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Perspective Transform\nNext, you want to identify four source points for your perspective transform.  In this case, you can assume the road is a flat plane.  This isn't strictly true, but it can serve as an approximation for this project.  You would like to pick four points in a trapezoidal shape (similar to region masking) that would represent a rectangle when looking down on the road from above.  \n\nThe easiest way to do this is to investigate an image where the lane lines are straight, and find four points lying along the lines that, after perspective transform, make the lines look straight and vertical from a bird's eye view perspective.  \n\n### Here's an example of the result you are going for with straight lane lines:\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 218376,
+              "key": "1e72a42e-7e00-48c4-ac47-ac9f2cba7394",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58448557_warped-straight-lines/warped-straight-lines.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1e72a42e-7e00-48c4-ac47-ac9f2cba7394",
+              "caption": "",
+              "alt": null,
+              "width": 2428,
+              "height": 736,
+              "instructor_notes": null
+            },
+            {
+              "id": 218375,
+              "key": "3caf28c8-0fe5-4d20-a1e8-57d8ed6beaf1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Now for curved lines\n\nThose same four source points will now work to transform any image (again, under the assumption that the road is flat and the camera perspective hasn't changed).   When applying the transform to new images, the test of whether or not you got the transform correct, is that the lane lines should appear parallel in the warped images, whether they are straight or curved.  \n\nHere's an example of applying a perspective transform to your thresholded binary image, using the same source and destination points as above, showing that the curved lines are (more or less) parallel in the transformed image:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 218377,
+              "key": "c085bf26-2147-4f96-8a87-34f11725d019",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/5844911a_warped-curved-lines/warped-curved-lines.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c085bf26-2147-4f96-8a87-34f11725d019",
+              "caption": "",
+              "alt": null,
+              "width": 2300,
+              "height": 698,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 651055,
+          "key": "011b8b18-331f-4f43-8a04-bf55787b347f",
+          "title": "Finding the Lines: Histogram Peaks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "011b8b18-331f-4f43-8a04-bf55787b347f",
+            "completed_at": "2019-02-25T07:03:24.479Z",
+            "last_viewed_at": "2019-06-11T09:25:40.612Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 651058,
+              "key": "b6e86ce2-9168-4f79-90d6-3c9e78178d52",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Locate the Lane Lines\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 651059,
+              "key": "7f9e3f9d-bf72-486f-adcb-01923d71450f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58422552_warped-example/warped-example.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7f9e3f9d-bf72-486f-adcb-01923d71450f",
+              "caption": "Thresholded and perspective transformed image",
+              "alt": "",
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            },
+            {
+              "id": 651060,
+              "key": "e4b69b4f-8d80-4960-a598-1f546d821368",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You now have a thresholded warped image and you're ready to map out the lane lines!  There are many ways you could go about this, but here's one example of how you might do it: \n\n** Line Finding Method: Peaks in a Histogram**\n\nAfter applying calibration, thresholding, and a perspective transform to a road image, you should have a binary image where the lane lines stand out clearly. However, you still need to decide explicitly which pixels are part of the lines and which belong to the left line and which belong to the right line.\n\nPlotting a histogram of where the binary activations occur across the image is one potential solution for this. In the quiz below, let's take a couple quick steps to create our histogram!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 651062,
+              "key": "dee7b9a0-8b88-4804-a79c-351d081a4e88",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "dee7b9a0-8b88-4804-a79c-351d081a4e88",
+                "completed_at": "2019-02-25T07:03:28.772Z",
+                "last_viewed_at": "2019-06-11T09:26:26.091Z",
+                "unstructured": "{\"lane_histogram.py\":\"import numpy as np\\nimport matplotlib.image as mpimg\\nimport matplotlib.pyplot as plt\\n\\n# Load our image\\n# `mpimg.imread` will load .jpg as 0-255, so normalize back to 0-1\\nimg = mpimg.imread('warped_example.jpg')/255\\n#plt.imshow(img)\\nprint(img.shape)\\ndef hist(img):\\n    # TO-DO: Grab only the bottom half of the image\\n    # Lane lines are likely to be mostly vertical nearest to the car\\n    mask=int(img.shape[0]/2)\\n    bottom_half = img[mask:]\\n\\n    # TO-DO: Sum across image pixels vertically - make sure to set `axis`\\n    # i.e. the highest areas of vertical lines should be larger values\\n    histogram = np.sum(bottom_half,axis=0)\\n    \\n    return histogram\\n\\n# Create histogram of image binary activations\\nhistogram = hist(img)\\n\\n# Visualize the resulting histogram\\nplt.plot(histogram)\",\"solution.py\":\"def hist(img):\\n    # Grab only the bottom half of the image\\n    # Lane lines are likely to be mostly vertical nearest to the car\\n    bottom_half = img[img.shape[0]//2:,:]\\n\\n    # Sum across image pixels vertically - make sure to set an `axis`\\n    # i.e. the highest areas of vertical lines should be larger values\\n    histogram = np.sum(bottom_half, axis=0)\\n    \\n    return histogram\"}"
+              },
+              "instruction": null,
+              "question": {
+                "title": "Lane Line Histogram",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5113296225697792",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\nimport matplotlib.image as mpimg\nimport matplotlib.pyplot as plt\n\n# Load our image\n# `mpimg.imread` will load .jpg as 0-255, so normalize back to 0-1\nimg = mpimg.imread('warped_example.jpg')/255\n\ndef hist(img):\n    # TO-DO: Grab only the bottom half of the image\n    # Lane lines are likely to be mostly vertical nearest to the car\n    bottom_half = None\n\n    # TO-DO: Sum across image pixels vertically - make sure to set `axis`\n    # i.e. the highest areas of vertical lines should be larger values\n    histogram = None\n    \n    return histogram\n\n# Create histogram of image binary activations\nhistogram = hist(img)\n\n# Visualize the resulting histogram\nplt.plot(histogram)",
+                    "name": "lane_histogram.py"
+                  },
+                  {
+                    "text": "def hist(img):\n    # Grab only the bottom half of the image\n    # Lane lines are likely to be mostly vertical nearest to the car\n    bottom_half = img[img.shape[0]//2:,:]\n\n    # Sum across image pixels vertically - make sure to set an `axis`\n    # i.e. the highest areas of vertical lines should be larger values\n    histogram = np.sum(bottom_half, axis=0)\n    \n    return histogram",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 651061,
+              "key": "6ede7066-52f4-4424-91b9-0ffa39544b5e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##### Here's the approach I took.\n\nI take a **histogram** along all the columns in the *lower half* of the image like this:\n\n```python\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nhistogram = np.sum(img[img.shape[0]//2:,:], axis=0)\nplt.plot(histogram)\n```\n\nThe result looks like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 651064,
+              "key": "d3695bce-2821-44f8-8066-799c1dc962a8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b22f6d8_screen-shot-2017-01-28-at-11.21.09-am/screen-shot-2017-01-28-at-11.21.09-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d3695bce-2821-44f8-8066-799c1dc962a8",
+              "caption": "",
+              "alt": "",
+              "width": 1009,
+              "height": 294,
+              "instructor_notes": null
+            },
+            {
+              "id": 651101,
+              "key": "5b1a89a1-f2b8-4619-ac9a-a5814d4b9728",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Sliding Window\n\nWith this histogram we are adding up the pixel values along each column in the image. In our thresholded binary image, pixels are either 0 or 1, so the two most prominent peaks in this histogram will be good indicators of the x-position of the base of the lane lines.  We can use that as a starting point for where to search for the lines.  From that point, we can use a sliding window, placed around the line centers, to find and follow the lines up to the top of the frame.\n\nHere is a short animation (no sound!) showing this method:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 651102,
+              "key": "89737c24-0a6c-4ea7-ac5b-48fee1a61a85",
+              "title": "Finding Lane Pixels by Histogram and Sliding Window",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "siAMDK8C_x8",
+                "china_cdn_id": "siAMDK8C_x8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 651056,
+          "key": "4dd9f2c2-1722-412f-9a02-eec3de0c2207",
+          "title": "Finding the Lines: Sliding Window",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4dd9f2c2-1722-412f-9a02-eec3de0c2207",
+            "completed_at": "2019-02-25T12:25:56.147Z",
+            "last_viewed_at": "2019-06-11T09:26:35.753Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 652390,
+              "key": "04ed73f2-ddd0-493c-aa47-33d421c2e311",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implement Sliding Windows and Fit a Polynomial",
+              "instructor_notes": ""
+            },
+            {
+              "id": 651105,
+              "key": "1feb8e2a-e7db-4e48-aca9-89f64508a95b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b2343e8_screen-shot-2017-01-28-at-11.49.20-am/screen-shot-2017-01-28-at-11.49.20-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1feb8e2a-e7db-4e48-aca9-89f64508a95b",
+              "caption": "",
+              "alt": "",
+              "width": 1055,
+              "height": 625,
+              "instructor_notes": null
+            },
+            {
+              "id": 651104,
+              "key": "d548a6ea-4bc0-4dbe-bb2f-f3b67b58d513",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As shown in the previous animation, we can use the two highest peaks from our histogram as a starting point for determining where the lane lines are, and then use sliding windows moving upward in the image (further along the road) to determine where the lane lines go.\n\n### Split the histogram for the two lines\nThe first step we'll take is to split the histogram into two sides, one for each lane line.\n\n```python\nimport numpy as np\nimport cv2\nimport matplotlib.pyplot as plt\n\n# Assuming you have created a warped binary image called \"binary_warped\"\n# Take a histogram of the bottom half of the image\nhistogram = np.sum(binary_warped[binary_warped.shape[0]//2:,:], axis=0)\n# Create an output image to draw on and visualize the result\nout_img = np.dstack((binary_warped, binary_warped, binary_warped))*255\n# Find the peak of the left and right halves of the histogram\n# These will be the starting point for the left and right lines\nmidpoint = np.int(histogram.shape[0]//2)\nleftx_base = np.argmax(histogram[:midpoint])\nrightx_base = np.argmax(histogram[midpoint:]) + midpoint\n```\n\nNote that in the above, we also create `out_img` to help with visualizing our output later on.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 652384,
+              "key": "b24c37b3-9938-415a-b3ac-3f7433e5b305",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Set up windows and window hyperparameters\n\nOur next step is to set a few hyperparameters related to our sliding windows, and set them up to iterate across the binary activations in the image. We have some base hyperparameters below, but don't forget to try out different values in your own implementation to see what works best!\n\n```python\n# HYPERPARAMETERS\n# Choose the number of sliding windows\nnwindows = 9\n# Set the width of the windows +/- margin\nmargin = 100\n# Set minimum number of pixels found to recenter window\nminpix = 50\n\n# Set height of windows - based on nwindows above and image shape\nwindow_height = np.int(binary_warped.shape[0]//nwindows)\n# Identify the x and y positions of all nonzero (i.e. activated) pixels in the image\nnonzero = binary_warped.nonzero()\nnonzeroy = np.array(nonzero[0])\nnonzerox = np.array(nonzero[1])\n# Current positions to be updated later for each window in nwindows\nleftx_current = leftx_base\nrightx_current = rightx_base\n\n# Create empty lists to receive left and right lane pixel indices\nleft_lane_inds = []\nright_lane_inds = []\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 652386,
+              "key": "c8bde2c1-dd11-4c40-8b8e-bdaa31e528b4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Iterate through `nwindows` to track curvature\n\nNow that we've set up what the windows look like and have a starting point, we'll want to loop for `nwindows`, with the given window sliding left or right if it finds the mean position of activated pixels within the window to have shifted.\n\nYou'll implement this part in the **quiz** below, but here's a few steps to get you started:\n\n1. Loop through each window in `nwindows`\n2. Find the boundaries of our current window. This is based on a combination of the current window's starting point (`leftx_current` and `rightx_current`), as well as the `margin` you set in the hyperparameters.\n3. Use `cv2.rectangle` to draw these window boundaries onto our visualization image `out_img`. This is required for the quiz, but you can skip this step in practice if you don't need to visualize where the windows are.\n4. Now that we know the boundaries of our window, find out which activated pixels from `nonzeroy` and `nonzerox` above actually fall into the window.\n5. Append these to our lists `left_lane_inds` and `right_lane_inds`.\n6. If the number of pixels you found in Step 4 are greater than your hyperparameter `minpix`, re-center our window (i.e. `leftx_current` or `rightx_current`) based on the mean position of these pixels.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 652387,
+              "key": "b5bb1b8f-a802-441f-9192-05939f01630a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Fit a polynomial\n\nNow that we have found all our pixels belonging to each line through the sliding window method, it's time to fit a polynomial to the line. First, we have a couple small steps to ready our pixels.\n\n```python\n# Concatenate the arrays of indices (previously was a list of lists of pixels)\nleft_lane_inds = np.concatenate(left_lane_inds)\nright_lane_inds = np.concatenate(right_lane_inds)\n\n# Extract left and right line pixel positions\nleftx = nonzerox[left_lane_inds]\nlefty = nonzeroy[left_lane_inds] \nrightx = nonzerox[right_lane_inds]\nrighty = nonzeroy[right_lane_inds]\n```\n\nWe'll let you implement the function for the polynomial in the **quiz** below using `np.polyfit`. \n\n```python\n# Assuming we have `left_fit` and `right_fit` from `np.polyfit` before\n# Generate x and y values for plotting\nploty = np.linspace(0, binary_warped.shape[0]-1, binary_warped.shape[0])\nleft_fitx = left_fit[0]*ploty**2 + left_fit[1]*ploty + left_fit[2]\nright_fitx = right_fit[0]*ploty**2 + right_fit[1]*ploty + right_fit[2]\n```\n\nTake note of *how* we fit the lines above - while normally you calculate a y-value for a given x, here we do the opposite. Why? Because we expect our lane lines to be (mostly) vertically-oriented.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 652389,
+              "key": "aea8747e-a6d6-47a7-adff-740e2c3c5fc6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Visualization\nOnce you reach this point, you're done! But here is how you can visualize the result as well:\n\n```python\nout_img[lefty, leftx] = [255, 0, 0]\nout_img[righty, rightx] = [0, 0, 255]\n\nplt.imshow(out_img)\nplt.plot(left_fitx, ploty, color='yellow')\nplt.plot(right_fitx, ploty, color='yellow')\nplt.xlim(0, 1280)\nplt.ylim(720, 0)\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 652440,
+              "key": "22f54b28-abc8-479d-bb48-f0b4f01347b5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Quiz\n\nIn the below quiz, implement the following (see `TO-DO`'s):\n\n- Steps 2, 4 and 6 from above within the `for` loop in `find_lane_pixels()` - find the window boundaries, find all pixels within those boundaries, and if there are more than `minpix`, slide the window over to the mean of these pixels.\n- Fit a polynomial to all the relevant pixels you've found in your sliding windows in `fit_polynomial()`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 652436,
+              "key": "6e1a2fce-7237-435e-b982-9f0e8e6aa519",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "6e1a2fce-7237-435e-b982-9f0e8e6aa519",
+                "completed_at": "2019-02-25T12:38:09.002Z",
+                "last_viewed_at": "2019-04-20T04:15:37.857Z",
+                "unstructured": "{\"sliding_window.py\":\"import numpy as np\\nimport matplotlib.image as mpimg\\nimport matplotlib.pyplot as plt\\nimport cv2\\n\\n# Load our image\\nbinary_warped = mpimg.imread('warped_example.jpg')\\n\\ndef find_lane_pixels(binary_warped):\\n    # Take a histogram of the bottom half of the image\\n    histogram = np.sum(binary_warped[binary_warped.shape[0]//2:,:], axis=0)\\n    # Create an output image to draw on and visualize the result\\n    out_img = np.dstack((binary_warped, binary_warped, binary_warped))\\n    # Find the peak of the left and right halves of the histogram\\n    # These will be the starting point for the left and right lines\\n    midpoint = np.int(histogram.shape[0]//2)\\n    leftx_base = np.argmax(histogram[:midpoint])\\n    rightx_base = np.argmax(histogram[midpoint:]) + midpoint\\n\\n    # HYPERPARAMETERS\\n    # Choose the number of sliding windows\\n    nwindows = 9\\n    # Set the width of the windows +/- margin\\n    margin = 100\\n    # Set minimum number of pixels found to recenter window\\n    minpix = 50\\n\\n    # Set height of windows - based on nwindows above and image shape\\n    window_height = np.int(binary_warped.shape[0]//nwindows)\\n    # Identify the x and y positions of all nonzero pixels in the image\\n    nonzero = binary_warped.nonzero()\\n    nonzeroy = np.array(nonzero[0])\\n    nonzerox = np.array(nonzero[1])\\n    # Current positions to be updated later for each window in nwindows\\n    leftx_current = leftx_base\\n    rightx_current = rightx_base\\n\\n    # Create empty lists to receive left and right lane pixel indices\\n    left_lane_inds = []\\n    right_lane_inds = []\\n\\n    # Step through the windows one by one\\n    for window in range(nwindows):\\n        # Identify window boundaries in x and y (and right and left)\\n        win_y_low = binary_warped.shape[0] - (window+1)*window_height\\n        win_y_high = binary_warped.shape[0] - window*window_height\\n        ### TO-DO: Find the four below boundaries of the window ###\\n        win_xleft_low = leftx_current - margin\\n        win_xleft_high = leftx_current + margin\\n        win_xright_low = rightx_current - margin\\n        win_xright_high = rightx_current + margin\\n        \\n        # Draw the windows on the visualization image\\n        cv2.rectangle(out_img,(win_xleft_low,win_y_low),\\n        (win_xleft_high,win_y_high),(0,255,0), 2) \\n        cv2.rectangle(out_img,(win_xright_low,win_y_low),\\n        (win_xright_high,win_y_high),(0,255,0), 2) \\n        \\n        ### TO-DO: Identify the nonzero pixels in x and y within the window ###\\n        good_left_inds = ((nonzeroy >= win_y_low) & (nonzeroy < win_y_high) & \\n        (nonzerox >= win_xleft_low) &  (nonzerox < win_xleft_high)).nonzero()[0]\\n        good_right_inds = ((nonzeroy >= win_y_low) & (nonzeroy < win_y_high) & \\n        (nonzerox >= win_xright_low) &  (nonzerox < win_xright_high)).nonzero()[0]\\n        \\n        # Append these indices to the lists\\n        left_lane_inds.append(good_left_inds)\\n        right_lane_inds.append(good_right_inds)\\n        \\n        if len(good_left_inds) > minpix:\\n            leftx_current = np.int(np.mean(nonzerox[good_left_inds]))\\n        if len(good_right_inds) > minpix:        \\n            rightx_current = np.int(np.mean(nonzerox[good_right_inds]))\\n    # Concatenate the arrays of indices (previously was a list of lists of pixels)\\n    try:\\n        left_lane_inds = np.concatenate(left_lane_inds)\\n        right_lane_inds = np.concatenate(right_lane_inds)\\n    except ValueError:\\n        # Avoids an error if the above is not implemented fully\\n        pass\\n\\n    # Extract left and right line pixel positions\\n    leftx = nonzerox[left_lane_inds]\\n    lefty = nonzeroy[left_lane_inds] \\n    rightx = nonzerox[right_lane_inds]\\n    righty = nonzeroy[right_lane_inds]\\n\\n    return leftx, lefty, rightx, righty, out_img\\n\\n\\ndef fit_polynomial(binary_warped):\\n    # Find our lane pixels first\\n    leftx, lefty, rightx, righty, out_img = find_lane_pixels(binary_warped)\\n\\n    ### TO-DO: Fit a second order polynomial to each using `np.polyfit` ###\\n    left_fit = np.polyfit(lefty, leftx, 2)\\n    right_fit = np.polyfit(righty, rightx, 2)\\n\\n    # Generate x and y values for plotting\\n    ploty = np.linspace(0, binary_warped.shape[0]-1, binary_warped.shape[0] )\\n    try:\\n        left_fitx = left_fit[0]*ploty**2 + left_fit[1]*ploty + left_fit[2]\\n        right_fitx = right_fit[0]*ploty**2 + right_fit[1]*ploty + right_fit[2]\\n    except TypeError:\\n        # Avoids an error if `left` and `right_fit` are still none or incorrect\\n        print('The function failed to fit a line!')\\n        left_fitx = 1*ploty**2 + 1*ploty\\n        right_fitx = 1*ploty**2 + 1*ploty\\n\\n    ## Visualization ##\\n    # Colors in the left and right lane regions\\n    out_img[lefty, leftx] = [255, 0, 0]\\n    out_img[righty, rightx] = [0, 0, 255]\\n\\n    # Plots the left and right polynomials on the lane lines\\n    plt.plot(left_fitx, ploty, color='yellow')\\n    plt.plot(right_fitx, ploty, color='yellow')\\n\\n    return out_img\\n\\n\\nout_img = fit_polynomial(binary_warped)\\n\\nplt.imshow(out_img)\",\"solution.py\":\"import numpy as np\\nimport matplotlib.image as mpimg\\nimport matplotlib.pyplot as plt\\nimport cv2\\n\\n# Load our image\\nbinary_warped = mpimg.imread('warped_example.jpg')\\n\\ndef find_lane_pixels(binary_warped):\\n    # Take a histogram of the bottom half of the image\\n    histogram = np.sum(binary_warped[binary_warped.shape[0]//2:,:], axis=0)\\n    # Create an output image to draw on and visualize the result\\n    out_img = np.dstack((binary_warped, binary_warped, binary_warped))\\n    # Find the peak of the left and right halves of the histogram\\n    # These will be the starting point for the left and right lines\\n    midpoint = np.int(histogram.shape[0]//2)\\n    leftx_base = np.argmax(histogram[:midpoint])\\n    rightx_base = np.argmax(histogram[midpoint:]) + midpoint\\n\\n    # HYPERPARAMETERS\\n    # Choose the number of sliding windows\\n    nwindows = 9\\n    # Set the width of the windows +/- margin\\n    margin = 100\\n    # Set minimum number of pixels found to recenter window\\n    minpix = 50\\n\\n    # Set height of windows - based on nwindows above and image shape\\n    window_height = np.int(binary_warped.shape[0]//nwindows)\\n    # Identify the x and y positions of all nonzero pixels in the image\\n    nonzero = binary_warped.nonzero()\\n    nonzeroy = np.array(nonzero[0])\\n    nonzerox = np.array(nonzero[1])\\n    # Current positions to be updated later for each window in nwindows\\n    leftx_current = leftx_base\\n    rightx_current = rightx_base\\n\\n    # Create empty lists to receive left and right lane pixel indices\\n    left_lane_inds = []\\n    right_lane_inds = []\\n\\n    # Step through the windows one by one\\n    for window in range(nwindows):\\n        # Identify window boundaries in x and y (and right and left)\\n        win_y_low = binary_warped.shape[0] - (window+1)*window_height\\n        win_y_high = binary_warped.shape[0] - window*window_height\\n        win_xleft_low = leftx_current - margin\\n        win_xleft_high = leftx_current + margin\\n        win_xright_low = rightx_current - margin\\n        win_xright_high = rightx_current + margin\\n        \\n        # Draw the windows on the visualization image\\n        cv2.rectangle(out_img,(win_xleft_low,win_y_low),\\n        (win_xleft_high,win_y_high),(0,255,0), 2) \\n        cv2.rectangle(out_img,(win_xright_low,win_y_low),\\n        (win_xright_high,win_y_high),(0,255,0), 2) \\n        \\n        # Identify the nonzero pixels in x and y within the window #\\n        good_left_inds = ((nonzeroy >= win_y_low) & (nonzeroy < win_y_high) & \\n        (nonzerox >= win_xleft_low) &  (nonzerox < win_xleft_high)).nonzero()[0]\\n        good_right_inds = ((nonzeroy >= win_y_low) & (nonzeroy < win_y_high) & \\n        (nonzerox >= win_xright_low) &  (nonzerox < win_xright_high)).nonzero()[0]\\n        \\n        # Append these indices to the lists\\n        left_lane_inds.append(good_left_inds)\\n        right_lane_inds.append(good_right_inds)\\n        \\n        # If you found > minpix pixels, recenter next window on their mean position\\n        if len(good_left_inds) > minpix:\\n            leftx_current = np.int(np.mean(nonzerox[good_left_inds]))\\n        if len(good_right_inds) > minpix:        \\n            rightx_current = np.int(np.mean(nonzerox[good_right_inds]))\\n\\n    # Concatenate the arrays of indices (previously was a list of lists of pixels)\\n    try:\\n        left_lane_inds = np.concatenate(left_lane_inds)\\n        right_lane_inds = np.concatenate(right_lane_inds)\\n    except ValueError:\\n        # Avoids an error if the above is not implemented fully\\n        pass\\n\\n    # Extract left and right line pixel positions\\n    leftx = nonzerox[left_lane_inds]\\n    lefty = nonzeroy[left_lane_inds] \\n    rightx = nonzerox[right_lane_inds]\\n    righty = nonzeroy[right_lane_inds]\\n\\n    return leftx, lefty, rightx, righty, out_img\\n\\n\\ndef fit_polynomial(binary_warped):\\n    # Find our lane pixels first\\n    leftx, lefty, rightx, righty, out_img = find_lane_pixels(binary_warped)\\n\\n    # Fit a second order polynomial to each using `np.polyfit`\\n    left_fit = np.polyfit(lefty, leftx, 2)\\n    right_fit = np.polyfit(righty, rightx, 2)\\n\\n    # Generate x and y values for plotting\\n    ploty = np.linspace(0, binary_warped.shape[0]-1, binary_warped.shape[0] )\\n    try:\\n        left_fitx = left_fit[0]*ploty**2 + left_fit[1]*ploty + left_fit[2]\\n        right_fitx = right_fit[0]*ploty**2 + right_fit[1]*ploty + right_fit[2]\\n    except TypeError:\\n        # Avoids an error if `left` and `right_fit` are still none or incorrect\\n        print('The function failed to fit a line!')\\n        left_fitx = 1*ploty**2 + 1*ploty\\n        right_fitx = 1*ploty**2 + 1*ploty\\n\\n    ## Visualization ##\\n    # Colors in the left and right lane regions\\n    out_img[lefty, leftx] = [255, 0, 0]\\n    out_img[righty, rightx] = [0, 0, 255]\\n\\n    # Plots the left and right polynomials on the lane lines\\n    plt.plot(left_fitx, ploty, color='yellow')\\n    plt.plot(right_fitx, ploty, color='yellow')\\n\\n    return out_img\\n\\n\\nout_img = fit_polynomial(binary_warped)\\n\\nplt.imshow(out_img)\"}"
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5080865833615360",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\nimport matplotlib.image as mpimg\nimport matplotlib.pyplot as plt\nimport cv2\n\n# Load our image\nbinary_warped = mpimg.imread('warped_example.jpg')\n\ndef find_lane_pixels(binary_warped):\n    # Take a histogram of the bottom half of the image\n    histogram = np.sum(binary_warped[binary_warped.shape[0]//2:,:], axis=0)\n    # Create an output image to draw on and visualize the result\n    out_img = np.dstack((binary_warped, binary_warped, binary_warped))\n    # Find the peak of the left and right halves of the histogram\n    # These will be the starting point for the left and right lines\n    midpoint = np.int(histogram.shape[0]//2)\n    leftx_base = np.argmax(histogram[:midpoint])\n    rightx_base = np.argmax(histogram[midpoint:]) + midpoint\n\n    # HYPERPARAMETERS\n    # Choose the number of sliding windows\n    nwindows = 9\n    # Set the width of the windows +/- margin\n    margin = 100\n    # Set minimum number of pixels found to recenter window\n    minpix = 50\n\n    # Set height of windows - based on nwindows above and image shape\n    window_height = np.int(binary_warped.shape[0]//nwindows)\n    # Identify the x and y positions of all nonzero pixels in the image\n    nonzero = binary_warped.nonzero()\n    nonzeroy = np.array(nonzero[0])\n    nonzerox = np.array(nonzero[1])\n    # Current positions to be updated later for each window in nwindows\n    leftx_current = leftx_base\n    rightx_current = rightx_base\n\n    # Create empty lists to receive left and right lane pixel indices\n    left_lane_inds = []\n    right_lane_inds = []\n\n    # Step through the windows one by one\n    for window in range(nwindows):\n        # Identify window boundaries in x and y (and right and left)\n        win_y_low = binary_warped.shape[0] - (window+1)*window_height\n        win_y_high = binary_warped.shape[0] - window*window_height\n        ### TO-DO: Find the four below boundaries of the window ###\n        win_xleft_low = 0  # Update this\n        win_xleft_high = 0  # Update this\n        win_xright_low = 0  # Update this\n        win_xright_high = 0  # Update this\n        \n        # Draw the windows on the visualization image\n        cv2.rectangle(out_img,(win_xleft_low,win_y_low),\n        (win_xleft_high,win_y_high),(0,255,0), 2) \n        cv2.rectangle(out_img,(win_xright_low,win_y_low),\n        (win_xright_high,win_y_high),(0,255,0), 2) \n        \n        ### TO-DO: Identify the nonzero pixels in x and y within the window ###\n        good_left_inds = None\n        good_right_inds = None\n        \n        # Append these indices to the lists\n        left_lane_inds.append(good_left_inds)\n        right_lane_inds.append(good_right_inds)\n        \n        ### TO-DO: If you found > minpix pixels, recenter next window ###\n        ### (`right` or `leftx_current`) on their mean position ###\n        pass # Remove this when you add your function\n\n    # Concatenate the arrays of indices (previously was a list of lists of pixels)\n    try:\n        left_lane_inds = np.concatenate(left_lane_inds)\n        right_lane_inds = np.concatenate(right_lane_inds)\n    except ValueError:\n        # Avoids an error if the above is not implemented fully\n        pass\n\n    # Extract left and right line pixel positions\n    leftx = nonzerox[left_lane_inds]\n    lefty = nonzeroy[left_lane_inds] \n    rightx = nonzerox[right_lane_inds]\n    righty = nonzeroy[right_lane_inds]\n\n    return leftx, lefty, rightx, righty, out_img\n\n\ndef fit_polynomial(binary_warped):\n    # Find our lane pixels first\n    leftx, lefty, rightx, righty, out_img = find_lane_pixels(binary_warped)\n\n    ### TO-DO: Fit a second order polynomial to each using `np.polyfit` ###\n    left_fit = None\n    right_fit = None\n\n    # Generate x and y values for plotting\n    ploty = np.linspace(0, binary_warped.shape[0]-1, binary_warped.shape[0] )\n    try:\n        left_fitx = left_fit[0]*ploty**2 + left_fit[1]*ploty + left_fit[2]\n        right_fitx = right_fit[0]*ploty**2 + right_fit[1]*ploty + right_fit[2]\n    except TypeError:\n        # Avoids an error if `left` and `right_fit` are still none or incorrect\n        print('The function failed to fit a line!')\n        left_fitx = 1*ploty**2 + 1*ploty\n        right_fitx = 1*ploty**2 + 1*ploty\n\n    ## Visualization ##\n    # Colors in the left and right lane regions\n    out_img[lefty, leftx] = [255, 0, 0]\n    out_img[righty, rightx] = [0, 0, 255]\n\n    # Plots the left and right polynomials on the lane lines\n    plt.plot(left_fitx, ploty, color='yellow')\n    plt.plot(right_fitx, ploty, color='yellow')\n\n    return out_img\n\n\nout_img = fit_polynomial(binary_warped)\n\nplt.imshow(out_img)",
+                    "name": "sliding_window.py"
+                  },
+                  {
+                    "text": "import numpy as np\nimport matplotlib.image as mpimg\nimport matplotlib.pyplot as plt\nimport cv2\n\n# Load our image\nbinary_warped = mpimg.imread('warped_example.jpg')\n\ndef find_lane_pixels(binary_warped):\n    # Take a histogram of the bottom half of the image\n    histogram = np.sum(binary_warped[binary_warped.shape[0]//2:,:], axis=0)\n    # Create an output image to draw on and visualize the result\n    out_img = np.dstack((binary_warped, binary_warped, binary_warped))\n    # Find the peak of the left and right halves of the histogram\n    # These will be the starting point for the left and right lines\n    midpoint = np.int(histogram.shape[0]//2)\n    leftx_base = np.argmax(histogram[:midpoint])\n    rightx_base = np.argmax(histogram[midpoint:]) + midpoint\n\n    # HYPERPARAMETERS\n    # Choose the number of sliding windows\n    nwindows = 9\n    # Set the width of the windows +/- margin\n    margin = 100\n    # Set minimum number of pixels found to recenter window\n    minpix = 50\n\n    # Set height of windows - based on nwindows above and image shape\n    window_height = np.int(binary_warped.shape[0]//nwindows)\n    # Identify the x and y positions of all nonzero pixels in the image\n    nonzero = binary_warped.nonzero()\n    nonzeroy = np.array(nonzero[0])\n    nonzerox = np.array(nonzero[1])\n    # Current positions to be updated later for each window in nwindows\n    leftx_current = leftx_base\n    rightx_current = rightx_base\n\n    # Create empty lists to receive left and right lane pixel indices\n    left_lane_inds = []\n    right_lane_inds = []\n\n    # Step through the windows one by one\n    for window in range(nwindows):\n        # Identify window boundaries in x and y (and right and left)\n        win_y_low = binary_warped.shape[0] - (window+1)*window_height\n        win_y_high = binary_warped.shape[0] - window*window_height\n        win_xleft_low = leftx_current - margin\n        win_xleft_high = leftx_current + margin\n        win_xright_low = rightx_current - margin\n        win_xright_high = rightx_current + margin\n        \n        # Draw the windows on the visualization image\n        cv2.rectangle(out_img,(win_xleft_low,win_y_low),\n        (win_xleft_high,win_y_high),(0,255,0), 2) \n        cv2.rectangle(out_img,(win_xright_low,win_y_low),\n        (win_xright_high,win_y_high),(0,255,0), 2) \n        \n        # Identify the nonzero pixels in x and y within the window #\n        good_left_inds = ((nonzeroy >= win_y_low) & (nonzeroy < win_y_high) & \n        (nonzerox >= win_xleft_low) &  (nonzerox < win_xleft_high)).nonzero()[0]\n        good_right_inds = ((nonzeroy >= win_y_low) & (nonzeroy < win_y_high) & \n        (nonzerox >= win_xright_low) &  (nonzerox < win_xright_high)).nonzero()[0]\n        \n        # Append these indices to the lists\n        left_lane_inds.append(good_left_inds)\n        right_lane_inds.append(good_right_inds)\n        \n        # If you found > minpix pixels, recenter next window on their mean position\n        if len(good_left_inds) > minpix:\n            leftx_current = np.int(np.mean(nonzerox[good_left_inds]))\n        if len(good_right_inds) > minpix:        \n            rightx_current = np.int(np.mean(nonzerox[good_right_inds]))\n\n    # Concatenate the arrays of indices (previously was a list of lists of pixels)\n    try:\n        left_lane_inds = np.concatenate(left_lane_inds)\n        right_lane_inds = np.concatenate(right_lane_inds)\n    except ValueError:\n        # Avoids an error if the above is not implemented fully\n        pass\n\n    # Extract left and right line pixel positions\n    leftx = nonzerox[left_lane_inds]\n    lefty = nonzeroy[left_lane_inds] \n    rightx = nonzerox[right_lane_inds]\n    righty = nonzeroy[right_lane_inds]\n\n    return leftx, lefty, rightx, righty, out_img\n\n\ndef fit_polynomial(binary_warped):\n    # Find our lane pixels first\n    leftx, lefty, rightx, righty, out_img = find_lane_pixels(binary_warped)\n\n    # Fit a second order polynomial to each using `np.polyfit`\n    left_fit = np.polyfit(lefty, leftx, 2)\n    right_fit = np.polyfit(righty, rightx, 2)\n\n    # Generate x and y values for plotting\n    ploty = np.linspace(0, binary_warped.shape[0]-1, binary_warped.shape[0] )\n    try:\n        left_fitx = left_fit[0]*ploty**2 + left_fit[1]*ploty + left_fit[2]\n        right_fitx = right_fit[0]*ploty**2 + right_fit[1]*ploty + right_fit[2]\n    except TypeError:\n        # Avoids an error if `left` and `right_fit` are still none or incorrect\n        print('The function failed to fit a line!')\n        left_fitx = 1*ploty**2 + 1*ploty\n        right_fitx = 1*ploty**2 + 1*ploty\n\n    ## Visualization ##\n    # Colors in the left and right lane regions\n    out_img[lefty, leftx] = [255, 0, 0]\n    out_img[righty, rightx] = [0, 0, 255]\n\n    # Plots the left and right polynomials on the lane lines\n    plt.plot(left_fitx, ploty, color='yellow')\n    plt.plot(right_fitx, ploty, color='yellow')\n\n    return out_img\n\n\nout_img = fit_polynomial(binary_warped)\n\nplt.imshow(out_img)",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 651057,
+          "key": "474a329a-78d0-4a33-833a-34d02a35fc13",
+          "title": "Finding the Lines: Search from Prior",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "474a329a-78d0-4a33-833a-34d02a35fc13",
+            "completed_at": "2019-02-25T13:12:21.530Z",
+            "last_viewed_at": "2019-04-20T04:19:45.072Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 651109,
+              "key": "d4794fb8-38e8-4604-a4f5-df1a50d53b51",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Skip the sliding windows step once you've found the lines",
+              "instructor_notes": ""
+            },
+            {
+              "id": 651107,
+              "key": "fbf3a05b-9499-48a8-9428-f31e7b56a9cc",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b234425_screen-shot-2017-01-28-at-12.39.43-pm/screen-shot-2017-01-28-at-12.39.43-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fbf3a05b-9499-48a8-9428-f31e7b56a9cc",
+              "caption": "",
+              "alt": "",
+              "width": 909,
+              "height": 534,
+              "instructor_notes": null
+            },
+            {
+              "id": 652442,
+              "key": "def1f9bf-d096-4f43-b64c-23b809d5b760",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Great work! You've now built an algorithm that uses sliding windows to track the lane lines out into the distance. However, using the full algorithm from before and starting fresh on every frame may seem inefficient, as the lane lines don't necessarily move a lot from frame to frame.\n\nIn the next frame of video you don't need to do a blind search again, but instead you can just search in a margin around the previous lane line position, like in the above image. The green shaded area shows where we searched for the lines this time. So, once you know where the lines are in one frame of video, you can do a highly targeted search for them in the next frame. \n\nThis is equivalent to using a customized region of interest for each frame of video, and should help you track the lanes through sharp curves and tricky conditions.  If you lose track of the lines, go back to your sliding windows search or other method to rediscover them.\n\nLet's walk through one way to do this, and then you'll build it out further in a **quiz** below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 652448,
+              "key": "dc021a6f-112d-4c45-b7c5-065d55208226",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Use the previous polynomial to skip the sliding window\n\nIn the previous quiz, we used `left_lane_inds` and `right_lane_inds`to hold the pixel values contained within the boundaries of a given sliding window. This time, we'll take the polynomial functions we fit before (`left_fit` and `right_fit`), along with a hyperparameter `margin`, to determine which activated pixels fall into the green shaded areas from the above image. Note that this `margin` can be a different value than the one originally used for your sliding windows!\n\nTo implement this in the below quiz, you'll want to grab only those pixels with x-values that are +/- your `margin` from your polynomial lines. Note that you'll only need to implement `left_lane_inds` and `right_lane_inds` in the quiz - most of the surrounding code, ignoring iterating through the windows, is the same as before!\n\nThe way we'll visualize this is a bit different than last time around, however, so make sure to pay attention to that if you want to visualize this step while working on your project.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 674938,
+              "key": "83a07c2c-e9eb-481f-901c-1c2b9dbfe00e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Quiz\n\nIn the below quiz, implement the following (see `TO-DO`'s):\n\n- Fit a polynomial to all the relevant pixels you've found in your sliding windows in `fit_poly()`.\n- Set the area to search for activated pixels based on `margin` out from your fit polynomial within `search_around_poly`. Note that the quiz grader expects a `margin` of `100` pixels, but you can tune this as part of your own project!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 663350,
+              "key": "937124cf-506f-4787-80cf-b67d1fecc8f3",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "937124cf-506f-4787-80cf-b67d1fecc8f3",
+                "completed_at": "2019-02-25T13:12:38.055Z",
+                "last_viewed_at": "2019-04-20T04:54:57.089Z",
+                "unstructured": "{\"prev_poly.py\":\"import cv2\\nimport numpy as np\\nimport matplotlib.image as mpimg\\nimport matplotlib.pyplot as plt\\n\\n# Load our image - this should be a new frame since last time!\\nbinary_warped = mpimg.imread('warped_example.jpg')\\n\\n# Polynomial fit values from the previous frame\\n# Make sure to grab the actual values from the previous step in your project!\\nleft_fit = np.array([ 2.13935315e-04, -3.77507980e-01,  4.76902175e+02])\\nright_fit = np.array([4.17622148e-04, -4.93848953e-01,  1.11806170e+03])\\n\\ndef fit_poly(img_shape, leftx, lefty, rightx, righty):\\n    ### TO-DO: Fit a second order polynomial to each with np.polyfit() ###\\n    left_fit = np.polyfit(lefty,leftx,2)\\n    right_fit = np.polyfit(righty,rightx,2)\\n    # Generate x and y values for plotting\\n    ploty = np.linspace(0, img_shape[0]-1, img_shape[0])\\n    ### TO-DO: Calc both polynomials using ploty, left_fit and right_fit ###\\n    left_fitx = left_fit[0]*ploty**2+left_fit[1]*ploty+left_fit[2]\\n    right_fitx =right_fit[0]*ploty**2+right_fit[1]*ploty+right_fit[2]\\n    \\n    return left_fitx, right_fitx, ploty\\n\\ndef search_around_poly(binary_warped):\\n    # HYPERPARAMETER\\n    # Choose the width of the margin around the previous polynomial to search\\n    # The quiz grader expects 100 here, but feel free to tune on your own!\\n    margin = 100\\n\\n    # Grab activated pixels\\n    nonzero = binary_warped.nonzero()\\n    nonzeroy = np.array(nonzero[0])\\n    nonzerox = np.array(nonzero[1])\\n    \\n    ### TO-DO: Set the area of search based on activated x-values ###\\n    ### within the +/- margin of our polynomial function ###\\n    ### Hint: consider the window areas for the similarly named variables ###\\n    ### in the previous quiz, but change the windows to our new search area ###\\n    left_lane_inds = ((nonzerox > (left_fit[0]*(nonzeroy**2) + left_fit[1]*nonzeroy + \\n                    left_fit[2] - margin)) & (nonzerox < (left_fit[0]*(nonzeroy**2) + \\n                    left_fit[1]*nonzeroy + left_fit[2] + margin)))\\n    right_lane_inds = ((nonzerox > (right_fit[0]*(nonzeroy**2) + right_fit[1]*nonzeroy + \\n                    right_fit[2] - margin)) & (nonzerox < (right_fit[0]*(nonzeroy**2) + \\n                    right_fit[1]*nonzeroy + right_fit[2] + margin)))\\n    plt.imshow(binary_warped[left_lane_inds])\\n    # Again, extract left and right line pixel positions\\n    leftx = nonzerox[left_lane_inds]\\n    lefty = nonzeroy[left_lane_inds] \\n    rightx = nonzerox[right_lane_inds]\\n    righty = nonzeroy[right_lane_inds]\\n\\n    # Fit new polynomials\\n    left_fitx, right_fitx, ploty = fit_poly(binary_warped.shape, leftx, lefty, rightx, righty)\\n    \\n    ## Visualization ##\\n    # Create an image to draw on and an image to show the selection window\\n    out_img = np.dstack((binary_warped, binary_warped, binary_warped))*255\\n    window_img = np.zeros_like(out_img)\\n    # Color in left and right line pixels\\n    out_img[nonzeroy[left_lane_inds], nonzerox[left_lane_inds]] = [255, 0, 0]\\n    out_img[nonzeroy[right_lane_inds], nonzerox[right_lane_inds]] = [0, 0, 255]\\n\\n    # Generate a polygon to illustrate the search window area\\n    # And recast the x and y points into usable format for cv2.fillPoly()\\n    left_line_window1 = np.array([np.transpose(np.vstack([left_fitx-margin, ploty]))])\\n    left_line_window2 = np.array([np.flipud(np.transpose(np.vstack([left_fitx+margin, \\n                              ploty])))])\\n    left_line_pts = np.hstack((left_line_window1, left_line_window2))\\n    right_line_window1 = np.array([np.transpose(np.vstack([right_fitx-margin, ploty]))])\\n    right_line_window2 = np.array([np.flipud(np.transpose(np.vstack([right_fitx+margin, \\n                              ploty])))])\\n    right_line_pts = np.hstack((right_line_window1, right_line_window2))\\n\\n    # Draw the lane onto the warped blank image\\n    cv2.fillPoly(window_img, np.int_([left_line_pts]), (0,255, 0))\\n    cv2.fillPoly(window_img, np.int_([right_line_pts]), (0,255, 0))\\n    result = cv2.addWeighted(out_img, 1, window_img, 0.3, 0)\\n    \\n    # Plot the polynomial lines onto the image\\n    plt.plot(left_fitx, ploty, color='yellow')\\n    plt.plot(right_fitx, ploty, color='yellow')\\n    ## End visualization steps ##\\n    \\n    return result\\n\\n# Run image through the pipeline\\n# Note that in your project, you'll also want to feed in the previous fits\\nresult = search_around_poly(binary_warped)\\n\\n# View your output\\n#plt.imshow(result)\",\"solution.py\":\"import cv2\\nimport numpy as np\\nimport matplotlib.image as mpimg\\nimport matplotlib.pyplot as plt\\n\\n# Load our image - this should be a new frame since last time!\\nbinary_warped = mpimg.imread('warped_example.jpg')\\n\\n# Polynomial fit values from the previous frame\\n# Make sure to grab the actual values from the previous step in your project!\\nleft_fit = np.array([ 2.13935315e-04, -3.77507980e-01,  4.76902175e+02])\\nright_fit = np.array([4.17622148e-04, -4.93848953e-01,  1.11806170e+03])\\n\\ndef fit_poly(img_shape, leftx, lefty, rightx, righty):\\n     ### TO-DO: Fit a second order polynomial to each with np.polyfit() ###\\n    left_fit = np.polyfit(lefty, leftx, 2)\\n    right_fit = np.polyfit(righty, rightx, 2)\\n    # Generate x and y values for plotting\\n    ploty = np.linspace(0, img_shape[0]-1, img_shape[0])\\n    ### TO-DO: Calc both polynomials using ploty, left_fit and right_fit ###\\n    left_fitx = left_fit[0]*ploty**2 + left_fit[1]*ploty + left_fit[2]\\n    right_fitx = right_fit[0]*ploty**2 + right_fit[1]*ploty + right_fit[2]\\n    \\n    return left_fitx, right_fitx, ploty\\n\\ndef search_around_poly(binary_warped):\\n    # HYPERPARAMETER\\n    # Choose the width of the margin around the previous polynomial to search\\n    # The quiz grader expects 100 here, but feel free to tune on your own!\\n    margin = 100\\n\\n    # Grab activated pixels\\n    nonzero = binary_warped.nonzero()\\n    nonzeroy = np.array(nonzero[0])\\n    nonzerox = np.array(nonzero[1])\\n    \\n    ### TO-DO: Set the area of search based on activated x-values ###\\n    ### within the +/- margin of our polynomial function ###\\n    ### Hint: consider the window areas for the similarly named variables ###\\n    ### in the previous quiz, but change the windows to our new search area ###\\n    left_lane_inds = ((nonzerox > (left_fit[0]*(nonzeroy**2) + left_fit[1]*nonzeroy + \\n                    left_fit[2] - margin)) & (nonzerox < (left_fit[0]*(nonzeroy**2) + \\n                    left_fit[1]*nonzeroy + left_fit[2] + margin)))\\n    right_lane_inds = ((nonzerox > (right_fit[0]*(nonzeroy**2) + right_fit[1]*nonzeroy + \\n                    right_fit[2] - margin)) & (nonzerox < (right_fit[0]*(nonzeroy**2) + \\n                    right_fit[1]*nonzeroy + right_fit[2] + margin)))\\n    \\n    # Again, extract left and right line pixel positions\\n    leftx = nonzerox[left_lane_inds]\\n    lefty = nonzeroy[left_lane_inds] \\n    rightx = nonzerox[right_lane_inds]\\n    righty = nonzeroy[right_lane_inds]\\n\\n    # Fit new polynomials\\n    left_fitx, right_fitx, ploty = fit_poly(binary_warped.shape, leftx, lefty, rightx, righty)\\n    \\n    ## Visualization ##\\n    # Create an image to draw on and an image to show the selection window\\n    out_img = np.dstack((binary_warped, binary_warped, binary_warped))*255\\n    window_img = np.zeros_like(out_img)\\n    # Color in left and right line pixels\\n    out_img[nonzeroy[left_lane_inds], nonzerox[left_lane_inds]] = [255, 0, 0]\\n    out_img[nonzeroy[right_lane_inds], nonzerox[right_lane_inds]] = [0, 0, 255]\\n\\n    # Generate a polygon to illustrate the search window area\\n    # And recast the x and y points into usable format for cv2.fillPoly()\\n    left_line_window1 = np.array([np.transpose(np.vstack([left_fitx-margin, ploty]))])\\n    left_line_window2 = np.array([np.flipud(np.transpose(np.vstack([left_fitx+margin, \\n                              ploty])))])\\n    left_line_pts = np.hstack((left_line_window1, left_line_window2))\\n    right_line_window1 = np.array([np.transpose(np.vstack([right_fitx-margin, ploty]))])\\n    right_line_window2 = np.array([np.flipud(np.transpose(np.vstack([right_fitx+margin, \\n                              ploty])))])\\n    right_line_pts = np.hstack((right_line_window1, right_line_window2))\\n\\n    # Draw the lane onto the warped blank image\\n    cv2.fillPoly(window_img, np.int_([left_line_pts]), (0,255, 0))\\n    cv2.fillPoly(window_img, np.int_([right_line_pts]), (0,255, 0))\\n    result = cv2.addWeighted(out_img, 1, window_img, 0.3, 0)\\n    \\n    # Plot the polynomial lines onto the image\\n    plt.plot(left_fitx, ploty, color='yellow')\\n    plt.plot(right_fitx, ploty, color='yellow')\\n    ## End visualization steps ##\\n    \\n    return result\\n\\n# Run image through the pipeline\\n# Note that in your project, you'll also want to feed in the previous fits\\nresult = search_around_poly(binary_warped)\\n\\n# View your output\\nplt.imshow(result)\"}"
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6443654259015680",
+                "initial_code_files": [
+                  {
+                    "text": "import cv2\nimport numpy as np\nimport matplotlib.image as mpimg\nimport matplotlib.pyplot as plt\n\n# Load our image - this should be a new frame since last time!\nbinary_warped = mpimg.imread('warped_example.jpg')\n\n# Polynomial fit values from the previous frame\n# Make sure to grab the actual values from the previous step in your project!\nleft_fit = np.array([ 2.13935315e-04, -3.77507980e-01,  4.76902175e+02])\nright_fit = np.array([4.17622148e-04, -4.93848953e-01,  1.11806170e+03])\n\ndef fit_poly(img_shape, leftx, lefty, rightx, righty):\n    ### TO-DO: Fit a second order polynomial to each with np.polyfit() ###\n    left_fit = None\n    right_fit = None\n    # Generate x and y values for plotting\n    ploty = np.linspace(0, img_shape[0]-1, img_shape[0])\n    ### TO-DO: Calc both polynomials using ploty, left_fit and right_fit ###\n    left_fitx = None\n    right_fitx = None\n    \n    return left_fitx, right_fitx, ploty\n\ndef search_around_poly(binary_warped):\n    # HYPERPARAMETER\n    # Choose the width of the margin around the previous polynomial to search\n    # The quiz grader expects 100 here, but feel free to tune on your own!\n    margin = 100\n\n    # Grab activated pixels\n    nonzero = binary_warped.nonzero()\n    nonzeroy = np.array(nonzero[0])\n    nonzerox = np.array(nonzero[1])\n    \n    ### TO-DO: Set the area of search based on activated x-values ###\n    ### within the +/- margin of our polynomial function ###\n    ### Hint: consider the window areas for the similarly named variables ###\n    ### in the previous quiz, but change the windows to our new search area ###\n    left_lane_inds = None\n    right_lane_inds = None\n    \n    # Again, extract left and right line pixel positions\n    leftx = nonzerox[left_lane_inds]\n    lefty = nonzeroy[left_lane_inds] \n    rightx = nonzerox[right_lane_inds]\n    righty = nonzeroy[right_lane_inds]\n\n    # Fit new polynomials\n    left_fitx, right_fitx, ploty = fit_poly(binary_warped.shape, leftx, lefty, rightx, righty)\n    \n    ## Visualization ##\n    # Create an image to draw on and an image to show the selection window\n    out_img = np.dstack((binary_warped, binary_warped, binary_warped))*255\n    window_img = np.zeros_like(out_img)\n    # Color in left and right line pixels\n    out_img[nonzeroy[left_lane_inds], nonzerox[left_lane_inds]] = [255, 0, 0]\n    out_img[nonzeroy[right_lane_inds], nonzerox[right_lane_inds]] = [0, 0, 255]\n\n    # Generate a polygon to illustrate the search window area\n    # And recast the x and y points into usable format for cv2.fillPoly()\n    left_line_window1 = np.array([np.transpose(np.vstack([left_fitx-margin, ploty]))])\n    left_line_window2 = np.array([np.flipud(np.transpose(np.vstack([left_fitx+margin, \n                              ploty])))])\n    left_line_pts = np.hstack((left_line_window1, left_line_window2))\n    right_line_window1 = np.array([np.transpose(np.vstack([right_fitx-margin, ploty]))])\n    right_line_window2 = np.array([np.flipud(np.transpose(np.vstack([right_fitx+margin, \n                              ploty])))])\n    right_line_pts = np.hstack((right_line_window1, right_line_window2))\n\n    # Draw the lane onto the warped blank image\n    cv2.fillPoly(window_img, np.int_([left_line_pts]), (0,255, 0))\n    cv2.fillPoly(window_img, np.int_([right_line_pts]), (0,255, 0))\n    result = cv2.addWeighted(out_img, 1, window_img, 0.3, 0)\n    \n    # Plot the polynomial lines onto the image\n    plt.plot(left_fitx, ploty, color='yellow')\n    plt.plot(right_fitx, ploty, color='yellow')\n    ## End visualization steps ##\n    \n    return result\n\n# Run image through the pipeline\n# Note that in your project, you'll also want to feed in the previous fits\nresult = search_around_poly(binary_warped)\n\n# View your output\nplt.imshow(result)",
+                    "name": "prev_poly.py"
+                  },
+                  {
+                    "text": "import cv2\nimport numpy as np\nimport matplotlib.image as mpimg\nimport matplotlib.pyplot as plt\n\n# Load our image - this should be a new frame since last time!\nbinary_warped = mpimg.imread('warped_example.jpg')\n\n# Polynomial fit values from the previous frame\n# Make sure to grab the actual values from the previous step in your project!\nleft_fit = np.array([ 2.13935315e-04, -3.77507980e-01,  4.76902175e+02])\nright_fit = np.array([4.17622148e-04, -4.93848953e-01,  1.11806170e+03])\n\ndef fit_poly(img_shape, leftx, lefty, rightx, righty):\n     ### TO-DO: Fit a second order polynomial to each with np.polyfit() ###\n    left_fit = np.polyfit(lefty, leftx, 2)\n    right_fit = np.polyfit(righty, rightx, 2)\n    # Generate x and y values for plotting\n    ploty = np.linspace(0, img_shape[0]-1, img_shape[0])\n    ### TO-DO: Calc both polynomials using ploty, left_fit and right_fit ###\n    left_fitx = left_fit[0]*ploty**2 + left_fit[1]*ploty + left_fit[2]\n    right_fitx = right_fit[0]*ploty**2 + right_fit[1]*ploty + right_fit[2]\n    \n    return left_fitx, right_fitx, ploty\n\ndef search_around_poly(binary_warped):\n    # HYPERPARAMETER\n    # Choose the width of the margin around the previous polynomial to search\n    # The quiz grader expects 100 here, but feel free to tune on your own!\n    margin = 100\n\n    # Grab activated pixels\n    nonzero = binary_warped.nonzero()\n    nonzeroy = np.array(nonzero[0])\n    nonzerox = np.array(nonzero[1])\n    \n    ### TO-DO: Set the area of search based on activated x-values ###\n    ### within the +/- margin of our polynomial function ###\n    ### Hint: consider the window areas for the similarly named variables ###\n    ### in the previous quiz, but change the windows to our new search area ###\n    left_lane_inds = ((nonzerox > (left_fit[0]*(nonzeroy**2) + left_fit[1]*nonzeroy + \n                    left_fit[2] - margin)) & (nonzerox < (left_fit[0]*(nonzeroy**2) + \n                    left_fit[1]*nonzeroy + left_fit[2] + margin)))\n    right_lane_inds = ((nonzerox > (right_fit[0]*(nonzeroy**2) + right_fit[1]*nonzeroy + \n                    right_fit[2] - margin)) & (nonzerox < (right_fit[0]*(nonzeroy**2) + \n                    right_fit[1]*nonzeroy + right_fit[2] + margin)))\n    \n    # Again, extract left and right line pixel positions\n    leftx = nonzerox[left_lane_inds]\n    lefty = nonzeroy[left_lane_inds] \n    rightx = nonzerox[right_lane_inds]\n    righty = nonzeroy[right_lane_inds]\n\n    # Fit new polynomials\n    left_fitx, right_fitx, ploty = fit_poly(binary_warped.shape, leftx, lefty, rightx, righty)\n    \n    ## Visualization ##\n    # Create an image to draw on and an image to show the selection window\n    out_img = np.dstack((binary_warped, binary_warped, binary_warped))*255\n    window_img = np.zeros_like(out_img)\n    # Color in left and right line pixels\n    out_img[nonzeroy[left_lane_inds], nonzerox[left_lane_inds]] = [255, 0, 0]\n    out_img[nonzeroy[right_lane_inds], nonzerox[right_lane_inds]] = [0, 0, 255]\n\n    # Generate a polygon to illustrate the search window area\n    # And recast the x and y points into usable format for cv2.fillPoly()\n    left_line_window1 = np.array([np.transpose(np.vstack([left_fitx-margin, ploty]))])\n    left_line_window2 = np.array([np.flipud(np.transpose(np.vstack([left_fitx+margin, \n                              ploty])))])\n    left_line_pts = np.hstack((left_line_window1, left_line_window2))\n    right_line_window1 = np.array([np.transpose(np.vstack([right_fitx-margin, ploty]))])\n    right_line_window2 = np.array([np.flipud(np.transpose(np.vstack([right_fitx+margin, \n                              ploty])))])\n    right_line_pts = np.hstack((right_line_window1, right_line_window2))\n\n    # Draw the lane onto the warped blank image\n    cv2.fillPoly(window_img, np.int_([left_line_pts]), (0,255, 0))\n    cv2.fillPoly(window_img, np.int_([right_line_pts]), (0,255, 0))\n    result = cv2.addWeighted(out_img, 1, window_img, 0.3, 0)\n    \n    # Plot the polynomial lines onto the image\n    plt.plot(left_fitx, ploty, color='yellow')\n    plt.plot(right_fitx, ploty, color='yellow')\n    ## End visualization steps ##\n    \n    return result\n\n# Run image through the pipeline\n# Note that in your project, you'll also want to feed in the previous fits\nresult = search_around_poly(binary_warped)\n\n# View your output\nplt.imshow(result)",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 652445,
+              "key": "d901f1fd-027d-45db-a53f-fc142679fcfd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Fitting on Large Curves\n\nOne thing to consider in our current implementation of sliding window search is what happens when we arrive at the left or right edge of an image, such as when there is a large curve on the road ahead. If `minpix` is not achieved (i.e. the curve ran off the image), the starting position of our next window doesn't change, so it is just positioned directly above the previous window. This will repeat for however many windows are left in `nwindows`, stacking the sliding windows vertically against the side of the image, and likely leading to an imperfect polynomial fit.\n\nCan you think of a way to solve this issue? If you want to tackle the curves on the harder challenge video as part of the project, you might want to include this in your lane finding algorithm.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 218380,
+          "key": "2f928913-21f6-4611-9055-01744acc344f",
+          "title": "Measuring Curvature I",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2f928913-21f6-4611-9055-01744acc344f",
+            "completed_at": "2019-02-26T07:12:01.064Z",
+            "last_viewed_at": "2019-06-11T10:03:43.087Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 218382,
+              "key": "0b3f1059-0e4f-455f-81a3-d2bb72f276dd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Measuring Curvature\n===\n\nYou're getting very close to a final result!  You have a thresholded image, where you've estimated which pixels belong to the left and right  lane lines (shown in red and blue, respectively, below), and you've fit a polynomial to those pixel positions.  Next we'll compute the radius of curvature of the fit.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 218383,
+              "key": "dd46faed-fbd1-4d13-9fa9-dacc7e4a519a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58449a23_color-fit-lines/color-fit-lines.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dd46faed-fbd1-4d13-9fa9-dacc7e4a519a",
+              "caption": "Here I have fit the left and right lines with a second order polynomial shown in green.",
+              "alt": null,
+              "width": 1012,
+              "height": 567,
+              "instructor_notes": null
+            },
+            {
+              "id": 218381,
+              "key": "4088a706-b7f3-47f4-bc76-33f98d331127",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the last exercise, you located the lane line pixels, used their x and y pixel positions to fit a second order polynomial curve: \n\n<span class=\"mathquill\">f(y) = Ay^2 + By + C</span>  \n\nYou're fitting for <span class=\"mathquill\">f(y)</span>, rather than <span class=\"mathquill\">f(x)</span>, because the lane lines in the warped image are near vertical and may have the same <span class=\"mathquill\">x</span> value for more than one <span class=\"mathquill\">y</span> value.  \n\n### Radius of Curvature\n\nThe radius of curvature ([awesome tutorial here](http://www.intmath.com/applications-differentiation/8-radius-curvature.php)) at any point <span class=\"mathquill\">x</span> of the function <span class=\"mathquill\">x = f(y)</span> is given as follows:\n\n<span class=\"mathquill\">\\LARGE R_{curve} = \\frac{[1 + (\\frac{dx}{dy})^2]^{3/2}}{|\\frac{d^2x}{dy^2}|}</span>\n\nIn the case of the second order polynomial above, the first and second derivatives are:  \n\n<span class=\"mathquill\">\\large f'(y) = \\frac{dx}{dy} = 2Ay + B</span> \n\n<span class=\"mathquill\">\\large f''(y) = \\frac{d^2x}{dy^2} = 2A</span> \n\nSo, our equation for radius of curvature becomes: \n\n<span class=\"mathquill\">\\LARGE R_{curve} =  \\frac{(1 + (2Ay + B)^2)^{3/2}}{\\left |2A  \\right |}</span>\n\nThe <span class=\"mathquill\">y</span> values of your image increase from top to bottom, so if, for example, you wanted to measure the radius of curvature closest to your vehicle, you could evaluate the formula above at the <span class=\"mathquill\">y</span> value corresponding to the bottom of your image, or in Python, at `yvalue = image.shape[0]`.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 218384,
+              "key": "e4b810e0-9df4-4616-bec8-9d0a35090e0f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Implementing the Calculation\n\n#### Generate some fake data first\nMost of the code below is just to generate some fake data to visualize with - everything up until the actual plotting of the data below should be replaced with your algorithms from before in your own implementation!\n\n```python\nimport numpy as np\nimport matplotlib.pyplot as plt\n# Generate some fake data to represent lane-line pixels\nploty = np.linspace(0, 719, num=720)# to cover same y-range as image\nquadratic_coeff = 3e-4 # arbitrary quadratic coefficient\n# For each y position generate random x position within +/-50 pix\n# of the line base position in each case (x=200 for left, and x=900 for right)\nleftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \n                              for y in ploty])\nrightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \n                                for y in ploty])\n\nleftx = leftx[::-1]  # Reverse to match top-to-bottom in y\nrightx = rightx[::-1]  # Reverse to match top-to-bottom in y\n\n\n# Fit a second order polynomial to pixel positions in each fake lane line\nleft_fit = np.polyfit(ploty, leftx, 2)\nleft_fitx = left_fit[0]*ploty**2 + left_fit[1]*ploty + left_fit[2]\nright_fit = np.polyfit(ploty, rightx, 2)\nright_fitx = right_fit[0]*ploty**2 + right_fit[1]*ploty + right_fit[2]\n\n# Plot up the fake data\nmark_size = 3\nplt.plot(leftx, ploty, 'o', color='red', markersize=mark_size)\nplt.plot(rightx, ploty, 'o', color='blue', markersize=mark_size)\nplt.xlim(0, 1280)\nplt.ylim(0, 720)\nplt.plot(left_fitx, ploty, color='green', linewidth=3)\nplt.plot(right_fitx, ploty, color='green', linewidth=3)\nplt.gca().invert_yaxis() # to visualize as we do the images\n```\n\nThe output looks like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262227,
+              "key": "892d749a-719e-4160-8041-9a6602ca6984",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/January/588b87c0_screen-shot-2017-01-27-at-9.47.14-am/screen-shot-2017-01-27-at-9.47.14-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/892d749a-719e-4160-8041-9a6602ca6984",
+              "caption": "",
+              "alt": null,
+              "width": 541,
+              "height": 364,
+              "instructor_notes": null
+            },
+            {
+              "id": 675786,
+              "key": "88cc0e85-f4f0-4e52-ac87-6c6ebdd8d3f9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Implementing the calculation itself\n\nNow we have polynomial fits and we can calculate the radius of curvature.\n\nIn the below quiz, you'll implement the radius of curvature calculation (using our fake generated data from above - remember that you'll be using your own implemented algorithm in place of the `generate_data` function in the below quiz!).\n\nUse the <span class=\"mathquill\">\\large R_{curve}</span> equation above in order to calculate `left_curverad` and `right_curverad` in the `measure_curvature_pixels()` function below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 675800,
+              "key": "692cf869-9174-4a30-b898-c813781d90b9",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "692cf869-9174-4a30-b898-c813781d90b9",
+                "completed_at": "2019-02-26T07:16:45.741Z",
+                "last_viewed_at": "2019-04-20T05:26:57.760Z",
+                "unstructured": "{\"curve_pixels.py\":\"import numpy as np\\n\\ndef generate_data():\\n    '''\\n    Generates fake data to use for calculating lane curvature.\\n    In your own project, you'll ignore this function and instead\\n    feed in the output of your lane detection algorithm to\\n    the lane curvature calculation.\\n    '''\\n    # Set random seed number so results are consistent for grader\\n    # Comment this out if you'd like to see results on different random data!\\n    np.random.seed(0)\\n    # Generate some fake data to represent lane-line pixels\\n    ploty = np.linspace(0, 719, num=720)# to cover same y-range as image\\n    quadratic_coeff = 3e-4 # arbitrary quadratic coefficient\\n    # For each y position generate random x position within +/-50 pix\\n    # of the line base position in each case (x=200 for left, and x=900 for right)\\n    leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \\n                                    for y in ploty])\\n    rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \\n                                    for y in ploty])\\n\\n    leftx = leftx[::-1]  # Reverse to match top-to-bottom in y\\n    rightx = rightx[::-1]  # Reverse to match top-to-bottom in y\\n\\n\\n    # Fit a second order polynomial to pixel positions in each fake lane line\\n    left_fit = np.polyfit(ploty, leftx, 2)\\n    right_fit = np.polyfit(ploty, rightx, 2)\\n    \\n    return ploty, left_fit, right_fit\\n\\n    \\ndef measure_curvature_pixels():\\n    '''\\n    Calculates the curvature of polynomial functions in pixels.\\n    '''\\n    # Start by generating our fake example data\\n    # Make sure to feed in your real data instead in your project!\\n    ploty, left_fit, right_fit = generate_data()\\n    \\n    # Define y-value where we want radius of curvature\\n    # We'll choose the maximum y-value, corresponding to the bottom of the image\\n    y_eval = np.max(ploty)\\n    \\n    ##### TO-DO: Implement the calculation of R_curve (radius of curvature) #####\\n    # = (1+(2*left_fit[0]*y_eval+left_fit[1])**2)**(3/2)/(2*np.absolute(left_fit[0])  \\n    right_curverad =(1+(2*right_fit[0]*y_eval+right_fit[1])**2)**(3/2)/(2*np.absolute(right_fit[0]))\\n    left_curverad = (1 + (2*left_fit[0]*y_eval + left_fit[1])**2)**1.5 /(2*np.absolute(left_fit[0]))\\n    #right_curverad = ((1 + (2*right_fit[0]*y_eval + right_fit[1])**2)**1.5) / np.absolute(2*right_fit[0])\\n    \\n    #right_curverad = ((1 + (2*right_fit[0]*y_eval + right_fit[1])**2)**1.5) / np.absolute(2*right_fit[0])\\n    return left_curverad, right_curverad\\n\\n\\n# Calculate the radius of curvature in pixels for both lane lines\\nleft_curverad, right_curverad = measure_curvature_pixels()\\n\\nprint(left_curverad, right_curverad)\\n# Should see values of 1625.06 and 1976.30 here, if using\\n# the default `generate_data` function with given seed number\",\"solution.py\":\"import numpy as np\\n\\ndef generate_data():\\n    '''\\n    Generates fake data to use for calculating lane curvature.\\n    In your own project, you'll ignore this function and instead\\n    feed in the output of your lane detection algorithm to\\n    the lane curvature calculation.\\n    '''\\n    # Set random seed number so results are consistent for grader\\n    # Comment this out if you'd like to see results on different random data!\\n    np.random.seed(0)\\n    # Generate some fake data to represent lane-line pixels\\n    ploty = np.linspace(0, 719, num=720)# to cover same y-range as image\\n    quadratic_coeff = 3e-4 # arbitrary quadratic coefficient\\n    # For each y position generate random x position within +/-50 pix\\n    # of the line base position in each case (x=200 for left, and x=900 for right)\\n    leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \\n                                    for y in ploty])\\n    rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \\n                                    for y in ploty])\\n\\n    leftx = leftx[::-1]  # Reverse to match top-to-bottom in y\\n    rightx = rightx[::-1]  # Reverse to match top-to-bottom in y\\n\\n\\n    # Fit a second order polynomial to pixel positions in each fake lane line\\n    left_fit = np.polyfit(ploty, leftx, 2)\\n    right_fit = np.polyfit(ploty, rightx, 2)\\n    \\n    return ploty, left_fit, right_fit\\n    \\ndef measure_curvature_pixels():\\n    '''\\n    Calculates the curvature of polynomial functions in pixels.\\n    '''\\n    # Start by generating our fake example data\\n    # Make sure to feed in your real data instead in your project!\\n    ploty, left_fit, right_fit = generate_data()\\n    \\n    # Define y-value where we want radius of curvature\\n    # We'll choose the maximum y-value, corresponding to the bottom of the image\\n    y_eval = np.max(ploty)\\n    \\n    # Calculation of R_curve (radius of curvature)\\n    left_curverad = ((1 + (2*left_fit[0]*y_eval + left_fit[1])**2)**1.5) / np.absolute(2*left_fit[0])\\n    right_curverad = ((1 + (2*right_fit[0]*y_eval + right_fit[1])**2)**1.5) / np.absolute(2*right_fit[0])\\n    \\n    return left_curverad, right_curverad\\n\\n\\n# Calculate the radius of curvature in pixels for both lane lines\\nleft_curverad, right_curverad = measure_curvature_pixels()\\n\\nprint(left_curverad, right_curverad)\\n# Should see values of 1625.06 and 1976.30 here, if using\\n# the default `generate_data` function with given seed number\"}"
+              },
+              "instruction": null,
+              "question": {
+                "title": "Measuring Curvature in Pixels",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4592333864173568",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\n\ndef generate_data():\n    '''\n    Generates fake data to use for calculating lane curvature.\n    In your own project, you'll ignore this function and instead\n    feed in the output of your lane detection algorithm to\n    the lane curvature calculation.\n    '''\n    # Set random seed number so results are consistent for grader\n    # Comment this out if you'd like to see results on different random data!\n    np.random.seed(0)\n    # Generate some fake data to represent lane-line pixels\n    ploty = np.linspace(0, 719, num=720)# to cover same y-range as image\n    quadratic_coeff = 3e-4 # arbitrary quadratic coefficient\n    # For each y position generate random x position within +/-50 pix\n    # of the line base position in each case (x=200 for left, and x=900 for right)\n    leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \n                                    for y in ploty])\n    rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \n                                    for y in ploty])\n\n    leftx = leftx[::-1]  # Reverse to match top-to-bottom in y\n    rightx = rightx[::-1]  # Reverse to match top-to-bottom in y\n\n\n    # Fit a second order polynomial to pixel positions in each fake lane line\n    left_fit = np.polyfit(ploty, leftx, 2)\n    right_fit = np.polyfit(ploty, rightx, 2)\n    \n    return ploty, left_fit, right_fit\n\n    \ndef measure_curvature_pixels():\n    '''\n    Calculates the curvature of polynomial functions in pixels.\n    '''\n    # Start by generating our fake example data\n    # Make sure to feed in your real data instead in your project!\n    ploty, left_fit, right_fit = generate_data()\n    \n    # Define y-value where we want radius of curvature\n    # We'll choose the maximum y-value, corresponding to the bottom of the image\n    y_eval = np.max(ploty)\n    \n    ##### TO-DO: Implement the calculation of R_curve (radius of curvature) #####\n    left_curverad = 0  ## Implement the calculation of the left line here\n    right_curverad = 0  ## Implement the calculation of the right line here\n    \n    return left_curverad, right_curverad\n\n\n# Calculate the radius of curvature in pixels for both lane lines\nleft_curverad, right_curverad = measure_curvature_pixels()\n\nprint(left_curverad, right_curverad)\n# Should see values of 1625.06 and 1976.30 here, if using\n# the default `generate_data` function with given seed number",
+                    "name": "curve_pixels.py"
+                  },
+                  {
+                    "text": "import numpy as np\n\ndef generate_data():\n    '''\n    Generates fake data to use for calculating lane curvature.\n    In your own project, you'll ignore this function and instead\n    feed in the output of your lane detection algorithm to\n    the lane curvature calculation.\n    '''\n    # Set random seed number so results are consistent for grader\n    # Comment this out if you'd like to see results on different random data!\n    np.random.seed(0)\n    # Generate some fake data to represent lane-line pixels\n    ploty = np.linspace(0, 719, num=720)# to cover same y-range as image\n    quadratic_coeff = 3e-4 # arbitrary quadratic coefficient\n    # For each y position generate random x position within +/-50 pix\n    # of the line base position in each case (x=200 for left, and x=900 for right)\n    leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \n                                    for y in ploty])\n    rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \n                                    for y in ploty])\n\n    leftx = leftx[::-1]  # Reverse to match top-to-bottom in y\n    rightx = rightx[::-1]  # Reverse to match top-to-bottom in y\n\n\n    # Fit a second order polynomial to pixel positions in each fake lane line\n    left_fit = np.polyfit(ploty, leftx, 2)\n    right_fit = np.polyfit(ploty, rightx, 2)\n    \n    return ploty, left_fit, right_fit\n    \ndef measure_curvature_pixels():\n    '''\n    Calculates the curvature of polynomial functions in pixels.\n    '''\n    # Start by generating our fake example data\n    # Make sure to feed in your real data instead in your project!\n    ploty, left_fit, right_fit = generate_data()\n    \n    # Define y-value where we want radius of curvature\n    # We'll choose the maximum y-value, corresponding to the bottom of the image\n    y_eval = np.max(ploty)\n    \n    # Calculation of R_curve (radius of curvature)\n    left_curverad = ((1 + (2*left_fit[0]*y_eval + left_fit[1])**2)**1.5) / np.absolute(2*left_fit[0])\n    right_curverad = ((1 + (2*right_fit[0]*y_eval + right_fit[1])**2)**1.5) / np.absolute(2*right_fit[0])\n    \n    return left_curverad, right_curverad\n\n\n# Calculate the radius of curvature in pixels for both lane lines\nleft_curverad, right_curverad = measure_curvature_pixels()\n\nprint(left_curverad, right_curverad)\n# Should see values of 1625.06 and 1976.30 here, if using\n# the default `generate_data` function with given seed number",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 675868,
+          "key": "1a352727-390e-469d-87ea-c91cd78869d6",
+          "title": "Measuring Curvature II",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1a352727-390e-469d-87ea-c91cd78869d6",
+            "completed_at": "2019-02-26T07:24:50.255Z",
+            "last_viewed_at": "2019-06-12T12:50:50.850Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 675869,
+              "key": "3f700c21-b293-45e2-8497-ad5cbfb2fc7b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### From Pixels to Real-World\nGreat! You've now calculated the radius of curvature for our lane lines. But now we need to stop and think... We've calculated the radius of curvature based on pixel values, so the radius we are reporting is in pixel space, which is not the same as real world space.  So we actually need to repeat this calculation after converting our x and y values to real world space.  \n\nThis involves measuring how long and wide the section of lane is that we're projecting in our warped image.  We could do this in detail by measuring out the physical lane in the field of view of the camera, but for this project, you can assume that if you're projecting a section of lane similar to the images above, the lane is about 30 meters long and 3.7 meters wide.  Or, if you prefer to derive a conversion from pixel space to world space in your own images, compare your images with U.S. regulations that require a minimum lane width of 12 feet or 3.7 meters, and the dashed lane lines are 10 feet or 3 meters long each.\n\nLet's say that our camera image has 720 relevant pixels in the y-dimension (remember, our image is perspective-transformed!), and we'll say roughly 700 relevant pixels in the x-dimension (our example of fake generated data above used from 200 pixels on the left to 900 on the right, or 700). Therefore, to convert from pixels to real-world meter measurements, we can use:\n\n```python\n# Define conversions in x and y from pixels space to meters\nym_per_pix = 30/720 # meters per pixel in y dimension\nxm_per_pix = 3.7/700 # meters per pixel in x dimension\n```\n\nIn the below quiz, you'll use the above conversions in order to adjust your calculation from before to give real-world lane curvature values. Once again, you'll focus on the `left_curverad` and `right_curverad` values within the new `measure_curvature_real()` function; however, you'll also need to adjust how you use `np.polyfit()` within `generate_data()` in order for this to work correctly. How do you need to change these to convert to meters?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 675870,
+              "key": "56705bb5-d7a9-4be1-aec5-8f8b727ff16d",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "56705bb5-d7a9-4be1-aec5-8f8b727ff16d",
+                "completed_at": "2019-02-26T07:28:47.377Z",
+                "last_viewed_at": "2019-04-20T09:06:00.161Z",
+                "unstructured": "{\"radius_curve.py\":\"import numpy as np\\n\\ndef generate_data(ym_per_pix, xm_per_pix):\\n    '''\\n    Generates fake data to use for calculating lane curvature.\\n    In your own project, you'll ignore this function and instead\\n    feed in the output of your lane detection algorithm to\\n    the lane curvature calculation.\\n    '''\\n    # Set random seed number so results are consistent for grader\\n    # Comment this out if you'd like to see results on different random data!\\n    np.random.seed(0)\\n    # Generate some fake data to represent lane-line pixels\\n    ploty = np.linspace(0, 719, num=720)# to cover same y-range as image\\n    quadratic_coeff = 3e-4 # arbitrary quadratic coefficient\\n    # For each y position generate random x position within +/-50 pix\\n    # of the line base position in each case (x=200 for left, and x=900 for right)\\n    leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \\n                                    for y in ploty])\\n    rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \\n                                    for y in ploty])\\n\\n    leftx = leftx[::-1]  # Reverse to match top-to-bottom in y\\n    rightx = rightx[::-1]  # Reverse to match top-to-bottom in y\\n\\n    # Fit a second order polynomial to pixel positions in each fake lane line\\n    ##### TO-DO: Fit new polynomials to x,y in world space #####\\n    ##### Utilize `ym_per_pix` & `xm_per_pix` here #####\\n    left_fit_cr = np.polyfit(ploty, leftx, 2)\\n    right_fit_cr = np.polyfit(ploty, rightx, 2)\\n    \\n    return ploty, left_fit_cr, right_fit_cr\\n\\n    \\ndef measure_curvature_real():\\n    '''\\n    Calculates the curvature of polynomial functions in meters.\\n    '''\\n    # Define conversions in x and y from pixels space to meters\\n    ym_per_pix = 30/720 # meters per pixel in y dimension\\n    xm_per_pix = 3.7/700 # meters per pixel in x dimension\\n    \\n    # Start by generating our fake example data\\n    # Make sure to feed in your real data instead in your project!\\n    ploty, left_fit_cr, right_fit_cr = generate_data(ym_per_pix, xm_per_pix)\\n    \\n    # Define y-value where we want radius of curvature\\n    # We'll choose the maximum y-value, corresponding to the bottom of the image\\n    y_eval = np.max(ploty)\\n    \\n    ##### TO-DO: Implement the calculation of R_curve (radius of curvature) #####\\n    left_curverad = 0  ## Implement the calculation of the left line here\\n    right_curverad = 0  ## Implement the calculation of the right line here\\n    \\n    return left_curverad, right_curverad\\n\\n\\n# Calculate the radius of curvature in meters for both lane lines\\nleft_curverad, right_curverad = measure_curvature_real()\\n\\nprint(left_curverad, 'm', right_curverad, 'm')\\n# Should see values of 533.75 and 648.16 here, if using\\n# the default `generate_data` function with given seed number\",\"real_world_solution.py\":\"import numpy as np\\n\\ndef generate_data(ym_per_pix, xm_per_pix):\\n    '''\\n    Generates fake data to use for calculating lane curvature.\\n    In your own project, you'll ignore this function and instead\\n    feed in the output of your lane detection algorithm to\\n    the lane curvature calculation.\\n    '''\\n    # Set random seed number so results are consistent for grader\\n    # Comment this out if you'd like to see results on different random data!\\n    np.random.seed(0)\\n    # Generate some fake data to represent lane-line pixels\\n    ploty = np.linspace(0, 719, num=720)# to cover same y-range as image\\n    quadratic_coeff = 3e-4 # arbitrary quadratic coefficient\\n    # For each y position generate random x position within +/-50 pix\\n    # of the line base position in each case (x=200 for left, and x=900 for right)\\n    leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \\n                                    for y in ploty])\\n    rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \\n                                    for y in ploty])\\n\\n    leftx = leftx[::-1]  # Reverse to match top-to-bottom in y\\n    rightx = rightx[::-1]  # Reverse to match top-to-bottom in y\\n\\n    # Fit a second order polynomial to pixel positions in each fake lane line\\n    # Fit new polynomials to x,y in world space\\n    left_fit_cr = np.polyfit(ploty*ym_per_pix, leftx*xm_per_pix, 2)\\n    right_fit_cr = np.polyfit(ploty*ym_per_pix, rightx*xm_per_pix, 2)\\n    \\n    return ploty, left_fit_cr, right_fit_cr\\n    \\ndef measure_curvature_real():\\n    '''\\n    Calculates the curvature of polynomial functions in meters.\\n    '''\\n    # Define conversions in x and y from pixels space to meters\\n    ym_per_pix = 30/720 # meters per pixel in y dimension\\n    xm_per_pix = 3.7/700 # meters per pixel in x dimension\\n    \\n    # Start by generating our fake example data\\n    # Make sure to feed in your real data instead in your project!\\n    ploty, left_fit_cr, right_fit_cr = generate_data(ym_per_pix, xm_per_pix)\\n    \\n    # Define y-value where we want radius of curvature\\n    # We'll choose the maximum y-value, corresponding to the bottom of the image\\n    y_eval = np.max(ploty)\\n    \\n    # Calculation of R_curve (radius of curvature)\\n    left_curverad = ((1 + (2*left_fit_cr[0]*y_eval*ym_per_pix + left_fit_cr[1])**2)**1.5) / np.absolute(2*left_fit_cr[0])\\n    right_curverad = ((1 + (2*right_fit_cr[0]*y_eval*ym_per_pix + right_fit_cr[1])**2)**1.5) / np.absolute(2*right_fit_cr[0])\\n    \\n    return left_curverad, right_curverad\\n\\n\\n# Calculate the radius of curvature in meters for both lane lines\\nleft_curverad, right_curverad = measure_curvature_real()\\n\\nprint(left_curverad, 'm', right_curverad, 'm')\\n# Should see values of 533.75 and 648.16 here, if using\\n# the default `generate_data` function with given seed number\"}"
+              },
+              "instruction": null,
+              "question": {
+                "title": "Measuring Curvature in Meters",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5119537979195392",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\n\ndef generate_data(ym_per_pix, xm_per_pix):\n    '''\n    Generates fake data to use for calculating lane curvature.\n    In your own project, you'll ignore this function and instead\n    feed in the output of your lane detection algorithm to\n    the lane curvature calculation.\n    '''\n    # Set random seed number so results are consistent for grader\n    # Comment this out if you'd like to see results on different random data!\n    np.random.seed(0)\n    # Generate some fake data to represent lane-line pixels\n    ploty = np.linspace(0, 719, num=720)# to cover same y-range as image\n    quadratic_coeff = 3e-4 # arbitrary quadratic coefficient\n    # For each y position generate random x position within +/-50 pix\n    # of the line base position in each case (x=200 for left, and x=900 for right)\n    leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \n                                    for y in ploty])\n    rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \n                                    for y in ploty])\n\n    leftx = leftx[::-1]  # Reverse to match top-to-bottom in y\n    rightx = rightx[::-1]  # Reverse to match top-to-bottom in y\n\n    # Fit a second order polynomial to pixel positions in each fake lane line\n    ##### TO-DO: Fit new polynomials to x,y in world space #####\n    ##### Utilize `ym_per_pix` & `xm_per_pix` here #####\n    left_fit_cr = np.polyfit(ploty, leftx, 2)\n    right_fit_cr = np.polyfit(ploty, rightx, 2)\n    \n    return ploty, left_fit_cr, right_fit_cr\n\n    \ndef measure_curvature_real():\n    '''\n    Calculates the curvature of polynomial functions in meters.\n    '''\n    # Define conversions in x and y from pixels space to meters\n    ym_per_pix = 30/720 # meters per pixel in y dimension\n    xm_per_pix = 3.7/700 # meters per pixel in x dimension\n    \n    # Start by generating our fake example data\n    # Make sure to feed in your real data instead in your project!\n    ploty, left_fit_cr, right_fit_cr = generate_data(ym_per_pix, xm_per_pix)\n    \n    # Define y-value where we want radius of curvature\n    # We'll choose the maximum y-value, corresponding to the bottom of the image\n    y_eval = np.max(ploty)\n    \n    ##### TO-DO: Implement the calculation of R_curve (radius of curvature) #####\n    left_curverad = 0  ## Implement the calculation of the left line here\n    right_curverad = 0  ## Implement the calculation of the right line here\n    \n    return left_curverad, right_curverad\n\n\n# Calculate the radius of curvature in meters for both lane lines\nleft_curverad, right_curverad = measure_curvature_real()\n\nprint(left_curverad, 'm', right_curverad, 'm')\n# Should see values of 533.75 and 648.16 here, if using\n# the default `generate_data` function with given seed number",
+                    "name": "radius_curve.py"
+                  },
+                  {
+                    "text": "import numpy as np\n\ndef generate_data(ym_per_pix, xm_per_pix):\n    '''\n    Generates fake data to use for calculating lane curvature.\n    In your own project, you'll ignore this function and instead\n    feed in the output of your lane detection algorithm to\n    the lane curvature calculation.\n    '''\n    # Set random seed number so results are consistent for grader\n    # Comment this out if you'd like to see results on different random data!\n    np.random.seed(0)\n    # Generate some fake data to represent lane-line pixels\n    ploty = np.linspace(0, 719, num=720)# to cover same y-range as image\n    quadratic_coeff = 3e-4 # arbitrary quadratic coefficient\n    # For each y position generate random x position within +/-50 pix\n    # of the line base position in each case (x=200 for left, and x=900 for right)\n    leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \n                                    for y in ploty])\n    rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) \n                                    for y in ploty])\n\n    leftx = leftx[::-1]  # Reverse to match top-to-bottom in y\n    rightx = rightx[::-1]  # Reverse to match top-to-bottom in y\n\n    # Fit a second order polynomial to pixel positions in each fake lane line\n    # Fit new polynomials to x,y in world space\n    left_fit_cr = np.polyfit(ploty*ym_per_pix, leftx*xm_per_pix, 2)\n    right_fit_cr = np.polyfit(ploty*ym_per_pix, rightx*xm_per_pix, 2)\n    \n    return ploty, left_fit_cr, right_fit_cr\n    \ndef measure_curvature_real():\n    '''\n    Calculates the curvature of polynomial functions in meters.\n    '''\n    # Define conversions in x and y from pixels space to meters\n    ym_per_pix = 30/720 # meters per pixel in y dimension\n    xm_per_pix = 3.7/700 # meters per pixel in x dimension\n    \n    # Start by generating our fake example data\n    # Make sure to feed in your real data instead in your project!\n    ploty, left_fit_cr, right_fit_cr = generate_data(ym_per_pix, xm_per_pix)\n    \n    # Define y-value where we want radius of curvature\n    # We'll choose the maximum y-value, corresponding to the bottom of the image\n    y_eval = np.max(ploty)\n    \n    # Calculation of R_curve (radius of curvature)\n    left_curverad = ((1 + (2*left_fit_cr[0]*y_eval*ym_per_pix + left_fit_cr[1])**2)**1.5) / np.absolute(2*left_fit_cr[0])\n    right_curverad = ((1 + (2*right_fit_cr[0]*y_eval*ym_per_pix + right_fit_cr[1])**2)**1.5) / np.absolute(2*right_fit_cr[0])\n    \n    return left_curverad, right_curverad\n\n\n# Calculate the radius of curvature in meters for both lane lines\nleft_curverad, right_curverad = measure_curvature_real()\n\nprint(left_curverad, 'm', right_curverad, 'm')\n# Should see values of 533.75 and 648.16 here, if using\n# the default `generate_data` function with given seed number",
+                    "name": "real_world_solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 858549,
+              "key": "664165eb-7e08-4861-8410-48a77c2a3915",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "- An insightful student has suggested an alternative approach which may scale more efficiently.  That is, once the parabola coefficients are obtained, in pixels, convert them into meters.  For example, if the parabola is `x= a*(y**2) +b*y+c`; and `mx` and `my` are the scale for the x and y axis, respectively (in meters/pixel); then the scaled parabola is `x= mx / (my ** 2) *a*(y**2)+(mx/my)*b*y+c`\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 675871,
+              "key": "7c8532da-b424-43de-9a95-db8dd7cc8e21",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Check out the [U.S. government specifications for highway curvature](http://onlinemanuals.txdot.gov/txdotmanuals/rdw/horizontal_alignment.htm#BGBHGEGC) to see how your numbers compare.  There's no need to worry about absolute accuracy in this case, but your results should be \"order of magnitude\" correct.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 809767,
+          "key": "7578f816-518e-487f-9e44-f829dbddc517",
+          "title": "Bonus Round: Computer Vision [Optional]",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7578f816-518e-487f-9e44-f829dbddc517",
+            "completed_at": "2019-02-26T07:38:29.510Z",
+            "last_viewed_at": "2019-06-12T12:50:56.406Z",
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 809773,
+              "key": "74efdd1e-364e-48b1-86de-7e70d1d6ab99",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Resources on Computer Vision\nNice work reaching the end of the computer vision content! While you still have the project left to do here, we're also providing some additional resources and recent research on the topic that you can come back to if you have time later on.\n\nReading research papers is a great way to get exposure to the latest and greatest in the field, as well as expand your learning. However, just like the project ahead, it's often best to *learn by doing* - if you find a paper that really excites you, try to implement it (or even something better) yourself!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 809774,
+              "key": "2622994a-0e8e-4991-914e-c4708ee62fae",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##### Optional Reading\n\nAll of these are completely optional reading - you could spend hours reading through the entirety of these! We suggest moving onto the project first so you have what you’ve learned fresh on your mind, before coming back to check these out. \n\nWe've categorized these papers to hopefully help you narrow down which ones might be of interest, as well as highlighted a couple key reads by category by including their *Abstract* section, which summarizes the paper.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 809818,
+              "key": "93838d02-6f9f-41e4-823b-9d1ba8234065",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lane Finding with Semantic Segmentation\nThe below papers and resources concern a technique called semantic segmentation, where each pixel of an image gets classified individually!\n\n[Fully Convolutional Networks for Semantic Segmentation](https://arxiv.org/abs/1605.06211) by E. Shelhamer, J. Long and T. Darrell\n> **Abstract:** Convolutional networks are powerful visual models that yield hierarchies of features. We show that convolutional networks by themselves, trained end-to-end, pixels-to-pixels, improve on the previous best result in semantic segmentation. Our key insight is to build \"fully convolutional\" networks that take input of arbitrary size and produce correspondingly-sized output with efficient inference and learning. We define and detail the space of fully convolutional networks, explain their application to spatially dense prediction tasks, and draw connections to prior models. We adapt contemporary classification networks (AlexNet, the VGG net, and GoogLeNet) into fully convolutional networks and transfer their learned representations by fine-tuning to the segmentation task. We then define a skip architecture that combines semantic information from a deep, coarse layer with appearance information from a shallow, fine layer to produce accurate and detailed segmentations. [...]\n\nYou can use the [KITTI road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) with the above technique for a model that can detect open space on the road.\n\n[Lane Detection with Deep Learning (Part 1)](https://towardsdatascience.com/lane-detection-with-deep-learning-part-1-9e096f3320b7) and [(Part 2)](https://towardsdatascience.com/lane-detection-with-deep-learning-part-2-3ba559b5c5af) by M. Virgo\n> **Summary:** Udacity SDC student (and now Udacian!) investigates using a deep learning approach to lane detection in order to improve upon the Advanced Lane Finding project, eventually building a model with a fully convolutional neural network that detects the road is a wider variety of situations and at faster speed.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 809819,
+              "key": "b4755905-5f5d-4fda-9a7e-2ccd59900a04",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Other Lane Finding Techniques\nThe below paper uses a multi-task model to identify lane and road markings, as well as vanishing point of the road, in order to build a robust model.\n\n[VPGNet: Vanishing Point Guided Network for Lane and Road Marking Detection and Recognition](https://arxiv.org/abs/1710.06288) by S. Lee, et. al.\n> **Abstract:** In this paper, we propose a unified end-to-end trainable multi-task network that jointly handles lane and road marking detection and recognition that is guided by a vanishing point under adverse weather conditions. We tackle rainy and low illumination conditions [...] At night, color distortion occurs under limited illumination. As a result, no benchmark dataset exists and only a few developed algorithms work under poor weather conditions. To address this shortcoming, we build up a lane and road marking benchmark which consists of about 20,000 images with 17 lane and road marking classes under four different scenarios: no rain, rain, heavy rain, and night. We train and evaluate several versions of the proposed multi-task network and validate the importance of each task. The resulting approach, VPGNet, can detect and classify lanes and road markings, and predict a vanishing point with a single forward pass. Experimental results show that our approach achieves high accuracy and robustness under various conditions in real-time (20 fps). [...]\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 809820,
+              "key": "23a9757b-1130-4c02-8d2b-9795522ba6a4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Vehicle Detection\nThe below paper builds a model to both detect vehicles as well as estimate their dimensions along the road.\n\n[Learning to Map Vehicles into Bird's Eye View](https://arxiv.org/abs/1706.08442) by A. Palazzi, et. al.\n> **Abstract:** Awareness of the road scene is an essential component for both autonomous vehicles and Advances Driver Assistance Systems and is gaining importance both for the academia and car companies. This paper presents a way to learn a semantic-aware transformation which maps detections from a dashboard camera view onto a broader bird's eye occupancy map of the scene. To this end, a huge synthetic dataset featuring 1M couples of frames, taken from both car dashboard and bird's eye view, has been collected and automatically annotated. A deep-network is then trained to warp detections from the first to the second view. We demonstrate the effectiveness of our model against several baselines and observe that is able to generalize on real-world data despite having been trained solely on synthetic ones.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 809821,
+              "key": "84498473-7e4c-4c97-a3c9-47512b8155cb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You may have noticed a lot of the papers above include deep learning techniques, which are now commonly used in many computer vision applications. More on deep learning is coming up!",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

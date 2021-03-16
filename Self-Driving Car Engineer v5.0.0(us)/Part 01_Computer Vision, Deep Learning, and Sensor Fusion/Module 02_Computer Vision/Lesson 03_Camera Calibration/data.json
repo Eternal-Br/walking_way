@@ -1,0 +1,1102 @@
+{
+  "data": {
+    "lesson": {
+      "id": 675859,
+      "key": "78afdfc4-f0fa-4505-b890-5d8e6319e15c",
+      "title": "Camera Calibration",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn how to calibrate your camera to remove inherent distortions that can affect its perception of the world.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/78afdfc4-f0fa-4505-b890-5d8e6319e15c/675859/1538943793057/Camera+Calibration+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/78afdfc4-f0fa-4505-b890-5d8e6319e15c/675859/1538943787634/Camera+Calibration+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 654016,
+          "key": "11c71cdc-3e4b-4acd-b1db-b6174614e4cb",
+          "title": "The Challenges with Cameras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "11c71cdc-3e4b-4acd-b1db-b6174614e4cb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 654017,
+              "key": "de8dcb66-064e-4aed-a917-aebc550d46c6",
+              "title": "02 Computer Vision A01 The Challenges With Cameras",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "n2RSEjPn814",
+                "china_cdn_id": "n2RSEjPn814.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 218371,
+          "key": "016c6236-7f8c-4c07-8232-a3d099c5454a",
+          "title": "Welcome to Computer Vision",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "016c6236-7f8c-4c07-8232-a3d099c5454a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 654008,
+              "key": "7c63a6c0-2e50-4679-8ca5-67a8d260eaf8",
+              "title": "L21 Advanced Techniques For Lane Finding  A02 L Welcome To Computer Vision",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FRBWnuf1OIg",
+                "china_cdn_id": "FRBWnuf1OIg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 218373,
+          "key": "e062a773-7e10-4e7e-8b77-668bdc6d54dc",
+          "title": "Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e062a773-7e10-4e7e-8b77-668bdc6d54dc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 218374,
+              "key": "258cff7e-f31f-4f94-afc1-0651f3e1ae1f",
+              "title": "Overview",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yN7u0qmJDhA",
+                "china_cdn_id": "yN7u0qmJDhA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 206202,
+          "key": "37263c47-2d5a-4914-a132-182c70b9f970",
+          "title": "Getting Started",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "37263c47-2d5a-4914-a132-182c70b9f970",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 216656,
+              "key": "160fc06d-18af-4204-a3f3-6643d123f366",
+              "title": "Getting Started, Camera Calibration",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0zlyx5nL8Uo",
+                "china_cdn_id": "0zlyx5nL8Uo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 206207,
+          "key": "77d68b8f-f3e4-4305-8459-560897465a0f",
+          "title": "Distortion Correction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "77d68b8f-f3e4-4305-8459-560897465a0f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 1015978,
+              "key": "80b83c7c-ab40-4080-825e-03ad5be26bb1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This uses a visual to convey the big idea - all about distortion and that is what this lesson is about so the students understand the motivation for the lesson.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 215904,
+              "key": "5ae54ede-98ac-4188-b49d-15d9528ae6f1",
+              "title": "Distortion",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Bv3o0INBQIU",
+                "china_cdn_id": "Bv3o0INBQIU.mp4"
+              }
+            },
+            {
+              "id": 216657,
+              "key": "868ab06d-b2eb-4fa4-9535-190b667e065b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Distortion** \n\nImage distortion occurs when a camera looks at 3D objects in the real world and transforms them into a 2D image; this transformation isn’t perfect. Distortion actually changes what the shape and size of these 3D objects appear to be. So, the first step in analyzing camera images, is to undo this distortion so that you can get correct and useful information out of them.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 215930,
+          "key": "667e0951-99ed-4b8f-b972-3b5614aac3b8",
+          "title": "Effects of Distortion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "667e0951-99ed-4b8f-b972-3b5614aac3b8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215931,
+              "key": "bcfaac40-a630-4b33-bbef-9f3250b6eec6",
+              "title": "Importance of Correcting for Distortion",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bcfaac40-a630-4b33-bbef-9f3250b6eec6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Why is it important to correct for image distortion?",
+                "answers": [
+                  {
+                    "id": "a1479673640623",
+                    "text": "Distortion can change the apparent size of an object in an image.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1479673706220",
+                    "text": "Distortion can change the apparent shape of an object in an image.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1479673734349",
+                    "text": "Distortion can cause an object's appearance to change depending on where it is in the field of view.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1479673735468",
+                    "text": "Distortion can make objects appear closer or farther away than they actually are.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 206211,
+          "key": "a9f8aeb5-d619-4a58-aa90-6b1bb81cd675",
+          "title": "Pinhole Camera Model",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a9f8aeb5-d619-4a58-aa90-6b1bb81cd675",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 216659,
+              "key": "e3a15169-23ad-499d-a426-d12082b867be",
+              "title": "Pinhole Camera Model and Types of Distortion",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FBHyHUN-A8c",
+                "china_cdn_id": "FBHyHUN-A8c.mp4"
+              }
+            },
+            {
+              "id": 216658,
+              "key": "d09455d6-1c12-467f-9533-3769fdd429f5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Types of Distortion**\n\nReal cameras use curved lenses to form an image, and light rays often bend a little too much or too little at the edges of these lenses. This creates an effect that distorts the edges of images, so that lines or objects appear more or less curved than they actually are. This is called **radial distortion**, and it’s the most common type of distortion.\n\nAnother type of distortion, is **tangential distortion**. This occurs when a camera’s lens is not aligned perfectly parallel to the imaging plane, where the camera film or sensor is. This makes an image look tilted so that some objects appear farther away or closer than they actually are.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216652,
+              "key": "5d5a3d21-efd1-4970-8bf8-bfabd5c5cf08",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Distortion Coefficients and Correction**\n\nThere are three coefficients needed to correct for **radial distortion**: **k1**, **k2**, and **k3**. To correct the appearance of radially distorted points in an image, one can use a correction formula.\n\nIn the following equations, <span class=\"mathquill\">(x, y)</span> is a point in a distorted image. To undistort these points, OpenCV calculates **r**, which is the known distance between a point in an undistorted (corrected) image \n<span class=\"mathquill\">(x_{corrected}, y_{corrected})</span> \nand the center of the image distortion, which is often the center of that image <span class=\"mathquill\">(x_c, y_c)</span>. This center point <span class=\"mathquill\">(x_c, y_c)</span> is sometimes referred to as the *distortion center*. These points are pictured below.\n\n*Note*: The distortion coefficient **k3** is required to accurately reflect *major* radial distortion (like in wide angle lenses). However, for minor radial distortion, which most regular camera lenses have, k3 has a value close to or equal to zero and is negligible. So, in OpenCV, you can choose to ignore this coefficient; this is why it appears at the end of the distortion values array: [k1, k2, p1, p2, k3]. In this course, we will use it in all calibration calculations so that our calculations apply to a *wider* variety of lenses (wider, like wide angle, haha) and can correct for both minor and major radial distortion.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217685,
+              "key": "7237b7a8-191e-4f58-8f5e-3ab802550c46",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/5840ae19_screen-shot-2016-12-01-at-3.10.19-pm/screen-shot-2016-12-01-at-3.10.19-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7237b7a8-191e-4f58-8f5e-3ab802550c46",
+              "caption": "Points in a distorted and undistorted (corrected) image. The point (x, y) is a single point in a distorted image and (x_corrected, y_corrected) is where that point will appear in the undistorted (corrected) image.",
+              "alt": null,
+              "width": 920,
+              "height": 392,
+              "instructor_notes": null
+            },
+            {
+              "id": 508643,
+              "key": "12bd6934-078a-40f1-a385-e3f43d6574a3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<div class='mathquill'>x_{distorted} = x_{ideal} (1 + k_1r^2 + k_2r^4 + k_3r^6)</div>\n<div class='mathquill'>y_{distorted} = y_{ideal} (1 + k_1r^2 + k_2r^4 + k_3r^6)</div>\n<h6 style=\"text-align: center;\">Radial distortion correction.</h6>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216654,
+              "key": "1036b4bd-9968-40f8-90d8-1aacd679f56c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "There are two more coefficients that account for **tangential distortion**: **p1** and **p2**, and this distortion can be corrected using a different correction formula.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508644,
+              "key": "0377f701-5592-4a8e-ab53-c12f0a8cd2a0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<div class='mathquill'>x_{corrected} = x + [2p_1xy + p_2(r^2 + 2x^2)]</div>\n<div class='mathquill'>y_{corrected} = y + [p_1(r^2 + 2y^2) + 2p_2xy]</div>\n<h6 style=\"text-align: center;\">Tangential distortion correction.</h6>",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 215932,
+          "key": "5c6e36cd-5662-4599-8348-c09d7a8ed781",
+          "title": "Image Formation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5c6e36cd-5662-4599-8348-c09d7a8ed781",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215933,
+              "key": "43450a07-fdf4-4b0c-b789-3ad6c51fdd21",
+              "title": "Pinhole Camera Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "43450a07-fdf4-4b0c-b789-3ad6c51fdd21",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Fun fact: the \"pinhole camera\" is not just a model, but was actually the earliest means of projecting images, [first documented almost 2500 years ago in China!](https://en.wikipedia.org/wiki/Camera_obscura)\n\nNow back to computer vision... what is the fundamental difference between images formed with a pinhole camera and those formed using lenses?",
+                "answers": [
+                  {
+                    "id": "a1479675251095",
+                    "text": "Images formed by a pinhole camera are always flipped upside down, lensed images appear upright.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1479676137492",
+                    "text": "Pinhole camera images are black and white, while lenses form color images.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1479676209576",
+                    "text": "Pinhole camera images are free from distortion, but lenses tend to introduce image distortion.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1479676252721",
+                    "text": "Images formed by pinhole cameras are the same as those formed using lenses.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 206216,
+          "key": "ac206923-823e-4806-9379-9db687fd22cf",
+          "title": "Measuring Distortion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ac206923-823e-4806-9379-9db687fd22cf",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215906,
+              "key": "d802755b-8f3c-409f-9dcc-d065f5dc4a9a",
+              "title": "Distortion",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "q3B71N6FrGw",
+                "china_cdn_id": "q3B71N6FrGw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 206228,
+          "key": "bf149677-e05e-4813-a6ea-5fe76021516a",
+          "title": "Finding Corners",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bf149677-e05e-4813-a6ea-5fe76021516a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 213346,
+              "key": "f67905dc-4207-474b-8e74-0baf583c085e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Finding Corners\n===\n\nIn this exercise, you'll use the OpenCV functions `findChessboardCorners()` and `drawChessboardCorners()` to automatically find and draw corners in an image of a chessboard pattern.\n\nTo learn more about both of those functions, you can have a look at the OpenCV documentation here: [cv2.findChessboardCorners()](http://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#cv2.findChessboardCorners) and [cv2.drawChessboardCorners()](http://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#cv2.drawChessboardCorners).\n\n\nApplying these two functions to a sample image, you'll get a result like this:\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217419,
+              "key": "29285a48-9c83-411e-b417-dcd6f742329f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/583dcf04_corners-found3/corners-found3.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/29285a48-9c83-411e-b417-dcd6f742329f",
+              "caption": "",
+              "alt": null,
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            },
+            {
+              "id": 217420,
+              "key": "a78afc11-e45f-45bc-b467-8aa8e733adf9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the following exercise, your job is simple.  Count the number of corners in any given row and enter that value in `nx`. Similarly, count the number of corners in a given column and store that in `ny`.  Keep in mind that \"corners\" are only points where two black and two white squares intersect, in other words, only count inside corners, not outside corners.\n\nIf you'd like to test the above image (before drawing the corners) on your own machine, download it [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Advanced_Lane_Finding_Images/calibration_test.png).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 213340,
+              "key": "10048649751",
+              "title": "Finding Corners",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "10048649751",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "Finding Corners",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "10041979835",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\nimport cv2\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\n\n# prepare object points\nnx = 0#TODO: enter the number of inside corners in x\nny = 0#TODO: enter the number of inside corners in y\n\n# Make a list of calibration images\nfname = 'calibration_test.png'\nimg = cv2.imread(fname)\n\n# Convert to grayscale\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n\n# Find the chessboard corners\nret, corners = cv2.findChessboardCorners(gray, (nx, ny), None)\n\n# If found, draw corners\nif ret == True:\n    # Draw and display the corners\n    cv2.drawChessboardCorners(img, (nx, ny), corners, ret)\n    plt.imshow(img)\n",
+                    "name": "find_corners.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 801514,
+              "key": "9b4aa933-f7a9-46e8-ab07-8e89e060c70b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<div id=\"spoiler_1\" style=\"display:none\">\nYou can count these in the image above - there are eight inside corners for x (nx=8) and six inside corners for y (ny=6).\n</div>\n<button title=\"Click to show/hide content\" type=\"button\" onclick=\"if(document.getElementById('spoiler_1') .style.display=='none') {document.getElementById('spoiler_1') .style.display=''}else{document.getElementById('spoiler_1') .style.display='none'}\">Show Solution</button>",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 213371,
+          "key": "a30f45cb-c1c0-482c-8e78-a26604841ec0",
+          "title": "Calibrating Your Camera",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a30f45cb-c1c0-482c-8e78-a26604841ec0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215907,
+              "key": "13ee6c3b-5031-4e41-9ad0-cd6e02b76569",
+              "title": "Chessboards",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lA-I22LtvD4",
+                "china_cdn_id": "lA-I22LtvD4.mp4"
+              }
+            },
+            {
+              "id": 394026,
+              "key": "71a7390f-ef87-4b4e-a8fe-31d9cc20a23b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Note Regarding Corner Coordinates\nSince the origin corner is (0,0,0) the final corner is (6,4,0) relative to this corner rather than (7,5,0).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216672,
+              "key": "895741df-9315-4442-8e1d-8e46641a09d1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "** Examples of Useful Code**\n\nConverting an image, imported by cv2 or the glob API, to grayscale:\n```python\ngray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)\n```\n\n*Note*: If you are reading in an image using mpimg.imread() this will read in an **RGB** image and you should convert to grayscale using *cv2.COLOR_RGB2GRAY*, but if you are using cv2.imread() or the glob API, as happens in this video example, this will read in a **BGR** image and you should convert to grayscale using *cv2.COLOR_BGR2GRAY*. We'll learn more about color conversions later on in this lesson, but please keep this in mind as you write your own code and look at code examples.\n\n\n\nFinding chessboard corners (for an 8x6 board):\n```python\nret, corners = cv2.findChessboardCorners(gray, (8,6), None)\n```\n\nDrawing detected corners on an image:\n```python\nimg = cv2.drawChessboardCorners(img, (8,6), corners, ret)\n```\n\nCamera calibration, given object points, image points, and the **shape of the grayscale image**:\n```python\nret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)\n```\n\nUndistorting a test image:\n```python\ndst = cv2.undistort(img, mtx, dist, None, mtx)\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217695,
+              "key": "12f1783c-2554-4b04-9d5e-fd0141fa0698",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### A note on image shape\n\nThe shape of the image, which is passed into the **calibrateCamera** function, is just the height and width of the image. One way to retrieve these values is by retrieving them from the **grayscale image shape** array `gray.shape[::-1]`. This returns the image width and height in pixel values like (1280, 960). \n\nAnother way to retrieve the image shape, is to get them directly from the *color* image by retrieving the first two values in the color image shape array using `img.shape[1::-1]`. This code snippet asks for just the first two values in the shape array, and reverses them.  Note that in our case we are working with a greyscale image, so we only have 2 dimensions (color images have three, height, width, and depth), so this is not necessary.\n\nIt's important to use an entire grayscale image shape *or* the first two values of a color image shape. This is because the entire _shape_ of a color image will include a third value -- the number of color channels -- in addition to the height and width of the image. For example the shape array of a color image might be (960, 1280, 3), which are the pixel height and width of an image (960, 1280) and a third value (3) that represents the three color channels in the color image which you'll learn more about later, and if you try to pass these three values into the calibrateCamera function, you'll get an error.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 213372,
+          "key": "5415176a-d615-49af-8535-53a385768a23",
+          "title": "Correcting for Distortion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5415176a-d615-49af-8535-53a385768a23",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 213437,
+              "key": "a1b3be65-9369-4f78-822c-966211ec092f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/582e25cf_orig-and-undist/orig-and-undist.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a1b3be65-9369-4f78-822c-966211ec092f",
+              "caption": "",
+              "alt": null,
+              "width": 2158,
+              "height": 818,
+              "instructor_notes": null
+            },
+            {
+              "id": 213404,
+              "key": "c647af2e-3409-4885-b745-4cccb9015bcd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here, you'll get a chance to try camera calibration and distortion correction for yourself!  \n\nThere are two main steps to this process: use chessboard images to obtain image points and object points, and then use the OpenCV functions `cv2.calibrateCamera()` and `cv2.undistort()` to compute the calibration and undistortion.  \n\nUnfortunately, we can't perform the extraction of object points and image points in the browser quiz editor, so we provide these for you in the quiz below.  \n\nTry computing the calibration and undistortion in the exercise below, and if you want to play with extracting object points and image points yourself, fork the Jupyter notebook and images in [this repository](https://github.com/udacity/CarND-Camera-Calibration). You can also download the [distortion pickle file](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Advanced_Lane_Finding_Images/correct_for_distortion/wide_dist_pickle.p) and [test image](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Advanced_Lane_Finding_Images/correct_for_distortion/test_image.png) used in the below quiz if you'd like to run the below code on your own machine.\n\nIf you run into any *errors* as you run your code, please refer to the **Examples of Useful Code** section in the previous video and make sure that your code syntax matches up!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 213406,
+              "key": "10048640811",
+              "title": "Distortion Correction",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "10048640811",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "Distortion Correction",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "10048610897",
+                "initial_code_files": [
+                  {
+                    "text": "import pickle\nimport cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\n\n# Read in the saved objpoints and imgpoints\ndist_pickle = pickle.load( open( \"wide_dist_pickle.p\", \"rb\" ) )\nobjpoints = dist_pickle[\"objpoints\"]\nimgpoints = dist_pickle[\"imgpoints\"]\n\n# Read in an image\nimg = cv2.imread('test_image.png')\n\n# TODO: Write a function that takes an image, object points, and image points\n# performs the camera calibration, image distortion correction and \n# returns the undistorted image\ndef cal_undistort(img, objpoints, imgpoints):\n    # Use cv2.calibrateCamera() and cv2.undistort()\n    undist = np.copy(img)  # Delete this line\n    return undist\n\nundistorted = cal_undistort(img, objpoints, imgpoints)\n\nf, (ax1, ax2) = plt.subplots(1, 2, figsize=(24, 9))\nf.tight_layout()\nax1.imshow(img)\nax1.set_title('Original Image', fontsize=50)\nax2.imshow(undistorted)\nax2.set_title('Undistorted Image', fontsize=50)\nplt.subplots_adjust(left=0., right=1, top=0.9, bottom=0.)",
+                    "name": "distort_correct.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 801515,
+              "key": "43e08dd9-138c-46f9-8016-0d83a6c3345b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<div id=\"spoiler_1\" style=\"display:none\">\nHere is one example answer:\n```\ndef cal_undistort(img, objpoints, imgpoints):\n    ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, img.shape[1:], None, None)\n    undist = cv2.undistort(img, mtx, dist, None, mtx)\n    return undist\n```\nNote that the quiz is loading this image as channels first, so we use `img.shape[1:]` to get the height and width. This should be adjusted as necessary, such as is seen on the previous page for a grayscale image.\n</div>\n<button title=\"Click to show/hide content\" type=\"button\" onclick=\"if(document.getElementById('spoiler_1') .style.display=='none') {document.getElementById('spoiler_1') .style.display=''}else{document.getElementById('spoiler_1') .style.display='none'}\">Show Solution</button>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 213405,
+              "key": "e1e2cc92-33ae-47fe-acb5-bc7bfdca4b40",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Challenge: Calibrate your own camera!\n===\n\nIf you're up for a challenge, go ahead and try these steps on your own camera images.  Just print out a [chessboard pattern](http://docs.opencv.org/2.4/_downloads/pattern.png), stick it to a flat surface, and take 20 or 30 pictures of it.  Make sure to take pictures of the pattern over the entire field of view of your camera, particularly near the edges.  \n\nTo extract object points and image points you can check out the Jupyter notebook in [this repository](https://github.com/udacity/CarND-Camera-Calibration).  If you're following along with the code in the notebook, be sure you set the right size for your chessboard, the link above is to a 9 x 6 pattern, while before we were using an 8 x 6.  ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 213441,
+          "key": "bf1690aa-fda6-4ead-b839-86212ebde7f2",
+          "title": "Lane Curvature",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bf1690aa-fda6-4ead-b839-86212ebde7f2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215908,
+              "key": "634239bf-8381-4142-af05-8daf59483490",
+              "title": "Lane Curvature",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2UQ22uRybuU",
+                "china_cdn_id": "2UQ22uRybuU.mp4"
+              }
+            },
+            {
+              "id": 216669,
+              "key": "40a0ba94-9265-4787-85e6-e48ead2e4edf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "** Calculating Lane Curvature**\n\nSelf-driving cars need to be told the correct steering angle to turn, left or right. You can calculate this angle if you know a few things about the speed and dynamics of the car and how much the lane is curving. \n\nOne way to calculate the curvature of a lane line, is to fit a 2nd degree polynomial to that line, and from this you can easily extract useful information.\n\nFor a lane line that is close to vertical, you can fit a line using this formula: **f(y) = Ay^2 + By + C**, where A, B, and C are coefficients.\n\nA gives you the curvature of the lane line, B gives you the heading or direction that the line is pointing, and C gives you the position of the line based on how far away it is from the very left of an image (y = 0).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 213442,
+          "key": "5aba544c-13b9-440f-b35c-f67aef7e2946",
+          "title": "Perspective Transform",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5aba544c-13b9-440f-b35c-f67aef7e2946",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215909,
+              "key": "959e88f0-3f19-43bf-a2b2-0d81ae3b5075",
+              "title": "Perspective Transform",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JTesiOANhB0",
+                "china_cdn_id": "JTesiOANhB0.mp4"
+              }
+            },
+            {
+              "id": 216670,
+              "key": "41f4a932-3ed2-4e2a-81fc-7384febbb605",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "** Perspective transform**\n\nA perspective transform maps the points in a given image to different, desired, image points with a new perspective. The perspective transform you’ll be most interested in is a bird’s-eye view transform that let’s us view a lane from above; this will be useful for calculating the lane curvature later on. Aside from creating a bird’s eye view representation of an image, a perspective transform can also be used for all kinds of different view points.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 233467,
+          "key": "69c45778-f3a1-43bf-908a-584be3b3bb45",
+          "title": "Curvature and Perspective",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "69c45778-f3a1-43bf-908a-584be3b3bb45",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 233468,
+              "key": "1e20d796-a3b1-48ff-b42f-1363bae2fc5b",
+              "title": "Curvature and Perspective",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "1e20d796-a3b1-48ff-b42f-1363bae2fc5b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "There are various reasons you might want to perform a perspective transform on an image, but in the case of road images taken from our front-facing camera on a car, why are we interested in doing a perspective transform?",
+                "answers": [
+                  {
+                    "id": "a1483407002240",
+                    "text": "Because it is more straightforward to take a gradient on a top-down view of the road image.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1483407099779",
+                    "text": "Because ultimately we want to  measure the curvature of the lines, and to do that, we need to transform to a top-down view.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1483407100926",
+                    "text": "Because transforming the perspective removes the effect of curvature from our measurement.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1483407228129",
+                    "text": "Because transforming the perspective removes the effect of shadows and color differences from our road image.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 213443,
+          "key": "d33ae3ea-01aa-414e-ad20-208dc161793d",
+          "title": "Transform a Stop Sign",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d33ae3ea-01aa-414e-ad20-208dc161793d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215910,
+              "key": "7e0ffffd-5e8f-4bd5-9f39-68ab84590e5b",
+              "title": "Transforming a Stop Sign",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OXILkkXXY8A",
+                "china_cdn_id": "OXILkkXXY8A.mp4"
+              }
+            },
+            {
+              "id": 216673,
+              "key": "9c05e92d-f4bc-4f00-9dd5-2cc6c361510e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Examples of Useful Code**\n\nCompute the perspective transform, M, given source and destination points: \n```python\nM = cv2.getPerspectiveTransform(src, dst)\n```\n\nCompute the inverse perspective transform: \n```python\nMinv = cv2.getPerspectiveTransform(dst, src)\n```\n\nWarp an image using the perspective transform, M:\n```python\nwarped = cv2.warpPerspective(img, M, img_size, flags=cv2.INTER_LINEAR)\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217713,
+              "key": "77009ed4-d320-4954-82a3-e05de2382036",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "*Note*: When you apply a perspective transform, choosing four source points manually, as we did in this video, is often not the best option. There are many other ways to select source points. For example, many perspective transform algorithms will programmatically detect four source points in an image based on edge or corner detection and analyzing attributes like color and surrounding pixels.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 233465,
+          "key": "ceafc0df-0d07-4a1c-bf22-eae6137ddf26",
+          "title": "Intuitions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ceafc0df-0d07-4a1c-bf22-eae6137ddf26",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 233466,
+              "key": "6ac69f1c-6cd0-4b5e-939b-7dcc539d8fd7",
+              "title": "Intuitions",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "6ac69f1c-6cd0-4b5e-939b-7dcc539d8fd7",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Here's a matching challenge to test your intuition about camera calibration, distortion, and perspective transforms.  Drag the answers to the appropriate location in the column on the right."
+                },
+                "concepts_label": "Process",
+                "answers_label": "Purpose",
+                "concepts": [
+                  {
+                    "text": "Camera Calibration",
+                    "correct_answer": {
+                      "id": "a1483404612683",
+                      "text": "To compute the transformation between 3D object points in the world and 2D image points."
+                    }
+                  },
+                  {
+                    "text": "Distortion Correction",
+                    "correct_answer": {
+                      "id": "a1483404764818",
+                      "text": "To ensure that the geometrical shape of objects is represented consistently, no matter where they appear in an image."
+                    }
+                  },
+                  {
+                    "text": "Perspective Transform",
+                    "correct_answer": {
+                      "id": "a1483404766274",
+                      "text": "To transform an image such that we are effectively viewing objects from a different angle or direction."
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1483404612683",
+                    "text": "To compute the transformation between 3D object points in the world and 2D image points."
+                  },
+                  {
+                    "id": "a1483404764818",
+                    "text": "To ensure that the geometrical shape of objects is represented consistently, no matter where they appear in an image."
+                  },
+                  {
+                    "id": "a1483405110816",
+                    "text": "To measure the orientation angles of objects in an image"
+                  },
+                  {
+                    "id": "a1483404766274",
+                    "text": "To transform an image such that we are effectively viewing objects from a different angle or direction."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 213444,
+          "key": "ae58b4d0-b909-4f4b-9332-67d80a1b4029",
+          "title": "Undistort and Transform",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ae58b4d0-b909-4f4b-9332-67d80a1b4029",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 213453,
+              "key": "6c3b73c9-10e2-4df0-ab48-09629e676d7f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Undistort and Transform Perspective\n===\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 213454,
+              "key": "4307abeb-cbae-4c31-b156-2146a1a6e5a6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/582e3bec_undist-and-warp/undist-and-warp.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4307abeb-cbae-4c31-b156-2146a1a6e5a6",
+              "caption": "",
+              "alt": null,
+              "width": 1069,
+              "height": 407,
+              "instructor_notes": null
+            },
+            {
+              "id": 213452,
+              "key": "c296e674-6652-450f-b937-329880069d7b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\nHere's a tricky quiz for you!  You have now seen how to find corners, calibrate your camera, undistort an image, and apply a perspective transform.  Now it's your chance to perform all these steps on an image.  In the last quiz you calibrated the camera, so here I'm giving you the camera matrix, `mtx`, and the distortion coefficients `dist` to start with.  \n\nYour goal is to generate output like the image shown above.  To do that, you need to write a function that takes your distorted image as input and completes the following steps:   \n* Undistort the image using `cv2.undistort()` with `mtx` and `dist`\n* Convert to grayscale  \n* Find the chessboard corners  \n* Draw corners  \n* Define 4 source points (the outer 4 corners detected in the chessboard pattern)\n* Define 4 destination points (must be listed in the same order as src points!)\n* Use `cv2.getPerspectiveTransform()` to get `M`, the transform matrix\n* use `cv2.warpPerspective()` to apply `M` and warp your image to a top-down view\n\n**HINT:** Source points are the x and y pixel values of any four corners on your chessboard, you can extract these from the `corners` array output from `cv2.findChessboardCorners()`.  Your destination points are the x and y pixel values of where you want those four corners to be mapped to in the output image.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217704,
+              "key": "aeffb5d5-96bb-4930-9c74-7c9f1b2395ca",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you run into any *errors* as you run your code, please refer to the **Examples of Useful Code** section in the previous video and make sure that your code syntax matches up! For this example, please also refer back to the examples in the _Calibrating Your Camera_ video. You can also download the [distortion pickle file](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Advanced_Lane_Finding_Images/correct_for_distortion/wide_dist_pickle.p) and [test image](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Advanced_Lane_Finding_Images/correct_for_distortion/test_image2.png) used in the below quiz if you'd like to run the below code on your own machine.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 213445,
+              "key": "aa1cf43c-c016-4ea4-be44-79f03140ff96",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "aa1cf43c-c016-4ea4-be44-79f03140ff96",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4755571968442368",
+                "initial_code_files": [
+                  {
+                    "text": "import pickle\nimport cv2\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\n\n# Read in the saved camera matrix and distortion coefficients\n# These are the arrays you calculated using cv2.calibrateCamera()\ndist_pickle = pickle.load( open( \"wide_dist_pickle.p\", \"rb\" ) )\nmtx = dist_pickle[\"mtx\"]\ndist = dist_pickle[\"dist\"]\n\n# Read in an image\nimg = cv2.imread('test_image2.png')\nnx = 8 # the number of inside corners in x\nny = 6 # the number of inside corners in y\n\n# MODIFY THIS FUNCTION TO GENERATE OUTPUT \n# THAT LOOKS LIKE THE IMAGE ABOVE\ndef corners_unwarp(img, nx, ny, mtx, dist):\n    # Pass in your image into this function\n    # Write code to do the following steps\n    # 1) Undistort using mtx and dist\n    # 2) Convert to grayscale\n    # 3) Find the chessboard corners\n    # 4) If corners found: \n            # a) draw corners\n            # b) define 4 source points src = np.float32([[,],[,],[,],[,]])\n                 #Note: you could pick any four of the detected corners \n                 # as long as those four corners define a rectangle\n                 #One especially smart way to do this would be to use four well-chosen\n                 # corners that were automatically detected during the undistortion steps\n                 #We recommend using the automatic detection of corners in your code\n            # c) define 4 destination points dst = np.float32([[,],[,],[,],[,]])\n            # d) use cv2.getPerspectiveTransform() to get M, the transform matrix\n            # e) use cv2.warpPerspective() to warp your image to a top-down view\n    #delete the next two lines\n    M = None\n    warped = np.copy(img) \n    return warped, M\n\ntop_down, perspective_M = corners_unwarp(img, nx, ny, mtx, dist)\nf, (ax1, ax2) = plt.subplots(1, 2, figsize=(24, 9))\nf.tight_layout()\nax1.imshow(img)\nax1.set_title('Original Image', fontsize=50)\nax2.imshow(top_down)\nax2.set_title('Undistorted and Warped Image', fontsize=50)\nplt.subplots_adjust(left=0., right=1, top=0.9, bottom=0.)\n",
+                    "name": "distort_and_transform.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 215885,
+          "key": "717b603e-4526-4a5d-ba2b-ed34f7e0b516",
+          "title": "How I Did It",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "717b603e-4526-4a5d-ba2b-ed34f7e0b516",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215887,
+              "key": "f6f52465-0864-4b74-aa6b-cfccf6ab96a5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Solution to Undistort and Transform quiz:\n===\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 215886,
+              "key": "8872efcc-3bbb-4b64-b772-b1f72fc86998",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "That was a tricky quiz!  \n\nLet's take a closer look at the pieces involved. These steps will all be useful when you get to the project at the end of this section.\n\nFirst off, we defined a function for you, `corners_unwarp()`. The function accepts an image and our previously calculated values for the camera matrix, `mtx`, and distortion coefficients, `dist`.  \n\nThen you had to implement the function.\n\nHere's how I implemented mine:\n\n```python\n# Define a function that takes an image, number of x and y points, \n# camera matrix and distortion coefficients\ndef corners_unwarp(img, nx, ny, mtx, dist):\n    # Use the OpenCV undistort() function to remove distortion\n    undist = cv2.undistort(img, mtx, dist, None, mtx)\n    # Convert undistorted image to grayscale\n    gray = cv2.cvtColor(undist, cv2.COLOR_BGR2GRAY)\n    # Search for corners in the grayscaled image\n    ret, corners = cv2.findChessboardCorners(gray, (nx, ny), None)\n\n    if ret == True:\n        # If we found corners, draw them! (just for fun)\n        cv2.drawChessboardCorners(undist, (nx, ny), corners, ret)\n        # Choose offset from image corners to plot detected corners\n        # This should be chosen to present the result at the proper aspect ratio\n        # My choice of 100 pixels is not exact, but close enough for our purpose here\n        offset = 100 # offset for dst points\n        # Grab the image shape\n        img_size = (gray.shape[1], gray.shape[0])\n\n        # For source points I'm grabbing the outer four detected corners\n        src = np.float32([corners[0], corners[nx-1], corners[-1], corners[-nx]])\n        # For destination points, I'm arbitrarily choosing some points to be\n        # a nice fit for displaying our warped result \n        # again, not exact, but close enough for our purposes\n        dst = np.float32([[offset, offset], [img_size[0]-offset, offset], \n                                     [img_size[0]-offset, img_size[1]-offset], \n                                     [offset, img_size[1]-offset]])\n        # Given src and dst points, calculate the perspective transform matrix\n        M = cv2.getPerspectiveTransform(src, dst)\n        # Warp the image using OpenCV warpPerspective()\n        warped = cv2.warpPerspective(undist, M, img_size)\n    \n    # Return the resulting image and matrix\n    return warped, M\n\n```\n\n## Output\n\nHere's the output you needed to achieve:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217421,
+              "key": "6392acd7-e023-41af-b559-78e4a31de91c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/582e3bec_undist-and-warp/undist-and-warp.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6392acd7-e023-41af-b559-78e4a31de91c",
+              "caption": "",
+              "alt": null,
+              "width": 1069,
+              "height": 407,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 646039,
+          "key": "0544382b-5e88-4650-8693-f028e2575d0c",
+          "title": "Coming Up",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0544382b-5e88-4650-8693-f028e2575d0c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 646040,
+              "key": "4042ab5c-a563-412f-91ac-a5b162dbc857",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Coming Up Next",
+              "instructor_notes": ""
+            },
+            {
+              "id": 646204,
+              "key": "9889dfdb-ec54-4095-972a-b6c58ffb962e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5ab2f025_1-c-advanced-techniques-for-lane-finding2x/1-c-advanced-techniques-for-lane-finding2x.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9889dfdb-ec54-4095-972a-b6c58ffb962e",
+              "caption": "Halfway There!",
+              "alt": "",
+              "width": 300,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 646205,
+              "key": "feecb1c5-7ac4-42f4-aa0a-f43d75fcf07a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\nNice work so far! You've learned a lot about how cameras work, the distortions they cause, and how to correct for that distortion. You've also learned about perspective transformation - a great method to help you see a view from a different angle than the original image.\n\nWhile you'll still be using the earlier concepts later on, we'll be shifting into color and gradient thresholds, a way of determining where certain objects occur in images that have already been undistorted and perspective transformed. From there, you'll learn how to identify the lane lines themselves.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

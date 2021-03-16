@@ -1,0 +1,223 @@
+{
+  "id": 1970,
+  "project_id": 238,
+  "upload_types": [
+    "repo",
+    "zip"
+  ],
+  "file_filter_regex": "\\A(?!(((.*/)?(__MACOSX|\\.git|node_modules|bower_components|jspm_packages|\\.idea|build|.ipynb_checkpoints|\\.Trash-0|logs)(\\Z|/))))((.*\\.(css|docx|gradle|htm|html|java|js|markdown|md|pdf|py|rmd|rst|sql|swift|txt|xml|yaml|yml)\\Z)|((.*/)?(README|Readme|readme|Makefile)\\Z))",
+  "nomination_eligible": true,
+  "stand_out": "Here are a few ideas for going beyond the requirements outlined in the rubric.\n\nAUGMENT THE TRAINING DATA\nAugmenting the training set might help improve model performance. Common data augmentation techniques include rotation, translation, zoom, flips, and/or color perturbation. These techniques can be used individually or combined. \n\nANALYZE NEW IMAGE PERFORMANCE IN MORE DETAIL \nCalculating the accuracy on these five German traffic sign images found on the web might not give a comprehensive overview of how well the model is performing. Consider ways to do a more detailed analysis of model performance by looking at predictions in more detail. For example, calculate the [precision and recall](https://en.wikipedia.org/wiki/Precision_and_recall) for each traffic sign type from the test set and then compare performance on these five new images..\n\nIf one of the new images is a stop sign but was predicted to be a bumpy road sign, then we might expect a low recall for stop signs. In other words, the model has trouble predicting on stop signs. If one of the new images is a 100 km/h sign but was predicted to be a stop sign, we might expect precision to be low for stop signs. In other words, if the model says something is a stop sign, we're not very sure that it really is a stop sign. \n\nLooking at performance of individual sign types can help guide how to better augment the data set or how to fine tune the model. \n\nCREATE VISUALIZATIONS OF THE SOFTMAX PROBABILITIES\nFor each of the five new images, create a graphic visualization of the soft-max probabilities. Bar charts might work well.\n\nVISUALIZE LAYERS OF THE NEURAL NETWORK\nSee Step 4 of the Iptyon notebook for details about how to do this.",
+  "hide_criteria": false,
+  "created_at": "2018-06-04T18:09:03.447Z",
+  "updated_at": "2019-03-26T17:28:46.188Z",
+  "hashtag": "",
+  "max_upload_size_mb": 500,
+  "estimated_sla": null,
+  "project_assistant_enabled": false,
+  "checkmate_enabled": false,
+  "checkmate_metadata": null,
+  "available_for_cert_project": false,
+  "classroom_node_id": 634676,
+  "classroom_project_key": "02c39917-5e4e-4ed4-861c-e2dd1bafb54a",
+  "language": "en-us",
+  "ndkeys": [
+    "nd013",
+    "nd026",
+    "nd013-ent"
+  ],
+  "coursekeys": [],
+  "sections": [
+    {
+      "id": 3985,
+      "name": "Files Submitted",
+      "created_at": "2018-06-04T18:14:48.412Z",
+      "updated_at": "2018-06-04T18:15:16.084Z",
+      "deleted_at": null,
+      "position": 0,
+      "rubric_id": 1970,
+      "rubric_items": [
+        {
+          "id": 11658,
+          "section_id": 3985,
+          "passed_description": "The project submission includes all required files.\n\n* Ipython notebook with code\n* HTML output of the code\n* A writeup report (either pdf or markdown)",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T18:15:16.356Z",
+          "updated_at": "2018-06-04T18:15:57.886Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Submission Files",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 3986,
+      "name": "Dataset Exploration",
+      "created_at": "2018-06-04T18:14:49.186Z",
+      "updated_at": "2018-06-04T18:15:57.893Z",
+      "deleted_at": null,
+      "position": 1,
+      "rubric_id": 1970,
+      "rubric_items": [
+        {
+          "id": 11659,
+          "section_id": 3986,
+          "passed_description": "The submission includes a basic summary of the data set.",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T18:15:58.089Z",
+          "updated_at": "2018-06-04T18:17:13.986Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Dataset Summary",
+          "exceedable": false
+        },
+        {
+          "id": 11660,
+          "section_id": 3986,
+          "passed_description": "The submission includes an exploratory visualization on the dataset.",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T18:15:59.353Z",
+          "updated_at": "2018-06-04T18:17:13.996Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Exploratory Visualization",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 3987,
+      "name": "Design and Test a Model Architecture",
+      "created_at": "2018-06-04T18:14:50.059Z",
+      "updated_at": "2018-06-04T18:17:14.005Z",
+      "deleted_at": null,
+      "position": 2,
+      "rubric_id": 1970,
+      "rubric_items": [
+        {
+          "id": 11661,
+          "section_id": 3987,
+          "passed_description": "The submission describes the preprocessing techniques used and why these techniques were chosen.",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T18:17:14.261Z",
+          "updated_at": "2018-06-04T18:18:36.146Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Preprocessing",
+          "exceedable": false
+        },
+        {
+          "id": 11662,
+          "section_id": 3987,
+          "passed_description": "The submission provides details of the characteristics and qualities of the architecture, including the type of model used, the number of layers, and the size of each layer. Visualizations emphasizing particular qualities of the architecture are encouraged.",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T18:17:15.379Z",
+          "updated_at": "2018-06-04T18:18:36.154Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Model Architecture",
+          "exceedable": false
+        },
+        {
+          "id": 11663,
+          "section_id": 3987,
+          "passed_description": "The submission describes how the model was trained by discussing what optimizer was used, batch size, number of epochs and values for hyperparameters.",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T18:17:16.361Z",
+          "updated_at": "2018-06-04T18:18:36.163Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "Model Training",
+          "exceedable": false
+        },
+        {
+          "id": 11664,
+          "section_id": 3987,
+          "passed_description": "The submission describes the approach to finding a solution. Accuracy on the validation set is 0.93 or greater.",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T18:17:17.256Z",
+          "updated_at": "2018-06-04T18:18:36.171Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 3,
+          "criteria": "Solution Approach",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 3988,
+      "name": "Test a Model on New Images",
+      "created_at": "2018-06-04T18:14:50.959Z",
+      "updated_at": "2018-06-04T18:20:01.522Z",
+      "deleted_at": null,
+      "position": 3,
+      "rubric_id": 1970,
+      "rubric_items": [
+        {
+          "id": 11665,
+          "section_id": 3988,
+          "passed_description": "The submission includes five new German Traffic signs found on the web, and the images are visualized. Discussion is made as to particular qualities of the images or traffic signs in the images that are of interest, such as whether they would be difficult for the model to classify.",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T18:20:01.798Z",
+          "updated_at": "2018-06-04T18:20:59.737Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Acquiring New Images",
+          "exceedable": false
+        },
+        {
+          "id": 11666,
+          "section_id": 3988,
+          "passed_description": "The submission documents the performance of the model when tested on the captured images. The performance on the new images is compared to the accuracy results of the test set.",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T18:20:02.462Z",
+          "updated_at": "2018-06-04T18:20:59.749Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Performance on New Images",
+          "exceedable": false
+        },
+        {
+          "id": 11667,
+          "section_id": 3988,
+          "passed_description": "The top five softmax probabilities of the predictions on the captured images are outputted. The submission discusses how certain or uncertain the model is of its predictions.",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T18:20:03.161Z",
+          "updated_at": "2018-06-04T18:20:59.760Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "Model Certainty - Softmax Probabilities",
+          "exceedable": false
+        }
+      ]
+    }
+  ],
+  "project": {
+    "id": 238,
+    "name": "Traffic Sign Classification",
+    "nanodegree_key": "nd013",
+    "is_cert_project": false,
+    "audit_project_id": null,
+    "hashtag": null,
+    "audit_rubric_id": 1144,
+    "entitlement_required": null,
+    "is_career": null,
+    "recruitment_family_id": 9,
+    "created_at": "2016-10-20T18:05:24.138Z",
+    "updated_at": "2020-05-21T02:09:09.321Z",
+    "price": "14.0",
+    "ungradeable_price": "3.0",
+    "audit_price": null
+  }
+}

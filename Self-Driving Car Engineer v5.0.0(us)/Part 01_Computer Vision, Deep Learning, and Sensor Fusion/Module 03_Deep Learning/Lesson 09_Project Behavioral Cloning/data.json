@@ -1,0 +1,1266 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627014,
+      "key": "3fc8dd70-23b3-4f49-86eb-a8707f71f8dd",
+      "title": "Project: Behavioral Cloning",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Train a deep neural network to drive a car like you!\n",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/3fc8dd70-23b3-4f49-86eb-a8707f71f8dd/627014/1538943763457/Project%3A+Behavioral+Cloning+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/3fc8dd70-23b3-4f49-86eb-a8707f71f8dd/627014/1538943758660/Project%3A+Behavioral+Cloning+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "9334f0ad-ada8-4266-a2b2-e53a64286f73",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 17280,
+        "semantic_type": "Project",
+        "title": "Behavioral Cloning",
+        "description": "For this project, a reviewer will be testing the model that you generated on the first test track (the one to the left in the track selection options).\n\nWhether you decide to zip up your submission or submit a GitHub repo, please follow the naming conventions below to make it easy for reviewers to find the right files:\n\n* `model.py` - The script used to create and train the model.\n* `drive.py` - The script to drive the car. You can feel free to resubmit the original `drive.py` or make modifications and submit your modified version.\n* `model.h5` - The saved model. Here is the [documentation](https://keras.io/getting-started/faq/#how-can-i-save-a-keras-model) explaining how to create this file.\n* `writeup_report` as a markdown or pdf file. It should explain the structure of your network and training approach. The writeup must also include examples of images from the dataset in the discussion of the characteristics of the dataset. While we recommend using English for good practice, writing in any language is acceptable (reviewers will translate). There is no minimum word count so long as there are complete descriptions of the problems and the strategies. See the [rubric](https://review.udacity.com/#!/rubrics/1968/view) and the [writeup_template.md](https://github.com/udacity/CarND-Behavioral-Cloning-P3/blob/master/writeup_template.md) for more details about the expectations.\n* `video.mp4` - A video recording of your vehicle driving autonomously at least one lap around the track.\n\n**As a reminder all of the files we provide for this project ([rubric](https://review.udacity.com/#!/rubrics/1968/view), simulator, github repository, track 1 sample data) can be found in the lecture slide titled \"Project Resources\". **\n",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1968",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://s3.amazonaws.com/video.udacity-data.com/topher/2018/June/5b1575e9_screen-shot-2016-10-21-at-6.38.01-pm/screen-shot-2016-10-21-at-6.38.01-pm.png",
+          "width": 2880,
+          "height": 1708
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 663232,
+          "key": "ad77b467-124e-4417-9d14-9ece468105c4",
+          "title": "Vehicle Simulator",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ad77b467-124e-4417-9d14-9ece468105c4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663233,
+              "key": "a1d7c47e-39bd-40ce-9dc9-6f8af52f339a",
+              "title": "03 Deep Learning A04 Simulation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "K8ROKGMm-mc",
+                "china_cdn_id": "K8ROKGMm-mc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194829,
+          "key": "0b36b5de-49bd-435b-99cf-9c657838ff49",
+          "title": "Intro to Behavioral Cloning Project",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0b36b5de-49bd-435b-99cf-9c657838ff49",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 199178,
+              "key": "c48e58f2-262e-49c1-b6e6-1e041c663d51",
+              "title": "Behavioral Cloning Project",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "YXs-IwG9ISg",
+                "china_cdn_id": "YXs-IwG9ISg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 631713,
+          "key": "37030133-aad2-4dd3-97d9-eedf326360ea",
+          "title": "Project Resources",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "37030133-aad2-4dd3-97d9-eedf326360ea",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 631715,
+              "key": "bc5964e7-f10f-4624-8b58-d8a814d6c59c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Resources For Completing the Project\n\nThis project will be completed and submitted via workspaces.  The required files and resources, described below, are already present in Behavioral Cloning Project workspace. \n\n- The [GitHub repository](https://github.com/udacity/CarND-Behavioral-Cloning-P3) has the following files:\n    + `drive.py`: a Python script that you can use to drive the car autonomously, once your deep neural network model is trained\n    + `writeup_template.md`: a writeup template\n    + `video.py`: a script that can be used to make a video of the vehicle when it is driving autonomously\n-  [sample driving data](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/584f6edd_data/data.zip) (optional) - if you choose to use a workspace, this is already included in your files. You can find it in `/opt/carnd_p3/data/` (`/opt` is in the directory above `/home`, where your workspace is contained) *when using GPU mode only*. Note that if you choose to only use your own training data, you'll want to save it to a different directory to make sure they are not accidentally combined.\n- a simulator, containing two tracks\n\nWe encourage you to drive the vehicle in training mode and collect your own training data, but we have also included [sample driving data](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/584f6edd_data/data.zip) for the first track, which you can optionally use to train your network. You may need to collect additional data in order to get the vehicle to stay on the road.  To review project completion requirements, please see the [Project Rubric](https://review.udacity.com/#!/rubrics/432/view).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 631712,
+          "key": "15a7ef4d-2705-49cf-9669-01aae7041b20",
+          "title": "Running the Simulator",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "15a7ef4d-2705-49cf-9669-01aae7041b20",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 631722,
+              "key": "b8bf18e0-a082-4603-9c46-94290688800f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/March/58dc749a_sim-image/sim-image.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b8bf18e0-a082-4603-9c46-94290688800f",
+              "caption": "",
+              "alt": "",
+              "width": 1024,
+              "height": 767,
+              "instructor_notes": null
+            },
+            {
+              "id": 631716,
+              "key": "66d1b436-d06f-446d-bbab-d8c6b3253096",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here are the latest updates to the simulator:\n\n1. Steering is controlled via position mouse instead of keyboard. This creates better angles for training. Note the angle is based on the mouse distance. To steer hold the left mouse button and move left or right. To reset the angle to 0 simply lift your finger off the left mouse button.\n2. You can toggle record by pressing R, previously you had to click the record button (you can still do that).\n3. When recording is finished, saves all the captured images to disk at the same time instead of trying to save them while the car is still driving periodically. You can see a save status and play back of the captured data.\n4. You can takeover in autonomous mode. While W or S are held down you can control the car the same way you would in training mode. This can be helpful for debugging. As soon as W or S are let go autonomous takes over again.\n5. Pressing the spacebar in training mode toggles on and off cruise control (effectively presses W for you).\n6. Added a Control screen\n7. Track 2 was replaced from a mountain theme to Jungle with free assets , Note the track is challenging \n8. You can use brake input in drive.py by issuing negative throttle values\n\nIf you are interested here is the source code for the [simulator repository](https://github.com/udacity/self-driving-car-sim)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 631717,
+              "key": "274035cd-95f3-43a0-a456-5f62d0c67940",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "When you first run the simulator, you’ll see a configuration screen asking what size and graphical quality you would like. We suggest running at the smallest size and the fastest graphical quality. \nWe also suggest closing most other applications (especially graphically intensive applications) on your computer, so that your machine can devote its resources to running the simulator.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 631719,
+              "key": "02b0bf39-b721-410b-9a94-930948853cbc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Training Mode",
+              "instructor_notes": ""
+            },
+            {
+              "id": 631720,
+              "key": "8e36c5af-7c78-42fc-907d-98e3d6e702a3",
+              "title": "01 - Running The Simulator",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "rKw8md-zVno",
+                "china_cdn_id": "rKw8md-zVno.mp4"
+              }
+            },
+            {
+              "id": 631721,
+              "key": "448ac900-460d-42cb-8226-bb412240e7ef",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The next screen gives you two options: Training Mode and Autonomous Mode.\n\nSelect Training Mode.\n\nThe simulator will load and you will be able to drive the car like it’s a video game. Try it!\n\nYou'll use autonomous mode in a later step, after you've used the data you collect here to train your neural network.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 268327,
+          "key": "a5a71d1e-cf00-48d2-a87a-ac591a01b5e2",
+          "title": "Data Collection Tactics ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a5a71d1e-cf00-48d2-a87a-ac591a01b5e2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268330,
+              "key": "64702a59-567f-4f70-9669-737b50fad330",
+              "title": "02 - Data Collection",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kTJiHXJe_t4",
+                "china_cdn_id": "kTJiHXJe_t4.mp4"
+              }
+            },
+            {
+              "id": 268328,
+              "key": "b9f34dae-74a5-41ee-af7b-448f702472c9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Collecting Training Data\n\nIn order to start collecting training data, you'll need to do the following:\n\n1. Enter Training Mode in the simulator.\n2. Start driving the car to get a feel for the controls.\n3. When you are ready, hit the record button in the top right to start recording.\n4. Continue driving for a few laps or till you feel like you have enough data.\n5. Hit the record button in the top right again to stop recording.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 268358,
+          "key": "69d0ae9f-dae1-447e-a5b8-7ddabe4a7ed7",
+          "title": "Data Collection Strategies",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "69d0ae9f-dae1-447e-a5b8-7ddabe4a7ed7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268362,
+              "key": "4a038f92-7348-4426-9a25-3df248304f50",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Center Driving\n\nSo that the car drives down the center of the road, it's essential to capture center lane driving. Try driving around the track various times while staying as close to the middle of the track as possible even when making turns. \n\nIn the real world, the car would need to stay in a lane rather than driving down the center. But for the purposes of this project, aim for center of the road driving.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 268361,
+              "key": "c1a1cc52-a2ef-40e4-bd53-438f87861eed",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58991369_screen-shot-2017-02-06-at-4.22.46-pm/screen-shot-2017-02-06-at-4.22.46-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c1a1cc52-a2ef-40e4-bd53-438f87861eed",
+              "caption": "Example of Center Lane Driving",
+              "alt": null,
+              "width": 632,
+              "height": 449,
+              "instructor_notes": null
+            },
+            {
+              "id": 268360,
+              "key": "15d321f5-a4ae-486e-aa94-5694fe43e5c7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Strategies for Collecting Data\n\nNow that you have driven the simulator and know how to record data, it's time to think about collecting data that will ensure a successful model. There are a few general concepts to think about that we will later discuss in more detail:\n* the car should stay in the center of the road as much as possible\n* if the car veers off to the side, it should recover back to center\n* driving counter-clockwise can help the model generalize\n* flipping the images is a quick way to augment the data\n* collecting data from the second track can also help generalize the model \n* we want to avoid overfitting or underfitting when training the model\n* knowing when to stop collecting more data\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 268344,
+          "key": "4b26b52d-8eed-4b04-91a6-f1d421bb04f1",
+          "title": "Data Visualization ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4b26b52d-8eed-4b04-91a6-f1d421bb04f1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268345,
+              "key": "0bfc7d32-cd03-42b0-9cdb-b27d83833bbc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If everything went correctly for recording data, you should see the following in the directory you selected:\n\n1. `IMG` folder - this folder contains all the frames of your driving. \n2. `driving_log.csv` - each row in this sheet correlates your image with the steering angle, throttle, brake, and speed of your car. You'll mainly be using the steering angle.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 268346,
+              "key": "1736297c-9546-410f-9b64-2e11166fde3e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/January/588ab788_driving-log-output/driving-log-output.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1736297c-9546-410f-9b64-2e11166fde3e",
+              "caption": "",
+              "alt": null,
+              "width": 1512,
+              "height": 158,
+              "instructor_notes": null
+            },
+            {
+              "id": 268347,
+              "key": "dc949b04-e20e-4370-9229-a1abb7d10d0d",
+              "title": "03 - Data Visualization",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "NOTE: At 1:20 the image is actually 160 pixels high and 320 pixels wide",
+              "video": {
+                "youtube_id": "_Gto6fQQWFI",
+                "china_cdn_id": "_Gto6fQQWFI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 631724,
+          "key": "b6356fc5-5191-40ae-a2d9-3c8d2c2b37bb",
+          "title": "Training Your Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b6356fc5-5191-40ae-a2d9-3c8d2c2b37bb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 631726,
+              "key": "c2a702c4-1a3c-4d14-850b-b0060345f662",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Note that the workspace for this project is equipped with a  GPU which can be enabled for training your network.  So, rather than working in a shell on AWS you can enable GPU mode and work in a workspace shell.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 631725,
+              "key": "e0310d2f-35f4-471b-b1bf-d2e78e918ce3",
+              "title": "04 - Training The Network",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "NOTE: cv2.imread will get images in BGR format, while drive.py uses RGB. In the video above one way you could keep the same image formatting is to do \"image = ndimage.imread(current_path)\" with \"from scipy import ndimage\" instead.",
+              "video": {
+                "youtube_id": "iYH4UvsPgOY",
+                "china_cdn_id": "iYH4UvsPgOY.mp4"
+              }
+            },
+            {
+              "id": 631727,
+              "key": "1315cae8-6fe3-44e0-bd05-a045658cb7a6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Training Your Network\n\nNow that you have training data, it’s time to build and train your network!\n\nUse Keras to train a network to do the following:\n\n1. Take in an image from the center camera of the car. This is the input to your neural network.\n2. Output a new steering angle for the car.\n\nYou don’t have to worry about the throttle for this project, that will be set for you.\n\n[Save your trained model](https://keras.io/getting-started/faq/#how-can-i-save-a-keras-model) architecture as `model.h5` using model.save('model.h5').",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 631734,
+          "key": "bcab9479-40c8-4218-abd0-1de35032f15f",
+          "title": "Running Your Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bcab9479-40c8-4218-abd0-1de35032f15f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 631736,
+              "key": "5774268b-fdb2-4ec9-8225-53f87fdc16cf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Note that this video describes the process for running your network on a local machine with a model built using an AWS GPU instance.  Since the project is in a GPU enabled workspace there is no need to download a GitHub repo (we have included the repo in the workspace) or transfer the model (the model should be trained in the workspace with GPU enabled).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 631737,
+              "key": "6fe55ece-a03a-41c4-aef3-9ab982432caf",
+              "title": "05 - Validating The Model",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1UGOJGg-0dU",
+                "china_cdn_id": "1UGOJGg-0dU.mp4"
+              }
+            },
+            {
+              "id": 631738,
+              "key": "4fccf23e-948f-4a44-8914-d3a6386dd067",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Validating Your Network\n\nIn order to validate your network, you'll want to compare model performance on the training set and a validation set. The validation set should contain image and steering data that was not used for training. A rule of thumb could be to use 80% of your data for training and 20% for validation or 70% and 30%. Be sure to randomly shuffle the data before splitting into training and validation sets.\n\nIf model predictions are poor on both the training and validation set (for example, mean squared error is high on both), then this is evidence of underfitting. Possible solutions could be to \n* increase the number of epochs\n* add more convolutions to the network.\n\nWhen the model predicts well on the training set but poorly on the validation set (for example, low mean squared error for training set, high mean squared error for validation set), this is evidence of overfitting. If the model is overfitting, a few ideas could be to\n* use dropout or pooling layers\n* use fewer convolution or fewer fully connected layers\n* collect more data or further augment the data set\n\nIdeally, the model will make good predictions on both the training and validation sets. The implication is that when the network sees an image, it can successfully predict what angle was being driven at that moment. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 631739,
+              "key": "7b791565-aae8-4266-9874-dffa02f0ce52",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Testing Your Network\n\nOnce you're satisfied that the model is making good predictions on the training and validation sets, you can test your model by launching the simulator and entering autonomous mode. \n\nThe car will just sit there until your Python server connects to it and provides it steering angles. Here’s how you start your Python server:\n\n`python drive.py model.h5`\n   \nOnce the model is up and running in `drive.py`, you should see the car move around (and hopefully not off) the track! If your model has low mean squared error on the training and validation sets but is driving off the track, this could be because of the data collection process. It's important to feed the network examples of good driving behavior so that the vehicle stays in the center and recovers when getting too close to the sides of the road. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 631740,
+          "key": "26433503-3f0c-4eb4-a73c-84a8c2607a3c",
+          "title": "Data Preprocessing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "26433503-3f0c-4eb4-a73c-84a8c2607a3c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 631743,
+              "key": "22830498-4ca2-497b-8d60-1d9261c4f156",
+              "title": "06 - Data Preprocessing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Oc7cLOS03PE",
+                "china_cdn_id": "Oc7cLOS03PE.mp4"
+              }
+            },
+            {
+              "id": 631741,
+              "key": "fd8520ea-35f8-4d22-a1a8-da2adf16cf71",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Lambda Layers\n\nIn Keras, [lambda layers](https://keras.io/layers/core/#lambda) can be used to create arbitrary functions that operate on each image as it passes through the layer.\n\nIn this project, a lambda layer is a convenient way to parallelize image normalization. The lambda layer will also ensure that the model will normalize input images when making predictions in `drive.py`. \n\n\nThat lambda layer could take each pixel in an image and run it through the formulas:\n\n`pixel_normalized = pixel / 255`\n\n`pixel_mean_centered = pixel_normalized - 0.5`\n\nA lambda layer will look something like:\n\n`Lambda(lambda x: (x / 255.0) - 0.5)`\n\nBelow is some example code for how a lambda layer can be used. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 631742,
+              "key": "a70f6268-3c2b-407c-9d83-1550b5825edf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```sh\nfrom keras.models import Sequential, Model\nfrom keras.layers import Lambda\n\n# set up lambda layer\nmodel = Sequential()\nmodel.add(Lambda(lambda x: (x / 255.0) - 0.5, input_shape=(160,320,3)))\n...\n```\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 268364,
+          "key": "0487ab4d-5550-4921-b3f0-5a9f1e4f9e93",
+          "title": "More Networks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0487ab4d-5550-4921-b3f0-5a9f1e4f9e93",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283805,
+              "key": "fe562c1e-4eb3-41d8-b41e-3e550df97029",
+              "title": "07 - LeNet Again",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "Note: The above video uses outdated Keras syntax - make sure you use the syntax applicable to Keras v2 in your own code!",
+              "video": {
+                "youtube_id": "rVusn6F5i7s",
+                "china_cdn_id": "rVusn6F5i7s.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 268394,
+          "key": "580c6a1d-9d20-4d2e-a77d-755e0ca0d4cd",
+          "title": "Data Augmentation ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "580c6a1d-9d20-4d2e-a77d-755e0ca0d4cd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268395,
+              "key": "a0b90628-3ed8-4418-a4b1-29beb63c9ffc",
+              "title": "09 - Data Augmentation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2oaB2_DhmF8",
+                "china_cdn_id": "2oaB2_DhmF8.mp4"
+              }
+            },
+            {
+              "id": 268396,
+              "key": "ca09a2f6-2e64-4a9a-9057-2d4927463f43",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Flipping Images And Steering Measurements\n\nA effective technique for helping with the left turn bias involves flipping images and taking the opposite sign of the steering measurement. For example:\n```sh\nimport numpy as np\nimage_flipped = np.fliplr(image)\nmeasurement_flipped = -measurement\n```\n\nThe cv2 library also has similar functionality with the [flip method](http://docs.opencv.org/2.4/modules/core/doc/operations_on_arrays.html#flip).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 268397,
+              "key": "07546246-6a6a-44b9-9cb4-7ff2f4eb6526",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58991518_center-2017-02-06-16-20-04-855/center-2017-02-06-16-20-04-855.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/07546246-6a6a-44b9-9cb4-7ff2f4eb6526",
+              "caption": "Image captured by the center camera",
+              "alt": null,
+              "width": 320,
+              "height": 160,
+              "instructor_notes": null
+            },
+            {
+              "id": 268398,
+              "key": "873fc026-42b2-42c0-813e-caa6b1f3c393",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58991530_center-2017-02-06-16-20-04-855-flipped/center-2017-02-06-16-20-04-855-flipped.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/873fc026-42b2-42c0-813e-caa6b1f3c393",
+              "caption": "Flipped image from the center camera",
+              "alt": null,
+              "width": 320,
+              "height": 160,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 268386,
+          "key": "2cd424ad-a661-4754-8421-aec8cb018005",
+          "title": "Using Multiple Cameras ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2cd424ad-a661-4754-8421-aec8cb018005",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268387,
+              "key": "5642227e-5140-4d21-a00e-8fc05aa78a55",
+              "title": "08 - Side Cameras",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "GumTdw9mjL0",
+                "china_cdn_id": "GumTdw9mjL0.mp4"
+              }
+            },
+            {
+              "id": 268388,
+              "key": "200e58b9-5e24-4d65-b673-82d24ebe68cd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The simulator captures images from three cameras mounted on the car: a center, right and left camera. That’s because of the issue of recovering from being off-center.\n\nIn the simulator, you can weave all over the road and turn recording on and off to record recovery driving. In a real car, however, that’s not really possible. At least not legally.\n\nSo in a real car, we’ll have multiple cameras on the vehicle, and we’ll map recovery paths from each camera. For example, if you train the model to associate a given image from the center camera with a left turn, then you could also train the model to associate the corresponding image from the left camera with a somewhat softer left turn. And you could train the model to associate the corresponding image from the right camera with an even harder left turn.\n\nIn that way, you can simulate your vehicle being in different positions, somewhat further off the center line. To read more about this approach, see [this paper](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf) by our friends at NVIDIA that makes use of this technique.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 268390,
+              "key": "9926e88e-8940-4d9e-955d-d35661e4c0a8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/589384b5_camera/camera.jpeg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9926e88e-8940-4d9e-955d-d35661e4c0a8",
+              "caption": "A camera mounted on the Udacity self-driving car.",
+              "alt": null,
+              "width": 400,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 268389,
+              "key": "d489f8f4-73e0-4bba-b215-813bd02b9f0a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Explanation of How Multiple Cameras Work\n\nThe image below gives a sense for how multiple cameras are used to train a self-driving car. This image shows a bird's-eye perspective of the car. The driver is moving forward but wants to turn towards a destination on the left.\n\nFrom the perspective of the left camera, the steering angle would be less than the steering angle from the center camera. From the right camera's perspective, the steering angle would be larger than the angle from the center camera. The next section will discuss how this can be implemented in your project although there is no requirement to use the left and right camera images.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 268391,
+              "key": "998f4ea8-ae42-41d1-a6aa-b5ff3af995e1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a50a30_carnd-using-multiple-cameras/carnd-using-multiple-cameras.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/998f4ea8-ae42-41d1-a6aa-b5ff3af995e1",
+              "caption": "Angles between the destination and each camera",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 268392,
+              "key": "a7ca838a-ccdc-47fc-92a9-b5c3c21a7455",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Multiple Cameras in This Project\n\nFor this project, recording recoveries from the sides of the road back to center is effective. But it is also possible to use all three camera images to train the model. When recording, the simulator will simultaneously save an image for the left, center and right cameras. Each row of the csv log file, `driving_log.csv`, contains the file path for each camera as well as information about the steering measurement, throttle, brake and speed of the vehicle. \n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 268393,
+              "key": "0f875045-a9c2-4527-bbe9-86f9238ad152",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is some example code to give an idea of how all three images can be used:\n\n```sh\n    with open(csv_file, 'r') as f:\n        reader = csv.reader(f)\n        for row in reader:\n            steering_center = float(row[3])\n\n            # create adjusted steering measurements for the side camera images\n            correction = 0.2 # this is a parameter to tune\n            steering_left = steering_center + correction\n            steering_right = steering_center - correction\n\n            # read in images from center, left and right cameras\n            path = \"...\" # fill in the path to your training IMG directory\n            img_center = process_image(np.asarray(Image.open(path + row[0])))\n            img_left = process_image(np.asarray(Image.open(path + row[1])))\n            img_right = process_image(np.asarray(Image.open(path + row[2])))\n\n            # add images and angles to data set\n            car_images.extend(img_center, img_left, img_right)\n            steering_angles.extend(steering_center, steering_left, steering_right)\n\n```\n\nDuring training, you want to feed the left and right camera images to your model as if they were coming from the center camera. This way, you can teach your model how to steer if the car drifts off to the left or the right.\n\nFiguring out how much to add or subtract from the center angle will involve some experimentation.\n\nDuring prediction (i.e. \"autonomous mode\"), you only need to predict with the center camera image.\n\nIt is not necessary to use the left and right images to derive a successful model. Recording recovery driving from the sides of the road is also effective.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 268399,
+          "key": "d76493fa-8061-44ab-b122-bc7fa25cd270",
+          "title": "Cropping Images in Keras ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d76493fa-8061-44ab-b122-bc7fa25cd270",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268400,
+              "key": "3f67946e-e0bc-4770-a1ac-603f3ff8f6a3",
+              "title": "10 - Image Cropping",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SpPxyW-869U",
+                "china_cdn_id": "SpPxyW-869U.mp4"
+              }
+            },
+            {
+              "id": 268401,
+              "key": "cadf23fd-9750-484b-b12d-638cafc6f9f3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The cameras in the simulator capture 160 pixel by 320 pixel images. \n\nNot all of these pixels contain useful information, however. In the image above, the top portion of the image captures trees and hills and sky, and the bottom portion of the image captures the hood of the car.\n\nYour model might train faster if you crop each image to focus on only the portion of the image that is useful for predicting a steering angle.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 268402,
+              "key": "5955ff45-8158-4970-b0c8-18b6ce865d1f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Cropping2D Layer\n\nKeras provides the [Cropping2D layer](https://keras.io/layers/convolutional/#cropping2d) for image cropping within the model. This is relatively fast, because the model is parallelized on the GPU, so many images are cropped simultaneously.\n\n\n\nBy contrast, image cropping outside the model on the CPU is relatively slow.  \n\nAlso, by adding the cropping layer, the model will automatically crop the input images when making predictions in `drive.py`. \n\nThe Cropping2D layer might be useful for choosing an area of interest that excludes the sky and/or the hood of the car. \n\nHere is an example of an input image and its cropped version after passing through a Cropping2D layer:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 268404,
+              "key": "a841c450-9437-4cf3-a9f6-8a5c61ca90af",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/5892a50d_original-image/original-image.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a841c450-9437-4cf3-a9f6-8a5c61ca90af",
+              "caption": "Original image taken from the simulator",
+              "alt": null,
+              "width": 320,
+              "height": 160,
+              "instructor_notes": null
+            },
+            {
+              "id": 268405,
+              "key": "09022a45-0f2a-466f-afb8-a6d5f917758e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/5892a531_cropped-image/cropped-image.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/09022a45-0f2a-466f-afb8-a6d5f917758e",
+              "caption": "Cropped image after passing through a Cropping2D layer",
+              "alt": null,
+              "width": 320,
+              "height": 90,
+              "instructor_notes": null
+            },
+            {
+              "id": 268403,
+              "key": "8a73420f-dd85-49a7-8e5d-56982a9b47af",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Cropping Layer Code Example\n\n```sh\nfrom keras.models import Sequential, Model\nfrom keras.layers import Cropping2D\nimport cv2\n\n# set up cropping2D layer\nmodel = Sequential()\nmodel.add(Cropping2D(cropping=((50,20), (0,0)), input_shape=(160,320,3)))\n...\n```\n\nThe example above crops:\n* 50 rows pixels from the top of the image\n* 20 rows pixels from the bottom of the image\n* 0 columns of pixels from the left of the image\n* 0 columns of pixels from the right of the image",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 268406,
+          "key": "7f68e171-cf87-40d2-adeb-61ae99fe56f5",
+          "title": "Even More Powerful Network",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7f68e171-cf87-40d2-adeb-61ae99fe56f5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268407,
+              "key": "f14be3ae-dd9e-4c03-a033-7440e4b7e8bf",
+              "title": "11 - NVIDIA Architecture",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6vVPHcgQkLg",
+                "china_cdn_id": "6vVPHcgQkLg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 268408,
+          "key": "b0034fd8-66a9-42b0-bbeb-26604b948817",
+          "title": "More Data Collection ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b0034fd8-66a9-42b0-bbeb-26604b948817",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268409,
+              "key": "3709bdca-3286-4662-8910-acb0ab0bd67c",
+              "title": "12 - More Data Collection",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cCZNlX3KLnY",
+                "china_cdn_id": "cCZNlX3KLnY.mp4"
+              }
+            },
+            {
+              "id": 268410,
+              "key": "d7af5a48-beb0-4341-b87b-478321c1df53",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Recovery Laps\n\nIf you drive and record normal laps around the track, even if you record a lot of them, it might not be enough to train your model to drive properly.\n\nHere’s the problem: if your training data is all focused on driving down the middle of the road, your model won’t ever learn what to do if it gets off to the side of the road. And probably when you run your model to predict steering measurements, things won’t go perfectly and the car will wander off to the side of the road at some point.\n\nSo you need to teach the car what to do when it’s off on the side of the road.\n\nOne approach might be to constantly wander off to the side of the road and then steer back to the middle.\n\nA better approach is to only record data when the car is driving from the side of the road back toward the center line.\n\nSo as the human driver, you’re still weaving back and forth between the middle of the road and the shoulder, but you need to turn off data recording when you weave out to the side, and turn it back on when you steer back to the middle.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 268414,
+              "key": "350d50d0-1e5d-4516-b512-77c6f58c23c1",
+              "title": "13 - Generalizing Data Collection",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SfHOdOHf4Zk",
+                "china_cdn_id": "SfHOdOHf4Zk.mp4"
+              }
+            },
+            {
+              "id": 268411,
+              "key": "c5fbcf37-7f23-43bd-805b-058b0900618f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Driving Counter-Clockwise\n\nTrack one has a left turn bias. If you only drive around the first track in a clock-wise direction, the data will be biased towards left turns. One way to combat the bias is to turn the car around and record counter-clockwise laps around the track. Driving counter-clockwise is also like giving the model a new track to learn from, so the model will generalize better.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 268412,
+              "key": "18efb0d1-7fe7-4bab-b72d-1d49ebba0dab",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Using Both Tracks\n\nIf you end up using data from only track one, the convolutional neural network could essentially memorize the track. Consider using data from both track one and track two to make a more generalized model. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 268413,
+              "key": "a336ed00-0d0b-4d18-9351-65d5e2082dc7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Collecting Enough Data\n\nHow do you know when you have collected enough data? Machine learning involves trying out ideas and testing them to see if they work. If the model is over or underfitting, then try to figure out why and adjust accordingly. \n\nSince this model outputs a single continuous numeric value, one appropriate error metric would be mean squared error. If the mean squared error is high on both a training and validation set, the model is underfitting. If the mean squared error is low on a training set but high on a validation set, the model is overfitting. Collecting more data can help improve a model when the model is overfitting. \n\nWhat if the model has a low mean squared error on both the training and validation sets, but the car is falling off the track?\n\nTry to figure out the cases where the vehicle is falling off the track. Does it occur only on turns? Then maybe it's important to collect more turning data. The vehicle's driving behavior is only as good as the behavior of the driver who provided the data.\n\n Here are some general guidelines for data collection:\n- two or three laps of center lane driving\n- one lap of recovery driving from the sides\n- one lap focusing on driving smoothly around curves",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 265062,
+          "key": "0f26c2e3-6feb-4ad6-a472-6312c6a3c60e",
+          "title": "Visualizing Loss",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0f26c2e3-6feb-4ad6-a472-6312c6a3c60e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 265063,
+              "key": "2b48d6b8-555d-4469-96f1-6640e404bd37",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Outputting Training and Validation Loss Metrics\n\nIn Keras, the `model.fit()` and `model.fit_generator()` methods have a `verbose` parameter \nthat tells Keras to output loss metrics as the model trains. The `verbose` parameter can optionally be set to `verbose = 1 ` or `verbose = 2`. \n\nSetting `model.fit(verbose = 1)` will \n* output a progress bar in the terminal as the model trains. \n* output the loss metric on the training set as the model trains. \n* output the loss on the training and validation sets after each epoch.\n\nWith `model.fit(verbose = 2)`, Keras will only output the loss on the training set and validation set after each epoch.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 265066,
+              "key": "928a397f-9e5e-40c2-b8fc-d1a91ae4f1b9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Model History Object\n\nWhen calling `model.fit()` or `model.fit_generator()`, Keras outputs a history object that contains the training and validation loss for each epoch. Here is an example of how you can use the history object to visualize the loss:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 265068,
+              "key": "0bd24a62-573a-40fb-ad44-b3ec5832bc5a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a3d938_screen-shot-2017-02-14-at-8.29.09-pm/screen-shot-2017-02-14-at-8.29.09-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0bd24a62-573a-40fb-ad44-b3ec5832bc5a",
+              "caption": "",
+              "alt": null,
+              "width": 635,
+              "height": 470,
+              "instructor_notes": null
+            },
+            {
+              "id": 265069,
+              "key": "28abbd38-2d4a-420c-847b-c681cf7f7d60",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The following code shows how to use the `model.fit()` history object to produce the visualization.\n\n```sh\nfrom keras.models import Model\nimport matplotlib.pyplot as plt\n\nhistory_object = model.fit_generator(train_generator, samples_per_epoch =\n    len(train_samples), validation_data = \n    validation_generator,\n    nb_val_samples = len(validation_samples), \n    nb_epoch=5, verbose=1)\n\n### print the keys contained in the history object\nprint(history_object.history.keys())\n\n### plot the training and validation loss for each epoch\nplt.plot(history_object.history['loss'])\nplt.plot(history_object.history['val_loss'])\nplt.title('model mean squared error loss')\nplt.ylabel('mean squared error loss')\nplt.xlabel('epoch')\nplt.legend(['training set', 'validation set'], loc='upper right')\nplt.show()\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 260129,
+          "key": "b602658e-8a68-44e5-9f0b-dfa746a0cc1a",
+          "title": "Generators",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b602658e-8a68-44e5-9f0b-dfa746a0cc1a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 260130,
+              "key": "7af0f656-1078-48c1-bc65-3de15f50fc98",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### How to Use Generators\n\nThe images captured in the car simulator are much larger than the images encountered in the Traffic Sign Classifier Project, a size of 160 x 320 x 3 compared to 32 x 32 x 3. Storing 10,000 traffic sign images would take about 30 MB but storing 10,000 simulator images would take over 1.5 GB. That's a lot of memory!\nNot to mention that preprocessing data can change data types from an `int` to a `float`, which can increase the size of the data by a factor of 4. \n\nGenerators can be a great way to work with large amounts of data. Instead of storing the preprocessed data in memory all at once, using a generator you can pull pieces of the data and process them on the fly only when you need them, which is much more memory-efficient.\n\nA generator is like a [coroutine](https://en.wikipedia.org/wiki/Coroutine), a process that can run separately from another main routine, which makes it a useful Python function. Instead of using `return`, the generator uses `yield`, which still returns the desired output values but saves the current values of all the generator's variables. When the generator is called a second time it re-starts right after the `yield` statement, with all its variables set to the same values as before.\n\nBelow is a short quiz using a generator. This generator appends a new Fibonacci number to its list every time it is called. To pass, simply modify the generator's `yield` so it returns a list instead of `1`. \nThe result will be we can get the first 10 Fibonacci numbers simply by calling our generator 10 times. If we need to go do something else besides generate Fibonacci numbers for a while we can do that and then always just call the generator again whenever we need more Fibonacci numbers.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 262839,
+              "key": "8429b557-be60-4581-823c-2c0b042a3b84",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "8429b557-be60-4581-823c-2c0b042a3b84",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6657978284507136",
+                "initial_code_files": [
+                  {
+                    "text": "def fibonacci():\r\n    numbers_list = []\r\n    while 1:\r\n        if(len(numbers_list) < 2):\r\n            numbers_list.append(1)\r\n        else:\r\n            numbers_list.append(numbers_list[-1] + numbers_list[-2])\r\n        yield 1 # change this line so it yields its list instead of 1\r\n\r\nour_generator = fibonacci()\r\nmy_output = []\r\n\r\nfor i in range(10):\r\n    my_output = (next(our_generator))\r\n    \r\nprint(my_output)",
+                    "name": "generator.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 262837,
+              "key": "8519c63f-af75-4d31-8fff-92e7c69f8081",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is an example of how you could use a generator to load data and preprocess it on the fly, in batch size portions to feed into your Behavioral Cloning  model .\n\n    import os\n    import csv\n\n    samples = []\n    with open('./driving_log.csv') as csvfile:\n        reader = csv.reader(csvfile)\n        for line in reader:\n            samples.append(line)\n\n    from sklearn.model_selection import train_test_split\n    train_samples, validation_samples = train_test_split(samples, test_size=0.2)\n\n    import cv2\n    import numpy as np\n    import sklearn\n\n    def generator(samples, batch_size=32):\n        num_samples = len(samples)\n        while 1: # Loop forever so the generator never terminates\n            shuffle(samples)\n            for offset in range(0, num_samples, batch_size):\n                batch_samples = samples[offset:offset+batch_size]\n                \n                images = []\n                angles = []\n                for batch_sample in batch_samples:\n                    name = './IMG/'+batch_sample[0].split('/')[-1]\n                    center_image = cv2.imread(name)\n                    center_angle = float(batch_sample[3])\n                    images.append(center_image)\n                    angles.append(center_angle)\n\n                # trim image to only see section with road\n                X_train = np.array(images)\n                y_train = np.array(angles)\n                yield sklearn.utils.shuffle(X_train, y_train)\n\n    # Set our batch size\n    batch_size=32\n\n    # compile and train the model using the generator function\n    train_generator = generator(train_samples, batch_size=batch_size)\n    validation_generator = generator(validation_samples, batch_size=batch_size)\n\n    ch, row, col = 3, 80, 320  # Trimmed image format\n\n    model = Sequential()\n    # Preprocess incoming data, centered around zero with small standard deviation \n    model.add(Lambda(lambda x: x/127.5 - 1.,\n            input_shape=(ch, row, col),\n            output_shape=(ch, row, col)))\n    model.add(... finish defining the rest of your model architecture here ...)\n\n    model.compile(loss='mse', optimizer='adam')\n    model.fit_generator(train_generator, /\n                steps_per_epoch=ceil(len(train_samples)/batch_size), /\n                validation_data=validation_generator, /\n                validation_steps=ceil(len(validation_samples)/batch_size), /\n                epochs=5, verbose=1)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 268313,
+          "key": "055bb6e0-b941-491b-b42a-81a04208f799",
+          "title": "Recording Video in Autonomous Mode",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "055bb6e0-b941-491b-b42a-81a04208f799",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 268318,
+              "key": "b1ee2834-db67-4eaa-8c04-f944cecb6f05",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Recording Video in Autonomous Mode\n\nBecause your hardware setup might be different from a reviewer's hardware setup, driving behavior could be different on your machine than on the reviewer's. To help with reviewing your submission, we require that you submit a video recording of your vehicle driving autonomously around the track. The video should include at least one full lap around the track. Keep in mind the rubric specifications:  \n\n\"No tire may leave the drivable portion of the track surface. The car may not pop up onto ledges or roll over any surfaces that would otherwise be considered unsafe (if humans were in the vehicle).\"\n\nIn the [GitHub repo](https://github.com/udacity/CarND-Behavioral-Cloning-P3), we have included a file called `video.py`, which can be used to create the video recording when in autonomous mode. \n\nThe README file in the GitHub repo contains instructions about how to make the video recording. Here are the instructions as well:\n\n```sh\npython drive.py model.h5 run1\n```\n\nThe fourth argument, `run1`, is the directory in which to save the images seen by the agent. If the directory already exists, it'll be overwritten.\n\n```sh\nls run1\n\n[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_424.jpg\n[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_451.jpg\n[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_477.jpg\n[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_528.jpg\n[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_573.jpg\n[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_618.jpg\n[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_697.jpg\n[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_723.jpg\n[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_749.jpg\n[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_817.jpg\n...\n```\n\nThe image file name is a timestamp of when the image was seen.. This information is used by `video.py` to create a chronological video of the agent driving.\n\n### Using video.py\n\n```sh\npython video.py run1\n```\n\nCreates a video based on images found in the `run1` directory. The name of the video will be the name of the directory followed by `'.mp4'`, so, in this case the video will be `run1.mp4`.\n\nOptionally, one can specify the FPS (frames per second) of the video:\n\n```sh\npython video.py run1 --fps 48\n```\n\nThe video will run at 48 FPS. The default FPS is 60.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 645533,
+          "key": "3421b370-1812-4739-b562-21ab8a4bd845",
+          "title": "Project Workspace Instructions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3421b370-1812-4739-b562-21ab8a4bd845",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 645534,
+              "key": "57e283fc-d40c-437a-b104-e056b28351f8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Running and submitting the Behavioral Cloning Project in workspaces <br> \n## Behavioral Cloning project workspace<br>\n\nThis workspace is designed to be a simple, easy to use environment in which you can code and run the Behavioral Cloning project. The project repo is already included so there is no need of downloading the project repo.\nFor tips on workspaces use, please review the earlier Workspaces lesson.\n\n## Accessing and using the workspace\n\nGo to the workspace in the next lesson. You will be asked if you want to use a GPU-enabled workspace.\nClick **YES** to run in GPU-enabled mode **only** if you:\n- Want to collect training data.\n- Want to test your solution. \n- Want to train your neural network using GPU (network training will be challenging without using a GPU).\n\nClick **NO** to run in GPU-enabled mode **only** if you:\n- Want to code your solution on the text editor.\n\n## Simulator\nTo run the simulator click on the button ** Simulator ** on the bottom right, then go to the newly opened tab in your browser and double-click on the simulator icon in the desktop. This will open the simulator's configuration window, finally, run and test your code or gather data. \nNote: If you get an error when clicking on the Simulator button, please check that you have enabled the GPU.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 689010,
+              "key": "1b0eacb3-25f6-421f-9865-f74c3deec3c5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b6223df_p3-sim/p3-sim.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1b0eacb3-25f6-421f-9865-f74c3deec3c5",
+              "caption": "Simulator",
+              "alt": "",
+              "width": 234,
+              "height": 240,
+              "instructor_notes": null
+            },
+            {
+              "id": 689009,
+              "key": "242baca3-8248-4a0c-8a3f-8612787b7bf9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Project submission when using the workspace\nTo submit your project, just click the button **SUBMIT PROJECT** and follow the instructions to submit!\n\n\nMake sure that the following files are present in the workspace and follow the naming conventions below to make it easy for reviewers to find the right files: \n\n* `model.py` - The script used to create and train the model.\n* `drive.py` - The script to drive the car. You can feel free to resubmit the original `drive.py` or make modifications and submit your modified version.\n* `model.h5` - The saved model. Here is the [documentation](https://keras.io/getting-started/faq/#how-can-i-save-a-keras-model) explaining how to create this file.\n* `writeup_report` as a markdown or pdf file. It should explain the structure of your network and training approach. The write-up must also include examples of images from the dataset in the discussion of the characteristics of the dataset. While we recommend using English for good practice, writing in any language is acceptable (reviewers will translate). There is no minimum word count so long as there are complete descriptions of the problems and the strategies. See the [rubric](https://review.udacity.com/#!/rubrics/1968/view) and the [writeup_template.md](https://github.com/udacity/CarND-Behavioral-Cloning-P3/blob/master/writeup_template.md) for more details about the expectations.\n* `video.mp4` - A video recording of your vehicle driving autonomously at least one lap around the track.\n\n**IMPORTANT: ** Make sure that your directory `/home/workspace/` doesn't include your training images since the Reviews system is limited to 10,000 files and 500MB. If you have more than that you will get the following error `too many files` when trying to submit. To fix this error just move your images to directory below`~/opt/`.\n\n## Things to keep in mind\n* If you leave your workspace unattended, it will time out and need to be refreshed. Your most recent work will be restored, but the list of open files or any running shell sessions will not be restored. Also, the data collected by you will not be stored, and you will have to drive the car in the simulator again to collect the data. <br>\n* Try to not save data directly within `/home/workspace/` because this directly only have the storage capacity of **3 GB**, and storing a large amount of data within this directory, can freeze your workspace. If you need to save a large amount of data use `/opt/` but all the data saved there will be lost once you leave the classroom.<br>\n*  If you want to avoid collecting data every time you refresh workspace, the data can be stored in your local environment (Dropbox, GitHub, Google Drive, etc.) and can be pulled over to the workspace, using the command ` 'wget'` command.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 688997,
+              "key": "42bf531b-54ba-4a33-9cc1-0fd9f152e8c2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Common Issues\n* \"**No VNC**\" or \"**Service is not running**\" error when launching simulator - this is related to either A) not having the workspace GPU enabled (the simulator needs a GPU to run), or B) the web browser being used. Safari is likely to produce this error, while Chrome should run the simulator fine.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 689002,
+              "key": "3cb37090-0931-45ba-bbda-242d9e92016f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b6220f1_novnc/novnc.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3cb37090-0931-45ba-bbda-242d9e92016f",
+              "caption": "",
+              "alt": "",
+              "width": 227,
+              "height": 240,
+              "instructor_notes": null
+            },
+            {
+              "id": 689000,
+              "key": "3f978c11-47e6-4938-9dde-e477ce748b53",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* \"**No session for PID**\" error when launching simulator - when the desktop simulator is opened, sometimes a \"PID error\" window will appear. This error does not impact the simulator itself and can be safely ignored or click OK, it is harmless.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 689007,
+              "key": "68f3dadd-1ffe-4b67-b028-532a496d3127",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b6222e5_pid-error/pid-error.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/68f3dadd-1ffe-4b67-b028-532a496d3127",
+              "caption": "",
+              "alt": "",
+              "width": 320,
+              "height": 211,
+              "instructor_notes": null
+            },
+            {
+              "id": 689003,
+              "key": "cc730f7d-00ee-4756-aa39-21f1bc1fc197",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* **Missing simulator icon** - the simulator icon may fail to appear after a short wait within the Linux Desktop. If this is the case, click on the Terminal icon in the Desktop, and the simulator icon will typically appear. Please note that you still will use the actual Terminal within the primary workspace, and not the one in the Desktop.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 688998,
+              "key": "e3d37212-a3af-4c9f-bbb1-f2b31049a516",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Commit to GitHub\nStudents are highly encouraged to commit their project to a GitHub repo. To do this, you must change the upstream of the current repository and add your credentials. We have supplied a bash script to help you do this. Please open up a terminal, navigate to the project repository, and enter: `./set_git.sh`, then follow the prompts. This will set the upstream remote to your own repository and add your email and username to the git configuration. At this time we are not configuring passwords, so you will need to enter your username and password for each push. Since credentials are not persistent, it will be necessary to run this script each time you open, refresh, or reset the workspace.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 682841,
+              "key": "f78cc2d2-b7c8-4824-b6b8-1bde9c513b3b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Running and submitting the Behavioral Cloning Project in your local machine\n## Project Submission\nFor this project, a reviewer will be testing the model that you generated on the first test track (the one to the left in the track selection options).  <br>\nWhether you decide to zip up your submission or submit a GitHub repo, please follow the naming conventions below to make it easy for reviewers to find the right files: <br>\n* `model.py` - The script used to create and train the model. <br>\n* `drive.py`- The script to drive the car. You can feel free to submit the original drive.py or make modifications and submit your modified version. <br>\n*  `model.h5` - The saved model. Here is the [documentation](https://keras.io/getting-started/faq/#how-can-i-save-a-keras-model) explaining how to create this file. <br>\n*  `writeup_report` as a markdown or pdf file. It should explain the structure of your network and training approach. The writeup must also include examples of images from the dataset in the discussion of the characteristics of the dataset. While we recommend using English for good practice, writing in any language is acceptable (reviewers will translate). There is no minimum word count so long as there are complete descriptions of the problems and the strategies. See the rubric and the writeup_template.md for more details about the expectations. <br>\n*  `video.mp4` - A video recording of your vehicle driving autonomously at least one lap around the track.\nAs a reminder all of the files we provide for this project (rubric, simulator, GitHub repository, track 1 sample data) can be found in the lecture slide titled \"Project Resources\". <br>\n\n#### Further Help\n\n* Use a generator (such as the `fit_generator` function provided by Keras). Here is [some documentation](https://keras.io/models/model/#fit_generator) that will help.\n\n* Paul Heraty, a student in the October cohort, has written [a helpful guide](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/Behavioral+Cloning+Cheatsheet+-+CarND.pdf) for those of you looking for some hints and advice.\n\n* You can use our sample data for track 1 (see the \"Project Resources\" lecture for the link)\n\n* Keep in mind that training images are loaded in BGR colorspace using cv2 while drive.py load images in RGB to predict the steering angles.\n\n\n## Using GitHub and Creating Effective READMEs\nIf you are unfamiliar with GitHub , Udacity has a brief [GitHub tutorial](http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html) to get you started. Udacity also provides a more detailed free [course on git and GitHub](https://www.udacity.com/course/how-to-use-git-and-github--ud775).\nTo learn about README files and Markdown, Udacity provides a free course on  [READMEs](https://www.udacity.com/course/writing-readmes--ud777), as well.\nGitHub also provides a tutorial about creating Markdown files. <br>\n\n## Project Support\nIf you are stuck or having difficulties with the project, don't lose hope! Ask (and answer!) questions on [Knowledge](https://knowledge.udacity.com) tagged with the project name or in the Behavioral Cloning channel in your Student Hub. We also have a previously recorded project Q&A that you can watch [here](https://youtu.be/rpxZ87YFg0M)!\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 640716,
+          "key": "fd9ed0cf-13f5-488b-9f49-4fc158c08e38",
+          "title": "Project Behavioral Cloning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fd9ed0cf-13f5-488b-9f49-4fc158c08e38",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 689165,
+              "key": "57440263-6b71-4039-a996-23185332d66f",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewHJeftIbWrX",
+              "pool_id": "autonomousgpu",
+              "view_id": "react-SJMFUb+BX",
+              "gpu_capable": true,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": true,
+                    "actionButtonText": "Simulator"
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 708557,
+          "key": "de634784-6ecf-421b-9f71-9f13aa2e0a9e",
+          "title": "Share your success - Behavioral Cloning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "de634784-6ecf-421b-9f71-9f13aa2e0a9e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 708604,
+              "key": "12515b19-d623-454c-af19-ca8e5fb3c851",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Share your project success\nPassed your project? Share the good news!\n\nWhat you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your success with your network.\n\n<iframe\n  src=\"https://platform.twitter.com/widgets/tweet_button.html?size=l&url=www.udacity.com&text=I%20completed%20Behavioral%20Cloning!%20I%27m%20now%20well%20on%20my%20way%20to%20completing%20Term%201%20of%20the%20Self-Driving%20Car%20Engineer%20Nanodegree%20%40udacity%20%5BInsert%20your%20Github%20repository%20url%20here%5D&hashtags=selfdrivingudacity\"\nwidth=\"140\"\nheight=\"28\"\nscrolling=\"no\">\n</iframe>\n\n#### Facebook and LinkedIn\nMake sure to use **@Udacity** and **#selfdrivingudacity** in your posts!\n\n<html>\n\n<head>\n<style>\n.fb {color: white;\n  background-color: #4661b0;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.fb:hover {color: #4661b0;\n  background-color: white;\n  border-color: #4661b0;\n  transition: background-color 0.4s}\n.linkedin {color: white;\n  background-color: #0077B5;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.linkedin:hover {color: #0077B5;\n  background-color: white;\n  border-color: #0077B5;\n  transition: background-color 0.4s}\n</style>\n\n</head>\n\n<body>\n<form action=\"https://www.facebook.com/sharer.php?\">\n  Enter the full URL of your Github repository or Youtube video:<br>\n  <input type=\"url\" name=\"u\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"hashtag\" value=\"#selfdrivingudacity\">\n  <button class=\"fb\">Share on Facebook</button>\n</form>\n\n<form action=\"https://www.linkedin.com/shareArticle?mini=true\">\n  <input type=\"url\" name=\"url\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"title\" value=\"Behavioral Cloning\">\n  <input type=\"hidden\" name=\"summary\" value=\"I finished Behavioral Cloning in the Self-Driving Car Nanodegree @udacity #selfdrivingudacity\">\n  <button class=\"linkedin\">Share on LinkedIn</button>\n</form>\n\n</body>\n\n</html>",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "data": {
+    "lesson": {
+      "id": 626704,
+      "key": "7ee8d0d4-561e-4101-8615-66e0ab8ea8c8",
+      "title": "Project: Traffic Sign Classifier",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Put your skills to the test by using deep learning to classify different traffic signs!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/7ee8d0d4-561e-4101-8615-66e0ab8ea8c8/626704/1538943040278/Project%3A+Traffic+Sign+Classifier+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/7ee8d0d4-561e-4101-8615-66e0ab8ea8c8/626704/1538943037121/Project%3A+Traffic+Sign+Classifier+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "02c39917-5e4e-4ed4-861c-e2dd1bafb54a",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 34560,
+        "semantic_type": "Project",
+        "title": "Traffic Sign Classifier",
+        "description": "Before submitting, make sure your project covers all of the rubric points, which can be found [here](https://review.udacity.com/#!/rubrics/1970/view).\n\n",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1970",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://s3.amazonaws.com/video.udacity-data.com/topher/2016/October/580d3b19_sign/sign.jpg",
+          "width": 1735,
+          "height": 1152
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 663265,
+          "key": "371f9f9b-20d1-4c17-81d4-8a740d9862e6",
+          "title": "Starting with Neural Networks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "371f9f9b-20d1-4c17-81d4-8a740d9862e6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663266,
+              "key": "27789709-fd62-481c-b330-2ba2d1709848",
+              "title": "03 Deep Learning A03 Starting With Neural Networks",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "TgRhLmHRvfE",
+                "china_cdn_id": "TgRhLmHRvfE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 189209,
+          "key": "3beb6c99-45a0-406c-aa20-2a046cacfb3d",
+          "title": "Intro to Traffic Sign Classifier",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3beb6c99-45a0-406c-aa20-2a046cacfb3d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197188,
+              "key": "6267f6dd-fe52-4b89-af5c-69857cb6c6f7",
+              "title": "Intro to Traffic Sign Classifier",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "7pULs5sC_7A",
+                "china_cdn_id": "7pULs5sC_7A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 578924,
+          "key": "8cb6867c-f809-49b3-9bc1-afb409a112a7",
+          "title": "Project Instructions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8cb6867c-f809-49b3-9bc1-afb409a112a7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 662711,
+              "key": "4b0a7ac0-f9bf-4909-894e-a1f5aa14ee5b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Traffic Sign Classifier Project\n\nIn this project, you will use what you've learned about deep neural networks and convolutional neural networks to classify traffic signs. Specifically, you'll train a model to classify traffic signs from the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 662715,
+              "key": "8ca1a2fd-18ad-45b5-8f23-88d6d1712e39",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Running the Traffic Sign Classifier in your local machine\n## Set Up Your Environment\n\n#### CarND Starter Kit\n\nInstall the car nanodegree starter kit if you have not already done so: [carnd starter kit](https://github.com/udacity/CarND-Term1-Starter-Kit)\n\n#### TensorFlow\n\nIf you have access to a GPU, you should follow the TensorFlow instructions for [installing TensorFlow with GPU support](https://www.tensorflow.org/get_started/os_setup#optional_install_cuda_gpus_on_linux).\n\nOnce you've installed all of the necessary dependencies, you can install the `tensorflow-gpu` package: \n\n`pip install tensorflow-gpu`\n\n#### Amazon Web Services\n\nInstead of a local GPU, you could use Amazon Web Services to launch an EC2 GPU instance. (This costs money.)\n\n1. [Follow the Udacity instructions](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/forum_archive/AWS+Instructions.pdf) to launch an EC2 GPU instance with the `udacity-carnd` AMI.\n2. Complete the **Setup** instructions.\n\n## Start the Project\n1. [Download the dataset](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/traffic-signs-data.zip). This is a pickled dataset in which we've already resized the images to 32x32.\n2. Clone the project and start the notebook.\n```\ngit clone https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project\ncd CarND-Traffic-Sign-Classifier-Project\n```\n\n1. Launch the Jupyter notebook: `jupyter notebook Traffic_Sign_Classifier.ipynb`\n2. Check out the [project rubric](https://review.udacity.com/#!/rubrics/481/view)\n3. Follow the instructions in the notebook\n4. Write your project report\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 645547,
+              "key": "c42e43b6-be82-4e44-bbeb-1773c2519527",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Running Traffic Sign Classifier in workspaces\nThis workspace is designed to be a simple, easy to use environment in which you can code and run the Traffic Sign Classifier project. The project repo already include all you need to complete this project.\n\nFor tips on workspace use, please review the [Workspaces](https://classroom.udacity.com/nanodegrees/nd013/parts/edf28735-efc1-4b99-8fbb-ba9c432239c8/modules/c773ee09-4a0d-445d-b6af-0739e6653f18/lessons/ec7a3d6d-24a6-4dad-9f5c-aacd29763e0b/concepts/undefined) lesson.\n\n## Accessing and using the workspace:\n- This notebook contains all the dependencies needed to run your code  without additional setup.\n- Go to the workspace node and click on JUPYTER notebook.\n- Complete the project using the instructions in the notebook\n-  The project repo is already in the workspace.  To see other files in the repo click on the JUPYTER icon.  This will expose the root directory.  From there click on the project folder.\n- The data (`train.p`, `test.p`,  `valid.p`) is already in the workspace, one level above the notebook.  Access it using `../data/filename`, for example, `../data/train.p`.\n\n### Running this workspace with GPU ###\nIn this workspace you can run your code using a GPU!  Awesome, right?  However, your time is limited to **50 hrs in total per account**, which means across any ND or course in Udacity, so please use them wisely! \n\nActivate and deactivate the GPU by clicking on the button at the bottom of the notebook.\n\n**Only** enable it when you want to **test** your code. You will also see the time remaining. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 590405,
+              "key": "efe61bcb-000e-44a5-a42d-83627ed136ee",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ac3b629_gpu-enable/gpu-enable.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/efe61bcb-000e-44a5-a42d-83627ed136ee",
+              "caption": "",
+              "alt": "",
+              "width": 1220,
+              "height": 645,
+              "instructor_notes": null
+            },
+            {
+              "id": 578925,
+              "key": "7a2e4fab-e004-4479-be03-9f54eaf42305",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Submission\n\nBefore submitting, make sure your project covers all of the rubric points, which can be found [here](https://review.udacity.com/#!/rubrics/481/view).\n\n\n## Project submission if you run the project on your local machine\nInclude a zipped file with your submission with:\n\n- The Traffic_Sign_Classifier.ipynb notebook file with all questions answered and all code cells executed and displaying output.\n- An HTML or PDF export of the project notebook with the name report.html or report.pdf.\n- Any additional datasets or images used for the project that are not from the German Traffic Sign Dataset.\n- Your writeup report as a markdown or pdf file \n- Please do not include project data (`train.p`, `test.p`,  `valid.p`) with your submission.\n\nAlternatively, you may submit a link to your GitHub repo for the project.  \n\nIn either case, **remember to include example images for each stage of your pipeline and your final output video in your submission**.\n\n## Project submission when using the workspaces:\nMake sure your workspace contains:\n- The Traffic_Sign_Classifier.ipynb notebook file with all questions answered and all code cells executed and displaying output.\n- An HTML or PDF export of the project notebook with the name report.html or report.pdf.\n- Any additional datasets or images used for the project that are not from the German Traffic Sign Dataset.\n- Your writeup report as a markdown or pdf file \n\nWhen you are ready to submit your project, just click the button **SUBMIT PROJECT** and follow the instructions to submit!\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 590408,
+              "key": "3caf2e51-9ff4-422b-a866-53cf03175931",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ac3b702_screen-shot-2018-04-03-at-10.14.31-am/screen-shot-2018-04-03-at-10.14.31-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3caf2e51-9ff4-422b-a866-53cf03175931",
+              "caption": "",
+              "alt": "",
+              "width": 803,
+              "height": 56,
+              "instructor_notes": null
+            },
+            {
+              "id": 645548,
+              "key": "84d330ad-3f07-4887-93ab-b2442617e7b5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Commit to GitHub\nStudents are highly encouraged to commit their project to a GitHub repo.  To do this, you must change the upstream of the current repository and add your credentials.  We have supplied a bash script to help you do this.  Please open up a terminal, navigate to the project repository, and enter: `./set_git.sh`, then follow the prompts.  This will set the upstream remote to your own repository and add your email and username to the git configuration.  At this time we are not configuring passwords, so you will need to enter your username and password for each push.  Since credentials are not persistent, it will be necessary to run this script each time you open, refresh, or reset the workspace.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 590406,
+              "key": "a359adc7-a6ac-4a2e-a9d2-1c274731e5e7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Using GitHub and Creating Effective READMEs\n\nIf you are unfamiliar with GitHub , Udacity has a brief [GitHub tutorial](http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html) to get you started. Udacity also provides a more detailed free [course on git and GitHub](https://www.udacity.com/course/how-to-use-git-and-github--ud775).\n\nTo learn about README files and Markdown, Udacity provides a free [course on READMEs](https://www.udacity.com/course/writing-readmes--ud777), as well. \n\n\n\n## Project Support ##\n\nIf you are stuck or having difficulties with the project, don't lose hope! Remember to talk to your mentors and fellow students in your Study Group, as well as ask (and answer!) questions on [Knowledge](https://knowledge.udacity.com) tagged with the project name. We also have a previously recorded project Q&A that you can watch [here](https://youtu.be/ni95EfPILjI)!\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 578899,
+          "key": "a96fb396-2997-46e5-bed8-543a16e4f72e",
+          "title": "Traffic Sign Classifier",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a96fb396-2997-46e5-bed8-543a16e4f72e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 578902,
+              "key": "8eea061a-0320-4965-8c07-78d604c5081d",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view5f1639b6",
+              "pool_id": "jupytergpu",
+              "view_id": "5f1639b6-6b09-4cde-8522-97b9ac5fec79",
+              "gpu_capable": true,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": true,
+                    "defaultPath": "/notebooks/CarND-Traffic-Sign-Classifier-Project"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 708555,
+          "key": "30db5857-e6ad-47f2-a153-5fe5acbfc952",
+          "title": "Share your success - Traffic Sign",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "30db5857-e6ad-47f2-a153-5fe5acbfc952",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 708603,
+              "key": "b60bea63-a993-4de3-8cc5-4b32b7ce5f97",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Share your project success\nPassed your project? Share the good news!\n\nWhat you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your success with your network.\n\n<iframe\n  src=\"https://platform.twitter.com/widgets/tweet_button.html?size=l&url=www.udacity.com&text=I%20completed%20Traffic%20Sign%20Classification!%20It%20is%20my%20first%20deep%20learning%20project%20with%20the%20Self-Driving%20Car%20Engineer%20Nanodegree%20%40udacity%20%5BInsert%20your%20Github%20repository%20url%20here%5D&hashtags=selfdrivingudacity\"\nwidth=\"140\"\nheight=\"28\"\nscrolling=\"no\">\n</iframe>\n\n#### Facebook and LinkedIn\nMake sure to use **@Udacity** and **#selfdrivingudacity** in your posts!\n\n<html>\n\n<head>\n<style>\n.fb {color: white;\n  background-color: #4661b0;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.fb:hover {color: #4661b0;\n  background-color: white;\n  border-color: #4661b0;\n  transition: background-color 0.4s}\n.linkedin {color: white;\n  background-color: #0077B5;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.linkedin:hover {color: #0077B5;\n  background-color: white;\n  border-color: #0077B5;\n  transition: background-color 0.4s}\n</style>\n\n</head>\n\n<body>\n<form action=\"https://www.facebook.com/sharer.php?\">\n  Enter the full URL of your Github repository or Youtube video:<br>\n  <input type=\"url\" name=\"u\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"hashtag\" value=\"#selfdrivingudacity\">\n  <button class=\"fb\">Share on Facebook</button>\n</form>\n\n<form action=\"https://www.linkedin.com/shareArticle?mini=true\">\n  <input type=\"url\" name=\"url\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"title\" value=\"Traffic Sign Classification\">\n  <input type=\"hidden\" name=\"summary\" value=\"I finished Traffic Sign Classification in the Self-Driving Car Nanodegree @udacity #selfdrivingudacity\">\n  <button class=\"linkedin\">Share on LinkedIn</button>\n</form>\n\n</body>\n\n</html>",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

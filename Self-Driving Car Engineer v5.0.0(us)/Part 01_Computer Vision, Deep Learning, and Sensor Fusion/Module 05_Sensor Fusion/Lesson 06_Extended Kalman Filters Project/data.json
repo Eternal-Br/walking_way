@@ -1,0 +1,883 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627481,
+      "key": "3feb3671-6252-4c25-adf0-e963af4d9d4a",
+      "title": "Extended Kalman Filters Project",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Apply everything you've learned about Sensor Fusion by implementing an Extended Kalman Filter in C++!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/3feb3671-6252-4c25-adf0-e963af4d9d4a/627481/1545019048898/Extended+Kalman+Filters+Project+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/3feb3671-6252-4c25-adf0-e963af4d9d4a/627481/1545019046653/Extended+Kalman+Filters+Project+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "748b00bd-77b7-4ca0-86c0-bb7d35c459cf",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 34560,
+        "semantic_type": "Project",
+        "title": "Extended Kalman Filters",
+        "description": "Check your project against the [project rubric](https://review.udacity.com/#!/rubrics/1962/view). Make sure your RMSE values satisfy the thresholds listed in the rubric!\n",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1962",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://s3.amazonaws.com/video.udacity-data.com/topher/2018/August/5b7dbd4e_extended-kf/extended-kf.png",
+          "width": 1179,
+          "height": 647
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 663245,
+          "key": "c841a6a6-5a50-4ce4-b21c-63275ea4b4d7",
+          "title": "Back to Bayes Theorem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c841a6a6-5a50-4ce4-b21c-63275ea4b4d7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663246,
+              "key": "a831d438-fac7-443f-9f52-642c712c2659",
+              "title": "04 Sensor Fusion A03 Back To Bayes Theorem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wel0ggSIT54",
+                "china_cdn_id": "wel0ggSIT54.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 663478,
+          "key": "6eb598f7-44f2-4236-b9ae-d0c4d3ec3f0c",
+          "title": "Intro to Extended Kalman Filter Project",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6eb598f7-44f2-4236-b9ae-d0c4d3ec3f0c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663479,
+              "key": "b6b54fac-82f1-4cef-bbf7-2dbce1348cf4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Project Introduction\n\nNow that you have learned how the extended Kalman filter works, you are going to implement the extended Kalman filter in C++. We are providing simulated lidar and radar measurements detecting a bicycle that travels around your vehicle. You will use a Kalman filter, lidar measurements and radar measurements to track the bicycle's position and velocity.\n\nThe first step is to download the simulator, which contains all the projects for Self-Driving Car Nanodegree. More detailed instruction about setting up the simulator with uWebSocketIO can be found at the end of this section.\n\nLidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles. The video below shows what the simulator looks like when a c++ script is using its Kalman filter to track the object. The simulator provides the script the measured data (either lidar or radar), and the script feeds back the measured estimation marker, and RMSE values from its Kalman filter. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 663480,
+              "key": "bc867f39-7532-4070-9130-c2ae40120c43",
+              "title": "T2 P1 EKF",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "d6qbR3_LPoA",
+                "china_cdn_id": "d6qbR3_LPoA.mp4"
+              }
+            },
+            {
+              "id": 663488,
+              "key": "b808eacd-a722-4768-b98c-40588b5d03f7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Example of Tracking with Lidar\n\nCheck out the video below to see a real world example of object tracking with lidar. In this project, you will only be tracking one object, but the video will give you a sense for how object tracking with lidar works:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 663489,
+              "key": "f2d34486-a282-4c17-91fa-724a2ad07d8b",
+              "title": "Data collected from Castro St. in Mountain View, California.",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FMNJPX_sszU",
+                "china_cdn_id": "FMNJPX_sszU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 682573,
+          "key": "67f3c507-76e8-43c3-ae09-478a0a0a6563",
+          "title": "Data File for EKF project",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "67f3c507-76e8-43c3-ae09-478a0a0a6563",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 682574,
+              "key": "bccfe022-87ee-41f6-8b41-2a90e5d9fa0a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Explanation of the Data File\n\nThe github repo contains one data file:\n- `obj_pose-laser-radar-synthetic-input.txt`\n\nHere is a screenshot of the first data file:\n\nThe simulator will be using this data file, and feed main.cpp values from it one line at a time.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 682576,
+              "key": "eceb31c1-d15c-47cf-9058-bc393bf2543f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b5b69ad_screen-shot-2017-04-18-at-2.33.20-pm/screen-shot-2017-04-18-at-2.33.20-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/eceb31c1-d15c-47cf-9058-bc393bf2543f",
+              "caption": "Screenshot of Data File",
+              "alt": "",
+              "width": 1212,
+              "height": 355,
+              "instructor_notes": null
+            },
+            {
+              "id": 682577,
+              "key": "b4994036-5240-450a-98e4-bde3e079bbaa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Each row represents a sensor measurement where the first column tells you if the measurement comes from radar (R) or lidar (L).\n\nFor a row containing radar data, the columns are:\n**sensor_type, rho_measured, phi_measured, rhodot_measured, timestamp, x_groundtruth, y_groundtruth, vx_groundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth**.\n\nFor a row containing lidar data, the columns are:\n**sensor_type, x_measured, y_measured, timestamp, x_groundtruth, y_groundtruth, vx_groundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth**.\n\nWhereas radar has three measurements (rho, phi, rhodot), lidar has two measurements (x, y).\n\nYou will use the measurement values and timestamp in your Kalman filter algorithm. Groundtruth, which represents the actual path the bicycle took, is for calculating **root mean squared error**.\n\nYou do not need to worry about yaw and yaw rate ground truth values.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 682578,
+              "key": "8cf440f4-5dbe-4a9b-ab0d-c2da6f2ab431",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Reading in the Data\n\nWe have provided code that will read in and parse the data files for you. This code is in the `main.cpp` file. The `main.cpp` file creates instances of a **MeasurementPackage**.\n\nIf you look inside 'main.cpp', you will see code like:\n\n```\nMeasurementPackage meas_package;\nmeas_package.sensor_type_ = MeasurementPackage::LASER;\nmeas_package.raw_measurements_ = VectorXd(2);\nmeas_package.raw_measurements_ << px, py;\nmeas_package.timestamp_ = timestamp;\n```\n\nand\n```\nvector<VectorXd> ground_truth;\nVectorXd gt_values(4);\ngt_values(0) = x_gt;\ngt_values(1) = y_gt; \ngt_values(2) = vx_gt;\ngt_values(3) = vy_gt;\nground_truth.push_back(gt_values);\n```\n \nThe code reads in the data file line by line. The measurement data for each line gets pushed onto a `measurement_pack_list`. The ground truth <span class=\"mathquill\">[p_x, p_y, v_x, v_y]</span> for each line in the data file gets pushed onto`ground_truth`so RMSE can be calculated later from `tools.cpp`. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 290329,
+          "key": "295dfb84-91ad-4887-87b0-3c0b635684b5",
+          "title": "File Structure",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "295dfb84-91ad-4887-87b0-3c0b635684b5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290553,
+              "key": "d01999c6-eae9-473c-8c89-51b831c8eb5c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Overview of a Kalman Filter: Initialize, Predict, Update\n\nTo review what we learned in the extended Kalman filter lectures, let's discuss the three main steps for programming a Kalman filter:\n- **initializing** Kalman filter variables\n- **predicting** where our object is going to be after a time step <span class=\"mathquill\">\\Delta{t}</span>\n- **updating** where our object is based on sensor measurements\n\nThen the prediction and update steps repeat themselves in a loop.\n\nTo measure how well our Kalman filter performs, we will then calculate **root mean squared error** comparing the Kalman filter results with the provided ground truth.\n\nThese three steps (initialize, predict, update) plus calculating RMSE encapsulate the entire extended Kalman filter project.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290333,
+              "key": "7949dabc-fda6-4d88-8308-042cc5082858",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Files in the Github src Folder\n\nThe files you need to work with are in the `src` folder of the github repository.\n- `main.cpp` - communicates with the Term 2 Simulator receiving data measurements, calls a function to run the Kalman filter, calls a function to calculate RMSE\n- `FusionEKF.cpp` - initializes the filter, calls the predict function, calls the update function\n- `kalman_filter.cpp`- defines the predict function, the update function for lidar, and the update function for radar\n- `tools.cpp`- function to calculate RMSE and the Jacobian matrix\n\nThe only files you need to modify are `FusionEKF.cpp`, `kalman_filter.cpp`, and `tools.cpp`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290552,
+              "key": "0b401378-4cb3-4339-8b8b-4f139aafa849",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### How the Files Relate to Each Other\n\nHere is a brief overview of what happens when you run the code files:\n\n1. `Main.cpp` reads in the data and sends a sensor measurement to `FusionEKF.cpp`\n2. `FusionEKF.cpp` takes the sensor data and initializes variables and updates variables. The Kalman filter equations are not in this file. `FusionEKF.cpp` has a variable called `ekf_`, which is an instance of a `KalmanFilter` class. The `ekf_` will hold the matrix and vector values. You will also use the `ekf_` instance to call the predict and update equations. \n3. The `KalmanFilter` class is defined in `kalman_filter.cpp` and `kalman_filter.h`. You will only need to modify 'kalman_filter.cpp', which contains functions for the prediction and update steps.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 321957,
+          "key": "cfbc9a5c-294f-4c24-9aae-1bdb7abf2018",
+          "title": "Main.cpp",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cfbc9a5c-294f-4c24-9aae-1bdb7abf2018",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 321958,
+              "key": "249d7fbd-d3fa-4b03-8858-39cdc8ed0e15",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here we will discuss the `main.cpp` file. Although you will not need to modify this file, the project is easier to implement once you understand what the file is doing. As a suggestion, open the github repository for the project and look at the code files simultaneously with this lecture slide.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 321959,
+              "key": "1ec617e6-275e-4a84-b47e-2eb6f7ee3111",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Main.cpp\n\nYou do not need to modify the `main.cpp`, but let's discuss what the file does.\n\nThe **Term 2 simulator** is a client, and the c++ program software is a web server.\n\nWe already discussed how `main.cpp` reads in the sensor data. Recall that `main.cpp` reads in the sensor data line by line from the client and stores the data into a measurement object that it passes to the Kalman filter for processing. Also a ground truth list and an estimation list are used for tracking RMSE. \n\n`main.cpp` is made up of several functions within `main()`, these all handle the uWebsocketIO communication between the simulator and it's self.\n\nHere is the main protocol that main.cpp uses for uWebSocketIO in communicating with the simulator.\n\n```python\nINPUT: values provided by the simulator to the c++ program\n\n[\"sensor_measurement\"] => the measurement that the simulator observed (either lidar or radar)\n\n\nOUTPUT: values provided by the c++ program to the simulator\n\n[\"estimate_x\"] <= kalman filter estimated position x\n[\"estimate_y\"] <= kalman filter estimated position y\n[\"rmse_x\"]\n[\"rmse_y\"]\n[\"rmse_vx\"]\n[\"rmse_vy\"]\n```\n\nAll the main code loops in `h.onMessage()`, to have access to intial variables that we created at the beginning of `main()`, we pass pointers as arguments into the header of `h.onMessage()`.\n\nFor example:\n\n```cpp\nh.onMessage([&fusionEKF,&tools,&estimations,&ground_truth]\n            (uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, \n             uWS::OpCode opCode)\n``` \n\nThe rest of the arguments in `h.onMessage` are used to set up the server.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 321960,
+              "key": "d3bf13b5-a411-4540-b794-8d024b6df4e9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```\n // Create a Fusion EKF instance\n  FusionEKF fusionEKF;\n\n  // used to compute the RMSE later\n  vector<VectorXd> estimations;\n  vector<VectorXd> ground_truth;\n\n  //Call the EKF-based fusion\n  fusionEKF.ProcessMeasurement(meas_package); \n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 321961,
+              "key": "005964bf-4cc9-465c-85bc-ed8e15f7bc1c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The code is:\n- creating an instance of the `FusionEKF` class\n- Receiving the measurement data calling the `ProcessMeasurement()` function. `ProcessMeasurement()` is responsible for the initialization of the Kalman filter as well as calling the prediction and update steps of the Kalman filter. You will be implementing the `ProcessMeasurement()` function in `FusionEKF.cpp`:\n\n\n\nFinally, \n\nThe rest of `main.cpp` will output the following results to the simulator:\n- estimation position\n- calculated RMSE\n\n`main.cpp` will call a function to calculate root mean squared error:\n```\n  // compute the accuracy (RMSE)\n  Tools tools;\n  cout << \"Accuracy - RMSE:\" << endl << tools.CalculateRMSE(estimations, ground_truth) << endl;\n```\n\nYou will implement an RMSE function in the `tools.cpp` file.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 290461,
+          "key": "15b78db8-924a-47a0-bee2-9ea135651d63",
+          "title": "Project Code",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "15b78db8-924a-47a0-bee2-9ea135651d63",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290556,
+              "key": "d496f31d-2760-415f-82bb-2a3c858eedf7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's discuss the three files that you will need to modify.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290463,
+              "key": "d08add91-2eaa-48bc-9e98-802a5cb996fe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### FusionEKF.cpp\n\nIn `FusionEKF.cpp`, we have given some starter code for implementing sensor fusion. In this file, you won't need to include the actual Kalman filter equations; instead, you will be initializing variables, initializing the Kalman filters, and then calling functions that implement the prediction step or update step. You will see `TODO` comments indicating where to put your code.\n\n You will need to:\n1. initialize variables and matrices (x, F, H_laser, H_jacobian, P, etc.)\n2. initialize the Kalman filter position vector with the first sensor measurements\n3. modify the F and Q matrices prior to the prediction step based on the elapsed time between measurements\n4. call the update step for either the lidar or radar sensor measurement. Because the update step for lidar and radar are slightly different, there are different functions for updating lidar and radar. \n\n\n#### Initializing Variables in FusionEKF.cpp\n```\n  // initializing matrices\n  R_laser_ = MatrixXd(2, 2);\n  R_radar_ = MatrixXd(3, 3);\n  H_laser_ = MatrixXd(2, 4);\n  Hj_ = MatrixXd(3, 4);\n\n  //measurement covariance matrix - laser\n  R_laser_ << 0.0225, 0,\n              0, 0.0225;\n\n  //measurement covariance matrix - radar\n  R_radar_ << 0.09, 0, 0,\n              0, 0.0009, 0,\n              0, 0, 0.09;\n\n  /**\n   * TODO: Finish initializing the FusionEKF.\n   * TODO: Set the process and measurement noises\n   */\n```\n\nEvery time `main.cpp` calls `fusionEKF.ProcessMeasurement(measurement_pack_list[k])`, the code in `FusionEKF.cpp` will run. -  If this is the first measurement, the Kalman filter will try to initialize the object's location with the sensor measurement. \n\n#### Initializing the Kalman Filter in FusionEKF.cpp\n\n```\n  /**\n   * Initialization\n   */\n  if (!is_initialized_) {\n    /**\n     * TODO: Initialize the state ekf_.x_ with the first measurement.\n     * TODO: Create the covariance matrix.\n     * You'll need to convert radar from polar to cartesian coordinates.\n     */\n\n    // first measurement\n    cout << \"EKF: \" << endl;\n    ekf_.x_ = VectorXd(4);\n    ekf_.x_ << 1, 1, 1, 1;\n\n    if (measurement_pack.sensor_type_ == MeasurementPackage::RADAR) {\n      // TODO: Convert radar from polar to cartesian coordinates \n      //         and initialize state.\n\n    }\n    else if (measurement_pack.sensor_type_ == MeasurementPackage::LASER) {\n      // TODO: Initialize state.\n\n    }\n\n    // done initializing, no need to predict or update\n    is_initialized_ = true;\n    return;\n  }\n```\n\n#### Predict and Update Steps in FusionEKF.cpp\nOnce the Kalman filter gets initialized, the next iterations of the for loop will call the `ProcessMeasurement()` function to do the predict and update steps.\n\n```\n  /**\n   * Prediction\n   */\n\n  /**\n   * TODO: Update the state transition matrix F according to the new elapsed time.\n   * Time is measured in seconds.\n   * TODO: Update the process noise covariance matrix.\n   * Use noise_ax = 9 and noise_ay = 9 for your Q matrix.\n   */\n\n  ekf_.Predict();\n\n  /**\n   * Update\n   */\n\n  /**\n   * TODO: Use the sensor type to perform the update step.\n   * TODO: Update the state and covariance matrices.\n   */\n\n  if (measurement_pack.sensor_type_ == MeasurementPackage::RADAR) {\n    // TODO: Radar updates\n\n  } else {\n    // TODO: Laser updates\n\n  }\n```\n\nIn `FusionEKF.cpp`, you will see references to a variable called `ekf_`. The `ekf_` variable is an instance of the `KalmanFilter` class. You will use `ekf_` to store your Kalman filter variables (x, P, F, H, R, Q) and call the predict and update functions. Let's talk more about the KalmanFilter class.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290467,
+              "key": "91eda530-3755-4f74-b022-778a6b779ec9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### KalmanFilter Class\n\n`kalman_filter.h` defines the `KalmanFilter` class containing the x vector as well as the P, F, Q, H and R matrices. The KalmanFilter class also contains functions for the prediction step as well as the Kalman filter update step (lidar) and extended Kalman filter update step (radar). \n\nYou will need to add your code to `kalman_filter.cpp` to implement the prediction and update equations. You do not need to modify 'kalman_filter.h'. \n\nBecause lidar uses linear equations, the update step will use the basic Kalman filter equations. On the other hand, radar uses non-linear equations, so the update step involves linearizing the equations with the Jacobian matrix. The `Update` function will use the standard Kalman filter equations. The `UpdateEKF` will use the extended Kalman filter equations:\n\n```\nvoid KalmanFilter::Predict() {\n  /**\n   * TODO: predict the state\n   */\n}\n\nvoid KalmanFilter::Update(const VectorXd &z) {\n  /**\n   * TODO: update the state by using Kalman Filter equations\n   */\n}\n\nvoid KalmanFilter::UpdateEKF(const VectorXd &z) {\n  /**\n   * TODO: update the state by using Extended Kalman Filter equations\n   */\n}\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290469,
+              "key": "1b9218e3-a1a2-498c-8739-efbab17ccb03",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Tools.cpp\n\nThis file is relatively straight forward. You will implement functions to calculate root mean squared error and the Jacobian matrix:\n\n```\nVectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,\n                              const vector<VectorXd> &ground_truth) {\n  /**\n   * TODO: Calculate the RMSE here.\n   */\n}\n\nMatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {\n  /**\n   * TODO: Calculate a Jacobian here.\n   */\n}\n``` \n\nHINT: You implemented these already in the coding quizzes.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290560,
+              "key": "1577763e-c3be-4bf0-97a9-ab3cff93cb3f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Compiling and Running Your Code\n\nTake a look at the github repo [README file](https://github.com/udacity/CarND-Extended-Kalman-Filter-Project/blob/master/README.md) for instructions on how to compile and run your code.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 290330,
+          "key": "cb31243c-3983-4a13-8799-5db4b0488b5e",
+          "title": "Tips and Tricks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cb31243c-3983-4a13-8799-5db4b0488b5e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 292490,
+              "key": "ed0a0e89-756d-451d-a32c-b3b927105745",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Summary of What Needs to Be Done\n\n1. In `tools.cpp`, fill in the functions that calculate root mean squared error (RMSE)  and the Jacobian matrix.\n2. Fill in the code in `FusionEKF.cpp`. You'll need to initialize the Kalman Filter, prepare the Q and F matrices for the prediction step, and call the radar and lidar update functions.\n3. In `kalman_filter.cpp`, fill out the `Predict()`, `Update()`, and `UpdateEKF()` functions. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290479,
+              "key": "569f2632-aea9-4bee-b79e-9cc9b24a6bd5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Tips and Tricks\n\n##### Review the Previous Lessons\n* Review the previous lessons! Andrei, Dominik and co. have given you everything you need. In fact, you've built most of an Extended Kalman Filter already! Take a look at the programming assignments and apply the techniques you used to this project.\n\n##### No Need to Tune Parameters\n* The R matrix values and Q noise values are provided for you. There is no need to tune these parameters for this project.\n\n##### Initializing the State Vector\n* You'll need to initialize the state vector with the first sensor measurement. \n* Although radar gives velocity data in the form of the range rate <span class=\"mathquill\">\\dot{\\rho}</span>, a radar measurement does not contain enough information to determine the state variable velocities <span class=\"mathquill\">v_x</span> and <span class=\"mathquill\">v_y</span>. You can, however, use the radar measurements <span class=\"mathquill\">\\rho</span> and <span class=\"mathquill\">\\phi</span> to initialize the state variable locations <span class=\"mathquill\">p_x</span> and <span class=\"mathquill\">p_y</span>.\n\n##### Calculating y = z - H * x'\n* For lidar measurements, the error equation is `y = z - H * x'`. For radar measurements, the functions that map the x vector [px, py, vx, vy] to polar coordinates are non-linear. Instead of using H to calculate `y = z - H * x'`, for radar measurements you'll have to use the equations that map from cartesian to polar coordinates: `y = z - h(x')`.\n\n##### Normalizing Angles \n* In C++, `atan2()` returns values between -pi and pi. When calculating phi in `y = z - h(x)` for radar measurements, the resulting angle phi in the y vector should be adjusted so that it is between -pi and pi. The Kalman filter is expecting small angle values between the range -pi and pi. HINT: when working in radians, you can add <span class=\"mathquill\">2\\pi</span> or subtract <span class=\"mathquill\">2\\pi</span> until the angle is within the desired range.\n\n##### Avoid Divide by Zero throughout the Implementation\n* Before and while calculating the Jacobian matrix Hj, make sure your code avoids dividing by zero. For example, both the x and y values might be zero or `px*px + py*py` might be close to zero. What should be done in those cases?\n\n##### Test Your Implementation\n* Test! We're giving you the ability to analyze your output data and calculate RMSE. As you make changes, keep testing your algorithm! If you are getting stuck, add print statements to pinpoint any issues. But please remove extra print statements before turning in the code.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290481,
+              "key": "732dfe73-4e42-4f5e-b102-07e9293b86fe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Ideas for Standing out!\nThe Kalman Filter general processing flow that you've learned in the preceding lessons gives you the basic knowledge needed to track an object. However, there are ways that you can make your algorithm more efficient! \n\n- Dealing with the first frame, in particular, offers opportunities for improvement. \n- Experiment and see how low your RMSE can go!\n- Try removing radar or lidar data from the filter. Observe how your estimations change when running against a single sensor type! Do the results make sense given what you know about the nature of radar and lidar data? \n- We give you starter code, but you are not required to use it! You may want to start from scratch if:\nYou want a bigger challenge!\nYou want to redesign the project architecture. There are many valid design patterns for approaching the Kalman Filter algorithm. Feel free to experiment and try your own!\nYou want to use a different coding style, eg. functional programming. While C++ code naturally tends towards being object-oriented in nature, it's perfectly reasonable to attempt a functional approach. Give it a shot and maybe you can improve its efficiency!\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 290261,
+          "key": "382ebfd6-1d55-4487-84a5-b6a5a4ba1e47",
+          "title": "Project Resources",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "382ebfd6-1d55-4487-84a5-b6a5a4ba1e47",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 290264,
+              "key": "b1a31306-def9-4676-85ed-a9e60e7c0998",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Resources for Completing the Project\n\nThe project's [GitHub repository](https://github.com/udacity/CarND-Extended-Kalman-Filter-Project) (included within the workspace) contains all of the files that you will need. The github repository includes:\n\n- starter code in the `src` folder\n- a README file with instructions on compiling the code\n- a `Docs` folder, which contains details about the structure of the code templates\n- `CMakeLists.txt` file that will be used when compiling your code (you do not need to change this file)\n- a data file for testing your extended Kalman filter which the simulator interface provides\n\n\n\nHere is a link to the [project rubric](https://review.udacity.com/#!/rubrics/748/view). Your project will need to meet specifications for all of the criteria in the rubric.\n\n### Using GitHub and Creating Effective READMEs\n\nIf you are unfamiliar with GitHub , Udacity has a brief [GitHub tutorial](http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html) to get you started. Udacity also provides a more detailed free [course on git and GitHub](https://www.udacity.com/course/how-to-use-git-and-github--ud775).\n\nTo learn about README files and Markdown, Udacity provides a free [course on READMEs](https://www.udacity.com/course/writing-readmes--ud777), as well. \n\nGitHub also provides a [tutorial](https://guides.github.com/features/mastering-markdown/) about creating Markdown files.\n\n\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 292488,
+              "key": "2c601bb8-c005-4cb9-8254-e02147f7b264",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Dependencies\n\nKeep in mind that the minimum project dependency versions are:\n\n* cmake: 3.5\n * All OSes: [click here for installation instructions](https://cmake.org/install/)\n* make: 4.1 (Linux and Mac), 3.81 (Windows)\n  * Linux: make is installed by default on most Linux distros\n  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)\n  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)\n* gcc/g++: 5.4\n  * Linux: gcc / g++ is installed by default on most Linux distros\n  * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)\n  * Windows: recommend using [MinGW](http://www.mingw.org/)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 290268,
+              "key": "142af61f-e020-4ca7-a32e-10fdc2a94d9b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Optional Resources\n\nTo complete the project, you only need the files in the github repo; however, we are also providing some extra resources that you can use to develop your solution:\n- A [Sensor Fusion utilities repo](https://github.com/udacity/CarND-Mercedes-SF-Utilities) containing Matlab scripts that will generate more sample data (generating your own sample data is completely optional)\n- A visualization package that you can also find within [the Sensor Fusion utilities repo](https://github.com/udacity/CarND-Mercedes-SF-Utilities)\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 650409,
+          "key": "f1e4ef0e-dff1-4b0e-b623-30cbacd6aad7",
+          "title": "Project Instructions for workspaces",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f1e4ef0e-dff1-4b0e-b623-30cbacd6aad7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 650410,
+              "key": "d32a4e7d-6315-4531-beee-02876bc27438",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#  Running the Extended Kalman Filter project in workspaces\nThis workspace is designed to be a simple, easy to use environment in which you can code and run the Extended Kalman Filter project. \n\nFor tips on workspace use, please review the Workspaces lesson earlier in the program.\n\n## Accessing and using the workspace:\n- Navigate to the workspace node. If you need to test your solution, enable the GPU - otherwise you won't be able to run the simulator. Remember to turn it off when you code your solution so that you don't run out of GPU hours.\n- Navigate to the repository `CarND-Extended-Kalman-Filter-Project` using the file and directory menu on the left.\n- Run `./install-ubuntu.sh` in the terminal window to make sure the necessary dependencies are installed (you may need to run `chmod u+x install-ubuntu.sh` to make the file executable).\n- Complete the `TODO` in FusionEKF.cpp, FusionEKF.h, kalman_filter.cpp, kalman_filter.h, tools.cpp and tools.h using the text editor in the workspace.\n- Navigate to the project repository in the terminal.\n\nThe main program can be built and run by doing the following from the project top directory:\n1. `mkdir build && cd build`\n2. `cmake .. && make`\n3.  `./ExtendedKF`\n\nClick on the \"Simulator\" button in the bottom of the Udacity workspace, which will open a new virtual desktop. You should see a \"Simulator\" link on the virtual desktop. Double-click the \"Simulator\" link in that desktop to start the simulator.\n\n**Important: ** You need to open a terminal before attempting to run the simulator. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 663487,
+              "key": "f5eb2f55-cda3-45dc-937a-987b2eec300d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Extended Kalman Filter Simulator\n\n1. In the main menu screen select Project 1/2 EKF and UKF.\n2. Once the scene is loaded you can hit the START button to observe how the object moves and how measurement markers are positioned in the data set. Also for more experimentation, \"Data set 2\" is included which is a reversed version of \"Data set 1\", also the second data set starts with a radar measurement where the first data set starts with a lidar measurement. At any time you can press the PAUSE button, to pause the scene or hit the RESTART button to reset the scene. Also, the ARROW KEYS can be used to move the camera around, and the top left ZOOM IN/OUT buttons can be used to focus the camera. Pressing the ESCAPE KEY returns to the simulator main menu.\n\n**NOTES:**\n- Currently hitting Restart or switching between data sets only refreshes the simulator state and not the Kalman Filter's saved results. The current procedure for refreshing the Kalman Filter is to close the connection, `ctrl+c` and reopen it, `./ExtendedKF`. If you don't do this when trying to run a different data set or running the same data set multiple times in a row, the RMSE values will become large because of the previous different filter results still being observed in memory.\n\n\n- The two functions in `tools.cpp` need to be implemented for the simulator to avoid throwing a segmentation fault - make sure to get those built out in order to test in the simulator!\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 692079,
+              "key": "04568c08-7ecc-4f29-9c9c-866cc5afc668",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Common Issues\n* \"**No VNC**\" or \"**Service is not running**\" error when launching simulator - this is related to either A) not having the workspace GPU enabled (the simulator needs a GPU to run), or B) the web browser being used. Safari is likely to produce this error, while Chrome should run the simulator fine.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 692081,
+              "key": "e884c247-5be3-44a3-95b8-752d077f6546",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b6220f1_novnc/novnc.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e884c247-5be3-44a3-95b8-752d077f6546",
+              "caption": "",
+              "alt": "",
+              "width": 227,
+              "height": 240,
+              "instructor_notes": null
+            },
+            {
+              "id": 692082,
+              "key": "3e2cf9ed-a55a-459e-9c2f-678aa43fd277",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* \"**No session for PID**\" error when launching simulator - when the desktop simulator is opened, sometimes a \"PID error\" window will appear. This error does not impact the simulator itself and can be safely ignored or click OK, it is harmless.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 692084,
+              "key": "43be4225-5f87-42cc-97d4-86920dd88a23",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b6222e5_pid-error/pid-error.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/43be4225-5f87-42cc-97d4-86920dd88a23",
+              "caption": "",
+              "alt": "",
+              "width": 320,
+              "height": 211,
+              "instructor_notes": null
+            },
+            {
+              "id": 692088,
+              "key": "50811b7c-ddbd-4801-b8f1-71abf7f925a2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "* **Missing simulator icon** - the simulator icon may fail to appear after a short wait within the Linux Desktop. If this is the case, click on the Terminal icon in the Desktop, and the simulator icon will typically appear. Please note that you still will use the actual Terminal within the primary workspace, and not the one in the Desktop.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 663428,
+              "key": "726d5d53-07b7-4ee1-b812-87d6caad5cc5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Commit to GitHub\nStudents are highly encouraged to commit their project to a GitHub repo.  To do this, you must change the upstream of the current repository and add your credentials.  We have supplied a bash script to help you do this.  Please open up a terminal, navigate to the project repository, and enter: `./set_git.sh`, then follow the prompts.  This will set the upstream remote to your own repository and add your email and username to the git configuration.  At this time we are not configuring passwords, so you will need to enter your username and password for each push.  Since credentials are not persistent, it will be necessary to run this script each time you open, refresh, or reset the workspace.\n\n## Project submission when using the workspace:\nCheck your project against the [project rubric](https://review.udacity.com/#!/rubrics/748/view). Make sure your RMSE values satisfy the thresholds listed in the rubric!\n\nClick on the `Submit project` button in the workspace and follow the instructions.\n\n## Things to keep in mind:\n- If you leave your workspace unattended, it will time out and need to be refreshed. Your most recent work will be restored, but the list of open files or any running shell sessions will not be restored.\n- Remember to turn off your GPU when coding your solution and just turn it on when you want to test your code. \n\n## Project Support ##\n\nIf you are stuck or having difficulties with the project, don't lose hope! Remember to talk to your mentors and fellow students in your Study Group, as well as ask (and answer!) questions on [Knowledge](https://knowledge.udacity.com) tagged with the project name. We also have a previously recorded project Q&A that you can watch [here](https://youtu.be/J7WK9gEUltM)!\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 650903,
+          "key": "a5facabd-2879-4b98-b7fd-f47b75026069",
+          "title": "Project Extended Kalman Filter GPU",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a5facabd-2879-4b98-b7fd-f47b75026069",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 650913,
+              "key": "30ba63f0-6495-48ae-a983-af08f03c4fc3",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view7b94286b",
+              "pool_id": "autonomousgpu",
+              "view_id": "7b94286b-93eb-4198-9c4a-e85719d6becc",
+              "gpu_capable": true,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "autonomous-datasets",
+                      "paths": [
+                        {
+                          "src": "/sdc_nd",
+                          "dest": "/data/"
+                        }
+                      ]
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "echo \"Installing dependencies.\"\nsudo apt-get -qq update > /dev/null\nsudo apt-get -y -qq install libssl-dev >/dev/null 2>&1 &\nmkdir -p /usr/include/uWS\nln -sf /data/uWebSockets/src/*.h /usr/include/uWS/\nln -sf /data/uWebSockets/build/libuWS.so /usr/lib/\ncp -rsn /data/libuv/usr/* /usr &> /dev/null\necho \"Done. All dependencies installed.\"\n",
+                    "openFiles": [],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": true,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Simulator",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 663472,
+          "key": "8b13c6f4-da54-41ac-935d-94b872f6e02b",
+          "title": "Project Instructions for local setup",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8b13c6f4-da54-41ac-935d-94b872f6e02b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663473,
+              "key": "a1c04895-b005-4f3e-a8d4-1d3796c93d97",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Running the project in your local machine\n1. Clone/fork the project's template files from the [project repository](https://github.com/udacity/CarND-Extended-Kalman-Filter-Project). (Note: Please do not submit your project as a pull request against our repo!)\n2. Read [the repo's README](https://github.com/udacity/CarND-Extended-Kalman-Filter-Project/blob/master/README.md) for more detailed instructions.\n3. Clone the visualization and data generation utilities from the [utilities repository](https://github.com/udacity/CarND-Mercedes-SF-Utilities).\n3. Build an Extended Kalman Filter by applying the general processing flow as described in the previous lessons.\n3. Ensure that your project compiles.\n  - From the root of the repo:\n    1. `mkdir build && cd build`\n    2. `cmake .. && make`\n    3.  `./ExtendedKF`\n4. Test your code using the simulator! \n5. Check your project against the [project rubric](https://review.udacity.com/#!/rubrics/748/view). Make sure your RMSE values satisfy the thresholds listed in the rubric!\n6. Submit your project for review. ***Be sure to include all files necessary to compile and run your project, including the CMakeLists.txt file.***\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 663475,
+              "key": "34df5702-6274-4a5d-9ada-20702efe7f46",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Download Link for EKF Simulator\n\nThe EKF project was previously part of Term 2, so please download the\n[Term 2 Simulator Release](https://github.com/udacity/self-driving-car-sim/releases/).\n\n## Running the Program\n\n1. Download the simulator and open it. In the main menu screen select Project 1/2 EKF and UKF.\n\n2. Once the scene is loaded you can hit the START button to observe how the object moves and how measurement markers are positioned in the data set. Also for more experimentation, \"Data set 2\" is included which is a reversed version of \"Data set 1\", also the second data set starts with a radar measurement where the first data set starts with a lidar measurement. At any time you can press the PAUSE button, to pause the scene or hit the RESTART button to reset the scene. Also, the ARROW KEYS can be used to move the camera around, and the top left ZOOM IN/OUT buttons can be used to focus the camera. Pressing the ESCAPE KEY returns to the simulator main menu.\n\n3. The [EKF project Github repository README](https://github.com/udacity/CarND-Extended-Kalman-Filter-Project)  has more detailed instructions for installing and using c++ uWebScoketIO.\n\n**NOTES:**\n- Currently hitting Restart or switching between data sets only refreshes the simulator state and not the Kalman Filter's saved results. The current procedure for refreshing the Kalman Filter is to close the connection, `ctrl+c` and reopen it, `./ExtendedKF`. If you don't do this when trying to run a different data set or running the same data set multiple times in a row, the RMSE values will become large because of the previous different filter results still being observed in memory.\n\n\n- The two functions in `tools.cpp` need to be implemented for the simulator to avoid throwing a segmentation fault - make sure to get those built out in order to test in the simulator!\n\n\n- Students have reported rapid expansion of log files when using the term 2 simulator.  This appears to be associated with not being connected to uWebSockets.  If this does occur, please make sure you are connected to uWebSockets. The following workaround may also be effective at preventing large log files.\n\n    + create an empty log file\n    + remove write permissions so that the simulator can't write to log\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 663498,
+              "key": "cb6f2f5a-982e-4541-b396-a47b2c41096d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Project submission\nCheck your project against the [project rubric](https://review.udacity.com/#!/rubrics/748/view). Make sure your RMSE values satisfy the thresholds listed in the rubric!\n\nOnce you are ready to submit go to the last item in this lesson and submit your project, make sure you include all the files necessary to compile and run your project!\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 663497,
+              "key": "32bc37e1-e189-4962-88e6-4956444aba73",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Problems with setup in your local machine?\nMake sure to review the next lessons if you face any problem while preparing your local setup. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 663474,
+              "key": "1326ea18-4d5d-478f-92df-945f0d0f716b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Project Support ##\n\nIf you are stuck or having difficulties with the project, don't lose hope! Remember to talk to your mentors and fellow students in your Study Group, as well as ask (and answer!) questions on [Knowledge](https://knowledge.udacity.com) tagged with the project name. We also have a previously recorded project Q&A that you can watch [here](https://youtu.be/J7WK9gEUltM)!\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 663499,
+          "key": "7dedf53a-324a-4998-aaf4-e30a3f2cef1d",
+          "title": "uWebSocketIO Starter Guide",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7dedf53a-324a-4998-aaf4-e30a3f2cef1d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663500,
+              "key": "5eff15f8-9de7-431f-8bd9-243c135074e0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# uWebSocketIO Starter Guide\n\nThis project involve using an open source package called [uWebSocketIO](https://github.com/uNetworking/uWebSockets). This package facilitates the same connection between the simulator and code that was used in the Term 1 Behavioral Cloning Project, but now with C++. The package does this by setting up a web socket server connection from the C++ program to the simulator, which acts as the host. In the project repository there are two scripts for installing uWebSocketIO - one for Linux and the other for macOS. \n\nNote: Only uWebSocketIO branch *e94b6e1*, which the scripts reference, is compatible with the package installation.\n\n### Linux Installation:\nFrom the project repository directory run the script: `install-ubuntu.sh`\n\n### Mac Installation:\nFrom the project repository directory run the script: `install-mac.sh`\n\nSome users report needing to use `cmakepatch.txt` which is automatically referenced and is also located in the project repository directory.\n\n### Windows Installation\nAlthough it is possible to install uWebSocketIO to native Windows, the process is quite involved. Instead, you can use one of several Linux-like environments on Windows to install and run the package.\n\n#### Bash on Windows\nOne of the newest features to Windows 10 users is an Ubuntu Bash environment that works great and is easy to setup and use. Here is a nice [step by step guide](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) for setting up the utility.\n\nWe recommend using the newest version of Ubunut Bash 16.04,  which is able to run the `install-ubuntu.sh` script without complications. The link [here](https://www.howtogeek.com/278152/how-to-update-the-windows-bash-shell/) can help you check which version of Ubuntu Bash you are running, and also help you upgrade if you need to.\n\n### Docker\n\nIf you don't want to use Bash on Windows, or you don't have Windows 10, then you can use a virtual machine to run a Docker image that already contains all the project dependencies.\n\nFirst [install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/).\n\nNext, launch the Docker Quickstart Terminal. The default Linux virtual environment should load up. You can test that Docker is setup correctly by running `docker version` and `docker ps`.\n\nYou can enter a Docker image that has all the project dependencies by running:  \n\ndocker run -it -p 4567:4567 -v 'pwd':/work udacity/controls_kit:latest\n\nOnce inside Docker you can clone over the GitHub project repositories and run the project from there. \n\n## Port forwarding is required when running code on VM and simulator on host\nFor security reasons, the VM does not automatically open port forwarding, so you need to manually [enable port 4567](https://www.howtogeek.com/122641/how-to-forward-ports-to-a-virtual-machine-and-use-it-as-a-server/). This is needed for the C++ program to successfully connect to the host simulator.\n\n##### Port Forwarding Instructions\n1. First open up Oracle VM VirtualBox\n2. Click on the default session and select settings.\n3. Click on Network, and then Advanced.\n4. Click on Port Forwarding\n5. Click on the green plus, adds new port forwarding rule.\n6. Add a rule that assigns 4567 as both the host port and guest Port, as in the screenshot.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 663501,
+              "key": "49112966-90b1-48eb-9187-60a896998e51",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/June/5942e57a_port-forward/port-forward.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/49112966-90b1-48eb-9187-60a896998e51",
+              "caption": "",
+              "alt": "",
+              "width": 878,
+              "height": 330,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 396561,
+          "key": "23d376c7-0195-4276-bdf0-e02f1f3c665d",
+          "title": "Environment Setup (Windows)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "23d376c7-0195-4276-bdf0-e02f1f3c665d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 396562,
+              "key": "8e032819-5e08-4831-a28c-82faf772a429",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The tips below may be helpful in setting up your environment and getting term 2 projects up and running.  **Windows 10 Users please note that Ubuntu BASH is the recommended option.** ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 396566,
+              "key": "a26d799d-bbc8-41e7-b04d-aa57969c4666",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Ubuntu BASH on Windows\n\n### Steps\n\n- Ensure all dependencies are present per [project resources](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/382ebfd6-1d55-4487-84a5-b6a5a4ba1e47) \n- Follow these the instructions in the [uWebSocketIO starter guide](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/16cf4a78-4fc7-49e1-8621-3450ca938b77) which includes \n[instructions](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) for setting up Ubuntu BASH.\n- open Ubuntu Bash and clone the project repository\n- on the command line execute ```./install-ubuntu.sh```\n- build and run according to the instructions in the project repository README\n\n### Trouble Shooting\n- **.sh files not recognized on run:** Try ```chmod a+x <filename.sh>``` for example ```chmod a+x install-ubuntu.sh``` \n- **Messages regarding 404s, missing resources, and a variety of other error messages** can be addressed by updates and other means, per [this Knowledge post](https://knowledge.udacity.com/questions/5184).  The general steps are:\n\n** Not all steps will be necessary, for example, installing git and cloning the project repository, if this has already been done.**\n\n1. ```sudo apt-get update```\n2. ```sudo apt-get install git```\n3. ```sudo apt-get install cmake```\n4. ```sudo apt-get install openssl```\n5. ```sudo apt-get install libssl-dev```\n6. ```git clone https://github.com/udacity/CarND-Kidnapped-Vehicle-Project or whatever CarND project```\n7. ```sudo rm /usr/lib/libuWS.so``` \n8. navigate to  CarND-Kidnapped-Vehicle-Project/\n9. ```./install-ubuntu.sh```\n10. at the top level of the project repository ```mkdir build && cd build```\n11. from /build ```cmake .. && make```\n12. Launch the simulator from Windows and execute the run command for the project, for example ```./ExtendedKF``` or ```./particle_filter```  (Make sure you also run the simulator on the Windows host machine)\nIf you see this message, it is working ```Listening to port 4567 Connected!!!```\n\nAfter following these steps there may be some messages regarding makefile not found or can't create symbolic link to websockets.  There is likely nothing wrong with the installation.  Before doing any other troubleshooting  make sure that steps 10 and 11 have been executed from the top level of the project directory, then test the installation using step 12.\n\n**Step 9 may fail for number of reasons as listed below:**\n- ```install-ubuntu.sh``` has only rw but no x permission. Run ```chmod a+x install-ubuntu.sh``` to give execution permission\n- Cannot find the package ```libuv1-dev```\n    + To install the package run ```sudo apt-get install libuv1.dev```\n    + If you still cannot install the package run the following to get the package and install it:\n        + ```sudo add-apt-repository ppa:acooks/libwebsockets6```\n        + ```sudo apt-get update```\n        + ```sudo apt-get install libuv1.dev```\n- May complain about the version of cmake you have. You need a version greater than 3.0. [Here is a link ](https://askubuntu.com/questions/355565/how-to-install-latest-cmake-version-in-linux-ubuntu-from-command-line) which describes how to get version 3.8. Look at Teocci's response in this link\n- Installing cmake requires g++ compiler. Install a g++ version 4.9 or greater. Here are the steps:\n    + ```sudo add-apt-repository ppa:ubuntu-toolchain-r/test```\n    + ```sudo apt-get update```\n    + ```sudo apt-get install g++-4.9```\n\n** A Note Regarding Step 11**\nThis step can fail if the bash shell is still referring to an older g++ version.  To address this, please refer to [this Ask Ubuntu post](https://askubuntu.com/a/507068/706823).\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 396564,
+              "key": "54cae3d0-5f04-4c37-96a0-c914353b962e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Docker on Windows\n\nThe best place to start is to follow the instructions [here](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/16cf4a78-4fc7-49e1-8621-3450ca938b77).  A common pitfall is to not log in to the docker container.  The first time you run ```docker run -it -p 4567:4567 -v 'pwd':/work udacity/controls_kit:latest``` the controls_kit may download, but the system may not log you in to the container.  If you are logged in instead of a ```$``` prompt, you should see something like this: ```root@27b126542a51:/work#```.  If you are not logged into the container commands such as ```apt-get``` and ```make``` will not be recognized, so be sure to execute ```docker run -it -p 4567:4567 -v 'pwd':/work udacity/controls_kit:latest``` again, if you do not see the correct prompt.\n\nA thoughtful student has created a docker specific [starter guide](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/forum_archive/brightwellt+Docker+Windows+Starter+Guide.pdf) for the EKF project.  The following is an abridged version.\n\n### Tip regarding port forwarding when running code on vm and simulator on host\nWhen using a virtual machine and running the simulator on the host machine, it is critical to set up port forwarding, as described [here](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/16cf4a78-4fc7-49e1-8621-3450ca938b77).\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 403044,
+              "key": "c50e7a0b-3fc4-4976-89ff-65751a9a2031",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Transferring Files Between Native and Virtual Environments\n\nMany prefer to use text editors in Windows rather than those that ship with Ubuntu BASH or Docker (vim, nano, etc.)\n\nOptions for addressing this include:\n\n- **All Systems:** setup a git repo, edit files in Windows, push to the repo from Windows, pull the repo from the virtual environment\n- **Ubuntu BASH:** edit files in windows,  mount the c drive in Ubuntu BASH (```cd /mnt /c```), navigate to the files, copy to the desired location in Ubuntu BASH, navigated to the appropriate Ubuntu BASH folder \n- **Docker on Windows:** See this [starter guide](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/forum_archive/brightwellt+Docker+Windows+Starter+Guide.pdf) for suggestions.\n\n\n### Note Regarding Ubuntu Bash on Windows\n\nThe Ubuntu Bash system can be accessed from Windows, any files altered in this way may no longer be recognizable by Ubuntu BASH.  This often manifest itself in the file disappearing from Ubuntu BASH.  \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 433624,
+              "key": "fa041fe6-9cf9-413a-9791-a1ea898a5c31",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## IDE Profile to Develop Natively in Windows with Visual Studio\n\nA student contributed IDE profile can be found [here](https://github.com/fkeidel/CarND-Term2-ide-profile-VisualStudio).  More detail can be found [here](https://github.com/udacity/sdc-issue-reports/issues/1136).\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 415789,
+          "key": "07be3ef0-e444-4080-b766-4a454185529a",
+          "title": "Environment Setup (Linux)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "07be3ef0-e444-4080-b766-4a454185529a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 415791,
+              "key": "46caae2d-f0e4-487a-955a-caa189ec03e9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Linux\n\n### Steps\n\n- Ensure all dependencies are present per Project Resources earlier in the lesson\n- Clone the project repository\n- Follow these the instructions in the uWebSocketIO starter guide earlier in the lesson (From the project repository directory run the script: ```install-ubuntu.sh```.\n- on the command line execute ```./install-ubuntu.sh```\n- build and run according to the instructions in the project repository README\n\n### Trouble Shooting\n\nThese steps are similar to those with Ubuntu BASH on Windows 10, above.\n\n- **.sh files not recognized on run:** Try ```chmod a+x <filename.sh>``` for example ```chmod a+x install-ubuntu.sh``` \n- **Messages regarding 404s, missing resources, and a variety of other error messages** can be addressed by updates and other means, per [this Knowledge post](https://knowledge.udacity.com/questions/5184).  The general steps are:\n\n** Not all steps will be necessary, for example, installing git and cloning the project repository, if this has already been done.**\n\n1. ```sudo apt-get update```\n2. ```sudo apt-get install git```\n3. ```sudo apt-get install cmake```\n4. ```sudo apt-get install openssl```\n5. ```sudo apt-get install libssl-dev```\n6. ```git clone https://github.com/udacity/CarND-Kidnapped-Vehicle-Project or whatever CarND project```\n7. ```sudo rm /usr/lib/libuWS.so``` \n8. navigate to  CarND-Kidnapped-Vehicle-Project/\n9. ```./install-ubuntu.sh```\n10. at the top level of the project repository ```mkdir build && cd build```\n11. from /build ```cmake .. && make```\n12. Launch the simulator from Windows and execute the run command for the project, for example ```./ExtendedKF``` or ```./particle_filter```  (Make sure you also run the simulator)\nIf you see this message, it is working ```Listening to port 4567 Connected!!!```\n\nAfter following these steps there may be some messages regarding makefile not found or can't create symbolic link to websockets.  There is likely nothing wrong with the installation.  Before doing any other troubleshooting  make sure that steps 10 and 11 have been executed from the top level of the project directory, then test the installation using step 12.\n\n**Step 9 may fail for number of reasons as listed below:**\n- ```install-ubuntu.sh``` has only rw but no x permission. Run ```chmod a+x install-ubuntu.sh``` to give execution permission\n- Cannot find the package ```libuv1-dev```\n    + To install the package run ```sudo apt-get install libuv1.dev```\n    + If you still cannot install the package run the following to get the package and install it:\n        + ```sudo add-apt-repository ppa:acooks/libwebsockets6```\n        + ```sudo apt-get update```\n        + ```sudo apt-get install libuv1.dev```\n- May complain about the version of cmake you have. You need a version greater than 3.0. [Here is a link ](https://askubuntu.com/questions/355565/how-to-install-latest-cmake-version-in-linux-ubuntu-from-command-line) which describes how to get version 3.8. Look at Teocci's response in this link\n- Installing cmake requires g++ compiler. Install a g++ version 4.9 or greater. Here are the steps:\n    + ```sudo add-apt-repository ppa:ubuntu-toolchain-r/test```\n    + ```sudo apt-get update```\n    + ```sudo apt-get install g++-4.9```\n\n** A Note Regarding Step 11**\nThis step can fail if the bash shell is still referring to an older g++ version.  To address this, please refer to [this Ask Ubuntu post](https://askubuntu.com/a/507068/706823).\n\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 415790,
+          "key": "7d235103-5c4d-4001-a227-5ad2ac43bfff",
+          "title": "Environment Setup (Mac)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7d235103-5c4d-4001-a227-5ad2ac43bfff",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 415792,
+              "key": "fc738dd5-ceba-4726-8961-1b0806544d30",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Mac\n\nFor most instances of missing packages and messages regarding uWebsockets, refer to Linux and Windows troubleshooting.  Below are some common issues and their solutions.\n\n-   **.sh files not recognized on run:** Try chmod a+x <filename.sh> for example ```chmod a+x install-mac.sh```\n- **missing ```openssl```, ```libuv```, or ```cmake```:**  install-mac.sh contains the line ```brew install openssl libuv cmake```, which will not execute properly if ```homebrew``` is not installed.  To determine if ```homebrew``` is installed, execute ```which brew``` in a terminal.  If a path returns it is installed, otherwise you see ```brew not found```.  Follow the guidance [here](https://brew.sh/) to install homebrew, then try running ```install-mac.sh``` again.\n- If the step above does not resolve issues regarding openssl, please try the guidance provided [this Knowledge post](https://knowledge.udacity.com/questions/5184) (scroll down to Set-up for Mac portion).\n- **Issues with rootless mode in recent versions of OSx:** Some recent versions of OSx have a rootless mode by default that cause some install script commands to fail, even when running as root or sudo.  To disable this reboot in recovery mode (```command+R```), and execute ```csrutil disable``` in a terminal.  After this is complete, try running the install script.\n\nAfter following these steps there may be some messages regarding makefile not found or can't create symbolic link to websockets. There is likely nothing wrong with the installation. Before doing any other troubleshooting make sure that build steps (10 and 11 from Windows and Linux instructions) have been executed from the top level of the project directory, then test the installation using running the code (step 12 from Windows and Linux instructions).\n\n### Tip regarding port forwarding when running code on vm and simulator on host\nWhen using a virtual machine and running the simulator on the host machine, it is critical to set up port forwarding, as described [here](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/16cf4a78-4fc7-49e1-8621-3450ca938b77).\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 278762,
+          "key": "c709884e-fa5c-460a-9a44-22386e4a367f",
+          "title": "Compiling and Running the Project",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c709884e-fa5c-460a-9a44-22386e4a367f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 278763,
+              "key": "25c1be49-c0a2-4cf3-96c9-fdfda76a22f2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Dependencies\n\nKeep in mind that the minimum project dependency versions are:\n\n* cmake: 3.5\n * All OSes: [click here for installation instructions](https://cmake.org/install/)\n* make: 4.1\n  * Linux: make is installed by default on most Linux distros\n  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)\n  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)\n* gcc/g++: 5.4\n  * Linux: gcc / g++ is installed by default on most Linux distros\n  * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)\n  * Windows: recommend using [MinGW](http://www.mingw.org/)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 278780,
+              "key": "0911d007-ad4b-454f-95d5-639fa1942282",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## \"Hmmm, I don't know what any of those dependencies are...\"\n\nFair point! You've been writing C++ in the classroom up to this point. Compiling on your own machine is a different challenge altogether. Let's talk about compiling.\n\n#### Compiling\n\nCompiling is the process of translating the code that you've written into machine code that processors understand. Every program, regardless of the source language, needs to be compiled in order to execute. This is true even for scripting languages like Python or JavaScript. In these cases, the interpreter (or a similar system) is responsible for compiling code on the fly in a process known as [just-in-time compiling](https://en.wikipedia.org/wiki/Just-in-time_compilation). To the user, compiling and execution are effectively a single action. (Of course, the actual process of compiling code at run-time is much more complicated than what was described here in one sentence. It's also very much dependent on the exact language and runtime in question.)\n\nUnlike scripted languages, compiled languages treat compilation and execution as two distinct steps. Compiling a program leaves you with an [executable](https://en.wikipedia.org/wiki/Executable) (often called a \"binary\"), a non-human readable file with machine code that the processor can run.\n\nThe nice thing about binaries is that they're generally distributable. So long as it was built with the right architecture in mind, you can copy an executable and run it immediately on other machines (like downloading a `.exe` file on Windows) without any need to share your source code or have the user perform any intermediate tasks before execution.\n\nThe problem with compiling is that it can be a _massive_ pain, to put it lightly. I've argued that half the battle of learning a language like C++ is just getting your code to compile for the first time. There are many tools available to help you compile, ranging from barebones tools, such as `g++` on Unix, to complex build systems that are integrated into IDEs like Visual Studio and Eclipse.\n\nFor this project, we decided to use a high-level build tool called **CMake** for the fact that it's fairly popular and cross-platform. CMake in and of itself, however, does not compile code. CMake results in compilation configurations. It depends on a lower-level build tool called **Make** to _manage_ compiling from source. And then Make depends on a compiler to do the actual compiling.\n\nConfused? Let's take a look at the subproducts and processes of compiling first. After that, the tooling choices for this project should make more sense.\n\n### Object Files\n\nCompiling source code, like a single .cpp file, results in something called an [object file](https://en.wikipedia.org/wiki/Object_file). An object file contains machine code but may not be executable in and of itself. Among other things, object files describe their own public APIs (usually called symbols) as well as references that need to be resolved from other object files. Depended upon object files might come from other source files within the same project or from external or system libraries.\n\nIn order to be executable, object files need to be linked together.\n\n### Linking\n\nLinking is the process of creating an executable by effectively combining object files. During the linking process, the linker (the thing that does the linking) resolves symbolic references between object files and outputs a self-contained binary with all the machine code needed to execute.\n\nAs an aside, linking is not required for all programs. Most operating systems allow **dynamic linking**, in which symbolic references point to libraries that are not compiled into the resulting binary. With dynamic linking, these references are resolved at runtime. An example of this is a program that depends on a system library. At runtime, the symbolic references of the program resolve to the symbols of the system library.\n\n### The Compilation Stack\n\nLet's go through the flow _backwards_ from executable to source code. I'll show you the challenges that exist in each step in order to clarify why an abstraction is often helpful.\n\n#### Compiling to Executable with a Compiler\n\nTechnically, you only need a compiler to compile C++ source code to a binary. A compiler does the dirty work of writing machine code for a given processor architecture. There are many compilers available. For this project, we picked the open source GNU Compiler Collection, more commonly called G++ or GCC. `gcc` is a command line tool.\n\nThere are two challenges with using gcc alone, both of which relate to the fact that most C++ projects are _large_. For one thing, you need to pass the paths for all of the project's source header files and cpp files to `gcc`. This is in addition to any compiler flags or options. You can easily end up with single call to `gcc` that spans multiple lines on a terminal, which is unruly and error-prone.\n\nSecondly, large projects will usually contain multiple linked binaries, each of which is compiled individually. If you're working in large project and only change one .cpp file, you generally only need to recompile _that one binary_ - the rest of your project does not need to be compiled again! Compiling an entire project can take up to _hours_ for large projects, and as such being intelligent about only compiling binaries that need to be compiled can save lots of time. GCC in and of itself is not smart enough to recognize what files in your project have changed and which haven't, and as such will recompile binaries needlessly - you'd need to manually change your `gcc` calls for the same optimizations. Luckily, there are tools that solve both of these problems!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 626898,
+          "key": "b06309fe-0475-4862-9817-1aecab1b1dff",
+          "title": "Share your success - EKF",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b06309fe-0475-4862-9817-1aecab1b1dff",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626899,
+              "key": "0dd72682-8f0b-4f29-b1bb-bc156e0e7e88",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Share your project success\nPassed your project? Share the good news!\n\nWhat you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your success with your network.\n\n<iframe\n  src=\"https://platform.twitter.com/widgets/tweet_button.html?size=l&url=www.udacity.com&text=I%20completed%20Extended%20Kalman%20Filters!%20I've%20just%20completed%20Term%201%20of%20the%20Self-Driving%20Car%20Engineer%20Nanodegree%20@udacity%20\n[Insert%20your%20Github%20repository%20url%20here]&hashtags=selfdrivingudacity\"\nwidth=\"140\"\nheight=\"28\"\nscrolling=\"no\">\n</iframe>\n\n#### Facebook and LinkedIn\nMake sure to use **@Udacity** and **#selfdrivingudacity** in your posts!\n\n<html>\n\n<head>\n<style>\n.fb {color: white;\n  background-color: #4661b0;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.fb:hover {color: #4661b0;\n  background-color: white;\n  border-color: #4661b0;\n  transition: background-color 0.4s}\n.linkedin {color: white;\n  background-color: #0077B5;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.linkedin:hover {color: #0077B5;\n  background-color: white;\n  border-color: #0077B5;\n  transition: background-color 0.4s}\n</style>\n\n</head>\n\n<body>\n<form action=\"https://www.facebook.com/sharer.php?\">\n  Enter the full URL of your Github repository or Youtube video:<br>\n  <input type=\"url\" name=\"u\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"hashtag\" value=\"#selfdrivingudacity\">\n  <button class=\"fb\">Share on Facebook</button>\n</form>\n\n<form action=\"https://www.linkedin.com/shareArticle?mini=true\">\n  <input type=\"url\" name=\"url\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"title\" value=\"Extended Kalman Filter\">\n  <input type=\"hidden\" name=\"summary\" value=\"I finished Extended Kalman Filter in the Self-Driving Car Nanodegree @udacity #selfdrivingudacity\">\n  <button class=\"linkedin\">Share on LinkedIn</button>\n</form>\n\n</body>\n\n</html>",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

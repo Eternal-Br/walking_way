@@ -1,0 +1,186 @@
+{
+  "id": 1962,
+  "project_id": 285,
+  "upload_types": [
+    "repo",
+    "zip"
+  ],
+  "file_filter_regex": "\\A(?!(((.*/)?(__MACOSX|\\.git|node_modules|bower_components|jspm_packages|\\.idea|build|.ipynb_checkpoints|\\.Trash-0|logs)(\\Z|/))))((.*\\.(cpp|css|docx|gradle|htm|html|java|js|markdown|md|pdf|py|rmd|rst|sql|swift|txt|xml|yaml|yml)\\Z)|((.*/)?(README|Readme|readme|Makefile)\\Z))",
+  "nomination_eligible": false,
+  "stand_out": "There are two ways we think you could make your project stand out:\r\n\r\n1. While we're giving this project to you with starter code, you are not actually required to use it! If you think you can organize your Kalman Filter better than us, go for it! Also, this project was templatized in an object-oriented style, however it's reasonable to build a Kalman Filter in a functional style. Feel free to start from scratch with a functional algorithm!\r\n  - Keep in mind that your code *must* compile. If your changes necessitate modifying CMakeLists.txt, you are responsible for ensuring that *any* reviewer can still compile your code given the dependencies listed earlier in the instructions - platform specific errors will *not* be debugged by graders.\r\n\r\n2. There is some room for improvement with the Kalman Filter algorithm. Maybe some aspects of the algorithm could be combined? Maybe some could be skipped under certain circumstances? Maybe there are other ways to improve performance? Get creative!\r\n\r\n3. Analyze what happens when you turn off radar or lidar. Which sensor type provides more accurate readings? How does fusing the two sensors' data improve the tracking results?",
+  "hide_criteria": false,
+  "created_at": "2018-06-01T21:55:23.197Z",
+  "updated_at": "2020-04-21T17:19:38.326Z",
+  "hashtag": "",
+  "max_upload_size_mb": 500,
+  "estimated_sla": null,
+  "project_assistant_enabled": false,
+  "checkmate_enabled": false,
+  "checkmate_metadata": null,
+  "available_for_cert_project": false,
+  "classroom_node_id": 634221,
+  "classroom_project_key": "748b00bd-77b7-4ca0-86c0-bb7d35c459cf",
+  "language": "en-us",
+  "ndkeys": [
+    "nd013beta",
+    "nd013",
+    "nd026",
+    "nd013-ent",
+    "nd013-ent-wipro"
+  ],
+  "coursekeys": [],
+  "sections": [
+    {
+      "id": 3954,
+      "name": "Compiling",
+      "created_at": "2018-06-01T22:10:20.403Z",
+      "updated_at": "2018-06-04T18:26:36.424Z",
+      "deleted_at": null,
+      "position": 0,
+      "rubric_id": 1962,
+      "rubric_items": [
+        {
+          "id": 11563,
+          "section_id": 3954,
+          "passed_description": "Code must compile without errors with `cmake` and `make`.\r\n\r\nGiven that we've made CMakeLists.txt as general as possible, it's recommended that you do not change it unless you can guarantee that your changes will still compile on any platform.",
+          "exceeded_description": "",
+          "created_at": "2018-06-01T22:10:27.546Z",
+          "updated_at": "2018-12-21T16:55:45.783Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Your code should compile.",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 3990,
+      "name": "Accuracy",
+      "created_at": "2018-06-04T18:27:33.368Z",
+      "updated_at": "2018-06-04T18:27:42.387Z",
+      "deleted_at": null,
+      "position": 1,
+      "rubric_id": 1962,
+      "rubric_items": [
+        {
+          "id": 11672,
+          "section_id": 3990,
+          "passed_description": "Your algorithm will be run against Dataset 1 in the simulator which is the same as \"data/obj_pose-laser-radar-synthetic-input.txt\" in the repository.  We'll collect the positions that your algorithm outputs and compare them to ground truth data. Your px, py, vx, and vy RMSE should be less than or equal to the values [.11, .11, 0.52, 0.52]. ",
+          "exceeded_description": "",
+          "created_at": "2018-06-04T18:27:42.606Z",
+          "updated_at": "2018-12-21T16:55:45.794Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "px, py, vx, vy output coordinates must have an RMSE <= [.11, .11, 0.52, 0.52] when using the file: \"obj_pose-laser-radar-synthetic-input.txt\" which is the same data file the simulator uses for Dataset 1.",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 3991,
+      "name": "Follows the Correct Algorithm",
+      "created_at": "2018-06-04T18:27:34.605Z",
+      "updated_at": "2018-06-04T18:28:31.780Z",
+      "deleted_at": null,
+      "position": 2,
+      "rubric_id": 1962,
+      "rubric_items": [
+        {
+          "id": 11673,
+          "section_id": 3991,
+          "passed_description": "While you may be creative with your implementation, there is a well-defined set of steps that must take place in order to successfully build a Kalman Filter. As such, your project should follow the algorithm as described in the preceding lesson.",
+          "exceeded_description": "",
+          "created_at": "2018-06-04T18:28:32.017Z",
+          "updated_at": "2018-12-21T16:55:45.801Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Your Sensor Fusion algorithm follows the general processing flow as taught in the preceding lessons.",
+          "exceedable": false
+        },
+        {
+          "id": 11674,
+          "section_id": 3991,
+          "passed_description": "Your algorithm should use the first measurements to initialize the state vectors and covariance matrices.",
+          "exceeded_description": "",
+          "created_at": "2018-06-04T18:28:32.627Z",
+          "updated_at": "2018-12-21T16:55:45.806Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 1,
+          "criteria": "Your Kalman Filter algorithm handles the first measurements appropriately.",
+          "exceedable": false
+        },
+        {
+          "id": 11675,
+          "section_id": 3991,
+          "passed_description": "Upon receiving a measurement after the first, the algorithm should predict object position to the current timestep and then update the prediction using the new measurement.",
+          "exceeded_description": "",
+          "created_at": "2018-06-04T18:28:33.328Z",
+          "updated_at": "2018-12-21T16:55:45.812Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 2,
+          "criteria": "Your Kalman Filter algorithm first predicts then updates.",
+          "exceedable": false
+        },
+        {
+          "id": 11676,
+          "section_id": 3991,
+          "passed_description": "Your algorithm sets up the appropriate matrices given the type of measurement and calls the correct measurement function for a given sensor type.",
+          "exceeded_description": "",
+          "created_at": "2018-06-04T18:28:33.854Z",
+          "updated_at": "2018-12-21T16:55:45.817Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 3,
+          "criteria": "Your Kalman Filter can handle radar and lidar measurements.",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 3992,
+      "name": "Code Efficiency",
+      "created_at": "2018-06-04T18:27:35.437Z",
+      "updated_at": "2018-06-04T18:29:51.639Z",
+      "deleted_at": null,
+      "position": 3,
+      "rubric_id": 1962,
+      "rubric_items": [
+        {
+          "id": 11677,
+          "section_id": 3992,
+          "passed_description": "This is mostly a \"code smell\" test. Your algorithm does not need to sacrifice comprehension, stability, robustness or security for speed, however it should maintain good practice with respect to calculations.\r\n\r\nHere are some things to avoid. This is not a complete list, but rather a few examples of inefficiencies.\r\n\r\n* Running the exact same calculation repeatedly when you can run it once, store the value and then reuse the value later.\r\n* Loops that run too many times.\r\n* Creating unnecessarily complex data structures when simpler structures work equivalently.\r\n* Unnecessary control flow checks.",
+          "exceeded_description": "",
+          "created_at": "2018-06-04T18:29:51.874Z",
+          "updated_at": "2018-12-21T16:55:45.824Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Your algorithm should avoid unnecessary calculations.",
+          "exceedable": false
+        }
+      ]
+    }
+  ],
+  "project": {
+    "id": 285,
+    "name": "Extended Kalman Filters",
+    "nanodegree_key": "nd013",
+    "is_cert_project": false,
+    "audit_project_id": null,
+    "hashtag": null,
+    "audit_rubric_id": 1144,
+    "entitlement_required": null,
+    "is_career": null,
+    "recruitment_family_id": 9,
+    "created_at": "2017-02-23T23:47:27.826Z",
+    "updated_at": "2020-05-21T04:07:48.549Z",
+    "price": "10.0",
+    "ungradeable_price": "3.0",
+    "audit_price": null
+  }
+}

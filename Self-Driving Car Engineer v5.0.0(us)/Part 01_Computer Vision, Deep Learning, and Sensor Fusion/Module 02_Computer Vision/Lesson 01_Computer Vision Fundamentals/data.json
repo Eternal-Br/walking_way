@@ -1,0 +1,1449 @@
+{
+  "data": {
+    "lesson": {
+      "id": 624936,
+      "key": "18ec8dff-25a7-4f30-b121-89e3a9bebbc4",
+      "title": "Computer Vision Fundamentals",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Get a taste of some basic computer vision techniques to find lane markings on the road.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/18ec8dff-25a7-4f30-b121-89e3a9bebbc4/624936/1538943224569/Computer+Vision+Fundamentals+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/18ec8dff-25a7-4f30-b121-89e3a9bebbc4/624936/1538943221355/Computer+Vision+Fundamentals+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 654011,
+          "key": "d352a534-74a5-46f9-9f28-fbaddd833d2a",
+          "title": "Power of Cameras",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d352a534-74a5-46f9-9f28-fbaddd833d2a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 654012,
+              "key": "ae241d34-c0b5-41c1-99fd-22a54281e60c",
+              "title": "01 Introduction A01 Power Of Cameras",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lCPWJEEzUeo",
+                "china_cdn_id": "lCPWJEEzUeo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 179212,
+          "key": "8bf03eb7-1fdb-4623-9e60-d7308c3e8eec",
+          "title": "Setting up the Problem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8bf03eb7-1fdb-4623-9e60-d7308c3e8eec",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 179364,
+              "key": "f319a448-8431-4535-9a0e-05195fe4ca2f",
+              "title": "title",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Finding Lane Lines on the Road\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 194733,
+              "key": "3113fafd-15fd-46cb-bd6f-10127cbf5615",
+              "title": "lane line intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "aIkAcXVxf2w",
+                "china_cdn_id": "aIkAcXVxf2w.mp4"
+              }
+            },
+            {
+              "id": 179215,
+              "key": "b9579a18-2de4-4f03-b806-a4e579e86828",
+              "title": "Useful Features",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b9579a18-2de4-4f03-b806-a4e579e86828",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following features could be useful in the identification of lane lines on the road?",
+                "answers": [
+                  {
+                    "id": "a1471460470746",
+                    "text": "Color",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1471460472426",
+                    "text": "Shape",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1471460473059",
+                    "text": "Orientation",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1471460473781",
+                    "text": "Position in the image",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 179216,
+          "key": "f03600e4-44c0-408c-b52d-3e4a0429095d",
+          "title": "Color Selection",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f03600e4-44c0-408c-b52d-3e4a0429095d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 179365,
+              "key": "c111c294-207e-4ced-a01d-80a6eb21517f",
+              "title": "title",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Identifying Lane Lines by Color\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 194734,
+              "key": "70c5b3b3-7b31-4c29-9045-71a3736622eb",
+              "title": "color selection",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bNOWJ9wdmhk",
+                "china_cdn_id": "bNOWJ9wdmhk.mp4"
+              }
+            },
+            {
+              "id": 179228,
+              "key": "a94d859f-7674-478f-bbd6-f04a95a42563",
+              "title": "White in a 3 color image",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a94d859f-7674-478f-bbd6-f04a95a42563",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What color is pure white in our combined red + green + blue [R, G, B] image?",
+                "answers": [
+                  {
+                    "id": "a1471463753416",
+                    "text": "[0, 0, 0]",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1471463754274",
+                    "text": "[0, 255, 255]",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1471463754859",
+                    "text": "[100, 150, 200]",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1471463755555",
+                    "text": "[255, 255, 255]",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 179229,
+          "key": "b180303f-be20-4b38-a3d3-aa0ffe8d3ea0",
+          "title": "Color Selection Code Example",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b180303f-be20-4b38-a3d3-aa0ffe8d3ea0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 179234,
+              "key": "f55b95da-f33d-4fb8-a2d4-b148001c477a",
+              "title": "intro text",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Coding up a Color Selection\n===\n\nLet’s code up a simple color selection in Python. \n\nNo need to download or install anything, you can just follow along in the browser for now. \n\nWe'll be working with the same image you saw previously. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 179238,
+              "key": "6db9b21c-ff8b-4029-8da7-4500394e850b",
+              "title": "test image",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/August/57b4b3ff_test/test.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6db9b21c-ff8b-4029-8da7-4500394e850b",
+              "caption": "",
+              "alt": null,
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 179230,
+              "key": "8e22e02f-dc8b-4ad6-ade6-2cf9a76a1edd",
+              "title": "Code Example",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Check out the code below.  First, I import `pyplot` and `image` from `matplotlib`.  I also import `numpy` for operating on the image.\n\n```python\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport numpy as np\n```\n\n\nI then read in an image and print out some stats.  I’ll grab the x and y sizes and make a copy of the image to work with.  NOTE: Always make a copy of arrays or other variables in Python.  If instead, you say \"a = b\" then all changes you make to \"a\" will be reflected in \"b\" as well!\n\n```python\n# Read in the image and print out some stats\nimage = mpimg.imread('test.jpg')\nprint('This image is: ',type(image), \n         'with dimensions:', image.shape)\n\n# Grab the x and y size and make a copy of the image\nysize = image.shape[0]\nxsize = image.shape[1]\n# Note: always make a copy rather than simply using \"=\"\ncolor_select = np.copy(image)\n```\n\nNext I define a color threshold in the variables `red_threshold`, `green_threshold`, and `blue_threshold` and populate `rgb_threshold` with these values. This vector contains the minimum values for red, green, and blue (R,G,B) that I will allow in my selection.\n\n```python\n# Define our color selection criteria\n# Note: if you run this code, you'll find these are not sensible values!!\n# But you'll get a chance to play with them soon in a quiz\nred_threshold = 0\ngreen_threshold = 0\nblue_threshold = 0\nrgb_threshold = [red_threshold, green_threshold, blue_threshold]\n```\n\nNext, I'll select any pixels below the threshold and set them to zero. \n\nAfter that, all pixels that meet my color criterion (those above the threshold) will be retained, and those that do not (below the threshold) will be blacked out.\n\n```python\n# Identify pixels below the threshold\nthresholds = (image[:,:,0] < rgb_threshold[0]) \\\n            | (image[:,:,1] < rgb_threshold[1]) \\\n            | (image[:,:,2] < rgb_threshold[2])\ncolor_select[thresholds] = [0,0,0]\n\n# Display the image                 \nplt.imshow(color_select)\nplt.show()\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 179244,
+              "key": "013b9e4e-ca82-4129-a889-dea290b1c1d5",
+              "title": "result text",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The result, `color_select`, is an image in which pixels that were above the threshold have been retained, and pixels below the threshold have been blacked out.\n\nIn the code snippet above, `red_threshold`, `green_threshold` and `blue_threshold` are all set to `0`, which implies all pixels will be included in the selection. \n\nIn the next quiz, you will modify the values of `red_threshold`, `green_threshold` and `blue_threshold` until you retain as much of the lane lines as possible while dropping everything else.  Your output image should look like the one below.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 179245,
+              "key": "1f4e6ee0-042a-4ad7-aa80-1691015630fb",
+              "title": "colorSelect",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/August/57b4c566_image34/image34.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1f4e6ee0-042a-4ad7-aa80-1691015630fb",
+              "caption": "Image after color selection",
+              "alt": null,
+              "width": 492,
+              "height": 276,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 183187,
+          "key": "5ab569c2-d833-4dd4-9f85-b84afe3e0d38",
+          "title": "Color Selection",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5ab569c2-d833-4dd4-9f85-b84afe3e0d38",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 183186,
+              "key": "9437550102",
+              "title": "Color Selection Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "9437550102",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "",
+                  "china_cdn_id": ".mp4"
+                },
+                "text": "In the next quiz, I want you to modify the values of the variables `red_threshold`, `green_threshold`, and `blue_threshold` until you are able to retain as much of the lane lines as possible, while getting rid of most of the other stuff.  When you run the code in the quiz, your image will be output with an example image next to it.  Tweak these variables such that your input image (on the left below) looks like the example image on the right.\n\n<figure>\n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/test.jpg\" width=\"375\"/> \n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/test_color_selected.jpg\" width=\"375\"/> \n    <figcaption>The original image (left), and color selection applied (right).</figcaption>\n</figure>"
+              },
+              "question": {
+                "title": "Color Selection Code Quiz",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "9434080070",
+                "initial_code_files": [
+                  {
+                    "text": "import matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport numpy as np\n\n# Read in the image\nimage = mpimg.imread('test.jpg')\n\n# Grab the x and y size and make a copy of the image\nysize = image.shape[0]\nxsize = image.shape[1]\ncolor_select = np.copy(image)\n\n# Define color selection criteria\n###### MODIFY THESE VARIABLES TO MAKE YOUR COLOR SELECTION\nred_threshold = 0\ngreen_threshold = 0\nblue_threshold = 0\n######\n\nrgb_threshold = [red_threshold, green_threshold, blue_threshold]\n\n# Do a boolean or with the \"|\" character to identify\n# pixels below the thresholds\nthresholds = (image[:,:,0] < rgb_threshold[0]) \\\n            | (image[:,:,1] < rgb_threshold[1]) \\\n            | (image[:,:,2] < rgb_threshold[2])\ncolor_select[thresholds] = [0,0,0]\n\n# Display the image                 \nplt.imshow(color_select)\n\n# Uncomment the following code if you are running the code locally and wish to save the image\n# mpimg.imsave(\"test-after.png\", color_select)\n",
+                    "name": "color_selection.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": "Here's how I did it… I started by just trying some guesses.  \n\nEventually, I found that with `red_threshold = green_threshold = blue_threshold = 200`, I get a pretty good result, where I can clearly see the lane lines, but most everything else is blacked out.\n\nAt this point, however, it would still be tricky to extract the exact lines automatically, because we still have many other pixels detected around the periphery.\n\n<figure>\n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/test.jpg\" width=\"375\"/> \n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/test_color_selected.jpg\" width=\"375\"/> \n    <figcaption>The original image (left), and color selection applied (right).</figcaption>\n</figure>",
+                "video": {
+                  "youtube_id": "",
+                  "china_cdn_id": ".mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 179256,
+          "key": "a26d7fdd-291e-46f4-b3eb-01189cbb8afa",
+          "title": "Region Masking",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a26d7fdd-291e-46f4-b3eb-01189cbb8afa",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 194735,
+              "key": "05602588-674b-47fc-91f6-7e8dc6349972",
+              "title": "region select",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ngN9Cr-QfiI",
+                "china_cdn_id": "ngN9Cr-QfiI.mp4"
+              }
+            },
+            {
+              "id": 179258,
+              "key": "941fa1e2-cbcb-4c27-9729-21553a0212d1",
+              "title": "intro text",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Coding up a Region of Interest Mask\n===\n\nAwesome!  Now you've seen that with a simple color selection we have managed to eliminate almost everything in the image except the lane lines.  \n\nAt this point, however, it would still be tricky to extract the exact lines automatically, because we still have some other objects detected around the periphery that aren't lane lines.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 179260,
+              "key": "50ab34e7-473f-48d9-9508-18a3a92f05e4",
+              "title": "colorSelect",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/August/57b4c566_image34/image34.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/50ab34e7-473f-48d9-9508-18a3a92f05e4",
+              "caption": "",
+              "alt": null,
+              "width": 492,
+              "height": 276,
+              "instructor_notes": null
+            },
+            {
+              "id": 179259,
+              "key": "cf9ed5b9-d40e-4dd7-9e6f-ae5b6416fe0b",
+              "title": "code intro text",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this case, I'll assume that the front facing camera that took the image is mounted in a fixed position on the car, such that the lane lines will always appear in the same general region of the image.  Next, I'll take advantage of this by adding a criterion to only consider pixels for color selection in the region where we expect to find the lane lines.\n\nCheck out the code below.  The variables `left_bottom`, `right_bottom`, and `apex` represent the vertices of a triangular region that I would like to retain for my color selection, while masking everything else out.  Here I'm using a triangular mask to illustrate the simplest case, but later you'll use a quadrilateral, and in principle, you could use any polygon.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 179261,
+              "key": "fc1ad1f8-9c60-453a-84c7-49e23f60a854",
+              "title": "region select code",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport numpy as np\n\n# Read in the image and print some stats\nimage = mpimg.imread('test.jpg')\nprint('This image is: ', type(image), \n         'with dimensions:', image.shape)\n\n# Pull out the x and y sizes and make a copy of the image\nysize = image.shape[0]\nxsize = image.shape[1]\nregion_select = np.copy(image)\n\n# Define a triangle region of interest \n# Keep in mind the origin (x=0, y=0) is in the upper left in image processing\n# Note: if you run this code, you'll find these are not sensible values!!\n# But you'll get a chance to play with them soon in a quiz \nleft_bottom = [0, 539]\nright_bottom = [900, 300]\napex = [400, 0]\n\n# Fit lines (y=Ax+B) to identify the  3 sided region of interest\n# np.polyfit() returns the coefficients [A, B] of the fit\nfit_left = np.polyfit((left_bottom[0], apex[0]), (left_bottom[1], apex[1]), 1)\nfit_right = np.polyfit((right_bottom[0], apex[0]), (right_bottom[1], apex[1]), 1)\nfit_bottom = np.polyfit((left_bottom[0], right_bottom[0]), (left_bottom[1], right_bottom[1]), 1)\n\n# Find the region inside the lines\nXX, YY = np.meshgrid(np.arange(0, xsize), np.arange(0, ysize))\nregion_thresholds = (YY > (XX*fit_left[0] + fit_left[1])) & \\\n                    (YY > (XX*fit_right[0] + fit_right[1])) & \\\n                    (YY < (XX*fit_bottom[0] + fit_bottom[1]))\n\n# Color pixels red which are inside the region of interest\nregion_select[region_thresholds] = [255, 0, 0]\n         \n# Display the image\nplt.imshow(region_select)\n\n# uncomment if plot does not display\n# plt.show()\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 179263,
+          "key": "c87c2a1c-c80e-4383-bf66-c1182ae91661",
+          "title": "Color and Region Combined",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c87c2a1c-c80e-4383-bf66-c1182ae91661",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 179264,
+              "key": "4bbb4417-a48c-47f5-bb4b-ecd2dcbbc5c0",
+              "title": "intro text",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Combining Color and Region Selections\n===\n\nNow you've seen how to mask out a region of interest in an image.  Next, let's combine the mask and color selection to pull only the lane lines out of the image.  \n\nCheck out the code below.  Here we’re doing both the color and region selection steps, requiring that a pixel meet both the mask and color selection requirements to be retained.  \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 179265,
+              "key": "4fa52307-8c4b-47b7-bf39-ec8768049286",
+              "title": "color region code",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport numpy as np\n\n# Read in the image\nimage = mpimg.imread('test.jpg')\n\n# Grab the x and y sizes and make two copies of the image\n# With one copy we'll extract only the pixels that meet our selection,\n# then we'll paint those pixels red in the original image to see our selection \n# overlaid on the original.\nysize = image.shape[0]\nxsize = image.shape[1]\ncolor_select= np.copy(image)\nline_image = np.copy(image)\n\n# Define our color criteria\nred_threshold = 0\ngreen_threshold = 0\nblue_threshold = 0\nrgb_threshold = [red_threshold, green_threshold, blue_threshold]\n\n# Define a triangle region of interest (Note: if you run this code, \n# Keep in mind the origin (x=0, y=0) is in the upper left in image processing\n# you'll find these are not sensible values!!\n# But you'll get a chance to play with them soon in a quiz ;)\nleft_bottom = [0, 539]\nright_bottom = [900, 300]\napex = [400, 0]\n\nfit_left = np.polyfit((left_bottom[0], apex[0]), (left_bottom[1], apex[1]), 1)\nfit_right = np.polyfit((right_bottom[0], apex[0]), (right_bottom[1], apex[1]), 1)\nfit_bottom = np.polyfit((left_bottom[0], right_bottom[0]), (left_bottom[1], right_bottom[1]), 1)\n\n# Mask pixels below the threshold\ncolor_thresholds = (image[:,:,0] < rgb_threshold[0]) | \\\n                    (image[:,:,1] < rgb_threshold[1]) | \\\n                    (image[:,:,2] < rgb_threshold[2])\n\n# Find the region inside the lines\nXX, YY = np.meshgrid(np.arange(0, xsize), np.arange(0, ysize))\nregion_thresholds = (YY > (XX*fit_left[0] + fit_left[1])) & \\\n                    (YY > (XX*fit_right[0] + fit_right[1])) & \\\n                    (YY < (XX*fit_bottom[0] + fit_bottom[1]))\n# Mask color selection\ncolor_select[color_thresholds] = [0,0,0]\n# Find where image is both colored right and in the region\nline_image[~color_thresholds & region_thresholds] = [255,0,0]\n\n# Display our two output images\nplt.imshow(color_select)\nplt.imshow(line_image)\n\n# uncomment if plot does not display\n# plt.show()\n```\n\nIn the next quiz, you can vary your color selection and the shape of your region mask (vertices of a triangle `left_bottom`, `right_bottom`, and `apex`), such that you pick out the lane lines and nothing else.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 183302,
+          "key": "42ea7858-34b1-4e28-89c9-50afaa6d36fd",
+          "title": "Color Region",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "42ea7858-34b1-4e28-89c9-50afaa6d36fd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 183241,
+              "key": "9431145991",
+              "title": "Color and Region Selection",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "9431145991",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "",
+                  "china_cdn_id": ".mp4"
+                },
+                "text": "In this next quiz, I've given you the values of `red_threshold`, `green_threshold`, and `blue_threshold` but now you need to modify `left_bottom`, `right_bottom`, and `apex` to represent the vertices of a triangle identifying the region of interest in the image.  When you run the code in the quiz, your output result will be several images.  Tweak the vertices until your output looks like the examples shown below.\n<figure>\n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/test.jpg\" width=\"250\"/> \n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/test_color_masked.jpg\" width=\"250\"/> \n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/lines_painted.png\" width=\"250\"/> \n    <figcaption>The original image (left), region and color selection applied (center) and lines identified (right).</figcaption>\n</figure>\n\n"
+              },
+              "question": {
+                "title": "Color plus Region Selection",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "9462499625",
+                "initial_code_files": [
+                  {
+                    "text": "import matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport numpy as np\n\n# Read in the image\nimage = mpimg.imread('test.jpg')\n\n# Grab the x and y size and make a copy of the image\nysize = image.shape[0]\nxsize = image.shape[1]\ncolor_select = np.copy(image)\nline_image = np.copy(image)\n\n# Define color selection criteria\n# MODIFY THESE VARIABLES TO MAKE YOUR COLOR SELECTION\nred_threshold = 200\ngreen_threshold = 200\nblue_threshold = 200\n\nrgb_threshold = [red_threshold, green_threshold, blue_threshold]\n\n# Define the vertices of a triangular mask.\n# Keep in mind the origin (x=0, y=0) is in the upper left\n# MODIFY THESE VALUES TO ISOLATE THE REGION \n# WHERE THE LANE LINES ARE IN THE IMAGE\nleft_bottom = [0, 539]\nright_bottom = [900, 300]\napex = [400, 0]\n\n# Perform a linear fit (y=Ax+B) to each of the three sides of the triangle\n# np.polyfit returns the coefficients [A, B] of the fit\nfit_left = np.polyfit((left_bottom[0], apex[0]), (left_bottom[1], apex[1]), 1)\nfit_right = np.polyfit((right_bottom[0], apex[0]), (right_bottom[1], apex[1]), 1)\nfit_bottom = np.polyfit((left_bottom[0], right_bottom[0]), (left_bottom[1], right_bottom[1]), 1)\n\n# Mask pixels below the threshold\ncolor_thresholds = (image[:,:,0] < rgb_threshold[0]) | \\\n                    (image[:,:,1] < rgb_threshold[1]) | \\\n                    (image[:,:,2] < rgb_threshold[2])\n\n# Find the region inside the lines\nXX, YY = np.meshgrid(np.arange(0, xsize), np.arange(0, ysize))\nregion_thresholds = (YY > (XX*fit_left[0] + fit_left[1])) & \\\n                    (YY > (XX*fit_right[0] + fit_right[1])) & \\\n                    (YY < (XX*fit_bottom[0] + fit_bottom[1]))\n                    \n# Mask color and region selection\ncolor_select[color_thresholds | ~region_thresholds] = [0, 0, 0]\n# Color pixels red where both color and region selections met\nline_image[~color_thresholds & region_thresholds] = [255, 0, 0]\n\n# Display the image and show region and color selections\nplt.imshow(image)\nx = [left_bottom[0], right_bottom[0], apex[0], left_bottom[0]]\ny = [left_bottom[1], right_bottom[1], apex[1], left_bottom[1]]\nplt.plot(x, y, 'b--', lw=4)\nplt.imshow(color_select)\nplt.imshow(line_image)\n",
+                    "name": "color_region.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": "Here’s how I did it: After selecting `red_threshold = green_threshold = blue_threshold = 200`, I chose the vertices of my triangle to be `left_bottom = [0, 539]`, `right_bottom [900, 539]`, and `apex = [475, 320]`, which produces the result shown below.\n\n<figure>\n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/test.jpg\" width=\"250\"/> \n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/test_color_masked.jpg\" width=\"250\"/> \n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/lines_painted.png\" width=\"250\"/> \n    <figcaption>The original image (left), region and color selection applied (center) and lines identified (right).</figcaption>\n</figure>\n",
+                "video": {
+                  "youtube_id": "",
+                  "china_cdn_id": ".mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 179268,
+          "key": "417f44de-1271-4f88-b9cb-dad6cd0c3af1",
+          "title": "Finding Lines of Any Color",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "417f44de-1271-4f88-b9cb-dad6cd0c3af1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 179367,
+              "key": "f24bea64-2669-4eb8-a9f0-4f1790e32d40",
+              "title": "title",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Finding Lines of any Color\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 179269,
+              "key": "fa5053cc-cdd5-4a86-a1cb-87e5786a437f",
+              "title": "red lanes",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/August/57b4ca33_image30/image30.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fa5053cc-cdd5-4a86-a1cb-87e5786a437f",
+              "caption": "",
+              "alt": null,
+              "width": 492,
+              "height": 276,
+              "instructor_notes": null
+            },
+            {
+              "id": 179270,
+              "key": "44b721a5-065e-4f37-9e09-748eb4d1fd09",
+              "title": "next level text",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "So you found the lane lines... simple right?  Now you’re ready to upload the algorithm to the car and drive autonomously right??  Well, not quite yet ;)\n\nAs it happens, lane lines are not always the same color, and even lines of the same color under different lighting conditions (day, night, etc) may fail to be detected by our simple color selection.\n\nWhat we need is to take our algorithm to the next level to detect lines of any color using sophisticated computer vision methods.  \n\nSo, what is computer vision?",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 179272,
+          "key": "f429492f-f701-4c3c-a5fd-25c314f7cdd6",
+          "title": "What is Computer Vision?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f429492f-f701-4c3c-a5fd-25c314f7cdd6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 179368,
+              "key": "1a70f0f6-ee6e-4a4d-bfcf-9ed6d857c7ce",
+              "title": "title",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Computer Vision\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 194967,
+              "key": "618b4e3a-f25e-4ac3-86d7-ccf03fd1c066",
+              "title": "Computer Vision",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wxQhfSdxjKU",
+                "china_cdn_id": "wxQhfSdxjKU.mp4"
+              }
+            },
+            {
+              "id": 196056,
+              "key": "e09666fa-9742-4346-8711-97d91d841468",
+              "title": "refer to CV course",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In rest of this lesson, we’ll introduce some computer vision techniques with enough detail for you to get an intuitive feel for how they work. \n\nYou'll learn much more about these topics during the Computer Vision module later in the program.\n\nWe also recommend the free Udacity course, [Introduction to Computer Vision](https://www.udacity.com/course/introduction-to-computer-vision--ud810).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 179282,
+              "key": "c356541a-f6eb-403c-90c0-283476c12805",
+              "title": "opencv python",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/August/57b4d197_image14/image14.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c356541a-f6eb-403c-90c0-283476c12805",
+              "caption": "",
+              "alt": null,
+              "width": 568,
+              "height": 270,
+              "instructor_notes": null
+            },
+            {
+              "id": 179283,
+              "key": "e7509b31-ee72-4767-a3ac-a700aaa92a83",
+              "title": "opencv text",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Throughout this Nanodegree Program, we will be using Python with OpenCV for computer vision work.  OpenCV stands for Open-Source Computer Vision.  For now, you don't need to download or install anything, but later in the program we'll help you get these tools installed on your own computer.  \n\nOpenCV contains extensive libraries of functions that you can use.  The OpenCV libraries are well documented, so if you’re ever feeling confused about what the parameters in a particular function are doing, or anything else, you can find a wealth of information at [opencv.org](http://opencv.org/).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 179291,
+          "key": "aa5f2275-0c1a-4359-a084-24036dc842ce",
+          "title": "Canny Edge Detection",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "aa5f2275-0c1a-4359-a084-24036dc842ce",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 199179,
+              "key": "436f964a-948f-45c4-bd40-160d629bbac4",
+              "title": "Canny Edge Detection",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Av2GsgQWX8I",
+                "china_cdn_id": "Av2GsgQWX8I.mp4"
+              }
+            },
+            {
+              "id": 194737,
+              "key": "7425843a-0a57-49a3-b51f-8c5dcfec3f8e",
+              "title": "canny and gradient",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LQM--KPJjD0",
+                "china_cdn_id": "LQM--KPJjD0.mp4"
+              }
+            },
+            {
+              "id": 179301,
+              "key": "ab05b690-3e86-49c0-8142-e3a73651c063",
+              "title": "grad text",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note!  The standard location of the origin (x=0, y=0) for images is in the top left corner with y values increasing downward and x increasing to the right.  This might seem weird at first, but if you think about an image as a matrix, it makes sense that the \"00\" element is in the upper left.**\n\n---\nNow let's try a quiz. Below, I’m plotting a cross section through this image.  Where are the areas in the image that are most likely to be identified as edges?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 196453,
+              "key": "b619eb0a-d176-42a7-8190-f3cd54d09fda",
+              "title": "canny intro quiz",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/58014f3a_17-q-canny-intro-quiz-2/17-q-canny-intro-quiz-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b619eb0a-d176-42a7-8190-f3cd54d09fda",
+              "caption": "",
+              "alt": null,
+              "width": 1940,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 184309,
+              "key": "950a52a3-310b-4685-b7cd-118081b974b9",
+              "title": "Edges quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "950a52a3-310b-4685-b7cd-118081b974b9",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "The red line in the plot above shows where I took a cross section through the image.  The wiggles in the blue line indicate changes in intensity along that cross section through the image.  Check all the boxes of the letters along this cross section, where you expect to find strong edges.",
+                "answers": [
+                  {
+                    "id": "a1473037227908",
+                    "text": "A",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1473037229280",
+                    "text": "B",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1473037229994",
+                    "text": "C",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1473037230644",
+                    "text": "D",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1473037231297",
+                    "text": "E",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1473037243210",
+                    "text": "F",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 179318,
+          "key": "07bb0221-1900-4cd8-bd89-36f971d863d5",
+          "title": "Canny to Detect Lane Lines",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "07bb0221-1900-4cd8-bd89-36f971d863d5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 179320,
+              "key": "ec995880-a4e5-49f6-9d54-8c7030cc86a7",
+              "title": "text",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Canny Edge Detection in Action\n===\n\nNow that you have a conceptual grasp on how the Canny algorithm works, it's time to use it to find the edges of the lane lines in an image of the road. So let's give that a try.\n\nFirst, we need to read in an image:\n\n```python\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimage = mpimg.imread('exit-ramp.jpg')\nplt.imshow(image)\n```\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 229371,
+              "key": "569cbc83-920b-489b-8293-094368a08a2f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/585047e6_exit-ramp/exit-ramp.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/569cbc83-920b-489b-8293-094368a08a2f",
+              "caption": "",
+              "alt": null,
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 179370,
+              "key": "b1decd00-180e-4109-9502-0aa03f62d39f",
+              "title": "title",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here we have an image of the road, and it's fairly obvious by eye where the lane lines are, but what about using computer vision?\n\nLet's go ahead and convert to grayscale.\n\n```python\nimport cv2  #bringing in OpenCV libraries\ngray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY) #grayscale conversion\nplt.imshow(gray, cmap='gray')\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 184319,
+              "key": "8e863365-515d-4aac-9993-21a59b4ad1ce",
+              "title": "exit_gray",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/September/57ccc862_grayscale/grayscale.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8e863365-515d-4aac-9993-21a59b4ad1ce",
+              "caption": "",
+              "alt": null,
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 179322,
+              "key": "5c7f07df-a57e-48e9-8d61-6a4ab2df3e20",
+              "title": "code and stuff",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let’s try our Canny edge detector on this image. This is where OpenCV gets useful.  First, we'll have a look at the parameters for the OpenCV `Canny` function.  You will call it like this:\n\n```python\nedges = cv2.Canny(gray, low_threshold, high_threshold)\n```\n\nIn this case, you are applying `Canny` to the image `gray` and your output will be another image called `edges`.  `low_threshold` and `high_threshold` are your thresholds for edge detection.  \n\nThe algorithm will first detect strong edge (strong gradient) pixels above the `high_threshold`, and reject pixels below the `low_threshold`.  Next, pixels with values between the `low_threshold` and `high_threshold` will be included as long as they are connected to strong edges.  The output `edges` is a binary image with white pixels tracing out the detected edges and black everywhere else.   See the [OpenCV Canny Docs](http://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/canny_detector/canny_detector.html) for more details.    \n\nWhat would make sense as a reasonable range for these parameters?  In our case, converting to grayscale has left us with an [8-bit](https://en.wikipedia.org/wiki/8-bit) image, so each pixel can take 2^8 = 256 possible values.  Hence, the pixel values range from 0 to 255.  \n\nThis range implies that derivatives (essentially, the value differences from pixel to pixel) will be on the scale of tens or hundreds.  So, **a reasonable range for your threshold parameters would also be in the tens to hundreds**.\n\nAs far as a ratio of `low_threshold` to `high_threshold`, [John Canny himself recommended](http://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/canny_detector/canny_detector.html#steps) a low to high ratio of 1:2 or 1:3. \n\nWe'll also include Gaussian smoothing, before running `Canny`, which is essentially a way of suppressing noise and spurious gradients by averaging (check out the [OpenCV docs for GaussianBlur](http://docs.opencv.org/2.4/modules/imgproc/doc/filtering.html?highlight=gaussianblur#gaussianblur)).  `cv2.Canny()` actually applies Gaussian smoothing internally, but we include it here because you can get a different result by applying further smoothing (and it's not a changeable parameter within `cv2.Canny()`!).  \n\nYou can choose the `kernel_size` for Gaussian smoothing to be any odd number.  A larger `kernel_size` implies averaging, or smoothing, over a larger area.  The example in the previous lesson was `kernel_size = 3`.\n\n*Note:* If this is all sounding complicated and new to you, don't worry!  We're moving pretty fast through the material here, because for now we just want you to be able to use these tools. If you would like to dive into the math underpinning these functions, please check out the free Udacity course, [Intro to Computer Vision](https://www.udacity.com/course/introduction-to-computer-vision--ud810), where the third lesson covers Gaussian filters and the sixth and seventh lessons cover edge detection.\n\n```python\n#doing all the relevant imports\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport numpy as np\nimport cv2\n\n# Read in the image and convert to grayscale\nimage = mpimg.imread('exit-ramp.jpg')\ngray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)\n\n# Define a kernel size for Gaussian smoothing / blurring\n# Note: this step is optional as cv2.Canny() applies a 5x5 Gaussian internally\nkernel_size = 3\nblur_gray = cv2.GaussianBlur(gray,(kernel_size, kernel_size), 0)\n\n# Define parameters for Canny and run it\n# NOTE: if you try running this code you might want to change these!\nlow_threshold = 1\nhigh_threshold = 10\nedges = cv2.Canny(blur_gray, low_threshold, high_threshold)\n\n# Display the image\nplt.imshow(edges, cmap='Greys_r')\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 184320,
+              "key": "3489eb84-b7fb-4164-b3ec-4568680a5f9d",
+              "title": "exit_edges",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/September/57ccc9f9_edges-exitramp/edges-exitramp.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3489eb84-b7fb-4164-b3ec-4568680a5f9d",
+              "caption": "",
+              "alt": null,
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 179324,
+              "key": "e50615a7-05e1-4139-8350-bb2648be3457",
+              "title": "text",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here I've called the OpenCV function `Canny` on a Gaussian-smoothed grayscaled image called `blur_gray` and detected edges with thresholds on the gradient of `high_threshold`, and `low_threshold`.\n\nIn the next quiz you'll get to try this on your own and mess around with the parameters for the Gaussian smoothing and Canny Edge Detection to optimize for detecting the lane lines and not a lot of other stuff.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 184280,
+          "key": "e3faf2cd-7ef5-4883-9a37-53f7c1dacb0f",
+          "title": "Canny Edges",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e3faf2cd-7ef5-4883-9a37-53f7c1dacb0f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 184281,
+              "key": "9430307511",
+              "title": "Canny Edge Detection Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "9430307511",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "",
+                  "china_cdn_id": ".mp4"
+                },
+                "text": "Now it’s your turn! Try using Canny on your own and fiddle with the parameters for the Gaussian smoothing and Edge Detection to optimize for detecting the lane lines well without detecting a lot of other stuff.  Your result should look like the example shown below.\n\n<figure>\n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/exit-ramp.jpg\" width=\"375\"/> \n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/exit_ramp_edges.jpg\" width=\"375\"/> \n    <figcaption>The original image (left), and edge detection applied (right).</figcaption>\n</figure>"
+              },
+              "question": {
+                "title": "Canny Edge Detection",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "9451006073",
+                "initial_code_files": [
+                  {
+                    "text": "# Do all the relevant imports\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport numpy as np\nimport cv2\n\n# Read in the image and convert to grayscale\n# Note: in the previous example we were reading a .jpg \n# Here we read a .png and convert to 0,255 bytescale\nimage = mpimg.imread('exit-ramp.jpg')\ngray = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)\n\n# Define a kernel size for Gaussian smoothing / blurring\nkernel_size = 3 # Must be an odd number (3, 5, 7...)\nblur_gray = cv2.GaussianBlur(gray,(kernel_size, kernel_size),0)\n\n# Define our parameters for Canny and run it\nlow_threshold = 1\nhigh_threshold = 10\nedges = cv2.Canny(blur_gray, low_threshold, high_threshold)\n\n# Display the image\nplt.imshow(edges, cmap='Greys_r')",
+                    "name": "canny_example.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": "Here’s how I did it…\n\nI chose a kernelSize of 5 for Gaussian smoothing, a lowThreshold of 50 and a highThreshold of 150. These selections nicely extract the lane lines, while minimizing the edges detected in the rest of the image, producing the result shown below.  \n\n<figure>\n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/exit-ramp.jpg\" width=\"375\"/> \n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/exit_ramp_edges.jpg\" width=\"375\"/> \n    <figcaption>The original image (left), and edge detection applied (right).</figcaption>\n</figure>",
+                "video": {
+                  "youtube_id": "",
+                  "china_cdn_id": ".mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 179325,
+          "key": "a21e50a1-bf49-4ec4-ab1d-5b25d0aa4428",
+          "title": "Hough Transform",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a21e50a1-bf49-4ec4-ab1d-5b25d0aa4428",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 179373,
+              "key": "cb2b5075-39d8-49fa-93a0-8e33b2922bc3",
+              "title": "title",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Using the Hough Transform to Find Lines from Canny Edges\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 194739,
+              "key": "ec709532-9035-46cb-8d70-4c4c44411933",
+              "title": "Hough Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "---\nIn image space, a line is plotted as x vs. y, but in 1962, Paul Hough devised a method for representing lines in parameter space, which we will call “Hough space” in his honor.  \n\nIn Hough space, I can represent my \"x vs. y\" line as a point in \"m vs. b\" instead.  The Hough Transform is just the conversion from image space to Hough space.  So, the characterization of a line in image space will be a single point at the position (m, b) in Hough space.  ",
+              "video": {
+                "youtube_id": "JFwj5UtKmPY",
+                "china_cdn_id": "JFwj5UtKmPY.mp4"
+              }
+            },
+            {
+              "id": 179334,
+              "key": "3f6cea3f-45b8-4602-a736-222c31c2ae30",
+              "title": "stuff",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "----\nSo now I’d like to check your intuition… if a **line** in image space corresponds to a **point** in Hough space, what would **two parallel lines** in image space correspond to in Hough space?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 194746,
+              "key": "8b705a7f-29c5-4448-8bed-f3eddef1176f",
+              "title": "nd013 image parallel lines to hough",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/57efe077_22-q-hough-intro-quiz/22-q-hough-intro-quiz.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8b705a7f-29c5-4448-8bed-f3eddef1176f",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 184324,
+              "key": "e6d75dc2-4683-4a06-9354-df0e6ae2fe02",
+              "title": "hough_quiz1",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e6d75dc2-4683-4a06-9354-df0e6ae2fe02",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What will be the representation in Hough space of two parallel lines in image space?",
+                "answers": [
+                  {
+                    "id": "a1473040826991",
+                    "text": "A",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1473040828562",
+                    "text": "B",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1473040829307",
+                    "text": "C",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1473040830024",
+                    "text": "D",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 184325,
+              "key": "96408fd6-2f7b-489a-a972-5389c68d0e37",
+              "title": "hough_text2",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Alright, so a line in image space corresponds to a point in Hough space. What does a point in image space correspond to in Hough space?\n\nA single point in image space has many possible lines that pass through it, but not just any lines, only those with particular combinations of the m and b parameters.  Rearranging the equation of a line, we find that a single point (x,y) corresponds to the line b = y - xm.  \n\nSo what is the representation of a **point** in image space in Hough space?\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 194745,
+              "key": "96317b6a-868f-4aa5-81f1-bbfa1f5625db",
+              "title": "nd013 image point to hough",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/57efdd4a_23-q-hough-second-quiz/23-q-hough-second-quiz.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/96317b6a-868f-4aa5-81f1-bbfa1f5625db",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 184327,
+              "key": "fa4d221c-d7ec-4b0e-a4b0-68d239390357",
+              "title": "hough_quiz2",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "fa4d221c-d7ec-4b0e-a4b0-68d239390357",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What does a point in image space correspond to in Hough space?",
+                "answers": [
+                  {
+                    "id": "a1473041175741",
+                    "text": "A",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1473041176707",
+                    "text": "B",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1473041177286",
+                    "text": "C",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1473041177978",
+                    "text": "D",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 179338,
+              "key": "ec0b39b0-5161-41be-8ee0-11faf3083366",
+              "title": "hough_text3",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "What if you have **2 points** in image space.  What would that look like in Hough space?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 194744,
+              "key": "cf5e98f0-8957-467d-84d0-458fb676ebfe",
+              "title": "nd013 image 2 points",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/57efdd0a_23-q-hough-second-quiz-copy/23-q-hough-second-quiz-copy.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cf5e98f0-8957-467d-84d0-458fb676ebfe",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 184329,
+              "key": "b45376ce-8184-4520-9c77-070d4e678ee3",
+              "title": "hough_quiz3",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b45376ce-8184-4520-9c77-070d4e678ee3",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the representation in Hough space of two points in image space?",
+                "answers": [
+                  {
+                    "id": "a1473041477978",
+                    "text": "A",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1473041478978",
+                    "text": "B",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1473041479564",
+                    "text": "C",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1473041480127",
+                    "text": "D",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 184330,
+              "key": "218eadf8-beab-45ae-aba4-8f24b354bdb1",
+              "title": "hough_text4",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Alright, now we have two intersecting lines in Hough Space. How would you represent their **intersection** at the point (m<sub>0</sub>, b<sub>0</sub>) in image space?\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 204952,
+              "key": "e4b73fae-cc6c-4c90-bb0a-ee6f00d710cf",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/58212f80_25-q-hough-fourth-quiz-updated2/25-q-hough-fourth-quiz-updated2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e4b73fae-cc6c-4c90-bb0a-ee6f00d710cf",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 184332,
+              "key": "56b6aba2-ae9e-44b1-bd91-02f73403bdb5",
+              "title": "hough_quiz4",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "56b6aba2-ae9e-44b1-bd91-02f73403bdb5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What does the intersection point of the two lines in Hough space correspond to in image space?",
+                "answers": [
+                  {
+                    "id": "a1473041732323",
+                    "text": "A) A line in image space that passes through both (x1, y1) and (x2, y2)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1473041733125",
+                    "text": "B) A line in image space that passes between (x1, y1) and (x2, y2)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1473041733838",
+                    "text": "C) A line in image space that passes through (x1, y1)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1473041734491",
+                    "text": "D) A line in image space that passes through only (x2, y2) ",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 194740,
+              "key": "002a7826-47d9-49f2-8d9c-1bd154dd4524",
+              "title": "sine Hough",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XQf7FOhwOVk",
+                "china_cdn_id": "XQf7FOhwOVk.mp4"
+              }
+            },
+            {
+              "id": 179344,
+              "key": "f9007797-6df1-485c-bf3e-8b46776419f3",
+              "title": "title",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "So, what happens if we run a Hough Transform on an image of a square?  What will the corresponding plot in Hough space look like?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 194950,
+              "key": "a5cec194-b0cd-4f4d-9529-916695ad98d1",
+              "title": "Hough Quiz 5",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "upKjISd3aBk",
+                "china_cdn_id": "upKjISd3aBk.mp4"
+              }
+            },
+            {
+              "id": 186279,
+              "key": "a7b63bf7-2576-48f1-bf90-b3dd2f94cd69",
+              "title": "hough_quiz5",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a7b63bf7-2576-48f1-bf90-b3dd2f94cd69",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What happens if we run a Hough Transform on an image of a square?  What will the corresponding plot in Hough space look like?",
+                "answers": [
+                  {
+                    "id": "a1473369788029",
+                    "text": "A",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1473369788637",
+                    "text": "B",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1473369789253",
+                    "text": "C",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1473369789917",
+                    "text": "D",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 179374,
+          "key": "90e3a984-eb68-48d3-8724-e58303a8d2cc",
+          "title": "Hough Transform to Find Lane Lines",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "90e3a984-eb68-48d3-8724-e58303a8d2cc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 179375,
+              "key": "2e7e5d58-adfd-42a9-bc6f-8cb0d89b048b",
+              "title": "title",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Implementing a Hough Transform on Edge Detected Image\n===\n\nNow you know how the Hough Transform works, but to accomplish the task of finding lane lines, we need to specify some parameters to say what kind of lines we want to detect (i.e., long lines, short lines, bendy lines, dashed lines, etc.).  \n\nTo do this, we'll be using an OpenCV function called `HoughLinesP` that takes several parameters.  Let's code it up and find the lane lines in the image we detected edges in with the Canny function (for a look at coding up a Hough Transform from scratch, check [this](https://alyssaq.github.io/2014/understanding-hough-transform/) out.) .\n\nHere's the image we're working with:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 184335,
+              "key": "950d5397-9bef-4510-bcd7-b90bcef1a011",
+              "title": "edges_exit",
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/September/57ccdd86_edges-exitramp/edges-exitramp.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/950d5397-9bef-4510-bcd7-b90bcef1a011",
+              "caption": "",
+              "alt": null,
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 179380,
+              "key": "9428f822-7e5e-43a4-ab6f-281757430995",
+              "title": "title",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's look at the input parameters for the OpenCV function `HoughLinesP` that we will use to find lines in the image.  You will call it like this:\n\n```python\nlines = cv2.HoughLinesP(masked_edges, rho, theta, threshold, np.array([]),\n                                             min_line_length, max_line_gap)\n```\n\nIn this case, we are operating on the image `masked_edges` (the output from `Canny`) and the output from `HoughLinesP` will be `lines`, which will simply be an array containing the endpoints (x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>) of all line segments detected by the transform operation.  The other parameters define just what kind of line segments we're looking for.  \n\nFirst off, `rho` and `theta` are the distance and angular resolution of our grid in Hough space.  Remember that, in Hough space, we have a grid laid out along the (Θ, ρ) axis.  You need to specify `rho` in units of pixels and `theta` in units of radians.  \n\nSo, what are reasonable values?  Well, rho takes a minimum value of 1,  and a reasonable starting place for theta is 1 degree (pi/180 in radians).  Scale these values up to be more flexible in your definition of what constitutes a line.\n\nThe `threshold` parameter specifies the minimum number of votes (intersections in a given grid cell) a candidate line needs to have to make it into the output.  The empty `np.array([])` is just a placeholder, no need to change it. `min_line_length` is the minimum length of a line (in pixels) that you will accept in the output, and `max_line_gap` is the maximum distance (again, in pixels) between segments that you will allow to be connected into a single line.  You can then iterate through your output `lines` and draw them onto the image to see what you got!\n\nSo, here's what its going to look like:\n\n\n```python\n# Do relevant imports\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport numpy as np\nimport cv2\n\n# Read in and grayscale the image\nimage = mpimg.imread('exit-ramp.jpg')\ngray = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)\n\n# Define a kernel size and apply Gaussian smoothing\nkernel_size = 5\nblur_gray = cv2.GaussianBlur(gray,(kernel_size, kernel_size),0)\n\n# Define our parameters for Canny and apply\nlow_threshold = 50\nhigh_threshold = 150\nmasked_edges = cv2.Canny(blur_gray, low_threshold, high_threshold)\n\n# Define the Hough transform parameters\n# Make a blank the same size as our image to draw on\nrho = 1\ntheta = np.pi/180\nthreshold = 1\nmin_line_length = 10\nmax_line_gap = 1\nline_image = np.copy(image)*0 #creating a blank to draw lines on\n\n# Run Hough on edge detected image\nlines = cv2.HoughLinesP(masked_edges, rho, theta, threshold, np.array([]),\n                            min_line_length, max_line_gap)\n\n# Iterate over the output \"lines\" and draw lines on the blank\nfor line in lines:\n    for x1,y1,x2,y2 in line:\n        cv2.line(line_image,(x1,y1),(x2,y2),(255,0,0),10)\n\n# Create a \"color\" binary image to combine with line image\ncolor_edges = np.dstack((masked_edges, masked_edges, masked_edges)) \n\n# Draw the lines on the edge image\ncombo = cv2.addWeighted(color_edges, 0.8, line_image, 1, 0) \nplt.imshow(combo)\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 197381,
+              "key": "ab882012-88ad-4ebe-ba22-7c10192d92c9",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/October/580d6fe9_hough-test/hough-test.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ab882012-88ad-4ebe-ba22-7c10192d92c9",
+              "caption": "",
+              "alt": null,
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            },
+            {
+              "id": 179382,
+              "key": "79d3201a-7e42-4d2a-a838-bacf752f6000",
+              "title": "hough_text_outro",
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As you can see I've detected lots of line segments!  Your job, in the next exercise, is to figure out which parameters do the best job of optimizing the detection of the lane lines.  Then, you'll want to apply a region of interest mask to filter out detected line segments in other areas of the image.  Earlier in this lesson you used a triangular region mask, but this time you'll get a chance to use a quadrilateral region mask using the `cv2.fillPoly()` function (keep in mind though, you could use this same method to mask an arbitrarily complex polygon region).   When you're finished you'll be ready to apply the skills you've learned to do the project at the end of this lesson.  ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 184298,
+          "key": "22086a6f-15ce-4121-bacd-1969f2b61fb9",
+          "title": "Hough Transform",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "22086a6f-15ce-4121-bacd-1969f2b61fb9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 184299,
+              "key": "9497068645",
+              "title": "Hough Transform Quiz",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "9497068645",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "",
+                  "china_cdn_id": ".mp4"
+                },
+                "text": "Now it's your turn to play with the Hough Transform on an edge-detected image.  You'll start with the image on the left below.  If you \"Test Run\" the quiz, you'll get output that looks like the center image.  Your job is to modify the parameters for the Hough Transform and impose a region of interest mask to get output that looks like the image on the right.  In the code, I've given you a framework for defining a quadrilateral region of interest mask. \n\n<figure>\n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/exit-ramp.jpg\" width=\"250\"/> \n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/hough_test.jpg\" width=\"250\"/>\n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/exit_ramp_hough_masked.jpg\" width=\"250\"/> \n    <figcaption>The original image (left), edge detection and Hough transform (center), parameters optimized and region masked on the right.</figcaption>\n</figure>"
+              },
+              "question": {
+                "title": "Hough Quiz",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "9502768707",
+                "initial_code_files": [
+                  {
+                    "text": "import matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport numpy as np\nimport cv2\n\n\n# Read in and grayscale the image\nimage = mpimg.imread('exit-ramp.jpg')\ngray = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)\n\n# Define a kernel size and apply Gaussian smoothing\nkernel_size = 5\nblur_gray = cv2.GaussianBlur(gray,(kernel_size, kernel_size),0)\n\n# Define our parameters for Canny and apply\nlow_threshold = 50\nhigh_threshold = 150\nedges = cv2.Canny(blur_gray, low_threshold, high_threshold)\n\n# Next we'll create a masked edges image using cv2.fillPoly()\nmask = np.zeros_like(edges)   \nignore_mask_color = 255   \n\n# This time we are defining a four sided polygon to mask\nimshape = image.shape\nvertices = np.array([[(0,imshape[0]),(0, 0), (imshape[1], 0), (imshape[1],imshape[0])]], dtype=np.int32)\ncv2.fillPoly(mask, vertices, ignore_mask_color)\nmasked_edges = cv2.bitwise_and(edges, mask)\n\n# Define the Hough transform parameters\n# Make a blank the same size as our image to draw on\nrho = 1 # distance resolution in pixels of the Hough grid\ntheta = np.pi/180 # angular resolution in radians of the Hough grid\nthreshold = 1     # minimum number of votes (intersections in Hough grid cell)\nmin_line_length = 5 #minimum number of pixels making up a line\nmax_line_gap = 1    # maximum gap in pixels between connectable line segments\nline_image = np.copy(image)*0 # creating a blank to draw lines on\n\n# Run Hough on edge detected image\n# Output \"lines\" is an array containing endpoints of detected line segments\nlines = cv2.HoughLinesP(masked_edges, rho, theta, threshold, np.array([]),\n                            min_line_length, max_line_gap)\n\n# Iterate over the output \"lines\" and draw lines on a blank image\nfor line in lines:\n    for x1,y1,x2,y2 in line:\n        cv2.line(line_image,(x1,y1),(x2,y2),(255,0,0),10)\n\n# Create a \"color\" binary image to combine with line image\ncolor_edges = np.dstack((edges, edges, edges)) \n\n# Draw the lines on the edge image\nlines_edges = cv2.addWeighted(color_edges, 0.8, line_image, 1, 0) \nplt.imshow(lines_edges)\n\n",
+                    "name": "hough_example.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": "Here's how I did it: I went with a `low_threshold` of 50 and `high_threshold` of 150 for Canny edge detection.\n\nFor region selection, I defined `vertices = np.array([[(0,imshape[0]),(450, 290), (490, 290), (imshape[1],imshape[0])]], dtype=np.int32)`\n\nI chose parameters for my Hough space grid to be a `rho` of 2 pixels and `theta` of 1 degree (pi/180 radians).  I chose a `threshold` of 15, meaning at least 15 points in image space need to be associated with each line segment.  I imposed a `min_line_length` of 40 pixels, and `max_line_gap` of 20 pixels.  \n\nWith these parameters, I'm picking up the lanes lines and nothing else, so looks like a decent solution!\n\n<figure>\n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/exit-ramp.jpg\" width=\"375\"/> \n    <img src=\"https://s3.amazonaws.com/udacity-sdc/new+folder/exit_ramp_hough_masked.jpg\" width=\"375\"/> \n    <figcaption>The original image (left), with edge detection, region masking, and Hough transform applied (right).</figcaption>\n</figure>",
+                "video": {
+                  "youtube_id": "",
+                  "china_cdn_id": ".mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 846042,
+          "key": "55db39e1-07c5-46cf-b028-2cbbe44f20fe",
+          "title": "Parameter Tuning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "55db39e1-07c5-46cf-b028-2cbbe44f20fe",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 846043,
+              "key": "445473c9-e401-4b78-ace9-40cc88cdc56b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Tuning Parameters\n\nParameter tuning is one of the biggest challenges in computer vision - what works well for one image may not work at all with different lighting and/or backgrounds.\n\nComputer Vision Engineers gain an intuition over time for ranges of parameters and different techniques that might work best for a set of situations. When getting started, this can be a big hill to climb. Oftentimes, building a tool to help speed up your iteration between different techniques and thresholds can help you in parameter tuning.\n\nWhile it's not required for the project, you might consider reading [this blog post](https://medium.com/@maunesh/finding-the-right-parameters-for-your-computer-vision-algorithm-d55643b6f954) from a fellow Self-Driving Car student on their approach to a parameter tuning tool, and consider building one of your own in the future!",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

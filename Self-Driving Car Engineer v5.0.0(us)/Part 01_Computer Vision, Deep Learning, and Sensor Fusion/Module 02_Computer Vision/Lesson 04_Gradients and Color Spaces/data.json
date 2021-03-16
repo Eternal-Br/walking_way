@@ -1,0 +1,1323 @@
+{
+  "data": {
+    "lesson": {
+      "id": 675860,
+      "key": "144d538f-335d-454d-beb2-b1736ec204cb",
+      "title": "Gradients and Color Spaces",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn how to use gradient thresholds and different color spaces to more easily identify lane markings on the road.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/144d538f-335d-454d-beb2-b1736ec204cb/675860/1538943352429/Gradients+and+Color+Spaces+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/144d538f-335d-454d-beb2-b1736ec204cb/675860/1538943350178/Gradients+and+Color+Spaces+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 213459,
+          "key": "68624be4-95d0-432d-be8c-637191e77509",
+          "title": "Gradient Threshold",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "68624be4-95d0-432d-be8c-637191e77509",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215911,
+              "key": "16ea9d1a-b99f-4f97-995a-f572e743fe97",
+              "title": "Gradient Threshold",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2TlORF3RzH8",
+                "china_cdn_id": "2TlORF3RzH8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 213460,
+          "key": "e6115672-155d-4c10-b640-fe20a4f4b0a6",
+          "title": "Sobel Operator",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e6115672-155d-4c10-b640-fe20a4f4b0a6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 224638,
+              "key": "aade6d11-184d-4fae-a89c-9fa8d4c12cb6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Sobel Operator\n===\n\nThe Sobel operator is at the heart of the Canny edge detection algorithm you used in the Introductory Lesson.  Applying the Sobel operator to an image is a way of taking the derivative of the image in the <span class=\"mathquill\">x</span> or <span class=\"mathquill\">y</span> direction.  The operators for <span class=\"mathquill\">Sobel_x</span> and <span class=\"mathquill\">Sobel_y</span>, respectively, look like this: \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 224642,
+              "key": "fc070c94-8970-401d-baeb-9c670af35749",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/584cbe5e_soble-operator/soble-operator.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fc070c94-8970-401d-baeb-9c670af35749",
+              "caption": "",
+              "alt": null,
+              "width": 400,
+              "height": 311,
+              "instructor_notes": null
+            },
+            {
+              "id": 224643,
+              "key": "070baddc-f960-4bba-b03d-0a598df92277",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "These are examples of Sobel operators with a kernel size of 3 (implying a 3 x 3 operator in each case).  This is the minimum size, but the kernel size can be any odd number. A larger kernel implies taking the gradient over a larger region of the image, or, in other words, a smoother gradient.  \n\nTo understand how these operators take the derivative, you can think of overlaying either one on a 3 x 3 region of an image.  If the image is flat across that region (i.e., there is little change in values across the given region), then the result (summing the element-wise product of the operator and corresponding image pixels) will be zero.\n\n<div class='mathquill'>gradient = \\sum(region * S_x)</div>\n\nFor example, given:\n\n<div class='mathquill'>region =\n\\begin{pmatrix}\n   2 & 2 & 2 \\\\\n   2 & 2 & 2 \\\\\n   2 & 2 & 2\n\\end{pmatrix}, \n\nS_x =\n\\begin{pmatrix}\n   -1 & 0 & 1 \\\\\n   -2 & 0 & 2 \\\\\n   -1 & 0 & 1\n\\end{pmatrix}\n</div>\n\nThe element-wise product would be:\n\n<div class='mathquill'>\n\\begin{pmatrix}\n   -2 & 0 & 2 \\\\\n   -4 & 0 & 4 \\\\\n   -2 & 0 & 2\n\\end{pmatrix}\n</div>\n\nIn which case, the sum of this matrix is <span class='mathquill'>0</span>, implying a flat gradient (in the x-direction in this calculation, although the y-direction is also zero in this example).\n\nIf, instead, for example, you apply the  <span class=\"mathquill\">S_x</span> operator to a region of the image where values are rising from left to right, then the result will be positive, implying a positive derivative.\n\nGiven:\n\n<div class='mathquill'>region =\n\\begin{pmatrix}\n   1 & 2 & 3 \\\\\n   1 & 2 & 3 \\\\\n   1 & 2 & 3\n\\end{pmatrix}, \n\nS_x =\n\\begin{pmatrix}\n   -1 & 0 & 1 \\\\\n   -2 & 0 & 2 \\\\\n   -1 & 0 & 1\n\\end{pmatrix}\n</div>\n\nThe element-wise product would be:\n\n<div class='mathquill'>\n\\begin{pmatrix}\n   -1 & 0 & 3 \\\\\n   -2 & 0 & 6 \\\\\n   -1 & 0 & 3\n\\end{pmatrix}\n</div>\n\nThis time, the sum of this matrix is <span class='mathquill'>8</span>, meaning a gradient exists in the x-direction. Note that in this example image region, if you applied the <span class='mathquill'>S_y</span> operator, the result would be a gradient of <span class='mathquill'>0</span> in the y-direction, as the values are not varying from top to bottom.\n\n### Visual Example ###\n\n If we apply the Sobel <span class=\"mathquill\">x</span> and <span class=\"mathquill\">y</span> operators to this image:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 224644,
+              "key": "cff30e75-6042-4c3e-8c7e-7927b7dba243",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/584cc3f4_curved-lane/curved-lane.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cff30e75-6042-4c3e-8c7e-7927b7dba243",
+              "caption": "",
+              "alt": null,
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            },
+            {
+              "id": 224645,
+              "key": "dbb26a6d-87de-4694-b691-5c6842ee4092",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "And then we take the absolute value, we get the result:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217707,
+              "key": "8c212817-04a8-44d7-a266-8a7a65f2d1af",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/5840c575_screen-shot-2016-12-01-at-4.50.36-pm/screen-shot-2016-12-01-at-4.50.36-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8c212817-04a8-44d7-a266-8a7a65f2d1af",
+              "caption": "Absolute value of Sobel x (left) and Sobel y (right).",
+              "alt": null,
+              "width": 992,
+              "height": 348,
+              "instructor_notes": null
+            },
+            {
+              "id": 217708,
+              "key": "6e33e394-e8a2-49db-a38d-472eae12e2d1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### <span class=\"mathquill\">x</span> vs. <span class=\"mathquill\">y</span>\n\nIn the above images, you can see that the gradients taken in both the <span class=\"mathquill\">x</span> and the <span class=\"mathquill\">y</span> directions detect the lane lines and pick up other edges.  Taking the gradient in the <span class=\"mathquill\">x</span> direction emphasizes edges closer to vertical. Alternatively, taking the gradient in the <span class=\"mathquill\">y</span> direction emphasizes edges closer to horizontal.  \n\nIn the upcoming exercises, you'll write functions to take various thresholds of the <span class=\"mathquill\">x</span> and <span class=\"mathquill\">y</span> gradients.   Here's some code that might be useful:  \n\n**Examples of Useful Code**\n\nYou need to pass a single color channel to the `cv2.Sobel()` function, so first convert it to grayscale:\n```python\ngray = cv2.cvtColor(im, cv2.COLOR_RGB2GRAY)\n```\n\n** Note: ** Make sure you use the correct grayscale conversion depending on how you've read in your images. Use `cv2.COLOR_RGB2GRAY` if you've read in an image using `mpimg.imread()`. Use `cv2.COLOR_BGR2GRAY` if you've read in an image using `cv2.imread()`.\n\nCalculate the derivative in the <span class=\"mathquill\">x</span> direction (the 1, 0 at the end denotes <span class=\"mathquill\">x</span> direction):\n```python\nsobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0)\n```\nCalculate the derivative in the <span class=\"mathquill\">y</span> direction (the 0, 1 at the end denotes <span class=\"mathquill\">y</span> direction):\n```python\nsobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1)\n```\n\nCalculate the absolute value of the <span class=\"mathquill\">x</span> derivative:\n```python\nabs_sobelx = np.absolute(sobelx)\n```\n\nConvert the absolute value image to 8-bit:\n```python\nscaled_sobel = np.uint8(255*abs_sobelx/np.max(abs_sobelx))\n```\n** Note: ** It's not entirely necessary to convert to 8-bit (range from 0 to 255) but in practice, it can be useful in the event that you've written a function to apply a particular threshold, and you want it to work the same on input images of different scales, like jpg vs. png.   You could just as well choose a different standard range of values, like 0 to 1 etc.  \n\nCreate a binary threshold to select pixels based on gradient strength:\n```python\nthresh_min = 20\nthresh_max = 100\nsxbinary = np.zeros_like(scaled_sobel)\nsxbinary[(scaled_sobel >= thresh_min) & (scaled_sobel <= thresh_max)] = 1\nplt.imshow(sxbinary, cmap='gray')\n```\n\n** Result **",
+              "instructor_notes": ""
+            },
+            {
+              "id": 224646,
+              "key": "3a4f9532-a985-4808-adf7-833406e7c702",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/584cd30c_sobelx-binary/sobelx-binary.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3a4f9532-a985-4808-adf7-833406e7c702",
+              "caption": "Pixels have a value of 1 or 0 based on the strength of the <span class=\"mathquill\">x</span> gradient.  ",
+              "alt": null,
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 215679,
+          "key": "ac652b00-7257-4c90-8087-eda8f152a035",
+          "title": "Applying Sobel",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ac652b00-7257-4c90-8087-eda8f152a035",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215680,
+              "key": "61261f92-f19e-4a30-a440-f1a7df32512a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Applying Sobel\n===\n\nHere's your chance to write a function that will be useful for the Advanced Lane-Finding Project at the end of this lesson!  Your goal in this exercise is to identify pixels where the gradient of an image falls within a specified threshold range.\n\n## Example\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 215817,
+              "key": "da6384ce-f671-491c-932b-7e1a1bfa3ef8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/582f7a38_thresh-x-example/thresh-x-example.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/da6384ce-f671-491c-932b-7e1a1bfa3ef8",
+              "caption": "",
+              "alt": null,
+              "width": 2266,
+              "height": 716,
+              "instructor_notes": null
+            },
+            {
+              "id": 215830,
+              "key": "321bc392-3c08-4389-952f-0cc46bdf3efe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here's the scaffolding for your function:\n\n ```python\ndef abs_sobel_thresh(img, orient='x', thresh_min=0, thresh_max=255):\n    # Grayscale\n    # Apply cv2.Sobel()\n    # Take the absolute value of the output from cv2.Sobel()\n    # Scale the result to an 8-bit range (0-255)\n    # Apply lower and upper thresholds\n    # Create binary_output\n    return binary_output\n```\nPass in `img` and set the parameter `orient` as `'x'` or `'y'` to take either the <span class=\"mathquill\">x</span> or <span class=\"mathquill\">y</span> gradient.\nSet `thresh_min`, and `thresh_max` to specify the range to select for `binary output`.   You can use exclusive (`<, >`) or inclusive (`<=, >=`) thresholding.\n\n** NOTE:**  Your output should be an array of the same size as the input image. The output array elements should be `1` where gradients were in the threshold range, and `0` everywhere else.  ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217705,
+              "key": "dddc14d4-d20d-464e-8cea-38e0cfea9e73",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As usual, if you run into any *errors* as you run your code, please refer to the **Examples of Useful Code** section in the previous video and make sure that your code syntax matches up! You can download the image used in the quiz [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Advanced_Lane_Finding_Images/sobel_example/signs_vehicles_xygrad.png).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 215753,
+              "key": "10047802951",
+              "title": "Applying Sobel",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "10047802951",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "Applying Sobel",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "10047623024",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\nimport cv2\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport pickle\n\n\n# Read in an image and grayscale it\nimage = mpimg.imread('signs_vehicles_xygrad.png')\n\n# Define a function that applies Sobel x or y, \n# then takes an absolute value and applies a threshold.\n# Note: calling your function with orient='x', thresh_min=20, thresh_max=100\n# should produce output like the example image shown above this quiz.\ndef abs_sobel_thresh(img, orient='x', thresh_min=0, thresh_max=255):\n    \n    # Apply the following steps to img\n    # 1) Convert to grayscale\n    # 2) Take the derivative in x or y given orient = 'x' or 'y'\n    # 3) Take the absolute value of the derivative or gradient\n    # 4) Scale to 8-bit (0 - 255) then convert to type = np.uint8\n    # 5) Create a mask of 1's where the scaled gradient magnitude \n            # is > thresh_min and < thresh_max\n    # 6) Return this mask as your binary_output image\n    binary_output = np.copy(img) # Remove this line\n    return binary_output\n    \n# Run the function\ngrad_binary = abs_sobel_thresh(image, orient='x', thresh_min=20, thresh_max=100)\n# Plot the result\nf, (ax1, ax2) = plt.subplots(1, 2, figsize=(24, 9))\nf.tight_layout()\nax1.imshow(image)\nax1.set_title('Original Image', fontsize=50)\nax2.imshow(grad_binary, cmap='gray')\nax2.set_title('Thresholded Gradient', fontsize=50)\nplt.subplots_adjust(left=0., right=1, top=0.9, bottom=0.)",
+                    "name": "apply_sobel.py"
+                  },
+                  {
+                    "text": "# Define a function that takes an image, gradient orientation,\n# and threshold min / max values.\ndef abs_sobel_thresh(img, orient='x', thresh_min=0, thresh_max=255):\n    # Convert to grayscale\n    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)\n    # Apply x or y gradient with the OpenCV Sobel() function\n    # and take the absolute value\n    if orient == 'x':\n        abs_sobel = np.absolute(cv2.Sobel(gray, cv2.CV_64F, 1, 0))\n    if orient == 'y':\n        abs_sobel = np.absolute(cv2.Sobel(gray, cv2.CV_64F, 0, 1))\n    # Rescale back to 8 bit integer\n    scaled_sobel = np.uint8(255*abs_sobel/np.max(abs_sobel))\n    # Create a copy and apply the threshold\n    binary_output = np.zeros_like(scaled_sobel)\n    # Here I'm using inclusive (>=, <=) thresholds, but exclusive is ok too\n    binary_output[(scaled_sobel >= thresh_min) & (scaled_sobel <= thresh_max)] = 1\n\n    # Return the result\n    return binary_output",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 215891,
+          "key": "78be8208-1af0-4cb4-8a60-2d904b696449",
+          "title": "Magnitude of the Gradient",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78be8208-1af0-4cb4-8a60-2d904b696449",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215892,
+              "key": "7e2ca93d-d787-4423-ae96-227d2f2c17c3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Magnitude of the Gradient\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 224635,
+              "key": "2286db8e-11ea-422d-8f53-7139a49f9aef",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/584c70ed_mag-binary/mag-binary.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2286db8e-11ea-422d-8f53-7139a49f9aef",
+              "caption": "",
+              "alt": null,
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            },
+            {
+              "id": 215893,
+              "key": "07f5f241-6133-48fb-985e-9b48cd27d06d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "With the result of the last quiz, you can now take the gradient in x or y and set thresholds to identify pixels within a certain gradient range.  If you play around with the thresholds a bit, you'll find the x-gradient does a cleaner job of picking up the lane lines, but you can see the lines in the y-gradient as well. \n\nIn this next exercise, your goal is to apply a threshold to the overall magnitude of the gradient, in both x and y.  \n\nThe magnitude, or absolute value, of the gradient is just the square root of the squares of the individual x and y gradients. For a gradient in both the <span class=\"mathquill\">x</span> **and** <span class=\"mathquill\">y</span> directions, the magnitude is the square root of the sum of the squares.\n\nabs_sobelx<span class=\"mathquill\"> = \\sqrt{(sobel_x)^2}</span>\n\nabs_sobely<span class=\"mathquill\"> = \\sqrt{(sobel_y)^2}</span>\n\nabs_sobelxy<span class=\"mathquill\"> = \\sqrt{(sobel_x)^2+(sobel_y)^2}</span>\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 215901,
+              "key": "63d9e4a2-531f-44d4-94ee-bd94af517d9e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "It's also worth considering the size of the region in the image over which you'll be taking the gradient.  You can modify the kernel size for the Sobel operator to change the size of this region.  Taking the gradient over larger regions can smooth over noisy intensity fluctuations on small scales.  The default Sobel kernel size is 3, but here you'll define a new function that takes kernel size as a parameter.\n\nIt's important to note here that the kernel size should be an **odd** number. Since we are searching for the gradient around a given pixel, we want to have an equal number of pixels in each direction of the region from this central pixel, leading to an odd-numbered filter size - a filter of size three has the central pixel with one additional pixel in each direction, while a filter of size five has an additional two pixels outward from the central pixel in each direction.\n\nThe function you'll define for the exercise below should take in an image and optional Sobel kernel size, as well as thresholds for gradient magnitude.  Next, you'll compute the gradient magnitude, apply a threshold, and create a binary output image showing where thresholds were met.  \n\n### Steps to take in this exercise: ###\n1. Fill out the function in the editor below to return a thresholded gradient magnitude.  Again, you can apply exclusive (`<, >`) or inclusive (`<=, >=`) thresholds.\n2. Test that your function returns output similar to the example below for `sobel_kernel=9, mag_thresh=(30, 100)`.\n\nYou can download the image used in the quiz [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Advanced_Lane_Finding_Images/sobel_example/signs_vehicles_xygrad.png).\n\n## Here's an example of the output you're going for:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217417,
+              "key": "d10e47d7-7307-4a82-9a40-480369a82b7a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/583dc062_thresh-mag-example/thresh-mag-example.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d10e47d7-7307-4a82-9a40-480369a82b7a",
+              "caption": "",
+              "alt": null,
+              "width": 2304,
+              "height": 702,
+              "instructor_notes": null
+            },
+            {
+              "id": 215902,
+              "key": "ccd1bc92-0e25-4f63-9b28-da954cf7be7c",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "ccd1bc92-0e25-4f63-9b28-da954cf7be7c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5112824126898176",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\nimport cv2\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport pickle\n\n\n# Read in an image\nimage = mpimg.imread('signs_vehicles_xygrad.png')\n\n# Define a function that applies Sobel x and y, \n# then computes the magnitude of the gradient\n# and applies a threshold\ndef mag_thresh(img, sobel_kernel=3, mag_thresh=(0, 255)):\n    \n    # Apply the following steps to img\n    # 1) Convert to grayscale\n    # 2) Take the gradient in x and y separately\n    # 3) Calculate the magnitude \n    # 4) Scale to 8-bit (0 - 255) and convert to type = np.uint8\n    # 5) Create a binary mask where mag thresholds are met\n    # 6) Return this mask as your binary_output image\n    binary_output = np.copy(img) # Remove this line\n    return binary_output\n    \n# Run the function\nmag_binary = mag_thresh(image, sobel_kernel=3, mag_thresh=(30, 100))\n# Plot the result\nf, (ax1, ax2) = plt.subplots(1, 2, figsize=(24, 9))\nf.tight_layout()\nax1.imshow(image)\nax1.set_title('Original Image', fontsize=50)\nax2.imshow(mag_binary, cmap='gray')\nax2.set_title('Thresholded Magnitude', fontsize=50)\nplt.subplots_adjust(left=0., right=1, top=0.9, bottom=0.)",
+                    "name": "mag_dir.py"
+                  },
+                  {
+                    "text": "# Define a function to return the magnitude of the gradient\n# for a given sobel kernel size and threshold values\ndef mag_thresh(img, sobel_kernel=3, mag_thresh=(0, 255)):\n    # Convert to grayscale\n    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)\n    # Take both Sobel x and y gradients\n    sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=sobel_kernel)\n    sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=sobel_kernel)\n    # Calculate the gradient magnitude\n    gradmag = np.sqrt(sobelx**2 + sobely**2)\n    # Rescale to 8 bit\n    scale_factor = np.max(gradmag)/255 \n    gradmag = (gradmag/scale_factor).astype(np.uint8) \n    # Create a binary image of ones where threshold is met, zeros otherwise\n    binary_output = np.zeros_like(gradmag)\n    binary_output[(gradmag >= mag_thresh[0]) & (gradmag <= mag_thresh[1])] = 1\n\n    # Return the binary image\n    return binary_output\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 215946,
+          "key": "d9ad4008-6744-4dc1-803d-e43a67cc050f",
+          "title": "Direction of the Gradient",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d9ad4008-6744-4dc1-803d-e43a67cc050f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215950,
+              "key": "383fdeca-8f3e-4880-9789-0535fbd164b1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Direction of the Gradient\n===\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 215951,
+              "key": "7276f7b5-f12f-4602-849c-794a56a6056d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "When you play around with the thresholding for the gradient magnitude in the previous exercise, you find what you might expect, namely, that it picks up the lane lines well, but with a lot of other stuff detected too.  Gradient magnitude is at the heart of Canny edge detection, and is why Canny works well for picking up all edges.\n\nIn the case of lane lines, we're interested only in edges of a particular orientation.  So now we will explore the direction, or orientation, of the gradient.  \n\nThe direction of the gradient is simply the inverse tangent (arctangent) of the <span class=\"mathquill\">y</span> gradient divided by the <span class=\"mathquill\">x</span> gradient:\n\n<span class=\"mathquill\">arctan{(sobel_y/sobel_x)}</span>.  \n\nEach pixel of the resulting image contains a value for the angle of the gradient away from horizontal in units of radians, covering a range of <span class=\"mathquill\">-\\pi/2 </span> to <span class=\"mathquill\"> \\pi/2 </span>.  An orientation of 0 implies a vertical line and orientations of <span class=\"mathquill\">\\footnotesize{+/-}\\:\\normalsize{\\pi/2} </span> imply horizontal lines. (Note that in the quiz below, we actually utilize `np.arctan2`, which can return values between <span class=\"mathquill\">\\footnotesize{+/-}\\:\\normalsize{\\pi} </span>; however, as we'll take the absolute value of <span class=\"mathquill\">sobel_x</span>, this restricts the values to <span class=\"mathquill\">\\footnotesize{+/-}\\:\\normalsize{\\pi/2} </span>, as shown [here](https://en.wikipedia.org/wiki/Atan2).)\n\nIn this next exercise, you'll write a function to compute the direction of the gradient and apply a threshold.   The direction of the gradient is much noisier than the gradient magnitude, but you should find that you can pick out particular features by orientation.  \n\n### Steps to take in this exercise: ###\n1. Fill out the function in the editor below to return a thresholded absolute value of the gradient direction.  Use Boolean operators, again with exclusive (`<, >`) or inclusive (`<=, >=`) thresholds.\n2. Test that your function returns output similar to the example below for `sobel_kernel=15, thresh=(0.7, 1.3)`.\n\nYou can download the image used in the quiz [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Advanced_Lane_Finding_Images/sobel_example/signs_vehicles_xygrad.png).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217418,
+              "key": "d493262b-21a9-4b5c-913c-feb6257980c3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/583dc504_thresh-grad-dir-example/thresh-grad-dir-example.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d493262b-21a9-4b5c-913c-feb6257980c3",
+              "caption": "",
+              "alt": null,
+              "width": 2286,
+              "height": 706,
+              "instructor_notes": null
+            },
+            {
+              "id": 215957,
+              "key": "d64de84d-6f72-4a95-bdc4-1bc94f93a641",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "d64de84d-6f72-4a95-bdc4-1bc94f93a641",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6535833362497536",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\nimport cv2\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport pickle\n\n\n# Read in an image\nimage = mpimg.imread('signs_vehicles_xygrad.png')\n\n# Define a function that applies Sobel x and y, \n# then computes the direction of the gradient\n# and applies a threshold.\ndef dir_threshold(img, sobel_kernel=3, thresh=(0, np.pi/2)):\n    \n    # Apply the following steps to img\n    # 1) Convert to grayscale\n    # 2) Take the gradient in x and y separately\n    # 3) Take the absolute value of the x and y gradients\n    # 4) Use np.arctan2(abs_sobely, abs_sobelx) to calculate the direction of the gradient \n    # 5) Create a binary mask where direction thresholds are met\n    # 6) Return this mask as your binary_output image\n    binary_output = np.copy(img) # Remove this line\n    return binary_output\n    \n# Run the function\ndir_binary = dir_threshold(image, sobel_kernel=15, thresh=(0.7, 1.3))\n# Plot the result\nf, (ax1, ax2) = plt.subplots(1, 2, figsize=(24, 9))\nf.tight_layout()\nax1.imshow(image)\nax1.set_title('Original Image', fontsize=50)\nax2.imshow(dir_binary, cmap='gray')\nax2.set_title('Thresholded Grad. Dir.', fontsize=50)\nplt.subplots_adjust(left=0., right=1, top=0.9, bottom=0.)",
+                    "name": "dir_thresh.py"
+                  },
+                  {
+                    "text": "# Define a function to threshold an image for a given range and Sobel kernel\ndef dir_threshold(img, sobel_kernel=3, thresh=(0, np.pi/2)):\n    # Grayscale\n    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)\n    # Calculate the x and y gradients\n    sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=sobel_kernel)\n    sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=sobel_kernel)\n    # Take the absolute value of the gradient direction, \n    # apply a threshold, and create a binary image result\n    absgraddir = np.arctan2(np.absolute(sobely), np.absolute(sobelx))\n    binary_output =  np.zeros_like(absgraddir)\n    binary_output[(absgraddir >= thresh[0]) & (absgraddir <= thresh[1])] = 1\n\n    # Return the binary image\n    return binary_output",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 216025,
+          "key": "c53a9a18-d31b-4fd7-bc44-07070507abd8",
+          "title": "Combining Thresholds",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c53a9a18-d31b-4fd7-bc44-07070507abd8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 216026,
+              "key": "7437135e-26b4-4e44-b1f3-1fa472a9da18",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Combining Thresholds\n===\n\nIf you play around with the thresholds in the last exercise, you'll find that you can start to identify the lane lines by gradient direction alone by setting the threshold around `thresh = (0.7, 1.3)`, but there's still a lot of noise in the resulting image.  \n\nNow consider how you can use various aspects of your gradient measurements (x, y, magnitude, direction) to isolate lane-line pixels.  Specifically, think about how you can use thresholds of the x and y gradients, the overall gradient magnitude, and the gradient direction to focus on pixels that are likely to be part of the lane lines.  \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216716,
+              "key": "5f1e0733-4700-4e5b-a402-fa3c217dbb52",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Challenge: \n===\nIn the project at the end of this section, you'll want to experiment with thresholding various aspects of the gradient, so now would be a great time to start coding it up on your local machine!  Grab the image we've been working with for the last three quizzes [here](https://s3.amazonaws.com/udacity-sdc/advanced_lane_finding/signs_vehicles_xygrad.png) (or a smaller jpg file [here](https://s3.amazonaws.com/udacity-sdc/advanced_lane_finding/signs_vehicles_xygrad.jpg)).\n\nCombine the selection thresholds from the last 3 quizzes to write a piece of code like the following, where you can play with various thresholds and see the output.\n\n```python\ndef abs_sobel_thresh(img, orient='x', sobel_kernel=3, thresh=(0, 255)):\n    # Calculate directional gradient\n    # Apply threshold\n    return grad_binary\n\ndef mag_thresh(image, sobel_kernel=3, mag_thresh=(0, 255)):\n    # Calculate gradient magnitude\n    # Apply threshold\n    return mag_binary\n\ndef dir_threshold(image, sobel_kernel=3, thresh=(0, np.pi/2)):\n    # Calculate gradient direction\n    # Apply threshold\n    return dir_binary\n\n# Choose a Sobel kernel size\nksize = 3 # Choose a larger odd number to smooth gradient measurements\n\n# Apply each of the thresholding functions\ngradx = abs_sobel_thresh(image, orient='x', sobel_kernel=ksize, thresh=(0, 255))\ngrady = abs_sobel_thresh(image, orient='y', sobel_kernel=ksize, thresh=(0, 255))\nmag_binary = mag_thresh(image, sobel_kernel=ksize, mag_thresh=(0, 255))\ndir_binary = dir_threshold(image, sobel_kernel=ksize, thresh=(0, np.pi/2))\n```\n\nTry different combinations and see what you get.  \n\nFor example, here is a selection for pixels where both the <span class=\"mathquill\">x</span> and <span class=\"mathquill\">y</span> gradients meet the threshold criteria, or the gradient magnitude and direction are both within their threshold values.\n\n```python\ncombined = np.zeros_like(dir_binary)\ncombined[((gradx == 1) & (grady == 1)) | ((mag_binary == 1) & (dir_binary == 1))] = 1```  \n\n## Output\n\nHere is an example of a binary result from multiple thresholds:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217185,
+              "key": "a03aff59-4bca-49fd-b40f-0ea6e6d88ea8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/583b72df_binary-combo-example/binary-combo-example.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a03aff59-4bca-49fd-b40f-0ea6e6d88ea8",
+              "caption": "",
+              "alt": null,
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 213461,
+          "key": "3272fb94-57c6-4705-bc81-c53bbb336ae5",
+          "title": "Color Spaces",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3272fb94-57c6-4705-bc81-c53bbb336ae5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215913,
+              "key": "e0511017-e297-43f0-b8fc-20f87d2c42af",
+              "title": "Color Spaces",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mhILAhzgPRE",
+                "china_cdn_id": "mhILAhzgPRE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 213462,
+          "key": "c8f43048-e923-4b95-ad1c-ec74db948cb1",
+          "title": "Color Thresholding",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c8f43048-e923-4b95-ad1c-ec74db948cb1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 216668,
+              "key": "2a5e47af-b465-48bf-b990-34bda0e2e42b",
+              "title": "Color Spaces and Thresholding",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dMI_so4P1Jc",
+                "china_cdn_id": "dMI_so4P1Jc.mp4"
+              }
+            },
+            {
+              "id": 216503,
+              "key": "3a7586e4-49dc-49d2-aefc-a42df7d2d92d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A **color space** is a specific organization of colors; color spaces provide a way to categorize colors and represent them in digital images.\n\n**RGB**  is red-green-blue color space. You can think of this as a 3D space, in this case a cube, where any color can be represented by a 3D coordinate of R, G, and B values. For example, white has the coordinate (255, 255, 255), which has the maximum value for red, green, and blue.\n\n***Note***: If you read in an image using `matplotlib.image.imread()` you will get an RGB image, but if you read it in using OpenCV `cv2.imread()` this will give you a BGR image.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216504,
+              "key": "2ffb8d26-1960-4866-91a5-0916c1db4f36",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/5834e496_screen-shot-2016-11-22-at-4.35.48-pm/screen-shot-2016-11-22-at-4.35.48-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2ffb8d26-1960-4866-91a5-0916c1db4f36",
+              "caption": "RGB color space",
+              "alt": null,
+              "width": 290,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 216509,
+              "key": "659b4133-d3db-4bab-bd73-cc5266060286",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "There are many other ways to represent the colors in an image besides just composed of red, green, and blue values.\n\n\nThere is also **HSV** color space (hue, saturation, and value), and **HLS** space (hue, lightness, and saturation). These are some of the most commonly used color spaces in image analysis.\n\nTo get some intuition about these color spaces, you can generally think of **Hue** as the value that represents color independent of any change in brightness. So if you imagine a basic red paint color, then add some white to it or some black to make that color lighter or darker -- the underlying color remains the same and the hue for all of these colors will be the same. \n\nOn the other hand, **Lightness** and **Value** represent different ways to measure the relative lightness or darkness of a color. For example, a dark red will have a similar hue but much lower value for lightness than a light red. **Saturation** also plays a part in this; saturation is a measurement of colorfulness. So, as colors get lighter and closer to white, they have a lower saturation value, whereas colors that are the most intense, like a bright primary color (imagine a bright red, blue, or yellow), have a high saturation value. You can get a better idea of these values by looking at the 3D color spaces pictured below.\n\nMost of these different color spaces were either inspired by the human vision system, and/or developed for efficient use in television screen displays and computer graphics. You can read more about the history and the derivation of HLS and HSV color spaces [here](https://en.wikipedia.org/wiki/HSL_and_HSV).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216511,
+              "key": "bc5a5370-5364-4036-adc7-a32d915668ba",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/November/5834e6ed_screen-shot-2016-11-22-at-4.44.32-pm/screen-shot-2016-11-22-at-4.44.32-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/bc5a5370-5364-4036-adc7-a32d915668ba",
+              "caption": "(Left) HSV color space, (Right) HLS color space",
+              "alt": null,
+              "width": 600,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 216512,
+              "key": "8bd9eff0-78f6-4132-a62a-3d4de51f5a39",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the code example, I used HLS space to help detect lane lines of different colors and under different lighting conditions.\n\n\nOpenCV provides a function  `hls = cv2.cvtColor(im, cv2.COLOR_RGB2HLS)` that converts images from one color space to another. If you’re interested in the math behind this conversion, take a look at the equations below; note that all this math is for converting 8-bit images, which is the format for most road images in this course. These equations convert one color at a time from RGB to HLS.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216636,
+              "key": "49d5e7ad-8572-4db7-9594-3333a3876dbe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Constants**\n\n<span class=\"mathquill\">V_{max} \\leftarrow  max(R, G, B)</span>\n\n\n<span class=\"mathquill\">V_{min} \\leftarrow  min(R, G, B)</span>\n\nThese are the maximum and minimum values across all three RGB values for a given color (by pixel).\n\nNote that in these equations, it would be necessary to divide the RGB values by 255 such that they fall in the range <span class=\"mathquill\">(0, 1)</span>, but OpenCV will perform this for you in `cv2.cvtColor()`. **L** and **S** are scaled back up after the transformations take place, while **H** is halved for use in 8-bit images (see below).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216649,
+              "key": "cad0190b-cd6f-4989-af5f-50629822733f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "** H channel conversion equations**\n\nThere are three different equations, which one is used depends on the the value of <span class=\"mathquill\">V_{max}</span> whether that's R, G, or B.\n\n<span class=\"mathquill\">\\large H \\leftarrow  \\frac{30(G-B)}{V_{max}-V_{min}}</span> , if <span class=\"mathquill\"> \\: V_{max}=R </span>\n\n<span class=\"mathquill\">\\large H \\leftarrow  60 + \\frac{30(B-R)}{V_{max}-V_{min}}</span> , if <span class=\"mathquill\"> \\: V_{max}=G  </span>\n\n<span class=\"mathquill\">\\large H \\leftarrow  120 + \\frac{30(R-G)}{V_{max}-V_{min}}</span> , if <span class=\"mathquill\"> \\: V_{max}=B  </span>\n\n***Note***: In OpenCV, for 8-bit images, the range of H is from 0-179. It's typically from 0-359 for degrees around the cylindrical colorspace, but this number is divided in half so that the range can be represented in an 8-bit image whose color values range from 0-255. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216650,
+              "key": "7298f08c-f9de-4ad1-9726-1428d243565a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "** L channel conversion equation**\n\n<span class=\"mathquill\">\\large L \\leftarrow \\frac{V_{max}+V_{min}}{2}</span>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216651,
+              "key": "052aa2e0-4b32-4805-bcea-7828bbe28b86",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**S channel conversion equations**\n\nThere are two possible equations; one is used depending on the value of L.\n\n<span class=\"mathquill\">\\large S \\leftarrow \\frac{V_{max}-V_{min}}{V_{max}+V_{min}} </span>, if <span class=\"mathquill\">L < 0.5 </span>\n\n\n<span class=\"mathquill\">\\large S \\leftarrow \\frac{V_{max}-V_{min}}{2 - (V_{max}+V_{min})} </span>, if <span class=\"mathquill\">L \\geq 0.5 </span>\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 220046,
+          "key": "5ad61f44-73a9-44ac-9a8c-37b41770df0a",
+          "title": "HLS intuitions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5ad61f44-73a9-44ac-9a8c-37b41770df0a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 220050,
+              "key": "58260c65-ffa0-47c0-a3cd-dc173514bf34",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58477369_screen-shot-2016-12-06-at-6.26.30-pm/screen-shot-2016-12-06-at-6.26.30-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/58260c65-ffa0-47c0-a3cd-dc173514bf34",
+              "caption": "Color options: A, B, and C",
+              "alt": null,
+              "width": 1088,
+              "height": 364,
+              "instructor_notes": null
+            },
+            {
+              "id": 220054,
+              "key": "f2de0ab0-98ba-4ba6-9aa3-5868d48ea1fc",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f2de0ab0-98ba-4ba6-9aa3-5868d48ea1fc",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Considering the colors pictured above, in HLS color space, which of these options will have the *lowest* L value?",
+                "answers": [
+                  {
+                    "id": "a1481077635008",
+                    "text": "A",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1481077702529",
+                    "text": "B",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1481077705543",
+                    "text": "C",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 233630,
+              "key": "745fc494-1156-4561-90f5-aaf3c6ad5e2a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58477369_screen-shot-2016-12-06-at-6.26.30-pm/screen-shot-2016-12-06-at-6.26.30-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/745fc494-1156-4561-90f5-aaf3c6ad5e2a",
+              "caption": "",
+              "alt": null,
+              "width": 1088,
+              "height": 364,
+              "instructor_notes": null
+            },
+            {
+              "id": 233633,
+              "key": "a9403bd4-b4aa-45eb-aa1e-2589d8449c76",
+              "title": "Another HLS quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a9403bd4-b4aa-45eb-aa1e-2589d8449c76",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Considering the same three images, in which of the HLS color channels will these three images have approximately the same value?",
+                "answers": [
+                  {
+                    "id": "a1483485808869",
+                    "text": "H",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1483485882922",
+                    "text": "L",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1483485884199",
+                    "text": "S",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 230379,
+          "key": "d7542ed8-36ce-4407-bd0a-4a38d17d2325",
+          "title": "HLS and Color Thresholds",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d7542ed8-36ce-4407-bd0a-4a38d17d2325",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 230383,
+              "key": "ab4d944b-ab1d-4136-8fe4-f8a014ab6efb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "HLS and Color Thresholds\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 230479,
+              "key": "df6ac904-bba5-4c61-b1ae-8456a9a37dda",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58531b46_test6/test6.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/df6ac904-bba5-4c61-b1ae-8456a9a37dda",
+              "caption": "",
+              "alt": null,
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            },
+            {
+              "id": 230481,
+              "key": "cacc44da-d784-4c80-90d7-8ca96731b849",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You've now seen that various color thresholds can be applied to find the lane lines in images.  Here we'll explore this a bit further and look at a couple examples to see why a color space like HLS can be more robust.  Let's first take another look at some of the images you saw in the last video.\n\nHere I'll read in the same original image (the image above), convert to grayscale, and apply a threshold that identifies the lines:\n\n```python\nimport numpy as np\nimport cv2\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\n\nimage = mpimg.imread('test6.jpg')\nthresh = (180, 255)\ngray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)\nbinary = np.zeros_like(gray)\nbinary[(gray > thresh[0]) & (gray <= thresh[1])] = 1\n```\n\nAnd here's the result:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 230482,
+              "key": "624bfcdf-7cab-4e34-b559-437ddb2caad7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58531db9_test6gray/test6gray.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/624bfcdf-7cab-4e34-b559-437ddb2caad7",
+              "caption": "",
+              "alt": null,
+              "width": 1200,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 230483,
+              "key": "fb92c262-280e-43ad-accd-96811e471e22",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You might have also explored thresholding individual RGB color channels.  You can take a look at them side by side to see which ones do a better job of picking up the lane lines:\n\n```python\nR = image[:,:,0]\nG = image[:,:,1]\nB = image[:,:,2]\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 230484,
+              "key": "ee4aa3e8-2497-46f2-9d63-057422e78c5e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58531f5e_test6rgb/test6rgb.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ee4aa3e8-2497-46f2-9d63-057422e78c5e",
+              "caption": "",
+              "alt": null,
+              "width": 1200,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 230485,
+              "key": "4cdbbd6d-3bfb-4bb4-bb8b-afc8aa33e6e7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The R channel does a reasonable job of highlighting the lines, and you can apply a similar threshold to find lane-line pixels: \n\n```python\nthresh = (200, 255)\nbinary = np.zeros_like(R)\nbinary[(R > thresh[0]) & (R <= thresh[1])] = 1\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 230486,
+              "key": "e878cacc-3faf-4efa-b6c1-032d2d077293",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/585322d2_test6r-channel/test6r-channel.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e878cacc-3faf-4efa-b6c1-032d2d077293",
+              "caption": "",
+              "alt": null,
+              "width": 1200,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 230487,
+              "key": "ab281cc7-d6c3-456a-817a-10e984d32c5c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this lesson, we're looking at different color spaces.  While there are several that are worth exploring, here we'll look specifically at HLS.  When we separate the H, L, and S channels we get the following result: \n\n```python\nhls = cv2.cvtColor(image, cv2.COLOR_RGB2HLS)\nH = hls[:,:,0]\nL = hls[:,:,1]\nS = hls[:,:,2]\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 230490,
+              "key": "f0e40538-9ec6-47dc-8b10-fec24baebe9a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58532d15_test6hls/test6hls.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f0e40538-9ec6-47dc-8b10-fec24baebe9a",
+              "caption": "",
+              "alt": null,
+              "width": 1200,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 230489,
+              "key": "e31485ea-86bb-49db-8610-24c9359f6a4f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The S channel picks up the lines well, so let's try applying a threshold there:\n\n```python\nthresh = (90, 255)\nbinary = np.zeros_like(S)\nbinary[(S > thresh[0]) & (S <= thresh[1])] = 1\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 230491,
+              "key": "38f63922-3337-4d6e-95eb-0d3e1c2acc64",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58532d3b_test6s-channel/test6s-channel.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/38f63922-3337-4d6e-95eb-0d3e1c2acc64",
+              "caption": "",
+              "alt": null,
+              "width": 1200,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 230493,
+              "key": "1e75ae0f-b1ec-4642-ab9b-40144cfec5fd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You can also see that in the H channel, the lane lines appear dark, so we could try a low threshold there and obtain the following result:\n\n```python\nthresh = (15, 100)\nbinary = np.zeros_like(H)\nbinary[(H > thresh[0]) & (H <= thresh[1])] = 1\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 230494,
+              "key": "0711fc4c-edbc-4602-af77-0ac254be9610",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58532e18_test6h-channel/test6h-channel.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0711fc4c-edbc-4602-af77-0ac254be9610",
+              "caption": "",
+              "alt": null,
+              "width": 1200,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 230492,
+              "key": "eb6254ae-7a97-4b03-abc6-d9b936905a00",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "From these examples, you can see that the S channel is probably your best bet. It's cleaner than the H channel result and a bit better than the R channel or simple grayscaling.  But it's not clear that one method is far superior to the others.  \n\nIn each case, I've tweaked the threshold parameters to do as good a job as possible of picking out the lines.  Where we can really see a difference in results, however, is when we step to a new frame, where there are shadows and different colors in the pavement.  \n\nLook at the same thresholds applied to each of these four channels for this image:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 230495,
+              "key": "4cb63541-8891-4136-90bb-43209e3098d6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58532f15_test4/test4.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4cb63541-8891-4136-90bb-43209e3098d6",
+              "caption": "",
+              "alt": null,
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            },
+            {
+              "id": 230496,
+              "key": "ffb569c0-ddc3-4a5c-807f-d544c97ce277",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here's how the various channels and binaries (with the same threshold values as above) look: ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 230497,
+              "key": "57b1fb9a-f314-4f9e-a3e0-a472bb3722ac",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58532f41_test4gray/test4gray.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/57b1fb9a-f314-4f9e-a3e0-a472bb3722ac",
+              "caption": "",
+              "alt": null,
+              "width": 1200,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 230498,
+              "key": "a9cb5ff9-7545-4e40-ad98-12d1093e1e77",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58532f53_test4r-channel/test4r-channel.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a9cb5ff9-7545-4e40-ad98-12d1093e1e77",
+              "caption": "",
+              "alt": null,
+              "width": 1200,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 230499,
+              "key": "a806d99d-ba58-436d-af4b-14c36aaae585",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58532f69_test4s-channel/test4s-channel.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a806d99d-ba58-436d-af4b-14c36aaae585",
+              "caption": "",
+              "alt": null,
+              "width": 1200,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 230500,
+              "key": "e35fda5b-c6b8-460a-abef-11e5aff1621f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58532f86_test4h-channel/test4h-channel.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e35fda5b-c6b8-460a-abef-11e5aff1621f",
+              "caption": "",
+              "alt": null,
+              "width": 1200,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 230502,
+              "key": "4a445aa7-b9d2-463b-ba5f-71e68021f910",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now you can see that, the S channel is still doing a fairly robust job of picking up the lines under very different color and contrast conditions, while the other selections look messy.  You could tweak the thresholds and get closer in the other channels, but the S channel is preferable because it is more robust to changing conditions.\n\nIt's worth noting, however, that the R channel still does rather well on the white lines, perhaps even better than the S channel.  As with gradients, it's worth considering how you might combine various color thresholds to make the most robust identification of the lines.  ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 217186,
+          "key": "e1f444b5-f649-44a1-9a69-39873e8c04d5",
+          "title": "HLS Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e1f444b5-f649-44a1-9a69-39873e8c04d5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 224636,
+              "key": "28e1d91c-0e10-4fe4-8299-29422fc81e69",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "HLS Color Threshold\n===\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 224637,
+              "key": "83caab41-2d0d-4364-ae2f-98eeefcf953a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/584c86e6_hls-binary/hls-binary.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/83caab41-2d0d-4364-ae2f-98eeefcf953a",
+              "caption": "",
+              "alt": null,
+              "width": 1280,
+              "height": 720,
+              "instructor_notes": null
+            },
+            {
+              "id": 217338,
+              "key": "7b8a65a5-3c5d-4d54-a1cc-49fa7747b524",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\nIn this exercise, you can try applying a color threshold in the HLS color space. If you have any problems with the implementation, please refer to the previous video and instructor notes.    \n\nYour task here is to write a function that takes in an image and threshold values and returns a binary output from applying the threshold to the S-channel.  Apply your thresholds as you did for gradients but this time use an exclusive (`>`) lower bound and an inclusive upper bound (`<=`).  \n\nYou can download the test images in the quiz for local usage [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Advanced_Lane_Finding_Images/color_spaces/colorspace_test_images.zip).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 217210,
+              "key": "10092945416",
+              "title": "HLS",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "10092945416",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "HLS",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "10094915227",
+                "initial_code_files": [
+                  {
+                    "text": "import matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\nimport numpy as np\nimport cv2\n\n# Read in an image, you can also try test1.jpg or test4.jpg\nimage = mpimg.imread('test6.jpg') \n\n# TODO: Define a function that thresholds the S-channel of HLS\n# Use exclusive lower bound (>) and inclusive upper (<=)\ndef hls_select(img, thresh=(0, 255)):\n    # 1) Convert to HLS color space\n    # 2) Apply a threshold to the S channel\n    # 3) Return a binary image of threshold result\n    binary_output = np.copy(img) # placeholder line\n    return binary_output\n    \n# Optional TODO - tune the threshold to try to match the above image!    \nhls_binary = hls_select(image, thresh=(0, 255))\n\n# Plot the result\nf, (ax1, ax2) = plt.subplots(1, 2, figsize=(24, 9))\nf.tight_layout()\nax1.imshow(image)\nax1.set_title('Original Image', fontsize=50)\nax2.imshow(hls_binary, cmap='gray')\nax2.set_title('Thresholded S', fontsize=50)\nplt.subplots_adjust(left=0., right=1, top=0.9, bottom=0.)",
+                    "name": "rgb_to_hls.py"
+                  },
+                  {
+                    "text": "# Define a function that thresholds the S-channel of HLS\ndef hls_select(img, thresh=(0, 255)):\n    hls = cv2.cvtColor(img, cv2.COLOR_RGB2HLS)\n    s_channel = hls[:,:,2]\n    binary_output = np.zeros_like(s_channel)\n    binary_output[(s_channel > thresh[0]) & (s_channel <= thresh[1])] = 1\n    return binary_output\n\nhls_binary = hls_select(image, thresh=(90, 255))",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 215896,
+          "key": "a1b70df9-638b-46bb-8af0-12c43dcfd0b4",
+          "title": "Color and Gradient",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a1b70df9-638b-46bb-8af0-12c43dcfd0b4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 215897,
+              "key": "4c968dca-9674-4400-92c0-ed99ebea7fd7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Color and Gradient\n===\n\nNow it's time to combine what you know about color and gradient thresholding to get the best of both worlds. Here's an example of how that might look:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 220032,
+              "key": "35904b5f-ea9d-49ad-af93-17793d304db1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/584763e9_screen-shot-2016-12-06-at-5.19.16-pm/screen-shot-2016-12-06-at-5.19.16-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/35904b5f-ea9d-49ad-af93-17793d304db1",
+              "caption": "Combined color and gradient thresholds for lane detection.",
+              "alt": null,
+              "width": 1540,
+              "height": 990,
+              "instructor_notes": null
+            },
+            {
+              "id": 220037,
+              "key": "000e9929-31d7-491f-a09d-a0c0d22a8a04",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "At this point, it's okay to detect edges around trees or cars because these lines can be mostly filtered out by applying a mask to the image and essentially cropping out the area outside of the lane lines. It's most important that you reliably detect different colors of lane lines under varying degrees of daylight and shadow.\n\nYou can clearly see which parts of the lane lines were detected by the gradient threshold and which parts were detected by the color threshold by stacking the channels and seeing the individual components. You can create a binary combination of these  two images to map out where either the color or gradient thresholds were met. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216059,
+              "key": "913e36c1-0b07-4e82-b107-7b75ca014b55",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here's what that looks like in code:\n\n```python\n# Convert to HLS color space and separate the S channel\n# Note: img is the undistorted image\nhls = cv2.cvtColor(img, cv2.COLOR_RGB2HLS)\ns_channel = hls[:,:,2]\n\n# Grayscale image\n# NOTE: we already saw that standard grayscaling lost color information for the lane lines\n# Explore gradients in other colors spaces / color channels to see what might work better\ngray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)\n\n# Sobel x\nsobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0) # Take the derivative in x\nabs_sobelx = np.absolute(sobelx) # Absolute x derivative to accentuate lines away from horizontal\nscaled_sobel = np.uint8(255*abs_sobelx/np.max(abs_sobelx))\n\n# Threshold x gradient\nthresh_min = 20\nthresh_max = 100\nsxbinary = np.zeros_like(scaled_sobel)\nsxbinary[(scaled_sobel >= thresh_min) & (scaled_sobel <= thresh_max)] = 1\n\n# Threshold color channel\ns_thresh_min = 170\ns_thresh_max = 255\ns_binary = np.zeros_like(s_channel)\ns_binary[(s_channel >= s_thresh_min) & (s_channel <= s_thresh_max)] = 1\n\n# Stack each channel to view their individual contributions in green and blue respectively\n# This returns a stack of the two binary images, whose components you can see as different colors\ncolor_binary = np.dstack(( np.zeros_like(sxbinary), sxbinary, s_binary)) * 255\n\n# Combine the two binary thresholds\ncombined_binary = np.zeros_like(sxbinary)\ncombined_binary[(s_binary == 1) | (sxbinary == 1)] = 1\n\n# Plotting thresholded images\nf, (ax1, ax2) = plt.subplots(1, 2, figsize=(20,10))\nax1.set_title('Stacked thresholds')\nax1.imshow(color_binary)\n\nax2.set_title('Combined S channel and gradient thresholds')\nax2.imshow(combined_binary, cmap='gray')\n```\n\nThe output is shown below.  The final image `color_binary` is a combination of binary thresholding the S channel (HLS) and binary thresholding the result of applying the Sobel operator in the x direction on the original image. \n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 220038,
+              "key": "461c0fd0-e0ad-4f98-9fd8-b67952c6b4b6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2016/December/58476598_screen-shot-2016-12-06-at-5.27.35-pm/screen-shot-2016-12-06-at-5.27.35-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/461c0fd0-e0ad-4f98-9fd8-b67952c6b4b6",
+              "caption": "(Left) Stacked image; the green is the gradient threshold component and the blue is the color channel threshold component.\n(Right) black and white combined thresholded image - this one has combined both gradient and color thresholds into one image.",
+              "alt": null,
+              "width": 1986,
+              "height": 562,
+              "instructor_notes": null
+            },
+            {
+              "id": 228069,
+              "key": "dad99abb-a060-4ce1-b145-bc4a3befc87c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this next exercise, you'll get the chance to play around with different combinations of color and gradient with the goal using the pipeline you come up with for your upcoming project. There's no correct submission, just explore!\n\nSome interesting things to explore might include: the H channel, different threshold values for color and gradient binary images, and even a different color space, like HSV!\n\nYou can download the image used in the quiz [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Advanced_Lane_Finding_Images/luv_example/bridge_shadow.jpg).\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 216060,
+              "key": "fe031ed9-5fc1-4661-a1b2-de148c681900",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "fe031ed9-5fc1-4661-a1b2-de148c681900",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "Color and Gradient Combinations",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4506910810308608",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\nimport cv2\nimport matplotlib.pyplot as plt\nimport matplotlib.image as mpimg\n\n\nimage = mpimg.imread('bridge_shadow.jpg')\n\n# Edit this function to create your own pipeline.\ndef pipeline(img, s_thresh=(170, 255), sx_thresh=(20, 100)):\n    img = np.copy(img)\n    # Convert to HLS color space and separate the V channel\n    hls = cv2.cvtColor(img, cv2.COLOR_RGB2HLS)\n    l_channel = hls[:,:,1]\n    s_channel = hls[:,:,2]\n    # Sobel x\n    sobelx = cv2.Sobel(l_channel, cv2.CV_64F, 1, 0) # Take the derivative in x\n    abs_sobelx = np.absolute(sobelx) # Absolute x derivative to accentuate lines away from horizontal\n    scaled_sobel = np.uint8(255*abs_sobelx/np.max(abs_sobelx))\n    \n    # Threshold x gradient\n    sxbinary = np.zeros_like(scaled_sobel)\n    sxbinary[(scaled_sobel >= sx_thresh[0]) & (scaled_sobel <= sx_thresh[1])] = 1\n    \n    # Threshold color channel\n    s_binary = np.zeros_like(s_channel)\n    s_binary[(s_channel >= s_thresh[0]) & (s_channel <= s_thresh[1])] = 1\n    # Stack each channel\n    color_binary = np.dstack(( np.zeros_like(sxbinary), sxbinary, s_binary)) * 255\n    return color_binary\n    \nresult = pipeline(image)\n\n# Plot the result\nf, (ax1, ax2) = plt.subplots(1, 2, figsize=(24, 9))\nf.tight_layout()\n\nax1.imshow(image)\nax1.set_title('Original Image', fontsize=40)\n\nax2.imshow(result)\nax2.set_title('Pipeline Result', fontsize=40)\nplt.subplots_adjust(left=0., right=1, top=0.9, bottom=0.)",
+                    "name": "color_and_gradient.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

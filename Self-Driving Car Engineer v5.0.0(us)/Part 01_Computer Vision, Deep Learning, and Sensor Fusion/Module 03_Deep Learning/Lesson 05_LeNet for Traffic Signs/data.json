@@ -1,0 +1,329 @@
+{
+  "data": {
+    "lesson": {
+      "id": 665210,
+      "key": "fe16d91d-bc00-455b-bc7b-a61b5e55d473",
+      "title": "LeNet for Traffic Signs",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Using the infamous LeNet neural network architecture, take your first steps toward building a Traffic Sign classifier!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/fe16d91d-bc00-455b-bc7b-a61b5e55d473/665210/1538943753700/LeNet+for+Traffic+Signs+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/fe16d91d-bc00-455b-bc7b-a61b5e55d473/665210/1538943750418/LeNet+for+Traffic+Signs+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 667140,
+          "key": "58b70b90-05a6-40c5-8b7a-e97079cb3848",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58b70b90-05a6-40c5-8b7a-e97079cb3848",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 667152,
+              "key": "a04bf4ec-e55f-4152-9c5e-f7172199cd6b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## LeNet for Traffic Signs\n\nIn the Convolutional Neural Networks lesson we used LeNet with the MNIST data set.  This following lesson is a walkthrough on how to use LeNet with MNIST and how to leverage this process and the LeNet architecture to classify traffic signs.  This work was originally intended for a local or AWS GPU instance, but should now be conducted using a workspace.  Please use the workspace provided in the `Traffic Sign Classifier Project` lesson.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 232900,
+          "key": "badd25bd-e30d-4b07-a4ee-bca38280c067",
+          "title": "LeNet Architecture",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "badd25bd-e30d-4b07-a4ee-bca38280c067",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232901,
+              "key": "a0f7aedf-6356-4a38-972a-df629618f5c7",
+              "title": "LeNet Architecture",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FQYrzmnbsMs",
+                "china_cdn_id": "FQYrzmnbsMs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 232902,
+          "key": "149cf107-5504-40ea-9df6-ad613dee7b09",
+          "title": "LeNet Data",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "149cf107-5504-40ea-9df6-ad613dee7b09",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232903,
+              "key": "8a1176f0-4544-49cf-9eb2-9d66e50cd8ce",
+              "title": "LeNet Data",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "eCP8o1BnhRA",
+                "china_cdn_id": "eCP8o1BnhRA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 232904,
+          "key": "4f80676f-53fa-4b26-a987-36806c448fdd",
+          "title": "LeNet Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4f80676f-53fa-4b26-a987-36806c448fdd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232905,
+              "key": "4de84310-8138-42d0-ba0a-ceba860820cb",
+              "title": "LeNet Implementation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "EA3f6zTbbo0",
+                "china_cdn_id": "EA3f6zTbbo0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 232906,
+          "key": "603b3147-180d-4053-889d-70e773fbb8d3",
+          "title": "LeNet Training Pipeline",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "603b3147-180d-4053-889d-70e773fbb8d3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232907,
+              "key": "758a865b-7d9d-4adb-99c4-5aa32599c17d",
+              "title": "LeNet Training Pipeline",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yof-J8Xktlk",
+                "china_cdn_id": "yof-J8Xktlk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 232908,
+          "key": "6d9816b6-6cb6-44a5-a515-7350108851c1",
+          "title": "LeNet Evaluation Pipeline",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6d9816b6-6cb6-44a5-a515-7350108851c1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232909,
+              "key": "1027dee4-2248-48a3-8159-7e1544e33709",
+              "title": "LeNet Evaluation Pipeline",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cibEsIOTE60",
+                "china_cdn_id": "cibEsIOTE60.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 232910,
+          "key": "6d256485-ce49-4283-9017-b7067f8f7737",
+          "title": "LeNet Training the Model",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6d256485-ce49-4283-9017-b7067f8f7737",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232911,
+              "key": "448e4d5d-b868-4a85-8e6b-c4d5780723e3",
+              "title": "LeNet Model Training",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9580p7ZRQVY",
+                "china_cdn_id": "9580p7ZRQVY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 232912,
+          "key": "4d9bfe68-6faa-4471-a816-8d36f6aeb6fc",
+          "title": "LeNet Testing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4d9bfe68-6faa-4471-a816-8d36f6aeb6fc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 232913,
+              "key": "199cee08-4450-4b90-b364-0a50b8728c1d",
+              "title": "LeNet Testing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NHoyQSZNWA4",
+                "china_cdn_id": "NHoyQSZNWA4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667158,
+          "key": "5c5f522a-3022-4160-b05b-9dccc8934770",
+          "title": "LeNet for Traffic Signs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5c5f522a-3022-4160-b05b-9dccc8934770",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 667191,
+              "key": "c7f40229-0414-4f2e-8ab5-5feb65766104",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Data \n\nNote that the video directs you to download the data.  However, the `Traffic Sign Classifier Project` workspace comes pre-configured with the required data.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 668083,
+              "key": "7f20634b-ed7c-4687-9e21-8dfedf71baa6",
+              "title": "Lenet For Traffic Signs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "tSLOQPqPb7k",
+                "china_cdn_id": "tSLOQPqPb7k.mp4"
+              }
+            },
+            {
+              "id": 667189,
+              "key": "a9d70a6b-3336-4717-b8d6-dd83016a6150",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Strategies to Improve Your Classification Model\n\nLooking at where to go next what could you do to further improve this model? There are several broad categories, to try.\n\n- experiment with different network architectures, or just change the dimensions of the LeNet layers\n- add regularization features like drop out or L2 regularization to make sure the network doesn't overfit the training data\n- tune the hyperparameters\n- improve the data pre-processing with steps like normalization and setting a zero mean\n- augment the training data by rotating or shifting images or by changing colors\n\nThere are a lot of fun experiments you can run on this network so give it a shot and see how well you can do. Good luck.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 260131,
+          "key": "30a64fdb-6341-47ff-8d3c-71e2088e4675",
+          "title": "Visualizing Layers",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "30a64fdb-6341-47ff-8d3c-71e2088e4675",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 260132,
+              "key": "663ac4ec-83ca-414d-bb75-6c9e3364c17f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "While neural networks can be a great learning device they are often referred to as a black box, here we will explore a technique that lets us shine a light into that black box and see closer what it looks like on the inside by observing the kind of shadows that are formed. These shadows will be our feature maps, and after successfully training your neural network you can see what it's feature maps look like by plotting the output of the network's weight layers in response to a test stimuli image, which will be our light. From these plotted feature maps, it's possible to see what characteristics of an image the network finds interesting. For a sign, maybe the inner network feature maps react with high activation to the sign's boundary outline or to the contrast in the sign's painted symbol.\n\nProvided for you below is the function code that allows you to get the visualization output of any Tensorflow weight layer you want. The inputs to the function should be a stimuli image, one used during training or a new one you provided, and then the Tensorflow variable name that represents the layer's state during the training process, for instance if you wanted to see what the LeNet lab's feature maps looked like for it's second convolutional layer you could enter conv2 as the tf_activation variable.\n\nFor an example of what feature map outputs look like, check out NVIDIA's results in their paper End-to-End Deep Learning for Self-Driving Cars in the section Visualization of internal CNN State. NVIDIA was able to show that their network's inner weights had high activation to road boundary lines by comparing feature maps from an image with a clear path to one without. Try experimenting with a similar test to show that your trained network's weights are looking for interesting features, whether it's looking at differences in feature maps from images with or without a sign, or even what feature maps look like in a trained network vs a completely untrained one on the same sign image.\n\n    # image_input: the test image being fed into the network to produce the feature maps\n    # tf_activation: should be a tf variable name used during your training procedure that represents the calculated state of a specific weight layer\n    # Note: that to get access to tf_activation, the session should be interactive which can be achieved with the following commands.\n    # sess = tf.InteractiveSession()\n    # sess.as_default()\n\n    # activation_min/max: can be used to view the activation contrast in more detail, by default matplot sets min and max to the actual min and    max values of the output\n    # plt_num: used to plot out multiple different weight feature map sets on the same block, just extend the plt number for each new feature map entry\n\n    def outputFeatureMap(image_input, tf_activation, activation_min=-1, activation_max=-1 ,plt_num=1):\n        # Here make sure to preprocess your image_input in a way your network expects\n        # with size, normalization, ect if needed\n        # image_input =\n        # Note: x should be the same name as your network's tensorflow data placeholder variable\n        # If you get an error tf_activation is not defined it maybe having trouble accessing the variable from inside a function\n        activation = tf_activation.eval(session=sess,feed_dict={x : image_input})\n        featuremaps = activation.shape[3]\n        plt.figure(plt_num, figsize=(15,15))\n        for featuremap in range(featuremaps):\n            plt.subplot(6,8, featuremap+1) # sets the number of feature maps to show on each row and column\n            plt.title('FeatureMap ' + str(featuremap)) # displays the feature map number\n            if activation_min != -1 & activation_max != -1:\n                plt.imshow(activation[0,:,:, featuremap], interpolation=\"nearest\", vmin =activation_min, vmax=activation_max, cmap=\"gray\")\n            elif activation_max != -1:\n                plt.imshow(activation[0,:,:, featuremap], interpolation=\"nearest\", vmax=activation_max, cmap=\"gray\")\n            elif activation_min !=-1:\n                plt.imshow(activation[0,:,:, featuremap], interpolation=\"nearest\", vmin=activation_min, cmap=\"gray\")\n            else:\n                plt.imshow(activation[0,:,:, featuremap], interpolation=\"nearest\", cmap=\"gray\")",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

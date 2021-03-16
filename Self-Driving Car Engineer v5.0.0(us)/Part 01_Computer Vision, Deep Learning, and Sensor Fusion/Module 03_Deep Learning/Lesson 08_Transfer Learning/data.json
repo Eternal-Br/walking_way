@@ -1,0 +1,1060 @@
+{
+  "data": {
+    "lesson": {
+      "id": 663254,
+      "key": "818a5b8e-44b3-42f9-9921-e0e0e49f104e",
+      "title": "Transfer Learning",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn about some of the most famous neural network architectures, and how you can use them to create new models by leveraging existing canonical networks.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/818a5b8e-44b3-42f9-9921-e0e0e49f104e/663254/1538943733986/Transfer+Learning+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/818a5b8e-44b3-42f9-9921-e0e0e49f104e/663254/1538943728872/Transfer+Learning+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 194695,
+          "key": "ee285e2a-8339-466c-aa6b-d1832199e0f2",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ee285e2a-8339-466c-aa6b-d1832199e0f2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197202,
+              "key": "6c702734-f9b3-44e2-a6fa-558518b3ed6d",
+              "title": "Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mMT_3k1LvNU",
+                "china_cdn_id": "mMT_3k1LvNU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194816,
+          "key": "8802cd58-405c-4059-9d77-de446949ad91",
+          "title": "Bryan Catanzaro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8802cd58-405c-4059-9d77-de446949ad91",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197206,
+              "key": "bc522179-392d-4410-9568-fea1a28f543e",
+              "title": "Bryan Catanzaro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "For more information on NVIDIA cuDNN, check out the [official page](https://developer.nvidia.com/cudnn).\n\n_Register for the NVIDIA Developer Program to access the latest NVIDIA SDK tools and be the first to hear about NVIDIA product announcements. Learn more at [developer.nvidia.com/developer-program](https://developer.nvidia.com/developer-program)._",
+              "video": {
+                "youtube_id": "CLIF_6QwlFo",
+                "china_cdn_id": "CLIF_6QwlFo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 197236,
+          "key": "2254e5df-8231-433e-8273-53572e0be7d8",
+          "title": "GPU vs. CPU",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2254e5df-8231-433e-8273-53572e0be7d8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 267345,
+              "key": "c2a5f276-7f6a-4aca-ba63-93d2c1c2ea51",
+              "title": "L9 03 L GPUs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8eP2EpfBli0",
+                "china_cdn_id": "8eP2EpfBli0.mp4"
+              }
+            },
+            {
+              "id": 267031,
+              "key": "c165d9f5-fc97-47a0-86f5-2d8c40661927",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### GPU vs CPU Performance Increase Over Time\n\nThe chart below gives a general idea of how, over time, GPU performance has increased faster than CPU performance. The data is based on a comparison of NVIDIA GPUs and Intel CPUs. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267033,
+              "key": "80bfeb80-c6fa-4a55-9be0-7105c59dc3fc",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a5f98c_03-gpus/03-gpus.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/80bfeb80-c6fa-4a55-9be0-7105c59dc3fc",
+              "caption": "",
+              "alt": null,
+              "width": 8800,
+              "height": 4950,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 267041,
+          "key": "10489223-72fa-4393-848b-f882ba3cf7f9",
+          "title": "Transfer Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "10489223-72fa-4393-848b-f882ba3cf7f9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 267042,
+              "key": "30cc48a3-41ba-42db-af84-5bd74fdf3c53",
+              "title": "Transfer Learning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "pkCUxzJNtfI",
+                "china_cdn_id": "pkCUxzJNtfI.mp4"
+              }
+            },
+            {
+              "id": 267045,
+              "key": "11f2f3df-91c0-4318-a080-f6341d4cc522",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### The Four Main Cases When Using Transfer Learning\n\nTransfer learning involves taking a pre-trained neural network and adapting the neural network to a new, different data set. \n\nDepending on both:\n* the size of the new data set, and\n* the similarity of the new data set to the original data set\n\nthe approach for using transfer learning will be different. There are four main cases:\n1. new data set is small, new data is similar to original training data\n2. new data set is small, new data is different from original training data\n3. new data set is large, new data is similar to original training data\n4. new data set is large, new data is different from original training data",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267048,
+              "key": "e55ffe4e-6d35-497a-b16d-138eda148382",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a608ea_02-guide-how-transfer-learning-v3-01/02-guide-how-transfer-learning-v3-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e55ffe4e-6d35-497a-b16d-138eda148382",
+              "caption": "Four Cases When Using Transfer Learning",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 267140,
+              "key": "ed90d7b7-00db-4eb2-aaa4-c03e94210815",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A large data set might have one million images. A small data could have two-thousand images. The dividing line between a large data set and small data set is somewhat subjective. Overfitting is a concern when using transfer learning with a small data set. \n\nImages of dogs and images of wolves would be considered similar; the images would share common characteristics. A data set of flower images would be different from a data set of dog images. \n\nEach of the four transfer learning cases has its own approach. In the following sections, we will look at each case one by one.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267049,
+              "key": "c2186220-3496-46af-bea1-3e9c112d2cae",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Demonstration Network\n\nTo explain how each situation works, we will start with a generic pre-trained convolutional neural network and explain how to adjust the network for each case. Our example network contains three convolutional layers and three fully connected layers:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267134,
+              "key": "86f6a042-a114-40d3-9141-ec5158968a5b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a73a2e_02-guide-how-transfer-learning-v3-02/02-guide-how-transfer-learning-v3-02.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/86f6a042-a114-40d3-9141-ec5158968a5b",
+              "caption": "General Overview of a Neural Network",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 267054,
+              "key": "380cdbc6-5961-4fdb-a7f0-740921fae034",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is an generalized overview of what the convolutional neural network does: \n* the first layer will detect edges in the image\n* the second layer will detect shapes\n* the third convolutional layer detects higher level features\n\nEach transfer learning case will use the pre-trained convolutional neural network in a different way.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267055,
+              "key": "2710af2e-3d0f-4828-8fa1-14c73a79f4c5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Case 1: Small Data Set, Similar Data",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267053,
+              "key": "ffdcf1f2-fddb-4611-844e-aad97cfb8308",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a60b70_02-guide-how-transfer-learning-v3-03/02-guide-how-transfer-learning-v3-03.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ffdcf1f2-fddb-4611-844e-aad97cfb8308",
+              "caption": "Case 1: Small Data Set with Similar Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 267052,
+              "key": "3a88b87c-da84-4eaa-81ad-d257e04792b7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If the new data set is small and similar to the original training data:\n- slice off the end of the neural network\n- add a new fully connected layer that matches the number of classes in the new data set\n- randomize the weights of the new fully connected layer; freeze all the weights from the pre-trained network\n- train the network to update the weights of the new fully connected layer\n\nTo avoid overfitting on the small data set, the weights of the original network will be held constant rather than re-training the weights. \n\nSince the data sets are similar, images from each data set will have similar higher level features. Therefore most or all of the pre-trained neural network layers already contain relevant information about the new data set and should be kept.\n\nHere's how to visualize this approach:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267137,
+              "key": "dfc52cfb-7dd9-423b-aa01-eac92fcdd76c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a73c8d_02-guide-how-transfer-learning-v3-04/02-guide-how-transfer-learning-v3-04.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dfc52cfb-7dd9-423b-aa01-eac92fcdd76c",
+              "caption": "Neural Network with Small Data Set, Similar Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 267056,
+              "key": "63154992-23e5-46e2-ae0e-acf80cf74d10",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Case 2: Small Data Set, Different Data",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267057,
+              "key": "57260f21-a20a-4cae-99df-678488d1b52d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a60eaf_02-guide-how-transfer-learning-v3-05/02-guide-how-transfer-learning-v3-05.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/57260f21-a20a-4cae-99df-678488d1b52d",
+              "caption": "Case 2: Small Data Set, Different Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 267070,
+              "key": "0fecc0b7-17e8-487a-9d1a-bd2a743c0d8b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If the new data set is small and different from the original training data:\n* slice off most of the pre-trained layers near the beginning of the network\n* add to the remaining pre-trained layers a new fully connected layer that matches the number of classes in the new data set\n* randomize the weights of the new fully connected layer; freeze all the weights from the pre-trained network\n* train the network to update the weights of the new fully connected layer\n\nBecause the data set is small, overfitting is still a concern. To combat overfitting, the weights of the original neural network will be held constant, like in the first case.\n\nBut the original training set and the new data set do not share higher level features. In this case, the new network will only use the layers containing lower level features.\n\nHere is how to visualize this approach:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267135,
+              "key": "db312e3f-e980-4818-8905-449c22a1d4e7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a73bd8_02-guide-how-transfer-learning-v3-06/02-guide-how-transfer-learning-v3-06.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/db312e3f-e980-4818-8905-449c22a1d4e7",
+              "caption": "Neural Network with Small Data Set, Different Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 267071,
+              "key": "7e308082-b593-46af-87e2-5b9714133d46",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Case 3: Large Data Set, Similar Data\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267072,
+              "key": "ff4a5348-6f15-4996-95a0-75d597444a73",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a6176d_02-guide-how-transfer-learning-v3-07/02-guide-how-transfer-learning-v3-07.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ff4a5348-6f15-4996-95a0-75d597444a73",
+              "caption": "Case 3: Large Data Set, Similar Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 267073,
+              "key": "386c2d5d-f001-48bf-b171-8e61693cf0f1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If the new data set is large and similar to the original training data:\n- remove the last fully connected layer and replace with a layer matching the number of classes in the new data set\n- randomly initialize the weights in the new fully connected layer\n- initialize the rest of the weights using the pre-trained weights \n-  re-train the entire neural network\n\nOverfitting is not as much of a concern when training on a large data set; therefore, you can re-train all of the weights.\n\nBecause the original training set and the new data set share higher level features, the entire neural network is used as well.\n\nHere is how to visualize this approach:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267138,
+              "key": "cec1f2eb-f01e-4497-a526-2c5ac1d20216",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a73ccd_02-guide-how-transfer-learning-v3-08/02-guide-how-transfer-learning-v3-08.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cec1f2eb-f01e-4497-a526-2c5ac1d20216",
+              "caption": "Neural Network with Large Data Set, Similar Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 267075,
+              "key": "1a13d1b3-ae08-4dfb-b8f2-5db2a7824253",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Case 4: Large Data Set, Different Data\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267076,
+              "key": "58c72e1f-89f4-4030-a8fa-54b86961b8bd",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a61e66_02-guide-how-transfer-learning-v3-09/02-guide-how-transfer-learning-v3-09.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/58c72e1f-89f4-4030-a8fa-54b86961b8bd",
+              "caption": "Case 4: Large Data Set, Different Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 267078,
+              "key": "e80aa3a9-09a0-4c3b-b4ac-c86f8d181e1c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If the new data set is large and different from the original training data:\n- remove the last fully connected layer and replace with a layer matching the number of classes in the new data set\n- retrain the network from scratch with randomly initialized weights\n- alternatively, you could just use the same strategy as the \"large and similar\" data case\n\nEven though the data set is different from the training data, initializing the weights from the pre-trained network might make training faster. So this case is exactly the same as the case with a large, similar data set.\n\nIf using the pre-trained network as a starting point does not produce a successful model, another option is to randomly initialize the convolutional neural network weights and train the network from scratch.\n\nHere is how to visualize this approach:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267139,
+              "key": "5b565855-909a-4453-b6b4-3e8c423b388e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a73d0d_02-guide-how-transfer-learning-v3-10/02-guide-how-transfer-learning-v3-10.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5b565855-909a-4453-b6b4-3e8c423b388e",
+              "caption": "Neural Network with Large Data Set, Different Data",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 194821,
+          "key": "ae128d50-30a1-4c6a-bc44-6d3b0d7e1730",
+          "title": "Deep Learning History",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ae128d50-30a1-4c6a-bc44-6d3b0d7e1730",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197235,
+              "key": "e596f333-7cfd-443a-a139-c45127c39228",
+              "title": "Deep Learning History",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AWWLT4QxKaM",
+                "china_cdn_id": "AWWLT4QxKaM.mp4"
+              }
+            },
+            {
+              "id": 790836,
+              "key": "b95f0e53-575a-45f4-b7f1-b5f53ff3e31b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Interested in reading the original LeNet paper? You can find it [here](http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194706,
+          "key": "e401e31c-bf5b-4504-aa56-dcb95a65bd96",
+          "title": "ImageNet",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e401e31c-bf5b-4504-aa56-dcb95a65bd96",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197239,
+              "key": "1d8a480f-df8b-4adb-a622-8f507f8c5524",
+              "title": "Imagenet",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "The terms \"aughts\" or \"oughts\" refers to the first decade of a century.  In this context the \"late aughts\" refers to the latter part of the first decade of the 2000's.",
+              "video": {
+                "youtube_id": "pcNxBs7OAzA",
+                "china_cdn_id": "pcNxBs7OAzA.mp4"
+              }
+            },
+            {
+              "id": 790833,
+              "key": "1087eedb-a7ad-4816-a720-95aa16b5e5be",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "ImageNet was its own competition from 2012-2017, but now it's hosted on [Kaggle](https://www.kaggle.com/c/imagenet-object-localization-challenge)! There are 1,000 different image categories between over 14 million images, so it's a great way to get involved with large datasets. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 790834,
+              "key": "874b57db-d784-4594-987d-278a0ee8c7e4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Pre-training a network with the ImageNet dataset is a very common way to get a strong neural network that can be used for transfer learning. With recent versions of Keras, you can easily import a pre-trained network by using the [Keras Applications](https://keras.io/applications/) models. We'll come back to this soon.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194708,
+          "key": "eb3b073d-75cb-4a44-b21f-f8df52379a73",
+          "title": "AlexNet",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "eb3b073d-75cb-4a44-b21f-f8df52379a73",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197216,
+              "key": "6c0a10ec-bad9-40cc-b1c9-1a7788faecbc",
+              "title": "Alexnet",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "X-QVsH27Mo4",
+                "china_cdn_id": "X-QVsH27Mo4.mp4"
+              }
+            },
+            {
+              "id": 267039,
+              "key": "5c1938a4-f8dc-4826-89df-ae02b3fa7910",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### AlexNet Architecture\n\nAlexNet puts the network on two GPUs, which allows for building a larger network. Although most of the calculations are done in parallel, the GPUs communicate with each other in certain layers. The [original research paper](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf) on AlexNet said that parallelizing the network decreased the classification error rate by 1.7% when compared to a neural network that used half as many neurons on one GPU.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 267096,
+              "key": "7656f4b6-49fb-4680-ae15-5560446d33a4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/February/58a63da6_08-alexnet-1/08-alexnet-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7656f4b6-49fb-4680-ae15-5560446d33a4",
+              "caption": "AlexNet Architecture",
+              "alt": null,
+              "width": 4022,
+              "height": 2272,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 194710,
+          "key": "aaccc3db-3142-4c99-8a08-b36dd39b9d49",
+          "title": "AlexNet Today",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "aaccc3db-3142-4c99-8a08-b36dd39b9d49",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197217,
+              "key": "93141c25-a727-4682-ac15-c4fb39b2cc38",
+              "title": "Alexnet Today",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AItZPkRHH_I",
+                "china_cdn_id": "AItZPkRHH_I.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194714,
+          "key": "ac8f71a2-052c-4591-8063-e5d877ca2eeb",
+          "title": "VGG",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ac8f71a2-052c-4591-8063-e5d877ca2eeb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197218,
+              "key": "7a0c2748-597a-48be-a06e-10cac1d671c0",
+              "title": "VGG",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "akFO1sH7Q_0",
+                "china_cdn_id": "akFO1sH7Q_0.mp4"
+              }
+            },
+            {
+              "id": 790940,
+              "key": "8b64cfe0-032d-4475-a960-25c336ea4697",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You can find the original VGG paper [here](https://arxiv.org/pdf/1409.1556.pdf).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 790837,
+              "key": "09982de4-be7e-499f-bbd4-860e82bf29af",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## VGG in Keras\n\nAs we mentioned earlier, you can fairly quickly utilize a pre-trained model with [Keras Applications](https://keras.io/applications/). VGG16 is one of the built-in models supported. There are actually two versions of VGG, VGG16 and VGG19 (where the numbers denote the number of layers included in each respective model), and you can utilize either with Keras, but we'll work with VGG16 here.\n\n```python\nfrom keras.applications.vgg16 import VGG16\n\nmodel = VGG16(weights='imagenet', include_top=False)\n```\n\nThere are two arguments to `VGG16` in this example, although there could be more or less (check out the linked documentation to see other possible arguments). The first, `weights='imagenet'`, loads the pre-trained ImageNet weights. This is actually the default argument per the documentation, so if you don't include it, you should still be loading the ImageNet weights. However, you can also specify `None` here to get random weights if you just want the architecture of VGG16; this is not suggested here since you won't get the benefit of transfer learning. \n\nThe argument `include_top` is for whether you want to include the fully-connected layer at the top of the network; unless you are actually trying to classify ImageNet's 1,000 classes, you likely want to set this to `False` and add your own additional layer for the output you desire.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 790838,
+              "key": "278fdd4e-0cc0-4b43-9239-f9e82724b3ee",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Pre-processing for ImageNet weights\n\nThere is another item to consider before jumping into using an ImageNet pre-trained model. These networks are typically pre-trained with a specific type of pre-processing, so you need to make sure to use the same pre-processing steps, or your network's outputs will likely be erratic.\n\nVGG uses 224x224 images as input, so that's another thing to consider.\n\n```python\nfrom keras.preprocessing import image\nfrom keras.applications.vgg16 import preprocess_input\nimport numpy as np\n\nimg_path = 'your_image.jpg'\nimg = image.load_img(img_path, target_size=(224, 224))\nx = image.img_to_array(img)\nx = np.expand_dims(x, axis=0)\nx = preprocess_input(x)\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 790926,
+              "key": "657f3a4c-492c-404b-999f-1f5c4ace206b",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r233565c194714xJUPYTERf7m2pwe5",
+              "pool_id": "jupyter",
+              "view_id": "jupyter-mfhqs",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowGrade": false,
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/VGG_Transfer_Learning.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 194826,
+          "key": "8dcba1ab-df7a-47a7-adb9-f2ee478e0308",
+          "title": "Empirics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8dcba1ab-df7a-47a7-adb9-f2ee478e0308",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197222,
+              "key": "91d51519-220c-41b2-a518-8263083d2cf1",
+              "title": "Empirics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "VT8RENbE9Ck",
+                "china_cdn_id": "VT8RENbE9Ck.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 194716,
+          "key": "4e549026-dfcd-488f-85bf-6d0d32f52ad8",
+          "title": "GoogLeNet",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4e549026-dfcd-488f-85bf-6d0d32f52ad8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197225,
+              "key": "51a164ad-200a-4ebc-8cf8-8cc9ab1e4e36",
+              "title": "GoogLeNet",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "sdT5f8n7IcI",
+                "china_cdn_id": "sdT5f8n7IcI.mp4"
+              }
+            },
+            {
+              "id": 790941,
+              "key": "6f750ae3-32e5-4b44-9828-1050286a28b7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You can find the original GoogLeNet/Inception paper [here](https://arxiv.org/pdf/1409.4842.pdf).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 790943,
+              "key": "0a446479-ccc3-409b-a716-d4add49224b8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## GoogLeNet/Inception in Keras\n\nInception is also one of the models included in [Keras Applications](https://keras.io/applications/). Utilizing this model follows pretty much the same steps as using VGG, although this time you'll use the `InceptionV3` architecture.\n```python\nfrom keras.applications.inception_v3 import InceptionV3\n\nmodel = InceptionV3(weights='imagenet', include_top=False)\n```\n\nDon't forget to perform the necessary pre-processing steps to any inputs you include! While the original Inception model used a 224x224 input like VGG, InceptionV3 actually uses a 299x299 input.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 194721,
+          "key": "75e52c2d-aa00-4dbc-b56e-c88415ff3183",
+          "title": "ResNet",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "75e52c2d-aa00-4dbc-b56e-c88415ff3183",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197229,
+              "key": "653f19bc-848a-44fa-94c5-606da696333e",
+              "title": "ResNet",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fDCgul26GGk",
+                "china_cdn_id": "fDCgul26GGk.mp4"
+              }
+            },
+            {
+              "id": 790946,
+              "key": "d3c4443d-faa9-4a00-a7a8-61a46d0329ba",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "[Here](https://arxiv.org/pdf/1512.03385.pdf) is the original ResNet paper, for those interested.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 790945,
+              "key": "b3a3bdae-88ce-4507-8e0b-b5a7569befc6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## ResNet in Keras\n\nAs you may have guessed, ResNet is also a model included in [Keras Applications](https://keras.io/applications/), under `ResNet50`.\n```python\nfrom keras.applications.resnet50 import ResNet50\n\nmodel = ResNet50(weights='imagenet', include_top=False)\n```\n\nAgain, you'll need to do ImageNet-related pre-processing if you want to use the pre-trained weights for it. ResNet50 has a 224x224 input size.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 790947,
+          "key": "8b0252fb-a763-417e-ab78-36ac8541b09c",
+          "title": "Without Pre-trained Weights",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8b0252fb-a763-417e-ab78-36ac8541b09c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 790948,
+              "key": "fd05399b-7b03-4af6-9ed6-fc008956d362",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Using Keras Applications models without pre-trained weights\n\nSo far, you've seen the effectiveness of models pre-trained on ImageNet weights, but what if we specify `weights=None` when we load a model? Well, you'll instead be randomly initializing the weights, as if you had built a model on your own and were starting from scratch.\n\nFrom our chart before, there are few situations where this might even be a potential use case - basically, when you have data that is very different from the original data. However, given the large size of the ImageNet dataset (remember, it's over 14 million images from 1,000 classes!), it's highly unlikely this is really the case - it will almost always make the most sense to start with ImageNet pre-trained weights, and only fine-tune from there",
+              "instructor_notes": ""
+            },
+            {
+              "id": 790949,
+              "key": "839fa60c-7d17-4999-b6ae-29e090df8410",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/April/58e80aac_02-guide-how-transfer-learning-v3-01/02-guide-how-transfer-learning-v3-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/839fa60c-7d17-4999-b6ae-29e090df8410",
+              "caption": "Four Use Cases of Transfer Learning",
+              "alt": "Four Use Cases of Transfer Learning",
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 790950,
+              "key": "4a7308bc-61ac-4947-b838-324f50f8f5ff",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Below, let's check out what happens when we try to use a pre-made model but set the weights to `None` - this means no training has occurred yet!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 790952,
+              "key": "f86d22ce-194b-4054-94ed-917ddd8ec076",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r233565c194714xJUPYTERf7m2pwe5",
+              "pool_id": "jupyter",
+              "view_id": "jupyter-5dzs6",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowGrade": false,
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/No_Pretraining.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            },
+            {
+              "id": 790951,
+              "key": "a8d9131a-fea2-402d-9865-b23c379b20e5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the following lab, you'll get a chance to actually add layers to the end of a pre-trained model, so that you can actually use the full power of transfer learning, instead of just using it toward the 1,000 ImageNet classes as a whole.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 790955,
+          "key": "ca8f22f8-7d7d-4989-ba30-9e850dd42bf8",
+          "title": "Lab: Transfer Learning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ca8f22f8-7d7d-4989-ba30-9e850dd42bf8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 790956,
+              "key": "e5e42220-d950-48be-895f-9f5d6b4a5356",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Lab: Transfer Learning\n\nIn the below lab, you'll get a chance to try out a few instances of transfer learning, including both frozen and non-frozen pre-trained weights.\n\n#### Frozen Weights\nFrozen weights are often used when only fine-tuning the model, as backpropagation and weight updates will not be applied to any frozen layers during training. If you have an ImageNet pre-trained model, most of the network is likely applicable to your situation, so you may only need to cut off the top fully-connected layer, freeze all other layers, and just add one or more layers at the end that are not frozen to perform some fine-tuning.\n\nThere is also the option of not freezing the weights, which will start your model on the ImageNet pre-trained weights (if applicable) and then perform further training from there. \n\nAn additional benefit of freezing the weights also comes in the form of memory usage and training speed - for the larger networks such as VGG, there is a substantially larger memory usage and slower speed when it needs to perform backpropagation and weight updates across all layers instead of just on a small portion of (likely smaller) layers.\n\n*Note*: There is a solution notebook that can be found by clicking on the Jupyter logo in the upper left of the workspace if you get stuck.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 790968,
+              "key": "17a7dbca-2916-47aa-9ca7-4ce9e8ae5643",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "r233565c790955xJUPYTERnie7fmhq",
+              "pool_id": "jupytergpu",
+              "view_id": "jupyter-ig9vl",
+              "gpu_capable": true,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowGrade": false,
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Transfer_Learning_Lab.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 194728,
+          "key": "adf2746b-af76-4d22-b2fc-51c36400b34b",
+          "title": "Outro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "adf2746b-af76-4d22-b2fc-51c36400b34b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 197231,
+              "key": "81845369-ccd5-4f1b-9598-0eaa15ad61e6",
+              "title": "Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WOrM6qopj7A",
+                "china_cdn_id": "WOrM6qopj7A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 809768,
+          "key": "3d6408a6-3f08-4750-8ee2-7efdf910fb64",
+          "title": "Bonus Round: Deep Learning [Optional]",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3d6408a6-3f08-4750-8ee2-7efdf910fb64",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 809775,
+              "key": "bf941351-4c35-4720-abd8-d831982c99d2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Resources on Deep Learning\n\nNice work reaching the end of the deep learning content! While you still have the project left to do here, we're also providing some additional resources and recent research on the topic that you can come back to if you have time later on.\n\nReading research papers is a great way to get exposure to the latest and greatest in the field, as well as expand your learning. However, just like the project ahead, it's often best to *learn by doing* - if you find a paper that really excites you, try to implement it (or even something better) yourself!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 809776,
+              "key": "c755fa46-001d-4bd7-9249-dff55375ed0a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##### Optional Reading\n\nAll of these are completely optional reading - you could spend hours reading through the entirety of these! We suggest moving onto the project first so you have what you’ve learned fresh on your mind, before coming back to check these out. \n\nWe've categorized these papers to hopefully help you narrow down which ones might be of interest, as well as highlighted a couple key reads by category by including their *Abstract* section, which summarizes the paper.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 809833,
+              "key": "96e2a63e-f21b-4511-b300-245ad67e8f76",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Behavioral Cloning\nThe below paper shows one of the techniques Waymo has researched using imitation learning (aka behavioral cloning) to drive a car.\n\n[ChauffeurNet: Learning to Drive by Imitating the Best and Synthesizing the Worst](https://arxiv.org/abs/1812.03079) by M. Bansal, A. Krizhevsky and A. Ogale\n> **Abstract:** Our goal is to train a policy for autonomous driving via imitation learning that is robust enough to drive a real vehicle. We find that standard behavior cloning is insufficient for handling complex driving scenarios, even when we leverage a perception system for preprocessing the input and a controller for executing the output on the car: 30 million examples are still not enough. We propose exposing the learner to synthesized data in the form of perturbations to the expert's driving, which creates interesting situations such as collisions and/or going off the road. Rather than purely imitating all data, we augment the imitation loss with additional losses that penalize undesirable events and encourage progress -- the perturbations then provide an important signal for these losses and lead to robustness of the learned model. We show that the ChauffeurNet model can handle complex situations in simulation, and present ablation experiments that emphasize the importance of each of our proposed changes and show that the model is responding to the appropriate causal factors. Finally, we demonstrate the model driving a car in the real world.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 809831,
+              "key": "5050740d-5cd6-4690-951b-7d91b48b56d9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Object Detection and Tracking\nThe below papers include various deep learning-based approaches to 2D and 3D object detection and tracking.\n\n[SSD: Single Shot MultiBox Detector](https://arxiv.org/abs/1512.02325) by W. Liu, et. al.\n> **Abstract:** We present a method for detecting objects in images using a single deep neural network. Our approach, named SSD, discretizes the output space of bounding boxes into a set of default boxes over different aspect ratios and scales per feature map location. At prediction time, the network generates scores for the presence of each object category in each default box and produces adjustments to the box to better match the object shape. Additionally, the network combines predictions from multiple feature maps with different resolutions to naturally handle objects of various sizes. Our SSD model is simple relative to methods that require object proposals because it completely eliminates proposal generation and subsequent pixel or feature resampling stage and encapsulates all computation in a single network. [...] Experimental results [...] confirm that SSD has comparable accuracy to methods that utilize an additional object proposal step and is much faster, while providing a unified framework for both training and inference. Compared to other single stage methods, SSD has much better accuracy, even with a smaller input image size. [...]\n\n[VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection](https://arxiv.org/abs/1711.06396) by Y. Zhou and O. Tuzel\n> **Abstract:** Accurate detection of objects in 3D point clouds is a central problem in many applications, such as autonomous navigation, housekeeping robots, and augmented/virtual reality. To interface a highly sparse LiDAR point cloud with a region proposal network (RPN), most existing efforts have focused on hand-crafted feature representations, for example, a bird's eye view projection. In this work, we remove the need of manual feature engineering for 3D point clouds and propose VoxelNet, a generic 3D detection network that unifies feature extraction and bounding box prediction into a single stage, end-to-end trainable deep network. [...] Experiments on the KITTI car detection benchmark show that VoxelNet outperforms the state-of-the-art LiDAR based 3D detection methods by a large margin. Furthermore, our network learns an effective discriminative representation of objects with various geometries, leading to encouraging results in 3D detection of pedestrians and cyclists, based on only LiDAR.\n\n[Fast and Furious: Real Time End-to-End 3D Detection, Tracking and Motion Forecasting with a Single Convolutional Net](http://openaccess.thecvf.com/content_cvpr_2018/papers/Luo_Fast_and_Furious_CVPR_2018_paper.pdf) by W. Luo, *et. al.*\n> **Abstract:** In this paper we propose a novel deep neural network that is able to jointly reason about 3D detection, tracking and motion forecasting given data captured by a 3D sensor. By jointly reasoning about these tasks, our holistic approach is more robust to occlusion as well as sparse data at range. Our approach performs 3D convolutions across space and time over a bird’s eye view representation of the 3D world, which is very efficient in terms of both memory and computation. Our experiments on a new very large scale dataset captured in several north american cities, show that we can outperform the state-of-the-art by a\nlarge margin. Importantly, by sharing computation we can perform all tasks in as little as 30 ms.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 809832,
+              "key": "30a7d29c-2373-4c40-9135-165dec113d31",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Semantic Segmentation\nThe below paper concerns a technique called semantic segmentation, where each pixel of an image gets classified individually!\n\n[SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation](https://arxiv.org/abs/1511.00561) by V. Badrinarayanan, A. Kendall and R. Cipolla\n> **Abstract:** We present a novel and practical deep fully convolutional neural network architecture for semantic pixel-wise segmentation termed SegNet. [...] The novelty of SegNet lies in the manner in which the decoder upsamples its lower resolution input feature map(s). Specifically, the decoder uses pooling indices computed in the max-pooling step of the corresponding encoder to perform non-linear upsampling. This eliminates the need for learning to upsample. The upsampled maps are sparse and are then convolved with trainable filters to produce dense feature maps. We compare our proposed architecture with the widely adopted FCN and also with the well known DeepLab-LargeFOV, DeconvNet architectures. This comparison reveals the memory versus accuracy trade-off involved in achieving good segmentation performance. \n[...] We show that SegNet provides good performance with competitive inference time and more efficient inference memory-wise as compared to other architectures. [...]",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}
