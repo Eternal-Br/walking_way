@@ -1,0 +1,47 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.633 --> 00:00:01.868
+Na última aula,
+
+00:00:01.901 --> 00:00:05.238
+treinamos um classificador logístico
+simples em imagens.
+
+00:00:05.271 --> 00:00:07.207
+Agora pegaremos
+este classificador
+
+00:00:07.240 --> 00:00:09.476
+e o transformaremos
+em uma rede de aprendizado profundo.
+
+00:00:09.509 --> 00:00:11.678
+E serão apenas
+algumas linhas de código,
+
+00:00:11.711 --> 00:00:16.016
+então garanta que você entende bem
+o que acontece no modelo prévio.
+
+00:00:16.049 --> 00:00:21.254
+Na segunda parte, você vai ver
+como nosso otimizador faz
+
+00:00:21.287 --> 00:00:22.689
+todo o trabalho duro
+para você,
+
+00:00:22.722 --> 00:00:25.625
+computando gradientes
+para funções arbitrárias.
+
+00:00:25.658 --> 00:00:29.963
+E veremos juntos
+o importante tópico "regularização",
+
+00:00:29.996 --> 00:00:33.500
+que vai nos permitir treinar
+modelos muito maiores.
+

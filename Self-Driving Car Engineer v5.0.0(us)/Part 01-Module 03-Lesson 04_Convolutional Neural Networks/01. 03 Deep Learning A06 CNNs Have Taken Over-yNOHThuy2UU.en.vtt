@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.580
+One of the very popular ways to
+
+00:00:02.580 --> 00:00:06.019
+structure a neural network is called a Convolutional Neural Network.
+
+00:00:06.019 --> 00:00:08.399
+It was invented by my good friend,
+
+00:00:08.400 --> 00:00:09.984
+Yann LeCun about 30 years ago,
+
+00:00:09.984 --> 00:00:13.919
+but it's become incredibly popular for things like image processing,
+
+00:00:13.919 --> 00:00:15.808
+and processing large datasets.
+
+00:00:15.808 --> 00:00:19.160
+So, let's talk about Convolutional Neural Networks.
+

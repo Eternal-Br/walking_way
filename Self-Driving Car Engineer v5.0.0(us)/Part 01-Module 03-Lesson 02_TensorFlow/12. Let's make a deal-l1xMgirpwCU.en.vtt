@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.850
+So let's learn about classification. Here's the plan.
+
+00:00:03.850 --> 00:00:06.919
+I'm going to tell you just enough so that you can put together
+
+00:00:06.919 --> 00:00:12.179
+a very simple but very important type of classifier called a logistic classifier.
+
+00:00:12.179 --> 00:00:15.154
+With that, you'll be able to run through the first assignment,
+
+00:00:15.154 --> 00:00:19.054
+which will have you download and preprocess some images for classification,
+
+00:00:19.054 --> 00:00:21.920
+and then run an actual logistic classifier on that data.
+
+00:00:21.920 --> 00:00:24.525
+Once you've connected the bit of math
+
+00:00:24.524 --> 00:00:27.554
+that's coming up and the code in that first assignment,
+
+00:00:27.554 --> 00:00:30.789
+everything else will just be building up from there.
+
+00:00:30.789 --> 00:00:36.000
+We will be building together all of deep learning on top of this piece, block by block.
+

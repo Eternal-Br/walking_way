@@ -1,0 +1,169 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.846
+The problem with scaling gradient descent is simple.
+
+00:00:02.846 --> 00:00:05.325
+You need to compute these gradients.
+
+00:00:05.325 --> 00:00:07.330
+Here's another rule of thumb.
+
+00:00:07.330 --> 00:00:11.262
+If computing your loss takes n floating point operations,
+
+00:00:11.262 --> 00:00:14.875
+computing its gradient takes about three times that compute.
+
+00:00:14.875 --> 00:00:16.320
+As we saw earlier,
+
+00:00:16.320 --> 00:00:18.115
+this last function is huge.
+
+00:00:18.114 --> 00:00:21.500
+It depends on every single element in your training set.
+
+00:00:21.500 --> 00:00:24.975
+That can be a lot of compute if your data set is big,
+
+00:00:24.975 --> 00:00:28.320
+and we want to be able to train on lots of data because in practice,
+
+00:00:28.320 --> 00:00:30.929
+on real problems, you'll always get more gains,
+
+00:00:30.929 --> 00:00:32.509
+the more data you use.
+
+00:00:32.509 --> 00:00:34.695
+And because gradient descent is iterative,
+
+00:00:34.695 --> 00:00:37.005
+you have to do that for many steps.
+
+00:00:37.005 --> 00:00:41.965
+That means going through your data tens or hundreds of times. That's not good.
+
+00:00:41.965 --> 00:00:43.485
+So instead, we're going to cheat.
+
+00:00:43.484 --> 00:00:44.957
+Instead of computing the loss,
+
+00:00:44.957 --> 00:00:46.855
+we're going to compute an estimate of it,
+
+00:00:46.854 --> 00:00:48.449
+a very bad estimate,
+
+00:00:48.450 --> 00:00:50.652
+a terrible estimate, in fact.
+
+00:00:50.652 --> 00:00:52.460
+That estimate is going to be so bad,
+
+00:00:52.460 --> 00:00:54.157
+you might wonder why it works at all.
+
+00:00:54.156 --> 00:00:56.219
+And you would be right because we're going to
+
+00:00:56.219 --> 00:00:59.640
+also have to spend some time making it less terrible.
+
+00:00:59.640 --> 00:01:02.460
+The estimate we're going to use is simply computing
+
+00:01:02.460 --> 00:01:06.075
+the average loss for a very small random fraction of the training data.
+
+00:01:06.075 --> 00:01:10.784
+Think between one and a thousand training samples each time.
+
+00:01:10.784 --> 00:01:12.944
+I say random because it's very important.
+
+00:01:12.944 --> 00:01:15.944
+If the way you pick your samples isn't random enough,
+
+00:01:15.944 --> 00:01:18.034
+it no longer works at all.
+
+00:01:18.034 --> 00:01:21.435
+So we're going to take a very small sliver of the training data,
+
+00:01:21.435 --> 00:01:23.594
+compute the loss for that sample,
+
+00:01:23.594 --> 00:01:26.257
+compute the derivative for that sample,
+
+00:01:26.257 --> 00:01:31.354
+and pretend that that derivative is the right direction to use to do gradient descent.
+
+00:01:31.355 --> 00:01:33.660
+It is not at all the right direction.
+
+00:01:33.659 --> 00:01:34.950
+And, in fact, at times,
+
+00:01:34.950 --> 00:01:37.725
+it might increase the real loss, not reduce it.
+
+00:01:37.724 --> 00:01:40.289
+But we're going to compensate by doing this many,
+
+00:01:40.290 --> 00:01:42.090
+many times, taking very,
+
+00:01:42.090 --> 00:01:44.730
+very small steps each time.
+
+00:01:44.730 --> 00:01:47.310
+So each step is a lot cheaper to compute,
+
+00:01:47.310 --> 00:01:48.865
+but we pay a price.
+
+00:01:48.864 --> 00:01:52.879
+We have to take many more smaller steps instead of one large step.
+
+00:01:52.879 --> 00:01:55.664
+On balance though, we win by a lot.
+
+00:01:55.665 --> 00:01:57.525
+In fact, as you'll see in the assignments,
+
+00:01:57.525 --> 00:02:01.094
+doing this is vastly more efficient than doing gradient decent.
+
+00:02:01.093 --> 00:02:03.884
+This technique is called stochastic gradient descent,
+
+00:02:03.885 --> 00:02:05.978
+and is at the core of deep learning.
+
+00:02:05.977 --> 00:02:10.560
+That's because stochastic gradient descent scales well with both data and model size,
+
+00:02:10.560 --> 00:02:13.575
+and we want both big data and big models.
+
+00:02:13.575 --> 00:02:16.185
+Stochastic gradient descent, SGD for short,
+
+00:02:16.185 --> 00:02:17.689
+is nice and scalable.
+
+00:02:17.689 --> 00:02:20.504
+But because it's fundamentally a pretty bad optimizer
+
+00:02:20.504 --> 00:02:23.579
+that happens to be the only one that's fast enough,
+
+00:02:23.580 --> 00:02:25.610
+it comes with a lot of issues in.
+

@@ -1,0 +1,29 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.433 --> 00:00:03.303
+A matriz W, aqui,
+toma, como um input,
+
+00:00:03.336 --> 00:00:07.040
+a imagem toda,
+então tem 28x28 pixels.
+
+00:00:07.073 --> 00:00:09.976
+O output tem tamanho 10,
+
+00:00:10.010 --> 00:00:12.312
+então a outra dimensão
+da matriz é 10.
+
+00:00:12.345 --> 00:00:15.048
+Bias têm 1 por 10.
+
+00:00:15.081 --> 00:00:19.986
+O número total de parâmetros é
+28x28x10+10,
+
+00:00:20.020 --> 00:00:23.723
+isto dá 7.850.
+

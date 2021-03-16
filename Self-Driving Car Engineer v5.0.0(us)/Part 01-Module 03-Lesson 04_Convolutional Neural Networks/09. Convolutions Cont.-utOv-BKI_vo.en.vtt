@@ -1,0 +1,50 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.380 --> 00:00:04.410
+That's it, you can build
+a simple conv net with just this.
+
+00:00:04.410 --> 00:00:07.040
+Stack up your convolutions
+which thankfully you don't
+
+00:00:07.040 --> 00:00:08.426
+have to implement yourselves.
+
+00:00:08.426 --> 00:00:11.470
+Then use triads to reduce
+the dimensionality and
+
+00:00:11.470 --> 00:00:15.220
+increase the depth of your
+network layer after layer.
+
+00:00:15.220 --> 00:00:16.289
+And once you have a deep and
+
+00:00:16.289 --> 00:00:19.539
+narrow presentation, connect
+the whole thing to a few regular,
+
+00:00:19.539 --> 00:00:23.439
+fully connected layers, and
+you're ready to train your classifier.
+
+00:00:23.440 --> 00:00:26.460
+You might wonder what happens
+to training and to chain rule,
+
+00:00:26.460 --> 00:00:30.089
+in particular,
+when you use shared weights like this.
+
+00:00:30.089 --> 00:00:32.939
+Nothing really happens,
+the math just works.
+
+00:00:32.939 --> 00:00:36.599
+You just add up the derivatives for
+all the possible locations on the image.
+

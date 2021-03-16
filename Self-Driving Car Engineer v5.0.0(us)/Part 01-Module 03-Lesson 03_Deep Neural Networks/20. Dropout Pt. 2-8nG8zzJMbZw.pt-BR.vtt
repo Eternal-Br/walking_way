@@ -1,0 +1,60 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.601 --> 00:00:03.400
+Ao avaliar uma rede
+treinada com dropout,
+
+00:00:03.434 --> 00:00:06.167
+você não quer
+uma bagunça aleatória.
+
+00:00:06.200 --> 00:00:08.234
+Você quer algo
+determinístico.
+
+00:00:08.267 --> 00:00:12.868
+É melhor seguir o consenso
+a estes modelos redundantes.
+
+00:00:13.133 --> 00:00:16.801
+O consenso é a média
+das ativações.
+
+00:00:16.834 --> 00:00:18.734
+Você quer que ye
+
+00:00:18.767 --> 00:00:23.133
+seja a média de todos os yt
+do treinamento.
+
+00:00:23.167 --> 00:00:26.534
+Vou ensinar um truque.
+
+00:00:26.567 --> 00:00:27.834
+Durante o treinamento,
+
+00:00:27.868 --> 00:00:31.467
+além de zerar
+as ativações do dropout,
+
+00:00:31.501 --> 00:00:35.601
+multiplique as outras
+ativações por dois.
+
+00:00:35.634 --> 00:00:39.367
+Assim, na hora de fazer
+a média durante a avaliação,
+
+00:00:39.400 --> 00:00:41.501
+é só tirar os dropouts
+
+00:00:41.534 --> 00:00:43.667
+e as operações
+de multiplicação.
+
+00:00:43.701 --> 00:00:47.701
+O resultado será
+uma média equilibrada.
+

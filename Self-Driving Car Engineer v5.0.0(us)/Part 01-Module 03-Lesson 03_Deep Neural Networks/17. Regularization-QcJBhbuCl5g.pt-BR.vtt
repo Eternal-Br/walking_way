@@ -1,0 +1,78 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:02.833
+A primeira forma
+de impedir sobre ajuste
+
+00:00:02.867 --> 00:00:06.033
+é acompanhar o desempenho
+do conjunto de validação
+
+00:00:06.067 --> 00:00:09.167
+e parar de treinar assim
+que paramos de melhorar.
+
+00:00:09.200 --> 00:00:12.100
+Chama-se parada antecipada,
+e é a melhor forma
+
+00:00:12.133 --> 00:00:16.233
+de impedir que sua rede otimize
+demais nos dados de treinamento.
+
+00:00:16.267 --> 00:00:18.833
+Outra forma
+é aplicar regularização.
+
+00:00:18.867 --> 00:00:22.933
+Regularizar significa aplicar
+restrições artificiais à sua rede,
+
+00:00:22.967 --> 00:00:26.567
+que implicitamente reduzam
+o número de parâmetros livres,
+
+00:00:26.600 --> 00:00:29.333
+sem dificultar
+a optimização.
+
+00:00:29.367 --> 00:00:32.967
+Na analogia do "jeans apertado",
+pense em calças stretch.
+
+00:00:33.000 --> 00:00:35.967
+Vestem tão bem quanto
+mas, por serem flexíveis,
+
+00:00:36.000 --> 00:00:37.733
+não são difíceis de vestir.
+
+00:00:37.767 --> 00:00:40.033
+As "calças strech"
+da aprendizagem profunda
+
+00:00:40.067 --> 00:00:42.500
+são chamadas
+de Regularização L2.
+
+00:00:42.533 --> 00:00:45.533
+A ideia é acrescentar
+outro termo à perda,
+
+00:00:45.567 --> 00:00:47.900
+que penaliza pesos grandes.
+
+00:00:47.933 --> 00:00:52.000
+Consegue-se isso adicionando
+a norma L2 dos seus pesos à perda,
+
+00:00:52.033 --> 00:00:54.500
+multiplicada
+por uma constante pequena.
+
+00:00:54.533 --> 00:00:58.933
+Sim, mais um hiperparâmetro
+para ajustar, desculpem.
+

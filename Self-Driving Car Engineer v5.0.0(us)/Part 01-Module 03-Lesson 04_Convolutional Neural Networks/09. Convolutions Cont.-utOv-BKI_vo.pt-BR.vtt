@@ -1,0 +1,48 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:04.267
+É isso, podem construir
+uma ConvNet simples com apenas isto.
+
+00:00:04.300 --> 00:00:08.701
+Empilhe suas convoluções, que não
+precisam implementar vocês mesmos.
+
+00:00:08.734 --> 00:00:11.300
+Use passos para reduzir
+a dimensionalidade
+
+00:00:11.334 --> 00:00:14.601
+e aumentar a profundidade da rede,
+camada após camada.
+
+00:00:14.634 --> 00:00:17.834
+Quando tiver uma representação
+profunda e estreita,
+
+00:00:17.868 --> 00:00:21.133
+conecte tudo a algumas camadas
+totalmente conectadas
+
+00:00:21.167 --> 00:00:23.300
+e pode treinar
+o seu classificador.
+
+00:00:23.334 --> 00:00:27.033
+O que acontece ao treinamento
+e com a regra da cadeia
+
+00:00:27.067 --> 00:00:29.834
+quando usam pesos
+compartilhados assim?
+
+00:00:29.868 --> 00:00:32.734
+Nada acontece,
+a Matemática funciona.
+
+00:00:32.767 --> 00:00:37.200
+Você soma as derivadas para todas
+as possíveis localizações da imagem.
+

@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.015
+One of the coolest things that happened in last decade is that
+
+00:00:03.015 --> 00:00:07.265
+Google released a framework for deep learning called TensorFlow.
+
+00:00:07.264 --> 00:00:09.980
+TensorFlow makes all that hard work that you've
+
+00:00:09.980 --> 00:00:13.880
+done superfluous because now you have a software framework.
+
+00:00:13.880 --> 00:00:16.605
+They can very easily configure and train
+
+00:00:16.605 --> 00:00:20.120
+deep networks and TensorFlow can be run on many machines at the same time.
+
+00:00:20.120 --> 00:00:22.230
+So, we're going to teach you some about TensorFlow
+
+00:00:22.230 --> 00:00:24.785
+because if you become a machine learning expert,
+
+00:00:24.785 --> 00:00:27.719
+these are the tools that people in the trade use everyday.
+

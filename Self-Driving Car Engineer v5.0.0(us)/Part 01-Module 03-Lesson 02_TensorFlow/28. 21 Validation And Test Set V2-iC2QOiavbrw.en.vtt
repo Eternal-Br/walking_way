@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.425
+Imagine that your validation set has just six examples with an accuracy of 66 percent.
+
+00:00:06.425 --> 00:00:12.720
+Now you tweak your model and your performance goes from 66 percent to 83 percent.
+
+00:00:12.720 --> 00:00:15.450
+Is this something you can trust? No, of course.
+
+00:00:15.450 --> 00:00:19.045
+This is only a change of label for a single example.
+
+00:00:19.045 --> 00:00:20.875
+It could just be noise.
+
+00:00:20.875 --> 00:00:22.305
+The bigger your test set,
+
+00:00:22.305 --> 00:00:25.490
+the less noisy the accuracy measurement will be.
+
+00:00:25.490 --> 00:00:27.985
+Here is a useful rule of thumb.
+
+00:00:27.985 --> 00:00:29.295
+And if you're a statistician,
+
+00:00:29.295 --> 00:00:31.730
+feel free to cover your ears right now.
+
+00:00:31.730 --> 00:00:36.875
+A change that affects 30 examples in your validation sets one way or another,
+
+00:00:36.875 --> 00:00:41.000
+is usually statistically significant and typically can be trusted.
+

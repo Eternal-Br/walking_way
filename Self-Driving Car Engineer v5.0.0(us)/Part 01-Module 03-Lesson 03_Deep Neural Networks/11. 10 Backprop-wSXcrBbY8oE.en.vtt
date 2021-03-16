@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.240
+Here's an example.
+
+00:00:02.240 --> 00:00:05.685
+Imagine your network is a stack of simple operations;
+
+00:00:05.684 --> 00:00:09.629
+like linear transforms, ReLUs, whatever you want.
+
+00:00:09.630 --> 00:00:13.575
+Some have parameters, like the matrix transforms,
+
+00:00:13.574 --> 00:00:15.674
+some don't, like the ReLUs.
+
+00:00:15.675 --> 00:00:18.030
+When you apply your data to some input x,
+
+00:00:18.030 --> 00:00:21.615
+you have data flowing through the stack up to your predictions y.
+
+00:00:21.614 --> 00:00:23.409
+To compute the derivatives,
+
+00:00:23.410 --> 00:00:25.850
+you create another graph that looks like this.
+
+00:00:25.850 --> 00:00:29.895
+The data in that new graph flows backwards through the network,
+
+00:00:29.894 --> 00:00:34.784
+gets combined using the chain rule that we saw before, and produces gradients.
+
+00:00:34.784 --> 00:00:37.469
+That graph can be derived completely automatically
+
+00:00:37.469 --> 00:00:40.254
+from the individual operations in your network.
+
+00:00:40.255 --> 00:00:44.065
+So, most deep learning frameworks will just do it for you.
+
+00:00:44.064 --> 00:00:48.195
+This is called back propagation and it's a very powerful concept.
+
+00:00:48.195 --> 00:00:51.725
+It makes computing derivatives of complex function very efficient,
+
+00:00:51.725 --> 00:00:56.130
+as long as the function is made up of simple blocks with simple derivatives.
+
+00:00:56.130 --> 00:01:00.315
+Running the model up to the predictions is often called the forward prop.
+
+00:01:00.314 --> 00:01:04.200
+And the model that goes backwards is called the back prop.
+
+00:01:04.200 --> 00:01:07.225
+So to recap, to run stochastic gradient descent.
+
+00:01:07.224 --> 00:01:11.184
+For every single little batch of your data in your training set,
+
+00:01:11.185 --> 00:01:14.745
+you're going to run the forward prop and then the back prop.
+
+00:01:14.745 --> 00:01:19.219
+And that will give you gradient for each of your weights in your model.
+
+00:01:19.219 --> 00:01:21.539
+Then you're going to apply those gradients with learning
+
+00:01:21.540 --> 00:01:24.615
+rates to your original weights and update them.
+
+00:01:24.614 --> 00:01:28.224
+And you're going to repeat that all over again many, many times.
+
+00:01:28.224 --> 00:01:31.614
+This is how your entire model gets optimized.
+
+00:01:31.614 --> 00:01:35.819
+I'm not going to go through more of the math of what's going on in each of those blocks,
+
+00:01:35.819 --> 00:01:38.629
+because again you don't typically have to worry about that.
+
+00:01:38.629 --> 00:01:40.459
+And it's essentially the chain rule.
+
+00:01:40.459 --> 00:01:42.134
+But keep in mind this diagram.
+
+00:01:42.135 --> 00:01:45.300
+In particular, each block of the back prop often takes
+
+00:01:45.299 --> 00:01:50.314
+about twice the memory that's needed for the forward prop and twice to compute.
+
+00:01:50.314 --> 00:01:54.000
+That's important when you want to size your model and fit in memory for example.
+

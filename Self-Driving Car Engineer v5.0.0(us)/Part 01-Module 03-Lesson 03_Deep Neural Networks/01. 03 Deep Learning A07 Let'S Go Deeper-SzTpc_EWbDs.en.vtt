@@ -1,0 +1,19 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.294
+Let's take our neural networks one level
+
+00:00:02.294 --> 00:00:05.355
+deeper and learn about concepts that every expert knows.
+
+00:00:05.355 --> 00:00:09.075
+Things like activation function, normalization, regularization,
+
+00:00:09.074 --> 00:00:11.719
+and even things like dropouts to make the training more robust
+
+00:00:11.720 --> 00:00:15.200
+so you can become much more proficient in training neural networks.
+

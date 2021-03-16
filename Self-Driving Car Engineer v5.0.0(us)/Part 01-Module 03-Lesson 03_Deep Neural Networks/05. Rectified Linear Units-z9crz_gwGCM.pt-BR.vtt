@@ -1,0 +1,21 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.567 --> 00:00:03.636
+Quando x é maior que zero,
+o RELU é zero.
+
+00:00:03.670 --> 00:00:06.373
+Então, o derivado é 0 também.
+
+00:00:06.406 --> 00:00:10.677
+Quando x é maior que 0,
+o valor é igual a x.
+
+00:00:10.710 --> 00:00:13.446
+Então, o derivado é igual a 1.
+
+00:00:13.480 --> 00:00:15.782
+A resposta certa é a segunda.
+

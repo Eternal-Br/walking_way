@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.810
+Now that the Jupyter Notebook is up and running,
+
+00:00:02.810 --> 00:00:05.294
+you can use it to classify traffic signs.
+
+00:00:05.294 --> 00:00:10.589
+First, reset the kernel and clear the output to ensure you have a fresh start.
+
+00:00:10.589 --> 00:00:12.900
+Next, clear the cell that loads
+
+00:00:12.900 --> 00:00:17.695
+the MNIST data and replace it with code to load the traffic sign data.
+
+00:00:17.695 --> 00:00:22.269
+You can find that code in the notebook for the traffic sign classifier project.
+
+00:00:22.269 --> 00:00:25.739
+You should also delete the code that adds the images since
+
+00:00:25.739 --> 00:00:29.494
+the traffic sign images are already 32 by 32 pixels.
+
+00:00:29.495 --> 00:00:31.830
+One problem to solve though is that
+
+00:00:31.829 --> 00:00:35.489
+the traffic sign data does not come with a validation set.
+
+00:00:35.490 --> 00:00:38.520
+You can use the train test split function in
+
+00:00:38.520 --> 00:00:43.770
+the SKLearn library though to slice off a validation set from the training set.
+
+00:00:43.770 --> 00:00:46.560
+You can allocate as much of the training set as you want,
+
+00:00:46.560 --> 00:00:48.890
+20 percent is a good rule of thumb.
+
+00:00:48.890 --> 00:00:52.310
+Now, you can visualize an image from the dataset.
+
+00:00:52.310 --> 00:00:54.750
+But remember, that the traffic sign images are in
+
+00:00:54.750 --> 00:00:57.895
+color not gray scale like the MNIST images.
+
+00:00:57.895 --> 00:01:01.620
+It's worth looking in the GitHub Repo to compare the image label to
+
+00:01:01.619 --> 00:01:05.914
+the CSV file that matches numerical labels to text descriptions.
+
+00:01:05.915 --> 00:01:09.985
+In this case, the numeric label is 35,
+
+00:01:09.984 --> 00:01:14.650
+which corresponds to a head only which looks correct.
+
+00:01:14.650 --> 00:01:20.550
+You can proceed to pre-process the data and set up TensorFlow just as we did for MNIST.
+
+00:01:20.549 --> 00:01:24.759
+You'll have to make a few changes to the LeNet architecture though.
+
+00:01:24.760 --> 00:01:30.180
+First, remember that the traffic sign images or in color not gray scale,
+
+00:01:30.180 --> 00:01:35.220
+so the input depth should be three to match the three RGB color channels.
+
+00:01:35.219 --> 00:01:39.284
+The new input depth won't affect the rest of the network architecture.
+
+00:01:39.284 --> 00:01:44.799
+Also at the output layer the traffic sign classifier has 43 classes,
+
+00:01:44.799 --> 00:01:49.019
+whereas MNIST only had 10 so you'll have to change that.
+
+00:01:49.019 --> 00:01:51.849
+When you set up the TensorFlow placeholders,
+
+00:01:51.849 --> 00:01:54.000
+you'll have to update the input and output
+
+00:01:54.000 --> 00:01:57.049
+shapes again to match the shapes of the new dataset.
+
+00:01:57.049 --> 00:02:03.009
+Training the network should be the same as well so let's run it and see how it does.
+
+00:02:06.200 --> 00:02:12.715
+Ninety six percent validation accuracy that's pretty good for the first shot.
+
+00:02:12.715 --> 00:02:16.629
+Remember don't run the test set until you're done
+
+00:02:16.629 --> 00:02:20.439
+tuning the model and you're ready to stop training and submit the project.
+

@@ -1,0 +1,62 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:05.767
+No curso todo, vou focar
+no problema de classificação.
+
+00:00:05.801 --> 00:00:09.067
+É a tarefa
+de pegar uma entrada,
+
+00:00:09.100 --> 00:00:10.367
+como esta letra,
+
+00:00:10.400 --> 00:00:13.501
+e dar a ela um rótulo
+que diga: "Isto é um B."
+
+00:00:13.534 --> 00:00:16.634
+A situação típica
+é que você tem muitos exemplos,
+
+00:00:16.667 --> 00:00:18.734
+chamados
+conjunto de treinamento,
+
+00:00:18.767 --> 00:00:23.601
+que já foram classificados em:
+isto é um A, isto é um B etc.
+
+00:00:23.634 --> 00:00:25.968
+Agora, um exemplo
+totalmente novo,
+
+00:00:26.000 --> 00:00:30.100
+e sua meta será entender
+a qual dessas classes ele pertence.
+
+00:00:30.133 --> 00:00:33.601
+Há mais do que classificação
+na aprenizagem de máquina,
+
+00:00:33.634 --> 00:00:36.200
+mas classificação,
+ou previsão em geral,
+
+00:00:36.234 --> 00:00:39.167
+é a base central
+da aprendizagem de máquina.
+
+00:00:39.200 --> 00:00:41.400
+Quando sabem
+classificar as coisas,
+
+00:00:41.434 --> 00:00:43.434
+é muito fácil, por exemplo,
+
+00:00:43.467 --> 00:00:47.267
+aprender a detectá-las
+ou a ordená-las.
+

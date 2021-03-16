@@ -1,0 +1,29 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.734 --> 00:00:03.269
+O modelo simples que você treinou
+até agora é legal,
+
+00:00:03.303 --> 00:00:05.405
+mas é relativamente limitado.
+
+00:00:05.438 --> 00:00:07.040
+Uma pergunta para você.
+
+00:00:07.073 --> 00:00:09.709
+Quantos parâmetros de treino
+ele tinha?
+
+00:00:09.743 --> 00:00:13.947
+Como lembrete, cada input tinha
+uma imagem de 28 por 28,
+
+00:00:13.980 --> 00:00:16.416
+e o output tinha 10 classes.
+
+00:00:16.449 --> 00:00:18.518
+Coloque o número
+de parâmetros aqui.
+

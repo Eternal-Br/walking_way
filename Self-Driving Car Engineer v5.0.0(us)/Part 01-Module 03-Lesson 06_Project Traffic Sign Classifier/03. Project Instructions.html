@@ -1,0 +1,582 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Project Instructions
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Traffic Sign Classifier
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Starting with Neural Networks.html">
+       01. Starting with Neural Networks
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Intro to Traffic Sign Classifier.html">
+       02. Intro to Traffic Sign Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Project Instructions.html">
+       03. Project Instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Traffic Sign Classifier.html">
+       04. Traffic Sign Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Share your success - Traffic Sign.html">
+       05. Share your success - Traffic Sign
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Traffic Sign Classifier.html">
+       Project Description - Traffic Sign Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Traffic Sign Classifier.html">
+       Project Rubric - Traffic Sign Classifier
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          03. Project Instructions
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="traffic-sign-classifier-project">
+          Traffic Sign Classifier Project
+         </h1>
+         <p>
+          In this project, you will use what you've learned about deep neural networks and convolutional neural networks to classify traffic signs. Specifically, you'll train a model to classify traffic signs from the
+          <a href="http://benchmark.ini.rub.de/?section=gtsrb&amp;subsection=dataset" rel="noopener noreferrer" target="_blank">
+           German Traffic Sign Dataset
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="running-the-traffic-sign-classifier-in-your-local-machine">
+          Running the Traffic Sign Classifier in your local machine
+         </h1>
+         <h2 id="set-up-your-environment">
+          Set Up Your Environment
+         </h2>
+         <h4 id="carnd-starter-kit">
+          CarND Starter Kit
+         </h4>
+         <p>
+          Install the car nanodegree starter kit if you have not already done so:
+          <a href="https://github.com/udacity/CarND-Term1-Starter-Kit" rel="noopener noreferrer" target="_blank">
+           carnd starter kit
+          </a>
+         </p>
+         <h4 id="tensorflow">
+          TensorFlow
+         </h4>
+         <p>
+          If you have access to a GPU, you should follow the TensorFlow instructions for
+          <a href="https://www.tensorflow.org/get_started/os_setup#optional_install_cuda_gpus_on_linux" rel="noopener noreferrer" target="_blank">
+           installing TensorFlow with GPU support
+          </a>
+          .
+         </p>
+         <p>
+          Once you've installed all of the necessary dependencies, you can install the
+          <code>
+           tensorflow-gpu
+          </code>
+          package:
+         </p>
+         <p>
+          <code>
+           pip install tensorflow-gpu
+          </code>
+         </p>
+         <h4 id="amazon-web-services">
+          Amazon Web Services
+         </h4>
+         <p>
+          Instead of a local GPU, you could use Amazon Web Services to launch an EC2 GPU instance. (This costs money.)
+         </p>
+         <ol>
+          <li>
+           <a href="https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/forum_archive/AWS+Instructions.pdf" rel="noopener noreferrer" target="_blank">
+            Follow the Udacity instructions
+           </a>
+           to launch an EC2 GPU instance with the
+           <code>
+            udacity-carnd
+           </code>
+           AMI.
+          </li>
+          <li>
+           Complete the
+           <strong>
+            Setup
+           </strong>
+           instructions.
+          </li>
+         </ol>
+         <h2 id="start-the-project">
+          Start the Project
+         </h2>
+         <ol>
+          <li>
+           <a href="https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/traffic-signs-data.zip" rel="noopener noreferrer" target="_blank">
+            Download the dataset
+           </a>
+           . This is a pickled dataset in which we've already resized the images to 32x32.
+          </li>
+          <li>
+           Clone the project and start the notebook.
+          </li>
+         </ol>
+         <pre><code>git clone https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project
+cd CarND-Traffic-Sign-Classifier-Project</code></pre>
+         <ol>
+          <li>
+           Launch the Jupyter notebook:
+           <code>
+            jupyter notebook Traffic_Sign_Classifier.ipynb
+           </code>
+          </li>
+          <li>
+           Check out the
+           <a href="https://review.udacity.com/#!/rubrics/481/view" rel="noopener noreferrer" target="_blank">
+            project rubric
+           </a>
+          </li>
+          <li>
+           Follow the instructions in the notebook
+          </li>
+          <li>
+           Write your project report
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="running-traffic-sign-classifier-in-workspaces">
+          Running Traffic Sign Classifier in workspaces
+         </h1>
+         <p>
+          This workspace is designed to be a simple, easy to use environment in which you can code and run the Traffic Sign Classifier project. The project repo already include all you need to complete this project.
+         </p>
+         <p>
+          For tips on workspace use, please review the
+          <a href="https://classroom.udacity.com/nanodegrees/nd013/parts/edf28735-efc1-4b99-8fbb-ba9c432239c8/modules/c773ee09-4a0d-445d-b6af-0739e6653f18/lessons/ec7a3d6d-24a6-4dad-9f5c-aacd29763e0b/concepts/undefined" rel="noopener noreferrer" target="_blank">
+           Workspaces
+          </a>
+          lesson.
+         </p>
+         <h2 id="accessing-and-using-the-workspace">
+          Accessing and using the workspace:
+         </h2>
+         <ul>
+          <li>
+           This notebook contains all the dependencies needed to run your code  without additional setup.
+          </li>
+          <li>
+           Go to the workspace node and click on JUPYTER notebook.
+          </li>
+          <li>
+           Complete the project using the instructions in the notebook
+          </li>
+          <li>
+           The project repo is already in the workspace.  To see other files in the repo click on the JUPYTER icon.  This will expose the root directory.  From there click on the project folder.
+          </li>
+          <li>
+           The data (
+           <code>
+            train.p
+           </code>
+           ,
+           <code>
+            test.p
+           </code>
+           ,
+           <code>
+            valid.p
+           </code>
+           ) is already in the workspace, one level above the notebook.  Access it using
+           <code>
+            ../data/filename
+           </code>
+           , for example,
+           <code>
+            ../data/train.p
+           </code>
+           .
+          </li>
+         </ul>
+         <h3 id="running-this-workspace-with-gpu">
+          Running this workspace with GPU
+         </h3>
+         <p>
+          In this workspace you can run your code using a GPU!  Awesome, right?  However, your time is limited to
+          <strong>
+           50 hrs in total per account
+          </strong>
+          , which means across any ND or course in Udacity, so please use them wisely!
+         </p>
+         <p>
+          Activate and deactivate the GPU by clicking on the button at the bottom of the notebook.
+         </p>
+         <p>
+          <strong>
+           Only
+          </strong>
+          enable it when you want to
+          <strong>
+           test
+          </strong>
+          your code. You will also see the time remaining.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/gpu-enable.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="submission">
+          Submission
+         </h3>
+         <p>
+          Before submitting, make sure your project covers all of the rubric points, which can be found
+          <a href="https://review.udacity.com/#!/rubrics/481/view" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          .
+         </p>
+         <h2 id="project-submission-if-you-run-the-project-on-your-local-machine">
+          Project submission if you run the project on your local machine
+         </h2>
+         <p>
+          Include a zipped file with your submission with:
+         </p>
+         <ul>
+          <li>
+           The Traffic_Sign_Classifier.ipynb notebook file with all questions answered and all code cells executed and displaying output.
+          </li>
+          <li>
+           An HTML or PDF export of the project notebook with the name report.html or report.pdf.
+          </li>
+          <li>
+           Any additional datasets or images used for the project that are not from the German Traffic Sign Dataset.
+          </li>
+          <li>
+           Your writeup report as a markdown or pdf file
+          </li>
+          <li>
+           Please do not include project data (
+           <code>
+            train.p
+           </code>
+           ,
+           <code>
+            test.p
+           </code>
+           ,
+           <code>
+            valid.p
+           </code>
+           ) with your submission.
+          </li>
+         </ul>
+         <p>
+          Alternatively, you may submit a link to your GitHub repo for the project.
+         </p>
+         <p>
+          In either case,
+          <strong>
+           remember to include example images for each stage of your pipeline and your final output video in your submission
+          </strong>
+          .
+         </p>
+         <h2 id="project-submission-when-using-the-workspaces">
+          Project submission when using the workspaces:
+         </h2>
+         <p>
+          Make sure your workspace contains:
+         </p>
+         <ul>
+          <li>
+           The Traffic_Sign_Classifier.ipynb notebook file with all questions answered and all code cells executed and displaying output.
+          </li>
+          <li>
+           An HTML or PDF export of the project notebook with the name report.html or report.pdf.
+          </li>
+          <li>
+           Any additional datasets or images used for the project that are not from the German Traffic Sign Dataset.
+          </li>
+          <li>
+           Your writeup report as a markdown or pdf file
+          </li>
+         </ul>
+         <p>
+          When you are ready to submit your project, just click the button
+          <strong>
+           SUBMIT PROJECT
+          </strong>
+          and follow the instructions to submit!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/screen-shot-2018-04-03-at-10.14.31-am.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="commit-to-github">
+          Commit to GitHub
+         </h2>
+         <p>
+          Students are highly encouraged to commit their project to a GitHub repo.  To do this, you must change the upstream of the current repository and add your credentials.  We have supplied a bash script to help you do this.  Please open up a terminal, navigate to the project repository, and enter:
+          <code>
+           ./set_git.sh
+          </code>
+          , then follow the prompts.  This will set the upstream remote to your own repository and add your email and username to the git configuration.  At this time we are not configuring passwords, so you will need to enter your username and password for each push.  Since credentials are not persistent, it will be necessary to run this script each time you open, refresh, or reset the workspace.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="using-github-and-creating-effective-readmes">
+          Using GitHub and Creating Effective READMEs
+         </h3>
+         <p>
+          If you are unfamiliar with GitHub , Udacity has a brief
+          <a href="http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html" rel="noopener noreferrer" target="_blank">
+           GitHub tutorial
+          </a>
+          to get you started. Udacity also provides a more detailed free
+          <a href="https://www.udacity.com/course/how-to-use-git-and-github--ud775" rel="noopener noreferrer" target="_blank">
+           course on git and GitHub
+          </a>
+          .
+         </p>
+         <p>
+          To learn about README files and Markdown, Udacity provides a free
+          <a href="https://www.udacity.com/course/writing-readmes--ud777" rel="noopener noreferrer" target="_blank">
+           course on READMEs
+          </a>
+          , as well.
+         </p>
+         <h2 id="project-support">
+          Project Support
+         </h2>
+         <p>
+          If you are stuck or having difficulties with the project, don't lose hope! Remember to talk to your mentors and fellow students in your Study Group, as well as ask (and answer!) questions on
+          <a href="https://knowledge.udacity.com" rel="noopener noreferrer" target="_blank">
+           Knowledge
+          </a>
+          tagged with the project name. We also have a previously recorded project Q&amp;A that you can watch
+          <a href="https://youtu.be/ni95EfPILjI" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          !
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="04. Traffic Sign Classifier.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Project Instructions')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

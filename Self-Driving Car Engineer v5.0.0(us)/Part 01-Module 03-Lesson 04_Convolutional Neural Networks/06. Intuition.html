@@ -1,0 +1,583 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Intuition
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Convolutional Neural Networks
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. CNNs Have Taken Over.html">
+       01. CNNs Have Taken Over
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Intro To CNNs.html">
+       02. Intro To CNNs
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Color.html">
+       03. Color
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Statistical Invariance.html">
+       04. Statistical Invariance
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Convolutional Networks.html">
+       05. Convolutional Networks
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Intuition.html">
+       06. Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Filters.html">
+       07. Filters
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Feature Map Sizes.html">
+       08. Feature Map Sizes
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Convolutions continued.html">
+       09. Convolutions continued
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Parameters.html">
+       10. Parameters
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Quiz Convolution Output Shape.html">
+       11. Quiz: Convolution Output Shape
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Solution Convolution Output Shape.html">
+       12. Solution: Convolution Output Shape
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Quiz Number of Parameters.html">
+       13. Quiz: Number of Parameters
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Solution Number of Parameters.html">
+       14. Solution: Number of Parameters
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Quiz Parameter Sharing.html">
+       15. Quiz: Parameter Sharing
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Solution Parameter Sharing.html">
+       16. Solution: Parameter Sharing
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Visualizing CNNs.html">
+       17. Visualizing CNNs
+      </a>
+     </li>
+     <li class="">
+      <a href="18. TensorFlow Convolution Layer.html">
+       18. TensorFlow Convolution Layer
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Explore The Design Space.html">
+       19. Explore The Design Space
+      </a>
+     </li>
+     <li class="">
+      <a href="20. TensorFlow Max Pooling.html">
+       20. TensorFlow Max Pooling
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Quiz Pooling Intuition.html">
+       21. Quiz: Pooling Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Solution Pooling Intuition.html">
+       22. Solution: Pooling Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Quiz Pooling Mechanics.html">
+       23. Quiz: Pooling Mechanics
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Solution Pooling Mechanics.html">
+       24. Solution: Pooling Mechanics
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Quiz Pooling Practice.html">
+       25. Quiz: Pooling Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Solution Pooling Practice.html">
+       26. Solution: Pooling Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Quiz Average Pooling.html">
+       27. Quiz: Average Pooling
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Solution Average Pooling.html">
+       28. Solution: Average Pooling
+      </a>
+     </li>
+     <li class="">
+      <a href="29. 1x1 Convolutions.html">
+       29. 1x1 Convolutions
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Inception Module.html">
+       30. Inception Module
+      </a>
+     </li>
+     <li class="">
+      <a href="31. Convolutional Network in TensorFlow.html">
+       31. Convolutional Network in TensorFlow
+      </a>
+     </li>
+     <li class="">
+      <a href="32. TensorFlow Convolutional Layer Workspaces.html">
+       32. TensorFlow Convolutional Layer Workspaces
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Solution TensorFlow Convolution Layer.html">
+       33. Solution: TensorFlow Convolution Layer
+      </a>
+     </li>
+     <li class="">
+      <a href="34. TensorFlow Pooling Layer Workspaces.html">
+       34. TensorFlow Pooling Layer Workspaces
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Solution TensorFlow Pooling Layer.html">
+       35. Solution: TensorFlow Pooling Layer
+      </a>
+     </li>
+     <li class="">
+      <a href="36. Lab LeNet in TensorFlow.html">
+       36. Lab: LeNet in TensorFlow
+      </a>
+     </li>
+     <li class="">
+      <a href="37. LeNet Lab Workspace.html">
+       37. LeNet Lab Workspace
+      </a>
+     </li>
+     <li class="">
+      <a href="38. CNNs - Additional Resources.html">
+       38. CNNs - Additional Resources
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          06. Intuition
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="intuition">
+          Intuition
+         </h3>
+         <p>
+          Let's develop better intuition for how Convolutional Neural Networks (CNN) work. We'll examine how humans classify images, and then see how CNNs use similar approaches.
+         </p>
+         <p>
+          Let’s say we wanted to classify the following image of a dog as a Golden Retriever.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="An image that we'd like to classify as a Golden Retriever." class="img img-fluid" src="img/dog-1210559-1280.jpg"/>
+          <figcaption class="figure-caption">
+           <p>
+            An image that we'd like to classify as a Golden Retriever.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          As humans, how do we do this?
+         </p>
+         <p>
+          One thing we do is that we identify certain parts of the dog, such as the nose, the eyes, and the fur. We essentially break up the image into smaller pieces, recognize the smaller pieces, and then combine those pieces to get an idea of the overall dog.
+         </p>
+         <p>
+          In this case, we might break down the image into a combination of the following:
+         </p>
+         <ul>
+          <li>
+           A nose
+          </li>
+          <li>
+           Two eyes
+          </li>
+          <li>
+           Golden fur
+          </li>
+         </ul>
+         <p>
+          These pieces can be seen below:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="The eye of the dog." class="img img-fluid" src="img/screen-shot-2016-11-24-at-12.49.08-pm.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            The eye of the dog.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="The nose of the dog." class="img img-fluid" src="img/screen-shot-2016-11-24-at-12.49.43-pm.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            The nose of the dog.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="The fur of the dog." class="img img-fluid" src="img/screen-shot-2016-11-24-at-12.50.54-pm.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            The fur of the dog.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="going-one-step-further">
+          Going One Step Further
+         </h3>
+         <p>
+          But let’s take this one step further. How do we determine what exactly a nose is? A Golden Retriever nose can be seen as an oval with two black holes inside it. Thus, one way of classifying a Retriever’s nose is to to break it up into smaller pieces and look for black holes (nostrils) and curves that define an oval as shown below.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="A curve that we can use to determine a nose." class="img img-fluid" src="img/screen-shot-2016-11-24-at-12.51.47-pm.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            A curve that we can use to determine a nose.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="A nostril that we can use to classify a nose of the dog." class="img img-fluid" src="img/screen-shot-2016-11-24-at-12.51.51-pm.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            A nostril that we can use to classify a nose of the dog.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Broadly speaking, this is what a CNN learns to do. It learns to recognize basic lines and curves, then shapes and blobs, and then increasingly complex objects within the image. Finally, the CNN classifies the image by combining the larger, more complex objects.
+         </p>
+         <p>
+          In our case, the levels in the hierarchy are:
+         </p>
+         <ul>
+          <li>
+           Simple shapes, like ovals and dark circles
+          </li>
+          <li>
+           Complex objects (combinations of simple shapes), like eyes, nose, and fur
+          </li>
+          <li>
+           The dog as a whole (a combination of complex objects)
+          </li>
+         </ul>
+         <p>
+          With deep learning, we don't actually program the CNN to recognize these specific features. Rather, the CNN learns on its own to recognize such objects through forward propagation and backpropagation!
+         </p>
+         <p>
+          It's amazing how well a CNN can learn to classify images, even though we never program the CNN with information about specific features to look for.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="An example of what each layer in a CNN might recognize when classifying a picture of a dog." class="img img-fluid" src="img/heirarchy-diagram.jpg"/>
+          <figcaption class="figure-caption">
+           <p>
+            An example of what each layer in a CNN might recognize when classifying a picture of a dog.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          A CNN might have several layers, and each layer might capture a different level in the hierarchy of objects. The first layer is the lowest level in the hierarchy, where the CNN generally classifies small parts of the image into simple shapes like horizontal and vertical lines and simple blobs of colors. The subsequent layers tend to be higher levels in the hierarchy and generally classify more complex ideas like shapes (combinations of lines), and eventually full objects like dogs.
+         </p>
+         <p>
+          Once again, the CNN
+          <strong>
+           <em>
+            learns all of this on its own
+           </em>
+          </strong>
+          . We don't ever have to tell the CNN to go looking for lines or curves or noses or fur. The CNN just learns from the training set and discovers which characteristics of a Golden Retriever are worth looking for.
+         </p>
+         <p>
+          That's a good start! Hopefully you've developed some intuition about how CNNs work.
+         </p>
+         <p>
+          Next, let’s look at some implementation details.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="07. Filters.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Intuition')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

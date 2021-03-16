@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:03.803
+Vamos aprender sobre classificação.
+O plano vai ser este.
+
+00:00:03.837 --> 00:00:05.705
+Eu só vou dizer o bastante
+
+00:00:05.739 --> 00:00:08.108
+para você criar um tipo
+de classificador muito simples,
+
+00:00:08.141 --> 00:00:12.145
+mas muito importante chamado
+de "classificador logístico".
+
+00:00:12.178 --> 00:00:15.215
+Com isto, você poderá
+fazer a primeira lição,
+
+00:00:15.248 --> 00:00:18.918
+em que você baixará e pré-processará
+algumas imagens para classificação,
+
+00:00:18.952 --> 00:00:20.053
+e depois executará
+
+00:00:20.086 --> 00:00:21.855
+um classificador logístico
+nestes dados.
+
+00:00:21.888 --> 00:00:25.525
+Quando você tiver se conectado
+com a matemática que surgir
+
+00:00:25.558 --> 00:00:27.494
+e o código na primeira lição,
+
+00:00:27.527 --> 00:00:30.730
+tudo mais vai fazer a build
+a partir disso.
+
+00:00:30.764 --> 00:00:32.465
+Vamos construir juntos
+
+00:00:32.499 --> 00:00:35.035
+todo o aprendizado profundo
+com estas peças,
+
+00:00:35.068 --> 00:00:36.403
+bloco por bloco.
+

@@ -1,0 +1,739 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Convolutional Network in TensorFlow
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Convolutional Neural Networks
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. CNNs Have Taken Over.html">
+       01. CNNs Have Taken Over
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Intro To CNNs.html">
+       02. Intro To CNNs
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Color.html">
+       03. Color
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Statistical Invariance.html">
+       04. Statistical Invariance
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Convolutional Networks.html">
+       05. Convolutional Networks
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Intuition.html">
+       06. Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Filters.html">
+       07. Filters
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Feature Map Sizes.html">
+       08. Feature Map Sizes
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Convolutions continued.html">
+       09. Convolutions continued
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Parameters.html">
+       10. Parameters
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Quiz Convolution Output Shape.html">
+       11. Quiz: Convolution Output Shape
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Solution Convolution Output Shape.html">
+       12. Solution: Convolution Output Shape
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Quiz Number of Parameters.html">
+       13. Quiz: Number of Parameters
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Solution Number of Parameters.html">
+       14. Solution: Number of Parameters
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Quiz Parameter Sharing.html">
+       15. Quiz: Parameter Sharing
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Solution Parameter Sharing.html">
+       16. Solution: Parameter Sharing
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Visualizing CNNs.html">
+       17. Visualizing CNNs
+      </a>
+     </li>
+     <li class="">
+      <a href="18. TensorFlow Convolution Layer.html">
+       18. TensorFlow Convolution Layer
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Explore The Design Space.html">
+       19. Explore The Design Space
+      </a>
+     </li>
+     <li class="">
+      <a href="20. TensorFlow Max Pooling.html">
+       20. TensorFlow Max Pooling
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Quiz Pooling Intuition.html">
+       21. Quiz: Pooling Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Solution Pooling Intuition.html">
+       22. Solution: Pooling Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Quiz Pooling Mechanics.html">
+       23. Quiz: Pooling Mechanics
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Solution Pooling Mechanics.html">
+       24. Solution: Pooling Mechanics
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Quiz Pooling Practice.html">
+       25. Quiz: Pooling Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Solution Pooling Practice.html">
+       26. Solution: Pooling Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Quiz Average Pooling.html">
+       27. Quiz: Average Pooling
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Solution Average Pooling.html">
+       28. Solution: Average Pooling
+      </a>
+     </li>
+     <li class="">
+      <a href="29. 1x1 Convolutions.html">
+       29. 1x1 Convolutions
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Inception Module.html">
+       30. Inception Module
+      </a>
+     </li>
+     <li class="">
+      <a href="31. Convolutional Network in TensorFlow.html">
+       31. Convolutional Network in TensorFlow
+      </a>
+     </li>
+     <li class="">
+      <a href="32. TensorFlow Convolutional Layer Workspaces.html">
+       32. TensorFlow Convolutional Layer Workspaces
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Solution TensorFlow Convolution Layer.html">
+       33. Solution: TensorFlow Convolution Layer
+      </a>
+     </li>
+     <li class="">
+      <a href="34. TensorFlow Pooling Layer Workspaces.html">
+       34. TensorFlow Pooling Layer Workspaces
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Solution TensorFlow Pooling Layer.html">
+       35. Solution: TensorFlow Pooling Layer
+      </a>
+     </li>
+     <li class="">
+      <a href="36. Lab LeNet in TensorFlow.html">
+       36. Lab: LeNet in TensorFlow
+      </a>
+     </li>
+     <li class="">
+      <a href="37. LeNet Lab Workspace.html">
+       37. LeNet Lab Workspace
+      </a>
+     </li>
+     <li class="">
+      <a href="38. CNNs - Additional Resources.html">
+       38. CNNs - Additional Resources
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          31. Convolutional Network in TensorFlow
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="convolutional-network-in-tensorflow">
+          Convolutional Network in TensorFlow
+         </h1>
+         <p>
+          It's time to walk through an example Convolutional Neural Network (CNN) in TensorFlow.
+         </p>
+         <p>
+          The structure of this network follows the classic structure of CNNs, which is a mix of convolutional layers and max pooling, followed by fully-connected layers.
+         </p>
+         <p>
+          The code you'll be looking at is similar to what you saw in the segment on
+          <strong>
+           Deep Neural Network in TensorFlow
+          </strong>
+          in the previous lesson, except we restructured the architecture of this network as a CNN.
+         </p>
+         <p>
+          Just like in that segment, here you'll study the line-by-line breakdown of the code. If you want, you can even
+          <a href="https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58a61ca1_cnn/cnn.zip" rel="noopener noreferrer" target="_blank">
+           download the code
+          </a>
+          and run it yourself.
+         </p>
+         <p>
+          Thanks to
+          <a href="https://github.com/aymericdamien/TensorFlow-Examples" rel="noopener noreferrer" target="_blank">
+           Aymeric Damien
+          </a>
+          for providing the original TensorFlow model on which this segment is based.
+         </p>
+         <p>
+          Time to dive in!
+         </p>
+         <h3 id="dataset">
+          Dataset
+         </h3>
+         <p>
+          You've seen this section of code from previous lessons.  Here we're importing the MNIST dataset and using a convenient TensorFlow function to batch, scale, and One-Hot encode the data.
+         </p>
+         <pre><code class="python language-python">from tensorflow.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets(".", one_hot=True, reshape=False)
+
+import tensorflow as tf
+
+# Parameters
+learning_rate = 0.00001
+epochs = 10
+batch_size = 128
+
+# Number of samples to calculate validation and accuracy
+# Decrease this if you're running out of memory to calculate accuracy
+test_valid_size = 256
+
+# Network Parameters
+n_classes = 10  # MNIST total classes (0-9 digits)
+dropout = 0.75  # Dropout, probability to keep units</code></pre>
+         <h3 id="weights-and-biases">
+          Weights and Biases
+         </h3>
+         <pre><code class="python language-python"># Store layers weight &amp; bias
+weights = {
+    'wc1': tf.Variable(tf.random_normal([5, 5, 1, 32])),
+    'wc2': tf.Variable(tf.random_normal([5, 5, 32, 64])),
+    'wd1': tf.Variable(tf.random_normal([7*7*64, 1024])),
+    'out': tf.Variable(tf.random_normal([1024, n_classes]))}
+
+biases = {
+    'bc1': tf.Variable(tf.random_normal([32])),
+    'bc2': tf.Variable(tf.random_normal([64])),
+    'bd1': tf.Variable(tf.random_normal([1024])),
+    'out': tf.Variable(tf.random_normal([n_classes]))}</code></pre>
+         <h3 id="convolutions">
+          Convolutions
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Convolution with 3×3 Filter.  Source: http://deeplearning.stanford.edu/wiki/index.php/Feature_extraction_using_convolution" class="img img-fluid" src="img/convolution-schematic.gif"/>
+          <figcaption class="figure-caption">
+           <p>
+            Convolution with 3×3 Filter.  Source:
+            <a href="http://deeplearning.stanford.edu/wiki/index.php/Feature_extraction_using_convolution" rel="noopener noreferrer" target="_blank">
+             http://deeplearning.stanford.edu/wiki/index.php/Feature_extraction_using_convolution
+            </a>
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The above is an example of a
+          <a href="https://en.wikipedia.org/wiki/Convolution" rel="noopener noreferrer" target="_blank">
+           convolution
+          </a>
+          with a 3x3 filter and a stride of 1 being applied to data with a range of 0 to 1.  The convolution for each 3x3 section is calculated against the weight,
+          <code>
+           [[1, 0, 1], [0, 1, 0], [1, 0, 1]]
+          </code>
+          , then a bias is added to create the convolved feature on the right.  In this case, the bias is zero.  In TensorFlow, this is all done using
+          <a href="https://www.tensorflow.org/api_docs/python/tf/nn/conv2d" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.nn.conv2d()
+           </code>
+          </a>
+          and
+          <a href="https://www.tensorflow.org/api_docs/python/tf/nn/bias_add" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.nn.bias_add()
+           </code>
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <pre><code class="python language-python">def conv2d(x, W, b, strides=1):
+    x = tf.nn.conv2d(x, W, strides=[1, strides, strides, 1], padding='SAME')
+    x = tf.nn.bias_add(x, b)
+    return tf.nn.relu(x)</code></pre>
+         <p>
+          The
+          <a href="https://www.tensorflow.org/api_docs/python/tf/nn/conv2d" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.nn.conv2d()
+           </code>
+          </a>
+          function computes the convolution against weight
+          <code>
+           W
+          </code>
+          as shown above.
+         </p>
+         <p>
+          In TensorFlow,
+          <code>
+           strides
+          </code>
+          is an array of 4 elements;  the first element in this array indicates the stride for batch and last element indicates stride for features.  It's good practice to remove the batches or features you want to skip from the data set rather than use a stride to skip them.  You can always set the first and last element to 1 in
+          <code>
+           strides
+          </code>
+          in order to use all batches and features.
+         </p>
+         <p>
+          The middle two elements are the strides for height and width respectively.  I've mentioned stride as one number because you usually have a square stride where
+          <code>
+           height = width
+          </code>
+          .  When someone says they are using a stride of 3, they usually mean
+          <code>
+           tf.nn.conv2d(x, W, strides=[1, 3, 3, 1])
+          </code>
+          .
+         </p>
+         <p>
+          To make life easier, the code is using
+          <a href="https://www.tensorflow.org/api_docs/python/tf/nn/bias_add" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.nn.bias_add()
+           </code>
+          </a>
+          to add the bias.  Using
+          <a href="https://www.tensorflow.org/api_docs/python/tf/add" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.add()
+           </code>
+          </a>
+          doesn't work when the tensors aren't the same shape.
+         </p>
+         <h3 id="max-pooling">
+          Max Pooling
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Max Pooling with 2x2 filter and stride of 2.  Source: http://cs231n.github.io/convolutional-networks/" class="img img-fluid" src="img/maxpool.jpeg"/>
+          <figcaption class="figure-caption">
+           <p>
+            Max Pooling with 2x2 filter and stride of 2.  Source:
+            <a href="http://cs231n.github.io/convolutional-networks/" rel="noopener noreferrer" target="_blank">
+             http://cs231n.github.io/convolutional-networks/
+            </a>
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The above is an example of
+          <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network#Pooling_layer" rel="noopener noreferrer" target="_blank">
+           max pooling
+          </a>
+          with a 2x2 filter and stride of 2.  The left square is the input and the right square is the output.  The four 2x2 colors in input represents each time the filter was applied to create the max on the right side.  For example,
+          <code>
+           [[1, 1], [5, 6]]
+          </code>
+          becomes 6 and
+          <code>
+           [[3, 2], [1, 2]]
+          </code>
+          becomes 3.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <pre><code class="python language-python">def maxpool2d(x, k=2):
+    return tf.nn.max_pool(
+        x,
+        ksize=[1, k, k, 1],
+        strides=[1, k, k, 1],
+        padding='SAME')</code></pre>
+         <p>
+          The
+          <a href="https://www.tensorflow.org/api_docs/python/tf/nn/max_pool" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.nn.max_pool()
+           </code>
+          </a>
+          function does exactly what you would expect, it performs max pooling with the
+          <code>
+           ksize
+          </code>
+          parameter as the size of the filter.
+         </p>
+         <h3 id="model">
+          Model
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Image from Explore The Design Space video" class="img img-fluid" src="img/arch.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Image from Explore The Design Space video
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In the code below, we're creating 3 layers alternating between convolutions and max pooling followed by a fully connected and output layer.  The transformation of each layer to new dimensions are shown in the comments.  For example, the first layer shapes the images from 28x28x1 to 28x28x32 in the convolution step.  Then next step applies max pooling, turning each sample into 14x14x32.  All the layers are applied from
+          <code>
+           conv1
+          </code>
+          to
+          <code>
+           output
+          </code>
+          , producing 10 class predictions.
+         </p>
+         <pre><code class="python language-python">def conv_net(x, weights, biases, dropout):
+    # Layer 1 - 28*28*1 to 14*14*32
+    conv1 = conv2d(x, weights['wc1'], biases['bc1'])
+    conv1 = maxpool2d(conv1, k=2)
+
+    # Layer 2 - 14*14*32 to 7*7*64
+    conv2 = conv2d(conv1, weights['wc2'], biases['bc2'])
+    conv2 = maxpool2d(conv2, k=2)
+
+    # Fully connected layer - 7*7*64 to 1024
+    fc1 = tf.reshape(conv2, [-1, weights['wd1'].get_shape().as_list()[0]])
+    fc1 = tf.add(tf.matmul(fc1, weights['wd1']), biases['bd1'])
+    fc1 = tf.nn.relu(fc1)
+    fc1 = tf.nn.dropout(fc1, dropout)
+
+    # Output Layer - class prediction - 1024 to 10
+    out = tf.add(tf.matmul(fc1, weights['out']), biases['out'])
+    return out</code></pre>
+         <h3 id="session">
+          Session
+         </h3>
+         <p>
+          Now let's run it!
+         </p>
+         <pre><code class="python language-python"># tf Graph input
+x = tf.placeholder(tf.float32, [None, 28, 28, 1])
+y = tf.placeholder(tf.float32, [None, n_classes])
+keep_prob = tf.placeholder(tf.float32)
+
+# Model
+logits = conv_net(x, weights, biases, keep_prob)
+
+# Define loss and optimizer
+cost = tf.reduce_mean(\
+    tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=y))
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate)\
+    .minimize(cost)
+
+# Accuracy
+correct_pred = tf.equal(tf.argmax(logits, 1), tf.argmax(y, 1))
+accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+
+# Initializing the variables
+init = tf. global_variables_initializer()
+
+# Launch the graph
+with tf.Session() as sess:
+    sess.run(init)
+
+    for epoch in range(epochs):
+        for batch in range(mnist.train.num_examples//batch_size):
+            batch_x, batch_y = mnist.train.next_batch(batch_size)
+            sess.run(optimizer, feed_dict={
+                x: batch_x,
+                y: batch_y,
+                keep_prob: dropout})
+
+            # Calculate batch loss and accuracy
+            loss = sess.run(cost, feed_dict={
+                x: batch_x,
+                y: batch_y,
+                keep_prob: 1.})
+            valid_acc = sess.run(accuracy, feed_dict={
+                x: mnist.validation.images[:test_valid_size],
+                y: mnist.validation.labels[:test_valid_size],
+                keep_prob: 1.})
+
+            print('Epoch {:&gt;2}, Batch {:&gt;3} -'
+                  'Loss: {:&gt;10.4f} Validation Accuracy: {:.6f}'.format(
+                epoch + 1,
+                batch + 1,
+                loss,
+                valid_acc))
+
+    # Calculate Test Accuracy
+    test_acc = sess.run(accuracy, feed_dict={
+        x: mnist.test.images[:test_valid_size],
+        y: mnist.test.labels[:test_valid_size],
+        keep_prob: 1.})
+    print('Testing Accuracy: {}'.format(test_acc))</code></pre>
+         <p>
+          That's it!  That is a CNN in TensorFlow.  Now that you've seen a CNN in TensorFlow, let's see if you can apply it on your own!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="32. TensorFlow Convolutional Layer Workspaces.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('31. Convolutional Network in TensorFlow')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:01.901
+Isto é muito poderoso.
+
+00:00:01.935 --> 00:00:04.137
+Contanto que você saiba escrever
+os derivativos
+
+00:00:04.170 --> 00:00:05.638
+das suas funções individuais,
+
+00:00:05.672 --> 00:00:08.641
+existe um simples modo gráfico
+de combiná-los
+
+00:00:08.675 --> 00:00:11.544
+e computar o derivativo
+para toda a função.
+
+00:00:11.578 --> 00:00:12.946
+Isto é uma notícia
+ainda melhor
+
+00:00:12.979 --> 00:00:14.981
+para o cientista da computação
+que existe em você.
+
+00:00:15.015 --> 00:00:16.950
+Existe um modo de escrever
+a regra da cadeia
+
+00:00:16.983 --> 00:00:18.852
+que é muito eficiente
+computacionalmente,
+
+00:00:18.885 --> 00:00:20.487
+com muita reutilização
+de dados
+
+00:00:20.520 --> 00:00:22.989
+e parece uma pipeline de dados
+bem simples.
+

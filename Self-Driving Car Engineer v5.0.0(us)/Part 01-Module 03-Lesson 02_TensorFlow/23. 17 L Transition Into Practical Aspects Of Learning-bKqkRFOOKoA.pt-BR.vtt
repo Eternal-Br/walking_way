@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.567 --> 00:00:03.167
+Nas próximas aulas,
+eu falarei das ferramentas
+
+00:00:03.200 --> 00:00:05.334
+que computam os derivativos
+
+00:00:05.367 --> 00:00:08.934
+e sobre as vantagens e desvantagens
+da gradiente descendente.
+
+00:00:08.968 --> 00:00:13.000
+Presumiremos que o otimizador
+seja uma caixa preta
+
+00:00:13.033 --> 00:00:14.901
+que você pode utilizar.
+
+00:00:14.934 --> 00:00:18.901
+Há duas coisas práticas antes
+de treinar seu primeiro modelo:
+
+00:00:19.534 --> 00:00:22.868
+como você preenche os pixels
+da imagem deste classificador
+
+00:00:22.901 --> 00:00:25.467
+e onde você inicializa
+a otimização.
+
+00:00:25.501 --> 00:00:26.701
+Vamos ver.
+

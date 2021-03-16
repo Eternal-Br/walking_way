@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.690
+&gt;&gt; I hope you enjoyed learning about neural networks and convolutions.
+
+00:00:03.690 --> 00:00:06.419
+So far, you've been learning about deep neural networks at
+
+00:00:06.419 --> 00:00:08.400
+the conceptual level and applying
+
+00:00:08.400 --> 00:00:11.984
+these techniques to a range of image classification tasks.
+
+00:00:11.984 --> 00:00:13.695
+In the next project,
+
+00:00:13.695 --> 00:00:16.254
+you're going to return to autonomous driving.
+
+00:00:16.254 --> 00:00:18.195
+&gt;&gt; That's right. Next, you're going to build
+
+00:00:18.195 --> 00:00:20.699
+a deep neural network to classify traffic signs.
+
+00:00:20.699 --> 00:00:24.494
+Your network should be able to take an image and decide if it's a stop sign,
+
+00:00:24.495 --> 00:00:27.420
+a yield sign, a different type of sign or maybe no sign at all.
+
+00:00:27.420 --> 00:00:31.530
+&gt;&gt; This will be a terrific portfolio project to demonstrate for
+
+00:00:31.530 --> 00:00:36.000
+employers your hands-on practical experience with deep neural networks.
+

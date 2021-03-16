@@ -1,0 +1,59 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.967 --> 00:00:03.203
+Não vou falar
+sobre validação cruzada aqui,
+
+00:00:03.236 --> 00:00:05.805
+mas se você não tem experiência
+com ela,
+
+00:00:05.839 --> 00:00:09.242
+sugiro que aprenda sobre ela.
+
+00:00:09.275 --> 00:00:10.577
+Estou gastando tempo nisto
+
+00:00:10.610 --> 00:00:13.747
+porque é particularmente essencial
+para o aprendizado profundo.
+
+00:00:13.780 --> 00:00:16.182
+O aprendizado profundo tem
+muitas coisas que você pode ajustar,
+
+00:00:16.216 --> 00:00:19.719
+e você será tentado a ajustá-las
+várias vezes.
+
+00:00:19.753 --> 00:00:21.054
+Precisa ser muito cuidadoso
+
+00:00:21.087 --> 00:00:22.922
+para não sobreajustar
+seu conjunto de teste.
+
+00:00:22.956 --> 00:00:24.758
+Use um conjunto de validação.
+
+00:00:24.791 --> 00:00:26.559
+Qual o tamanho
+seu conjunto de validação
+
+00:00:26.593 --> 00:00:28.128
+e o conjunto de testes
+precisam ter?
+
+00:00:28.161 --> 00:00:29.195
+Depende.
+
+00:00:29.229 --> 00:00:31.031
+Quanto maior é
+o seu conjunto de validação,
+
+00:00:31.064 --> 00:00:32.866
+mais precisos serão
+seus números.
+

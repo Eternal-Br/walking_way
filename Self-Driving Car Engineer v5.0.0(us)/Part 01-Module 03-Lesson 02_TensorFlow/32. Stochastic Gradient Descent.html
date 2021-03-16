@@ -1,0 +1,373 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Stochastic Gradient Descent
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      TensorFlow
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Deep Learning Frameworks.html">
+       01. Deep Learning Frameworks
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction to Deep Neural Networks.html">
+       02. Introduction to Deep Neural Networks
+      </a>
+     </li>
+     <li class="">
+      <a href="03. What is Deep Learning.html">
+       03. What is Deep Learning?
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Solving Problems - Big and Small.html">
+       04. Solving Problems - Big and Small
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Let's Get Started!.html">
+       05. Let's Get Started!
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Installing TensorFlow.html">
+       06. Installing TensorFlow
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Hello, Tensor World!.html">
+       07. Hello, Tensor World!
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Quiz Tensorflow Input.html">
+       08. Quiz: Tensorflow Input
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Quiz Tensorflow Math.html">
+       09. Quiz: Tensorflow Math
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Transition to Classification.html">
+       10. Transition to Classification
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Supervised Classification.html">
+       11. Supervised Classification
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Let's make a deal.html">
+       12. Let's make a deal
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Training Your Logistic Classifier.html">
+       13. Training Your Logistic Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="14. TensorFlow Linear Function.html">
+       14. TensorFlow Linear Function
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Quiz Linear Function.html">
+       15. Quiz: Linear Function
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Linear Update.html">
+       16. Linear Update
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Quiz Softmax.html">
+       17. Quiz: Softmax
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Quiz TensorFlow Softmax Workspaces.html">
+       18. Quiz: TensorFlow Softmax Workspaces
+      </a>
+     </li>
+     <li class="">
+      <a href="19. One-Hot Encoding.html">
+       19. One-Hot Encoding
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Quiz One-Hot Encoding.html">
+       20. Quiz: One-Hot Encoding
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Cross Entropy.html">
+       21. Cross Entropy
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Minimizing Cross Entropy.html">
+       22. Minimizing Cross Entropy
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Practical Aspects of Learning.html">
+       23. Practical Aspects of Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Quiz Numerical Stability.html">
+       24. Quiz: Numerical Stability
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Normalized Inputs and Initial Weights.html">
+       25. Normalized Inputs and Initial Weights
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Measuring Performance.html">
+       26. Measuring Performance
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Transition Overfitting - Dataset Size.html">
+       27. Transition: Overfitting -&gt; Dataset Size
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Validation and Test Set Size.html">
+       28. Validation and Test Set Size
+      </a>
+     </li>
+     <li class="">
+      <a href="29. Validation Set Size.html">
+       29. Validation Set Size
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Validation Test Set Size Continued.html">
+       30. Validation Test Set Size Continued
+      </a>
+     </li>
+     <li class="">
+      <a href="31. Optimizing a Logistic Classifier.html">
+       31. Optimizing a Logistic Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Stochastic Gradient Descent.html">
+       32. Stochastic Gradient Descent
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Momentum and Learning Rate Decay.html">
+       33. Momentum and Learning Rate Decay
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Parameter Hyperspace! .html">
+       34. Parameter Hyperspace!
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Mini-batch.html">
+       35. Mini-batch
+      </a>
+     </li>
+     <li class="">
+      <a href="36. Quiz 2 Mini-batch.html">
+       36. Quiz 2: Mini-batch
+      </a>
+     </li>
+     <li class="">
+      <a href="37. Epochs.html">
+       37. Epochs
+      </a>
+     </li>
+     <li class="">
+      <a href="38. Intro TensorFlow Neural Network .html">
+       38. Intro TensorFlow Neural Network
+      </a>
+     </li>
+     <li class="">
+      <a href="39. Lab Neural Network Workspaces.html">
+       39. Lab: Neural Network Workspaces
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          32. Stochastic Gradient Descent
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          30 L Stochastic Gradient Descent
+         </p>
+        </h3>
+        <video controls="">
+         <source src="32. 30 L Stochastic Gradient Descent-U9iEGUd9kJ0.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="32. 30 L Stochastic Gradient Descent-U9iEGUd9kJ0.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="JP" src="32. 30 L Stochastic Gradient Descent-U9iEGUd9kJ0.ja-JP.vtt" srclang="JP"/>
+         <track default="false" kind="subtitles" label="BR" src="32. 30 L Stochastic Gradient Descent-U9iEGUd9kJ0.pt-BR.vtt" srclang="BR"/>
+         <track default="false" kind="subtitles" label="CN" src="32. 30 L Stochastic Gradient Descent-U9iEGUd9kJ0.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="33. Momentum and Learning Rate Decay.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('32. Stochastic Gradient Descent')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

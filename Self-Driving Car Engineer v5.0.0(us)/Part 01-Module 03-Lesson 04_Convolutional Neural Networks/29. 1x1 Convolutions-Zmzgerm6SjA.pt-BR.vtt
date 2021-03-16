@@ -1,0 +1,102 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:03.067
+Antes, quero lhes apresentar
+uma outra ideia.
+
+00:00:03.100 --> 00:00:05.767
+A ideia de convoluções 1x1.
+
+00:00:05.801 --> 00:00:10.200
+Podem pensar: "Por que alguém
+ia querer usar convoluções 1x1?"
+
+00:00:10.234 --> 00:00:12.934
+Não estão olhando
+para um trecho da imagem,
+
+00:00:12.968 --> 00:00:14.334
+só para aquele pixel.
+
+00:00:14.367 --> 00:00:17.000
+Vejam a disposição clássica
+da convolução.
+
+00:00:17.033 --> 00:00:19.434
+É basicamente
+um pequeno classificador
+
+00:00:19.467 --> 00:00:21.601
+para um trecho da imagem,
+
+00:00:21.634 --> 00:00:24.567
+mas é só
+um classificador linear.
+
+00:00:24.601 --> 00:00:27.634
+Mas se acrescentarem
+uma convolução 1x1 no meio,
+
+00:00:27.667 --> 00:00:30.067
+de repente terão
+uma minirrede neural
+
+00:00:30.100 --> 00:00:31.567
+rodando no trecho
+
+00:00:31.601 --> 00:00:33.734
+em vez
+de um classificador linear.
+
+00:00:33.767 --> 00:00:36.901
+Intercalar suas convoluções
+com convoluções 1x1
+
+00:00:36.934 --> 00:00:40.667
+é uma forma bem barata
+de fazer seus modelos mais profundos
+
+00:00:40.701 --> 00:00:42.334
+e de ter mais parâmetros,
+
+00:00:42.367 --> 00:00:44.767
+sem mudar completamente
+sua estrutura.
+
+00:00:44.801 --> 00:00:48.200
+Também são baratos
+pois se olharem a Matemática deles,
+
+00:00:48.234 --> 00:00:50.234
+na verdade,
+não são convoluções.
+
+00:00:50.267 --> 00:00:52.133
+São só
+multiplicação de matriz
+
+00:00:52.167 --> 00:00:54.567
+e têm relativamente
+poucos parâmetros.
+
+00:00:54.601 --> 00:00:56.033
+Mencionei tudo isto,
+
+00:00:56.067 --> 00:00:58.367
+agregação média
+e convoluções 1x1,
+
+00:00:58.400 --> 00:01:01.300
+porque quero falar
+sobre uma estratégia geral
+
+00:01:01.334 --> 00:01:06.200
+que teve muito sucesso em criar
+convNets que são menores e melhores
+
+00:01:06.234 --> 00:01:10.033
+do que convNets que apenas usam
+uma pirâmide de convoluções.
+

@@ -1,0 +1,38 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:01.968
+A ideia é muito simples.
+
+00:00:02.000 --> 00:00:04.200
+Se seus dados
+têm alguma estrutura,
+
+00:00:04.234 --> 00:00:07.601
+e sua rede não precisa
+aprendê-la do zero,
+
+00:00:07.634 --> 00:00:09.534
+o desempenho será melhor.
+
+00:00:09.567 --> 00:00:12.501
+Imagine que quer
+classificar essas letras,
+
+00:00:12.534 --> 00:00:17.567
+e sabe que a cor não é um fator
+que faz um A ser um A.
+
+00:00:17.601 --> 00:00:21.200
+O que seria mais fácil
+para o seu classificador aprender?
+
+00:00:21.234 --> 00:00:23.934
+Um modelo que usa
+a imagem com cor,
+
+00:00:23.968 --> 00:00:26.934
+ou um que só veja
+a escala cinza?
+

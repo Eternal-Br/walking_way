@@ -1,0 +1,35 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.200 --> 00:00:02.635
+Vamos fazer
+um pouco de cálculo do envelope.
+
+00:00:02.669 --> 00:00:06.106
+Imagine que você tem 3 mil exemplos
+no seu conjunto de validação,
+
+00:00:06.139 --> 00:00:08.942
+e suponha que você confie
+na minha regra prática de 30.
+
+00:00:08.975 --> 00:00:10.944
+Que nível de melhoria
+de precisão
+
+00:00:10.977 --> 00:00:13.947
+você pode confiar em não estar
+no aviso?
+
+00:00:13.980 --> 00:00:17.083
+Uma diferença de 80% para 81%,
+
+00:00:17.117 --> 00:00:20.387
+uma diferença de 80%
+para 80,5%
+
+00:00:20.420 --> 00:00:24.124
+ou uma diferença
+de 80% a 80,1%?
+

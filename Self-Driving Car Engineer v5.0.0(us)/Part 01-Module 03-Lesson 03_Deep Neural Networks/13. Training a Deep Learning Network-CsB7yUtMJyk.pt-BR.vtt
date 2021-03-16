@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:02.400
+Agora têm
+uma rede neural pequena.
+
+00:00:02.434 --> 00:00:05.234
+Não é especialmente profunda,
+apenas duas camadas.
+
+00:00:05.267 --> 00:00:07.434
+Podem aumentá-la,
+torná-la mais complexa,
+
+00:00:07.467 --> 00:00:10.367
+aumentando o tamanho
+da camada oculta do meio.
+
+00:00:10.400 --> 00:00:14.801
+Mas aumentar este H
+não é eficiente, em geral.
+
+00:00:14.834 --> 00:00:17.133
+É preciso torná-lo muito,
+muito grande,
+
+00:00:17.167 --> 00:00:19.267
+e o treinamento
+fica difícil.
+
+00:00:19.300 --> 00:00:22.767
+É aí que entra a ideia central
+do aprendizado profundo.
+
+00:00:22.801 --> 00:00:25.033
+Em vez disso,
+podem acrescentar camadas
+
+00:00:25.067 --> 00:00:26.634
+e tornar o modelo
+mais profundo.
+
+00:00:26.667 --> 00:00:28.501
+Há muitas razões para isso.
+
+00:00:28.534 --> 00:00:30.534
+Uma é a eficiência
+dos parâmetros.
+
+00:00:30.567 --> 00:00:34.000
+Você consegue mais desempenho
+com menos parâmetros
+
+00:00:34.033 --> 00:00:37.334
+ficando mais profundo
+em vez de mais largo.
+
+00:00:37.367 --> 00:00:39.767
+Outra é que
+muitos fenômenos naturais,
+
+00:00:39.801 --> 00:00:43.300
+que podem lhe interessar, tendem
+a ter uma estrutura hierárquica
+
+00:00:43.334 --> 00:00:45.834
+que modelos profundos
+naturalmente captam.
+
+00:00:45.868 --> 00:00:48.200
+Se procura um modelo
+para imagens, por exemplo,
+
+00:00:48.234 --> 00:00:50.400
+e visualiza
+o que o modelo aprende,
+
+00:00:50.434 --> 00:00:53.267
+achará coisas bem simples
+nas camadas mais baixas,
+
+00:00:53.300 --> 00:00:55.200
+como linhas ou arestas.
+
+00:00:55.234 --> 00:00:58.067
+Quando você sobe,
+vê coisas mais complicadas,
+
+00:00:58.100 --> 00:00:59.734
+como formas geométricas.
+
+00:00:59.767 --> 00:01:03.300
+Suba mais, e começa a ver coisas
+como objetos, rostos.
+
+00:01:03.334 --> 00:01:06.267
+Isto é muito eficiente,
+pois a estrutura do modelo
+
+00:01:06.300 --> 00:01:10.100
+bate com o tipo de abstrações
+que você espera ver nos seus dados
+
+00:01:10.133 --> 00:01:14.400
+e, como resultado, é mais fácil
+para o modelo aprendê-las.
+

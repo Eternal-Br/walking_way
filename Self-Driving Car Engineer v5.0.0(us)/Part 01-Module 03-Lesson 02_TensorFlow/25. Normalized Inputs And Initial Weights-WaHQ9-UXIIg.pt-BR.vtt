@@ -1,0 +1,232 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:01.767
+No exemplo do quiz,
+
+00:00:01.801 --> 00:00:04.901
+a Matemática diz que o resultado
+deveria ser 1,0,
+
+00:00:04.934 --> 00:00:07.267
+mas o código diz 0,95.
+
+00:00:07.300 --> 00:00:08.934
+É uma diferença grande.
+
+00:00:08.968 --> 00:00:11.934
+Pode substituir 1 bilhão
+por simplemente 1.
+
+00:00:11.968 --> 00:00:14.601
+Verá que o erro
+se torna pequeno.
+
+00:00:14.634 --> 00:00:17.501
+Queremos que os valores
+envolvidos nas contas
+
+00:00:17.534 --> 00:00:19.834
+da função de perda
+que nos interessa
+
+00:00:19.868 --> 00:00:23.067
+nunca sejam muito grandes
+ou muito pequenos.
+
+00:00:23.100 --> 00:00:24.834
+Um bom princípio
+
+00:00:24.868 --> 00:00:29.434
+é que sempre queremos variáveis
+com média zero e variância igual,
+
+00:00:29.467 --> 00:00:30.901
+sempre que possível.
+
+00:00:30.934 --> 00:00:32.734
+Além dos problemas
+numéricos,
+
+00:00:32.767 --> 00:00:35.267
+também há motivos matemáticos
+muito bons
+
+00:00:35.300 --> 00:00:38.734
+para manter seus valores
+em torno de média zero
+
+00:00:38.767 --> 00:00:41.534
+e variância igual,
+quando se faz otimização.
+
+00:00:41.567 --> 00:00:43.367
+Um problema mal condicionado
+
+00:00:43.400 --> 00:00:46.267
+significa que o otimizador
+precisa procurar muito
+
+00:00:46.300 --> 00:00:48.100
+para encontrar
+uma boa solução.
+
+00:00:48.133 --> 00:00:49.834
+Um problema bem condicionado
+
+00:00:49.868 --> 00:00:52.767
+torna o trabalho do otimizador
+muito mais fácil.
+
+00:00:52.801 --> 00:00:55.334
+Se estiver lidando com imagens,
+é simples.
+
+00:00:55.367 --> 00:00:57.601
+Pegue os valores
+dos pixels da imagem,
+
+00:00:57.634 --> 00:01:00.100
+costumam estar
+entre zero e 255,
+
+00:01:00.133 --> 00:01:03.901
+subtraia 128,
+e divida por 128.
+
+00:01:03.934 --> 00:01:06.000
+Não muda
+o conteúdo da imagem,
+
+00:01:06.033 --> 00:01:10.334
+mas facilita o procedimento
+numérico do otimizador.
+
+00:01:10.367 --> 00:01:12.567
+Também queremos
+os pesos e tendências
+
+00:01:12.601 --> 00:01:14.968
+inicializados
+em um bom ponto de partida
+
+00:01:15.000 --> 00:01:16.701
+para a descida do gradiente.
+
+00:01:16.734 --> 00:01:20.200
+Existem esquemas sofisticados
+para encontrar bons valores,
+
+00:01:20.234 --> 00:01:23.234
+mas vamos nos focar
+em um método simples e geral:
+
+00:01:23.267 --> 00:01:26.834
+selecionar pesos aleatoriamente
+de uma distribuição gaussiana
+
+00:01:26.868 --> 00:01:29.968
+com média zero
+e desvio padrão sigma.
+
+00:01:30.000 --> 00:01:34.067
+O valor de sigma determina
+a ordem de grandeza das saídas
+
+00:01:34.100 --> 00:01:37.334
+no ponto inicial
+da sua otimização.
+
+00:01:37.367 --> 00:01:39.601
+Por causa do softmax
+que vem depois,
+
+00:01:39.634 --> 00:01:41.667
+a ordem de grandeza
+também determina
+
+00:01:41.701 --> 00:01:45.100
+o quão estreita é
+sua distribuição inicial.
+
+00:01:45.133 --> 00:01:49.133
+Um sigma grande significa
+que terá picos largos.
+
+00:01:49.167 --> 00:01:51.100
+Terá opiniões fortes.
+
+00:01:51.133 --> 00:01:55.133
+Um sigma pequeno significa que
+a rede não tem certeza das coisas.
+
+00:01:55.167 --> 00:01:58.033
+É melhor começar com
+uma distribuição incerta
+
+00:01:58.067 --> 00:02:00.901
+e deixar a otimização
+se tornar mais confiante
+
+00:02:00.934 --> 00:02:02.934
+enquanto o treinamento
+continua.
+
+00:02:02.968 --> 00:02:05.000
+Comece com um sigma pequeno.
+
+00:02:05.033 --> 00:02:07.734
+Agora temos tudo
+de que precisamos
+
+00:02:07.767 --> 00:02:09.567
+para treinar
+este classificador.
+
+00:02:09.601 --> 00:02:11.200
+Temos os dados
+de treinamento,
+
+00:02:11.234 --> 00:02:15.000
+normalizado para ter média zero
+e variância 1,
+
+00:02:15.033 --> 00:02:17.334
+multiplicamos
+por uma matriz grande,
+
+00:02:17.367 --> 00:02:20.033
+inicializada
+com pesos aleatórios,
+
+00:02:20.067 --> 00:02:21.801
+aplicamos o softmax,
+
+00:02:21.834 --> 00:02:24.033
+depois a perda
+de entropia cruzada,
+
+00:02:24.067 --> 00:02:29.133
+e calculamos a média desta perda
+sobre todos os dados de treinamento.
+
+00:02:29.167 --> 00:02:33.167
+O pacote mágico de otimização
+calcula a derivada da perda
+
+00:02:33.200 --> 00:02:36.334
+em relação aos pesos
+e às tendências
+
+00:02:36.367 --> 00:02:40.634
+e dá um passo para trás
+na direção oposta à derivada.
+
+00:02:40.667 --> 00:02:42.300
+Depois começamos de novo.
+
+00:02:42.334 --> 00:02:46.167
+Repetimos o processo até chegar
+no mínimo da função de perda.
+

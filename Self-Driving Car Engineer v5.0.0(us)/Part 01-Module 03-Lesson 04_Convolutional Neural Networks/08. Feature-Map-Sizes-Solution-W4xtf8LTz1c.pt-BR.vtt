@@ -1,0 +1,59 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:04.033
+Se usar o preenchimento igual
+e o passo igual a 1,
+
+00:00:04.067 --> 00:00:07.934
+a largura e altura da saída
+são iguais às da entrada.
+
+00:00:07.968 --> 00:00:11.234
+Só acrescentamos zeros
+à imagem de entrada
+
+00:00:11.267 --> 00:00:13.200
+para que os tamanhos
+fiquem iguais.
+
+00:00:13.234 --> 00:00:16.934
+Se usar o preenchimento válido,
+com o passo igual a 1,
+
+00:00:16.968 --> 00:00:18.734
+não tem nenhum
+preenchimento.
+
+00:00:18.767 --> 00:00:23.000
+Se quer colocar o filtro na imagem
+sem usar preenchimento,
+
+00:00:23.033 --> 00:00:27.033
+tem que remover uma linha
+e uma coluna da imagem
+
+00:00:27.067 --> 00:00:28.934
+de cada lado.
+
+00:00:28.968 --> 00:00:33.801
+Sobram 26 características
+em cada mapa da saída.
+
+00:00:33.834 --> 00:00:36.133
+Se ainda usar
+o passo igual a 2,
+
+00:00:36.167 --> 00:00:38.667
+tem a metade
+do número de saídas,
+
+00:00:38.701 --> 00:00:41.501
+então 13 na largura
+e 13 na altura.
+
+00:00:41.534 --> 00:00:44.534
+Em todos os casos,
+a profundidade da saída não muda.
+

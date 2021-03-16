@@ -1,0 +1,122 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.367 --> 00:00:01.968
+Este é o caso no geral.
+
+00:00:02.002 --> 00:00:04.637
+Se você tem N inputs,
+e K outputs,
+
+00:00:04.671 --> 00:00:08.875
+você tem (N+1)K parâmetros
+para usar.
+
+00:00:08.908 --> 00:00:09.943
+Não um a mais.
+
+00:00:09.976 --> 00:00:14.948
+A questão é, você pode querer usar
+muitos outros parâmetros na prática.
+
+00:00:14.981 --> 00:00:16.616
+E é linear.
+
+00:00:16.649 --> 00:00:18.284
+Isto significa que o tipo
+de interações
+
+00:00:18.318 --> 00:00:22.455
+que você pode representar
+com este modelo é limitado.
+
+00:00:22.489 --> 00:00:26.926
+Por exemplo, se dois inputs
+interagem de um modo aditivo,
+
+00:00:26.960 --> 00:00:29.896
+seu modelo pode representá-los
+como uma multiplicação de matriz.
+
+00:00:29.929 --> 00:00:32.065
+Mas se dois inputs interagem
+de modo
+
+00:00:32.098 --> 00:00:35.502
+que o resultado depende
+do produto dos dois, por exemplo,
+
+00:00:35.535 --> 00:00:37.604
+você não poderá modelá-lo
+eficientemente
+
+00:00:37.637 --> 00:00:39.105
+com um modelo linear.
+
+00:00:39.139 --> 00:00:41.608
+Mas operações lineares
+são muito legais.
+
+00:00:41.641 --> 00:00:44.644
+Grandes multiplicações de matriz
+são exatamente o que GPUs
+
+00:00:44.678 --> 00:00:45.879
+foram projetados para fazer.
+
+00:00:45.912 --> 00:00:49.082
+Eles são relativamente baratos
+e muito, muito rápidos.
+
+00:00:49.115 --> 00:00:52.018
+Numericamente, as operações lineares
+são muito estáveis.
+
+00:00:52.052 --> 00:00:55.955
+Nós podemos mostrar matematicamente
+que pequenas mudanças no input
+
+00:00:55.989 --> 00:00:59.526
+não podem produzir grandes mudanças
+no output.
+
+00:00:59.559 --> 00:01:01.494
+Os derivativos também são
+muito bons.
+
+00:01:01.528 --> 00:01:04.631
+Os derivativos de uma função linear
+são constantes.
+
+00:01:04.664 --> 00:01:07.767
+Você pode ficar mais estável
+numericamente do que uma constante.
+
+00:01:07.801 --> 00:01:09.769
+Então, gostaríamos de manter
+nossos parâmetros
+
+00:01:09.803 --> 00:01:11.771
+dentro
+de grandes operações lineares,
+
+00:01:11.805 --> 00:01:13.139
+mas nós também queremos
+
+00:01:13.173 --> 00:01:15.475
+que o todo do modelo
+seja não linear.
+
+00:01:15.508 --> 00:01:19.446
+Nós não podemos apenas multiplicar
+nossos inputs por funções lineares,
+
+00:01:19.479 --> 00:01:22.849
+porque isto é equivalente
+a uma grande função linear.
+
+00:01:22.882 --> 00:01:25.685
+Então teremos que introduzir
+não linearidades.
+

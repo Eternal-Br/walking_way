@@ -1,0 +1,164 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:02.202
+A codificação one-hot
+funciona muito bem
+
+00:00:02.235 --> 00:00:03.503
+para a maioria dos problemas,
+
+00:00:03.536 --> 00:00:06.373
+até você chegar a uma situação
+em que tenha dezenas de milhares,
+
+00:00:06.406 --> 00:00:08.174
+ou até milhões de classes.
+
+00:00:08.208 --> 00:00:11.778
+Neste caso,
+seu vetor fica muito, muito grande
+
+00:00:11.811 --> 00:00:15.849
+e tem zeros por todo lado,
+se tornando bem ineficiente.
+
+00:00:15.882 --> 00:00:18.251
+Você verá mais tarde
+como lidamos com este problema
+
+00:00:18.284 --> 00:00:19.452
+usando embeddings.
+
+00:00:19.486 --> 00:00:21.187
+O legal nesta abordagem
+
+00:00:21.221 --> 00:00:24.124
+é que podemos medir
+se estamos indo bem
+
+00:00:24.157 --> 00:00:26.159
+apenas comparando
+dois vetores.
+
+00:00:26.192 --> 00:00:27.961
+Um que venha
+dos seus classificadores
+
+00:00:27.994 --> 00:00:30.397
+e contenha as probabilidades
+das suas classes
+
+00:00:30.430 --> 00:00:34.034
+e o vetor codificado one-hot
+que corresponde aos seus rótulos.
+
+00:00:34.067 --> 00:00:35.935
+Vamos ver como fazer isto
+na prática.
+
+00:00:35.969 --> 00:00:37.771
+O modo natural de medir
+a distância
+
+00:00:37.804 --> 00:00:39.973
+entre os dois vetores
+de probabilidade
+
+00:00:40.006 --> 00:00:42.042
+é chamado
+de "Entropia Cruzada."
+
+00:00:42.075 --> 00:00:44.744
+Este D aqui é de "distância".
+
+00:00:44.778 --> 00:00:47.113
+Na representação matemática
+fica assim.
+
+00:00:47.147 --> 00:00:50.016
+Tome cuidado,
+a entropia cruzada não é simétrica
+
+00:00:50.050 --> 00:00:51.418
+e você tem um log aqui.
+
+00:00:51.451 --> 00:00:52.485
+Você tem que garantir
+
+00:00:52.519 --> 00:00:56.456
+que seus rótulos e distribuições
+estão no lugar certo.
+
+00:00:56.489 --> 00:00:59.092
+Seus rótulos,
+por serem codificados em one-hot,
+
+00:00:59.125 --> 00:01:00.927
+terão vários zeros
+
+00:01:00.960 --> 00:01:03.496
+e você não quer levar
+o log de zero.
+
+00:01:03.530 --> 00:01:04.764
+Para sua distribuição,
+
+00:01:04.798 --> 00:01:06.533
+a softmax vai sempre garantir
+
+00:01:06.566 --> 00:01:09.269
+que você tenha
+um pouco de probabilidade,
+
+00:01:09.302 --> 00:01:11.671
+então você nunca pega
+um log de zero.
+
+00:01:11.705 --> 00:01:12.772
+Vamos recapitular,
+
+00:01:12.806 --> 00:01:14.441
+porque já temos
+muitas informações.
+
+00:01:14.474 --> 00:01:18.078
+Temos um input,
+ele vai ser transformado em logits
+
+00:01:18.111 --> 00:01:19.279
+usando um modelo linear,
+
+00:01:19.312 --> 00:01:22.749
+que é uma multiplicação de matriz
+e a excentricidade.
+
+00:01:22.782 --> 00:01:26.186
+Depois vamos alimentar os logits,
+que são scores,
+
+00:01:26.219 --> 00:01:29.155
+em uma softmax para transformá-los
+em probabilidades.
+
+00:01:29.189 --> 00:01:31.424
+Depois vamos comparar
+estas probabilidades
+
+00:01:31.458 --> 00:01:33.293
+com os rótulos codificados
+em one-hot,
+
+00:01:33.326 --> 00:01:35.295
+usando a função
+de entropia cruzada.
+
+00:01:35.328 --> 00:01:37.330
+Toda esta configuração é
+frequentemente chamada
+
+00:01:37.364 --> 00:01:39.466
+de "classificação logística
+multinomial."
+

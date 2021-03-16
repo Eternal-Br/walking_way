@@ -1,0 +1,42 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.567 --> 00:00:03.203
+Vou apresentar
+a função não linear favorita
+
+00:00:03.236 --> 00:00:04.504
+do engenheiro preguiçoso:
+
+00:00:04.537 --> 00:00:07.707
+as unidades lineares retificadas,
+ou RELU para abreviar.
+
+00:00:07.741 --> 00:00:11.177
+RELUs são literalmente as funções
+não lineares mais simples
+
+00:00:11.211 --> 00:00:12.379
+em que se pode pensar.
+
+00:00:12.412 --> 00:00:15.081
+Elas são lineares
+se x é maior que 0,
+
+00:00:15.115 --> 00:00:17.150
+e eles são o 0
+nos outros lugares.
+
+00:00:17.183 --> 00:00:20.787
+RELUs também têm
+derivativos legais.
+
+00:00:20.820 --> 00:00:22.155
+Quais desses gráficos
+você acha
+
+00:00:22.188 --> 00:00:24.824
+que representa melhor
+o derivativo de um RELU?
+

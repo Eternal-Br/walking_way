@@ -1,0 +1,86 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:02.701
+Chama-se
+um modulo inception.
+
+00:00:02.734 --> 00:00:05.167
+Vai parecer
+um pouco mais complicado.
+
+00:00:05.200 --> 00:00:07.467
+Podem pular esta seção,
+se quiserem.
+
+00:00:07.501 --> 00:00:10.367
+Não é essencial
+para o resto.
+
+00:00:10.400 --> 00:00:14.167
+A ideia é que
+a cada camada do seu ConvNet,
+
+00:00:14.200 --> 00:00:15.701
+vocês podem escolher:
+
+00:00:15.734 --> 00:00:18.901
+ter uma operação de agregação,
+uma convolução...
+
+00:00:18.934 --> 00:00:24.567
+Vocês devem decidir.
+É uma convolução 1x1, 3x3 ou 5x5?
+
+00:00:24.601 --> 00:00:29.133
+Tudo isso é benéfico ao poder
+de modelagem da sua rede.
+
+00:00:29.167 --> 00:00:31.901
+Então, por que escolher?
+Vamos usar tudo.
+
+00:00:31.934 --> 00:00:34.300
+Um módulo inception
+é assim.
+
+00:00:34.334 --> 00:00:36.667
+Em vez de ter
+uma única convolução,
+
+00:00:36.701 --> 00:00:41.200
+vocês tem uma composição de
+agregação média seguida de 1x1,
+
+00:00:41.234 --> 00:00:46.467
+depois, uma convolução 1x1,
+depois uma 1x1 seguida de uma 3x3.
+
+00:00:46.501 --> 00:00:49.067
+E uma 1x1
+seguida por uma 5x5.
+
+00:00:49.100 --> 00:00:52.634
+No fim, vocês concatenam
+a saída de cada uma.
+
+00:00:52.667 --> 00:00:54.167
+Parece complicado.
+
+00:00:54.200 --> 00:00:58.300
+Mas vocês podem escolher
+esses parâmetros de tal forma,
+
+00:00:58.334 --> 00:01:02.167
+que o nº total de parâmetros
+no seu modelo é muito pequeno.
+
+00:01:02.200 --> 00:01:04.200
+Mas ele
+tem um desempenho melhor
+
+00:01:04.234 --> 00:01:06.767
+do que com
+uma simples convolução.
+

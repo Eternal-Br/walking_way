@@ -1,0 +1,506 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Quiz: TensorFlow Dropout
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Deep Neural Networks
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Let's Go Deeper.html">
+       01. Let's Go Deeper
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Intro to Deep Neural Networks.html">
+       02. Intro to Deep Neural Networks
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Number of Parameters.html">
+       03. Number of Parameters
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Linear Models are Limited.html">
+       04. Linear Models are Limited
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Rectified Linear Units.html">
+       05. Rectified Linear Units
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Network of ReLUs.html">
+       06. Network of ReLUs
+      </a>
+     </li>
+     <li class="">
+      <a href="07. 2-Layer Neural Network.html">
+       07. 2-Layer Neural Network
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Quiz TensorFlow ReLu.html">
+       08. Quiz: TensorFlow ReLu
+      </a>
+     </li>
+     <li class="">
+      <a href="09. No Neurons.html">
+       09. No Neurons
+      </a>
+     </li>
+     <li class="">
+      <a href="10. The Chain Rule.html">
+       10. The Chain Rule
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Backprop.html">
+       11. Backprop
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Deep Neural Network in TensorFlow.html">
+       12. Deep Neural Network in TensorFlow
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Training a Deep Learning Network.html">
+       13. Training a Deep Learning Network
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Save and Restore TensorFlow Models.html">
+       14. Save and Restore TensorFlow Models
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Finetuning.html">
+       15. Finetuning
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Regularization Intro.html">
+       16. Regularization Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Regularization.html">
+       17. Regularization
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Regularization Quiz.html">
+       18. Regularization Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Dropout.html">
+       19. Dropout
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Dropout Pt. 2.html">
+       20. Dropout Pt. 2
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Quiz TensorFlow Dropout.html">
+       21. Quiz: TensorFlow Dropout
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Quiz 2 TensorFlow Dropout.html">
+       22. Quiz 2: TensorFlow Dropout
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          21. Quiz: TensorFlow Dropout
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="tensorflow-dropout">
+          TensorFlow Dropout
+         </h1>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt='Figure 1: Taken from the paper "Dropout: A Simple Way to Prevent Neural Networks from
+' class="img img-fluid" src="img/dropout-node.jpeg"/>
+          <figcaption class="figure-caption">
+           <p>
+            Figure 1: Taken from the paper "Dropout: A Simple Way to Prevent Neural Networks from
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Dropout is a regularization technique for reducing overfitting.  The technique temporarily drops units (
+          <a href="https://en.wikipedia.org/wiki/Artificial_neuron" rel="noopener noreferrer" target="_blank">
+           artificial neurons
+          </a>
+          ) from the network, along with all of those units' incoming and outgoing connections. Figure 1 illustrates how dropout works.
+         </p>
+         <p>
+          TensorFlow provides the
+          <a href="https://www.tensorflow.org/api_docs/python/tf/nn/dropout" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.nn.dropout()
+           </code>
+          </a>
+          function, which you can use to implement dropout.
+         </p>
+         <p>
+          Let's look at an example of how to use
+          <a href="https://www.tensorflow.org/api_docs/python/tf/nn/dropout" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.nn.dropout()
+           </code>
+          </a>
+          .
+         </p>
+         <pre><code class="python language-python">keep_prob = tf.placeholder(tf.float32) # probability to keep units
+
+hidden_layer = tf.add(tf.matmul(features, weights[0]), biases[0])
+hidden_layer = tf.nn.relu(hidden_layer)
+hidden_layer = tf.nn.dropout(hidden_layer, keep_prob)
+
+logits = tf.add(tf.matmul(hidden_layer, weights[1]), biases[1])</code></pre>
+         <p>
+          The code above illustrates how to apply dropout to a neural network.
+         </p>
+         <p>
+          The
+          <a href="https://www.tensorflow.org/api_docs/python/tf/nn/dropout" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.nn.dropout()
+           </code>
+          </a>
+          function takes in two parameters:
+         </p>
+         <ol>
+          <li>
+           <code>
+            hidden_layer
+           </code>
+           : the tensor to which you would like to apply dropout
+          </li>
+          <li>
+           <code>
+            keep_prob
+           </code>
+           : the probability of keeping (i.e.
+           <em>
+            not
+           </em>
+           dropping) any given unit
+          </li>
+         </ol>
+         <p>
+          <code>
+           keep_prob
+          </code>
+          allows you to adjust the number of units to drop. In order to compensate for dropped units,
+          <a href="https://www.tensorflow.org/api_docs/python/tf/nn/dropout" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.nn.dropout()
+           </code>
+          </a>
+          multiplies all units that are kept (i.e.
+          <em>
+           not
+          </em>
+          dropped) by
+          <code>
+           1/keep_prob
+          </code>
+          .
+         </p>
+         <p>
+          During training, a good starting value for
+          <code>
+           keep_prob
+          </code>
+          is
+          <code>
+           0.5
+          </code>
+          .
+         </p>
+         <p>
+          During testing, use a
+          <code>
+           keep_prob
+          </code>
+          value of
+          <code>
+           1.0
+          </code>
+          to keep all units and maximize the power of the model.
+         </p>
+         <h2 id="quiz-1">
+          Quiz 1
+         </h2>
+         <p>
+          Take a look at the code snippet below.  Do you see what's wrong?
+         </p>
+         <p>
+          There's nothing wrong with the syntax, however the test accuracy is extremely low.
+         </p>
+         <pre><code class="python language-python">...
+
+keep_prob = tf.placeholder(tf.float32) # probability to keep units
+
+hidden_layer = tf.add(tf.matmul(features, weights[0]), biases[0])
+hidden_layer = tf.nn.relu(hidden_layer)
+hidden_layer = tf.nn.dropout(hidden_layer, keep_prob)
+
+logits = tf.add(tf.matmul(hidden_layer, weights[1]), biases[1])
+
+...
+
+with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+
+    for epoch_i in range(epochs):
+        for batch_i in range(batches):
+            ....
+
+            sess.run(optimizer, feed_dict={
+                features: batch_features,
+                labels: batch_labels,
+                keep_prob: 0.5})
+
+    validation_accuracy = sess.run(accuracy, feed_dict={
+        features: test_features,
+        labels: test_labels,
+        keep_prob: 0.5})</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             What's wrong with the above code?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1525903397041" name="626720" type="radio" value="a1525903397041"/>
+           <label for="a1525903397041">
+            <p>
+             Dropout doesn't work with batching.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1525903425645" name="626720" type="radio" value="a1525903425645"/>
+           <label for="a1525903425645">
+            <p>
+             The keep_prob value of 0.5 is too low.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1525903434822" name="626720" type="radio" value="a1525903434822"/>
+           <label for="a1525903434822">
+            <p>
+             There shouldn't be a value passed to keep_prob when testing for accuracy.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1525903436038" name="626720" type="radio" value="a1525903436038"/>
+           <label for="a1525903436038">
+            <p>
+             keep_prob should be set to 1.0 when evaluating validation accuracy.
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          keep_prob should be set to 1.0 when evaluating validation accuracy.
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="22. Quiz 2 TensorFlow Dropout.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('21. Quiz: TensorFlow Dropout')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

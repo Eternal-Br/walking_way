@@ -1,0 +1,131 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:02.601
+Ajustar a taxa de aprendizagem
+pode ser muito estranho.
+
+00:00:02.634 --> 00:00:05.400
+Por exemplo, você imagina
+que uma taxa mais alta
+
+00:00:05.434 --> 00:00:08.534
+faz você aprender mais,
+ou que aprende mais rápido.
+
+00:00:08.567 --> 00:00:09.734
+Mas isso não é verdade.
+
+00:00:09.767 --> 00:00:12.267
+Na verdade, muitas vezes
+você pode pegar um modelo,
+
+00:00:12.300 --> 00:00:13.834
+diminuir
+a taxa de aprendizagem,
+
+00:00:13.868 --> 00:00:16.133
+e chegar a um modelo melhor
+mais rápido.
+
+00:00:16.167 --> 00:00:17.601
+Fica ainda pior.
+
+00:00:17.634 --> 00:00:21.701
+Você quer olhar para a curva
+que mostra a perda com o tempo
+
+00:00:21.734 --> 00:00:23.868
+para ver a velocidade
+com a qual está aprendendo.
+
+00:00:23.901 --> 00:00:26.200
+A taxa mais alta
+começa mais rápido,
+
+00:00:26.234 --> 00:00:27.501
+mas chega a um patamar.
+
+00:00:27.534 --> 00:00:30.968
+A taxa menor continua
+descendo e melhorando.
+
+00:00:31.000 --> 00:00:35.100
+É uma imagem muito familiar
+para quem treina redes neurais.
+
+00:00:35.133 --> 00:00:37.200
+Nunca confie
+em quão rápido aprende.
+
+00:00:37.234 --> 00:00:40.834
+Costuma não ter nada a ver
+com a qualidade do treinamento.
+
+00:00:40.868 --> 00:00:44.234
+É por isso que DGE tem
+a reputação de ser magia negra.
+
+00:00:44.267 --> 00:00:47.968
+Você tem muitos hiperparâmetros
+nos quais pode mexer.
+
+00:00:48.000 --> 00:00:51.167
+Parâmetros de inicialização,
+taxa de aprendizagem,
+
+00:00:51.200 --> 00:00:54.534
+decaimento, momento...
+E precisam estar certos.
+
+00:00:54.567 --> 00:00:56.567
+Na prática, não é tão ruim.
+
+00:00:56.601 --> 00:00:58.834
+Se quiser se lembrar
+apenas de uma coisa,
+
+00:00:58.868 --> 00:01:00.934
+é que quando as coisas
+não funcionam,
+
+00:01:00.968 --> 00:01:03.534
+primeiro tente diminuir
+a taxa de aprendizagem.
+
+00:01:03.567 --> 00:01:06.534
+Tem muitas soluções boas
+para modelos pequenos,
+
+00:01:06.567 --> 00:01:09.467
+mas nenhuma ainda é
+completamente satisfatória
+
+00:01:09.501 --> 00:01:12.801
+para os modelos muito grandes
+pelos quais nos interessamos.
+
+00:01:12.834 --> 00:01:15.400
+Vou mencionar uma abordagem
+chamada ADAGRAD,
+
+00:01:15.434 --> 00:01:17.400
+que torna as coisas
+um pouco mais fáceis.
+
+00:01:17.434 --> 00:01:19.501
+ADAGRAD é uma modificação
+da DGE,
+
+00:01:19.534 --> 00:01:23.000
+que faz momento e decaimento
+implicitamente por você.
+
+00:01:23.033 --> 00:01:26.567
+Usar ADAGRAD costuma tornar
+o aprendizado menos sensível
+
+00:01:26.601 --> 00:01:28.167
+aos hiperparâmetros.
+

@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.100 --> 00:00:03.970
+Se sua precisão muda
+de 80% para 80,1%,
+
+00:00:04.004 --> 00:00:08.008
+no máximo apenas três exemplos
+estão mudando de rótulo.
+
+00:00:08.041 --> 00:00:11.378
+É 0,1 vezes 3 mil
+dividido por 100.
+
+00:00:11.411 --> 00:00:13.313
+Isto é muito pouco.
+
+00:00:13.346 --> 00:00:15.148
+Pode ser apenas barulho.
+
+00:00:15.181 --> 00:00:18.985
+E ela não atende minha regra
+de no mínimo 30 exemplos.
+
+00:00:19.019 --> 00:00:22.822
+A mesma coisa vale
+de 80% para 80,5%.
+
+00:00:22.856 --> 00:00:26.526
+Na pior das hipóteses,
+só 15 exemplos os estão mudando.
+
+00:00:26.559 --> 00:00:28.928
+Quando você recebe
+uma melhora de 1%,
+
+00:00:28.962 --> 00:00:31.631
+indo de 80% para 81%,
+
+00:00:31.664 --> 00:00:34.534
+isto são robustos 30 exemplos
+
+00:00:34.567 --> 00:00:37.904
+que estão indo do incorreto
+para o correto.
+
+00:00:37.937 --> 00:00:39.105
+Isto é um forte sinal
+
+00:00:39.139 --> 00:00:40.707
+de que o que quer
+que esteja fazendo,
+
+00:00:40.740 --> 00:00:42.575
+está aumentando a precisão.
+

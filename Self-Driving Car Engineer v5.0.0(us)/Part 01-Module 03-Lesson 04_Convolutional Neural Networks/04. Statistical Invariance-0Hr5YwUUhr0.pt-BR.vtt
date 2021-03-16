@@ -1,0 +1,120 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:02.000
+Aqui está outro exemplo.
+
+00:00:02.033 --> 00:00:04.934
+Você tem uma imagem
+e quer que a rede diga
+
+00:00:04.968 --> 00:00:06.934
+que é a imagem de um gato.
+
+00:00:06.968 --> 00:00:11.067
+Não importa onde está o gato.
+Continua sendo um gato.
+
+00:00:11.100 --> 00:00:14.834
+Se a rede tiver que aprender
+sobre gatos no canto esquerdo,
+
+00:00:14.868 --> 00:00:17.701
+e gatos no canto direito,
+separadamente,
+
+00:00:17.734 --> 00:00:20.200
+é muito trabalho
+que ela tem que fazer.
+
+00:00:20.234 --> 00:00:25.534
+E se dissermos explicitamente
+que os objetos são os mesmos
+
+00:00:25.567 --> 00:00:28.734
+independente de estarem
+na esquerda ou na direita?
+
+00:00:28.767 --> 00:00:31.334
+Isso se chama
+invariância por translação.
+
+00:00:31.367 --> 00:00:33.968
+Posições diferentes,
+mas o mesmo gato.
+
+00:00:34.000 --> 00:00:35.968
+Outro exemplo:
+
+00:00:36.000 --> 00:00:39.501
+Imagine que você tem
+um texto longo sobre gatos.
+
+00:00:39.534 --> 00:00:45.400
+O significado de "gato" muda
+dependendo de onde está?
+
+00:00:45.434 --> 00:00:47.033
+Em geral, não.
+
+00:00:47.067 --> 00:00:49.200
+Se treinar uma rede
+com texto,
+
+00:00:49.234 --> 00:00:53.067
+a parte da rede que aprende
+o que é um gato
+
+00:00:53.100 --> 00:00:56.334
+deve ser usada sempre que
+aparece a palavra "gato".
+
+00:00:56.367 --> 00:00:58.968
+Não precisa aprender
+todas as vezes.
+
+00:00:59.000 --> 00:01:03.701
+A forma de conseguir isso é com
+compartilhamento de pesos.
+
+00:01:03.734 --> 00:01:07.567
+Você sabe que duas entradas
+contêm a mesma informação
+
+00:01:07.601 --> 00:01:09.467
+e compartilha seus pesos.
+
+00:01:09.501 --> 00:01:12.501
+Treine os pesos junto
+para essas duas entradas.
+
+00:01:12.534 --> 00:01:14.367
+É uma ideia
+muito importante.
+
+00:01:14.400 --> 00:01:16.033
+Invariantes estatísticos,
+
+00:01:16.067 --> 00:01:19.801
+coisas que não mudam
+com o tempo ou espaço,
+
+00:01:19.834 --> 00:01:21.334
+estão por toda a parte.
+
+00:01:21.367 --> 00:01:24.267
+Para imagens, a ideia
+de compartilhar os pesos
+
+00:01:24.300 --> 00:01:27.133
+vai nos levar a estudar
+redes convolucionais.
+
+00:01:27.167 --> 00:01:28.834
+Para texto e sequências,
+
+00:01:28.868 --> 00:01:32.300
+vai nos levar a embarcação
+e redes neurais recorrentes.
+

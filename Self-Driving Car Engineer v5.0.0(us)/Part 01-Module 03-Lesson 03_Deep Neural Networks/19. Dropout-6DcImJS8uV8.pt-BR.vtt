@@ -1,0 +1,145 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.167 --> 00:00:03.033
+Há outra técnica importante
+de regularização
+
+00:00:03.067 --> 00:00:06.801
+que surgiu recentemente
+e funciona muito bem.
+
+00:00:07.501 --> 00:00:10.367
+Ela parece muito louca
+quando vista pela primeira vez,
+
+00:00:10.400 --> 00:00:11.934
+então me acompanhe.
+
+00:00:11.968 --> 00:00:13.567
+Ela se chama Dropout.
+
+00:00:13.601 --> 00:00:15.634
+Ela funciona assim:
+
+00:00:15.667 --> 00:00:17.334
+imagine que você possui
+uma camada
+
+00:00:17.367 --> 00:00:19.200
+que se conecta
+com outra camada.
+
+00:00:19.234 --> 00:00:21.634
+Os valores que vão de uma
+para a outra
+
+00:00:21.667 --> 00:00:23.367
+são chamados de ativações.
+
+00:00:24.000 --> 00:00:26.834
+Pegue as ativações
+e, de forma aleatória,
+
+00:00:26.868 --> 00:00:29.300
+para cada exemplo
+que você treinar a sua rede,
+
+00:00:29.334 --> 00:00:31.267
+configure metade deles
+como sendo zero.
+
+00:00:32.100 --> 00:00:37.167
+De forma aleatória, você pegou
+metade dos dados da sua rede
+
+00:00:37.200 --> 00:00:40.300
+e os destruiu.
+Tudo de forma aleatória.
+
+00:00:41.133 --> 00:00:43.234
+Se isso não parece loucura
+para você,
+
+00:00:43.267 --> 00:00:46.267
+então você pode estudar
+com Geoffrey Hinton,
+
+00:00:46.300 --> 00:00:47.968
+que criou a técnica.
+
+00:00:48.000 --> 00:00:49.734
+O que acontece
+com a Dropout?
+
+00:00:49.767 --> 00:00:55.200
+Sua rede não pode confiar
+em nenhuma ativação apresentada,
+
+00:00:55.234 --> 00:00:58.067
+porque ela pode ser comprimida
+a qualquer momento.
+
+00:00:58.701 --> 00:01:02.400
+Ele precisa fazer a representação
+redundante de tudo
+
+00:01:02.434 --> 00:01:05.901
+para garantir que algumas
+informações permaneçam.
+
+00:01:05.934 --> 00:01:07.734
+É como jogar wack a mole.
+
+00:01:07.767 --> 00:01:09.767
+Uma ativação é comprimida,
+
+00:01:09.801 --> 00:01:13.501
+mas há sempre uma ou mais
+que fazem o mesmo trabalho
+
+00:01:13.534 --> 00:01:15.167
+e ela não morre.
+
+00:01:15.200 --> 00:01:17.868
+Então tudo fica bem
+no final.
+
+00:01:17.901 --> 00:01:20.701
+Forçar a sua rede a aprender
+representações redundantes
+
+00:01:20.734 --> 00:01:22.601
+pode parecer ineficiente,
+
+00:01:22.634 --> 00:01:25.167
+mas isso deixa as coisas
+mais robustas
+
+00:01:25.200 --> 00:01:26.834
+e impede o superajuste.
+
+00:01:26.868 --> 00:01:30.434
+E a sua rede agirá
+como se estivesse consentindo
+
+00:01:30.467 --> 00:01:32.367
+a um conjunto de redes,
+
+00:01:32.400 --> 00:01:34.901
+que é uma ótima maneira
+de aprimorar o desempenho.
+
+00:01:34.934 --> 00:01:38.968
+Dropout é uma das técnicas
+recentes mais importantes.
+
+00:01:39.000 --> 00:01:40.667
+Se a Dropout não servir
+para você,
+
+00:01:40.701 --> 00:01:42.767
+você deve estar utilizando
+uma rede maior.
+

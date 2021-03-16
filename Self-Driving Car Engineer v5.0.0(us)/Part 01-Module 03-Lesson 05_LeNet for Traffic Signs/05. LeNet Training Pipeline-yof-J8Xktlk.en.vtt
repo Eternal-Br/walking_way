@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.259
+Here, we set up our TensorFlow variables.
+
+00:00:03.259 --> 00:00:06.809
+x is a placeholder that will store our input batches.
+
+00:00:06.809 --> 00:00:09.689
+We initialize the batch size to None,
+
+00:00:09.689 --> 00:00:13.414
+which allows the placeholder to later accept a batch of any size,
+
+00:00:13.414 --> 00:00:19.780
+and we set the image dimensions to 32 by 32 by 1. y stores our labels.
+
+00:00:19.780 --> 00:00:23.310
+In this case, our labels come through with sparse variables,
+
+00:00:23.309 --> 00:00:25.364
+which just means that they're integers.
+
+00:00:25.364 --> 00:00:27.314
+They aren't one-hot encoded yet.
+
+00:00:27.315 --> 00:00:31.770
+We use the tf.one_hot function to one-hot encode the labels.
+
+00:00:31.769 --> 00:00:34.439
+Now we set up our training pipeline.
+
+00:00:34.439 --> 00:00:37.070
+First, we have another hyperparameter to tune.
+
+00:00:37.070 --> 00:00:41.605
+The learning rate tells TensorFlow how quickly to update the network's weights.
+
+00:00:41.604 --> 00:00:44.809
+0.001 is a good default value
+
+00:00:44.810 --> 00:00:47.594
+but you can experiment with other rates and see how they do.
+
+00:00:47.594 --> 00:00:52.795
+Next, we pass the input data to the LeNet function to calculate our logits.
+
+00:00:52.795 --> 00:00:57.170
+We used the tf.nn.softmax_cross_entropy_with_logits
+
+00:00:57.170 --> 00:00:59.450
+function to compare those logits to
+
+00:00:59.450 --> 00:01:02.715
+the ground truth labels and calculate the cross entropy.
+
+00:01:02.715 --> 00:01:05.480
+Cross entropy is just a measure of how different
+
+00:01:05.480 --> 00:01:08.359
+the logits are from the ground truth training labels.
+
+00:01:08.359 --> 00:01:13.924
+The tf.reduce_mean function averages the cross entropy from all of the training images.
+
+00:01:13.924 --> 00:01:17.810
+AdamOptimizer uses the Adam algorithm to minimize
+
+00:01:17.810 --> 00:01:22.480
+the loss function similarly to what stochastic gradient descent does.
+
+00:01:22.480 --> 00:01:27.344
+The Adam algorithm is a little more sophisticated than stochastic gradient descent,
+
+00:01:27.344 --> 00:01:29.905
+so it's a good default choice for an optimizer.
+
+00:01:29.905 --> 00:01:33.780
+This is where we use the learning rate hyperparameter that we set earlier.
+
+00:01:33.780 --> 00:01:37.409
+Finally, we run the minimize function on the optimizer which
+
+00:01:37.409 --> 00:01:41.959
+uses backpropagation to update the network and minimize our training loss.
+
+00:01:41.959 --> 00:01:43.759
+So this is our training pipeline.
+
+00:01:43.760 --> 00:01:46.527
+But so far, it's only a pipeline,
+
+00:01:46.527 --> 00:01:50.010
+we have to actually pass data into the pipeline for it to work.
+
+00:01:50.010 --> 00:01:52.000
+We'll get to that in a few code cells.
+

@@ -1,0 +1,214 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.234 --> 00:00:03.200
+O problema ao escalonar
+o gradiente descendente é simples,
+
+00:00:03.234 --> 00:00:05.267
+você precisa calcular
+este gradiente.
+
+00:00:05.300 --> 00:00:07.000
+Existe outra regra geral,
+
+00:00:07.033 --> 00:00:09.100
+se para calcular a sua perda
+é necessário
+
+00:00:09.133 --> 00:00:10.901
+operações de floating point,
+
+00:00:10.934 --> 00:00:12.934
+para calcular
+os gradientes deles
+
+00:00:12.968 --> 00:00:14.801
+é necessário três vezes
+este cálculo.
+
+00:00:14.834 --> 00:00:17.934
+Como vimos antes,
+esta função é enorme.
+
+00:00:17.968 --> 00:00:21.667
+Ela depende de cada elemento
+do seu conjunto de treinamento.
+
+00:00:21.701 --> 00:00:25.000
+Você vai calcular muito se
+o conjunto de dados for grande.
+
+00:00:25.033 --> 00:00:28.167
+E nós queremos treinar
+muitos dados porque, na prática,
+
+00:00:28.200 --> 00:00:30.868
+com problemas reais,
+você recebe mais ganhos
+
+00:00:30.901 --> 00:00:32.434
+ao utilizar mais dados.
+
+00:00:32.467 --> 00:00:34.567
+Como o gradiente descendente
+é interativo,
+
+00:00:34.601 --> 00:00:36.934
+você fará isso
+em muitos passos.
+
+00:00:36.968 --> 00:00:40.801
+Você acessará os seus dados
+dezenas ou centenas de vezes.
+
+00:00:40.834 --> 00:00:42.001
+Isso não é bom.
+
+00:00:42.033 --> 00:00:45.033
+Então nós vamos trapacear.
+Em vez de calcular a perda,
+
+00:00:45.067 --> 00:00:47.000
+nós comparamos
+uma estimativa disso.
+
+00:00:47.033 --> 00:00:50.367
+Uma estimativa muito ruim.
+Terrível na verdade.
+
+00:00:50.400 --> 00:00:54.234
+Ela será tão ruim que você
+não saberá como ela funciona.
+
+00:00:54.267 --> 00:00:55.434
+E você terá razão,
+
+00:00:55.467 --> 00:00:59.200
+porque nós precisaremos
+deixá-la melhor.
+
+00:00:59.234 --> 00:01:01.133
+Para a estimativa
+que utilizaremos
+
+00:01:01.167 --> 00:01:05.968
+nós calculamos a perda média
+de uma pequena fração dos dados.
+
+00:01:06.000 --> 00:01:10.467
+Cerca de um a mil
+amostras de treinamento por vez.
+
+00:01:10.501 --> 00:01:12.868
+A escolha aleatória
+é muito importante.
+
+00:01:12.901 --> 00:01:15.868
+Se você não escolher
+de forma aleatória,
+
+00:01:15.901 --> 00:01:17.834
+ela não funcionará.
+
+00:01:17.868 --> 00:01:21.367
+Pegamos pequenas partes
+dos dados chaining,
+
+00:01:21.400 --> 00:01:23.467
+calculamos a perda
+desta amostra,
+
+00:01:23.501 --> 00:01:25.934
+calculamos o derivativo dela
+
+00:01:25.968 --> 00:01:29.267
+e fingimos que o derivativo
+é a direção correta
+
+00:01:29.300 --> 00:01:31.234
+para efetuar
+o gradiente descendente.
+
+00:01:31.267 --> 00:01:33.467
+Esta não é sempre
+a direção correta,
+
+00:01:33.501 --> 00:01:37.734
+e isso pode aumentar
+a perda real e não reduzi-la,
+
+00:01:37.767 --> 00:01:41.001
+mas nós iremos compensar
+fazendo isso muitas vezes,
+
+00:01:41.033 --> 00:01:44.434
+dando pequenos passos
+por vez.
+
+00:01:44.467 --> 00:01:47.167
+É bem mais barato
+calcular cada passo,
+
+00:01:47.200 --> 00:01:48.701
+mas nós pagamos um preço,
+
+00:01:48.734 --> 00:01:50.868
+precisamos fazer
+muitos pequenos passos
+
+00:01:50.901 --> 00:01:52.534
+em vez de um passo maior.
+
+00:01:52.567 --> 00:01:55.534
+No final, a gente
+acaba ganhando muito.
+
+00:01:55.567 --> 00:01:57.467
+Como você verá
+nos exercícios,
+
+00:01:57.501 --> 00:01:59.400
+fazer isto
+é muito mais eficaz
+
+00:01:59.434 --> 00:02:01.100
+do que o gradiente
+descendente.
+
+00:02:01.133 --> 00:02:03.868
+Esta técnica se chama gradiente
+descendente estocástico
+
+00:02:03.901 --> 00:02:05.734
+e é a essência
+do deep learning.
+
+00:02:05.767 --> 00:02:10.367
+Isso porque ela escalona bem
+com grandes dados e modelos.
+
+00:02:10.400 --> 00:02:13.400
+E nós queremos grandes dados
+e grandes modelos.
+
+00:02:13.434 --> 00:02:16.067
+O gradiente descendente
+estocástico, SGD,
+
+00:02:16.100 --> 00:02:17.734
+é ótimo
+e pode ser escalonado,
+
+00:02:17.767 --> 00:02:20.334
+mas como ele é
+um otimizador ruim,
+
+00:02:20.367 --> 00:02:23.133
+e é o único rápido,
+
+00:02:23.167 --> 00:02:25.467
+ele apresenta
+muitos problemas.
+

@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:02.102
+Imagine que seu conjunto
+de validação
+
+00:00:02.135 --> 00:00:06.373
+tenha apenas seis exemplos
+com uma precisão de 66%.
+
+00:00:06.406 --> 00:00:08.074
+Agora você ajusta seu modelo,
+
+00:00:08.108 --> 00:00:12.679
+e seu desempenho vai
+de 66% para 83%.
+
+00:00:12.712 --> 00:00:15.415
+É algo em que você pode confiar?
+Claro que não.
+
+00:00:15.448 --> 00:00:18.985
+Isto é só uma mudança de rótulo
+para um exemplo simples.
+
+00:00:19.019 --> 00:00:20.687
+Podia ser apenas barulho.
+
+00:00:20.720 --> 00:00:22.255
+Quanto maior seu conjunto
+de teste,
+
+00:00:22.288 --> 00:00:25.425
+menos barulhenta será
+a precisão da medição.
+
+00:00:25.458 --> 00:00:27.927
+Aqui uma regra prática
+bem útil.
+
+00:00:27.961 --> 00:00:29.396
+E se você é um estatístico,
+
+00:00:29.429 --> 00:00:31.664
+fique à vontade
+para cobrir as orelhas agora.
+
+00:00:31.698 --> 00:00:34.334
+Uma mudança
+que afeta 30 exemplos
+
+00:00:34.367 --> 00:00:36.836
+em seu conjunto de validação,
+de um jeito ou de outro,
+
+00:00:36.870 --> 00:00:39.239
+normalmente é estatisticamente
+significante
+
+00:00:39.272 --> 00:00:40.974
+e pode ser confiável.
+

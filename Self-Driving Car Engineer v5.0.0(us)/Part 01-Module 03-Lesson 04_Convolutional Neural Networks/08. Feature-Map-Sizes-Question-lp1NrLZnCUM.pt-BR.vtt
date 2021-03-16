@@ -1,0 +1,35 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:03.801
+Imagine que você tem
+uma imagem 28x28.
+
+00:00:03.834 --> 00:00:07.133
+Você faz uma convolução 3x3
+
+00:00:07.167 --> 00:00:09.267
+com uma profundidade de entrada
+igual a 3
+
+00:00:09.300 --> 00:00:11.234
+e profundidade de saída
+igual a 8.
+
+00:00:11.267 --> 00:00:15.000
+Quais são as dimensões do mapa
+de características na saída,
+
+00:00:15.033 --> 00:00:18.934
+quando usa preenchimento igual,
+com passo igual a 1,
+
+00:00:18.968 --> 00:00:22.000
+quando usa preenchimento válido
+com passo igual a 1,
+
+00:00:22.033 --> 00:00:25.567
+e quando usa preenchimento válido
+com passo igual a 2?
+

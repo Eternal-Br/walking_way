@@ -1,0 +1,175 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:02.202
+Aqui está um exemplo.
+
+00:00:02.235 --> 00:00:05.739
+Imagine que sua rede é
+uma pilha de operações simples.
+
+00:00:05.772 --> 00:00:09.576
+como transformações lineares,
+RELUs, o que você quiser.
+
+00:00:09.609 --> 00:00:13.646
+Algumas têm parâmetros,
+como uma transformação matricial,
+
+00:00:13.680 --> 00:00:15.615
+algumas não, como os RELUs.
+
+00:00:15.648 --> 00:00:18.051
+Quando você aplica seus dados
+a um input x,
+
+00:00:18.084 --> 00:00:21.554
+os dados flutuam pela pilha
+até suas previsões y.
+
+00:00:21.588 --> 00:00:23.356
+Para computar os derivativos,
+
+00:00:23.390 --> 00:00:25.792
+você cria outro gráfico
+com esta aparência.
+
+00:00:25.825 --> 00:00:29.829
+Os dados no novo gráfico flutuam
+pela rede na direção contrária,
+
+00:00:29.863 --> 00:00:33.233
+são combinados usando
+a regra da cadeia que vimos antes,
+
+00:00:33.266 --> 00:00:34.668
+e produzem gradientes.
+
+00:00:34.701 --> 00:00:37.470
+Este gráfico pode ser derivado
+completamente de forma automática
+
+00:00:37.504 --> 00:00:39.973
+de operações individuais
+em sua rede.
+
+00:00:40.006 --> 00:00:41.941
+A maioria das estruturas
+de aprendizado profundo
+
+00:00:41.975 --> 00:00:44.010
+faria isto por você.
+
+00:00:44.044 --> 00:00:48.148
+Isto é chamado de "retropropagação"
+e é um conceito muito poderoso.
+
+00:00:48.181 --> 00:00:50.650
+Ele cria derivativos computacionais
+de função complexa
+
+00:00:50.684 --> 00:00:51.685
+muito eficientemente,
+
+00:00:51.718 --> 00:00:54.621
+contanto que a função seja feita
+de blocos simples
+
+00:00:54.654 --> 00:00:56.089
+com derivativos simples.
+
+00:00:56.122 --> 00:00:58.358
+Executar o modelo
+nas previsões
+
+00:00:58.391 --> 00:01:00.260
+é geralmente chamado
+de "propagação direta."
+
+00:01:00.293 --> 00:01:03.963
+E o modelo que faz o caminho inverso
+é chamado de retropropagação.
+
+00:01:03.997 --> 00:01:04.998
+Para recapitular,
+
+00:01:05.031 --> 00:01:07.167
+para executar gradientes
+descendentes estocásticos,
+
+00:01:07.200 --> 00:01:11.137
+para cada lote dos seus dados
+no seu conjunto de treinamento,
+
+00:01:11.171 --> 00:01:13.139
+você vai executar
+a propagação direta
+
+00:01:13.173 --> 00:01:14.708
+e depois a retropropagação.
+
+00:01:14.741 --> 00:01:16.976
+E isto vai dar a você
+gradientes
+
+00:01:17.010 --> 00:01:19.179
+para cada um dos seus pesos
+em seu modelo.
+
+00:01:19.212 --> 00:01:21.948
+Então aplicará estes gradientes
+com taxas de aprendizados
+
+00:01:21.981 --> 00:01:24.551
+nos seus pesos originais
+e atualizá-los.
+
+00:01:24.584 --> 00:01:28.188
+E você vai repetir isto
+várias e várias vezes.
+
+00:01:28.221 --> 00:01:31.558
+É assim que todo o seu modelo
+é otimizado.
+
+00:01:31.591 --> 00:01:33.560
+Não vou me aprofundar
+na matemática
+
+00:01:33.593 --> 00:01:35.762
+que acontece
+em cada um destes blocos
+
+00:01:35.795 --> 00:01:38.565
+porque você não tem
+que se preocupar com isto.
+
+00:01:38.598 --> 00:01:40.400
+E é essencialmente
+a regra da cadeia.
+
+00:01:40.433 --> 00:01:42.068
+Mas mantenha este diagrama
+em mente.
+
+00:01:42.102 --> 00:01:44.604
+Em particular,
+cada bloco da retropropagação
+
+00:01:44.637 --> 00:01:47.240
+frequentemente pega duas vezes
+a memória necessária
+
+00:01:47.273 --> 00:01:49.843
+para a propagação direta
+e o dobro para computar.
+
+00:01:49.876 --> 00:01:52.479
+Isto é importante
+se você quer dimensionar seu modelo
+
+00:01:52.512 --> 00:01:53.980
+e encaixar na memória
+por exemplo.
+

@@ -1,0 +1,69 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.333 --> 00:00:02.936
+É por isso que, para a maioria
+das tarefas de classificação,
+
+00:00:02.969 --> 00:00:04.337
+as pessoas tendem a reter
+
+00:00:04.371 --> 00:00:07.974
+mais do que 30 mil exemplos
+para validação.
+
+00:00:08.008 --> 00:00:10.543
+Isso faz com que os números
+de precisão sejam significativos
+
+00:00:10.577 --> 00:00:12.412
+para a primeira casa decimal
+
+00:00:12.445 --> 00:00:16.316
+e dá resolução o bastante
+para ver pequenas melhorias.
+
+00:00:16.349 --> 00:00:18.251
+Se suas classes
+não são bem equilibradas,
+
+00:00:18.284 --> 00:00:19.319
+por exemplo,
+
+00:00:19.352 --> 00:00:21.888
+se algumas classes importantes
+são bem raras,
+
+00:00:21.921 --> 00:00:24.257
+esta heurística
+deixou de ser boa.
+
+00:00:24.290 --> 00:00:27.527
+Notícia ruim:
+você precisará de muito mais dados.
+
+00:00:27.560 --> 00:00:30.597
+Reter mais de 30 mil exemplos
+podem ser dados demais
+
+00:00:30.630 --> 00:00:32.665
+se seu conjunto de treinamento
+é pequeno.
+
+00:00:32.699 --> 00:00:35.235
+A validação cruzada,
+que eu mencionei antes,
+
+00:00:35.268 --> 00:00:37.604
+é um possível jeito de atenuar
+o problema.
+
+00:00:37.637 --> 00:00:39.839
+Mas a validação cruzada pode ser
+um processo lento,
+
+00:00:39.873 --> 00:00:42.342
+então conseguir mais dados
+normalmente é a solução certa.
+

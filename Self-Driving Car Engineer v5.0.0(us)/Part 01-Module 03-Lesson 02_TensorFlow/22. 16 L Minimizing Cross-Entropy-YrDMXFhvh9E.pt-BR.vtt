@@ -1,0 +1,165 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.100 --> 00:00:02.701
+Agora nós temos
+todas as peças do quebra-cabeça.
+
+00:00:02.734 --> 00:00:06.868
+A pergunta é como nós
+encontraremos os pesos W
+
+00:00:06.901 --> 00:00:10.100
+e os vieses B que farão
+com que nosso classificador
+
+00:00:10.133 --> 00:00:11.734
+faça o que nós queremos,
+
+00:00:11.767 --> 00:00:15.534
+ou seja, tenha pouca distância
+da classe correta
+
+00:00:15.567 --> 00:00:19.133
+e grande distância
+da classe incorreta.
+
+00:00:19.167 --> 00:00:22.400
+Algo que você pode fazer
+é medir a distância média
+
+00:00:22.434 --> 00:00:25.400
+no conjunto de treinamento
+de todas as entradas
+
+00:00:25.434 --> 00:00:27.868
+e de todos os rótulos
+que você possui.
+
+00:00:27.901 --> 00:00:29.868
+Isso é chamado
+de perda de treinamento.
+
+00:00:29.901 --> 00:00:32.701
+Essa perda, que é a entropia
+cruzada média
+
+00:00:32.734 --> 00:00:36.701
+do conjunto de treinamento,
+é uma função enorme.
+
+00:00:36.734 --> 00:00:38.701
+Os exemplos
+no conjunto de treinamento
+
+00:00:38.734 --> 00:00:41.400
+são multiplicados
+pela grande matriz W
+
+00:00:41.434 --> 00:00:44.968
+e somados ao total final.
+
+00:00:45.000 --> 00:00:47.167
+Queremos que as distâncias
+sejam pequenas,
+
+00:00:47.200 --> 00:00:51.434
+assim classificaremos o exemplo
+dos dados de treinamento.
+
+00:00:51.467 --> 00:00:53.968
+Nós queremos que a perda
+seja pequena.
+
+00:00:54.001 --> 00:00:56.701
+A perda é uma função dos pesos
+e dos vieses.
+
+00:00:56.734 --> 00:00:59.734
+Então nós tentaremos
+minimizar tal função.
+
+00:00:59.767 --> 00:01:02.634
+Imagine que a perda
+é uma função de dois pesos,
+
+00:01:02.667 --> 00:01:05.834
+peso um e peso dois,
+para este exemplo.
+
+00:01:05.868 --> 00:01:09.267
+Ela será maior
+em algumas áreas
+
+00:01:09.300 --> 00:01:10.901
+e menor em outras.
+
+00:01:10.934 --> 00:01:13.033
+Nós tentaremos
+encontrar os pesos,
+
+00:01:13.067 --> 00:01:15.400
+que fazem com que
+esta perda seja a menor.
+
+00:01:15.434 --> 00:01:18.067
+Transformamos o problema
+de aprendizado de máquina
+
+00:01:18.100 --> 00:01:20.334
+em um de otimização
+numérica.
+
+00:01:20.367 --> 00:01:23.968
+Há diversas formas de resolver
+problemas de otimização numérica.
+
+00:01:24.002 --> 00:01:27.267
+A mais simples é uma
+que você já deve ter visto antes:
+
+00:01:27.300 --> 00:01:28.868
+a gradiente descendente.
+
+00:01:28.901 --> 00:01:31.968
+Pegue o derivativo da perda,
+em relação aos seus parâmetros,
+
+00:01:32.001 --> 00:01:35.234
+e siga o derivativo
+dando um passo atrás,
+
+00:01:35.267 --> 00:01:37.701
+repita o processo
+até chegar ao final.
+
+00:01:37.734 --> 00:01:39.767
+A gradiente descendente
+é simples,
+
+00:01:39.801 --> 00:01:42.234
+especialmente quando há
+ferramentas numéricas
+
+00:01:42.267 --> 00:01:44.100
+que computam
+os derivativos.
+
+00:01:44.133 --> 00:01:46.734
+Eu estou lhe mostrando
+o derivativo para uma função
+
+00:01:46.767 --> 00:01:48.534
+de dois parâmetros,
+
+00:01:48.567 --> 00:01:50.334
+mas em um problema típico,
+
+00:01:50.367 --> 00:01:52.567
+poderia ser uma função
+com milhares, milhões
+
+00:01:52.601 --> 00:01:54.100
+e até bilhões de parâmetros.
+

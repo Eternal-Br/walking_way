@@ -1,0 +1,35 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:03.867
+Queremos uma forma de representar
+os rótulos matematicamente.
+
+00:00:03.901 --> 00:00:08.600
+As probabilidades da classe correta
+devem ser perto de 1,
+
+00:00:08.634 --> 00:00:11.867
+e a probabilidade para as outras,
+perto de 0.
+
+00:00:11.901 --> 00:00:13.634
+Vamos escrever assim.
+
+00:00:13.667 --> 00:00:16.434
+Cada rótulo
+será representado por um vetor
+
+00:00:16.467 --> 00:00:20.801
+cujo tamanho é o nº de classes,
+e tem o valor 1.0
+
+00:00:20.834 --> 00:00:24.234
+para a classe correta,
+e 0 em todo o resto.
+
+00:00:24.267 --> 00:00:26.667
+Chamamos isto
+de codificação one hot.
+

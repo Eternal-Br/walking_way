@@ -1,0 +1,234 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:04.133
+Falemos sobre redes
+convolucionais, ou ConvNets.
+
+00:00:04.167 --> 00:00:07.334
+São redes neurais
+que compartilham seus parâmetros
+
+00:00:07.367 --> 00:00:09.400
+pelo espaço.
+
+00:00:09.434 --> 00:00:11.167
+Imaginem
+que têm uma imagem.
+
+00:00:11.200 --> 00:00:14.300
+Pode ser representada
+como uma panqueca achatada.
+
+00:00:14.334 --> 00:00:16.234
+Tem largura, altura
+
+00:00:16.267 --> 00:00:20.133
+e como geralmente você tem canais
+vermelhos, verdes e azuis,
+
+00:00:20.167 --> 00:00:21.901
+também tem profundidade.
+
+00:00:21.934 --> 00:00:24.567
+Neste exemplo,
+profundidade é 3.
+
+00:00:24.601 --> 00:00:26.167
+Esta é a sua entrada.
+
+00:00:26.200 --> 00:00:29.000
+Agora imaginem pegar
+um pequeno trecho dela
+
+00:00:29.033 --> 00:00:33.200
+e rodar uma pequena rede neural
+nele, com digamos, k saídas.
+
+00:00:33.234 --> 00:00:35.801
+Representemos essas saídas
+verticalmente,
+
+00:00:35.834 --> 00:00:37.868
+numa pequena coluna assim.
+
+00:00:37.901 --> 00:00:40.968
+Vamos deslizar a pequena
+rede neural pela imagem
+
+00:00:41.000 --> 00:00:42.367
+sem mudar os pesos.
+
+00:00:42.400 --> 00:00:44.868
+Deslize de lado a lado
+e verticalmente,
+
+00:00:44.901 --> 00:00:47.133
+como que pintando
+com um pincel.
+
+00:00:47.167 --> 00:00:49.868
+Na saída,
+desenhamos uma outra imagem.
+
+00:00:49.901 --> 00:00:52.234
+Tem largura e altura
+diferentes
+
+00:00:52.267 --> 00:00:55.234
+e, mais importante,
+uma profundidade diferente.
+
+00:00:55.267 --> 00:00:57.467
+Em vez de só
+vermelho, verde e azul
+
+00:00:57.501 --> 00:01:01.100
+a saída tem muitos
+canais coloridos, k deles.
+
+00:01:01.133 --> 00:01:03.434
+Esta operação
+é chamada convolução.
+
+00:01:03.467 --> 00:01:07.267
+Se o tamanho do seu trecho
+fosse o tamanho de toda a imagem,
+
+00:01:07.300 --> 00:01:11.100
+não seria diferente de uma
+camada normal da rede neural.
+
+00:01:11.133 --> 00:01:15.567
+Mas como temos esse pequeno trecho,
+temos menos pesos
+
+00:01:15.601 --> 00:01:18.167
+e são compartilhados
+pelo espaço.
+
+00:01:18.200 --> 00:01:21.501
+Uma ConvNet basicamente
+será uma rede profunda
+
+00:01:21.534 --> 00:01:25.734
+onde, em vez de pilhas de camadas
+de multiplicações de matrizes
+
+00:01:25.767 --> 00:01:28.934
+teremos pilhas
+de convoluções.
+
+00:01:28.968 --> 00:01:32.501
+A ideia geral
+é de que formarão uma pirâmide.
+
+00:01:32.534 --> 00:01:36.167
+Na base, você tem
+esta imagem grande, mas fina.
+
+00:01:36.200 --> 00:01:38.767
+Só vermelho, verde e azul.
+
+00:01:38.801 --> 00:01:42.167
+Vocês aplicarão convoluções
+que, progressivamente,
+
+00:01:42.200 --> 00:01:46.400
+espremerão as dimensões espaciais
+enquanto aumentam a profundidade,
+
+00:01:46.434 --> 00:01:49.534
+que corresponde a grosso modo
+à complexidade semântica
+
+00:01:49.567 --> 00:01:51.434
+de sua representação.
+
+00:01:51.467 --> 00:01:53.934
+No topo,
+pode pôr o seu classificador.
+
+00:01:53.968 --> 00:01:58.467
+Você tem uma representação onde toda
+informação espacial foi espremida,
+
+00:01:58.501 --> 00:02:02.634
+e só permanecem parâmetros que
+representam o conteúdo da imagem.
+
+00:02:02.667 --> 00:02:04.267
+É a ideia geral.
+
+00:02:04.300 --> 00:02:08.000
+Se implementarem isto,
+há vários detalhes a acertar,
+
+00:02:08.033 --> 00:02:10.667
+e bastante jargão
+para se acostumarem.
+
+00:02:10.701 --> 00:02:13.667
+Já vimos o conceito
+de trecho e profundidade.
+
+00:02:13.701 --> 00:02:16.434
+Trechos às vezes
+são chamados de Kernels.
+
+00:02:16.467 --> 00:02:20.467
+Cada panqueca na pilha se chama
+mapa de características.
+
+00:02:20.501 --> 00:02:23.133
+Aqui vão mapear
+3 mapas de características
+
+00:02:23.167 --> 00:02:25.167
+para k mapas
+de características.
+
+00:02:25.200 --> 00:02:27.634
+Outro termo é
+o tamanho do passo.
+
+00:02:27.667 --> 00:02:32.067
+É o nº de pixels que você move
+sempre que mover seu filtro.
+
+00:02:32.100 --> 00:02:36.767
+Um passo de um faz a saída ser,
+a grosso modo, do tamanho da entrada.
+
+00:02:36.801 --> 00:02:40.267
+Um stride de 2 significa
+que é metade do tamanho.
+
+00:02:40.300 --> 00:02:43.567
+Digo a grosso modo
+porque depende do que você faz
+
+00:02:43.601 --> 00:02:45.367
+na margem da sua imagem.
+
+00:02:45.400 --> 00:02:51.100
+Ou você não passa da margem,
+chamado preenchimento válido,
+
+00:02:51.133 --> 00:02:54.200
+ou você sai da margem
+e preenche com zeros
+
+00:02:54.234 --> 00:02:56.834
+de forma que o tamanho
+do mapa da saída
+
+00:02:56.868 --> 00:03:00.100
+seja exatamente o mesmo
+do mapa de entrada.
+
+00:03:00.133 --> 00:03:03.901
+É chamado de
+preenchimento igual.
+

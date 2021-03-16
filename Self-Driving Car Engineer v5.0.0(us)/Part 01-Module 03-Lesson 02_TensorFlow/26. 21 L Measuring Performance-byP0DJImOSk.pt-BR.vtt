@@ -1,0 +1,331 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:02.234
+Agora que você treinou
+o seu primeiro modelo,
+
+00:00:02.267 --> 00:00:04.467
+eu quero discutir
+algo muito importante.
+
+00:00:04.501 --> 00:00:06.167
+Você deve ter percebido
+
+00:00:06.200 --> 00:00:07.901
+que há um conjunto
+de treinamento,
+
+00:00:07.934 --> 00:00:11.367
+um conjunto de validação
+e um conjunto de teste.
+
+00:00:11.400 --> 00:00:12.968
+O que é isso?
+
+00:00:13.000 --> 00:00:14.234
+Não pule essa parte,
+
+00:00:14.267 --> 00:00:16.767
+isso serve para medir
+se você está indo bem
+
+00:00:16.801 --> 00:00:19.367
+sem que você faça
+alguma besteira sem querer.
+
+00:00:19.400 --> 00:00:22.100
+E isso é muito mais fácil
+do que você pensa.
+
+00:00:22.133 --> 00:00:25.033
+Isso é importante porque,
+como veremos depois,
+
+00:00:25.067 --> 00:00:28.100
+se você souber medir
+seu desempenho em um problema,
+
+00:00:28.133 --> 00:00:30.534
+você já resolveu
+metade dele.
+
+00:00:30.567 --> 00:00:33.200
+Me deixe explicar por que
+medir o desempenho é fácil.
+
+00:00:33.234 --> 00:00:35.567
+Vamos retornar
+à nossa tarefa de classificação.
+
+00:00:35.601 --> 00:00:38.067
+Você tem um monte
+de imagens com rótulos.
+
+00:00:38.100 --> 00:00:41.133
+Você poderia rodar
+seu classificador
+
+00:00:41.167 --> 00:00:43.968
+nestas imagens
+para ver quantas estão corretas.
+
+00:00:44.000 --> 00:00:45.434
+Essa é a sua medida de erro.
+
+00:00:45.467 --> 00:00:48.634
+Então você usa seu classificador
+em novas imagens,
+
+00:00:48.667 --> 00:00:50.868
+imagens que você
+nunca viu antes.
+
+00:00:50.901 --> 00:00:52.834
+Você mede quantas
+você acerta,
+
+00:00:52.868 --> 00:00:54.634
+e seu desempenho piora.
+
+00:00:54.667 --> 00:00:56.601
+O classificador não serve
+também.
+
+00:00:56.634 --> 00:00:58.067
+O que aconteceu?
+
+00:00:58.100 --> 00:01:00.267
+Imagine que eu construí
+um classificador
+
+00:01:00.300 --> 00:01:02.501
+que compara a nova imagem
+
+00:01:02.534 --> 00:01:06.467
+com todas as outras
+do meu conjunto de treinamento
+
+00:01:06.501 --> 00:01:08.400
+e retorna o meu rótulo.
+
+00:01:08.434 --> 00:01:11.467
+Pela medida que definimos antes,
+esse é um bom classificador.
+
+00:01:11.501 --> 00:01:14.400
+Ele teria precisão de 100%
+no conjunto de treinamento.
+
+00:01:14.434 --> 00:01:17.067
+Mas, quando ele vê
+uma nova imagem,
+
+00:01:17.100 --> 00:01:19.267
+ele se perde
+e não sabe o que fazer.
+
+00:01:19.300 --> 00:01:21.100
+Esse não é
+um bom classificador.
+
+00:01:21.133 --> 00:01:25.033
+O problema é que ele memorizou
+o conjunto de treinamento
+
+00:01:25.067 --> 00:01:27.734
+e não conseguiu generalizar
+os novos exemplos.
+
+00:01:27.767 --> 00:01:29.868
+Esse não é só
+um problema teórico.
+
+00:01:29.901 --> 00:01:32.100
+Todo classificador
+que você construir
+
+00:01:32.133 --> 00:01:34.801
+tenderá a memorizar
+os conjuntos de treinamento.
+
+00:01:34.834 --> 00:01:37.434
+E ele faz isso muito bem.
+
+00:01:37.467 --> 00:01:39.934
+O seu trabalho é ajudá-lo
+a generalizar
+
+00:01:39.968 --> 00:01:41.868
+os novos dados.
+
+00:01:41.901 --> 00:01:44.701
+Como medimos a generalização
+em vez de medir
+
+00:01:44.734 --> 00:01:48.200
+como o classificador
+memoriza os dados?
+
+00:01:48.234 --> 00:01:50.868
+A maneira mais simples
+é pegar um pequeno subconjunto
+
+00:01:50.901 --> 00:01:52.400
+do conjunto de treinamento,
+
+00:01:52.434 --> 00:01:54.133
+não usá-lo no treinamento,
+
+00:01:54.167 --> 00:01:56.601
+e medir o erro
+dos dados de teste.
+
+00:01:56.634 --> 00:01:58.033
+Problema resolvido.
+
+00:01:58.067 --> 00:01:59.934
+Seu classificador
+não pode trapacear,
+
+00:01:59.968 --> 00:02:01.801
+porque ele não viu
+os dados de teste,
+
+00:02:01.834 --> 00:02:03.567
+então ele não consegue
+memorizá-lo.
+
+00:02:03.601 --> 00:02:06.534
+Mas ainda há um problema,
+porque treinar um classificador
+
+00:02:06.567 --> 00:02:08.667
+é um processo
+de tentativa e acerto.
+
+00:02:08.701 --> 00:02:11.901
+Você usa um classificador,
+mede o desempenho,
+
+00:02:11.934 --> 00:02:14.567
+usa outro e mede novamente.
+
+00:02:14.601 --> 00:02:17.834
+E outro, e outro...
+Você usa o modelo,
+
+00:02:17.868 --> 00:02:21.334
+explora os parâmetros,
+mede e finalmente
+
+00:02:21.367 --> 00:02:24.567
+você terá o que você acha ser
+o classificador perfeito.
+
+00:02:24.601 --> 00:02:26.767
+Depois de todo o cuidado
+
+00:02:26.801 --> 00:02:29.334
+de separar os dados teste
+dos dados de treinamento
+
+00:02:29.367 --> 00:02:32.100
+e de medir seu desempenho
+nos dados teste,
+
+00:02:32.133 --> 00:02:35.300
+você lança o seu sistema
+em um ambiente de produção real
+
+00:02:35.334 --> 00:02:36.734
+e recebe mais dados.
+
+00:02:36.767 --> 00:02:39.133
+Você analisa seu desempenho
+nos novos dados,
+
+00:02:39.167 --> 00:02:41.767
+e ele não funciona bem.
+
+00:02:41.801 --> 00:02:43.834
+O que pode ter acontecido?
+
+00:02:43.868 --> 00:02:47.300
+O seu classificador
+viu seus dados teste
+
+00:02:47.334 --> 00:02:49.734
+de forma indireta
+pelos seus olhos.
+
+00:02:49.767 --> 00:02:52.901
+Sempre que você decide
+qual classificador utilizar,
+
+00:02:52.934 --> 00:02:54.667
+qual parâmetro ajustar,
+
+00:02:54.701 --> 00:02:57.200
+você passou informações
+ao seu classificador
+
+00:02:57.234 --> 00:02:58.834
+sobre o conjunto de teste.
+
+00:02:58.868 --> 00:03:01.434
+Só algumas informações,
+mas elas são adicionadas.
+
+00:03:01.467 --> 00:03:04.667
+Com o passar do tempo,
+após muitas tentativas,
+
+00:03:04.701 --> 00:03:07.434
+os dados teste vazam
+para os de treinamento.
+
+00:03:07.467 --> 00:03:09.000
+O que você pode fazer?
+
+00:03:09.033 --> 00:03:11.000
+Há muitas maneiras
+para lidar com isto.
+
+00:03:11.033 --> 00:03:12.467
+Vou mostrar a mais simples.
+
+00:03:12.501 --> 00:03:14.467
+Pegue um pedaço
+do seu conjunto de teste
+
+00:03:14.501 --> 00:03:16.133
+e o esconda.
+
+00:03:16.167 --> 00:03:19.167
+Não olhe para ele
+até você ter tomado a decisão.
+
+00:03:19.200 --> 00:03:21.133
+Utilize o conjunto
+de validação
+
+00:03:21.167 --> 00:03:22.968
+para medir seu erro,
+
+00:03:23.000 --> 00:03:26.634
+e talvez o conjunto de validação
+vazará para o de treinamento,
+
+00:03:26.667 --> 00:03:29.634
+mas tudo bem, porque você
+terá o conjunto de teste
+
+00:03:29.667 --> 00:03:31.234
+que você pode utilizar
+
+00:03:31.267 --> 00:03:32.801
+para medir
+seu desempenho real.
+

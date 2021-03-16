@@ -1,0 +1,66 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.000 --> 00:00:04.234
+Por que não descobrimos antes
+que modelos profundos eram eficazes?
+
+00:00:04.267 --> 00:00:08.033
+Há muitas razões, mas principalmente
+porque eles brilham mesmo
+
+00:00:08.067 --> 00:00:10.968
+se tivermos dados suficientes
+para treiná-los.
+
+00:00:11.000 --> 00:00:16.734
+Só recentemente esses dados
+entraram no mundo acadêmico.
+
+00:00:16.767 --> 00:00:18.968
+Veremos outra razão agora.
+
+00:00:19.000 --> 00:00:23.234
+Sabemos melhor hoje como treinar
+modelos muito grandes
+
+00:00:23.267 --> 00:00:25.901
+usando técnicas melhores
+de regularização.
+
+00:00:25.934 --> 00:00:29.334
+Há um problema geral,
+ao se fazer otimização numérica,
+
+00:00:29.367 --> 00:00:31.534
+que chamo
+de "jeans apertado".
+
+00:00:31.567 --> 00:00:34.367
+Este jeans é ótimo,
+encaixa perfeitamente,
+
+00:00:34.400 --> 00:00:36.501
+mas é difícil vesti-lo.
+
+00:00:36.534 --> 00:00:40.200
+Assim, a maioria acaba
+vestindo um número maior.
+
+00:00:40.234 --> 00:00:42.734
+É exatamente assim
+com redes profundas.
+
+00:00:42.767 --> 00:00:47.801
+A rede exata para os seus dados
+é muito difícil de otimizar.
+
+00:00:47.834 --> 00:00:52.000
+Na prática, sempre tentamos redes
+grandes demais para os dados
+
+00:00:52.033 --> 00:00:55.734
+e fazemos o possível
+para impedir um super-ajuste.
+
