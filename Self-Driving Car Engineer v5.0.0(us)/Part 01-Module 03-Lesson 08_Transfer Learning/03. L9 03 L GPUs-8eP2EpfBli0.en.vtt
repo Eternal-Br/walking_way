@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.819
+&gt;&gt; You might think of GPUs as devices built for
+
+00:00:02.819 --> 00:00:06.025
+rendering graphically intensive video games, and that's true.
+
+00:00:06.025 --> 00:00:09.750
+But GPUs have also become extraordinarily important for deep learning.
+
+00:00:09.750 --> 00:00:13.574
+GPUs are optimized for high throughput computation.
+
+00:00:13.574 --> 00:00:16.589
+Whereas CPUs are mostly optimized for latency,
+
+00:00:16.589 --> 00:00:20.199
+running a single thread of instructions as quickly as possible,
+
+00:00:20.199 --> 00:00:22.244
+GPUs are optimized for throughput,
+
+00:00:22.245 --> 00:00:25.425
+running as many simultaneous computations as possible.
+
+00:00:25.425 --> 00:00:28.410
+Throughput computing is important for computer graphics because we
+
+00:00:28.410 --> 00:00:31.605
+want to update lots of pixels on the screen at the same time.
+
+00:00:31.605 --> 00:00:34.530
+And it turns out that throughput computing is also important for
+
+00:00:34.530 --> 00:00:36.570
+deep learning because the computations
+
+00:00:36.570 --> 00:00:39.359
+fundamental to deep learning have a lot of parallelism.
+
+00:00:39.359 --> 00:00:42.359
+&gt;&gt; What level of acceleration do you typically see when you
+
+00:00:42.359 --> 00:00:45.969
+move from training a network on a CPU to a GPU?
+
+00:00:45.969 --> 00:00:47.504
+&gt;&gt; It depends on a lot of factors,
+
+00:00:47.505 --> 00:00:50.445
+including how the software we're running has been designed,
+
+00:00:50.445 --> 00:00:53.605
+and the precise CPU and GPU we're comparing.
+
+00:00:53.604 --> 00:00:56.339
+For example, the low power processor in your laptop
+
+00:00:56.340 --> 00:00:59.440
+is going to be much slower than a big server processor.
+
+00:00:59.439 --> 00:01:01.769
+But a rule of thumb would be that networks train
+
+00:01:01.770 --> 00:01:04.760
+about five times faster on a GPU than on a CPU.
+
+00:01:04.760 --> 00:01:06.495
+&gt;&gt; That's similar to what I've seen,
+
+00:01:06.495 --> 00:01:10.890
+and I know from my own experience that it's just so much faster and easier
+
+00:01:10.890 --> 00:01:15.200
+to make progress when my network is training five or ten times faster,
+
+00:01:15.200 --> 00:01:17.459
+and I have all that extra time to experiment with
+
+00:01:17.459 --> 00:01:21.000
+new approaches and get fast feedback on how they work.
+
+00:01:21.000 --> 00:01:24.674
+Another good approach for getting fast feedback is to use transfer learning,
+
+00:01:24.674 --> 00:01:26.819
+to take advantage of networks that have already been
+
+00:01:26.819 --> 00:01:30.000
+trained instead of just starting from scratch every time.
+

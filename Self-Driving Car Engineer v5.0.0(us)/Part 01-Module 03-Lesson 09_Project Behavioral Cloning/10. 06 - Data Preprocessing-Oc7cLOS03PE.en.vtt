@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.500 --> 00:00:02.429
+The first obvious step to improve the model
+
+00:00:02.430 --> 00:00:04.080
+is to preprocess the data.
+
+00:00:04.080 --> 00:00:06.900
+I'm going to add two preprocessing steps,
+
+00:00:06.900 --> 00:00:09.839
+normalizing the data and mean centering the data.
+
+00:00:09.839 --> 00:00:13.560
+For normalization, I'll add a Lambda layer to my model.
+
+00:00:13.560 --> 00:00:16.050
+Within this Lambda layer, I'll normalize the image
+
+00:00:16.050 --> 00:00:18.719
+by dividing each element by 255, which
+
+00:00:18.719 --> 00:00:21.419
+is the maximum value of an image pixel.
+
+00:00:21.420 --> 00:00:25.370
+Once the image is normalized to a range between 0 and 1,
+
+00:00:25.370 --> 00:00:28.260
+I'll mean center the image by subtracting 0.5
+
+00:00:28.260 --> 00:00:31.230
+from each element, which will shift the element mean down
+
+00:00:31.230 --> 00:00:33.980
+from 0.5 to 0.
+
+00:00:33.979 --> 00:00:35.899
+When I train this model, now I can
+
+00:00:35.899 --> 00:00:38.269
+see that the training loss and the validation loss
+
+00:00:38.270 --> 00:00:40.550
+are both much smaller, which is a good sign.
+
+00:00:40.549 --> 00:00:42.769
+However, the validation loss only decreases
+
+00:00:42.770 --> 00:00:45.170
+for the first few epoches and then starts oscillating
+
+00:00:45.170 --> 00:00:45.859
+up and down.
+
+00:00:45.859 --> 00:00:47.630
+Again, that's a sign that the model may be
+
+00:00:47.630 --> 00:00:49.310
+overfitting the training data.
+
+00:00:49.310 --> 00:00:53.910
+I'll reduce the number of epoches and train the model again.
+
+00:00:53.909 --> 00:00:56.669
+This time, both the training loss and the validation loss
+
+00:00:56.670 --> 00:00:59.700
+decreased monotonically, which is what I hoped to see.
+
+00:00:59.700 --> 00:01:03.410
+I'm excited to see how well this model drives the car.
+

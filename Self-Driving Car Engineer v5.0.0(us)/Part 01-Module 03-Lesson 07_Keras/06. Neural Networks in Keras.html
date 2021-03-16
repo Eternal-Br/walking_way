@@ -1,0 +1,426 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Neural Networks in Keras
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Keras
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Deep Learning Breakthroughs.html">
+       01. Deep Learning Breakthroughs
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction.html">
+       02. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Deep Learning Frameworks.html">
+       03. Deep Learning Frameworks
+      </a>
+     </li>
+     <li class="">
+      <a href="04. High Level Frameworks.html">
+       04. High Level Frameworks
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Keras Overview.html">
+       05. Keras Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Neural Networks in Keras.html">
+       06. Neural Networks in Keras
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Convolutions in Keras.html">
+       07. Convolutions in Keras
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Pooling in Keras.html">
+       08. Pooling in Keras
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Dropout in Keras.html">
+       09. Dropout in Keras
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Testing in Keras.html">
+       10. Testing in Keras
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Conclusion.html">
+       11. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          06. Neural Networks in Keras
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="neural-networks-in-keras">
+          Neural Networks in Keras
+         </h1>
+         <p>
+          Here are some core concepts you need to know for working with Keras.   All Keras exercises will be performed in JUPYTER workspaces, using python 3.5, Tensorflow 1.3, and
+          <a href="https://keras.io/" rel="noopener noreferrer" target="_blank">
+           Keras
+          </a>
+          2.09.  More information on using JUPYTER in workspaces, can be found earlier in the term in the Workspaces lesson.
+         </p>
+         <h2 id="sequential-model">
+          Sequential Model
+         </h2>
+         <pre><code class="python language-python">    from keras.models import Sequential
+
+    # Create the Sequential model
+    model = Sequential()</code></pre>
+         <p>
+          The
+          <a href="https://keras.io/models/sequential/" rel="noopener noreferrer" target="_blank">
+           keras.models.Sequential
+          </a>
+          class is a wrapper for the neural network model. It provides common functions like
+          <code>
+           fit()
+          </code>
+          ,
+          <code>
+           evaluate()
+          </code>
+          , and
+          <code>
+           compile()
+          </code>
+          . We'll cover these functions as we get to them. Let's start looking at the layers of the model.
+         </p>
+         <p>
+          <strong>
+           See the documentation for
+           <code>
+            keras.models.Sequential
+           </code>
+           in Keras 2.09
+           <a href="https://faroit.github.io/keras-docs/2.0.9/models/sequential/" rel="noopener noreferrer" target="_blank">
+            here
+           </a>
+           .
+          </strong>
+         </p>
+         <h2 id="layers">
+          Layers
+         </h2>
+         <p>
+          A Keras layer is just like a neural network layer. There are fully connected layers, max pool layers, and activation layers. You can add a layer to the model using the model's
+          <code>
+           add()
+          </code>
+          function. For example, a simple model would look like this:
+         </p>
+         <pre><code class="python language-python">    from keras.models import Sequential
+    from keras.layers.core import Dense, Activation, Flatten
+
+    # Create the Sequential model
+    model = Sequential()
+
+    #1st Layer - Add a flatten layer
+    model.add(Flatten(input_shape=(32, 32, 3)))
+
+    #2nd Layer - Add a fully connected layer
+    model.add(Dense(100))
+
+    #3rd Layer - Add a ReLU activation layer
+    model.add(Activation('relu'))
+
+    #4th Layer - Add a fully connected layer
+    model.add(Dense(60))
+
+    #5th Layer - Add a ReLU activation layer
+    model.add(Activation('relu'))</code></pre>
+         <p>
+          Keras will automatically infer the shape of all layers after the first layer. This means you only have to set the input dimensions for the first layer.
+         </p>
+         <p>
+          The first layer from above,
+          <code>
+           model.add(Flatten(input_shape=(32, 32, 3)))
+          </code>
+          , sets the input dimension to (32, 32, 3) and output dimension to (3072=32 x 32 x 3). The second layer takes in the output of the first layer and sets the output dimensions to (100). This chain of passing output to the next layer continues until the last layer, which is the output of the model.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="quiz">
+          Quiz
+         </h2>
+         <p>
+          In this quiz you will build a multi-layer feedforward neural network to classify traffic sign images using Keras.
+         </p>
+         <ol>
+          <li>
+           Set the first layer to a
+           <code>
+            Flatten()
+           </code>
+           layer with the
+           <code>
+            input_shape
+           </code>
+           set to (32, 32, 3).
+          </li>
+          <li>
+           Set the second layer to a
+           <code>
+            Dense()
+           </code>
+           layer with an output width of 128.
+          </li>
+          <li>
+           Use a ReLU activation function after the second layer.
+          </li>
+          <li>
+           Set the output layer width to 5, because for this data set there are only 5 classes.
+          </li>
+          <li>
+           Use a softmax activation function after the output layer.
+          </li>
+          <li>
+           Train the model for 3 epochs. You should be able to get over 50% training accuracy.
+          </li>
+         </ol>
+         <p>
+          To get started, review the Keras documentation about models and layers.
+          <br/>
+          The Keras example of a
+          <a href="https://github.com/fchollet/keras/blob/master/examples/mnist_mlp.py" rel="noopener noreferrer" target="_blank">
+           Multi-Layer Perceptron
+          </a>
+          network is similar to what you need to do here. Use that as a guide, but keep in mind that there are a number of differences.
+         </p>
+         <h2 id="data-download">
+          Data Download
+         </h2>
+         <p>
+          The data set used in these quizzes can be downloaded
+          <a href="https://d17h27t6h515a5.cloudfront.net/topher/2017/March/58dbf6d5_small-traffic-set/small-traffic-set.zip" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div class="jumbotron">
+         <h3>
+          Workspace
+         </h3>
+         <p class="lead">
+          This section contains either a workspace (it can be a
+          <a href="http://jupyter.org/" target="_blank">
+           Jupyter
+      Notebook
+          </a>
+          workspace or an online code editor work space, etc.) and it cannot be automatically downloaded to be
+    generated here. Please access the classroom with your account and manually download the workspace to your local
+    machine. Note that for some courses, Udacity upload the workspace files onto
+          <a href="https://github.com/udacity" target="_blank">
+           https://github.com/udacity
+          </a>
+          , so you may be able to download them there.
+         </p>
+         <h4>
+          Workspace Information:
+         </h4>
+         <ul>
+          <li>
+           <strong>
+            Default file path:
+           </strong>
+          </li>
+          <li>
+           <strong>
+            Workspace type:
+           </strong>
+           jupyter
+          </li>
+          <li>
+           <strong>
+            Opened files (when workspace is loaded):
+           </strong>
+           n/a
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="07. Convolutions in Keras.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Neural Networks in Keras')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

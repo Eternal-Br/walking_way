@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.500 --> 00:00:03.600
+The simulator data consists primarily of images.
+
+00:00:03.600 --> 00:00:06.450
+Before I start using this data to train a model,
+
+00:00:06.450 --> 00:00:08.280
+I'd like to look at those images.
+
+00:00:08.279 --> 00:00:11.759
+I'll start by opening driving_log.csv.
+
+00:00:11.759 --> 00:00:14.339
+Each line in this file represents a point in time
+
+00:00:14.339 --> 00:00:18.570
+during my training lap, and each line has seven tokens.
+
+00:00:18.570 --> 00:00:20.429
+I'm going to add labels to each column
+
+00:00:20.429 --> 00:00:23.670
+here so it's easier to see what each line represents.
+
+00:00:23.670 --> 00:00:25.860
+The first three tokens in each line
+
+00:00:25.859 --> 00:00:29.309
+are paths to images, one each for cameras
+
+00:00:29.309 --> 00:00:32.399
+mounted on the center, left, and right of the vehicle's
+
+00:00:32.399 --> 00:00:33.549
+windshield.
+
+00:00:33.549 --> 00:00:36.179
+The next four tokens are measurements for steering,
+
+00:00:36.179 --> 00:00:38.340
+throttle, brake, and speed.
+
+00:00:38.340 --> 00:00:41.670
+The steering measurements range between negative 1 and 1.
+
+00:00:41.670 --> 00:00:44.850
+The throttle measurements range between 0 and 1.
+
+00:00:44.850 --> 00:00:47.399
+The brake measurements seem to all be 0,
+
+00:00:47.399 --> 00:00:50.189
+and the speed measurements range from 0 to 30.
+
+00:00:50.189 --> 00:00:52.079
+The throttle, brake, and speed data
+
+00:00:52.079 --> 00:00:54.460
+could all be useful for training the network,
+
+00:00:54.460 --> 00:00:56.469
+but for now, I'm going to ignore them.
+
+00:00:56.469 --> 00:00:58.890
+I'll start by using the images as the feature
+
+00:00:58.890 --> 00:01:02.340
+set and the steering measurements as the label set.
+
+00:01:02.340 --> 00:01:04.290
+Then I'll use the images to train the network
+
+00:01:04.290 --> 00:01:06.480
+to predict the steering measurements.
+
+00:01:06.480 --> 00:01:09.410
+This is the very first image in the data set.
+
+00:01:09.409 --> 00:01:11.640
+It's taken from a camera mounted in the center
+
+00:01:11.640 --> 00:01:14.730
+of the windshield, and I can see the hood of the car peeking out
+
+00:01:14.730 --> 00:01:16.500
+from the bottom of the image.
+
+00:01:16.500 --> 00:01:21.209
+The image is 160 pixels wide by 320 pixels high,
+
+00:01:21.209 --> 00:01:22.859
+and of course, it's three channels deep
+
+00:01:22.859 --> 00:01:25.019
+because it's an RGB image.
+
+00:01:25.019 --> 00:01:26.640
+The top portion of the image seems
+
+00:01:26.640 --> 00:01:29.760
+to capture hills and trees and sky, elements
+
+00:01:29.760 --> 00:01:32.460
+that might distract the model more than help it.
+
+00:01:32.459 --> 00:01:34.079
+At some point, it might make sense
+
+00:01:34.079 --> 00:01:36.629
+to crop off that top portion of the image.
+
+00:01:36.629 --> 00:01:38.310
+Here are the left and right images
+
+00:01:38.310 --> 00:01:41.460
+that correspond to that center image for the very first line
+
+00:01:41.459 --> 00:01:42.779
+in the CSV file.
+
+00:01:42.780 --> 00:01:45.060
+All of these images capture a similar scene
+
+00:01:45.060 --> 00:01:47.010
+but from slightly different positions.
+
+00:01:47.010 --> 00:01:49.710
+You might wonder why the simulator gives us three camera
+
+00:01:49.709 --> 00:01:51.519
+shots for each point in time.
+
+00:01:51.519 --> 00:01:54.269
+The reason is that we can use these camera shots to help
+
+00:01:54.269 --> 00:01:56.159
+us generalize the model.
+
+00:01:56.159 --> 00:01:58.259
+Effectively, we can pass these images
+
+00:01:58.260 --> 00:02:00.390
+to the network to teach the network what
+
+00:02:00.390 --> 00:02:02.909
+it looks like to be off the center of the road
+
+00:02:02.909 --> 00:02:05.159
+and how to steer to get back to the center.
+
+00:02:05.159 --> 00:02:07.700
+I'll talk more about this later.
+

@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.500 --> 00:00:03.629
+I could also try to be more clever about data collection.
+
+00:00:03.629 --> 00:00:05.429
+For example, I could drive around the track
+
+00:00:05.429 --> 00:00:07.283
+in the opposite direction.
+
+00:00:07.283 --> 00:00:08.699
+Training in the opposite direction
+
+00:00:08.699 --> 00:00:11.579
+is kind of like gathering data from a whole new track,
+
+00:00:11.580 --> 00:00:14.609
+and this data will help my model generalize better.
+
+00:00:14.609 --> 00:00:16.500
+So when I run in autonomous mode,
+
+00:00:16.500 --> 00:00:18.942
+if the vehicle gets into a weird place on the road,
+
+00:00:18.942 --> 00:00:20.399
+the model will have a better chance
+
+00:00:20.399 --> 00:00:22.109
+of making a good decision.
+
+00:00:22.109 --> 00:00:24.390
+In the same vein, I could gather training data
+
+00:00:24.390 --> 00:00:26.940
+from multiple tracks and mix them together.
+
+00:00:26.940 --> 00:00:29.250
+This could produce a much more generalized model
+
+00:00:29.250 --> 00:00:32.600
+that can drive either track successfully.
+

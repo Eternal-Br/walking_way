@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.600
+&gt;&gt; Deep learning is a hands on empirical field.
+
+00:00:03.600 --> 00:00:06.825
+The more experiments that we engineers and researchers try,
+
+00:00:06.825 --> 00:00:11.100
+the more ideas we generate and some of them actually turn out to work.
+
+00:00:11.099 --> 00:00:14.769
+Other ideas that seem promising initially don't work.
+
+00:00:14.769 --> 00:00:17.980
+The practice is definitely ahead of the theory in many cases.
+
+00:00:17.980 --> 00:00:21.089
+And so it's important not to get too attached to theories about
+
+00:00:21.089 --> 00:00:25.335
+different network architectures or exactly what layer follows another in a network,
+
+00:00:25.335 --> 00:00:28.510
+instead to be a successful deep learning practitioner,
+
+00:00:28.510 --> 00:00:30.775
+You need a bias towards action.
+
+00:00:30.774 --> 00:00:35.489
+Experiment to answer your questions rather than just thinking deep thoughts.
+
+00:00:35.490 --> 00:00:37.410
+Also don't be too discouraged if something
+
+00:00:37.409 --> 00:00:39.854
+doesn't work immediately the first time you try it.
+
+00:00:39.854 --> 00:00:41.579
+Keep experimenting until you find
+
+00:00:41.579 --> 00:00:44.809
+a network and hyperparameters that work for your problem.
+
+00:00:44.810 --> 00:00:48.179
+&gt;&gt; I like to think of deep learning as one of the few places in
+
+00:00:48.179 --> 00:00:51.799
+computer science where we actually do science.
+
+00:00:51.799 --> 00:00:54.884
+Most of computer science is really more about engineering,
+
+00:00:54.884 --> 00:00:58.004
+but in deep learning we really do spend a lot of time
+
+00:00:58.005 --> 00:01:01.620
+running experiments and building theories of what works and why,
+
+00:01:01.619 --> 00:01:03.320
+just like real scientists.
+
+00:01:03.320 --> 00:01:07.284
+&gt;&gt; Yeah, I would say that does make us real scientists.
+
+00:01:07.284 --> 00:01:10.140
+You're learning about several important network architectures
+
+00:01:10.140 --> 00:01:12.855
+that you can use as a basis for your own projects.
+
+00:01:12.855 --> 00:01:15.704
+But more important than the intricacies of these networks,
+
+00:01:15.704 --> 00:01:19.435
+is to get your hands dirty and try to solve real problems.
+
+00:01:19.435 --> 00:01:22.460
+This will develop your confidence and give you practical skills.
+
+00:01:22.459 --> 00:01:26.354
+&gt;&gt; With that in mind, let's look at that other networks from 2014, 
+
+00:01:26.355 --> 00:01:28.000
+which has its own strengths.
+

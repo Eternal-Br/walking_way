@@ -1,0 +1,557 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Behavioral Cloning
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Behavioral Cloning
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Vehicle Simulator.html">
+       01. Vehicle Simulator
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Intro to Behavioral Cloning Project.html">
+       02. Intro to Behavioral Cloning Project
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Project Resources.html">
+       03. Project Resources
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Running the Simulator.html">
+       04. Running the Simulator
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Data Collection Tactics .html">
+       05. Data Collection Tactics
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Data Collection Strategies.html">
+       06. Data Collection Strategies
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Data Visualization .html">
+       07. Data Visualization
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Training Your Network.html">
+       08. Training Your Network
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Running Your Network.html">
+       09. Running Your Network
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Data Preprocessing.html">
+       10. Data Preprocessing
+      </a>
+     </li>
+     <li class="">
+      <a href="11. More Networks.html">
+       11. More Networks
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Data Augmentation .html">
+       12. Data Augmentation
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Using Multiple Cameras .html">
+       13. Using Multiple Cameras
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Cropping Images in Keras .html">
+       14. Cropping Images in Keras
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Even More Powerful Network.html">
+       15. Even More Powerful Network
+      </a>
+     </li>
+     <li class="">
+      <a href="16. More Data Collection .html">
+       16. More Data Collection
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Visualizing Loss.html">
+       17. Visualizing Loss
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Generators.html">
+       18. Generators
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Recording Video in Autonomous Mode.html">
+       19. Recording Video in Autonomous Mode
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Project Workspace Instructions.html">
+       20. Project Workspace Instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Project Behavioral Cloning.html">
+       21. Project Behavioral Cloning
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Share your success - Behavioral Cloning.html">
+       22. Share your success - Behavioral Cloning
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Behavioral Cloning.html">
+       Project Description - Behavioral Cloning
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Behavioral Cloning.html">
+       Project Rubric - Behavioral Cloning
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          Behavioral Cloning
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div>
+        <h2>
+         <p>
+          Required Files
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             Are all required files submitted?
+            </p>
+           </td>
+           <td>
+            <p>
+             The submission includes a model.py file, drive.py, model.h5 a writeup report and video.mp4.
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div>
+        <h2>
+         <p>
+          Quality of Code
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             <strong>
+              Is the code functional?
+             </strong>
+            </p>
+           </td>
+           <td>
+            <p>
+             The model provided can be used to successfully operate the simulation.
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             <strong>
+              Is the code usable and readable?
+             </strong>
+            </p>
+           </td>
+           <td>
+            <p>
+             The code in
+             <code>
+              model.py
+             </code>
+             uses a Python generator, if needed, to generate data for training rather than storing the training data in memory. The
+             <code>
+              model.py
+             </code>
+             code is clearly organized and comments are included where needed.
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div>
+        <h2>
+         <p>
+          Model Architecture and Training Strategy
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             <strong>
+              Has an appropriate model architecture been employed for the task?
+             </strong>
+            </p>
+           </td>
+           <td>
+            <p>
+             The neural network uses convolution layers with appropriate filter sizes. Layers exist to introduce nonlinearity into the model. The data is normalized in the model.
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             <strong>
+              Has an attempt been made to reduce overfitting of the model?
+             </strong>
+            </p>
+           </td>
+           <td>
+            <p>
+             Train/validation/test splits have been used, and the model uses dropout layers or other methods to reduce overfitting.
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             <strong>
+              Have the model parameters been tuned appropriately?
+             </strong>
+            </p>
+           </td>
+           <td>
+            <p>
+             Learning rate parameters are chosen with explanation, or an Adam optimizer is used.
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             <strong>
+              Is the training data chosen appropriately?
+             </strong>
+            </p>
+           </td>
+           <td>
+            <p>
+             Training data has been chosen to induce the desired behavior in the simulation (i.e. keeping the car on the track).
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div>
+        <h2>
+         <p>
+          Architecture and Training Documentation
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             <strong>
+              Is the solution design documented?
+             </strong>
+            </p>
+           </td>
+           <td>
+            <p>
+             The README thoroughly discusses the approach taken for deriving and designing a model architecture fit for solving the given problem.
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             <strong>
+              Is the model architecture documented?
+             </strong>
+            </p>
+           </td>
+           <td>
+            <p>
+             The README provides sufficient details of the characteristics and qualities of the architecture, such as the type of model used, the number of layers, the size of each layer. Visualizations emphasizing particular qualities of the architecture are encouraged.
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             <strong>
+              Is the creation of the training dataset and training process documented?
+             </strong>
+            </p>
+           </td>
+           <td>
+            <p>
+             The README describes how the model was trained and what the characteristics of the dataset are. Information such as how the dataset was generated and examples of images from the dataset must be included.
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div>
+        <h2>
+         <p>
+          Simulation
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             <strong>
+              Is the car able to navigate correctly on test data?
+             </strong>
+            </p>
+           </td>
+           <td>
+            <p>
+             No tire may leave the drivable portion of the track surface. The car may not pop up onto ledges or roll over any surfaces that would otherwise be considered unsafe (if humans were in the vehicle).
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="jumbotron">
+        <h3>
+         Tips to make your project standout:
+        </h3>
+        <p>
+         <h3 id="track-two">
+          Track Two
+         </h3>
+         <p>
+          The simulator contains two tracks. To meet specifications, the car must successfully drive around track one. Track two is more difficult. See if you can get the car to stay on the road for track two as well.
+         </p>
+        </p>
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Behavioral Cloning')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

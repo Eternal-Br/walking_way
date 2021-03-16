@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.770
+All right. You're beginning to impress me because you just
+
+00:00:03.770 --> 00:00:07.445
+coded a piece of neural network that found traffic signs,
+
+00:00:07.445 --> 00:00:09.484
+and that's actually nontrivial.
+
+00:00:09.484 --> 00:00:11.459
+For many decades, it was really hard for
+
+00:00:11.460 --> 00:00:14.045
+computer vision researcher to do what you just did to be honest.
+
+00:00:14.044 --> 00:00:17.129
+But now, it's time to scale up.
+
+00:00:17.129 --> 00:00:19.289
+You're not going to do anything by hand anymore,
+
+00:00:19.289 --> 00:00:20.890
+you're going to use existing tools.
+
+00:00:20.890 --> 00:00:23.820
+Carrier system that we chose is built on TensorFlow by Google,
+
+00:00:23.820 --> 00:00:28.774
+and is a tool that makes building deep networks easy and effective.
+
+00:00:28.774 --> 00:00:30.689
+The reason why we do this is because we want you to
+
+00:00:30.690 --> 00:00:33.480
+experience building bigger and better things.
+
+00:00:33.479 --> 00:00:36.394
+As I mentioned, the human brain has over 10 to the 11 neurons.
+
+00:00:36.395 --> 00:00:38.785
+You haven't played with that many yet.
+
+00:00:38.784 --> 00:00:41.014
+But to make a machine really smart,
+
+00:00:41.015 --> 00:00:43.719
+you need to build really big brains.
+

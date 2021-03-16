@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.090 --> 00:00:01.950
+I have this problem that the car seems
+
+00:00:01.950 --> 00:00:04.139
+to pull too hard to the left.
+
+00:00:04.139 --> 00:00:05.639
+This actually makes sense.
+
+00:00:05.639 --> 00:00:07.529
+The training track is a loop, and the car
+
+00:00:07.530 --> 00:00:09.359
+drives counter-clockwise.
+
+00:00:09.359 --> 00:00:11.009
+So most of the time, the model is
+
+00:00:11.009 --> 00:00:12.599
+learning to steer to the left.
+
+00:00:12.599 --> 00:00:15.750
+Then in autonomous mode, the model does steer to the left
+
+00:00:15.750 --> 00:00:18.839
+even in situations when staying straight might be best.
+
+00:00:18.839 --> 00:00:22.320
+One approach to mitigate this problem is data augmentation.
+
+00:00:22.320 --> 00:00:25.050
+There are many ways to augment data to expand the training set
+
+00:00:25.050 --> 00:00:26.789
+and help the model generalize better.
+
+00:00:26.789 --> 00:00:28.649
+I could change the brightness on the images
+
+00:00:28.649 --> 00:00:31.019
+or I could shift them horizontally or vertically.
+
+00:00:31.019 --> 00:00:34.289
+In this case, though, I'm going to keep things pretty simple.
+
+00:00:34.289 --> 00:00:36.479
+I'm just going to flip the images horizontally
+
+00:00:36.479 --> 00:00:37.649
+like a mirror.
+
+00:00:37.649 --> 00:00:39.248
+Then I'll invert the steering angles,
+
+00:00:39.249 --> 00:00:40.957
+and I should wind up with a balanced data
+
+00:00:40.957 --> 00:00:44.100
+set that teaches the car to steer clockwise, as well
+
+00:00:44.100 --> 00:00:46.050
+as counter-clockwise.
+
+00:00:46.049 --> 00:00:49.439
+Just like with using side camera data, using data augmentation
+
+00:00:49.439 --> 00:00:51.369
+carries two benefits.
+
+00:00:51.369 --> 00:00:54.539
+One, we have more data to use for training the network.
+
+00:00:54.539 --> 00:00:57.060
+And two, the data we use for training the network
+
+00:00:57.060 --> 00:00:58.530
+is more comprehensive.
+
+00:00:58.530 --> 00:01:00.300
+Training seems to be going fine, and I
+
+00:01:00.299 --> 00:01:02.549
+can see that each epoch is training on about twice
+
+00:01:02.549 --> 00:01:04.469
+as many images as before.
+
+00:01:04.469 --> 00:01:06.659
+That makes sense since I copied each image
+
+00:01:06.659 --> 00:01:08.229
+and then flipped the copy.
+
+00:01:08.230 --> 00:01:10.140
+Let's see how this model does.
+
+00:01:10.140 --> 00:01:11.549
+Even better.
+
+00:01:11.549 --> 00:01:13.140
+There's still a long way to go, but it
+
+00:01:13.140 --> 00:01:15.950
+feels like the model is making progress.
+

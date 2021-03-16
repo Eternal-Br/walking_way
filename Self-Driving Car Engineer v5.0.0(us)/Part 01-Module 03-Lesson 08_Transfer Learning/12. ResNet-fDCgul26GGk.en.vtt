@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.819
+&gt;&gt; The 2015 ImageNet winner was a network
+
+00:00:02.819 --> 00:00:05.309
+from Microsoft Research called ResNet.
+
+00:00:05.309 --> 00:00:07.710
+ResNet claim to fame is that it has a
+
+00:00:07.710 --> 00:00:12.630
+massive 152 layers. For contrast, AlexNet
+
+00:00:12.630 --> 00:00:16.528
+has eight layers, VGG has 19 layers,
+
+00:00:16.528 --> 00:00:19.618
+and GoogLeNet has 22 layers.
+
+00:00:19.618 --> 00:00:21.629
+&gt;&gt; ResNet is kinda like VGG and that the same
+
+00:00:21.629 --> 00:00:23.129
+structure is repeated again and again
+
+00:00:23.129 --> 00:00:26.070
+for layer after layer. The main idea was
+
+00:00:26.070 --> 00:00:28.079
+to add connections to the neural network
+
+00:00:28.079 --> 00:00:30.359
+that skip layers. So that very deep
+
+00:00:30.359 --> 00:00:31.829
+neural networks could practically be
+
+00:00:31.829 --> 00:00:34.590
+trained. ResNet achieves a loss of only
+
+00:00:34.590 --> 00:00:36.479
+three percent on ImageNet which is
+
+00:00:36.479 --> 00:00:38.219
+actually better than normal human
+
+00:00:38.219 --> 00:00:39.390
+accuracy.
+
+00:00:39.390 --> 00:00:42.479
+&gt;&gt; Now that you've learned about VGG
+
+00:00:42.479 --> 00:00:44.850
+GoogLeNet and ResNet, we'd like you to get
+
+00:00:44.850 --> 00:00:47.700
+your hands dirty. In the next assignment
+
+00:00:47.700 --> 00:00:49.320
+you load each of these networks and
+
+00:00:49.320 --> 00:00:55.488
+benchmark their performance.
+

@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.040
+&gt;&gt; Hi Bryan.
+
+00:00:01.040 --> 00:00:02.250
+&gt;&gt; Hey David.
+
+00:00:02.250 --> 00:00:04.799
+&gt;&gt; So, you've got a pretty impressive title,
+
+00:00:04.799 --> 00:00:08.029
+Vice President of Applied Deep Learning Research.
+
+00:00:08.029 --> 00:00:10.404
+What does a vice president do all day?
+
+00:00:10.404 --> 00:00:12.054
+&gt;&gt; That's a great question, actually.
+
+00:00:12.054 --> 00:00:16.274
+Right now, I'm looking for people with deep learning experience to come join my team.
+
+00:00:16.274 --> 00:00:17.609
+But, most of my career,
+
+00:00:17.609 --> 00:00:19.379
+I've spent building deep neural networks,
+
+00:00:19.379 --> 00:00:21.089
+and infrastructure for deep learning,
+
+00:00:21.089 --> 00:00:23.675
+and I still spend a lot of my time on that.
+
+00:00:23.675 --> 00:00:25.414
+&gt;&gt; All right. So, impress me.
+
+00:00:25.414 --> 00:00:29.629
+What's the most amazing thing you've ever done with deep neural networks?
+
+00:00:29.629 --> 00:00:32.174
+&gt;&gt; Well, one of the things I'm most proud of is that,
+
+00:00:32.174 --> 00:00:35.009
+I wrote a library that became cuDNN,
+
+00:00:35.009 --> 00:00:36.929
+which has become really important for using
+
+00:00:36.929 --> 00:00:39.769
+GPUs to accelerate deep neural network training.
+
+00:00:39.770 --> 00:00:41.690
+&gt;&gt; All right. I'm impressed.
+
+00:00:41.689 --> 00:00:43.369
+Bryan's being a little modest.
+
+00:00:43.369 --> 00:00:45.659
+cuDNN has become so important, in fact,
+
+00:00:45.659 --> 00:00:50.279
+that it's effectively a requirement for successfully training deep neural networks.
+
+00:00:50.280 --> 00:00:52.320
+&gt;&gt; Well, I certainly think so.
+
+00:00:52.320 --> 00:00:54.179
+&gt;&gt; So, cuDNN is great.
+
+00:00:54.179 --> 00:00:58.149
+I would be happy if I built one project too successful as cuDNN in my life.
+
+00:00:58.149 --> 00:01:00.030
+But beyond cuDNN, what's
+
+00:01:00.030 --> 00:01:03.564
+the most exciting deep neural network you've been working on recently?
+
+00:01:03.564 --> 00:01:06.524
+&gt;&gt; Well, the last big project I did was at Baidu,
+
+00:01:06.525 --> 00:01:08.400
+and I was part of the deep speech team,
+
+00:01:08.400 --> 00:01:10.890
+where we built a new kind of end-to-end deep neural
+
+00:01:10.890 --> 00:01:14.939
+network for speech recognition in English, and Mandarin Chinese.
+
+00:01:14.939 --> 00:01:16.000
+&gt;&gt; That is amazing.
+

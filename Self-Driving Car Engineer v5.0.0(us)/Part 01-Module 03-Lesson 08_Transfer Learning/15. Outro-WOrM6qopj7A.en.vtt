@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.009
+&gt;&gt; AlexNet, VGG, GoogLeNet and ResNet are
+
+00:00:05.009 --> 00:00:09.955
+important neural network architectures you might want to use in future projects.
+
+00:00:09.955 --> 00:00:13.155
+And even if you build your own neural network from scratch,
+
+00:00:13.154 --> 00:00:15.344
+you'll still want to fine-tune it.
+
+00:00:15.345 --> 00:00:18.600
+You can save your network as you train and then come back later to
+
+00:00:18.600 --> 00:00:22.920
+experiment with new data and additional layer or different hyperparameters.
+
+00:00:22.920 --> 00:00:25.300
+&gt;&gt; As you proceed to the final project.
+
+00:00:25.300 --> 00:00:29.250
+Think about how you might use all of the techniques you learned, including convolutions,
+
+00:00:29.250 --> 00:00:31.350
+pooling, dropout and transfer
+
+00:00:31.350 --> 00:00:34.490
+learning to build your own neural network for behavioral cloning.
+

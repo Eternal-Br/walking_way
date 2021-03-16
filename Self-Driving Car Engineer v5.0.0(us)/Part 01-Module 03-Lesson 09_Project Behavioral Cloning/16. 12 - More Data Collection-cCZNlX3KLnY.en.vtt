@@ -1,0 +1,28 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.120 --> 00:00:02.480
+One obvious approach to improve the network that I
+
+00:00:02.480 --> 00:00:05.470
+haven't tried yet, maybe the obvious approach,
+
+00:00:05.469 --> 00:00:07.149
+is to gather more data.
+
+00:00:07.149 --> 00:00:08.689
+I'm going to start small by gathering
+
+00:00:08.689 --> 00:00:10.519
+a second lap of training data.
+
+00:00:10.519 --> 00:00:12.459
+Let's see how my model does after training
+
+00:00:12.460 --> 00:00:14.630
+with two laps of data.
+
+00:00:14.630 --> 00:00:17.650
+Whoa, we are getting a little bit closer.
+

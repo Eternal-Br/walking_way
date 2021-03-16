@@ -1,0 +1,28 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.314
+&gt;&gt; Now, we're going to introduce you to a high level framework called Keras,
+
+00:00:03.314 --> 00:00:06.769
+that sits on top of TensorFlow and provides a simplified interface.
+
+00:00:06.769 --> 00:00:08.539
+&gt;&gt; Yeah, that sounds great. At Otto,
+
+00:00:08.539 --> 00:00:12.119
+if we need a lot of flexibility and we really want to customize layer creation,
+
+00:00:12.119 --> 00:00:13.619
+we'll go straight to TensorFlow.
+
+00:00:13.619 --> 00:00:17.051
+But sometimes we can get everything we need out of a friendly interface like Keras.
+
+00:00:17.051 --> 00:00:19.669
+And it makes believe that it works much faster and cleaner.
+
+00:00:19.670 --> 00:00:21.210
+&gt;&gt; All right. Well, let's go check out Keras.
+

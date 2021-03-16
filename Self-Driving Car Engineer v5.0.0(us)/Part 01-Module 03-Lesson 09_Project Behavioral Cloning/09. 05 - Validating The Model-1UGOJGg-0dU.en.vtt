@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.060 --> 00:00:01.684
+In order to run the simulator
+
+00:00:01.683 --> 00:00:04.019
+in autonomous mode on my local machine,
+
+00:00:04.019 --> 00:00:07.530
+I'm going to first clone the GitHub repo for the project.
+
+00:00:07.530 --> 00:00:10.470
+This repo provides the drive.py file
+
+00:00:10.470 --> 00:00:12.510
+that will load my saved model and use it
+
+00:00:12.509 --> 00:00:14.189
+to make steering predictions.
+
+00:00:14.189 --> 00:00:17.609
+Now, I'll copy the saved model from the AWS instance
+
+00:00:17.609 --> 00:00:22.079
+to my local machine, then I'll run drive.py and pass my model
+
+00:00:22.079 --> 00:00:23.859
+file as an argument.
+
+00:00:23.859 --> 00:00:26.759
+drive.py is running now, waiting for the simulator
+
+00:00:26.760 --> 00:00:28.500
+to start in autonomous mode.
+
+00:00:28.500 --> 00:00:30.390
+When I launch the simulator this time,
+
+00:00:30.390 --> 00:00:32.259
+I'll select autonomous mode.
+
+00:00:32.259 --> 00:00:34.570
+I can see from the output in the terminal that drive.py
+
+00:00:34.570 --> 00:00:37.530
+is successfully predicting steering measurements based
+
+00:00:37.530 --> 00:00:39.899
+on my model, which is great.
+
+00:00:39.899 --> 00:00:42.269
+I can also see that my car is driving terribly,
+
+00:00:42.270 --> 00:00:43.507
+which is not so great.
+
+00:00:43.506 --> 00:00:45.089
+It's not going very fast, because it's
+
+00:00:45.090 --> 00:00:48.100
+spending so much time swerving from side to side.
+
+00:00:48.100 --> 00:00:49.859
+This is actually a pretty good start.
+
+00:00:49.859 --> 00:00:52.200
+The network doesn't drive well, but I didn't really
+
+00:00:52.200 --> 00:00:53.400
+expect it to.
+
+00:00:53.399 --> 00:00:55.109
+What I really wanted was to verify
+
+00:00:55.109 --> 00:00:57.700
+that I could train a model, save that model,
+
+00:00:57.700 --> 00:01:01.080
+and then use that model to drive the vehicle in the simulator.
+
+00:01:01.079 --> 00:01:04.819
+All of that works, so now I just have to improve the model.
+

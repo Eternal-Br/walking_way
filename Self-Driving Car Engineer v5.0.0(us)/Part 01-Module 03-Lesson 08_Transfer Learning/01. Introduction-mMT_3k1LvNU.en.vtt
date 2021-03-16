@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.155
+&gt;&gt; At this point, you've built and trained deep neural networks from the ground up.
+
+00:00:04.155 --> 00:00:08.935
+Congratulations. This is an amazing set of skills with a wide range of applications.
+
+00:00:08.935 --> 00:00:11.580
+However, deep learning engineers often don't actually
+
+00:00:11.580 --> 00:00:14.580
+start with a blank slate when they're building neural networks.
+
+00:00:14.580 --> 00:00:17.323
+&gt;&gt; Starting from scratch can be time-consuming.
+
+00:00:17.323 --> 00:00:19.710
+It's not just architecting the network,
+
+00:00:19.710 --> 00:00:21.554
+but also experimenting with it,
+
+00:00:21.554 --> 00:00:23.445
+training it and adjusting it,
+
+00:00:23.445 --> 00:00:25.859
+which can take days or even weeks.
+
+00:00:25.859 --> 00:00:27.660
+To accelerate the process,
+
+00:00:27.660 --> 00:00:31.714
+engineers often begin with a pre-trained network and then modify it.
+
+00:00:31.714 --> 00:00:34.979
+&gt;&gt; Fine-tuning an existing network is a powerful technique because
+
+00:00:34.979 --> 00:00:39.265
+improving a network takes much less effort than creating one from scratch.
+
+00:00:39.265 --> 00:00:42.134
+Going even further, we can take an existing network
+
+00:00:42.134 --> 00:00:45.349
+and re-purpose it for a related but different task.
+
+00:00:45.350 --> 00:00:47.804
+Re-purposing a network is called Transfer Learning,
+
+00:00:47.804 --> 00:00:51.984
+because you're transferring the learning from an existing network to a new one.
+
+00:00:51.984 --> 00:00:54.299
+&gt;&gt; To learn more about why Transfer Learning
+
+00:00:54.299 --> 00:00:57.070
+is so important for building deep neural networks,
+
+00:00:57.070 --> 00:00:59.369
+we're going to get some advice from Bryan Cantanzaro,
+
+00:00:59.369 --> 00:01:02.000
+a deep learning expert in NVIDIA.
+

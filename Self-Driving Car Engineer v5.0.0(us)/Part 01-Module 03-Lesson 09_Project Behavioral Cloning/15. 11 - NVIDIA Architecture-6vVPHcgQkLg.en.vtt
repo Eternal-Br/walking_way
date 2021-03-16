@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.730
+I'd like to try a network architecture that is even more powerful than LeNet.
+
+00:00:04.730 --> 00:00:09.260
+I'm going to test out an architecture published by the autonomous vehicle team at NVIDIA.
+
+00:00:09.260 --> 00:00:13.080
+This is the network they use for training a real car to drive autonomously.
+
+00:00:13.080 --> 00:00:14.319
+Starting from the bottom,
+
+00:00:14.319 --> 00:00:18.285
+the network consists of a normalization layer which I already have,
+
+00:00:18.285 --> 00:00:20.574
+followed by five convolutional layers,
+
+00:00:20.574 --> 00:00:23.205
+followed by four fully connected layers.
+
+00:00:23.205 --> 00:00:27.175
+Since the dimensions are changing between some of the convolutional layers,
+
+00:00:27.175 --> 00:00:31.585
+it seems like the network uses convolutional strides in some cases.
+
+00:00:31.585 --> 00:00:32.861
+The training is okay,
+
+00:00:32.861 --> 00:00:37.505
+but I can see that the validation loss is increasing with every epoch.
+
+00:00:37.505 --> 00:00:44.225
+I'm going to try training it again for a fewer number of epochs.
+
+00:00:44.225 --> 00:00:45.920
+All right, the network runs pretty well.
+
+00:00:45.920 --> 00:00:47.545
+It gets the car to the bridge,
+
+00:00:47.545 --> 00:00:51.000
+still needs improvement, but it feels like we're getting better each time.
+

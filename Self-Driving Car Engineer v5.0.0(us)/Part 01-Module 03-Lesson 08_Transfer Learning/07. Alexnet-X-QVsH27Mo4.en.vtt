@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.258
+&gt;&gt; AlexNet was developed at the University of Toronto by Alex Krizhevsky,
+
+00:00:04.258 --> 00:00:07.544
+Ilya Sutskever and their professor Geoffrey Hinton.
+
+00:00:07.544 --> 00:00:12.365
+Although the fundamental architecture of AlexNet resembled LeNet from 1998,
+
+00:00:12.365 --> 00:00:16.089
+AlexNet was a breakthrough in several respects.
+
+00:00:16.089 --> 00:00:18.320
+&gt;&gt; First and foremost, AlexNet used
+
+00:00:18.320 --> 00:00:22.995
+the massive parallelism afforded by GPUs to accelerate training.
+
+00:00:22.995 --> 00:00:26.460
+Using the best GPUs available in 2012,
+
+00:00:26.460 --> 00:00:30.530
+the AlexNet team was able to train the network in about a week.
+
+00:00:30.530 --> 00:00:34.799
+Additionally, AlexNet pioneered the use of Rectified Linear Units as
+
+00:00:34.799 --> 00:00:39.569
+an activation function and dropout is a technique for avoiding overfitting.
+
+00:00:39.570 --> 00:00:43.079
+&gt;&gt; In 2011, the year before AlexNet was developed,
+
+00:00:43.079 --> 00:00:48.104
+the winner of the ImageNet competition successfully classified 74% of images,
+
+00:00:48.104 --> 00:00:50.189
+or in the terminology of the competition,
+
+00:00:50.189 --> 00:00:51.919
+its error was 26%.
+
+00:00:51.920 --> 00:00:55.939
+The next year, AlexNet lowered its error to 15%.
+
+00:00:55.939 --> 00:00:58.000
+This was a huge leap forward.
+

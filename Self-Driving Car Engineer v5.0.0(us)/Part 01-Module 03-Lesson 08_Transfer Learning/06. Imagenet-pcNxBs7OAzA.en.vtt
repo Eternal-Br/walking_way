@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.512
+&gt;&gt; By the late aughts,
+
+00:00:01.512 --> 00:00:04.980
+the Internet had made it easier to generate and collect images,
+
+00:00:04.980 --> 00:00:09.900
+storage costs had dropped so that it was cheap to save large collections of images,
+
+00:00:09.900 --> 00:00:12.780
+and services like Amazon's Mechanical Turk had
+
+00:00:12.779 --> 00:00:15.855
+even made it more cost-effective to label images.
+
+00:00:15.855 --> 00:00:19.530
+That confluence of factors gave rise to ImageNet,
+
+00:00:19.530 --> 00:00:22.560
+a huge database of hand-labeled images.
+
+00:00:22.559 --> 00:00:25.410
+And the ImageNet database gave rise to
+
+00:00:25.410 --> 00:00:29.394
+the ImageNet Large Scale Visual Recognition Competition.
+
+00:00:29.394 --> 00:00:32.339
+&gt;&gt; The ImageNet Large Scale Visual Recognition Competition
+
+00:00:32.340 --> 00:00:34.680
+is most famous as an annual competition,
+
+00:00:34.679 --> 00:00:37.259
+where teams from industry and academia try to build
+
+00:00:37.259 --> 00:00:40.649
+the best networks for object detection and localization.
+
+00:00:40.649 --> 00:00:42.890
+&gt;&gt; Kind of like this image.
+
+00:00:42.890 --> 00:00:45.679
+Is this a dog or a horse?
+
+00:00:45.679 --> 00:00:47.509
+&gt;&gt; It's a horse.
+
+00:00:47.509 --> 00:00:51.299
+Anyway, this spurred really intense competition between teams in
+
+00:00:51.299 --> 00:00:55.879
+industry and academia to produce the best image classification network.
+
+00:00:55.880 --> 00:00:57.780
+And as these teams published their approaches,
+
+00:00:57.780 --> 00:01:01.649
+we learned a lot about the best ways to build neural networks.
+
+00:01:01.649 --> 00:01:03.765
+The first big breakthrough was in 2012,
+
+00:01:03.765 --> 00:01:06.629
+when the winning submission really changed the field.
+
+00:01:06.629 --> 00:01:07.897
+It was called AlexNet,
+
+00:01:07.897 --> 00:01:12.140
+and it looked a lot like Yann LeCun's neural network from way back in 1998.
+

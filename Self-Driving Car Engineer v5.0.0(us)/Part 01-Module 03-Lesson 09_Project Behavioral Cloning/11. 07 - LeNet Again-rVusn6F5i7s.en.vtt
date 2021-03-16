@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.499 --> 00:00:02.879
+Now that I have a model that can at least drive
+
+00:00:02.879 --> 00:00:05.969
+the car a little bit, I'd like to try a more powerful network
+
+00:00:05.969 --> 00:00:07.259
+architecture.
+
+00:00:07.259 --> 00:00:10.259
+To start, I'm going to return to my old friend LeNet.
+
+00:00:10.259 --> 00:00:14.879
+The original LeNet architecture takes a 32 by 32 by 1 image.
+
+00:00:14.880 --> 00:00:18.359
+And here, we have a 160 by 320 by 3 image.
+
+00:00:18.359 --> 00:00:20.730
+But one nice thing about convolutional networks
+
+00:00:20.730 --> 00:00:23.730
+is that they'll work with a wide range of input image sizes.
+
+00:00:23.730 --> 00:00:26.039
+Now that I've implemented the LeNet architecture,
+
+00:00:26.039 --> 00:00:28.140
+I'm curious to see how training goes.
+
+00:00:28.140 --> 00:00:31.050
+Since this is a much more powerful network architecture,
+
+00:00:31.050 --> 00:00:32.759
+I'll train over five epochs.
+
+00:00:32.759 --> 00:00:35.700
+The loss continues decreasing, pretty much through all five epochs,
+
+00:00:35.700 --> 00:00:37.440
+although only slightly.
+
+00:00:37.439 --> 00:00:39.809
+Let's see how well this model drives the car.
+
+00:00:39.810 --> 00:00:40.530
+This is great.
+
+00:00:40.530 --> 00:00:42.179
+It feels like a real driver.
+
+00:00:42.179 --> 00:00:44.460
+It needs improvement, but I finally
+
+00:00:44.460 --> 00:00:46.640
+think I'm making progress.
+

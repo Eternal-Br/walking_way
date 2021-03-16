@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.915
+&gt;&gt; You've reached the end of the deep learning module.
+
+00:00:02.915 --> 00:00:04.080
+Congratulations!
+
+00:00:04.080 --> 00:00:06.509
+&gt;&gt; Boy, you sounded just like Sebastian right there.
+
+00:00:06.509 --> 00:00:09.619
+&gt;&gt; Thank you. I try to be just like Sebastian.
+
+00:00:09.619 --> 00:00:14.234
+So, do you feel like a deep learning expert now?
+
+00:00:14.234 --> 00:00:16.105
+&gt;&gt; Well, I wouldn't necessarily say expert,
+
+00:00:16.105 --> 00:00:19.660
+but I think I know what tools I've got.
+
+00:00:19.660 --> 00:00:24.460
+&gt;&gt; Alright, I think you're ready to build the behavioral cloning network.
+
+00:00:24.460 --> 00:00:28.425
+The team at Udacity has built an awesome simulator for you.
+
+00:00:28.425 --> 00:00:32.094
+It's going to be your job to drive your car around the track,
+
+00:00:32.094 --> 00:00:37.570
+collect data and then train a deep neural network to do the driving for you.
+
+00:00:37.570 --> 00:00:41.350
+So, how would you approach this kind of problem?
+
+00:00:41.350 --> 00:00:44.439
+&gt;&gt; Well, I guess...I know!
+
+00:00:44.439 --> 00:00:46.594
+I'd compute the gradient.
+
+00:00:46.594 --> 00:00:47.890
+Yeah. And then once I got the...
+
+00:00:47.890 --> 00:00:49.865
+&gt;&gt; Stop, stop, stop. This is deep learning,
+
+00:00:49.865 --> 00:00:51.530
+not computer vision deep learning.
+
+00:00:51.530 --> 00:00:51.868
+&gt;&gt; No gradient?
+
+00:00:51.868 --> 00:00:53.590
+&gt;&gt; No. Focus, deep learning.
+
+00:00:53.590 --> 00:00:58.180
+&gt;&gt; Got it. Okay. Then, I think I'd go fire up my simulator.
+
+00:00:58.179 --> 00:01:01.149
+&gt;&gt; Thank you.
+
+00:01:01.149 --> 00:01:02.679
+When you're done,
+
+00:01:02.679 --> 00:01:05.849
+you're going to have an awesome portfolio project to show off.
+
+00:01:05.849 --> 00:01:09.179
+Actually that was kind of cool.
+

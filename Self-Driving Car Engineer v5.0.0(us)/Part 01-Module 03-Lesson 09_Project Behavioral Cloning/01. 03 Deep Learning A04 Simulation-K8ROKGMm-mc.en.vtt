@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.730
+You're about to enter what's often considered
+
+00:00:02.730 --> 00:00:05.269
+the most fun part of the entire nanodegree program.
+
+00:00:05.269 --> 00:00:08.773
+Which is, you're going to learn about behavioral cloning.
+
+00:00:08.773 --> 00:00:11.934
+But more importantly, you're going to play with simulation.
+
+00:00:11.935 --> 00:00:15.525
+You're going to drive a car through simulating yourself,
+
+00:00:15.525 --> 00:00:18.339
+and then you make a neural network copy you.
+
+00:00:18.339 --> 00:00:19.995
+So, you'd be superfluous.
+
+00:00:19.995 --> 00:00:21.644
+The neural network will watch you,
+
+00:00:21.644 --> 00:00:23.100
+will watch your behavior.
+
+00:00:23.100 --> 00:00:26.705
+The task for the neural network is to pick up your driving skill,
+
+00:00:26.704 --> 00:00:29.044
+and copy it and do the same.
+
+00:00:29.045 --> 00:00:30.390
+There's two ways to fail.
+
+00:00:30.390 --> 00:00:32.105
+One is you know a network fails,
+
+00:00:32.104 --> 00:00:35.939
+and second is that you use a lousy driver then find somebody else to drive for you.
+
+00:00:35.939 --> 00:00:37.554
+But if you succeed,
+
+00:00:37.554 --> 00:00:38.899
+you can take your brain,
+
+00:00:38.899 --> 00:00:44.799
+you're driving smarts and input it into a new network that is super cool. So, have fun.
+

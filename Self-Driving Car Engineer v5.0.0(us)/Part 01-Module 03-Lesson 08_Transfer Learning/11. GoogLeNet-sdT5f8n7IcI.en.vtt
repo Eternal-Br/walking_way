@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.509
+&gt;&gt; In 2014, Google published its own network in
+
+00:00:03.509 --> 00:00:08.070
+the ImageNet competition and in homage to Yann LeCun and LeNet,
+
+00:00:08.070 --> 00:00:10.970
+Google named their network,
+
+00:00:10.970 --> 00:00:13.670
+wait for it, GoogLeNet.
+
+00:00:13.669 --> 00:00:18.230
+It's spelled like GoogleNet but it's pronounced GoogLeNet.
+
+00:00:18.230 --> 00:00:20.594
+Go figure.
+
+00:00:20.594 --> 00:00:22.574
+In the ImageNet competition,
+
+00:00:22.574 --> 00:00:26.175
+GoogLeNet performed even a little better than VGG:
+
+00:00:26.175 --> 00:00:29.545
+6.7% compared to 7.3% percent,
+
+00:00:29.545 --> 00:00:30.825
+although at that level,
+
+00:00:30.824 --> 00:00:32.850
+it kind of feels like we're splitting hairs.
+
+00:00:32.850 --> 00:00:36.450
+&gt;&gt; GoogLeNet's great advantage is that it runs really fast.
+
+00:00:36.450 --> 00:00:39.300
+The team that developed GoogLeNet developed a clever concept
+
+00:00:39.299 --> 00:00:44.129
+called an Inception module, which trains really well and is efficiently deployable.
+
+00:00:44.130 --> 00:00:45.770
+&gt;&gt; Do you remember inception?
+
+00:00:45.770 --> 00:00:48.445
+Vincent explained the concept earlier.
+
+00:00:48.445 --> 00:00:51.344
+We're going to show it again here, in case you forgot.
+
+00:00:51.344 --> 00:00:53.850
+&gt;&gt; It's called an inception module.
+
+00:00:53.850 --> 00:00:56.600
+It's going to look a little more complicated.
+
+00:00:56.600 --> 00:01:00.000
+The idea is that at each layer of your ConvNet,
+
+00:01:00.000 --> 00:01:01.515
+you can make a choice,
+
+00:01:01.515 --> 00:01:03.480
+have a pooling operation,
+
+00:01:03.479 --> 00:01:06.015
+have a convolution and then you need to decide,
+
+00:01:06.015 --> 00:01:10.875
+is it the one by one convolution or a three by three or five by five.
+
+00:01:10.875 --> 00:01:15.105
+All of these are actually beneficial to the modeling power of your network.
+
+00:01:15.105 --> 00:01:17.969
+So why choose? Let's use them all.
+
+00:01:17.969 --> 00:01:20.204
+Here's what an inception module looks like.
+
+00:01:20.204 --> 00:01:22.635
+Instead of having a single convolution,
+
+00:01:22.635 --> 00:01:26.910
+you have a composition of average pooling followed by one by one,
+
+00:01:26.909 --> 00:01:29.429
+then a one by one convolution,
+
+00:01:29.430 --> 00:01:32.220
+then a one by one followed by a three by three,
+
+00:01:32.219 --> 00:01:35.250
+then a one by one followed by a five by five and
+
+00:01:35.250 --> 00:01:38.540
+at the top you simply concatenate the output of each of them.
+
+00:01:38.540 --> 00:01:43.140
+It looks complicated but what's interesting is that you can choose these parameters
+
+00:01:43.140 --> 00:01:48.015
+in such a way that the total number of parameters in your model is very small,
+
+00:01:48.015 --> 00:01:51.599
+yet the model performs better than if you had a simple convolution.
+
+00:01:51.599 --> 00:01:55.289
+&gt;&gt; As Vincent says, the inception modules create
+
+00:01:55.290 --> 00:01:59.124
+a situation in which the total number of parameters is very small.
+
+00:01:59.123 --> 00:02:02.109
+This is why GoogLeNet runs almost as fast as AlexNet.
+
+00:02:02.109 --> 00:02:05.855
+&gt;&gt; And of course GoogLeNet has great accuracy.
+
+00:02:05.855 --> 00:02:06.975
+Like we mentioned earlier,
+
+00:02:06.974 --> 00:02:09.965
+it's ImageNet error was only 7%.
+
+00:02:09.965 --> 00:02:14.310
+GoogLeNet is a great choice to investigate if you need to run your network in real time,
+
+00:02:14.310 --> 00:02:16.020
+like maybe in a self-driving car.
+

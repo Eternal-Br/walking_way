@@ -1,0 +1,232 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.090 --> 00:00:01.881
+The image data from the simulator
+
+00:00:01.881 --> 00:00:04.320
+is going to be much easier to work with on a GPU
+
+00:00:04.320 --> 00:00:05.520
+than on a CPU.
+
+00:00:05.519 --> 00:00:10.169
+So I've launched an AWS EC2 instance with an attached GPU.
+
+00:00:10.169 --> 00:00:12.719
+And I'm going to train the network there.
+
+00:00:12.720 --> 00:00:16.170
+I'll use SCP to copy the data up to the EC2 instance,
+
+00:00:16.170 --> 00:00:19.090
+and then extract the data there.
+
+00:00:19.089 --> 00:00:22.780
+Next, I'll use Python CSV library to read and store
+
+00:00:22.780 --> 00:00:26.620
+the lines from the drivinglog.csv file, then,
+
+00:00:26.620 --> 00:00:29.769
+for each line, I'll extract the path to the camera image.
+
+00:00:29.769 --> 00:00:33.189
+But remember that path was recorded on my local machine.
+
+00:00:33.189 --> 00:00:35.629
+And now I'm on the AWS instance.
+
+00:00:35.630 --> 00:00:38.170
+So I'll need to update the path so it's valid here
+
+00:00:38.170 --> 00:00:40.590
+on the AWS instance.
+
+00:00:40.590 --> 00:00:42.420
+An easy way to update the path is
+
+00:00:42.420 --> 00:00:44.670
+to split the path on its slashes,
+
+00:00:44.670 --> 00:00:46.560
+and then extract the final token, which
+
+00:00:46.560 --> 00:00:47.940
+will be the file name.
+
+00:00:47.939 --> 00:00:50.159
+Then, I can add that file name to the end
+
+00:00:50.159 --> 00:00:51.959
+of the path to the image directory
+
+00:00:51.960 --> 00:00:53.969
+here on my AWS instance.
+
+00:00:53.969 --> 00:00:55.679
+Once I have the current path, I can
+
+00:00:55.679 --> 00:00:59.340
+use OpenCV to load the image.
+
+00:00:59.340 --> 00:01:00.850
+And once I've loaded the image, I
+
+00:01:00.850 --> 00:01:03.380
+can append it to my list of images.
+
+00:01:03.380 --> 00:01:05.900
+I can do something similar for the steering measurements,
+
+00:01:05.900 --> 00:01:07.772
+which will serve as my output labels.
+
+00:01:07.772 --> 00:01:09.980
+It's actually going to be easier to load this steering
+
+00:01:09.980 --> 00:01:13.549
+measurements, because there are no paths or images to handle.
+
+00:01:13.549 --> 00:01:16.670
+I simply extract the fourth token from the CSV line,
+
+00:01:16.670 --> 00:01:18.477
+and then cast it as a float.
+
+00:01:18.477 --> 00:01:20.060
+That gives me the steering measurement
+
+00:01:20.060 --> 00:01:21.500
+for this point in time.
+
+00:01:21.500 --> 00:01:24.079
+Then, I append that measurement to the larger measurements
+
+00:01:24.079 --> 00:01:26.670
+array, just like I did for the image.
+
+00:01:26.670 --> 00:01:29.480
+Now that I've loaded the images and steering measurements,
+
+00:01:29.480 --> 00:01:31.850
+I'm going to convert them to NumPy arrays,
+
+00:01:31.849 --> 00:01:34.579
+since that's the format Keras requires.
+
+00:01:34.579 --> 00:01:37.310
+Next, I'm going to build the most basic neural network
+
+00:01:37.310 --> 00:01:40.129
+possible, just to verify that everything is working.
+
+00:01:40.129 --> 00:01:42.949
+This network is just going to be a flattened image connected
+
+00:01:42.950 --> 00:01:44.450
+to a single output node.
+
+00:01:44.450 --> 00:01:46.280
+This single output node will predict
+
+00:01:46.280 --> 00:01:49.969
+my steering angle, which makes this a regression network.
+
+00:01:49.969 --> 00:01:51.980
+For a classification network I might
+
+00:01:51.980 --> 00:01:55.579
+apply a softmax activation function to the output layer.
+
+00:01:55.579 --> 00:01:57.649
+But in a regression network like this,
+
+00:01:57.650 --> 00:02:00.230
+I just want the single output node to directly predict
+
+00:02:00.230 --> 00:02:01.430
+the steering measurement.
+
+00:02:01.430 --> 00:02:05.230
+So I won't apply an activation function here.
+
+00:02:05.230 --> 00:02:08.288
+With the network constructed, I'll compile the model.
+
+00:02:08.288 --> 00:02:12.130
+For the loss function, I'll use mean squared error, or MSE.
+
+00:02:12.129 --> 00:02:14.229
+This is different than the cross-entropy function
+
+00:02:14.229 --> 00:02:16.599
+we've used in the past, again because this
+
+00:02:16.599 --> 00:02:19.689
+is a regression network instead of a classification network.
+
+00:02:19.689 --> 00:02:22.960
+What I want to do is minimize the error between the steering
+
+00:02:22.960 --> 00:02:25.270
+measurement that the network predicts and the ground
+
+00:02:25.270 --> 00:02:26.590
+truth steering measurement.
+
+00:02:26.590 --> 00:02:29.379
+Mean squared error is a good loss function for this.
+
+00:02:29.379 --> 00:02:32.019
+Once the model is compiled, I'll train it with the feature
+
+00:02:32.020 --> 00:02:35.590
+and label arrays I just built. I'll also shuffle the data
+
+00:02:35.590 --> 00:02:40.120
+and split off 20% of the data to use for a validation set.
+
+00:02:40.120 --> 00:02:43.360
+Finally, I'm going to save the trained model, so that later I
+
+00:02:43.360 --> 00:02:45.520
+can download it onto my local machine,
+
+00:02:45.520 --> 00:02:47.740
+and see if it works for driving the simulator.
+
+00:02:47.740 --> 00:02:50.020
+Let's train the model and see how it goes.
+
+00:02:50.020 --> 00:02:52.600
+By default, Keras trains for 10 epoches.
+
+00:02:52.599 --> 00:02:54.430
+And I can see that the validation loss
+
+00:02:54.430 --> 00:02:56.379
+decreases for the first 7 epoches,
+
+00:02:56.379 --> 00:02:58.539
+and then starts climbing again.
+
+00:02:58.539 --> 00:03:01.900
+This is a sign that maybe I'm overfitting the training data.
+
+00:03:01.900 --> 00:03:03.520
+Now it looks a little better.
+
+00:03:03.520 --> 00:03:06.070
+Now, the validation loss decreases for almost all
+
+00:03:06.069 --> 00:03:07.129
+of the epoches.
+
+00:03:07.129 --> 00:03:09.729
+Next, I'll download this model to my local machine,
+
+00:03:09.729 --> 00:03:13.500
+and see how well it drives the car in the simulator.
+

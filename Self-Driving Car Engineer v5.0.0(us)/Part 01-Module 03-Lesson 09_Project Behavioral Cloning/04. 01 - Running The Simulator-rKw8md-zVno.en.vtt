@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.500 --> 00:00:01.889
+This is the simulator.
+
+00:00:01.889 --> 00:00:04.410
+From the home screen, you can launch the simulator
+
+00:00:04.410 --> 00:00:07.480
+into either training mode or autonomous mode.
+
+00:00:07.480 --> 00:00:10.470
+You can also select which track you want to work with.
+
+00:00:10.470 --> 00:00:12.330
+For the behavioral cloning project,
+
+00:00:12.330 --> 00:00:14.519
+you only need to work with this first track.
+
+00:00:14.519 --> 00:00:17.100
+But if you want to give yourself an extra challenge,
+
+00:00:17.100 --> 00:00:20.220
+you can also train your vehicle to drive on the second track.
+
+00:00:20.219 --> 00:00:22.289
+Before diving into training though,
+
+00:00:22.289 --> 00:00:25.839
+let's take a look at the controls.
+
+00:00:25.839 --> 00:00:28.539
+In training mode, there are actually three different ways
+
+00:00:28.539 --> 00:00:29.829
+to steer the vehicle.
+
+00:00:29.829 --> 00:00:32.484
+You can steer with the A, W, S, and D
+
+00:00:32.484 --> 00:00:34.479
+keys, which you might be familiar with if you
+
+00:00:34.479 --> 00:00:35.619
+play video games.
+
+00:00:35.619 --> 00:00:39.789
+Or you can steer with the arrow keys up, down, left, and right.
+
+00:00:39.789 --> 00:00:41.829
+Or you can steer with the mouse.
+
+00:00:41.829 --> 00:00:43.659
+Steering with the mouse actually outputs
+
+00:00:43.659 --> 00:00:46.329
+the best steering measurements and the training data.
+
+00:00:46.329 --> 00:00:48.159
+But I usually steer with the arrow keys.
+
+00:00:48.159 --> 00:00:50.199
+Because I find that to be the easiest.
+
+00:00:50.200 --> 00:00:52.929
+You can also press the R key on your keyboard
+
+00:00:52.929 --> 00:00:55.090
+to turn recording mode on and off.
+
+00:00:55.090 --> 00:00:57.780
+Let's go collect some training data.
+

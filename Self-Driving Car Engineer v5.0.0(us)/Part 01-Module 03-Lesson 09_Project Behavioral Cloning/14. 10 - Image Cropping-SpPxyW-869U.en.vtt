@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.499 --> 00:00:03.189
+I'd like to return to something I saw a while back,
+
+00:00:03.189 --> 00:00:05.040
+which is that the top pixels of the image
+
+00:00:05.040 --> 00:00:07.919
+mostly capture sky and trees and hills
+
+00:00:07.919 --> 00:00:10.589
+and other elements that might be more distracting for the model
+
+00:00:10.589 --> 00:00:11.939
+than helpful.
+
+00:00:11.939 --> 00:00:15.209
+It looks like this is about 70 rows of pixels.
+
+00:00:15.210 --> 00:00:18.690
+I also notice that the bottom 25 pixels largely
+
+00:00:18.690 --> 00:00:20.790
+consist of the hood of the car.
+
+00:00:20.789 --> 00:00:23.549
+I'm going to crop out those portions of the images.
+
+00:00:23.550 --> 00:00:25.199
+Just like with the Lambda layer, I'm
+
+00:00:25.199 --> 00:00:27.719
+going to use a built-in Keras layer to perform
+
+00:00:27.719 --> 00:00:29.579
+the cropping inside of the model.
+
+00:00:29.579 --> 00:00:31.739
+In this case I'll use the Cropping 2D
+
+00:00:31.739 --> 00:00:35.189
+layer to remove the top 70 pixels and the bottom 25
+
+00:00:35.189 --> 00:00:36.000
+pixels.
+
+00:00:36.000 --> 00:00:37.270
+Training looks good.
+
+00:00:37.270 --> 00:00:39.910
+Let's run it.
+
+00:00:39.909 --> 00:00:40.409
+All right.
+
+00:00:40.409 --> 00:00:41.325
+That's an improvement.
+
+00:00:41.326 --> 00:00:44.460
+The model is driving all the way around the first curve.
+
+00:00:44.460 --> 00:00:46.710
+It's starting to look like maybe I can get the car all
+
+00:00:46.710 --> 00:00:48.740
+the way around the track.
+
