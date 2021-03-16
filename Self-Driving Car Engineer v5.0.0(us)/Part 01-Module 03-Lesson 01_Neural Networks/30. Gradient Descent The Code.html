@@ -1,0 +1,550 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Gradient Descent: The Code
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Neural Networks
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Neural Network Intuition.html">
+       01. Neural Network Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction to Deep Learning.html">
+       02. Introduction to Deep Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Starting Machine Learning.html">
+       03. Starting Machine Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="04. A Note on Deep Learning.html">
+       04. A Note on Deep Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Quiz Housing Prices.html">
+       05. Quiz: Housing Prices
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Solution Housing Prices.html">
+       06. Solution: Housing Prices
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Linear to Logistic Regression.html">
+       07. Linear to Logistic Regression
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Classification Problems 1.html">
+       08. Classification Problems 1
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Classification Problems 2.html">
+       09. Classification Problems 2
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Linear Boundaries.html">
+       10. Linear Boundaries
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Higher Dimensions.html">
+       11. Higher Dimensions
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Perceptrons.html">
+       12. Perceptrons
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Perceptrons II.html">
+       13. Perceptrons II
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Why Neural Networks.html">
+       14. Why "Neural Networks"?
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Perceptrons as Logical Operators.html">
+       15. Perceptrons as Logical Operators
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Perceptron Trick.html">
+       16. Perceptron Trick
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Perceptron Algorithm.html">
+       17. Perceptron Algorithm
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Error Functions.html">
+       18. Error Functions
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Log-loss Error Function.html">
+       19. Log-loss Error Function
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Discrete vs Continuous.html">
+       20. Discrete vs Continuous
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Softmax.html">
+       21. Softmax
+      </a>
+     </li>
+     <li class="">
+      <a href="22. One-Hot Encoding.html">
+       22. One-Hot Encoding
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Maximum Likelihood.html">
+       23. Maximum Likelihood
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Maximizing Probabilities.html">
+       24. Maximizing Probabilities
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Cross-Entropy 1.html">
+       25. Cross-Entropy 1
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Cross-Entropy 2.html">
+       26. Cross-Entropy 2
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Multi-Class Cross Entropy.html">
+       27. Multi-Class Cross Entropy
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Logistic Regression.html">
+       28. Logistic Regression
+      </a>
+     </li>
+     <li class="">
+      <a href="29. Gradient Descent.html">
+       29. Gradient Descent
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Gradient Descent The Code.html">
+       30. Gradient Descent: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="31. Perceptron vs Gradient Descent.html">
+       31. Perceptron vs Gradient Descent
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Continuous Perceptrons.html">
+       32. Continuous Perceptrons
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Non-linear Data.html">
+       33. Non-linear Data
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Non-Linear Models.html">
+       34. Non-Linear Models
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Neural Network Architecture.html">
+       35. Neural Network Architecture
+      </a>
+     </li>
+     <li class="">
+      <a href="36. Feedforward.html">
+       36. Feedforward
+      </a>
+     </li>
+     <li class="">
+      <a href="37. Multilayer Perceptrons.html">
+       37. Multilayer Perceptrons
+      </a>
+     </li>
+     <li class="">
+      <a href="38. Backpropagation.html">
+       38. Backpropagation
+      </a>
+     </li>
+     <li class="">
+      <a href="39. Further Reading.html">
+       39. Further Reading
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          30. Gradient Descent: The Code
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="gradient-descent-the-code">
+          Gradient Descent: The Code
+         </h1>
+         <p>
+          From before we saw that one weight update can be calculated as:
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \Delta w_i = \alpha * \delta * x_i
+          </span>
+         </p>
+         <p>
+          where
+          <span class="mathquill ud-math">
+           \alpha
+          </span>
+          is the learning rate and
+          <span class="mathquill ud-math">
+           \delta
+          </span>
+          is the error term.
+         </p>
+         <p>
+          Previously, we utilized the loss (error) function for logistic regression, which was because we were performing a binary classification task. This time we'll try to get the function to learn a value instead of a class. Therefore, we'll use a simpler loss function, as defined below in the error term
+          <span class="mathquill ud-math">
+           \delta
+          </span>
+          .
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \delta = (y - \hat y) f'(h) =  (y - \hat y) f'(\sum w_i x_i)
+          </span>
+         </p>
+         <p>
+          Note that
+          <span class="mathquill ud-math">
+           f'(h)
+          </span>
+          is the derivative of the activation function
+          <span class="mathquill ud-math">
+           f(h)
+          </span>
+          , and
+          <span class="mathquill ud-math">
+           h
+          </span>
+          is defined as the output, which in the case of a neural network is a sum of the weights times the inputs.
+         </p>
+         <p>
+          Now I'll write this out in code for the case of only one output unit. We'll also be using the sigmoid as the activation function
+          <span class="mathquill ud-math">
+           f(h)
+          </span>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <pre><code># Defining the sigmoid function for activations
+def sigmoid(x):
+    return 1/(1+np.exp(-x))
+
+# Derivative of the sigmoid function
+def sigmoid_prime(x):
+    return sigmoid(x) * (1 - sigmoid(x))
+
+# Input data
+x = np.array([0.1, 0.3])
+# Target
+y = 0.2
+# Input to output weights
+weights = np.array([-0.8, 0.5])
+
+# The learning rate, eta in the weight step equation
+learnrate = 0.5
+
+# The neural network output (y-hat)
+nn_output = sigmoid(x[0]*weights[0] + x[1]*weights[1])
+# or nn_output = sigmoid(np.dot(x, weights))
+
+# output error (y - y-hat)
+error = y - nn_output
+
+# error term (lowercase delta)
+error_term = error * sigmoid_prime(np.dot(x,weights))
+
+# Gradient descent step 
+del_w = [ learnrate * error_term * x[0],
+                 learnrate * error_term * x[1]]
+# or del_w = learnrate * error_term * x</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="264666-gradient-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#264666-gradient-py" id="tab-264666-gradient-py" role="tab">
+            gradient.py
+           </a>
+           <a aria-controls="264666-solution-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#264666-solution-py" id="tab-264666-solution-py" role="tab">
+            solution.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-264666-gradient-py" class="tab-pane active show" id="264666-gradient-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+
+def sigmoid(x):
+    """
+    Calculate sigmoid
+    """
+    return 1/(1+np.exp(-x))
+
+learnrate = 0.5
+x = np.array([1, 2])
+y = np.array(0.5)
+
+# Initial weights
+w = np.array([0.5, -0.5])
+
+# Calculate one gradient descent step for each weight
+# TODO: Calculate output of neural network
+nn_output = None
+
+# TODO: Calculate error of neural network
+error = None
+
+# TODO: Calculate change in weights
+del_w = None
+
+print('Neural Network output:')
+print(nn_output)
+print('Amount of Error:')
+print(error)
+print('Change in Weights:')
+print(del_w)</pre>
+           </div>
+           <div aria-labelledby="tab-264666-solution-py" class="tab-pane" id="264666-solution-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+
+def sigmoid(x):
+    """
+    Calculate sigmoid
+    """
+    return 1/(1+np.exp(-x))
+
+learnrate = 0.5
+x = np.array([1, 2])
+y = np.array(0.5)
+
+# Initial weights
+w = np.array([0.5, -0.5])
+
+# Calculate one gradient descent step for each weight
+# TODO: Calculate output of neural network
+nn_output = sigmoid(np.dot(x, w))
+
+# TODO: Calculate error of neural network
+error = y - nn_output
+
+# TODO: Calculate change in weights
+del_w = learnrate * error * nn_output * (1 - nn_output) * x
+
+print('Neural Network output:')
+print(nn_output)
+print('Amount of Error:')
+print(error)
+print('Change in Weights:')
+print(del_w)</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="31. Perceptron vs Gradient Descent.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('30. Gradient Descent: The Code')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

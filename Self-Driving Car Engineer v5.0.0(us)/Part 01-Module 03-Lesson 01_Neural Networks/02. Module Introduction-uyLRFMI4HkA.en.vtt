@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.279
+&gt;&gt; Here, you're going to learn how to use one of
+
+00:00:02.279 --> 00:00:07.259
+the most exciting tools and self-driving car development, deep neural networks.
+
+00:00:07.259 --> 00:00:08.820
+At the end of this module,
+
+00:00:08.820 --> 00:00:10.710
+you'll create a project that demonstrates
+
+00:00:10.710 --> 00:00:15.600
+real world application of the skills you need to become a self-driving car engineer.
+
+00:00:15.599 --> 00:00:17.565
+&gt;&gt; That's right. In the project you'll train
+
+00:00:17.565 --> 00:00:20.304
+a deep neural network to drive a car in a simulator.
+
+00:00:20.304 --> 00:00:23.579
+First, you'll drive and record training laps in simulation and then
+
+00:00:23.579 --> 00:00:26.909
+you'll build and train a deep neural network that learns from the way you drive.
+
+00:00:26.910 --> 00:00:32.969
+&gt;&gt; A deep neural network is just a term that describes a big multi-layer neural network.
+
+00:00:32.969 --> 00:00:35.399
+&gt;&gt; And a neural network is
+
+00:00:35.399 --> 00:00:38.384
+a machine learning algorithm that you can train using input like
+
+00:00:38.384 --> 00:00:40.875
+camera images or sensor readings and generate
+
+00:00:40.875 --> 00:00:45.159
+output like what's steering angle the car should take or how fast it should go.
+
+00:00:45.159 --> 00:00:48.729
+The idea is that the neural network learns from observing the world.
+
+00:00:48.729 --> 00:00:50.899
+You don't have to teach it anything specific.
+
+00:00:50.899 --> 00:00:54.750
+&gt;&gt; Deep learning is just another term for using deep neural networks to
+
+00:00:54.750 --> 00:00:58.890
+solve problems and it's become really important for self-driving cars.
+
+00:00:58.890 --> 00:01:01.000
+&gt;&gt; But deep learning is relatively new.
+
+00:01:01.000 --> 00:01:02.454
+Until the last few years,
+
+00:01:02.454 --> 00:01:06.329
+computers simply weren't fast enough to train deep neural networks effectively.
+
+00:01:06.329 --> 00:01:08.640
+Now, however, automotive manufacturers can
+
+00:01:08.640 --> 00:01:11.640
+apply deep learning techniques to drive cars in real time.
+
+00:01:11.640 --> 00:01:14.103
+&gt;&gt; Because deep learning is so new,
+
+00:01:14.103 --> 00:01:16.409
+automotive engineers and researchers are
+
+00:01:16.409 --> 00:01:19.475
+still experimenting with just how far it can take us,
+
+00:01:19.475 --> 00:01:23.730
+but deep learning has already revolutionized segments of autonomous driving like
+
+00:01:23.730 --> 00:01:26.340
+computer vision and it has the potential to
+
+00:01:26.340 --> 00:01:29.430
+entirely change the way we develop self-driving cars.
+

@@ -1,0 +1,79 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.139
+&gt;&gt; Some of the most important recent breakthroughs in the performance of self-driving cars,
+
+00:00:04.139 --> 00:00:05.974
+have come from machine learning.
+
+00:00:05.974 --> 00:00:07.679
+Two of my Udacity colleagues,
+
+00:00:07.679 --> 00:00:10.879
+Luis and Mat, are machine learning experts.
+
+00:00:10.880 --> 00:00:13.260
+In this lesson, they're going to introduce you to
+
+00:00:13.259 --> 00:00:17.850
+the foundational concepts in the fields of machine learning and deep neural networks.
+
+00:00:17.850 --> 00:00:22.265
+Afterward, we'll build on those concepts and apply them to self-driving cars.
+
+00:00:22.265 --> 00:00:24.045
+&gt;&gt; Hi, I'm Louis Serrano,
+
+00:00:24.045 --> 00:00:26.850
+and I lead the Machine Learning Nanodegree program at Udacity.
+
+00:00:26.850 --> 00:00:30.000
+Machine learning is a field of artificial intelligence that relies
+
+00:00:30.000 --> 00:00:33.100
+on computers to learn about the environment from data,
+
+00:00:33.100 --> 00:00:35.939
+instead of relying on the rule set by computer programmers.
+
+00:00:35.939 --> 00:00:37.144
+&gt;&gt; And I'm Mat Leonard,
+
+00:00:37.145 --> 00:00:40.310
+I lead the Deep Learning Nanodegree Foundation program.
+
+00:00:40.310 --> 00:00:42.539
+Deep learning is an approach to machine learning,
+
+00:00:42.539 --> 00:00:44.250
+that uses deep neural networks.
+
+00:00:44.250 --> 00:00:48.435
+Deep learning uses this one tool to accomplish an amazing array of objectives,
+
+00:00:48.435 --> 00:00:51.679
+from speech recognition, to driving a car.
+
+00:00:51.679 --> 00:00:53.579
+&gt;&gt; You'll start learning about the perceptron,
+
+00:00:53.579 --> 00:00:56.250
+which is the fundamental unit of a neural network.
+
+00:00:56.250 --> 00:01:01.134
+&gt;&gt; Then you'll learn how to combine these units into a simple neural network.
+
+00:01:01.134 --> 00:01:03.674
+&gt;&gt; Before you start learning about neural network though,
+
+00:01:03.674 --> 00:01:05.644
+let's go over the basics of machine learning.
+
+00:01:05.644 --> 00:01:07.659
+We'll get started by thinking about something a little less
+
+00:01:07.659 --> 00:01:11.000
+complex than self-driving cars. Housing prices.
+

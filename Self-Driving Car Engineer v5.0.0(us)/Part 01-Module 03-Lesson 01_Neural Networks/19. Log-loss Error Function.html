@@ -1,0 +1,456 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Log-loss Error Function
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Neural Networks
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Neural Network Intuition.html">
+       01. Neural Network Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction to Deep Learning.html">
+       02. Introduction to Deep Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Starting Machine Learning.html">
+       03. Starting Machine Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="04. A Note on Deep Learning.html">
+       04. A Note on Deep Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Quiz Housing Prices.html">
+       05. Quiz: Housing Prices
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Solution Housing Prices.html">
+       06. Solution: Housing Prices
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Linear to Logistic Regression.html">
+       07. Linear to Logistic Regression
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Classification Problems 1.html">
+       08. Classification Problems 1
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Classification Problems 2.html">
+       09. Classification Problems 2
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Linear Boundaries.html">
+       10. Linear Boundaries
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Higher Dimensions.html">
+       11. Higher Dimensions
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Perceptrons.html">
+       12. Perceptrons
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Perceptrons II.html">
+       13. Perceptrons II
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Why Neural Networks.html">
+       14. Why "Neural Networks"?
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Perceptrons as Logical Operators.html">
+       15. Perceptrons as Logical Operators
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Perceptron Trick.html">
+       16. Perceptron Trick
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Perceptron Algorithm.html">
+       17. Perceptron Algorithm
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Error Functions.html">
+       18. Error Functions
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Log-loss Error Function.html">
+       19. Log-loss Error Function
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Discrete vs Continuous.html">
+       20. Discrete vs Continuous
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Softmax.html">
+       21. Softmax
+      </a>
+     </li>
+     <li class="">
+      <a href="22. One-Hot Encoding.html">
+       22. One-Hot Encoding
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Maximum Likelihood.html">
+       23. Maximum Likelihood
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Maximizing Probabilities.html">
+       24. Maximizing Probabilities
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Cross-Entropy 1.html">
+       25. Cross-Entropy 1
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Cross-Entropy 2.html">
+       26. Cross-Entropy 2
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Multi-Class Cross Entropy.html">
+       27. Multi-Class Cross Entropy
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Logistic Regression.html">
+       28. Logistic Regression
+      </a>
+     </li>
+     <li class="">
+      <a href="29. Gradient Descent.html">
+       29. Gradient Descent
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Gradient Descent The Code.html">
+       30. Gradient Descent: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="31. Perceptron vs Gradient Descent.html">
+       31. Perceptron vs Gradient Descent
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Continuous Perceptrons.html">
+       32. Continuous Perceptrons
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Non-linear Data.html">
+       33. Non-linear Data
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Non-Linear Models.html">
+       34. Non-Linear Models
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Neural Network Architecture.html">
+       35. Neural Network Architecture
+      </a>
+     </li>
+     <li class="">
+      <a href="36. Feedforward.html">
+       36. Feedforward
+      </a>
+     </li>
+     <li class="">
+      <a href="37. Multilayer Perceptrons.html">
+       37. Multilayer Perceptrons
+      </a>
+     </li>
+     <li class="">
+      <a href="38. Backpropagation.html">
+       38. Backpropagation
+      </a>
+     </li>
+     <li class="">
+      <a href="39. Further Reading.html">
+       39. Further Reading
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          19. Log-loss Error Function
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Error Functions
+         </p>
+        </h3>
+        <video controls="">
+         <source src="19. Error Functions-jfKShxGAbok.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="19. Error Functions-jfKShxGAbok.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="JP" src="19. Error Functions-jfKShxGAbok.ja-JP.vtt" srclang="JP"/>
+         <track default="false" kind="subtitles" label="BR" src="19. Error Functions-jfKShxGAbok.pt-BR.vtt" srclang="BR"/>
+         <track default="false" kind="subtitles" label="CN" src="19. Error Functions-jfKShxGAbok.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          We pick back up on log-loss error with the gradient descent concept.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Which of the following conditions should be met in order to apply gradient descent? (Check all that apply.)
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1503541771251" name="378621" type="checkbox" value="a1503541771251"/>
+           <label for="a1503541771251">
+            <p>
+             The error function should be discrete
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1503541789309" name="378621" type="checkbox" value="a1503541789309"/>
+           <label for="a1503541789309">
+            <p>
+             The error function should contain only positive values
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1503541796403" name="378621" type="checkbox" value="a1503541796403"/>
+           <label for="a1503541796403">
+            <p>
+             The error function should be differentiable
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1503541797713" name="378621" type="checkbox" value="a1503541797713"/>
+           <label for="a1503541797713">
+            <p>
+             The error function should be normalized
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1503541808617" name="378621" type="checkbox" value="a1503541808617"/>
+           <label for="a1503541808617">
+            <p>
+             The error function should be continuous
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <ul>
+           <li>
+            The error function should be differentiable
+           </li>
+           <li>
+            The error function should be continuous
+           </li>
+          </ul>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="20. Discrete vs Continuous.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('19. Log-loss Error Function')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

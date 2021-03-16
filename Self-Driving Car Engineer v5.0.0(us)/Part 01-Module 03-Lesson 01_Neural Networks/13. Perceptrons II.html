@@ -1,0 +1,1015 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Perceptrons II
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Neural Networks
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Neural Network Intuition.html">
+       01. Neural Network Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction to Deep Learning.html">
+       02. Introduction to Deep Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Starting Machine Learning.html">
+       03. Starting Machine Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="04. A Note on Deep Learning.html">
+       04. A Note on Deep Learning
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Quiz Housing Prices.html">
+       05. Quiz: Housing Prices
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Solution Housing Prices.html">
+       06. Solution: Housing Prices
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Linear to Logistic Regression.html">
+       07. Linear to Logistic Regression
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Classification Problems 1.html">
+       08. Classification Problems 1
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Classification Problems 2.html">
+       09. Classification Problems 2
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Linear Boundaries.html">
+       10. Linear Boundaries
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Higher Dimensions.html">
+       11. Higher Dimensions
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Perceptrons.html">
+       12. Perceptrons
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Perceptrons II.html">
+       13. Perceptrons II
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Why Neural Networks.html">
+       14. Why "Neural Networks"?
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Perceptrons as Logical Operators.html">
+       15. Perceptrons as Logical Operators
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Perceptron Trick.html">
+       16. Perceptron Trick
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Perceptron Algorithm.html">
+       17. Perceptron Algorithm
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Error Functions.html">
+       18. Error Functions
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Log-loss Error Function.html">
+       19. Log-loss Error Function
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Discrete vs Continuous.html">
+       20. Discrete vs Continuous
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Softmax.html">
+       21. Softmax
+      </a>
+     </li>
+     <li class="">
+      <a href="22. One-Hot Encoding.html">
+       22. One-Hot Encoding
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Maximum Likelihood.html">
+       23. Maximum Likelihood
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Maximizing Probabilities.html">
+       24. Maximizing Probabilities
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Cross-Entropy 1.html">
+       25. Cross-Entropy 1
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Cross-Entropy 2.html">
+       26. Cross-Entropy 2
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Multi-Class Cross Entropy.html">
+       27. Multi-Class Cross Entropy
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Logistic Regression.html">
+       28. Logistic Regression
+      </a>
+     </li>
+     <li class="">
+      <a href="29. Gradient Descent.html">
+       29. Gradient Descent
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Gradient Descent The Code.html">
+       30. Gradient Descent: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="31. Perceptron vs Gradient Descent.html">
+       31. Perceptron vs Gradient Descent
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Continuous Perceptrons.html">
+       32. Continuous Perceptrons
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Non-linear Data.html">
+       33. Non-linear Data
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Non-Linear Models.html">
+       34. Non-Linear Models
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Neural Network Architecture.html">
+       35. Neural Network Architecture
+      </a>
+     </li>
+     <li class="">
+      <a href="36. Feedforward.html">
+       36. Feedforward
+      </a>
+     </li>
+     <li class="">
+      <a href="37. Multilayer Perceptrons.html">
+       37. Multilayer Perceptrons
+      </a>
+     </li>
+     <li class="">
+      <a href="38. Backpropagation.html">
+       38. Backpropagation
+      </a>
+     </li>
+     <li class="">
+      <a href="39. Further Reading.html">
+       39. Further Reading
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          13. Perceptrons II
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/hq-perceptron.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="perceptron">
+          Perceptron
+         </h1>
+         <p>
+          Now you've seen how a simple neural network makes decisions: by taking in input data, processing that information, and finally, producing an output in the form of a decision! Let's take a deeper dive into the university admission example to learn more about processing the input data.
+         </p>
+         <p>
+          Data, like test scores and grades, are fed into a network of interconnected nodes. These individual nodes are called
+          <a href="https://en.wikipedia.org/wiki/Perceptron" rel="noopener noreferrer" target="_blank">
+           perceptrons
+          </a>
+          , or artificial neurons, and they are the basic unit of a neural network.
+          <em>
+           Each one looks at input data and decides how to categorize that data.
+          </em>
+          In the example above, the input either passes a threshold for grades and test scores or doesn't, and so the two categories are: yes (passed the threshold) and no (didn't pass the threshold). These categories then combine to form a decision -- for example, if both nodes produce a "yes" output, then this student gains admission into the university.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/hq-new-plot-perceptron-combine-v2.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Let's zoom in even further and look at how a single perceptron processes input data.
+         </p>
+         <p>
+          The perceptron above is one of the two perceptrons from the video that help determine whether or not a student is accepted to a university. It decides whether a student's grades are high enough to be accepted to the university. You might be wondering: "How does it know whether grades or test scores are more important in making this acceptance decision?"  Well, when we initialize a neural network, we don't know what information will be most important in making a decision. It's up to the neural network to
+          <em>
+           learn for itself
+          </em>
+          which data is most important and adjust how it considers that data.
+         </p>
+         <p>
+          It does this with something called
+          <strong>
+           weights
+          </strong>
+          .
+         </p>
+         <h2 id="weights">
+          Weights
+         </h2>
+         <p>
+          When input comes into a perceptron, it gets multiplied by a weight value that is assigned to this particular input. For example, the perceptron above has two inputs,
+          <code>
+           tests
+          </code>
+          for test scores and
+          <code>
+           grades
+          </code>
+          , so it has two associated weights that can be adjusted individually. These weights start out as random values, and as the neural network network learns more about what kind of input data leads to a student being accepted into a university, the network adjusts the weights based on any errors in categorization that results from the previous weights. This is called
+          <strong>
+           training
+          </strong>
+          the neural network.
+         </p>
+         <p>
+          A higher weight means the neural network considers that input more important than other inputs, and lower weight means that the data is considered less important. An extreme example would be if test scores had no affect at all on university acceptance; then the weight of the test score input would be zero and it would have no affect on the output of the perceptron.
+         </p>
+         <h2 id="summing-the-input-data">
+          Summing the Input Data
+         </h2>
+         <p>
+          Each input to a perceptron has an associated weight that represents its importance. These weights are determined during the learning process of a neural network, called training. In the next step, the weighted input data are summed to produce a single value, that will help determine the final output - whether a student is accepted to a university or not. Let's see a concrete example of this.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="We weight `x_test` by `w_test` and add it to `x_grades` weighted by `w_grades`." class="img img-fluid" src="img/perceptron-graphics.001.jpeg"/>
+          <figcaption class="figure-caption">
+           <p>
+            We weight
+            <code>
+             x_test
+            </code>
+            by
+            <code>
+             w_test
+            </code>
+            and add it to
+            <code>
+             x_grades
+            </code>
+            weighted by
+            <code>
+             w_grades
+            </code>
+            .
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          When writing equations related to neural networks, the weights will always be represented by some type of the letter
+          <strong>
+           w
+          </strong>
+          . It will usually look like a
+          <span class="mathquill ud-math">
+           W
+          </span>
+          when it represents a
+          <strong>
+           matrix
+          </strong>
+          of weights or a
+          <span class="mathquill ud-math">
+           w
+          </span>
+          when it represents an
+          <strong>
+           individual
+          </strong>
+          weight, and it may include some additional information in the form of a subscript to specify
+          <em>
+           which
+          </em>
+          weights (you'll see more on that next). But remember, when you see the letter
+          <strong>
+           w
+          </strong>
+          , think
+          <strong>
+           weights
+          </strong>
+          .
+         </p>
+         <p>
+          In this example, we'll use
+          <span class="mathquill ud-math">
+           w_{grades_{}}
+          </span>
+          for the weight of
+          <code>
+           grades
+          </code>
+          and
+          <span class="mathquill ud-math">
+           w_{test}
+          </span>
+          for the weight of
+          <code>
+           test
+          </code>
+          .
+         </p>
+         <p>
+          For the image above, let's say that the weights are:
+          <span class="mathquill ud-math">
+           w_{grades} = -1, w_{test} = -0.2
+          </span>
+          .  You don't have to be concerned with the actual values, but their relative values are important.
+          <span class="mathquill ud-math">
+           w_{grades_{}}
+          </span>
+          is 5 times larger than
+          <span class="mathquill ud-math">
+           w_{test}
+          </span>
+          , which means the neural network considers
+          <code>
+           grades
+          </code>
+          input 5 times more important than
+          <code>
+           test
+          </code>
+          in determining whether a student will be accepted into a university.
+         </p>
+         <p>
+          The perceptron applies these weights to the inputs and sums them in a process known as
+          <strong>
+           linear combination
+          </strong>
+          . In our case, this looks like
+          <span class="mathquill ud-math">
+           w_{grades} \cdot x_{grades} + w_{test} \cdot x_{test} = -1 \cdot  x_{grades} - 0.2 \cdot x_{test}
+          </span>
+          .
+         </p>
+         <p>
+          Now, to make our equation less wordy, let's replace the explicit names with numbers. Let's use
+          <span class="mathquill ud-math">
+           1
+          </span>
+          for
+          <span class="mathquill ud-math">
+           grades
+          </span>
+          and
+          <span class="mathquill ud-math">
+           2
+          </span>
+          for
+          <span class="mathquill ud-math">
+           tests
+          </span>
+          .  So now our equation becomes
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           w_{1} \cdot x_{1} + w_{2} \cdot x_{2}
+          </span>
+         </p>
+         <p>
+          In this example, we just have 2 simple inputs: grades and tests. Let's imagine we instead had
+          <code>
+           m
+          </code>
+          different inputs and we labeled them
+          <span class="mathquill ud-math">
+           x_1, x_2, …, x_m
+          </span>
+          . Let's also say that the weight corresponding to
+          <span class="mathquill ud-math">
+           x_1
+          </span>
+          is
+          <span class="mathquill ud-math">
+           w_1
+          </span>
+          and so on. In that case, we would express the linear combination succintly as:
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \sum_{i=1} ^ m w_i \cdot x_i
+          </span>
+         </p>
+         <p>
+          Here, the Greek letter Sigma
+          <span class="mathquill ud-math">
+           \sum
+          </span>
+          is used to represent
+          <strong>
+           summation
+          </strong>
+          . It simply means to evaluate the equation to the right multiple times and add up the results. In this case, the equation it will sum is
+          <span class="mathquill ud-math">
+           w_i \cdot x_i
+          </span>
+         </p>
+         <p>
+          But where do we get
+          <span class="mathquill ud-math">
+           w_i
+          </span>
+          and
+          <span class="mathquill ud-math">
+           x_i
+          </span>
+          ?
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \sum_{i=1} ^ m
+          </span>
+          means to iterate over all
+          <span class="mathquill ud-math">
+           i
+          </span>
+          values, from
+          <span class="mathquill ud-math">
+           1
+          </span>
+          to
+          <span class="mathquill ud-math">
+           m
+          </span>
+          .
+         </p>
+         <p>
+          So to put it all together,
+          <span class="mathquill ud-math">
+           \sum_{i=1} ^ m w_i \cdot x_i
+          </span>
+          means the following:
+         </p>
+         <ul>
+          <li>
+           Start at
+           <span class="mathquill ud-math">
+            i = 1
+           </span>
+          </li>
+          <li>
+           Evaluate
+           <span class="mathquill ud-math">
+            w_1 \cdot x_1
+           </span>
+           and remember the results
+          </li>
+          <li>
+           Move to
+           <span class="mathquill ud-math">
+            i = 2
+           </span>
+          </li>
+          <li>
+           Evaluate
+           <span class="mathquill ud-math">
+            w_2 \cdot x_2
+           </span>
+           and add these results to
+           <span class="mathquill ud-math">
+            w_1 \cdot x_1
+           </span>
+          </li>
+          <li>
+           Continue repeating that process until
+           <span class="mathquill ud-math">
+            i = m
+           </span>
+           , where
+           <span class="mathquill ud-math">
+            m
+           </span>
+           is the number of inputs.
+          </li>
+         </ul>
+         <p>
+          One last thing: you'll see equations written many different ways, both here and when reading on your own. For example, you will often just see
+          <span class="mathquill ud-math">
+           \sum_{i_{}}
+          </span>
+          instead of
+          <span class="mathquill ud-math">
+           \sum_{i=1} ^ m
+          </span>
+          . The first is simply a shorter way of writing the second. That is, if you see a summation without a starting number or a defined end value, it just means perform the sum for all of the them. And
+          <em>
+           sometimes
+          </em>
+          , if the value to iterate over can be inferred, you'll see it as just
+          <span class="mathquill ud-math">
+           \sum
+          </span>
+          . Just remember they're all the same thing:
+          <span class="mathquill ud-math">
+           \sum_{i=1} ^ m w_i \cdot x_i = \sum_{i} w_i \cdot x_i = \sum w_i \cdot x_i
+          </span>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="calculating-the-output-with-an-activation-function">
+          Calculating the Output with an Activation Function
+         </h2>
+         <p>
+          Finally, the result of the perceptron's summation is turned into an output signal! This is done by feeding the linear combination into an
+          <strong>
+           activation function
+          </strong>
+          .
+         </p>
+         <p>
+          Activation functions are functions that decide, given the inputs into the node, what should be the node's output? Because it's the activation function that decides the actual output, we often refer to the outputs of a layer as its "activations".
+         </p>
+         <p>
+          One of the simplest activation functions is the
+          <strong>
+           Heaviside step function
+          </strong>
+          . This function returns a
+          <strong>
+           0
+          </strong>
+          if the linear combination is less than 0. It returns a
+          <strong>
+           1
+          </strong>
+          if the linear combination is positive or equal to zero. The
+          <a href="https://en.wikipedia.org/wiki/Heaviside_step_function" rel="noopener noreferrer" target="_blank">
+           Heaviside step function
+          </a>
+          is shown below, where h is the calculated linear combination:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/heaviside-step-graph-2.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="The Heaviside Step Function" class="img img-fluid" src="img/heaviside-step-function-2.gif"/>
+          <figcaption class="figure-caption">
+           <p>
+            The Heaviside Step Function
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In the university acceptance example above, we used the weights
+          <span class="mathquill ud-math">
+           w_{grades} = -1, w_{test} = -0.2
+          </span>
+          .  Since
+          <span class="mathquill ud-math">
+           w_{grades_{}}
+          </span>
+          and
+          <span class="mathquill ud-math">
+           w_{test}
+          </span>
+          are negative values, the activation function will only return a
+          <span class="mathquill ud-math">
+           1
+          </span>
+          if grades and test are
+          <span class="mathquill ud-math">
+           0
+          </span>
+          !  This is because the range of values from the linear combination using these weights and inputs are
+          <span class="mathquill ud-math">
+           (-\infty, 0]
+          </span>
+          (i.e. negative infinity to 0, including 0 itself).
+         </p>
+         <p>
+          It's easiest to see this with an example in two dimensions. In the following graph, imagine any points along the line or in the shaded area represent all the possible inputs to our node. Also imagine that the value along the y-axis is the result of performing the linear combination on these inputs and the appropriate weights. It's this result that gets passed to the activation function.
+         </p>
+         <p>
+          Now remember that the step activation function returns
+          <span class="mathquill ud-math">
+           1
+          </span>
+          for any inputs greater than or equal to zero. As you can see in the image, only one point has a y-value greater than or equal to zero – the point right at the origin,
+          <span class="mathquill ud-math">
+           (0, 0)
+          </span>
+          :
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/example-before-bias.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Now,  we certainly want more than one possible grade/test combination to result in acceptance, so we need to adjust the results passed to our activation function so it activates – that is, returns
+          <span class="mathquill ud-math">
+           1
+          </span>
+          – for more inputs. Specifically, we need to find a way so all the scores we’d like to consider acceptable for admissions produce values greater than or equal to zero when linearly combined with the weights into our node.
+         </p>
+         <p>
+          One way to get our function to return
+          <span class="mathquill ud-math">
+           1
+          </span>
+          for more inputs is to add a value to the results of our linear combination, called a
+          <strong>
+           bias
+          </strong>
+          .
+         </p>
+         <p>
+          A bias, represented in equations as
+          <span class="mathquill ud-math">
+           b
+          </span>
+          , lets us move values in one direction or another.
+         </p>
+         <p>
+          For example, the following diagram shows the previous hypothetical function with an added bias of
+          <span class="mathquill ud-math">
+           +3
+          </span>
+          . The blue shaded area shows all the values that now activate the function. But notice that these are produced with the same inputs as the values shown shaded in grey – just adjusted higher by adding the bias term:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/example-after-bias.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Of course, with neural networks we won't know in advance what values to pick for biases. That’s ok, because just like the weights, the bias can also be updated and changed by the neural network during training. So after adding a bias, we now have a complete perceptron formula:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Perceptron Formula" class="img img-fluid" src="img/perceptron-equation-2.gif"/>
+          <figcaption class="figure-caption">
+           <p>
+            Perceptron Formula
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          This formula returns
+          <span class="mathquill ud-math">
+           1
+          </span>
+          if the input (
+          <span class="mathquill ud-math">
+           x_1, x_2, …, x_m
+          </span>
+          ) belongs to the accepted-to-university category or returns
+          <span class="mathquill ud-math">
+           0
+          </span>
+          if it doesn't.  The input is made up of one or more
+          <a href="https://en.wikipedia.org/wiki/Real_number" rel="noopener noreferrer" target="_blank">
+           real numbers
+          </a>
+          , each one represented by
+          <span class="mathquill ud-math">
+           x_i
+          </span>
+          , where
+          <span class="mathquill ud-math">
+           m
+          </span>
+          is the number of inputs.
+         </p>
+         <p>
+          Then the neural network starts to learn! Initially, the weights (
+          <span class="mathquill ud-math">
+           w_i
+          </span>
+          ) and bias (
+          <span class="mathquill ud-math">
+           b
+          </span>
+          ) are assigned a random value, and then they are updated using a learning algorithm like gradient descent. The weights and biases change so that the next training example is more accurately categorized, and patterns in data are "learned" by the neural network.
+         </p>
+         <p>
+          Now that you have a good understanding of perceptrons, let's put that knowledge to use.  In the next section, you'll create the AND perceptron from the
+          <em>
+           Neural Networks
+          </em>
+          video by setting the values for weights and bias.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="14. Why Neural Networks.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('13. Perceptrons II')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

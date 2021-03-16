@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.519
+Perhaps the hottest topic in the world right now is artificial intelligence.
+
+00:00:04.519 --> 00:00:05.949
+When people talk about this,
+
+00:00:05.950 --> 00:00:07.669
+they often talk about machine learning,
+
+00:00:07.669 --> 00:00:10.150
+and specifically, neural networks.
+
+00:00:10.150 --> 00:00:12.120
+Now, neural networks should be familiar with you.
+
+00:00:12.119 --> 00:00:13.824
+If you put your hands like this,
+
+00:00:13.824 --> 00:00:15.778
+left and right, do it,
+
+00:00:15.778 --> 00:00:18.109
+then between your hands is a big neural network called
+
+00:00:18.109 --> 00:00:21.600
+your brain with something like 10 to 11 neurons, is crazy.
+
+00:00:21.600 --> 00:00:27.020
+What people have done in the last decades kind of abstracted this big mass in
+
+00:00:27.019 --> 00:00:32.250
+your brain into a basis set of equations that emulate a network of artificial neurons.
+
+00:00:32.250 --> 00:00:37.009
+Then people have invented ways to train these systems based on data.
+
+00:00:37.009 --> 00:00:41.939
+So, rather than instructing a machine with rules like a piece of software,
+
+00:00:41.939 --> 00:00:44.024
+these neural networks are trained based on data.
+
+00:00:44.024 --> 00:00:49.280
+So, you're going to learn the very basics for now, perception, backpropagation,
+
+00:00:49.280 --> 00:00:51.335
+terminology that doesn't make sense yet,
+
+00:00:51.335 --> 00:00:52.700
+but by the end of this unit,
+
+00:00:52.700 --> 00:00:56.440
+you should be able to write and code and train your own neural network.
+
+00:00:56.439 --> 00:00:57.960
+That's a ton of fun.
+
