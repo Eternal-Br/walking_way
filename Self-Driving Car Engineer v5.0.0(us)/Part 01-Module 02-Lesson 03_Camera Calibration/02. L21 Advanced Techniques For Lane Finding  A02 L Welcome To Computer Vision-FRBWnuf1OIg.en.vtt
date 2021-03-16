@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.384
+Welcome to computer vision.
+
+00:00:02.384 --> 00:00:06.410
+Robotics can essentially be broken down into a three step cycle.
+
+00:00:06.410 --> 00:00:09.974
+The first step is to sense or perceive the world,
+
+00:00:09.974 --> 00:00:14.564
+the second step is to decide what to do based on that perception,
+
+00:00:14.564 --> 00:00:19.545
+and the third step is to perform an action to carry out that decision.
+
+00:00:19.545 --> 00:00:24.720
+Computer vision is a major part of the perception step in that cycle.
+
+00:00:24.719 --> 00:00:26.304
+If you ask Sebastian,
+
+00:00:26.304 --> 00:00:31.280
+he will tell you that 80% of the challenge of building a self-driving car is perception.
+
+00:00:31.280 --> 00:00:33.774
+This module is all about perception.
+
+00:00:33.774 --> 00:00:36.129
+Computer vision is the art and science of
+
+00:00:36.130 --> 00:00:39.380
+perceiving and understanding the world around you through images.
+
+00:00:39.380 --> 00:00:41.125
+In the case of self-driving cars,
+
+00:00:41.125 --> 00:00:43.435
+computer vision helps us detect lane markings,
+
+00:00:43.435 --> 00:00:48.175
+vehicles, pedestrians, and other elements in the environment in order to navigate safely.
+
+00:00:48.174 --> 00:00:49.679
+Later in this nano degree program,
+
+00:00:49.679 --> 00:00:52.795
+we will be using laser and radar data for the task of perception.
+
+00:00:52.795 --> 00:00:55.120
+So, you might ask, "Why bother doing this at all with
+
+00:00:55.119 --> 00:00:58.879
+camera images when we have more sophisticated instruments at our disposal? "
+
+00:00:58.880 --> 00:01:00.775
+So, why are we doing this David?
+
+00:01:00.774 --> 00:01:05.890
+Good question. Self-driven cars employ a suite of sophisticated sensors,
+
+00:01:05.890 --> 00:01:10.150
+but humans do the job of driving with just two eyes and one good brain.
+
+00:01:10.150 --> 00:01:13.815
+In fact, we can even do it with one eye closed.
+
+00:01:13.814 --> 00:01:18.329
+Indeed, we can. So, let's take a closer look at why using
+
+00:01:18.329 --> 00:01:22.614
+cameras instead of other sensors might be an advantage in developing self-driving cars.
+
+00:01:22.614 --> 00:01:25.059
+Radar and Lidar see the world in 3D,
+
+00:01:25.060 --> 00:01:28.560
+which can be a big advantage for knowing where you are relative to your environment.
+
+00:01:28.560 --> 00:01:30.079
+A camera sees in 2D,
+
+00:01:30.079 --> 00:01:33.719
+but at much higher spatial resolution than Radar and Lidar such that
+
+00:01:33.719 --> 00:01:37.629
+it's actually possible to infer depth information from camera images.
+
+00:01:37.629 --> 00:01:39.099
+The big difference, however,
+
+00:01:39.099 --> 00:01:42.649
+comes down to cost, where cameras are significantly cheaper.
+
+00:01:42.650 --> 00:01:47.370
+That's right. It is altogether possible that self-driving cars will eventually be
+
+00:01:47.370 --> 00:01:52.155
+outfitted with just a handful of cameras and a really smart algorithm to do the driving.
+
+00:01:52.155 --> 00:01:56.640
+That's why we're really excited to dive into computer vision with you in this module.
+

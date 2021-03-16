@@ -1,0 +1,194 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.330 --> 00:00:02.750
+Before we get into the code and
+start correcting for
+
+00:00:02.750 --> 00:00:06.919
+distortion, let's get some intuition
+as to how this distortion occurs.
+
+00:00:06.919 --> 00:00:10.529
+Here's a simple model of a camera
+called the pinhole camera model.
+
+00:00:10.529 --> 00:00:12.219
+When the camera forms an image,
+
+00:00:12.220 --> 00:00:15.310
+it's looking at the world
+similar to how our eyes do.
+
+00:00:15.310 --> 00:00:18.810
+By focusing the light that's reflected
+off of objects in the world.
+
+00:00:18.809 --> 00:00:22.679
+In this case through a small pinhole,
+the camera focuses the light that's
+
+00:00:22.679 --> 00:00:26.600
+reflected off of a 3D traffic sign,
+and forms a 2D image
+
+00:00:26.600 --> 00:00:30.750
+at the back of the camera or
+a sensor or some film would be placed.
+
+00:00:30.750 --> 00:00:33.670
+In fact the image it forms
+here will be upside down, and
+
+00:00:33.670 --> 00:00:37.740
+reversed because rays of light that
+enter from the top of an object 
+
+00:00:37.740 --> 00:00:41.260
+will continue on that angled path through the pinhole and
+
+00:00:41.259 --> 00:00:44.099
+end up at the bottom
+of the formed image.
+
+00:00:44.100 --> 00:00:47.829
+Similarly, light that reflects
+off the right side of an object
+
+00:00:47.829 --> 00:00:50.600
+will travel to the left
+of the formed image.
+
+00:00:50.600 --> 00:00:56.260
+In math this transformation from 3D
+object points, P of X, Y, and Z.
+
+00:00:56.259 --> 00:00:59.159
+To 2D image points, P of just X, and
+
+00:00:59.159 --> 00:01:03.399
+Y is done by a transformative
+matrix called the camera matrix.
+
+00:01:03.399 --> 00:01:05.409
+Which I'll call C for camera and
+
+00:01:05.409 --> 00:01:08.420
+we'll need this to calibrate
+the camera later on.
+
+00:01:08.420 --> 00:01:11.750
+However, real cameras don't
+use tiny pinholes like this,
+
+00:01:11.750 --> 00:01:14.849
+they use lenses to focus
+multiple light rays at a time.
+
+00:01:14.849 --> 00:01:17.309
+Which allows them to
+quickly form images.
+
+00:01:17.310 --> 00:01:20.210
+But lenses can introduce distortion too.
+
+00:01:20.209 --> 00:01:22.669
+Light rays often bend
+a little too much or
+
+00:01:22.670 --> 00:01:27.290
+too little at the edges of a curved lens
+of a camera, and this creates the effect
+
+00:01:27.290 --> 00:01:30.690
+we looked at earlier that
+distorts the edges of images.
+
+00:01:30.689 --> 00:01:35.120
+So that lines or objects appear, more or
+less, curved than they actually are.
+
+00:01:35.120 --> 00:01:39.600
+This is called radial distortion, and
+it's the most common type of distortion.
+
+00:01:39.599 --> 00:01:44.049
+Another type, is tangential distortion,
+if the camera's lens is not aligned
+
+00:01:44.049 --> 00:01:47.500
+perfectly parallel to the imaging
+plane where the camera film or
+
+00:01:47.500 --> 00:01:50.629
+sensor is,
+this makes an image look tilted.
+
+00:01:50.629 --> 00:01:55.269
+So that some objects appear further
+away or closer than they actually are.
+
+00:01:55.269 --> 00:01:57.459
+And this is tangential distortion.
+
+00:01:57.459 --> 00:02:02.349
+There are even example of lenses that
+purposefully distort images like fisheye
+
+00:02:02.349 --> 00:02:07.149
+or wide angle lenses which keep radial
+distortion for stylistic effect.
+
+00:02:07.150 --> 00:02:09.800
+But for
+our purposes we are using this images
+
+00:02:09.800 --> 00:02:13.969
+to position ourself driving car and
+eventually steer it the right direction.
+
+00:02:13.969 --> 00:02:17.129
+So we need undistorted images
+that accurately reflect
+
+00:02:17.129 --> 00:02:19.129
+our real world surroundings.
+
+00:02:19.129 --> 00:02:23.169
+Luckily, this distortion can generally
+be captured by five numbers called
+
+00:02:23.169 --> 00:02:27.399
+distortion coefficients, whose values
+reflect the amount of radial and
+
+00:02:27.400 --> 00:02:29.819
+tangential distortion in an image.
+
+00:02:29.819 --> 00:02:33.019
+In severely distorted cases,
+sometimes even more than
+
+00:02:33.020 --> 00:02:37.130
+five coefficients are required to
+capture the amount of distortion.
+
+00:02:37.129 --> 00:02:38.560
+If we know these coefficients,
+
+00:02:38.560 --> 00:02:42.849
+we can use them to calibrate our
+camera and undistort our images.
+
+00:02:42.849 --> 00:02:44.979
+And the mathematical
+details of correcting for
+
+00:02:44.979 --> 00:02:46.889
+distortion are in the notes below.
+
+00:02:46.889 --> 00:02:49.829
+Next we'll see how to get these
+coefficients and calibrate a camera.
+

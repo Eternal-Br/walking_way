@@ -1,0 +1,384 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Finding the Lines: Histogram Peaks
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Advanced Computer Vision
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Reviewing Steps.html">
+       01. Reviewing Steps
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Processing Each Image.html">
+       02. Processing Each Image
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Finding the Lines Histogram Peaks.html">
+       03. Finding the Lines: Histogram Peaks
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Finding the Lines Sliding Window.html">
+       04. Finding the Lines: Sliding Window
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Finding the Lines Search from Prior.html">
+       05. Finding the Lines: Search from Prior
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Measuring Curvature I.html">
+       06. Measuring Curvature I
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Measuring Curvature II.html">
+       07. Measuring Curvature II
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Bonus Round Computer Vision [Optional].html">
+       08. Bonus Round: Computer Vision [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          03. Finding the Lines: Histogram Peaks
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="locate-the-lane-lines">
+          Locate the Lane Lines
+         </h1>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Thresholded and perspective transformed image" class="img img-fluid" src="img/warped-example.jpg"/>
+          <figcaption class="figure-caption">
+           <p>
+            Thresholded and perspective transformed image
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          You now have a thresholded warped image and you're ready to map out the lane lines!  There are many ways you could go about this, but here's one example of how you might do it:
+         </p>
+         <p>
+          ** Line Finding Method: Peaks in a Histogram**
+         </p>
+         <p>
+          After applying calibration, thresholding, and a perspective transform to a road image, you should have a binary image where the lane lines stand out clearly. However, you still need to decide explicitly which pixels are part of the lines and which belong to the left line and which belong to the right line.
+         </p>
+         <p>
+          Plotting a histogram of where the binary activations occur across the image is one potential solution for this. In the quiz below, let's take a couple quick steps to create our histogram!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="651062-lane_histogram-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#651062-lane_histogram-py" id="tab-651062-lane_histogram-py" role="tab">
+            lane_histogram.py
+           </a>
+           <a aria-controls="651062-solution-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#651062-solution-py" id="tab-651062-solution-py" role="tab">
+            solution.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-651062-lane_histogram-py" class="tab-pane active show" id="651062-lane_histogram-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
+
+# Load our image
+# `mpimg.imread` will load .jpg as 0-255, so normalize back to 0-1
+img = mpimg.imread('warped_example.jpg')/255
+
+def hist(img):
+    # TO-DO: Grab only the bottom half of the image
+    # Lane lines are likely to be mostly vertical nearest to the car
+    bottom_half = None
+
+    # TO-DO: Sum across image pixels vertically - make sure to set `axis`
+    # i.e. the highest areas of vertical lines should be larger values
+    histogram = None
+    
+    return histogram
+
+# Create histogram of image binary activations
+histogram = hist(img)
+
+# Visualize the resulting histogram
+plt.plot(histogram)</pre>
+           </div>
+           <div aria-labelledby="tab-651062-solution-py" class="tab-pane" id="651062-solution-py" role="tabpanel">
+            <pre><code></code>def hist(img):
+    # Grab only the bottom half of the image
+    # Lane lines are likely to be mostly vertical nearest to the car
+    bottom_half = img[img.shape[0]//2:,:]
+
+    # Sum across image pixels vertically - make sure to set an `axis`
+    # i.e. the highest areas of vertical lines should be larger values
+    histogram = np.sum(bottom_half, axis=0)
+    
+    return histogram</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h5 id="heres-the-approach-i-took">
+          Here's the approach I took.
+         </h5>
+         <p>
+          I take a
+          <strong>
+           histogram
+          </strong>
+          along all the columns in the
+          <em>
+           lower half
+          </em>
+          of the image like this:
+         </p>
+         <pre><code class="python language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+histogram = np.sum(img[img.shape[0]//2:,:], axis=0)
+plt.plot(histogram)</code></pre>
+         <p>
+          The result looks like this:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/screen-shot-2017-01-28-at-11.21.09-am.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="sliding-window">
+          Sliding Window
+         </h2>
+         <p>
+          With this histogram we are adding up the pixel values along each column in the image. In our thresholded binary image, pixels are either 0 or 1, so the two most prominent peaks in this histogram will be good indicators of the x-position of the base of the lane lines.  We can use that as a starting point for where to search for the lines.  From that point, we can use a sliding window, placed around the line centers, to find and follow the lines up to the top of the frame.
+         </p>
+         <p>
+          Here is a short animation (no sound!) showing this method:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Finding Lane Pixels by Histogram and Sliding Window
+         </p>
+        </h3>
+        <video controls="">
+         <source src="03. Finding Lane Pixels by Histogram and Sliding Window-siAMDK8C_x8.mp4" type="video/mp4"/>
+         <track default="false" kind="subtitles" label="JP" src="03. Finding Lane Pixels by Histogram and Sliding Window-siAMDK8C_x8.ja-JP.vtt" srclang="JP"/>
+         <track default="false" kind="subtitles" label="CN" src="03. Finding Lane Pixels by Histogram and Sliding Window-siAMDK8C_x8.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="04. Finding the Lines Sliding Window.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Finding the Lines: Histogram Peaks')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,217 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.315
+Our very first project in the self-driving car then will be to find lane markings.
+
+00:00:05.315 --> 00:00:06.589
+Why is that important?
+
+00:00:06.589 --> 00:00:09.320
+Well, I can tell you if it can't find lane markings,
+
+00:00:09.320 --> 00:00:11.445
+you will have no clue where to drive.
+
+00:00:11.445 --> 00:00:13.349
+You probably don't pay much attention to him,
+
+00:00:13.349 --> 00:00:15.240
+but as a self-driving car engineer,
+
+00:00:15.240 --> 00:00:16.580
+they'll become your best friend.
+
+00:00:16.579 --> 00:00:22.019
+They'll tell you a lot as to where to drive. What is Computer Vision?
+
+00:00:22.019 --> 00:00:24.094
+When you and I drive a car,
+
+00:00:24.094 --> 00:00:28.094
+we use our eyes more than any other organ to understand what to do.
+
+00:00:28.094 --> 00:00:31.699
+Computer Vision does this the same capability into computers.
+
+00:00:31.699 --> 00:00:34.409
+Uses cameras, and we learned how to extract things like
+
+00:00:34.409 --> 00:00:37.214
+lane markings and other vehicles out of camera images,
+
+00:00:37.215 --> 00:00:39.180
+it's a lot of fun.
+
+00:00:39.179 --> 00:00:42.155
+Deep learning has become one of the hottest fields in Silicon Valley,
+
+00:00:42.155 --> 00:00:46.149
+and it's now massively been applied to self-driving cars.
+
+00:00:46.149 --> 00:00:51.619
+We're going to train a neural network to find traffic signs and images.
+
+00:00:51.920 --> 00:00:56.730
+We are here with cloning means that our learning program will copy and
+
+00:00:56.729 --> 00:01:00.599
+clone human behavior such as our steering actions and brake and gas actions,
+
+00:01:00.600 --> 00:01:02.865
+and you get a chance to try it on your own.
+
+00:01:02.865 --> 00:01:04.350
+When we train people,
+
+00:01:04.349 --> 00:01:06.000
+we don't train them by giving them the rules,
+
+00:01:06.000 --> 00:01:07.980
+we train by letting them learn from examples.
+
+00:01:07.980 --> 00:01:09.180
+So, in this unit,
+
+00:01:09.180 --> 00:01:10.920
+you are going to apply neural networks,
+
+00:01:10.920 --> 00:01:13.230
+Deep Learning to camera images and do
+
+00:01:13.230 --> 00:01:16.295
+some of the very things that a self-driving car ought to do right.
+
+00:01:16.295 --> 00:01:20.635
+I'm really excited to get you to the world of Sensor fusion.
+
+00:01:20.635 --> 00:01:25.975
+What is Sensor fusion? It is the science how to integrate different types of sensors.
+
+00:01:25.974 --> 00:01:28.349
+Self-driving cars have things like LIDARS,
+
+00:01:28.349 --> 00:01:29.849
+and they have radars,
+
+00:01:29.849 --> 00:01:34.979
+and also cameras, and their internal sensors got gyroscopes, inertial measurement units.
+
+00:01:34.980 --> 00:01:37.650
+Sensor fusion is a science how to come up
+
+00:01:37.650 --> 00:01:41.230
+with a single clear picture based on these different modalities.
+
+00:01:41.239 --> 00:01:48.119
+Localization is the simple question where relative to the world is a car.
+
+00:01:48.120 --> 00:01:50.750
+It's important because as you're going to see,
+
+00:01:50.750 --> 00:01:53.849
+you're going to build maps of the environment with lots of detailed information,
+
+00:01:53.849 --> 00:01:55.859
+some of which might even be invisible to the robot.
+
+00:01:55.859 --> 00:01:57.075
+Like where are the dangers?
+
+00:01:57.075 --> 00:01:59.579
+Where do pedestrians typically cross?
+
+00:01:59.579 --> 00:02:01.959
+To make sense of those maps,
+
+00:02:01.959 --> 00:02:04.679
+the robot must know where it is right from the map.
+
+00:02:04.680 --> 00:02:07.090
+The alignment of the sensor data,
+
+00:02:07.090 --> 00:02:09.439
+the current position to a map,
+
+00:02:09.439 --> 00:02:11.829
+that's what's called Localization.
+
+00:02:11.830 --> 00:02:15.240
+Path planning is the science of how to find
+
+00:02:15.240 --> 00:02:19.439
+a valid sequence of steps or actions in a maze.
+
+00:02:19.439 --> 00:02:22.250
+But even in Southern Manhattan for example, you want to cross the city,
+
+00:02:22.250 --> 00:02:24.490
+and you have to find a plan,
+
+00:02:24.490 --> 00:02:28.820
+a sequence of street you will go down to make it all the way to the other end.
+
+00:02:28.819 --> 00:02:33.840
+A path planning algorithm is an algorithm that finds that sequence of actions for you.
+
+00:02:33.840 --> 00:02:35.664
+It can apply to city navigation,
+
+00:02:35.664 --> 00:02:38.000
+it also applies to parking lot navigation,
+
+00:02:38.000 --> 00:02:40.490
+for example, across the parking lot.
+
+00:02:40.759 --> 00:02:45.794
+So, now we're entering the fascinating world of what's called control.
+
+00:02:45.794 --> 00:02:49.079
+In technical terms, what the controller does is
+
+00:02:49.080 --> 00:02:52.710
+a computer program that steers your wheels,
+
+00:02:52.710 --> 00:02:56.730
+your gas pedal, your brake pedal so as to meet a given objective.
+
+00:02:56.729 --> 00:02:58.500
+So, for example, if your objective is to stay
+
+00:02:58.500 --> 00:03:01.080
+centered in the road, and you start driving,
+
+00:03:01.080 --> 00:03:03.390
+and your car veers a little bit to the left,
+
+00:03:03.389 --> 00:03:06.029
+your controller is the unit to decide,
+
+00:03:06.030 --> 00:03:09.175
+okay, we compensate with the slight right under the steering wheel.
+
+00:03:09.175 --> 00:03:10.585
+That might sound trivial,
+
+00:03:10.585 --> 00:03:13.360
+but it's really easy to screw it up.
+
+00:03:13.849 --> 00:03:18.780
+So, now we're ready for the most fascinating part of this that I think we will take
+
+00:03:18.780 --> 00:03:24.129
+your code onto a physical car and drive it around in California. Sounds scary?
+
+00:03:24.129 --> 00:03:25.655
+Yes, I'm slightly scared,
+
+00:03:25.655 --> 00:03:28.289
+but I'm also really excited because there's no great,
+
+00:03:28.289 --> 00:03:31.079
+I don't think that would be complete without actually writing
+
+00:03:31.080 --> 00:03:35.200
+funny actual software for cars. So, let's do it.
+

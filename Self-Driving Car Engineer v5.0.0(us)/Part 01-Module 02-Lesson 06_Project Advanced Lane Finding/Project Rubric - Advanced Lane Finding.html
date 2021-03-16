@@ -1,0 +1,448 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Advanced Lane Finding
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Advanced Lane Finding
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Becoming an Expert.html">
+       01. Becoming an Expert
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Tips and Tricks for the Project.html">
+       02. Tips and Tricks for the Project
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Onward to the Project!.html">
+       03. Onward to the Project!
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Project Instructions.html">
+       04. Project Instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Project Advanced Lane Finding.html">
+       05. Project: Advanced Lane Finding
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Share your success - Advanced Lane Finding.html">
+       06. Share your success - Advanced Lane Finding
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Advanced Lane Finding.html">
+       Project Description - Advanced Lane Finding
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Advanced Lane Finding.html">
+       Project Rubric - Advanced Lane Finding
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          Advanced Lane Finding
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div>
+        <h2>
+         <p>
+          Writeup / README
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf.
+             <a href="https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md" rel="noopener noreferrer" target="_blank">
+              Here
+             </a>
+             is a template writeup for this project you can use as a guide and a starting point.
+            </p>
+           </td>
+           <td>
+            <p>
+             The writeup / README should include a statement and supporting figures / images that explain how each rubric item was addressed, and specifically where in the code each step was handled.
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div>
+        <h2>
+         <p>
+          Camera Calibration
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+            </p>
+           </td>
+           <td>
+            <p>
+             OpenCV functions or other methods were used to calculate the correct camera matrix and distortion coefficients using the calibration chessboard images provided in the repository
+             <strong>
+              (note these are 9x6 chessboard images, unlike the 8x6 images used in the lesson)
+             </strong>
+             .  The distortion matrix should be used to un-distort one of the calibration images provided as a demonstration that the calibration is correct. Example of undistorted calibration image is Included in the writeup (or saved to a folder).
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div>
+        <h2>
+         <p>
+          Pipeline (test images)
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             Provide an example of a distortion-corrected image.
+            </p>
+           </td>
+           <td>
+            <p>
+             Distortion correction that was calculated via camera calibration has been correctly applied to each image.  An example of a distortion corrected image should be included in the writeup (or saved to a folder) and submitted with the project.
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image. Provide an example of a binary image result.
+            </p>
+           </td>
+           <td>
+            <p>
+             A method or combination of methods  (i.e., color transforms, gradients)  has been used to create a binary image containing likely lane pixels.  There is no "ground truth" here, just visual verification that the pixels identified as part of the lane lines are, in fact, part of the lines.  Example binary images should be included in the writeup (or saved to a folder) and submitted with the project.
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+            </p>
+           </td>
+           <td>
+            <p>
+             OpenCV function or other method has been used to correctly rectify each image to a "birds-eye view".  Transformed images should be included in the writeup (or saved to a folder) and submitted with the project.
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
+            </p>
+           </td>
+           <td>
+            <p>
+             Methods have been used to identify lane line pixels in the rectified binary image.  The left and right line have been identified and fit with a curved functional form (e.g., spine or polynomial).  Example images with line pixels identified and a fit overplotted should be included in the writeup (or saved to a folder)  and submitted with the project.
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+            </p>
+           </td>
+           <td>
+            <p>
+             Here the idea is to take the measurements of where the lane lines are and estimate how much the road is curving and where the vehicle is located with respect to the center of the lane.  The radius of curvature may be given in meters assuming the curve of the road follows a circle.  For the position of the vehicle, you may assume the camera is mounted at the center of the car and the deviation of the midpoint of the lane from the center of the image is the offset you're looking for.  As with the polynomial fitting, convert from pixels to meters.
+            </p>
+           </td>
+          </tr>
+          <tr scope="row">
+           <td>
+            <p>
+             Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
+            </p>
+           </td>
+           <td>
+            <p>
+             The fit from the rectified image has been warped back onto the original image and plotted to identify the lane boundaries.  This should demonstrate that the lane boundaries were correctly identified.  An example image with lanes, curvature, and position from center should be included in the writeup (or saved to a folder) and submitted with the project.
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div>
+        <h2>
+         <p>
+          Pipeline (video)
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!)
+            </p>
+           </td>
+           <td>
+            <p>
+             The image processing pipeline that was established to find the lane lines in images successfully processes the video.  The output here should be a new video where the lanes are identified in every frame, and outputs are generated regarding the radius of curvature of the lane and vehicle position within the lane.   The pipeline should correctly map out curved lines and not fail when shadows or pavement color changes are present.  The output video should be linked to in the writeup and/or saved and submitted with the project.
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div>
+        <h2>
+         <p>
+          Discussion
+         </p>
+        </h2>
+        <table class="table table-bordered table-hover">
+         <thead>
+          <tr class="thead-dark">
+           <th>
+            Criteria
+           </th>
+           <th>
+            Meet Specification
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr scope="row">
+           <td>
+            <p>
+             Briefly discuss any problems / issues you faced in your implementation of this project. Where will your pipeline likely fail? What could you do to make it more robust?
+            </p>
+           </td>
+           <td>
+            <p>
+             Discussion includes some consideration of problems/issues faced, what could be improved about their algorithm/pipeline, and what hypothetical cases would cause their pipeline to fail.
+            </p>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="jumbotron">
+        <h3>
+         Tips to make your project standout:
+        </h3>
+        <p>
+         <p>
+          For a standout submission, you should follow the suggestion in the lesson to not just search blindly for the lane lines in each frame of video, but rather, once you have a high-confidence detection, use that to inform the search for the position of the lines in subsequent frames of video.  For example, if a polynomial fit was found to be robust in the previous frame, then rather than search the entire next frame for the lines, just a window around the previous detection could be searched.  This will improve speed and provide a more robust method for rejecting outliers.
+         </p>
+         <p>
+          For an additional improvement you should implement outlier rejection and use a low-pass filter to smooth the lane detection over frames, meaning add each new detection to a weighted mean of the position of the lines to avoid jitter.
+         </p>
+         <p>
+          If you really want to go above and beyond, implement these methods on the challenge videos as well, or on your own videos you've recorded yourself.
+         </p>
+        </p>
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Advanced Lane Finding')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

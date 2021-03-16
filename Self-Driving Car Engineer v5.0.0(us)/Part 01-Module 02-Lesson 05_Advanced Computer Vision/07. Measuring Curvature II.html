@@ -1,0 +1,442 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Measuring Curvature II
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Advanced Computer Vision
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Reviewing Steps.html">
+       01. Reviewing Steps
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Processing Each Image.html">
+       02. Processing Each Image
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Finding the Lines Histogram Peaks.html">
+       03. Finding the Lines: Histogram Peaks
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Finding the Lines Sliding Window.html">
+       04. Finding the Lines: Sliding Window
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Finding the Lines Search from Prior.html">
+       05. Finding the Lines: Search from Prior
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Measuring Curvature I.html">
+       06. Measuring Curvature I
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Measuring Curvature II.html">
+       07. Measuring Curvature II
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Bonus Round Computer Vision [Optional].html">
+       08. Bonus Round: Computer Vision [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          07. Measuring Curvature II
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="from-pixels-to-real-world">
+          From Pixels to Real-World
+         </h3>
+         <p>
+          Great! You've now calculated the radius of curvature for our lane lines. But now we need to stop and think… We've calculated the radius of curvature based on pixel values, so the radius we are reporting is in pixel space, which is not the same as real world space.  So we actually need to repeat this calculation after converting our x and y values to real world space.
+         </p>
+         <p>
+          This involves measuring how long and wide the section of lane is that we're projecting in our warped image.  We could do this in detail by measuring out the physical lane in the field of view of the camera, but for this project, you can assume that if you're projecting a section of lane similar to the images above, the lane is about 30 meters long and 3.7 meters wide.  Or, if you prefer to derive a conversion from pixel space to world space in your own images, compare your images with U.S. regulations that require a minimum lane width of 12 feet or 3.7 meters, and the dashed lane lines are 10 feet or 3 meters long each.
+         </p>
+         <p>
+          Let's say that our camera image has 720 relevant pixels in the y-dimension (remember, our image is perspective-transformed!), and we'll say roughly 700 relevant pixels in the x-dimension (our example of fake generated data above used from 200 pixels on the left to 900 on the right, or 700). Therefore, to convert from pixels to real-world meter measurements, we can use:
+         </p>
+         <pre><code class="python language-python"># Define conversions in x and y from pixels space to meters
+ym_per_pix = 30/720 # meters per pixel in y dimension
+xm_per_pix = 3.7/700 # meters per pixel in x dimension</code></pre>
+         <p>
+          In the below quiz, you'll use the above conversions in order to adjust your calculation from before to give real-world lane curvature values. Once again, you'll focus on the
+          <code>
+           left_curverad
+          </code>
+          and
+          <code>
+           right_curverad
+          </code>
+          values within the new
+          <code>
+           measure_curvature_real()
+          </code>
+          function; however, you'll also need to adjust how you use
+          <code>
+           np.polyfit()
+          </code>
+          within
+          <code>
+           generate_data()
+          </code>
+          in order for this to work correctly. How do you need to change these to convert to meters?
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="675870-radius_curve-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#675870-radius_curve-py" id="tab-675870-radius_curve-py" role="tab">
+            radius_curve.py
+           </a>
+           <a aria-controls="675870-real_world_solution-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#675870-real_world_solution-py" id="tab-675870-real_world_solution-py" role="tab">
+            real_world_solution.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-675870-radius_curve-py" class="tab-pane active show" id="675870-radius_curve-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+
+def generate_data(ym_per_pix, xm_per_pix):
+    '''
+    Generates fake data to use for calculating lane curvature.
+    In your own project, you'll ignore this function and instead
+    feed in the output of your lane detection algorithm to
+    the lane curvature calculation.
+    '''
+    # Set random seed number so results are consistent for grader
+    # Comment this out if you'd like to see results on different random data!
+    np.random.seed(0)
+    # Generate some fake data to represent lane-line pixels
+    ploty = np.linspace(0, 719, num=720)# to cover same y-range as image
+    quadratic_coeff = 3e-4 # arbitrary quadratic coefficient
+    # For each y position generate random x position within +/-50 pix
+    # of the line base position in each case (x=200 for left, and x=900 for right)
+    leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) 
+                                    for y in ploty])
+    rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) 
+                                    for y in ploty])
+
+    leftx = leftx[::-1]  # Reverse to match top-to-bottom in y
+    rightx = rightx[::-1]  # Reverse to match top-to-bottom in y
+
+    # Fit a second order polynomial to pixel positions in each fake lane line
+    ##### TO-DO: Fit new polynomials to x,y in world space #####
+    ##### Utilize `ym_per_pix` &amp; `xm_per_pix` here #####
+    left_fit_cr = np.polyfit(ploty, leftx, 2)
+    right_fit_cr = np.polyfit(ploty, rightx, 2)
+    
+    return ploty, left_fit_cr, right_fit_cr
+
+    
+def measure_curvature_real():
+    '''
+    Calculates the curvature of polynomial functions in meters.
+    '''
+    # Define conversions in x and y from pixels space to meters
+    ym_per_pix = 30/720 # meters per pixel in y dimension
+    xm_per_pix = 3.7/700 # meters per pixel in x dimension
+    
+    # Start by generating our fake example data
+    # Make sure to feed in your real data instead in your project!
+    ploty, left_fit_cr, right_fit_cr = generate_data(ym_per_pix, xm_per_pix)
+    
+    # Define y-value where we want radius of curvature
+    # We'll choose the maximum y-value, corresponding to the bottom of the image
+    y_eval = np.max(ploty)
+    
+    ##### TO-DO: Implement the calculation of R_curve (radius of curvature) #####
+    left_curverad = 0  ## Implement the calculation of the left line here
+    right_curverad = 0  ## Implement the calculation of the right line here
+    
+    return left_curverad, right_curverad
+
+
+# Calculate the radius of curvature in meters for both lane lines
+left_curverad, right_curverad = measure_curvature_real()
+
+print(left_curverad, 'm', right_curverad, 'm')
+# Should see values of 533.75 and 648.16 here, if using
+# the default `generate_data` function with given seed number</pre>
+           </div>
+           <div aria-labelledby="tab-675870-real_world_solution-py" class="tab-pane" id="675870-real_world_solution-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+
+def generate_data(ym_per_pix, xm_per_pix):
+    '''
+    Generates fake data to use for calculating lane curvature.
+    In your own project, you'll ignore this function and instead
+    feed in the output of your lane detection algorithm to
+    the lane curvature calculation.
+    '''
+    # Set random seed number so results are consistent for grader
+    # Comment this out if you'd like to see results on different random data!
+    np.random.seed(0)
+    # Generate some fake data to represent lane-line pixels
+    ploty = np.linspace(0, 719, num=720)# to cover same y-range as image
+    quadratic_coeff = 3e-4 # arbitrary quadratic coefficient
+    # For each y position generate random x position within +/-50 pix
+    # of the line base position in each case (x=200 for left, and x=900 for right)
+    leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) 
+                                    for y in ploty])
+    rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) 
+                                    for y in ploty])
+
+    leftx = leftx[::-1]  # Reverse to match top-to-bottom in y
+    rightx = rightx[::-1]  # Reverse to match top-to-bottom in y
+
+    # Fit a second order polynomial to pixel positions in each fake lane line
+    # Fit new polynomials to x,y in world space
+    left_fit_cr = np.polyfit(ploty*ym_per_pix, leftx*xm_per_pix, 2)
+    right_fit_cr = np.polyfit(ploty*ym_per_pix, rightx*xm_per_pix, 2)
+    
+    return ploty, left_fit_cr, right_fit_cr
+    
+def measure_curvature_real():
+    '''
+    Calculates the curvature of polynomial functions in meters.
+    '''
+    # Define conversions in x and y from pixels space to meters
+    ym_per_pix = 30/720 # meters per pixel in y dimension
+    xm_per_pix = 3.7/700 # meters per pixel in x dimension
+    
+    # Start by generating our fake example data
+    # Make sure to feed in your real data instead in your project!
+    ploty, left_fit_cr, right_fit_cr = generate_data(ym_per_pix, xm_per_pix)
+    
+    # Define y-value where we want radius of curvature
+    # We'll choose the maximum y-value, corresponding to the bottom of the image
+    y_eval = np.max(ploty)
+    
+    # Calculation of R_curve (radius of curvature)
+    left_curverad = ((1 + (2*left_fit_cr[0]*y_eval*ym_per_pix + left_fit_cr[1])**2)**1.5) / np.absolute(2*left_fit_cr[0])
+    right_curverad = ((1 + (2*right_fit_cr[0]*y_eval*ym_per_pix + right_fit_cr[1])**2)**1.5) / np.absolute(2*right_fit_cr[0])
+    
+    return left_curverad, right_curverad
+
+
+# Calculate the radius of curvature in meters for both lane lines
+left_curverad, right_curverad = measure_curvature_real()
+
+print(left_curverad, 'm', right_curverad, 'm')
+# Should see values of 533.75 and 648.16 here, if using
+# the default `generate_data` function with given seed number</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <ul>
+          <li>
+           An insightful student has suggested an alternative approach which may scale more efficiently.  That is, once the parabola coefficients are obtained, in pixels, convert them into meters.  For example, if the parabola is
+           <code>
+            x= a*(y**2) +b*y+c
+           </code>
+           ; and
+           <code>
+            mx
+           </code>
+           and
+           <code>
+            my
+           </code>
+           are the scale for the x and y axis, respectively (in meters/pixel); then the scaled parabola is
+           <code>
+            x= mx / (my ** 2) *a*(y**2)+(mx/my)*b*y+c
+           </code>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Check out the
+          <a href="http://onlinemanuals.txdot.gov/txdotmanuals/rdw/horizontal_alignment.htm#BGBHGEGC" rel="noopener noreferrer" target="_blank">
+           U.S. government specifications for highway curvature
+          </a>
+          to see how your numbers compare.  There's no need to worry about absolute accuracy in this case, but your results should be "order of magnitude" correct.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="08. Bonus Round Computer Vision [Optional].html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Measuring Curvature II')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

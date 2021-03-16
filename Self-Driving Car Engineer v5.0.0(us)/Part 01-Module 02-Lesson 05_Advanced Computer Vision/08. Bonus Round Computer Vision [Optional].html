@@ -1,0 +1,365 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Bonus Round: Computer Vision [Optional]
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Advanced Computer Vision
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Reviewing Steps.html">
+       01. Reviewing Steps
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Processing Each Image.html">
+       02. Processing Each Image
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Finding the Lines Histogram Peaks.html">
+       03. Finding the Lines: Histogram Peaks
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Finding the Lines Sliding Window.html">
+       04. Finding the Lines: Sliding Window
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Finding the Lines Search from Prior.html">
+       05. Finding the Lines: Search from Prior
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Measuring Curvature I.html">
+       06. Measuring Curvature I
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Measuring Curvature II.html">
+       07. Measuring Curvature II
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Bonus Round Computer Vision [Optional].html">
+       08. Bonus Round: Computer Vision [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          08. Bonus Round: Computer Vision [Optional]
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="additional-resources-on-computer-vision">
+          Additional Resources on Computer Vision
+         </h2>
+         <p>
+          Nice work reaching the end of the computer vision content! While you still have the project left to do here, we're also providing some additional resources and recent research on the topic that you can come back to if you have time later on.
+         </p>
+         <p>
+          Reading research papers is a great way to get exposure to the latest and greatest in the field, as well as expand your learning. However, just like the project ahead, it's often best to
+          <em>
+           learn by doing
+          </em>
+          - if you find a paper that really excites you, try to implement it (or even something better) yourself!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h5 id="optional-reading">
+          Optional Reading
+         </h5>
+         <p>
+          All of these are completely optional reading - you could spend hours reading through the entirety of these! We suggest moving onto the project first so you have what you’ve learned fresh on your mind, before coming back to check these out.
+         </p>
+         <p>
+          We've categorized these papers to hopefully help you narrow down which ones might be of interest, as well as highlighted a couple key reads by category by including their
+          <em>
+           Abstract
+          </em>
+          section, which summarizes the paper.
+         </p>
+         <hr/>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="lane-finding-with-semantic-segmentation">
+          Lane Finding with Semantic Segmentation
+         </h3>
+         <p>
+          The below papers and resources concern a technique called semantic segmentation, where each pixel of an image gets classified individually!
+         </p>
+         <p>
+          <a href="https://arxiv.org/abs/1605.06211" rel="noopener noreferrer" target="_blank">
+           Fully Convolutional Networks for Semantic Segmentation
+          </a>
+          by E. Shelhamer, J. Long and T. Darrell
+         </p>
+         <blockquote>
+          <p>
+           <strong>
+            Abstract:
+           </strong>
+           Convolutional networks are powerful visual models that yield hierarchies of features. We show that convolutional networks by themselves, trained end-to-end, pixels-to-pixels, improve on the previous best result in semantic segmentation. Our key insight is to build "fully convolutional" networks that take input of arbitrary size and produce correspondingly-sized output with efficient inference and learning. We define and detail the space of fully convolutional networks, explain their application to spatially dense prediction tasks, and draw connections to prior models. We adapt contemporary classification networks (AlexNet, the VGG net, and GoogLeNet) into fully convolutional networks and transfer their learned representations by fine-tuning to the segmentation task. We then define a skip architecture that combines semantic information from a deep, coarse layer with appearance information from a shallow, fine layer to produce accurate and detailed segmentations. […]
+          </p>
+         </blockquote>
+         <p>
+          You can use the
+          <a href="http://www.cvlibs.net/datasets/kitti/eval_road.php" rel="noopener noreferrer" target="_blank">
+           KITTI road dataset
+          </a>
+          with the above technique for a model that can detect open space on the road.
+         </p>
+         <p>
+          <a href="https://towardsdatascience.com/lane-detection-with-deep-learning-part-1-9e096f3320b7" rel="noopener noreferrer" target="_blank">
+           Lane Detection with Deep Learning (Part 1)
+          </a>
+          and
+          <a href="https://towardsdatascience.com/lane-detection-with-deep-learning-part-2-3ba559b5c5af" rel="noopener noreferrer" target="_blank">
+           (Part 2)
+          </a>
+          by M. Virgo
+         </p>
+         <blockquote>
+          <p>
+           <strong>
+            Summary:
+           </strong>
+           Udacity SDC student (and now Udacian!) investigates using a deep learning approach to lane detection in order to improve upon the Advanced Lane Finding project, eventually building a model with a fully convolutional neural network that detects the road is a wider variety of situations and at faster speed.
+          </p>
+         </blockquote>
+         <hr/>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="other-lane-finding-techniques">
+          Other Lane Finding Techniques
+         </h3>
+         <p>
+          The below paper uses a multi-task model to identify lane and road markings, as well as vanishing point of the road, in order to build a robust model.
+         </p>
+         <p>
+          <a href="https://arxiv.org/abs/1710.06288" rel="noopener noreferrer" target="_blank">
+           VPGNet: Vanishing Point Guided Network for Lane and Road Marking Detection and Recognition
+          </a>
+          by S. Lee, et. al.
+         </p>
+         <blockquote>
+          <p>
+           <strong>
+            Abstract:
+           </strong>
+           In this paper, we propose a unified end-to-end trainable multi-task network that jointly handles lane and road marking detection and recognition that is guided by a vanishing point under adverse weather conditions. We tackle rainy and low illumination conditions […] At night, color distortion occurs under limited illumination. As a result, no benchmark dataset exists and only a few developed algorithms work under poor weather conditions. To address this shortcoming, we build up a lane and road marking benchmark which consists of about 20,000 images with 17 lane and road marking classes under four different scenarios: no rain, rain, heavy rain, and night. We train and evaluate several versions of the proposed multi-task network and validate the importance of each task. The resulting approach, VPGNet, can detect and classify lanes and road markings, and predict a vanishing point with a single forward pass. Experimental results show that our approach achieves high accuracy and robustness under various conditions in real-time (20 fps). […]
+          </p>
+         </blockquote>
+         <hr/>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="vehicle-detection">
+          Vehicle Detection
+         </h3>
+         <p>
+          The below paper builds a model to both detect vehicles as well as estimate their dimensions along the road.
+         </p>
+         <p>
+          <a href="https://arxiv.org/abs/1706.08442" rel="noopener noreferrer" target="_blank">
+           Learning to Map Vehicles into Bird's Eye View
+          </a>
+          by A. Palazzi, et. al.
+         </p>
+         <blockquote>
+          <p>
+           <strong>
+            Abstract:
+           </strong>
+           Awareness of the road scene is an essential component for both autonomous vehicles and Advances Driver Assistance Systems and is gaining importance both for the academia and car companies. This paper presents a way to learn a semantic-aware transformation which maps detections from a dashboard camera view onto a broader bird's eye occupancy map of the scene. To this end, a huge synthetic dataset featuring 1M couples of frames, taken from both car dashboard and bird's eye view, has been collected and automatically annotated. A deep-network is then trained to warp detections from the first to the second view. We demonstrate the effectiveness of our model against several baselines and observe that is able to generalize on real-world data despite having been trained solely on synthetic ones.
+          </p>
+         </blockquote>
+         <hr/>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          You may have noticed a lot of the papers above include deep learning techniques, which are now commonly used in many computer vision applications. More on deep learning is coming up!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Bonus Round: Computer Vision [Optional]')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,572 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Measuring Curvature I
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Advanced Computer Vision
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Reviewing Steps.html">
+       01. Reviewing Steps
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Processing Each Image.html">
+       02. Processing Each Image
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Finding the Lines Histogram Peaks.html">
+       03. Finding the Lines: Histogram Peaks
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Finding the Lines Sliding Window.html">
+       04. Finding the Lines: Sliding Window
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Finding the Lines Search from Prior.html">
+       05. Finding the Lines: Search from Prior
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Measuring Curvature I.html">
+       06. Measuring Curvature I
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Measuring Curvature II.html">
+       07. Measuring Curvature II
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Bonus Round Computer Vision [Optional].html">
+       08. Bonus Round: Computer Vision [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          06. Measuring Curvature I
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="measuring-curvature">
+          Measuring Curvature
+         </h1>
+         <p>
+          You're getting very close to a final result!  You have a thresholded image, where you've estimated which pixels belong to the left and right  lane lines (shown in red and blue, respectively, below), and you've fit a polynomial to those pixel positions.  Next we'll compute the radius of curvature of the fit.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Here I have fit the left and right lines with a second order polynomial shown in green." class="img img-fluid" src="img/color-fit-lines.jpg"/>
+          <figcaption class="figure-caption">
+           <p>
+            Here I have fit the left and right lines with a second order polynomial shown in green.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In the last exercise, you located the lane line pixels, used their x and y pixel positions to fit a second order polynomial curve:
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           f(y) = Ay^2 + By + C
+          </span>
+         </p>
+         <p>
+          You're fitting for
+          <span class="mathquill ud-math">
+           f(y)
+          </span>
+          , rather than
+          <span class="mathquill ud-math">
+           f(x)
+          </span>
+          , because the lane lines in the warped image are near vertical and may have the same
+          <span class="mathquill ud-math">
+           x
+          </span>
+          value for more than one
+          <span class="mathquill ud-math">
+           y
+          </span>
+          value.
+         </p>
+         <h3 id="radius-of-curvature">
+          Radius of Curvature
+         </h3>
+         <p>
+          The radius of curvature (
+          <a href="http://www.intmath.com/applications-differentiation/8-radius-curvature.php" rel="noopener noreferrer" target="_blank">
+           awesome tutorial here
+          </a>
+          ) at any point
+          <span class="mathquill ud-math">
+           x
+          </span>
+          of the function
+          <span class="mathquill ud-math">
+           x = f(y)
+          </span>
+          is given as follows:
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \LARGE R_{curve} = \frac{[1 + (\frac{dx}{dy})^2]^{3/2}}{|\frac{d^2x}{dy^2}|}
+          </span>
+         </p>
+         <p>
+          In the case of the second order polynomial above, the first and second derivatives are:
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \large f'(y) = \frac{dx}{dy} = 2Ay + B
+          </span>
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \large f''(y) = \frac{d^2x}{dy^2} = 2A
+          </span>
+         </p>
+         <p>
+          So, our equation for radius of curvature becomes:
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \LARGE R_{curve} =  \frac{(1 + (2Ay + B)^2)^{3/2}}{\left |2A  \right |}
+          </span>
+         </p>
+         <p>
+          The
+          <span class="mathquill ud-math">
+           y
+          </span>
+          values of your image increase from top to bottom, so if, for example, you wanted to measure the radius of curvature closest to your vehicle, you could evaluate the formula above at the
+          <span class="mathquill ud-math">
+           y
+          </span>
+          value corresponding to the bottom of your image, or in Python, at
+          <code>
+           yvalue = image.shape[0]
+          </code>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="implementing-the-calculation">
+          Implementing the Calculation
+         </h3>
+         <h4 id="generate-some-fake-data-first">
+          Generate some fake data first
+         </h4>
+         <p>
+          Most of the code below is just to generate some fake data to visualize with - everything up until the actual plotting of the data below should be replaced with your algorithms from before in your own implementation!
+         </p>
+         <pre><code class="python language-python">import numpy as np
+import matplotlib.pyplot as plt
+# Generate some fake data to represent lane-line pixels
+ploty = np.linspace(0, 719, num=720)# to cover same y-range as image
+quadratic_coeff = 3e-4 # arbitrary quadratic coefficient
+# For each y position generate random x position within +/-50 pix
+# of the line base position in each case (x=200 for left, and x=900 for right)
+leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) 
+                              for y in ploty])
+rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) 
+                                for y in ploty])
+
+leftx = leftx[::-1]  # Reverse to match top-to-bottom in y
+rightx = rightx[::-1]  # Reverse to match top-to-bottom in y
+
+
+# Fit a second order polynomial to pixel positions in each fake lane line
+left_fit = np.polyfit(ploty, leftx, 2)
+left_fitx = left_fit[0]*ploty**2 + left_fit[1]*ploty + left_fit[2]
+right_fit = np.polyfit(ploty, rightx, 2)
+right_fitx = right_fit[0]*ploty**2 + right_fit[1]*ploty + right_fit[2]
+
+# Plot up the fake data
+mark_size = 3
+plt.plot(leftx, ploty, 'o', color='red', markersize=mark_size)
+plt.plot(rightx, ploty, 'o', color='blue', markersize=mark_size)
+plt.xlim(0, 1280)
+plt.ylim(0, 720)
+plt.plot(left_fitx, ploty, color='green', linewidth=3)
+plt.plot(right_fitx, ploty, color='green', linewidth=3)
+plt.gca().invert_yaxis() # to visualize as we do the images</code></pre>
+         <p>
+          The output looks like this:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/screen-shot-2017-01-27-at-9.47.14-am.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4 id="implementing-the-calculation-itself">
+          Implementing the calculation itself
+         </h4>
+         <p>
+          Now we have polynomial fits and we can calculate the radius of curvature.
+         </p>
+         <p>
+          In the below quiz, you'll implement the radius of curvature calculation (using our fake generated data from above - remember that you'll be using your own implemented algorithm in place of the
+          <code>
+           generate_data
+          </code>
+          function in the below quiz!).
+         </p>
+         <p>
+          Use the
+          <span class="mathquill ud-math">
+           \large R_{curve}
+          </span>
+          equation above in order to calculate
+          <code>
+           left_curverad
+          </code>
+          and
+          <code>
+           right_curverad
+          </code>
+          in the
+          <code>
+           measure_curvature_pixels()
+          </code>
+          function below.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="675800-curve_pixels-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#675800-curve_pixels-py" id="tab-675800-curve_pixels-py" role="tab">
+            curve_pixels.py
+           </a>
+           <a aria-controls="675800-solution-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#675800-solution-py" id="tab-675800-solution-py" role="tab">
+            solution.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-675800-curve_pixels-py" class="tab-pane active show" id="675800-curve_pixels-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+
+def generate_data():
+    '''
+    Generates fake data to use for calculating lane curvature.
+    In your own project, you'll ignore this function and instead
+    feed in the output of your lane detection algorithm to
+    the lane curvature calculation.
+    '''
+    # Set random seed number so results are consistent for grader
+    # Comment this out if you'd like to see results on different random data!
+    np.random.seed(0)
+    # Generate some fake data to represent lane-line pixels
+    ploty = np.linspace(0, 719, num=720)# to cover same y-range as image
+    quadratic_coeff = 3e-4 # arbitrary quadratic coefficient
+    # For each y position generate random x position within +/-50 pix
+    # of the line base position in each case (x=200 for left, and x=900 for right)
+    leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) 
+                                    for y in ploty])
+    rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) 
+                                    for y in ploty])
+
+    leftx = leftx[::-1]  # Reverse to match top-to-bottom in y
+    rightx = rightx[::-1]  # Reverse to match top-to-bottom in y
+
+
+    # Fit a second order polynomial to pixel positions in each fake lane line
+    left_fit = np.polyfit(ploty, leftx, 2)
+    right_fit = np.polyfit(ploty, rightx, 2)
+    
+    return ploty, left_fit, right_fit
+
+    
+def measure_curvature_pixels():
+    '''
+    Calculates the curvature of polynomial functions in pixels.
+    '''
+    # Start by generating our fake example data
+    # Make sure to feed in your real data instead in your project!
+    ploty, left_fit, right_fit = generate_data()
+    
+    # Define y-value where we want radius of curvature
+    # We'll choose the maximum y-value, corresponding to the bottom of the image
+    y_eval = np.max(ploty)
+    
+    ##### TO-DO: Implement the calculation of R_curve (radius of curvature) #####
+    left_curverad = 0  ## Implement the calculation of the left line here
+    right_curverad = 0  ## Implement the calculation of the right line here
+    
+    return left_curverad, right_curverad
+
+
+# Calculate the radius of curvature in pixels for both lane lines
+left_curverad, right_curverad = measure_curvature_pixels()
+
+print(left_curverad, right_curverad)
+# Should see values of 1625.06 and 1976.30 here, if using
+# the default `generate_data` function with given seed number</pre>
+           </div>
+           <div aria-labelledby="tab-675800-solution-py" class="tab-pane" id="675800-solution-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+
+def generate_data():
+    '''
+    Generates fake data to use for calculating lane curvature.
+    In your own project, you'll ignore this function and instead
+    feed in the output of your lane detection algorithm to
+    the lane curvature calculation.
+    '''
+    # Set random seed number so results are consistent for grader
+    # Comment this out if you'd like to see results on different random data!
+    np.random.seed(0)
+    # Generate some fake data to represent lane-line pixels
+    ploty = np.linspace(0, 719, num=720)# to cover same y-range as image
+    quadratic_coeff = 3e-4 # arbitrary quadratic coefficient
+    # For each y position generate random x position within +/-50 pix
+    # of the line base position in each case (x=200 for left, and x=900 for right)
+    leftx = np.array([200 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) 
+                                    for y in ploty])
+    rightx = np.array([900 + (y**2)*quadratic_coeff + np.random.randint(-50, high=51) 
+                                    for y in ploty])
+
+    leftx = leftx[::-1]  # Reverse to match top-to-bottom in y
+    rightx = rightx[::-1]  # Reverse to match top-to-bottom in y
+
+
+    # Fit a second order polynomial to pixel positions in each fake lane line
+    left_fit = np.polyfit(ploty, leftx, 2)
+    right_fit = np.polyfit(ploty, rightx, 2)
+    
+    return ploty, left_fit, right_fit
+    
+def measure_curvature_pixels():
+    '''
+    Calculates the curvature of polynomial functions in pixels.
+    '''
+    # Start by generating our fake example data
+    # Make sure to feed in your real data instead in your project!
+    ploty, left_fit, right_fit = generate_data()
+    
+    # Define y-value where we want radius of curvature
+    # We'll choose the maximum y-value, corresponding to the bottom of the image
+    y_eval = np.max(ploty)
+    
+    # Calculation of R_curve (radius of curvature)
+    left_curverad = ((1 + (2*left_fit[0]*y_eval + left_fit[1])**2)**1.5) / np.absolute(2*left_fit[0])
+    right_curverad = ((1 + (2*right_fit[0]*y_eval + right_fit[1])**2)**1.5) / np.absolute(2*right_fit[0])
+    
+    return left_curverad, right_curverad
+
+
+# Calculate the radius of curvature in pixels for both lane lines
+left_curverad, right_curverad = measure_curvature_pixels()
+
+print(left_curverad, right_curverad)
+# Should see values of 1625.06 and 1976.30 here, if using
+# the default `generate_data` function with given seed number</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="07. Measuring Curvature II.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Measuring Curvature I')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

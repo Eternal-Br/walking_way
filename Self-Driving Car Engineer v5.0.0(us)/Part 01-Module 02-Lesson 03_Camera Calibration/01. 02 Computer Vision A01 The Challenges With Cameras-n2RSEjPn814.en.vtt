@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.379
+So, very cool.
+
+00:00:01.379 --> 00:00:04.884
+You learned a lot about the very first steps OpenCV.
+
+00:00:04.884 --> 00:00:07.275
+You found some lane markings on roads,
+
+00:00:07.275 --> 00:00:10.655
+well done, but you're not an expert yet.
+
+00:00:10.654 --> 00:00:13.500
+Now, it's going to become more challenging.
+
+00:00:13.500 --> 00:00:16.600
+We're going to give you data that's more realistic, harder,
+
+00:00:16.600 --> 00:00:18.400
+you're going to find shades and curvature,
+
+00:00:18.399 --> 00:00:20.189
+and you have to play around with new stuff.
+
+00:00:20.190 --> 00:00:23.265
+You have to understand camera geometry and color spaces much
+
+00:00:23.265 --> 00:00:26.609
+more deeply on the way to become a computer vision expert.
+
+00:00:26.609 --> 00:00:28.439
+So, have fun.
+

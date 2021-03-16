@@ -1,0 +1,362 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   How I Did It
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Camera Calibration
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. The Challenges with Cameras.html">
+       01. The Challenges with Cameras
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Welcome to Computer Vision.html">
+       02. Welcome to Computer Vision
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Overview.html">
+       03. Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Getting Started.html">
+       04. Getting Started
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Distortion Correction.html">
+       05. Distortion Correction
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Effects of Distortion.html">
+       06. Effects of Distortion
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Pinhole Camera Model.html">
+       07. Pinhole Camera Model
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Image Formation.html">
+       08. Image Formation
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Measuring Distortion.html">
+       09. Measuring Distortion
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Finding Corners.html">
+       10. Finding Corners
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Calibrating Your Camera.html">
+       11. Calibrating Your Camera
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Correcting for Distortion.html">
+       12. Correcting for Distortion
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Lane Curvature.html">
+       13. Lane Curvature
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Perspective Transform.html">
+       14. Perspective Transform
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Curvature and Perspective.html">
+       15. Curvature and Perspective
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Transform a Stop Sign.html">
+       16. Transform a Stop Sign
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Intuitions.html">
+       17. Intuitions
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Undistort and Transform.html">
+       18. Undistort and Transform
+      </a>
+     </li>
+     <li class="">
+      <a href="19. How I Did It.html">
+       19. How I Did It
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Coming Up.html">
+       20. Coming Up
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          19. How I Did It
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="solution-to-undistort-and-transform-quiz">
+          Solution to Undistort and Transform quiz:
+         </h1>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          That was a tricky quiz!
+         </p>
+         <p>
+          Let's take a closer look at the pieces involved. These steps will all be useful when you get to the project at the end of this section.
+         </p>
+         <p>
+          First off, we defined a function for you,
+          <code>
+           corners_unwarp()
+          </code>
+          . The function accepts an image and our previously calculated values for the camera matrix,
+          <code>
+           mtx
+          </code>
+          , and distortion coefficients,
+          <code>
+           dist
+          </code>
+          .
+         </p>
+         <p>
+          Then you had to implement the function.
+         </p>
+         <p>
+          Here's how I implemented mine:
+         </p>
+         <pre><code class="python language-python"># Define a function that takes an image, number of x and y points, 
+# camera matrix and distortion coefficients
+def corners_unwarp(img, nx, ny, mtx, dist):
+    # Use the OpenCV undistort() function to remove distortion
+    undist = cv2.undistort(img, mtx, dist, None, mtx)
+    # Convert undistorted image to grayscale
+    gray = cv2.cvtColor(undist, cv2.COLOR_BGR2GRAY)
+    # Search for corners in the grayscaled image
+    ret, corners = cv2.findChessboardCorners(gray, (nx, ny), None)
+
+    if ret == True:
+        # If we found corners, draw them! (just for fun)
+        cv2.drawChessboardCorners(undist, (nx, ny), corners, ret)
+        # Choose offset from image corners to plot detected corners
+        # This should be chosen to present the result at the proper aspect ratio
+        # My choice of 100 pixels is not exact, but close enough for our purpose here
+        offset = 100 # offset for dst points
+        # Grab the image shape
+        img_size = (gray.shape[1], gray.shape[0])
+
+        # For source points I'm grabbing the outer four detected corners
+        src = np.float32([corners[0], corners[nx-1], corners[-1], corners[-nx]])
+        # For destination points, I'm arbitrarily choosing some points to be
+        # a nice fit for displaying our warped result 
+        # again, not exact, but close enough for our purposes
+        dst = np.float32([[offset, offset], [img_size[0]-offset, offset], 
+                                     [img_size[0]-offset, img_size[1]-offset], 
+                                     [offset, img_size[1]-offset]])
+        # Given src and dst points, calculate the perspective transform matrix
+        M = cv2.getPerspectiveTransform(src, dst)
+        # Warp the image using OpenCV warpPerspective()
+        warped = cv2.warpPerspective(undist, M, img_size)
+
+    # Return the resulting image and matrix
+    return warped, M</code></pre>
+         <h2 id="output">
+          Output
+         </h2>
+         <p>
+          Here's the output you needed to achieve:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/undist-and-warp.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="20. Coming Up.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('19. How I Did It')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
