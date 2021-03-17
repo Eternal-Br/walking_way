@@ -1,0 +1,175 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.710
+There are many classes of
+
+00:00:01.710 --> 00:00:06.890
+motion planning algorithms and today we'll focus on one of these classes,
+
+00:00:06.890 --> 00:00:08.570
+but it's worth mentioning the others.
+
+00:00:08.570 --> 00:00:13.020
+Combinatorial methods usually consists in dividing the free space into
+
+00:00:13.020 --> 00:00:15.060
+small pieces and first solving
+
+00:00:15.060 --> 00:00:18.600
+the motion planning problem by connecting these atomic elements.
+
+00:00:18.600 --> 00:00:22.380
+They are very intuitive ways to find initial approximate solution,
+
+00:00:22.380 --> 00:00:25.900
+but they usually do not scale well for large environments.
+
+00:00:25.900 --> 00:00:28.845
+Next, potential fields are reacting methods.
+
+00:00:28.845 --> 00:00:31.815
+Each obstacle is going to create a sort of
+
+00:00:31.815 --> 00:00:36.655
+anti-gravity field which makes it harder for the vehicle to come close to it.
+
+00:00:36.655 --> 00:00:40.080
+For example, you could imagine using this idea around pedestrians or
+
+00:00:40.080 --> 00:00:45.990
+bikes to encourage your planning algorithm to find trajectories that stay away from them.
+
+00:00:45.990 --> 00:00:50.009
+The main problem with most potential field methods is that they sometimes
+
+00:00:50.009 --> 00:00:54.300
+push us into local minima which can prevent us from finding a solution.
+
+00:00:54.300 --> 00:00:57.270
+Optimal control consists in trying to solve
+
+00:00:57.270 --> 00:01:01.485
+the motion planning problem and the controlling input generation in one algorithm.
+
+00:01:01.485 --> 00:01:06.921
+Using a dynamic model of a vehicle or start configuration and end configuration,
+
+00:01:06.921 --> 00:01:13.050
+we want to generate a sequence of inputs, for example, steering angle and throttle inputs, that
+
+00:01:13.050 --> 00:01:16.785
+would lead us from start to end configuration while
+
+00:01:16.785 --> 00:01:20.805
+optimizing a cost function relative to the control inputs such
+
+00:01:20.805 --> 00:01:25.666
+as minimizing gas consumption and relative to the configuration of the car,
+
+00:01:25.666 --> 00:01:28.440
+such as staying at a distance from other vehicles.
+
+00:01:28.440 --> 00:01:31.255
+There are a lot of very nice ways to do that.
+
+00:01:31.255 --> 00:01:34.690
+Most of them based on numerical optimization methods.
+
+00:01:34.690 --> 00:01:38.760
+However, it is hard to incorporate all of the constraints related to
+
+00:01:38.760 --> 00:01:44.130
+the other vehicles in a good enough way in order for these algorithms to work fast.
+
+00:01:44.130 --> 00:01:47.565
+Finally, there are sampling based methods,
+
+00:01:47.565 --> 00:01:49.820
+which are what we will focus on today.
+
+00:01:49.820 --> 00:01:52.710
+These algorithms are very popular because they
+
+00:01:52.710 --> 00:01:57.075
+require a somewhat easier to compute definition of the free space.
+
+00:01:57.075 --> 00:02:01.410
+Sampling based methods use a collision detection module that probes
+
+00:02:01.410 --> 00:02:05.460
+the free space to see if a configuration is in collision or not.
+
+00:02:05.460 --> 00:02:08.190
+Unlike combinatorial or optimal control methods,
+
+00:02:08.190 --> 00:02:10.965
+which analyzes the whole environment,
+
+00:02:10.965 --> 00:02:15.950
+not all parts of the free space need to be explored in order to find a solution.
+
+00:02:15.950 --> 00:02:19.890
+Explored parts are stored in a graph structure that
+
+00:02:19.890 --> 00:02:24.050
+can be searched with a graph search algorithm like Dijkstra or A star.
+
+00:02:24.050 --> 00:02:29.595
+Two main classes of methods can be identified as sampling based: discrete methods,
+
+00:02:29.595 --> 00:02:34.005
+which rely on a finite set of configurations and/or inputs,
+
+00:02:34.005 --> 00:02:38.340
+like a grid superposed on top of our configuration space,
+
+00:02:38.340 --> 00:02:41.730
+and probabilistic methods, which rely on
+
+00:02:41.730 --> 00:02:45.930
+the probabilistic sample of a continuous configuration space.
+
+00:02:45.930 --> 00:02:48.765
+The set of possible configurations or states
+
+00:02:48.765 --> 00:02:51.960
+that will be explored is potentially infinite,
+
+00:02:51.960 --> 00:02:55.230
+which gives some of these methods the nice property that
+
+00:02:55.230 --> 00:02:58.484
+they are probabilistically complete and sometimes
+
+00:02:58.484 --> 00:03:01.875
+probabilistically optimal meaning that they will
+
+00:03:01.875 --> 00:03:05.850
+always find a solution if you allow them enough computation time.
+
+00:03:05.850 --> 00:03:08.505
+We have barely scratched the surface on
+
+00:03:08.505 --> 00:03:11.860
+all the different sorts of planning algorithms that exist.
+
+00:03:11.860 --> 00:03:15.005
+Far from me the idea to create an exhaustive list,
+
+00:03:15.005 --> 00:03:17.100
+I strongly encourage you to look up some of
+
+00:03:17.100 --> 00:03:20.310
+these algorithms and learn more about how they work.
+
+00:03:20.310 --> 00:03:24.600
+Next, I'm going to present the Hybrid A* algorithm.
+
+00:03:24.600 --> 00:03:27.945
+But before that, I suggest you re-watch a video you saw earlier on
+
+00:03:27.945 --> 00:03:32.000
+A* and then answer a few questions about some of its properties.
+

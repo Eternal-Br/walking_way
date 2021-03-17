@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.940
+I'm proud of your work on behavior selection,
+
+00:00:02.940 --> 00:00:04.339
+but now we're going to go a level lower,
+
+00:00:04.339 --> 00:00:08.480
+where we actually want to find a specific trajectory that the car can take.
+
+00:00:08.480 --> 00:00:11.925
+A trajectory is not just a curve that the car can follow
+
+00:00:11.925 --> 00:00:16.060
+but also a time sequence in which we say how fast the car should go.
+
+00:00:16.059 --> 00:00:19.969
+In finding trajectory, there are many many important things to watch out for.
+
+00:00:19.969 --> 00:00:22.289
+The most important one is don't crash,
+
+00:00:22.289 --> 00:00:24.134
+don't collide with something else.
+
+00:00:24.135 --> 00:00:27.975
+But also important is things like passenger comfort, right?
+
+00:00:27.975 --> 00:00:29.460
+So you don't want to do crazy joke,
+
+00:00:29.460 --> 00:00:31.859
+a trajectory that passes both back and forth.
+
+00:00:31.859 --> 00:00:34.880
+You want to make this smooth and elegant as possible.
+

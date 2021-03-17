@@ -1,0 +1,727 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Implement Hybrid A* in C++ (solution)
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Trajectory Generation
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. From Behavior to Trajectory.html">
+       01. From Behavior to Trajectory
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Lesson Overview.html">
+       02. Lesson Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="03. The Motion Planning Problem.html">
+       03. The Motion Planning Problem
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Properties of Motion Planning Algorithms.html">
+       04. Properties of Motion Planning Algorithms
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Types of Motion Planning Algorithms.html">
+       05. Types of Motion Planning Algorithms
+      </a>
+     </li>
+     <li class="">
+      <a href="06. A Reminder.html">
+       06. A* Reminder
+      </a>
+     </li>
+     <li class="">
+      <a href="07. A Reminder Solution.html">
+       07. A* Reminder Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Hybrid A Introduction.html">
+       08. Hybrid A* Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Hybrid A Tradeoffs.html">
+       09. Hybrid A* Tradeoffs
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Hybrid A Tradeoffs Solution.html">
+       10. Hybrid A* Tradeoffs Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Hybrid A in Practice.html">
+       11. Hybrid A* in Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Hybrid A Heuristics.html">
+       12. Hybrid A* Heuristics
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Hybrid A Pseudocode.html">
+       13. Hybrid A* Pseudocode
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Implement Hybrid A in C++.html">
+       14. Implement Hybrid A* in C++
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Implement Hybrid A in C++ (solution).html">
+       15. Implement Hybrid A* in C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Environment Classification.html">
+       16. Environment Classification
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Frenet Reminder.html">
+       17. Frenet Reminder
+      </a>
+     </li>
+     <li class="">
+      <a href="18. The Need for Time.html">
+       18. The Need for Time
+      </a>
+     </li>
+     <li class="">
+      <a href="19. s, d, and t.html">
+       19. s, d, and t
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Trajectory Matching.html">
+       20. Trajectory Matching
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Structured Trajectory Generation Overview.html">
+       21. Structured Trajectory Generation Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Trajectories with Boundary Conditions.html">
+       22. Trajectories with Boundary Conditions
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Jerk Minimizing Trajectories.html">
+       23. Jerk Minimizing Trajectories
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Derivation Overview.html">
+       24. Derivation Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Derivation Details 2.html">
+       25. Derivation Details 2
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Polynomial Trajectory Generation.html">
+       26. Polynomial Trajectory Generation
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Implement Quintic Polynomial Solver C++.html">
+       27. Implement Quintic Polynomial Solver C++
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Implement Quintic Polynomial Solver Solution.html">
+       28. Implement Quintic Polynomial Solver Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="29. What should be checked.html">
+       29. What should be checked?
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Implementing Feasibility.html">
+       30. Implementing Feasibility
+      </a>
+     </li>
+     <li class="">
+      <a href="31. Putting it All Together.html">
+       31. Putting it All Together
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Polynomial Trajectory Reading (optional).html">
+       32. Polynomial Trajectory Reading (optional)
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Polynomial Trajectory Generation Playground.html">
+       33. Polynomial Trajectory Generation Playground
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Conclusion.html">
+       34. Conclusion
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Bonus Round Path Planning [Optional].html">
+       35. Bonus Round: Path Planning [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          15. Implement Hybrid A* in C++ (solution)
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Here is one possible implementation for Hybrid A* using the "distance to goal" heuristic function. In this implementation, we have added an
+          <code>
+           f
+          </code>
+          value to the
+          <code>
+           maze_s
+          </code>
+          struct, which is set in the
+          <code>
+           expand
+          </code>
+          function. Additionally, we've added two new functions:
+          <code>
+           heuristic
+          </code>
+          and
+          <code>
+           compare_maze_s
+          </code>
+          . The
+          <code>
+           compare_maze_s
+          </code>
+          function is used for comparison of
+          <code>
+           maze_s
+          </code>
+          objects when sorting the
+          <code>
+           opened
+          </code>
+          stack.
+         </p>
+         <p>
+          To get an even lower number of expansions, try reducing
+          <code>
+           NUM_THETA_CELLS
+          </code>
+          in
+          <code>
+           hybrid_breadth_first.h
+          </code>
+          to reduce the total number of cells that can be searched in the
+          <code>
+           closed
+          </code>
+          array. Be careful though! Making
+          <code>
+           NUM_THETA_CELLS
+          </code>
+          too small might result in the algorithm being unable to find a path through the maze.
+         </p>
+         <p>
+          Another possibility for improvement is to use the regular A* algorithm to assign a cost value to each grid cell. This grid of costs can then be used as the heuristic function, which will lead to an extremely efficient search. If you are looking for additional practice, give this a try!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="458689-main-cpp" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#458689-main-cpp" id="tab-458689-main-cpp" role="tab">
+            main.cpp
+           </a>
+           <a aria-controls="458689-hybrid_breadth_first-cpp" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#458689-hybrid_breadth_first-cpp" id="tab-458689-hybrid_breadth_first-cpp" role="tab">
+            hybrid_breadth_first.cpp
+           </a>
+           <a aria-controls="458689-hybrid_breadth_first-h" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#458689-hybrid_breadth_first-h" id="tab-458689-hybrid_breadth_first-h" role="tab">
+            hybrid_breadth_first.h
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-458689-main-cpp" class="tab-pane active show" id="458689-main-cpp" role="tabpanel">
+            <pre><code></code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include "hybrid_breadth_first.h"
+
+using std::cout;
+using std::endl;
+
+// Sets up maze grid
+int X = 1;
+int _ = 0;
+
+/**
+ * TODO: You can change up the grid maze to test different expansions.
+ */
+vector&lt;vector&lt;int&gt;&gt; GRID = {
+  {_,X,X,_,_,_,_,_,_,_,X,X,_,_,_,_,},
+  {_,X,X,_,_,_,_,_,_,X,X,_,_,_,_,_,},
+  {_,X,X,_,_,_,_,_,X,X,_,_,_,_,_,_,},
+  {_,X,X,_,_,_,_,X,X,_,_,_,X,X,X,_,},
+  {_,X,X,_,_,_,X,X,_,_,_,X,X,X,_,_,},
+  {_,X,X,_,_,X,X,_,_,_,X,X,X,_,_,_,},
+  {_,X,X,_,X,X,_,_,_,X,X,X,_,_,_,_,},
+  {_,X,X,X,X,_,_,_,X,X,X,_,_,_,_,_,},
+  {_,X,X,X,_,_,_,X,X,X,_,_,_,_,_,_,},
+  {_,X,X,_,_,_,X,X,X,_,_,X,X,X,X,X,},
+  {_,X,_,_,_,X,X,X,_,_,X,X,X,X,X,X,},
+  {_,_,_,_,X,X,X,_,_,X,X,X,X,X,X,X,},
+  {_,_,_,X,X,X,_,_,X,X,X,X,X,X,X,X,},
+  {_,_,X,X,X,_,_,X,X,X,X,X,X,X,X,X,},
+  {_,X,X,X,_,_,_,_,_,_,_,_,_,_,_,_,},
+  {X,X,X,_,_,_,_,_,_,_,_,_,_,_,_,_,}};
+
+vector&lt;double&gt; START = {0.0,0.0,0.0};
+vector&lt;int&gt; GOAL = {(int)GRID.size()-1, (int)GRID[0].size()-1};
+
+int main() {
+  cout &lt;&lt; "Finding path through grid:" &lt;&lt; endl;
+  
+  // Creates an Empty Maze and for testing the number of expansions with it
+  for(int i = 0; i &lt; GRID.size(); ++i) {
+    cout &lt;&lt; GRID[i][0];
+    for(int j = 1; j &lt; GRID[0].size(); ++j) {
+      cout &lt;&lt; "," &lt;&lt; GRID[i][j];
+    }
+    cout &lt;&lt; endl;
+  }
+
+  HBF hbf = HBF();
+
+  HBF::maze_path get_path = hbf.search(GRID,START,GOAL);
+
+  vector&lt;HBF::maze_s&gt; show_path = hbf.reconstruct_path(get_path.came_from, 
+                                                       START, get_path.final);
+
+  cout &lt;&lt; "show path from start to finish" &lt;&lt; endl;
+  for(int i = show_path.size()-1; i &gt;= 0; --i) {
+      HBF::maze_s step = show_path[i];
+      cout &lt;&lt; "##### step " &lt;&lt; step.g &lt;&lt; " #####" &lt;&lt; endl;
+      cout &lt;&lt; "x " &lt;&lt; step.x &lt;&lt; endl;
+      cout &lt;&lt; "y " &lt;&lt; step.y &lt;&lt; endl;
+      cout &lt;&lt; "theta " &lt;&lt; step.theta &lt;&lt; endl;
+  }
+  
+  return 0;
+}</pre>
+           </div>
+           <div aria-labelledby="tab-458689-hybrid_breadth_first-cpp" class="tab-pane" id="458689-hybrid_breadth_first-cpp" role="tabpanel">
+            <pre><code></code>#include &lt;math.h&gt;
+#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include "hybrid_breadth_first.h"
+
+// Initializes HBF
+HBF::HBF() {}
+
+HBF::~HBF() {}
+
+bool HBF::compare_maze_s(const HBF::maze_s &amp;lhs, const HBF::maze_s &amp;rhs) {
+  return lhs.f &lt; rhs.f;
+}
+
+double HBF::heuristic(double x, double y, vector&lt;int&gt; &amp;goal){
+  return fabs(y - goal[0]) + fabs(x - goal[1]); //return grid distance to goal
+}
+
+int HBF::theta_to_stack_number(double theta){
+  // Takes an angle (in radians) and returns which "stack" in the 3D 
+  //   configuration space this angle corresponds to. Angles near 0 go in the 
+  //   lower stacks while angles near 2 * pi go in the higher stacks.
+  double new_theta = fmod((theta + 2 * M_PI),(2 * M_PI));
+  int stack_number = (int)(round(new_theta * NUM_THETA_CELLS / (2*M_PI))) 
+                   % NUM_THETA_CELLS;
+
+  return stack_number;
+}
+
+int HBF::idx(double float_num) {
+  // Returns the index into the grid for continuous position. So if x is 3.621, 
+  //   then this would return 3 to indicate that 3.621 corresponds to array 
+  //   index 3.
+  return int(floor(float_num));
+}
+
+
+vector&lt;HBF::maze_s&gt; HBF::expand(HBF::maze_s &amp;state, vector&lt;int&gt; &amp;goal) {
+  int g = state.g;
+  double x = state.x;
+  double y = state.y;
+  double theta = state.theta;
+    
+  int g2 = g+1;
+  vector&lt;HBF::maze_s&gt; next_states;
+
+  for(double delta_i = -35; delta_i &lt; 40; delta_i+=5) {
+    double delta = M_PI / 180.0 * delta_i;
+    double omega = SPEED / LENGTH * tan(delta);
+    double theta2 = theta + omega;
+    if(theta2 &lt; 0) {
+      theta2 += 2*M_PI;
+    }
+    double x2 = x + SPEED * cos(theta);
+    double y2 = y + SPEED * sin(theta);
+    HBF::maze_s state2;
+    state2.f = g2 + heuristic(x2, y2, goal);
+    state2.g = g2;
+    state2.x = x2;
+    state2.y = y2;
+    state2.theta = theta2;
+    next_states.push_back(state2);
+  }
+
+  return next_states;
+}
+
+vector&lt; HBF::maze_s&gt; HBF::reconstruct_path(
+  vector&lt;vector&lt;vector&lt;HBF::maze_s&gt;&gt;&gt; &amp;came_from, vector&lt;double&gt; &amp;start, 
+  HBF::maze_s &amp;final) {
+
+  vector&lt;maze_s&gt; path = {final};
+  
+  int stack = theta_to_stack_number(final.theta);
+
+  maze_s current = came_from[stack][idx(final.x)][idx(final.y)];
+  
+  stack = theta_to_stack_number(current.theta);
+  
+  double x = current.x;
+  double y = current.y;
+
+  while(x != start[0] || y != start[1]) {
+    path.push_back(current);
+    current = came_from[stack][idx(x)][idx(y)];
+    x = current.x;
+    y = current.y;
+    stack = theta_to_stack_number(current.theta);
+  }
+  
+  return path;
+}
+
+HBF::maze_path HBF::search(vector&lt; vector&lt;int&gt; &gt; &amp;grid, vector&lt;double&gt; &amp;start, 
+                           vector&lt;int&gt; &amp;goal) {
+  // Working Implementation of breadth first search. Does NOT use a heuristic
+  //   and as a result this is pretty inefficient. Try modifying this algorithm 
+  //   into hybrid A* by adding heuristics appropriately.
+
+  /**
+   * TODO: Add heuristics and convert this function into hybrid A*
+   */
+  vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt; closed(
+    NUM_THETA_CELLS, vector&lt;vector&lt;int&gt;&gt;(grid[0].size(), vector&lt;int&gt;(grid.size())));
+  vector&lt;vector&lt;vector&lt;maze_s&gt;&gt;&gt; came_from(
+    NUM_THETA_CELLS, vector&lt;vector&lt;maze_s&gt;&gt;(grid[0].size(), vector&lt;maze_s&gt;(grid.size())));
+  double theta = start[2];
+  int stack = theta_to_stack_number(theta);
+  int g = 0;
+
+  maze_s state;
+  state.g = g;
+  state.x = start[0];
+  state.y = start[1];
+  state.f = g + heuristic(state.x, state.y, goal);
+  state.theta = theta;
+
+  closed[stack][idx(state.x)][idx(state.y)] = 1;
+  came_from[stack][idx(state.x)][idx(state.y)] = state;
+  int total_closed = 1;
+  vector&lt;maze_s&gt; opened = {state};
+  bool finished = false;
+  while(!opened.empty()) {
+    sort(opened.begin(), opened.end(), compare_maze_s);
+    maze_s current = opened[0]; //grab first elment
+    opened.erase(opened.begin()); //pop first element
+
+    int x = current.x;
+    int y = current.y;
+
+    if(idx(x) == goal[0] &amp;&amp; idx(y) == goal[1]) {
+      std::cout &lt;&lt; "found path to goal in " &lt;&lt; total_closed &lt;&lt; " expansions" 
+                &lt;&lt; std::endl;
+      maze_path path;
+      path.came_from = came_from;
+      path.closed = closed;
+      path.final = current;
+
+      return path;
+    }
+
+    vector&lt;maze_s&gt; next_state = expand(current, goal);
+
+    for(int i = 0; i &lt; next_state.size(); ++i) {
+      int g2 = next_state[i].g;
+      double x2 = next_state[i].x;
+      double y2 = next_state[i].y;
+      double theta2 = next_state[i].theta;
+
+      if((x2 &lt; 0 || x2 &gt;= grid.size()) || (y2 &lt; 0 || y2 &gt;= grid[0].size())) {
+        // invalid cell
+        continue;
+      }
+
+      int stack2 = theta_to_stack_number(theta2);
+
+      if(closed[stack2][idx(x2)][idx(y2)] == 0 &amp;&amp; grid[idx(x2)][idx(y2)] == 0) {
+        opened.push_back(next_state[i]);
+        closed[stack2][idx(x2)][idx(y2)] = 1;
+        came_from[stack2][idx(x2)][idx(y2)] = current;
+        ++total_closed;
+      }
+    }
+  }
+
+  std::cout &lt;&lt; "no valid path." &lt;&lt; std::endl;
+  HBF::maze_path path;
+  path.came_from = came_from;
+  path.closed = closed;
+  path.final = state;
+
+  return path;
+}</pre>
+           </div>
+           <div aria-labelledby="tab-458689-hybrid_breadth_first-h" class="tab-pane" id="458689-hybrid_breadth_first-h" role="tabpanel">
+            <pre><code></code>#ifndef HYBRID_BREADTH_FIRST_H_
+#define HYBRID_BREADTH_FIRST_H_
+
+#include &lt;vector&gt;
+
+using std::vector;
+
+class HBF {
+ public:
+  // Constructor
+  HBF();
+
+  // Destructor
+  virtual ~HBF();
+
+  // HBF structs
+  struct maze_s {
+    int g;  // iteration
+    int f;
+    double x;
+    double y;
+    double theta;
+  };
+
+  struct maze_path {
+    vector&lt;vector&lt;vector&lt;int&gt;&gt;&gt; closed;
+    vector&lt;vector&lt;vector&lt;maze_s&gt;&gt;&gt; came_from;
+    maze_s final;
+  };
+  
+  // HBF functions
+  int theta_to_stack_number(double theta);
+
+  int idx(double float_num);
+    
+  double heuristic(double x, double y, vector&lt;int&gt; &amp;goal);
+
+  static bool compare_maze_s(const HBF::maze_s &amp;lhs, const HBF::maze_s &amp;rhs);
+
+  vector&lt;maze_s&gt; expand(maze_s &amp;state, vector&lt;int&gt; &amp;goal);
+
+  vector&lt;maze_s&gt; reconstruct_path(vector&lt;vector&lt;vector&lt;maze_s&gt;&gt;&gt; &amp;came_from, 
+                                  vector&lt;double&gt; &amp;start, HBF::maze_s &amp;final);
+
+  maze_path search(vector&lt;vector&lt;int&gt;&gt; &amp;grid, vector&lt;double&gt; &amp;start, 
+                   vector&lt;int&gt; &amp;goal);
+
+ private:
+  const int NUM_THETA_CELLS = 90;
+  const double SPEED = 1.45;
+  const double LENGTH = 0.5;
+};
+
+#endif  // HYBRID_BREADTH_FIRST_H_</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="16. Environment Classification.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('15. Implement Hybrid A* in C++ (solution)')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

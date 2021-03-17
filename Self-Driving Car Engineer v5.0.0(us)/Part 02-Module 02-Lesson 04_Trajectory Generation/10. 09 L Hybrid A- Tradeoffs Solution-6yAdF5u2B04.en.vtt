@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.450
+Now, unlike regular A*,
+
+00:00:02.450 --> 00:00:05.850
+Hybrid A* is a continuous method.
+
+00:00:05.850 --> 00:00:08.970
+Since, the configuration that will end up being part of
+
+00:00:08.970 --> 00:00:13.890
+the trajectory are not part of a predefined discrete set.
+
+00:00:13.890 --> 00:00:19.242
+Similarly to A*, Hybrid A* star also uses an optimistic heuristic.
+
+00:00:19.242 --> 00:00:21.770
+But one sacrifice made with Hybrid A*
+
+00:00:21.770 --> 00:00:26.525
+is that it does not always find a solution when one exists.
+
+00:00:26.525 --> 00:00:29.145
+Indeed, the completeness is sacrificed
+
+00:00:29.145 --> 00:00:32.305
+because we only allow one continuous configuration per discrete cell.
+
+00:00:32.305 --> 00:00:38.100
+The great improvement compared with A* is that the solution it does find are
+
+00:00:38.100 --> 00:00:42.000
+guaranteed to be driveable, though not necessarily optimal.
+
+00:00:42.000 --> 00:00:44.040
+Compare these to the properties of A*.
+
+00:00:44.040 --> 00:00:52.320
+With Hybrid A*, we have lost completeness and optimality guarantees in favor of drivability.
+
+00:00:52.320 --> 00:00:54.690
+In practice, however, this algorithm is very
+
+00:00:54.690 --> 00:00:58.000
+efficient at finding good path almost all the time.
+

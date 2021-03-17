@@ -1,0 +1,238 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.280
+Now, in most cases,
+
+00:00:02.280 --> 00:00:04.360
+the behavior layer might not send
+
+00:00:04.360 --> 00:00:10.450
+an exact end configuration to reach but rather an approximate one like that.
+
+00:00:10.450 --> 00:00:14.630
+Therefore, we want to identify a varied goal state that leads our vehicle in
+
+00:00:14.630 --> 00:00:20.925
+the approximate end configuration that's being sent to us here in the other lane.
+
+00:00:20.925 --> 00:00:23.865
+Now, that's where our sampling based approach comes in handy.
+
+00:00:23.865 --> 00:00:27.855
+We don't know for sure what a good end state is.
+
+00:00:27.855 --> 00:00:32.535
+Even if we receive an exact S&amp;amp;D co-ordinate from the behavior layer,
+
+00:00:32.535 --> 00:00:36.280
+we still have to find a good end velocity and acceleration for our car.
+
+00:00:36.280 --> 00:00:39.820
+Most times, S&amp;amp;D aren't fixed either.
+
+00:00:39.820 --> 00:00:43.690
+Therefore, we want to sample a large number of end configurations
+
+00:00:43.690 --> 00:00:47.915
+are on the approximate desired position that we wish to drive our car to.
+
+00:00:47.915 --> 00:00:50.340
+And we generate the corresponding Jerk minimizing
+
+00:00:50.340 --> 00:00:53.135
+trajectories for each goal configuration.
+
+00:00:53.135 --> 00:00:56.470
+Then, we discard all non-derivable trajectories,
+
+00:00:56.470 --> 00:00:59.380
+all trajectories that collide with the road boundaries,
+
+00:00:59.380 --> 00:01:04.065
+or with other vehicles or pedestrians as predicted by the prediction layer.
+
+00:01:04.065 --> 00:01:09.360
+Now, we have a nice set of derivable trajectories which are all collision free and
+
+00:01:09.360 --> 00:01:15.435
+Jerk optimal in each dimension with respect to the start and goal configurations.
+
+00:01:15.435 --> 00:01:19.760
+We need to decide which one the car should follow.
+
+00:01:19.760 --> 00:01:21.675
+That means we need to rank them,
+
+00:01:21.675 --> 00:01:24.785
+which we are going to do by defining a cost function.
+
+00:01:24.785 --> 00:01:27.195
+What makes sense as a cost function?
+
+00:01:27.195 --> 00:01:28.740
+First, consider Jerk.
+
+00:01:28.740 --> 00:01:31.530
+For each pair of end configurations,
+
+00:01:31.530 --> 00:01:33.975
+a quintic polynomial is Jerk optimal.
+
+00:01:33.975 --> 00:01:38.520
+But given that all the trajectories obtained are different final configuration,
+
+00:01:38.520 --> 00:01:41.090
+maybe some are better than others.
+
+00:01:41.090 --> 00:01:42.420
+In addition to that,
+
+00:01:42.420 --> 00:01:46.070
+we want to consider longitudinal versus lateral Jerk.
+
+00:01:46.070 --> 00:01:48.025
+What is worse for comfort?
+
+00:01:48.025 --> 00:01:52.085
+Turns out that side to side Jerk is more uncomfortable.
+
+00:01:52.085 --> 00:01:56.960
+So we want to prioritize minimizing that over minimizing longitudinal Jerk.
+
+00:01:56.960 --> 00:02:00.075
+Next, consider distance to obstacles.
+
+00:02:00.075 --> 00:02:02.180
+Given these two configurations,
+
+00:02:02.180 --> 00:02:04.350
+we would prefer being further away from
+
+00:02:04.350 --> 00:02:09.585
+the other vehicle to a situation where we are right next to their rear bumper.
+
+00:02:09.585 --> 00:02:13.425
+Also, we want to consider distance to center line.
+
+00:02:13.425 --> 00:02:16.860
+We might prefer to be close to the center of the line.
+
+00:02:16.860 --> 00:02:20.385
+So, in choosing between these two scenarios,
+
+00:02:20.385 --> 00:02:23.200
+maybe we would prefer the one on the right.
+
+00:02:23.200 --> 00:02:25.475
+Finally, it is time to go.
+
+00:02:25.475 --> 00:02:29.070
+All else being equal given the final S,
+
+00:02:29.070 --> 00:02:34.360
+we would prefer to arrive at our destination earlier rather than later.
+
+00:02:34.360 --> 00:02:36.480
+So we might prefer this situation.
+
+00:02:36.480 --> 00:02:40.290
+And there are plenty of other cost functions one might think of.
+
+00:02:40.290 --> 00:02:44.280
+The tricky part is balancing all of these costs correctly.
+
+00:02:44.280 --> 00:02:46.305
+Often, our goals conflict.
+
+00:02:46.305 --> 00:02:48.235
+So the trajectory that minimizes
+
+00:02:48.235 --> 00:02:53.020
+lateral Jerk may not be the one that keeps us closest to the center line.
+
+00:02:53.020 --> 00:02:58.425
+In practice, most of the hard work is in the details of balancing these cost functions.
+
+00:02:58.425 --> 00:03:00.810
+Now that we have defined all these cost functions
+
+00:03:00.810 --> 00:03:03.525
+and combined them into one weighted cost function,
+
+00:03:03.525 --> 00:03:06.720
+we can look back at the scenario we just saw and use
+
+00:03:06.720 --> 00:03:10.885
+the supplied cost functions to calculate the cost for each trajectory.
+
+00:03:10.885 --> 00:03:13.830
+For example, this trajectory looks nice.
+
+00:03:13.830 --> 00:03:16.710
+However, its rather close to the boundary of the lane.
+
+00:03:16.710 --> 00:03:18.220
+And even more important,
+
+00:03:18.220 --> 00:03:21.110
+it is close to another moving vehicle.
+
+00:03:21.110 --> 00:03:22.800
+Remember that we have to consider
+
+00:03:22.800 --> 00:03:26.730
+the full car dimension when looking at distance to obstacles.
+
+00:03:26.730 --> 00:03:30.730
+And in this case, we would be dangerously close to another car.
+
+00:03:30.730 --> 00:03:35.530
+Therefore, we would associate a high cost with this trajectory.
+
+00:03:35.530 --> 00:03:37.980
+Similarly, we don't like these two trajectories too
+
+00:03:37.980 --> 00:03:41.535
+much because they make us drive on this side of the lane.
+
+00:03:41.535 --> 00:03:45.345
+And there is not really a reason for that in this scenario.
+
+00:03:45.345 --> 00:03:48.600
+So, they would be associated with a high cost as well.
+
+00:03:48.600 --> 00:03:51.110
+Regarding these two trajectories,
+
+00:03:51.110 --> 00:03:55.020
+they're okay but the lateral Jerk associated with them would be
+
+00:03:55.020 --> 00:04:00.350
+higher than for trajectories whose end configuration has a larger S value.
+
+00:04:00.350 --> 00:04:04.410
+Therefore, they would be associated with a medium cost.
+
+00:04:04.410 --> 00:04:06.960
+Now, consider the last trajectory.
+
+00:04:06.960 --> 00:04:08.120
+It's nice and smooth,
+
+00:04:08.120 --> 00:04:10.105
+it doesn't turn too fast,
+
+00:04:10.105 --> 00:04:12.703
+we end up moving further away along the road,
+
+00:04:12.703 --> 00:04:16.210
+none of our cost functions end up with a higher value.
+
+00:04:16.210 --> 00:04:18.510
+Therefore, when we combine them,
+
+00:04:18.510 --> 00:04:23.000
+this trajectory gets a low cost and ends up being selected.
+

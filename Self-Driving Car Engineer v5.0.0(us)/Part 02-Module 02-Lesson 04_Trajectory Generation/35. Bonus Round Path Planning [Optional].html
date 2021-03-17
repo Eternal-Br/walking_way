@@ -1,0 +1,479 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Bonus Round: Path Planning [Optional]
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Trajectory Generation
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. From Behavior to Trajectory.html">
+       01. From Behavior to Trajectory
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Lesson Overview.html">
+       02. Lesson Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="03. The Motion Planning Problem.html">
+       03. The Motion Planning Problem
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Properties of Motion Planning Algorithms.html">
+       04. Properties of Motion Planning Algorithms
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Types of Motion Planning Algorithms.html">
+       05. Types of Motion Planning Algorithms
+      </a>
+     </li>
+     <li class="">
+      <a href="06. A Reminder.html">
+       06. A* Reminder
+      </a>
+     </li>
+     <li class="">
+      <a href="07. A Reminder Solution.html">
+       07. A* Reminder Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Hybrid A Introduction.html">
+       08. Hybrid A* Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Hybrid A Tradeoffs.html">
+       09. Hybrid A* Tradeoffs
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Hybrid A Tradeoffs Solution.html">
+       10. Hybrid A* Tradeoffs Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Hybrid A in Practice.html">
+       11. Hybrid A* in Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Hybrid A Heuristics.html">
+       12. Hybrid A* Heuristics
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Hybrid A Pseudocode.html">
+       13. Hybrid A* Pseudocode
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Implement Hybrid A in C++.html">
+       14. Implement Hybrid A* in C++
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Implement Hybrid A in C++ (solution).html">
+       15. Implement Hybrid A* in C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Environment Classification.html">
+       16. Environment Classification
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Frenet Reminder.html">
+       17. Frenet Reminder
+      </a>
+     </li>
+     <li class="">
+      <a href="18. The Need for Time.html">
+       18. The Need for Time
+      </a>
+     </li>
+     <li class="">
+      <a href="19. s, d, and t.html">
+       19. s, d, and t
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Trajectory Matching.html">
+       20. Trajectory Matching
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Structured Trajectory Generation Overview.html">
+       21. Structured Trajectory Generation Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Trajectories with Boundary Conditions.html">
+       22. Trajectories with Boundary Conditions
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Jerk Minimizing Trajectories.html">
+       23. Jerk Minimizing Trajectories
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Derivation Overview.html">
+       24. Derivation Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Derivation Details 2.html">
+       25. Derivation Details 2
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Polynomial Trajectory Generation.html">
+       26. Polynomial Trajectory Generation
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Implement Quintic Polynomial Solver C++.html">
+       27. Implement Quintic Polynomial Solver C++
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Implement Quintic Polynomial Solver Solution.html">
+       28. Implement Quintic Polynomial Solver Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="29. What should be checked.html">
+       29. What should be checked?
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Implementing Feasibility.html">
+       30. Implementing Feasibility
+      </a>
+     </li>
+     <li class="">
+      <a href="31. Putting it All Together.html">
+       31. Putting it All Together
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Polynomial Trajectory Reading (optional).html">
+       32. Polynomial Trajectory Reading (optional)
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Polynomial Trajectory Generation Playground.html">
+       33. Polynomial Trajectory Generation Playground
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Conclusion.html">
+       34. Conclusion
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Bonus Round Path Planning [Optional].html">
+       35. Bonus Round: Path Planning [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          35. Bonus Round: Path Planning [Optional]
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="additional-resources-on-path-planning">
+          Additional Resources on Path Planning
+         </h2>
+         <p>
+          Nice work reaching the end of the path planning content! While you still have the project left to do here, we're also providing some additional resources and recent research on the topic that you can come back to if you have time later on.
+         </p>
+         <p>
+          Reading research papers is a great way to get exposure to the latest and greatest in the field, as well as expand your learning. However, just like the project ahead, it's often best to
+          <em>
+           learn by doing
+          </em>
+          - if you find a paper that really excites you, try to implement it (or even something better) yourself!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h5 id="optional-reading">
+          Optional Reading
+         </h5>
+         <p>
+          All of these are completely optional reading - you could spend hours reading through the entirety of these! We suggest moving onto the project first so you have what you’ve learned fresh on your mind, before coming back to check these out.
+         </p>
+         <p>
+          We've categorized these papers to hopefully help you narrow down which ones might be of interest, as well including their
+          <em>
+           Abstract
+          </em>
+          section, which summarizes the paper.
+         </p>
+         <hr/>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="indoors">
+          Indoors
+         </h3>
+         <p>
+          <a href="https://arxiv.org/abs/1710.05627" rel="noopener noreferrer" target="_blank">
+           Intention-Net: Integrating Planning and Deep Learning for Goal-Directed Autonomous Navigation
+          </a>
+          by S. W. Gao, et. al.
+         </p>
+         <blockquote>
+          <p>
+           <strong>
+            Abstract:
+           </strong>
+           How can a delivery robot navigate reliably to a destination in a new office building, with minimal prior information? To tackle this challenge, this paper introduces a two-level hierarchical approach, which integrates model-free deep learning and model-based path planning. At the low level, a neural-network motion controller, called the intention-net, is trained end-to-end to provide robust local navigation. The intention-net maps images from a single monocular camera and "intentions" directly to robot controls. At the high level, a path planner uses a crude map, e.g., a 2-D floor plan, to compute a path from the robot's current location to the goal. The planned path provides intentions to the intention-net. Preliminary experiments suggest that the learned motion controller is robust against perceptual uncertainty and by integrating with a path planner, it generalizes effectively to new environments and goals.
+          </p>
+         </blockquote>
+         <hr/>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="city-navigation">
+          City Navigation
+         </h3>
+         <p>
+          <a href="https://arxiv.org/abs/1804.00168" rel="noopener noreferrer" target="_blank">
+           Learning to Navigate in Cities Without a Map
+          </a>
+          by P. Mirowski, et. al.
+         </p>
+         <blockquote>
+          <h2 id="abstract-navigating-through-unstructured-environments-is-a-basic-capability-of-intelligent-creatures-and-thus-is-of-fundamental-interest-in-the-study-and-development-of-artificial-intelligence-long-range-navigation-is-a-complex-cognitive-task-that-relies-on-developing-an-internal-representation-of-space-grounded-by-recognizable-landmarks-and-robust-visual-processing-that-can-simultaneously-support-continuous-self-localization-i-am-here-and-a-representation-of-the-goal-i-am-going-there-building-upon-recent-research-that-applies-deep-reinforcement-learning-to-maze-navigation-problems-we-present-an-end-to-end-deep-reinforcement-learning-approach-that-can-be-applied-on-a-city-scale--we-present-an-interactive-navigation-environment-that-uses-google-streetview-for-its-photographic-content-and-worldwide-coverage-and-demonstrate-that-our-learning-method-allows-agents-to-learn-to-navigate-multiple-cities-and-to-traverse-to-target-destinations-that-may-be-kilometers-away-">
+           <strong>
+            Abstract:
+           </strong>
+           Navigating through unstructured environments is a basic capability of intelligent creatures, and thus is of fundamental interest in the study and development of artificial intelligence. Long-range navigation is a complex cognitive task that relies on developing an internal representation of space, grounded by recognizable landmarks and robust visual processing, that can simultaneously support continuous self-localization ("I am here") and a representation of the goal ("I am going there"). Building upon recent research that applies deep reinforcement learning to maze navigation problems, we present an end-to-end deep reinforcement learning approach that can be applied on a city scale. […] We present an interactive navigation environment that uses Google StreetView for its photographic content and worldwide coverage, and demonstrate that our learning method allows agents to learn to navigate multiple cities and to traverse to target destinations that may be kilometers away. […]
+          </h2>
+         </blockquote>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="intersections">
+          Intersections
+         </h3>
+         <p>
+          <a href="https://arxiv.org/abs/1806.07834" rel="noopener noreferrer" target="_blank">
+           A Look at Motion Planning for Autonomous Vehicles at an Intersection
+          </a>
+          by S. Krishnan, et. al.
+         </p>
+         <blockquote>
+          <p>
+           <strong>
+            Abstract:
+           </strong>
+           Autonomous Vehicles are currently being tested in a variety of scenarios. As we move towards Autonomous Vehicles, how should intersections look? To answer that question, we break down an intersection management into the different conundrums and scenarios involved in the trajectory planning and current approaches to solve them. Then, a brief analysis of current works in autonomous intersection is conducted. With a critical eye, we try to delve into the discrepancies of existing solutions while presenting some critical and important factors that have been addressed. Furthermore, open issues that have to be addressed are also emphasized. We also try to answer the question of how to benchmark intersection management algorithms by providing some factors that impact autonomous navigation at intersection.
+          </p>
+         </blockquote>
+         <hr/>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="planning-in-traffic-with-deep-reinforcement-learning">
+          Planning in Traffic with Deep Reinforcement Learning
+         </h3>
+         <p>
+          <a href="https://arxiv.org/abs/1801.02805" rel="noopener noreferrer" target="_blank">
+           DeepTraffic: Crowdsourced Hyperparameter Tuning of Deep Reinforcement Learning Systems for Multi-Agent Dense Traffic Navigation
+          </a>
+          by L. Fridman, J. Terwilliger and B. Jenik
+         </p>
+         <blockquote>
+          <p>
+           <strong>
+            Abstract:
+           </strong>
+           We present a traffic simulation named DeepTraffic where the planning systems for a subset of the vehicles are handled by a neural network as part of a model-free, off-policy reinforcement learning process. The primary goal of DeepTraffic is to make the hands-on study of deep reinforcement learning accessible to thousands of students, educators, and researchers in order to inspire and fuel the exploration and evaluation of deep Q-learning network variants and hyperparameter configurations through large-scale, open competition. This paper investigates the crowd-sourced hyperparameter tuning of the policy network that resulted from the first iteration of the DeepTraffic competition where thousands of participants actively searched through the hyperparameter space.
+          </p>
+         </blockquote>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('35. Bonus Round: Path Planning [Optional]')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

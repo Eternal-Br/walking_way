@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.355
+When discussing planning algorithms,
+
+00:00:02.355 --> 00:00:05.910
+there are two important properties that we like to talk about.
+
+00:00:05.910 --> 00:00:08.384
+The first one is called completeness.
+
+00:00:08.384 --> 00:00:12.539
+And this means that if a solution exists through the multiplying problem,
+
+00:00:12.539 --> 00:00:14.589
+the planner will find it.
+
+00:00:14.589 --> 00:00:16.515
+And if a solution does not exist,
+
+00:00:16.515 --> 00:00:20.245
+the planner will terminate and report that no solution exists.
+
+00:00:20.245 --> 00:00:23.650
+So, consider the following two situations.
+
+00:00:23.649 --> 00:00:28.984
+In the first one, the complete algorithm might correctly identify this as a solution.
+
+00:00:28.984 --> 00:00:30.644
+and the second one,
+
+00:00:30.644 --> 00:00:34.950
+the algorithm would terminates and tell us there is no solution.
+
+00:00:34.950 --> 00:00:37.425
+Now, there may be something bothering you
+
+00:00:37.424 --> 00:00:40.614
+about the solution identified in the first example.
+
+00:00:40.615 --> 00:00:44.219
+Which brings us to the second property, optimality.
+
+00:00:44.219 --> 00:00:47.579
+A planning algorithm is optimal if it always
+
+00:00:47.579 --> 00:00:51.629
+return the sequence which minimizes some cost function.
+
+00:00:51.630 --> 00:00:55.950
+So if we're using total distance traveled as a cost function for example,
+
+00:00:55.950 --> 00:01:00.030
+then this would be an optimal solution while this would not.
+

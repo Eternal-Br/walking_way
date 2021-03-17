@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.860
+In the next few segments,
+
+00:00:01.860 --> 00:00:05.040
+I'm going to present a method for trajectory planning that
+
+00:00:05.040 --> 00:00:08.714
+is useful in structured environments like highway driving.
+
+00:00:08.714 --> 00:00:12.419
+To do that, I'll introduce the idea of Jerk minimization to
+
+00:00:12.419 --> 00:00:16.890
+generate a nice trajectory from a start configuration to a goal configuration.
+
+00:00:16.890 --> 00:00:21.929
+I will show you how to generate Jerk minimizing trajectories using polynomials and then
+
+00:00:21.929 --> 00:00:24.420
+present a brief derivation on how to compute
+
+00:00:24.420 --> 00:00:28.120
+the coefficients of the polynomial that solves our problem.
+
+00:00:28.120 --> 00:00:32.710
+Then I will show you an example of what one such trajectory looks like on
+
+00:00:32.710 --> 00:00:34.539
+the highway and how we can evaluate
+
+00:00:34.539 --> 00:00:38.210
+its drive-ability and compare it to other trajectories.
+
+00:00:38.210 --> 00:00:42.350
+Finally, I will show you how by generating many similar jerk minimizing
+
+00:00:42.350 --> 00:00:45.465
+trajectories we can compare them
+
+00:00:45.465 --> 00:00:49.150
+and select the best one for the situation we want to drive through. 
+

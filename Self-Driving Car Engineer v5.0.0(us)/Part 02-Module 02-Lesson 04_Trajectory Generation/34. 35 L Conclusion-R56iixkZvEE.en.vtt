@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.530
+In this lesson, you saw several approaches to the trajectory generation problem.
+
+00:00:05.530 --> 00:00:10.935
+None of them is the best for every situation that a self-driving car will encounter.
+
+00:00:10.935 --> 00:00:13.980
+In reality, most self-driving cars have
+
+00:00:13.980 --> 00:00:17.795
+several trajectory planners they can use depending on the situation.
+
+00:00:17.795 --> 00:00:21.280
+A car may use hybrid A* in parking lots,
+
+00:00:21.280 --> 00:00:24.477
+polynomial trajectory generation on low traffic highways,
+
+00:00:24.477 --> 00:00:28.710
+and maybe several others for situations like intersections,
+
+00:00:28.710 --> 00:00:31.105
+high traffic, et cetera.
+
+00:00:31.105 --> 00:00:32.580
+In the final project,
+
+00:00:32.580 --> 00:00:36.420
+you'll get to choose how you implement trajectory generation.
+
+00:00:36.420 --> 00:00:37.740
+But I suspect you'll find
+
+00:00:37.740 --> 00:00:42.180
+that polynomial trajectory generation is well-suited for this problem.
+
+00:00:42.180 --> 00:00:44.000
+Good luck, and safe driving.
+

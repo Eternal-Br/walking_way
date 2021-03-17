@@ -1,0 +1,118 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.740
+In the first lesson,
+
+00:00:01.740 --> 00:00:03.629
+you saw some best planning algorithms,
+
+00:00:03.629 --> 00:00:05.718
+which solve the motion planning problem.
+
+00:00:05.718 --> 00:00:09.509
+But we never formally defined that problem. I'd like to do that now.
+
+00:00:09.509 --> 00:00:12.044
+Now, there is a word that you might encounter quite a bit
+
+00:00:12.044 --> 00:00:15.210
+if you start reading material regarding motion planning algorithm.
+
+00:00:15.210 --> 00:00:18.315
+That word is "configuration space," which defines
+
+00:00:18.315 --> 00:00:23.075
+all the possible configurations of a robot in the given world.
+
+00:00:23.074 --> 00:00:28.522
+Consider the maze word you saw in the first lesson where these words were all 2D grids,
+
+00:00:28.522 --> 00:00:30.480
+the robot configuration was sometimes two
+
+00:00:30.480 --> 00:00:34.170
+dimensional when we presented it as an x_y point,
+
+00:00:34.170 --> 00:00:38.245
+and sometimes three dimensional when also including the robot's heading.
+
+00:00:38.244 --> 00:00:41.729
+In fact, the configuration space for vehicle that can become
+
+00:00:41.729 --> 00:00:45.239
+even larger depending on what motion planning algorithms we decide to use.
+
+00:00:45.240 --> 00:00:48.570
+With this idea of configuration space in mind,
+
+00:00:48.570 --> 00:00:51.375
+we can define a motion planning problem as follows.
+
+00:00:51.375 --> 00:00:52.770
+We're given three things.
+
+00:00:52.770 --> 00:00:56.145
+An initial configuration, a goal configuration
+
+00:00:56.145 --> 00:01:00.265
+and also some constraints describing how the vehicle was allowed to move,
+
+00:01:00.265 --> 00:01:03.469
+its dynamics and the description of the environment.
+
+00:01:03.469 --> 00:01:06.810
+Here, it is important to understand how this connects to
+
+00:01:06.810 --> 00:01:10.469
+the other decision-making modules that you have recently learned about.
+
+00:01:10.469 --> 00:01:15.179
+Usually, the start configuration is the current configuration of the car given to us by
+
+00:01:15.180 --> 00:01:19.990
+the localization value and the sensors that give us information about car location,
+
+00:01:19.989 --> 00:01:23.242
+speed, acceleration they can go, etcetera.
+
+00:01:23.242 --> 00:01:26.685
+The behavior layer gives us a desired end configuration,
+
+00:01:26.685 --> 00:01:31.155
+and maybe some constraints regarding where to go and at which speed.
+
+00:01:31.155 --> 00:01:34.230
+Finally, the prediction completes this problem by giving us
+
+00:01:34.230 --> 00:01:38.085
+information about how the obstacle region will evolve in time.
+
+00:01:38.084 --> 00:01:40.829
+This way, the sequence of actions that we generate takes
+
+00:01:40.829 --> 00:01:44.087
+into account other vehicles and pedestrian actions.
+
+00:01:44.087 --> 00:01:47.140
+And if we're working with a more sophisticated prediction module,
+
+00:01:47.140 --> 00:01:49.859
+how our actions might influence them.
+
+00:01:49.859 --> 00:01:52.950
+The motion planning problem can then be
+
+00:01:52.950 --> 00:01:56.939
+defined as final sequence of feasible movements in
+
+00:01:56.939 --> 00:01:59.685
+the configuration space that's moved the robot from
+
+00:01:59.685 --> 00:02:05.250
+a start configuration to an end configuration without hitting any obstacles.
+
+00:02:05.250 --> 00:02:10.000
+Now, I'm going to ask you to think about configuration spaces in the following questions.
+

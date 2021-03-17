@@ -1,0 +1,519 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Implement Quintic Polynomial Solver Solution
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Trajectory Generation
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. From Behavior to Trajectory.html">
+       01. From Behavior to Trajectory
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Lesson Overview.html">
+       02. Lesson Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="03. The Motion Planning Problem.html">
+       03. The Motion Planning Problem
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Properties of Motion Planning Algorithms.html">
+       04. Properties of Motion Planning Algorithms
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Types of Motion Planning Algorithms.html">
+       05. Types of Motion Planning Algorithms
+      </a>
+     </li>
+     <li class="">
+      <a href="06. A Reminder.html">
+       06. A* Reminder
+      </a>
+     </li>
+     <li class="">
+      <a href="07. A Reminder Solution.html">
+       07. A* Reminder Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Hybrid A Introduction.html">
+       08. Hybrid A* Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Hybrid A Tradeoffs.html">
+       09. Hybrid A* Tradeoffs
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Hybrid A Tradeoffs Solution.html">
+       10. Hybrid A* Tradeoffs Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Hybrid A in Practice.html">
+       11. Hybrid A* in Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Hybrid A Heuristics.html">
+       12. Hybrid A* Heuristics
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Hybrid A Pseudocode.html">
+       13. Hybrid A* Pseudocode
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Implement Hybrid A in C++.html">
+       14. Implement Hybrid A* in C++
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Implement Hybrid A in C++ (solution).html">
+       15. Implement Hybrid A* in C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Environment Classification.html">
+       16. Environment Classification
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Frenet Reminder.html">
+       17. Frenet Reminder
+      </a>
+     </li>
+     <li class="">
+      <a href="18. The Need for Time.html">
+       18. The Need for Time
+      </a>
+     </li>
+     <li class="">
+      <a href="19. s, d, and t.html">
+       19. s, d, and t
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Trajectory Matching.html">
+       20. Trajectory Matching
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Structured Trajectory Generation Overview.html">
+       21. Structured Trajectory Generation Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Trajectories with Boundary Conditions.html">
+       22. Trajectories with Boundary Conditions
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Jerk Minimizing Trajectories.html">
+       23. Jerk Minimizing Trajectories
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Derivation Overview.html">
+       24. Derivation Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Derivation Details 2.html">
+       25. Derivation Details 2
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Polynomial Trajectory Generation.html">
+       26. Polynomial Trajectory Generation
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Implement Quintic Polynomial Solver C++.html">
+       27. Implement Quintic Polynomial Solver C++
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Implement Quintic Polynomial Solver Solution.html">
+       28. Implement Quintic Polynomial Solver Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="29. What should be checked.html">
+       29. What should be checked?
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Implementing Feasibility.html">
+       30. Implementing Feasibility
+      </a>
+     </li>
+     <li class="">
+      <a href="31. Putting it All Together.html">
+       31. Putting it All Together
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Polynomial Trajectory Reading (optional).html">
+       32. Polynomial Trajectory Reading (optional)
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Polynomial Trajectory Generation Playground.html">
+       33. Polynomial Trajectory Generation Playground
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Conclusion.html">
+       34. Conclusion
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Bonus Round Path Planning [Optional].html">
+       35. Bonus Round: Path Planning [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          28. Implement Quintic Polynomial Solver Solution
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="quintic-polynomial-solver-solution">
+          Quintic Polynomial Solver Solution
+         </h1>
+         <p>
+          Below is one potential solution for the quintic polynomial solver.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="348290-main-cpp" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#348290-main-cpp" id="tab-348290-main-cpp" role="tab">
+            main.cpp
+           </a>
+           <a aria-controls="348290-grader-h" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#348290-grader-h" id="tab-348290-grader-h" role="tab">
+            grader.h
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-348290-main-cpp" class="tab-pane active show" id="348290-main-cpp" role="tabpanel">
+            <pre><code></code>#include &lt;cmath&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+#include "Dense"
+#include "grader.h"
+
+using std::vector;
+using Eigen::MatrixXd;
+using Eigen::VectorXd;
+
+/**
+ * TODO: complete this function
+ */
+vector&lt;double&gt; JMT(vector&lt;double&gt; &amp;start, vector&lt;double&gt; &amp;end, double T) {
+  /**
+   * Calculate the Jerk Minimizing Trajectory that connects the initial state
+   * to the final state in time T.
+   *
+   * @param start - the vehicles start location given as a length three array
+   *   corresponding to initial values of [s, s_dot, s_double_dot]
+   * @param end - the desired end state for vehicle. Like "start" this is a
+   *   length three array.
+   * @param T - The duration, in seconds, over which this maneuver should occur.
+   *
+   * @output an array of length 6, each value corresponding to a coefficent in 
+   *   the polynomial:
+   *   s(t) = a_0 + a_1 * t + a_2 * t**2 + a_3 * t**3 + a_4 * t**4 + a_5 * t**5
+   *
+   * EXAMPLE
+   *   &gt; JMT([0, 10, 0], [10, 10, 0], 1)
+   *     [0.0, 10.0, 0.0, 0.0, 0.0, 0.0]
+   */
+  MatrixXd A = MatrixXd(3, 3);
+  A &lt;&lt; T*T*T, T*T*T*T, T*T*T*T*T,
+       3*T*T, 4*T*T*T,5*T*T*T*T,
+       6*T, 12*T*T, 20*T*T*T;
+    
+  MatrixXd B = MatrixXd(3,1);     
+  B &lt;&lt; end[0]-(start[0]+start[1]*T+.5*start[2]*T*T),
+       end[1]-(start[1]+start[2]*T),
+       end[2]-start[2];
+          
+  MatrixXd Ai = A.inverse();
+  
+  MatrixXd C = Ai*B;
+  
+  vector &lt;double&gt; result = {start[0], start[1], .5*start[2]};
+
+  for(int i = 0; i &lt; C.size(); ++i) {
+    result.push_back(C.data()[i]);
+  }
+
+  return result;
+}
+
+int main() {
+
+  // create test cases
+  vector&lt; test_case &gt; tc = create_tests();
+
+  bool total_correct = true;
+
+  for(int i = 0; i &lt; tc.size(); ++i) {
+    vector&lt;double&gt; jmt = JMT(tc[i].start, tc[i].end, tc[i].T);
+    bool correct = close_enough(jmt, answers[i]);
+    total_correct &amp;= correct;
+  }
+
+  if(!total_correct) {
+    std::cout &lt;&lt; "Try again!" &lt;&lt; std::endl;
+  } else {
+    std::cout &lt;&lt; "Nice work!" &lt;&lt; std::endl;
+  }
+
+  return 0;
+}</pre>
+           </div>
+           <div aria-labelledby="tab-348290-grader-h" class="tab-pane" id="348290-grader-h" role="tabpanel">
+            <pre><code></code>#ifndef GRADER_H
+#define GRADER_H
+
+#include &lt;cmath&gt;
+#include &lt;vector&gt;
+
+using std::vector;
+
+struct test_case {
+    vector&lt;double&gt; start;
+    vector&lt;double&gt; end;
+    double T;
+};
+
+bool close_enough(vector&lt;double&gt; &amp;poly, vector&lt;double&gt; &amp;target_poly, 
+                  double eps=0.01) {
+  if (poly.size() != target_poly.size()) {
+    std::cout &lt;&lt; "Your solution didn't have the correct number of terms" 
+              &lt;&lt; std::endl;
+    return false;
+  }
+
+  for (int i = 0; i &lt; poly.size(); ++i) {
+    double diff = poly[i]-target_poly[i];
+    if (abs(diff) &gt; eps) {
+      std::cout &lt;&lt; "At least one of your terms differed from target by more than " 
+                &lt;&lt; eps &lt;&lt; std::endl;
+      return false;
+    }
+  }
+
+  return true;
+}
+
+vector&lt;test_case&gt; create_tests() {
+  // Create test case vector
+  vector&lt;test_case&gt; tc;
+
+  test_case tc1;
+  tc1.start = {0,10,0};
+  tc1.end = {10,10,0};
+  tc1.T = 1;
+  tc.push_back(tc1);
+
+  test_case tc2;
+  tc2.start = {0,10,0};
+  tc2.end = {20,15,20};
+  tc2.T = 2;
+  tc.push_back(tc2);
+
+  test_case tc3;
+  tc3.start = {5,10,2};
+  tc3.end = {-30,-20,-4};
+  tc3.T = 5;
+  tc.push_back(tc3);
+  
+  return tc;
+}
+
+vector&lt;vector&lt;double&gt;&gt; answers = {{0.0, 10.0, 0.0, 0.0, 0.0, 0.0},
+                                  {0.0,10.0,0.0,0.0,-0.625,0.3125},
+                                  {5.0,10.0,1.0,-3.0,0.64,-0.0432}};
+
+#endif  // GRADER_H</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="29. What should be checked.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('28. Implement Quintic Polynomial Solver Solution')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.779
+Hi, I'm Emmanuel. And in this lesson,
+
+00:00:03.779 --> 00:00:06.669
+I'm going to teach you about continuous trajectory planning.
+
+00:00:06.669 --> 00:00:11.164
+And more specifically, how to generate drivable trajectories.
+
+00:00:11.164 --> 00:00:15.434
+Before we begin, let me give you a quick overview of the lesson.
+
+00:00:15.435 --> 00:00:18.780
+First, we will define what the motion planning problem is
+
+00:00:18.780 --> 00:00:22.754
+and discuss a few important concepts and priorities regarding motion planning algorithms.
+
+00:00:22.754 --> 00:00:26.704
+Then we'll do a quick review of A*
+
+00:00:26.704 --> 00:00:32.094
+to get you ready for the first new algorithm we will cover which is called Hybrid A*.
+
+00:00:32.094 --> 00:00:37.405
+As name suggests, Hybrid A* isn't purely discrete or continues.
+
+00:00:37.405 --> 00:00:41.924
+Next, we explore sampling based method called polynomial trajectory generation,
+
+00:00:41.924 --> 00:00:45.119
+which is really useful for highway driving.
+
+00:00:45.119 --> 00:00:47.948
+Before we dive into how to actually make the car drive,
+
+00:00:47.948 --> 00:00:51.520
+let's take a minute to formally define the motion planning problem.
+

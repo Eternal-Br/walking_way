@@ -1,0 +1,184 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.200
+Our goal is to generate continuous trajectories,
+
+00:00:03.200 --> 00:00:05.270
+but how do you do that?
+
+00:00:05.270 --> 00:00:08.715
+Let's start with a native approach and then gets more realistic.
+
+00:00:08.715 --> 00:00:13.815
+Let's say, our car has been driving along the road at a constant speed for some time.
+
+00:00:13.815 --> 00:00:17.730
+The s versus time graph is just a straight line,
+
+00:00:17.730 --> 00:00:19.920
+since the velocity is constant,
+
+00:00:19.920 --> 00:00:22.620
+and the differences time graph is flat,
+
+00:00:22.620 --> 00:00:26.380
+since the car is just staying in the center of the lane.
+
+00:00:26.380 --> 00:00:29.250
+Also note that I've shifted my axis a bit so that
+
+00:00:29.250 --> 00:00:33.545
+the origin of the frame is our current positioning as TNT.
+
+00:00:33.545 --> 00:00:36.650
+This will end up being computationally efficient layer.
+
+00:00:36.650 --> 00:00:40.210
+Now let's say we're getting off this highway soon.
+
+00:00:40.210 --> 00:00:43.460
+So we want to change lane in order to end up there.
+
+00:00:43.460 --> 00:00:47.510
+After some delta-T which let's say it's 10 second.
+
+00:00:47.510 --> 00:00:52.995
+On the SNT-graph that goal would be here and here.
+
+00:00:52.995 --> 00:00:56.170
+The stop position and go position are fixed.
+
+00:00:56.170 --> 00:01:00.576
+They define what we call the boundary conditions of our trajectory at t equals zero,
+
+00:01:00.576 --> 00:01:02.160
+and t equals ten.
+
+00:01:02.160 --> 00:01:04.474
+If those were our only boundary conditions,
+
+00:01:04.474 --> 00:01:08.170
+then we might consider s and t-trajectory is looking like this.
+
+00:01:08.170 --> 00:01:11.805
+But it turns out that these aren't physically possible.
+
+00:01:11.805 --> 00:01:14.040
+This kink in the slope would translate in
+
+00:01:14.040 --> 00:01:18.990
+an instantaneous jumping speed which would require infinite acceleration.
+
+00:01:18.990 --> 00:01:22.902
+Now, if we were to send that to our motion control module,
+
+00:01:22.902 --> 00:01:25.905
+maybe they can track this trajectory, but probably not.
+
+00:01:25.905 --> 00:01:27.765
+And even if they tried to track it,
+
+00:01:27.765 --> 00:01:30.735
+it would result in a very strong acceleration of our car,
+
+00:01:30.735 --> 00:01:33.510
+which is both uncomfortable and dangerous.
+
+00:01:33.510 --> 00:01:37.465
+This is why we need both continuity and smoothness in our trajectories.
+
+00:01:37.465 --> 00:01:39.555
+But how much continuity and smoothness?
+
+00:01:39.555 --> 00:01:41.940
+We know we want continuity in position,
+
+00:01:41.940 --> 00:01:44.065
+since our car cannot teleport.
+
+00:01:44.065 --> 00:01:48.725
+And it would not make sense to compute a trajectory starting 10 metres ahead of us.
+
+00:01:48.725 --> 00:01:53.490
+And we also know that our car cannot instantaneously change speed,
+
+00:01:53.490 --> 00:01:56.460
+therefore the speed should also be continuous.
+
+00:01:56.460 --> 00:02:00.360
+Following this logic you could also say that the acceleration should be
+
+00:02:00.360 --> 00:02:05.025
+continuous and maybe the acceleration's derivity as well and so on.
+
+00:02:05.025 --> 00:02:08.925
+Position becomes velocity, velocity because acceleration,
+
+00:02:08.925 --> 00:02:15.040
+acceleration becomes jerk, and going even further you get snap, crackle, and pop.
+
+00:02:15.040 --> 00:02:17.610
+It turns out that one of these quantities
+
+00:02:17.610 --> 00:02:20.590
+is directly related to human perception of comfort.
+
+00:02:20.590 --> 00:02:22.155
+So let's think about it.
+
+00:02:22.155 --> 00:02:27.410
+In a vehicle, humans feel discomfort when which of these values is high?
+
+00:02:27.410 --> 00:02:32.100
+Velocity? No. When they cruise down the highway at high velocity,
+
+00:02:32.100 --> 00:02:36.200
+people usually don't find it less comfortable than when they drive at lower speed.
+
+00:02:36.200 --> 00:02:38.218
+And if you think about airplanes,
+
+00:02:38.218 --> 00:02:41.960
+they move very fast and they aren't really uncomfortable.
+
+00:02:41.960 --> 00:02:43.550
+Acceleration maybe?
+
+00:02:43.550 --> 00:02:45.630
+That's slightly more tricky.
+
+00:02:45.630 --> 00:02:50.160
+We are indeed sensitive to acceleration but mostly when it becomes very high.
+
+00:02:50.160 --> 00:02:53.850
+For example, we are all used to supporting acceleration up to
+
+00:02:53.850 --> 00:02:58.430
+one G which is the most you can usually sustain in a normal car.
+
+00:02:58.430 --> 00:02:59.940
+Therefore, we shouldn't reach
+
+00:02:59.940 --> 00:03:02.960
+acceleration levels that are high enough to become uncomfortable.
+
+00:03:02.960 --> 00:03:04.730
+Jerk, then? It turns out,
+
+00:03:04.730 --> 00:03:08.985
+this is the quantity that humans perceive as uncomfortable.
+
+00:03:08.985 --> 00:03:12.210
+We can tolerate high acceleration but we don't like it
+
+00:03:12.210 --> 00:03:16.090
+when our acceleration changes too quickly which is high jerk.
+
+00:03:16.090 --> 00:03:18.850
+So when we design trajectories for self-driving car,
+
+00:03:18.850 --> 00:03:21.000
+we would like it, if they were jerk minimizing.
+

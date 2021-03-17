@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.870
+Correct, you've just implemented Hybrid A* which is one of
+
+00:00:03.870 --> 00:00:08.464
+the best algorithm for finding trajectories in unstructured environments.
+
+00:00:08.464 --> 00:00:11.390
+An example of such an environment is a parking lot or a maze.
+
+00:00:11.390 --> 00:00:14.310
+And these environments tend to have
+
+00:00:14.310 --> 00:00:19.490
+less specific rules than highway or streets and also, lower driving speeds.
+
+00:00:19.489 --> 00:00:22.334
+They also do not have an obvious reference path
+
+00:00:22.335 --> 00:00:25.830
+that corresponds to what we should be driving 90% of the time,
+
+00:00:25.829 --> 00:00:27.959
+because they change so much.
+
+00:00:27.960 --> 00:00:30.603
+On the other hand, highway or
+
+00:00:30.603 --> 00:00:34.820
+streets are very structured environments and in these environments,
+
+00:00:34.820 --> 00:00:37.770
+all motion is more constrained by predefined rules,
+
+00:00:37.770 --> 00:00:40.170
+regarding how we can move on the road.
+
+00:00:40.170 --> 00:00:46.844
+For example, the direction of traffic or lane boundaries or also speed limits.
+
+00:00:46.844 --> 00:00:50.129
+All these rules impose constraints which have to be
+
+00:00:50.130 --> 00:00:55.740
+satisfied but also for guidance regarding what the trajectory should look like.
+
+00:00:55.740 --> 00:01:00.465
+And while a style is great at finding solutions everywhere,
+
+00:01:00.465 --> 00:01:03.480
+it does not take advantage of this information.
+
+00:01:03.479 --> 00:01:08.155
+For example, the road structure itself can be used as a reference path.
+
+00:01:08.155 --> 00:01:09.769
+Let's see how we can u-
+

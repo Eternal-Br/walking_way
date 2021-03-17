@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.339
+I am soon going to ask you to implement
+
+00:00:02.339 --> 00:00:06.399
+a polynomial solver to generate Jerk minimizing trajectories.
+
+00:00:06.400 --> 00:00:09.759
+But first, I want to show you how it's being used.
+
+00:00:09.759 --> 00:00:12.419
+Let's consider the S coordinates first.
+
+00:00:12.419 --> 00:00:16.364
+As an input, it takes the current vehicle state,
+
+00:00:16.364 --> 00:00:19.604
+the goal state, and the duration.
+
+00:00:19.605 --> 00:00:21.225
+And as an output,
+
+00:00:21.225 --> 00:00:23.415
+it will generate six coefficients,
+
+00:00:23.414 --> 00:00:28.780
+which uniquely define the polynomial that describes the longitudinal trajectory.
+
+00:00:28.780 --> 00:00:32.189
+Similarly, we feed input parameters to
+
+00:00:32.189 --> 00:00:36.719
+our solver regarding lateral configurations and compute the lateral trajectory.
+
+00:00:36.719 --> 00:00:40.634
+We can use this approach in a situation like this one,
+
+00:00:40.634 --> 00:00:43.684
+you have traffic and a self-driving car.
+
+00:00:43.685 --> 00:00:48.450
+And let's say that the requested behavior is to pass the vehicle in front of us.
+
+00:00:48.450 --> 00:00:50.858
+With polynomial trajectory generation,
+
+00:00:50.857 --> 00:00:53.609
+we take the current configuration of the car along with
+
+00:00:53.609 --> 00:00:56.774
+its velocity and acceleration as our start state.
+
+00:00:56.774 --> 00:01:01.439
+And then we specify a valid goal state that leads our vehicle in the other lane.
+
+00:01:01.439 --> 00:01:04.454
+We ship these states into our polynomial solver
+
+00:01:04.454 --> 00:01:07.885
+along with the desired duration that will allow for the maneuver.
+
+00:01:07.885 --> 00:01:11.100
+And we get a Jerk minimizing trajectory to the goal.
+

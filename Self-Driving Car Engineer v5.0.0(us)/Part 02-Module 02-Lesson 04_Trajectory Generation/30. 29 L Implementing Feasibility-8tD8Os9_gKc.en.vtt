@@ -1,0 +1,115 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.304
+Here we're not going to discuss how to solve these feasibility check exactly.
+
+00:00:05.304 --> 00:00:07.859
+But I want to give you a few hints about how to
+
+00:00:07.860 --> 00:00:10.824
+do some initial validation for your trajectory.
+
+00:00:10.824 --> 00:00:13.469
+In order to do so, we're going to neglect
+
+00:00:13.470 --> 00:00:17.219
+the curvature of the road and assume it is locally straight.
+
+00:00:17.219 --> 00:00:20.339
+Regarding longitudinal acceleration, we make
+
+00:00:20.339 --> 00:00:24.134
+the additional assumption that our heading is pretty much aligned with the road.
+
+00:00:24.135 --> 00:00:29.650
+This allows us to say that S doubled dots is the longitude acceleration of the car.
+
+00:00:29.649 --> 00:00:33.614
+Therefore, we need to check that at any point of the trajectory,
+
+00:00:33.615 --> 00:00:36.120
+this acceleration is less than
+
+00:00:36.119 --> 00:00:39.924
+the maximum acceleration that the engine would need to supply,
+
+00:00:39.924 --> 00:00:43.204
+and more than the maximum braking deceleration of the car.
+
+00:00:43.204 --> 00:00:45.449
+Right now, this could be a fixed value.
+
+00:00:45.450 --> 00:00:46.960
+In real life however,
+
+00:00:46.960 --> 00:00:52.020
+this should probably be computed using information about the friction of the road.
+
+00:00:52.020 --> 00:00:54.355
+Similarly, for lateral acceleration,
+
+00:00:54.354 --> 00:00:58.140
+we can check that all d double dot values are less than
+
+00:00:58.140 --> 00:01:02.645
+a fixed lateral acceleration value that can be set for comfort,
+
+00:01:02.645 --> 00:01:05.814
+or to avoid any risk of rollover in our car.
+
+00:01:05.814 --> 00:01:10.170
+Regarding steering angle, the bicycle model tells us that there's
+
+00:01:10.170 --> 00:01:12.230
+a nice relationship between the steering angle of
+
+00:01:12.230 --> 00:01:15.465
+the car and the radius of the circle of curvature,
+
+00:01:15.465 --> 00:01:21.900
+where L is the distance between the wheel axis and R is the circle radius.
+
+00:01:21.900 --> 00:01:25.270
+The curvature is then given by this formula,
+
+00:01:25.269 --> 00:01:27.569
+and therefore the maximum curvature allowed at
+
+00:01:27.569 --> 00:01:30.804
+any point of the trajectory is given by this equation.
+
+00:01:30.805 --> 00:01:33.570
+If you remember, in the reading assignment about [inaudible]
+
+00:01:33.569 --> 00:01:38.049
+the curvature for path is defined like this,
+
+00:01:38.049 --> 00:01:41.759
+where Δφi is the heading difference between two points of
+
+00:01:41.760 --> 00:01:46.064
+the trajectory and Δχi is the distance between them.
+
+00:01:46.064 --> 00:01:48.359
+Finally the velocity is checked against
+
+00:01:48.359 --> 00:01:52.319
+values specified by the map or the behavioral layer.
+
+00:01:52.319 --> 00:01:56.564
+For example, we could use the speed limit of the road in most cases.
+
+00:01:56.564 --> 00:02:00.719
+That gives us a maximal velocity but also sometimes,
+
+00:02:00.719 --> 00:02:02.849
+we need a minimal velocity like on
+
+00:02:02.849 --> 00:02:07.034
+highways where we don't want to drive too slow or we're backing up,
+
+00:02:07.034 --> 00:02:09.030
+negative S dot is not allowed.
+
