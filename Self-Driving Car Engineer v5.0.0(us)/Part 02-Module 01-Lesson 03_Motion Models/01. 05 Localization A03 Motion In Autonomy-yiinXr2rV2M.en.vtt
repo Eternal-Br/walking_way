@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.174
+Let's talk motion models.
+
+00:00:02.174 --> 00:00:05.040
+Motion models are description of the physics of a vehicle.
+
+00:00:05.040 --> 00:00:06.875
+So when you have a car, for example,
+
+00:00:06.875 --> 00:00:09.289
+and you give gas, it doesn't go sideways,
+
+00:00:09.289 --> 00:00:12.899
+it goes forwards in a specific way and it might turn in circles and the math
+
+00:00:12.900 --> 00:00:16.785
+governing how vehicles move is called a motion model.
+
+00:00:16.785 --> 00:00:19.469
+Why do we have them? Well, they make it easier to predict.
+
+00:00:19.469 --> 00:00:21.689
+They also make it easier to track and do things like
+
+00:00:21.690 --> 00:00:24.630
+localization not just prediction and now we're
+
+00:00:24.629 --> 00:00:29.780
+going to dive into this by studying a motion model called the bicycle model.
+
+00:00:29.780 --> 00:00:31.290
+It's basically half of the guides like
+
+00:00:31.289 --> 00:00:34.679
+the one we have here and one from here driving together.
+

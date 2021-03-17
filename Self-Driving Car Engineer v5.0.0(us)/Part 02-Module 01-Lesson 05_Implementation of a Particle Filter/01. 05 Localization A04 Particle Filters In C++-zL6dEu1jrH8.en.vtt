@@ -1,0 +1,10 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.615
+Let's now talk about particle filters in the context
+
+00:00:03.615 --> 00:00:08.759
+of C++ and understand how to implement a particle filter using C++.
+

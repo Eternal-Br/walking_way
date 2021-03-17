@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.349 --> 00:00:01.889
+The next
+part of the filter
+
+00:00:01.889 --> 00:00:04.740
+you will need to implement
+is the prediction step.
+
+00:00:04.740 --> 00:00:07.080
+For the prediction
+step, you will
+
+00:00:07.080 --> 00:00:09.720
+use what you learned in
+the motion models lesson
+
+00:00:09.720 --> 00:00:13.800
+to predict where the car will
+be at the next time step.
+
+00:00:13.800 --> 00:00:16.679
+For each particle, you will
+have to update the particle's
+
+00:00:16.679 --> 00:00:21.719
+location based on velocity
+and [INAUDIBLE] measurements.
+
+00:00:21.719 --> 00:00:24.960
+To account for the uncertainty
+in the control input,
+
+00:00:24.960 --> 00:00:28.170
+in the project you will
+also add Gaussian noise
+
+00:00:28.170 --> 00:00:31.800
+to the velocity and [INAUDIBLE].
+
+00:00:31.800 --> 00:00:34.140
+Now, I want you to
+practice calculating
+
+00:00:34.140 --> 00:00:36.539
+the prediction of
+a car's position,
+
+00:00:36.539 --> 00:00:39.869
+assuming a basic motion
+model and disregarding
+
+00:00:39.869 --> 00:00:42.859
+sensor uncertainty for now.
+

@@ -1,0 +1,286 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Particle Filters in C++
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Implementation of a Particle Filter
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Particle Filters in C++.html">
+       01. Particle Filters in C++
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction.html">
+       02. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Pseudocode.html">
+       03. Pseudocode
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Initialization.html">
+       04. Initialization
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Program Gaussian Sampling Code.html">
+       05. Program Gaussian Sampling: Code
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Program Gaussian Sampling Code Solution.html">
+       06. Program Gaussian Sampling: Code Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Prediction Step.html">
+       07. Prediction Step
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Calculate Prediction Step Quiz.html">
+       08. Calculate Prediction Step: Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Calculate Prediction Step Quiz Explanation.html">
+       09. Calculate Prediction Step Quiz Explanation
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Data Association Nearest Neighbor.html">
+       10. Data Association: Nearest Neighbor
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Nearest Neighbor Advantages and Disadvantages.html">
+       11. Nearest Neighbor Advantages and Disadvantages
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Update Step.html">
+       12. Update Step
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Calculating Error.html">
+       13. Calculating Error
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Transformations and Associations.html">
+       14. Transformations and Associations
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Converting Landmark Observations.html">
+       15. Converting Landmark Observations
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Quiz Landmarks.html">
+       16. Quiz: Landmarks
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Landmarks Quiz Solution.html">
+       17. Landmarks Quiz Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Quiz Association.html">
+       18. Quiz: Association
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Quiz Particle Weights.html">
+       19. Quiz: Particle Weights
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Particle Weights Solution.html">
+       20. Particle Weights Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Explanation of Project Code.html">
+       21. Explanation of Project Code
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Bonus Round Localization [Optional].html">
+       22. Bonus Round: Localization [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          01. Particle Filters in C++
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          05 Localization A04 Particle Filters In C++
+         </p>
+        </h3>
+        <video controls="">
+         <source src="01. 05 Localization A04 Particle Filters In C++-zL6dEu1jrH8.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="01. 05 Localization A04 Particle Filters In C++-zL6dEu1jrH8.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="JP" src="01. 05 Localization A04 Particle Filters In C++-zL6dEu1jrH8.ja-JP.vtt" srclang="JP"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="02. Introduction.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('01. Particle Filters in C++')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

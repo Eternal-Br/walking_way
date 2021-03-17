@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.950
+In the previous lesson, you learned about
+
+00:00:01.950 --> 00:00:05.144
+the core idea of localization in an attuative way.
+
+00:00:05.144 --> 00:00:07.229
+You also did localization quizzes in Python.
+
+00:00:07.230 --> 00:00:09.150
+As Sebastian already told you,
+
+00:00:09.150 --> 00:00:12.449
+multiplication and addition solves the localization problem,
+
+00:00:12.449 --> 00:00:15.625
+and localization is a foundation for autonomous driving.
+
+00:00:15.625 --> 00:00:16.980
+Now, you will learn more about
+
+00:00:16.980 --> 00:00:20.899
+the whole underlying math behind such a localization problem.
+
+00:00:20.899 --> 00:00:23.429
+This means I will teach you the derivation of
+
+00:00:23.429 --> 00:00:26.370
+the base localization filter called Markov Localization,
+
+00:00:26.370 --> 00:00:29.429
+which is one of the most common localization frameworks.
+
+00:00:29.429 --> 00:00:34.829
+In parallel, you will also learn to implement the math directly with C++.
+
+00:00:34.829 --> 00:00:37.280
+I'll also talk about the motion and observation model.
+

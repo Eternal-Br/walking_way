@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.269
+Here is a picture from the introduction when you first encountered localization.
+
+00:00:06.269 --> 00:00:10.582
+We have a map with all these landmarks in a global coordinate system,
+
+00:00:10.582 --> 00:00:15.825
+observations from the on-board censor and the local coordinates system,
+
+00:00:15.824 --> 00:00:21.059
+and we also have the information how the car moves between two timesteps.
+
+00:00:21.059 --> 00:00:25.784
+Formally, the observations are defined as a vector z which includes
+
+00:00:25.785 --> 00:00:31.800
+all observations from timestep one to t. The observations could be range measurements,
+
+00:00:31.800 --> 00:00:34.990
+bearing angles, or images, for example.
+
+00:00:34.990 --> 00:00:39.060
+We also have the controls of the car as a vector u which includes
+
+00:00:39.060 --> 00:00:43.290
+all control elements from timestep one to t. Typically,
+
+00:00:43.289 --> 00:00:48.030
+you have low pitch or roll rates and velocity information.
+
+00:00:48.030 --> 00:00:49.829
+Finally, we have the map.
+
+00:00:49.829 --> 00:00:53.009
+The map could be a grid map of the global environment,
+
+00:00:53.009 --> 00:00:57.405
+or a database which includes global feature points and the lane geometry.
+
+00:00:57.405 --> 00:01:01.020
+Here, we do not add the time index t to the map
+
+00:01:01.020 --> 00:01:04.883
+because we assume the map does not change over time,
+
+00:01:04.882 --> 00:01:09.519
+and we assume these variables are known.
+
+00:01:09.519 --> 00:01:13.319
+Again, what we want to estimate is the transformation between
+
+00:01:13.319 --> 00:01:18.794
+the local coordinate system of the car and the global coordinate system of the map.
+
+00:01:18.795 --> 00:01:21.150
+If we know this transformation,
+
+00:01:21.150 --> 00:01:24.855
+then we also know the posts of the car in the global map.
+
+00:01:24.855 --> 00:01:30.659
+The position of the car at time t is defined with x.
+
+00:01:30.659 --> 00:01:33.704
+If we assume we have a 2D map for example,
+
+00:01:33.704 --> 00:01:41.429
+x includes a position with x and y coordinates and also the orientation phi.
+
+00:01:41.430 --> 00:01:44.420
+And these values are unknown.
+
+00:01:44.420 --> 00:01:48.355
+We will never know the state xt with perfect accuracy.
+
+00:01:48.355 --> 00:01:54.840
+What we want is to form a sufficiently accurate belief of the state xt,
+
+00:01:54.840 --> 00:01:59.549
+and we want to formulate this belief in a probabilistic way.
+
+00:01:59.549 --> 00:02:06.000
+Now here's a good question: Could you write down the posterior for the belief xt?
+

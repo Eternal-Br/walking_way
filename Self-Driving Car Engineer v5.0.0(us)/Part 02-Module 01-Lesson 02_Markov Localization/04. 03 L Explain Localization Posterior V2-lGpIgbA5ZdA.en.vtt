@@ -1,0 +1,151 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.629
+Localization is all about estimating the probability distribution of the state xt,
+
+00:00:06.629 --> 00:00:08.335
+which is the pose of the car,
+
+00:00:08.335 --> 00:00:13.440
+another condition that all previous observations that,
+
+00:00:13.439 --> 00:00:15.494
+from time 1 to t,
+
+00:00:15.494 --> 00:00:18.269
+and all previous controls u,
+
+00:00:18.269 --> 00:00:22.259
+from time 1 to t, are given.
+
+00:00:22.260 --> 00:00:25.243
+To solve the pure localization problem,
+
+00:00:25.242 --> 00:00:29.144
+we assume the map is correct and does not change.
+
+00:00:29.144 --> 00:00:32.435
+Therefore, the map is also given.
+
+00:00:32.435 --> 00:00:35.700
+If we would like to estimate also the map,
+
+00:00:35.700 --> 00:00:39.825
+then we would solve the simultaneous localization and mapping problem,
+
+00:00:39.825 --> 00:00:41.609
+or called SLAM problem,
+
+00:00:41.609 --> 00:00:44.070
+which is much more complex.
+
+00:00:44.070 --> 00:00:46.920
+But today I don't talk about this.
+
+00:00:46.920 --> 00:00:51.810
+Today, I will talk about the posterior distribution right here.
+
+00:00:51.810 --> 00:00:53.835
+Before we go deeper into math,
+
+00:00:53.835 --> 00:00:56.210
+I want to show you how we define
+
+00:00:56.210 --> 00:01:01.230
+the different input data for a specific 1D localization scenario.
+
+00:01:01.229 --> 00:01:06.119
+This means I will explain how the car is sensing and moving.
+
+00:01:06.120 --> 00:01:10.225
+I will also show you how the map looks.
+
+00:01:10.224 --> 00:01:14.914
+This example is very similar to what you already learned with Sebastian.
+
+00:01:14.915 --> 00:01:17.650
+So, let's talk about the map first.
+
+00:01:17.650 --> 00:01:23.000
+The map includes the position of street lamps and trees in 1D.
+
+00:01:23.000 --> 00:01:27.069
+This means we are working with landmark-based maps which are,
+
+00:01:27.069 --> 00:01:30.648
+in general, more sparse than grid-based maps.
+
+00:01:30.649 --> 00:01:32.280
+In the 1D case,
+
+00:01:32.280 --> 00:01:36.870
+the map is a vector of the position where these objects are.
+
+00:01:36.870 --> 00:01:42.135
+Here, the map includes six landmarks with the values 9, 15, 25, 31, 59, and 77.
+
+00:01:42.135 --> 00:01:49.790
+For the observation we
+
+00:01:49.790 --> 00:01:52.990
+state that the car measures the nearest k,
+
+00:01:52.989 --> 00:01:57.079
+seen static objects, in driving direction.
+
+00:01:57.079 --> 00:02:03.509
+So we assume that the car can detect the distances to street lamps and trees.
+
+00:02:03.510 --> 00:02:06.810
+This results in an observation list which includes,
+
+00:02:06.810 --> 00:02:09.305
+for each time stamp t,
+
+00:02:09.305 --> 00:02:12.885
+a vector of distances zt,
+
+00:02:12.884 --> 00:02:16.819
+from 1 to zt to
+
+00:02:16.819 --> 00:02:22.544
+k. It is possible that we detect multiple trees or street lamps at a time stamp t,
+
+00:02:22.544 --> 00:02:24.699
+or detect nothing at all.
+
+00:02:24.699 --> 00:02:30.655
+The control vector includes a direct move of the car between consecutive time stamps.
+
+00:02:30.655 --> 00:02:32.430
+This means the control is defined by
+
+00:02:32.430 --> 00:02:36.860
+the distance the car traveled between t and t minus 1.
+
+00:02:36.860 --> 00:02:40.470
+In this case, the car moves 2 meters to the right.
+
+00:02:40.469 --> 00:02:43.706
+The true pose of the car is somewhere on the mapped area.
+
+00:02:43.706 --> 00:02:46.109
+Since the map is discrete,
+
+00:02:46.110 --> 00:02:52.710
+the pose of the car could be any integer between 0 and 99 meters.
+
+00:02:52.710 --> 00:02:57.765
+This means the belief of xt is defined as a vector of hundred elements,
+
+00:02:57.764 --> 00:03:00.509
+and each element represents
+
+00:03:00.509 --> 00:03:05.519
+a probability that the car is located at the corresponding position.
+
+00:03:05.520 --> 00:03:08.390
+The goal is now to estimate these values.
+

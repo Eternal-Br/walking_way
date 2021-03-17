@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.104
+In this case, the law of total probability will help you a lot,
+
+00:00:04.104 --> 00:00:06.945
+so this has nothing to do with Bayes Rule.
+
+00:00:06.945 --> 00:00:09.300
+You already heard about this important rule from Sebastian.
+
+00:00:09.300 --> 00:00:12.179
+Do you remember? And here,
+
+00:00:12.179 --> 00:00:13.724
+we can see as a result,
+
+00:00:13.724 --> 00:00:18.420
+we introduce a state xt minus one and assume the state is given.
+
+00:00:18.420 --> 00:00:24.990
+Then, the probability distribution of our motion model can be expressed as the
+
+00:00:24.989 --> 00:00:32.504
+integral of pxt given the previous states,
+
+00:00:32.505 --> 00:00:35.770
+the previous observations are controls,
+
+00:00:35.770 --> 00:00:40.200
+the map multiplied by the probability distribution of
+
+00:00:40.200 --> 00:00:46.050
+the previous state itself over the whole state space xt minus one.
+
+00:00:46.049 --> 00:00:53.780
+For better understanding, assume you are only half p of xt and you introduce pxt minus 1.
+
+00:00:53.780 --> 00:00:57.425
+Then, you would have inside the integral pxt,
+
+00:00:57.424 --> 00:01:06.539
+given xt minus one and the probability distribution of pxt minus one itself.
+
+00:01:06.540 --> 00:01:10.670
+And this is exactly the same as the example over here.
+
+00:01:10.670 --> 00:01:13.739
+But since we have conditions in our target distribution,
+
+00:01:13.739 --> 00:01:17.789
+you also have to consider them in the first and second tab.
+
+00:01:17.790 --> 00:01:20.160
+So, let us represent this situation as
+
+00:01:20.159 --> 00:01:23.909
+a graph to visualize the dependencies between the road blocks,
+
+00:01:23.909 --> 00:01:26.484
+because of introducing xt minus one.
+
+00:01:26.484 --> 00:01:30.090
+You are looking at all possible states of the previous time step
+
+00:01:30.090 --> 00:01:34.960
+and then predict where the car would be in the next time step.
+
+00:01:34.959 --> 00:01:38.804
+Since we also have all the other given values over here,
+
+00:01:38.805 --> 00:01:41.850
+we also use this information to estimate xt.
+
+00:01:41.849 --> 00:01:49.079
+The same information is also use to estimate xt minus one itself.
+
+00:01:49.079 --> 00:01:53.530
+And of course, xt minus one is unknown.
+
+00:01:53.530 --> 00:01:55.049
+Now, my question is,
+
+00:01:55.049 --> 00:01:59.289
+could we simplify this relation by using meaningful assumptions?
+

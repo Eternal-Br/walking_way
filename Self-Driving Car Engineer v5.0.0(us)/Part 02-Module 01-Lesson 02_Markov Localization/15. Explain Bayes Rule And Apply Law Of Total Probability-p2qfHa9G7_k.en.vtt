@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.690
+Here, you can see as a result of applying Bayes' rule for the localization posterior.
+
+00:00:04.690 --> 00:00:06.540
+To define the likelihood term,
+
+00:00:06.540 --> 00:00:10.095
+we swapped the state and the observation at t,
+
+00:00:10.095 --> 00:00:13.778
+and also take into account all other conditions.
+
+00:00:13.778 --> 00:00:16.949
+The prior and the normalizer are also
+
+00:00:16.949 --> 00:00:22.035
+conditioned by the previous observations or controls and the math.
+
+00:00:22.035 --> 00:00:24.521
+It is totally fine here to condition
+
+00:00:24.521 --> 00:00:28.409
+base rule on arbitrary random variables like the controls,
+
+00:00:28.410 --> 00:00:31.067
+like our observations, and the map.
+
+00:00:31.067 --> 00:00:33.049
+And please, take a look at this.
+
+00:00:33.049 --> 00:00:36.314
+If you remove the additional conditions in the posterior,
+
+00:00:36.314 --> 00:00:40.229
+you would end up exactly with the general Bayes' formula.
+
+00:00:40.229 --> 00:00:42.584
+Recall the likelihood terms observation model,
+
+00:00:42.585 --> 00:00:46.829
+which describes the probability distribution of the observation vector,
+
+00:00:46.829 --> 00:00:52.420
+t. Another assumption that a state x_t are previous observations,
+
+00:00:52.420 --> 00:00:55.740
+are controlled, and the map are given.
+
+00:00:55.740 --> 00:00:57.885
+The prior is called a motion model.
+
+00:00:57.884 --> 00:01:04.099
+It is a probability distribution of x_t given all observations from one to t minus one.
+
+00:01:04.099 --> 00:01:07.454
+All controls and the math take into account that
+
+00:01:07.454 --> 00:01:11.429
+no current observations are included in the motion model.
+
+00:01:11.430 --> 00:01:13.761
+To simplify the normalization part,
+
+00:01:13.760 --> 00:01:16.319
+we define the normalizer as Ether.
+
+00:01:16.319 --> 00:01:21.539
+Ether is one of the original normalization term and this term is a sum of
+
+00:01:21.540 --> 00:01:28.400
+the product of the observation and the motion model over all possible states, x_t_i.
+
+00:01:28.400 --> 00:01:30.870
+This also means you only have to define
+
+00:01:30.870 --> 00:01:34.636
+the observation and motion model to estimate the beliefs.
+
+00:01:34.635 --> 00:01:37.909
+So, let's discuss these two terms more in detail.
+
+00:01:37.909 --> 00:01:42.390
+What you see here is again the definition of the motion model.The problem here
+
+00:01:42.390 --> 00:01:48.125
+is that we have no information where the car was before at time T minus one.
+
+00:01:48.125 --> 00:01:52.049
+This means, no information about the previous state, x_t minus one.
+
+00:01:52.049 --> 00:01:53.490
+Now, my question is,
+
+00:01:53.489 --> 00:01:58.000
+what kind of rule or law can we use which will help us here?
+

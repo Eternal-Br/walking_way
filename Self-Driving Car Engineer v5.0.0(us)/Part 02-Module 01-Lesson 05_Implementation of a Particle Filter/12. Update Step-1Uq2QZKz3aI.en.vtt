@@ -1,0 +1,322 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.700 --> 00:00:03.309
+You have learned how to
+incorporate velocity and yaw
+
+00:00:03.310 --> 00:00:06.500
+rate measurements into
+the particle filter.
+
+00:00:06.500 --> 00:00:09.220
+But what about sensor
+measurements, such as readings
+
+00:00:09.220 --> 00:00:11.860
+from radar or lidar?
+
+00:00:11.859 --> 00:00:13.719
+These landmark
+measurements will be
+
+00:00:13.720 --> 00:00:17.320
+used to compute the update
+step, which you saw before
+
+00:00:17.320 --> 00:00:19.570
+in the Bayesian filter.
+
+00:00:19.570 --> 00:00:22.420
+Instead of the feature
+measurements directly affecting
+
+00:00:22.420 --> 00:00:25.000
+the prediction of
+the state of the car,
+
+00:00:25.000 --> 00:00:27.009
+the measurements
+will instead inform
+
+00:00:27.010 --> 00:00:29.350
+the weight of each particle.
+
+00:00:29.350 --> 00:00:32.560
+The size of each particle
+in this visualization
+
+00:00:32.560 --> 00:00:35.359
+correlates with its weight.
+
+00:00:35.359 --> 00:00:37.750
+One way to update the
+weights of the particles
+
+00:00:37.750 --> 00:00:41.229
+is to use the multivariate
+Gaussian probability density
+
+00:00:41.229 --> 00:00:43.929
+function for each
+measurement and combine
+
+00:00:43.929 --> 00:00:45.909
+the likelihoods of
+all the measurements
+
+00:00:45.909 --> 00:00:47.889
+by taking their product.
+
+00:00:47.890 --> 00:00:49.689
+This function
+tells us how likely
+
+00:00:49.689 --> 00:00:53.409
+a set of landmark measurements
+is given our predicted state
+
+00:00:53.409 --> 00:00:56.349
+of the car and the assumption
+that the sensors have
+
+00:00:56.350 --> 00:00:57.940
+Gaussian noise.
+
+00:00:57.939 --> 00:01:01.509
+We also assume each landmark
+measurement is independent,
+
+00:01:01.509 --> 00:01:03.869
+so we will take the
+product of the likelihoods
+
+00:01:03.869 --> 00:01:05.890
+over all measurements.
+
+00:01:05.890 --> 00:01:10.180
+Here, xi represents the
+ith landmark measurement
+
+00:01:10.180 --> 00:01:12.900
+for one particular particle.
+
+00:01:12.900 --> 00:01:15.850
+mu i represents the
+predicted measurement
+
+00:01:15.849 --> 00:01:17.619
+for the map landmark
+corresponding
+
+00:01:17.620 --> 00:01:19.920
+to the ith measurement.
+
+00:01:19.920 --> 00:01:24.310
+m is the total number of
+measurements for one particle.
+
+00:01:24.310 --> 00:01:28.780
+And finally, sigma is the
+covariance of the measurement.
+
+00:01:28.780 --> 00:01:33.159
+The covariance matrix sigma
+is a symmetric square matrix
+
+00:01:33.159 --> 00:01:36.189
+that contains the
+variance, or uncertainty,
+
+00:01:36.189 --> 00:01:38.980
+of each variable in
+the sensor measurement,
+
+00:01:38.980 --> 00:01:42.070
+as well as the covariance,
+or correlation,
+
+00:01:42.069 --> 00:01:45.049
+between these variables.
+
+00:01:45.049 --> 00:01:47.980
+In the case of lidar,
+the variables in question
+
+00:01:47.980 --> 00:01:50.890
+would be the x and y
+position of the landmark
+
+00:01:50.890 --> 00:01:52.510
+and vehicle coordinates.
+
+00:01:52.510 --> 00:01:55.120
+The diagonal terms of
+the covariance matrix
+
+00:01:55.120 --> 00:01:57.530
+are the variance
+of each variable,
+
+00:01:57.530 --> 00:02:01.180
+which is the standard deviation
+of the variable squared.
+
+00:02:01.180 --> 00:02:04.780
+Here, the orange ovals
+around each lidar measurement
+
+00:02:04.780 --> 00:02:08.979
+are geometric representations
+of some covariance matrices.
+
+00:02:08.979 --> 00:02:11.350
+Notice how the
+covariance changes as you
+
+00:02:11.349 --> 00:02:13.569
+change the diagonal terms.
+
+00:02:13.569 --> 00:02:16.479
+As the x variance
+term increases,
+
+00:02:16.479 --> 00:02:20.289
+the uncertainty in the x
+direction also increases.
+
+00:02:20.289 --> 00:02:22.449
+Note that feature
+measurements are usually
+
+00:02:22.449 --> 00:02:24.669
+given in vehicle
+coordinates, where
+
+00:02:24.669 --> 00:02:28.539
+the x-axis points in the
+direction of the car's heading
+
+00:02:28.539 --> 00:02:32.049
+and the y-axis points
+to the left of the car.
+
+00:02:32.050 --> 00:02:35.830
+Similarly, as the y
+variance term increases,
+
+00:02:35.830 --> 00:02:39.580
+the uncertainty in the y
+direction also increases.
+
+00:02:39.580 --> 00:02:41.800
+You can think of the
+covariance matrix
+
+00:02:41.800 --> 00:02:44.260
+as an inverse matrix of weights.
+
+00:02:44.259 --> 00:02:47.889
+The smaller the diagonal
+term for a certain variable,
+
+00:02:47.889 --> 00:02:51.179
+the more you can trust this
+variable in the measurement
+
+00:02:51.180 --> 00:02:54.010
+and the higher the
+weight we can put on it.
+
+00:02:54.009 --> 00:02:57.159
+The off diagonal terms
+of the covariance matrix
+
+00:02:57.159 --> 00:03:00.699
+represent the correlation
+between the two variables.
+
+00:03:00.699 --> 00:03:05.289
+For instance, if x
+increases as y increases,
+
+00:03:05.289 --> 00:03:08.500
+you could represent that
+in the off diagonal terms
+
+00:03:08.500 --> 00:03:10.180
+of this matrix.
+
+00:03:10.180 --> 00:03:13.390
+For the project, we will
+assume the different variables
+
+00:03:13.389 --> 00:03:16.689
+in the sensor measurement
+are independent,
+
+00:03:16.689 --> 00:03:20.300
+and therefore the off
+diagonal terms are 0.
+
+00:03:20.300 --> 00:03:24.070
+However, this is often
+not the case in practice.
+
+00:03:24.069 --> 00:03:26.500
+Here is a geometric
+representation
+
+00:03:26.500 --> 00:03:31.300
+of some covariance matrices
+with off diagonal terms.
+
+00:03:31.300 --> 00:03:34.270
+Notice how the ovals look
+different from the covariances
+
+00:03:34.270 --> 00:03:39.040
+before that only had
+non-zero diagonal terms.
+
+00:03:39.039 --> 00:03:42.939
+They now show a positive
+or negative correlation
+
+00:03:42.939 --> 00:03:45.189
+between x and y.
+
+00:03:45.189 --> 00:03:46.359
+Awesome.
+
+00:03:46.360 --> 00:03:49.310
+After you update the
+weights for each particle,
+
+00:03:49.310 --> 00:03:52.659
+you will have to resample the
+particles with probability
+
+00:03:52.659 --> 00:03:55.569
+proportional to these
+weights, as was discussed
+
+00:03:55.569 --> 00:03:57.099
+in the previous lesson.
+
+00:03:57.099 --> 00:03:58.539
+And then you're done.
+
+00:03:58.539 --> 00:04:00.789
+Next, you'll learn
+about how to evaluate
+
+00:04:00.789 --> 00:04:03.189
+the accuracy of
+your particle filter
+
+00:04:03.189 --> 00:04:06.329
+once you've
+successfully built it.
+

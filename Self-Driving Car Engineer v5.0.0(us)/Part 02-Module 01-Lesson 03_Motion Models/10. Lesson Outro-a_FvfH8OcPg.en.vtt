@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.310 --> 00:00:01.229
+Good work.
+
+00:00:01.229 --> 00:00:03.799
+You learned a lot of cool
+things in this lesson.
+
+00:00:03.799 --> 00:00:06.330
+Now you know the assumptions
+made in the bicycle motion
+
+00:00:06.330 --> 00:00:10.120
+model, how to calculate the new
+position of the car, given yaw
+
+00:00:10.119 --> 00:00:13.129
+rate, velocity, and
+odometry measurements.
+
+00:00:13.130 --> 00:00:16.300
+You also learned about some
+limitations of odometry.
+
+00:00:16.300 --> 00:00:19.550
+Next, you'll learn about a
+cool algorithm for localization
+
+00:00:19.550 --> 00:00:21.740
+called the particle filter.
+

@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.500 --> 00:00:02.660
+If we move with no noise--
+
+00:00:02.660 --> 00:00:05.900
+which means the transition
+model is certain--
+
+00:00:05.900 --> 00:00:09.380
+then we would result
+in C. This means
+
+00:00:09.380 --> 00:00:13.670
+we just shift the initial
+belief 10 meters to the right.
+
+00:00:13.669 --> 00:00:16.940
+No noise does not mean we
+get a better precision.
+
+00:00:16.940 --> 00:00:21.859
+If we move with low noise,
+the belief is spread out--
+
+00:00:21.859 --> 00:00:24.589
+so, answer B is correct.
+
+00:00:24.589 --> 00:00:29.660
+And if we move with high noise,
+the belief is very spread out
+
+00:00:29.660 --> 00:00:32.329
+and almost looks uniform--
+
+00:00:32.329 --> 00:00:35.559
+so answer A is correct.
+

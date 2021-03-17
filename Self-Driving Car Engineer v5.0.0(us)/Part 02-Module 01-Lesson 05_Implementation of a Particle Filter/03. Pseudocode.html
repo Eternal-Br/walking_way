@@ -1,0 +1,488 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Pseudocode
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Implementation of a Particle Filter
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Particle Filters in C++.html">
+       01. Particle Filters in C++
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction.html">
+       02. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Pseudocode.html">
+       03. Pseudocode
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Initialization.html">
+       04. Initialization
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Program Gaussian Sampling Code.html">
+       05. Program Gaussian Sampling: Code
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Program Gaussian Sampling Code Solution.html">
+       06. Program Gaussian Sampling: Code Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Prediction Step.html">
+       07. Prediction Step
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Calculate Prediction Step Quiz.html">
+       08. Calculate Prediction Step: Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Calculate Prediction Step Quiz Explanation.html">
+       09. Calculate Prediction Step Quiz Explanation
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Data Association Nearest Neighbor.html">
+       10. Data Association: Nearest Neighbor
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Nearest Neighbor Advantages and Disadvantages.html">
+       11. Nearest Neighbor Advantages and Disadvantages
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Update Step.html">
+       12. Update Step
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Calculating Error.html">
+       13. Calculating Error
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Transformations and Associations.html">
+       14. Transformations and Associations
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Converting Landmark Observations.html">
+       15. Converting Landmark Observations
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Quiz Landmarks.html">
+       16. Quiz: Landmarks
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Landmarks Quiz Solution.html">
+       17. Landmarks Quiz Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Quiz Association.html">
+       18. Quiz: Association
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Quiz Particle Weights.html">
+       19. Quiz: Particle Weights
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Particle Weights Solution.html">
+       20. Particle Weights Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Explanation of Project Code.html">
+       21. Explanation of Project Code
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Bonus Round Localization [Optional].html">
+       22. Bonus Round: Localization [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          03. Pseudocode
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Pseudocode
+         </p>
+        </h3>
+        <video controls="">
+         <source src="03. Pseudocode-JNm1fnWj5To.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="03. Pseudocode-JNm1fnWj5To.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="JP" src="03. Pseudocode-JNm1fnWj5To.ja-JP.vtt" srclang="JP"/>
+         <track default="false" kind="subtitles" label="CN" src="03. Pseudocode-JNm1fnWj5To.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="process-and-implementation">
+          Process and Implementation
+         </h1>
+         <p>
+          As an accompaniment to the videos we will follow the particle filter algorithm process and
+          <br/>
+          implementation details.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="particle-filter-algorithm-steps-and-inputs">
+          Particle Filter Algorithm Steps and Inputs
+         </h2>
+         <p>
+          The flowchart below represents the steps of the particle filter algorithm as well as its inputs.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Particle Filter Algorithm Flowchart" class="img img-fluid" src="img/02-l-pseudocode.00-00-47-13.still006.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Particle Filter Algorithm Flowchart
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="psuedo-code">
+          Psuedo Code
+         </h2>
+         <p>
+          This is an outline of steps you will need to take with your code in order to implement
+          <br/>
+          a particle filter for localizing an autonomous vehicle.  The pseudo code steps correspond to the steps in the algorithm flow chart, initialization, prediction, particle weight updates, and resampling.  Python implementation of these steps was covered in the previous lesson.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Initialization" class="img img-fluid" src="img/02-l-pseudocode.00-00-14-28.still001.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Initialization
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          At the initialization step we estimate our position from GPS input.  The subsequent steps in the process will refine this estimate to localize our vehicle.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Prediction" class="img img-fluid" src="img/02-l-pseudocode.00-00-16-01.still002.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Prediction
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          During the prediction step we add the control input (yaw rate &amp; velocity) for all particles
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Update" class="img img-fluid" src="img/02-l-pseudocode.00-00-30-05.still003.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Update
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          During the update step, we update our particle weights using map landmark positions and feature measurements.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Resampling" class="img img-fluid" src="img/02-l-pseudocode.00-00-35-08.still004.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Resampling
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          During resampling we will resample M times (M is range of 0 to length_of_particleArray) drawing a particle i (i is the particle index) proportional to its weight .  Sebastian covered one implementation of this in his
+          <a href="https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/2c318113-724b-4f9f-860c-cb334e6e4ad7/lessons/4d7950f7-f519-4dc6-9142-052a1261f5bf/concepts/487480820923" rel="noopener noreferrer" target="_blank">
+           discussion and implementation of a resampling wheel
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Return New Particle Set" class="img img-fluid" src="img/02-l-pseudocode.00-00-40-01.still005.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Return New Particle Set
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The new set of particles represents the Bayes filter posterior probability.  We now have a refined estimate of the vehicles position based on input evidence.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="04. Initialization.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Pseudocode')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.500 --> 00:00:02.940
+The bicycle model is
+a simple and useful way
+
+00:00:02.940 --> 00:00:05.250
+to represent how a car moves.
+
+00:00:05.250 --> 00:00:07.950
+Like all models, it is
+based on several simplifying
+
+00:00:07.950 --> 00:00:09.500
+assumptions.
+
+00:00:09.500 --> 00:00:12.800
+First, we all ignore all
+vertical dynamics of the car,
+
+00:00:12.800 --> 00:00:16.100
+so you can assume the
+car only moves in 2D.
+
+00:00:16.100 --> 00:00:19.330
+This means no flying
+cars, unfortunately.
+
+00:00:19.329 --> 00:00:21.769
+Next, we'll assume
+that, like a bicycle,
+
+00:00:21.769 --> 00:00:24.079
+the front wheels of
+the car are connected
+
+00:00:24.079 --> 00:00:28.729
+to the back wheels of the car by
+a rigid beam with fixed length.
+
+00:00:28.730 --> 00:00:31.940
+Here, we assume that the
+front two wheels act together
+
+00:00:31.940 --> 00:00:35.270
+so they can effectively be
+represented as one wheel,
+
+00:00:35.270 --> 00:00:36.980
+just like a bicycle.
+
+00:00:36.979 --> 00:00:40.009
+The same holds for
+the two rear wheels.
+
+00:00:40.009 --> 00:00:44.449
+Finally, we assume the car is
+also controlled like a bicycle,
+
+00:00:44.450 --> 00:00:48.350
+with a steering angle theta
+and some longitudinal velocity
+
+00:00:48.350 --> 00:00:50.600
+in the direction that
+the car is heading.
+
+00:00:50.600 --> 00:00:52.969
+For this car, we change
+the steering angle
+
+00:00:52.969 --> 00:00:56.390
+by pi over 8 radians,
+and then the car
+
+00:00:56.390 --> 00:01:00.060
+moves forward at a velocity
+of 3 meters per second.
+
+00:01:00.060 --> 00:01:02.090
+You have just learned
+how the motion of a car
+
+00:01:02.090 --> 00:01:05.390
+can be simplified down to
+something similar to a bicycle,
+
+00:01:05.390 --> 00:01:07.400
+with a bicycle motion model.
+
+00:01:07.400 --> 00:01:09.260
+Next, you'll get
+reminded how to use
+
+00:01:09.260 --> 00:01:13.689
+the yaw rate and velocity of a
+car to find its new position.
+

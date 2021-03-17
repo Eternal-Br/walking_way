@@ -1,0 +1,105 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.274 --> 00:00:02.439
+Once you finish
+implementing your particle
+
+00:00:02.439 --> 00:00:06.429
+filter, I will ask you to assess
+how accurate your position
+
+00:00:06.429 --> 00:00:08.349
+estimates were.
+
+00:00:08.349 --> 00:00:11.830
+For your project, I have given
+you the ground truth position
+
+00:00:11.830 --> 00:00:15.550
+of the car for every time step.
+
+00:00:15.550 --> 00:00:17.140
+Your results might
+look something
+
+00:00:17.140 --> 00:00:20.980
+like this, where the red
+car is the ground truth
+
+00:00:20.980 --> 00:00:25.440
+and the blue car is the result
+of your particle filter.
+
+00:00:25.440 --> 00:00:27.780
+We will now discuss
+two different ways
+
+00:00:27.780 --> 00:00:31.020
+to quantify the difference
+between your results
+
+00:00:31.019 --> 00:00:33.780
+and the ground truth.
+
+00:00:33.780 --> 00:00:36.179
+One way you could
+report your error
+
+00:00:36.179 --> 00:00:41.429
+is to take the weighted average
+error of all the particles.
+
+00:00:41.429 --> 00:00:44.189
+To do this, simply
+take the root squared
+
+00:00:44.189 --> 00:00:48.119
+error between each
+particle and ground truth,
+
+00:00:48.119 --> 00:00:52.179
+and multiply it by
+the particle's weight.
+
+00:00:52.179 --> 00:00:56.759
+Remember that in this
+equation, Pi and g
+
+00:00:56.759 --> 00:01:00.359
+are vectors that contain
+the x position, y
+
+00:01:00.359 --> 00:01:05.489
+position, and [INAUDIBLE] of
+the car in map coordinates.
+
+00:01:05.489 --> 00:01:10.290
+Then, you'll have to divide
+by the sum of the weights.
+
+00:01:10.290 --> 00:01:12.359
+Another possibility
+is to just look
+
+00:01:12.359 --> 00:01:16.349
+at the best, or the
+highest-weighted particle,
+
+00:01:16.349 --> 00:01:20.759
+and simply take the root
+squared error of this particle.
+
+00:01:20.760 --> 00:01:23.160
+Now, I want you to
+practice reporting
+
+00:01:23.159 --> 00:01:26.099
+the error of the particle
+filter for a particular time
+
+00:01:26.099 --> 00:01:31.250
+step given the best particle
+and the ground truth position.
+

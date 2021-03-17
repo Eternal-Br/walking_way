@@ -1,0 +1,247 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.099
+Before we go back to our motion model and how we can simplify
+
+00:00:04.099 --> 00:00:09.175
+the relations between the states and to give them values,
+
+00:00:09.175 --> 00:00:13.861
+I want to introduce the first order Markov Assumption.
+
+00:00:13.861 --> 00:00:17.175
+Assume you want to estimate the posterior distribution
+
+00:00:17.175 --> 00:00:21.300
+of p x_t given our previous states,
+
+00:00:21.300 --> 00:00:24.490
+and you have no observations or controls.
+
+00:00:24.489 --> 00:00:31.019
+So this is a pretty simple example but it works fine to explain the Markov Assumption.
+
+00:00:31.019 --> 00:00:33.269
+You can write this distribution as
+
+00:00:33.270 --> 00:00:37.740
+the following: This relation can be represented as a chain.
+
+00:00:37.740 --> 00:00:41.835
+For example, to estimate or predict x_1,
+
+00:00:41.835 --> 00:00:44.969
+we only use x_0.
+
+00:00:44.969 --> 00:00:51.284
+To estimate x_2, we use x_1 and x_0.
+
+00:00:51.284 --> 00:00:53.819
+And finally, for x_3,
+
+00:00:53.820 --> 00:00:59.780
+we use x_2, x_1, and x_0.
+
+00:00:59.780 --> 00:01:08.210
+In this example, the Markov Assumption postulates that x_2 is the best predictor for x_3.
+
+00:01:08.209 --> 00:01:12.599
+This means, that the other states, x_1 and x_0,
+
+00:01:12.599 --> 00:01:15.359
+arts or future states, carry
+
+00:01:15.359 --> 00:01:21.629
+no additional information to predict x_3 in a better way far more accurately.
+
+00:01:21.629 --> 00:01:26.209
+We also say the state x_2 is complete.
+
+00:01:26.209 --> 00:01:31.424
+We remove the links or connectors between x_1 and x_3,
+
+00:01:31.424 --> 00:01:34.394
+and x_0 and x_3,
+
+00:01:34.394 --> 00:01:40.942
+which means x_3 is independent of x_0 and x_1,
+
+00:01:40.942 --> 00:01:44.194
+it only depends on x_2.
+
+00:01:44.194 --> 00:01:47.381
+And of course, for x_2, it is the same.
+
+00:01:47.381 --> 00:01:51.090
+This means, you can also remove this guy over here.
+
+00:01:51.090 --> 00:01:52.770
+Since we now assume,
+
+00:01:52.769 --> 00:01:56.313
+that x_t only depends on the previous state,
+
+00:01:56.313 --> 00:01:59.509
+we can rewrite the posterior in this way.
+
+00:01:59.510 --> 00:02:02.594
+So, if we want to continue this chain,
+
+00:02:02.594 --> 00:02:04.875
+which means to predict the future,
+
+00:02:04.875 --> 00:02:09.615
+we only take x_3 into consideration.
+
+00:02:09.615 --> 00:02:12.480
+An example could be a weather forecaster,
+
+00:02:12.479 --> 00:02:17.704
+the weather of tomorrow only depends on today and
+
+00:02:17.705 --> 00:02:23.040
+today includes our previous information and is uncertain, of course.
+
+00:02:23.039 --> 00:02:24.384
+As an important fact,
+
+00:02:24.384 --> 00:02:28.824
+we have to assume that we have an initial guess for x_0.
+
+00:02:28.824 --> 00:02:33.119
+So, x_0 must be initialized correctly.
+
+00:02:33.120 --> 00:02:35.730
+Let's go back to our motion model and I will show
+
+00:02:35.729 --> 00:02:39.215
+you how we can benefit from the Markov Assumption.
+
+00:02:39.215 --> 00:02:41.280
+Before I talked about the Markov assumption,
+
+00:02:41.280 --> 00:02:43.604
+I stopped here and ask you,
+
+00:02:43.604 --> 00:02:47.039
+how we can simplify the structure?
+
+00:02:47.039 --> 00:02:52.179
+Now, I will show you how the Markov Assumption can help us here.
+
+00:02:52.180 --> 00:02:56.340
+First, I split the control vector into the current control,
+
+00:02:56.340 --> 00:03:01.034
+u_t, and our previous controls.
+
+00:03:01.034 --> 00:03:03.840
+Now, let's take a look to the first term,
+
+00:03:03.840 --> 00:03:10.189
+the probability distribution of p x_t is conditioned by x_t minus one,
+
+00:03:10.189 --> 00:03:15.435
+all previous observations or controls, and the map.
+
+00:03:15.435 --> 00:03:19.245
+Here, we apply the Markov Assumption the first time,
+
+00:03:19.245 --> 00:03:22.469
+since you already know x_t minus one,
+
+00:03:22.469 --> 00:03:24.944
+set one_to_t minus one,
+
+00:03:24.944 --> 00:03:28.259
+and u 1_to_t minus one will not carry
+
+00:03:28.259 --> 00:03:33.194
+additional information to predict x_t in a better way.
+
+00:03:33.194 --> 00:03:37.114
+These values were already used to estimate x_t minus one.
+
+00:03:37.114 --> 00:03:40.935
+This means, x_t is independent of these values.
+
+00:03:40.935 --> 00:03:42.615
+Because of this fact,
+
+00:03:42.615 --> 00:03:46.344
+we can remove these two conditions in the graph.
+
+00:03:46.344 --> 00:03:48.436
+This will result in the following,
+
+00:03:48.436 --> 00:03:54.283
+and the posterior distribution of x_t only depends on x_t minus one,
+
+00:03:54.282 --> 00:03:57.034
+u_t, and the map.
+
+00:03:57.034 --> 00:03:58.469
+This term is called,
+
+00:03:58.469 --> 00:04:00.449
+the transition or system model,
+
+00:04:00.449 --> 00:04:05.109
+which predicts or which moves the previous state in the new one.
+
+00:04:05.110 --> 00:04:07.215
+And as you can see,
+
+00:04:07.215 --> 00:04:11.879
+we do not need the whole observation or control history.
+
+00:04:11.879 --> 00:04:14.849
+Here, you can also consider that the map,
+
+00:04:14.849 --> 00:04:18.584
+m, does not influence x_t.
+
+00:04:18.584 --> 00:04:20.709
+It is common practice to neglect m,
+
+00:04:20.709 --> 00:04:22.914
+but here, we keep it.
+
+00:04:22.915 --> 00:04:27.850
+The second term describes a posterior distribution of x_t minus one,
+
+00:04:27.850 --> 00:04:33.585
+given all previous observations or controls, and the map.
+
+00:04:33.584 --> 00:04:36.299
+Here, we use a Markov Assumption again.
+
+00:04:36.300 --> 00:04:42.085
+We assume that u_t tells us nothing about x_t minus one,
+
+00:04:42.084 --> 00:04:44.579
+because u_t is in the future.
+
+00:04:44.579 --> 00:04:47.125
+We ignore u_t to estimate the state,
+
+00:04:47.125 --> 00:04:50.839
+x_t minus one, and we move this condition over here.
+
+00:04:50.839 --> 00:04:52.474
+Based on this assumption,
+
+00:04:52.475 --> 00:04:55.004
+we rewrite the motion model again.
+
+00:04:55.004 --> 00:04:56.815
+After these two steps,
+
+00:04:56.815 --> 00:04:59.685
+we achieved a really, really important step.
+
+00:04:59.685 --> 00:05:02.060
+I ask you, do you know why?
+

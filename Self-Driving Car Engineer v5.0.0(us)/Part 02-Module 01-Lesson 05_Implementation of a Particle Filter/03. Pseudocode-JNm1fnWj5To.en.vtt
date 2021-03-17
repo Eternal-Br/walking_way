@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.500 --> 00:00:03.240
+In this lesson, we will
+go over some implementation
+
+00:00:03.240 --> 00:00:06.630
+details to get you ready to
+make your own particle filter.
+
+00:00:06.629 --> 00:00:09.039
+We will start with the
+pseudocode shown here,
+
+00:00:09.039 --> 00:00:11.729
+which outlines the steps you
+will need to take in your code.
+
+00:00:11.730 --> 00:00:14.400
+This first line here is
+the initialization step
+
+00:00:14.400 --> 00:00:15.630
+for the filter.
+
+00:00:15.630 --> 00:00:18.210
+Next, this line here
+is the prediction step
+
+00:00:18.210 --> 00:00:20.969
+of the filter, which is
+analogous to the prediction
+
+00:00:20.969 --> 00:00:23.579
+step of the base
+filter you saw before.
+
+00:00:23.579 --> 00:00:26.969
+Here, you will add the control
+input to all of the particles.
+
+00:00:26.969 --> 00:00:29.070
+This next part is
+the update step,
+
+00:00:29.070 --> 00:00:31.339
+where you will update
+each particle's weight.
+
+00:00:31.339 --> 00:00:34.530
+The second for loop is the
+all-important resampling step
+
+00:00:34.530 --> 00:00:36.990
+that you learned about
+in the previous lesson.
+
+00:00:36.990 --> 00:00:39.870
+Once the resampling is done,
+the new set of particles
+
+00:00:39.869 --> 00:00:42.179
+represents the Bayes
+filter posterior.
+
+00:00:42.179 --> 00:00:45.899
+Here is a flowchart representing
+the particle filter algorithm
+
+00:00:45.899 --> 00:00:47.969
+you just saw as pseudocode.
+
+00:00:47.969 --> 00:00:50.339
+Next, we'll take a closer
+look at the first step
+
+00:00:50.340 --> 00:00:51.150
+of the chart--
+
+00:00:51.149 --> 00:00:53.310
+initialization-- so
+that you'll know how
+
+00:00:53.310 --> 00:00:55.910
+to initialize your particles.
+

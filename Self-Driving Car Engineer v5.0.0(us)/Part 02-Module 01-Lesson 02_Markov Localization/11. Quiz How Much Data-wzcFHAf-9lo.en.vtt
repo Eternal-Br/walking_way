@@ -1,0 +1,28 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.679
+Before we go back to math,
+
+00:00:01.679 --> 00:00:06.549
+I want to make sure you understand how much data Z1:t represents,
+
+00:00:06.549 --> 00:00:10.740
+so you can consider what the performance consequences would be.
+
+00:00:10.740 --> 00:00:13.724
+So let's pretend that each observation vector
+
+00:00:13.724 --> 00:00:17.625
+contains 100000 data points or observations.
+
+00:00:17.625 --> 00:00:24.219
+Each of those observations may have five data points which take four bytes each.
+
+00:00:24.219 --> 00:00:30.404
+If we have been driving a car for six hours with our sensor updating at ten hertz,
+
+00:00:30.405 --> 00:00:36.000
+how much data is contained in this Z1:t?
+

@@ -1,0 +1,121 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.375
+Let me show you why we achieved a really, really important step.
+
+00:00:04.375 --> 00:00:09.785
+First, I rewrite the second term over here in this way,
+
+00:00:09.785 --> 00:00:14.580
+where I split x_1 to t minus one,
+
+00:00:14.580 --> 00:00:17.760
+to z_t minus one,
+
+00:00:17.760 --> 00:00:22.160
+and z_1 to t minus two.
+
+00:00:22.160 --> 00:00:26.984
+If you compare this with our formula from the very beginning over here,
+
+00:00:26.984 --> 00:00:30.945
+you can see that this term here is
+
+00:00:30.945 --> 00:00:35.414
+exactly the belief from the previous timestep, t minus one.
+
+00:00:35.414 --> 00:00:41.259
+Now, we can rewrite the integral with a belief x_t minus one inside.
+
+00:00:41.259 --> 00:00:42.809
+The amazing thing is,
+
+00:00:42.810 --> 00:00:45.539
+that we have a recursive update formula.
+
+00:00:45.539 --> 00:00:48.125
+You use to estimate its state from
+
+00:00:48.125 --> 00:00:52.769
+the previous timestep for the prediction of the current one.
+
+00:00:52.770 --> 00:00:56.715
+This is one of the most important steps as a recursive Bayesian filter
+
+00:00:56.715 --> 00:01:02.405
+because we are independent from the whole observation and control history.
+
+00:01:02.405 --> 00:01:04.019
+So, in the graph structure,
+
+00:01:04.019 --> 00:01:09.024
+I replace this part over here with the belief x_t minus one.
+
+00:01:09.025 --> 00:01:13.575
+Finally, you can replace the integral by a sum over all
+
+00:01:13.575 --> 00:01:18.945
+x_i's because you have a discrete localization scenario in this case.
+
+00:01:18.944 --> 00:01:23.824
+By the way, you already saw this formula in Sebastian's lesson for localization.
+
+00:01:23.825 --> 00:01:27.585
+The process of predicting x_t with the previous beliefs,
+
+00:01:27.584 --> 00:01:33.239
+x_t minus one, and the transition model is technically a convolution.
+
+00:01:33.239 --> 00:01:39.099
+Now, you also know the full mathematical background and how to derive this module.
+
+00:01:39.099 --> 00:01:41.280
+If you take a look to the formula again,
+
+00:01:41.280 --> 00:01:44.400
+it is essential that the belief at x_t
+
+00:01:44.400 --> 00:01:49.305
+equals zero is initialized with meaningful assumption.
+
+00:01:49.305 --> 00:01:53.820
+It depends on the localization scenario how you set the belief,
+
+00:01:53.819 --> 00:01:57.139
+or in other words, how you initialize your filter.
+
+00:01:57.140 --> 00:02:03.120
+For example, you can use GPS to get a course estimate where you are.
+
+00:02:03.120 --> 00:02:05.378
+So, let's sum up to this point.
+
+00:02:05.378 --> 00:02:07.519
+You learned again, how to apply the law of
+
+00:02:07.519 --> 00:02:13.483
+total probability by including the new variable, x_t minus one.
+
+00:02:13.483 --> 00:02:16.365
+You also learned about the Markov Assumption,
+
+00:02:16.365 --> 00:02:20.030
+which is very important for probabilistic reasoning.
+
+00:02:20.030 --> 00:02:25.620
+And finally, you learned how to derive the recursive filter structure.
+
+00:02:25.620 --> 00:02:29.159
+Next, you will implement a motion model in C++.
+
+00:02:29.159 --> 00:02:32.250
+You will also learn how to initialize our localizer,
+
+00:02:32.250 --> 00:02:36.780
+which means, defining the belief of the state at the very beginning.
+
+00:02:36.780 --> 00:02:38.090
+So, let's do it.
+

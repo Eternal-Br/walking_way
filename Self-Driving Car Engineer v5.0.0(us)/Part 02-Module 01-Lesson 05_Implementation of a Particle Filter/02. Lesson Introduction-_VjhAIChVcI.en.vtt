@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.540
+Hi again, everyone.
+
+00:00:01.540 --> 00:00:04.939
+I'm sitting in [? Sunny, ?]
+our S500 intelligent car.
+
+00:00:04.939 --> 00:00:06.849
+Now that you know what
+a particle filter is
+
+00:00:06.849 --> 00:00:09.039
+and how it works, in
+this lesson you'll
+
+00:00:09.039 --> 00:00:11.589
+learn some important
+implementation details.
+
+00:00:11.589 --> 00:00:14.109
+Afterwards, you'll be able
+to complete a project which
+
+00:00:14.109 --> 00:00:16.480
+involves making a particle
+filter to localize
+
+00:00:16.480 --> 00:00:20.050
+a self-driving car like
+this one I'm sitting in now.
+
+00:00:20.050 --> 00:00:22.184
+Code can be a bit different
+from theory and math,
+
+00:00:22.184 --> 00:00:24.100
+so I'll go over a few
+things you need to know,
+
+00:00:24.100 --> 00:00:25.540
+such as how to
+assign measurements
+
+00:00:25.539 --> 00:00:28.149
+to particular landmarks
+in a given map.
+
+00:00:28.149 --> 00:00:29.919
+Additionally, I'll go
+over the code frame
+
+00:00:29.920 --> 00:00:32.590
+you'll be using so
+you know how it works.
+
+00:00:32.590 --> 00:00:35.230
+Implementing algorithms has
+always been my favorite part,
+
+00:00:35.229 --> 00:00:37.599
+so I hope you'll enjoy
+putting the theory and math
+
+00:00:37.600 --> 00:00:40.390
+into a real working system too.
+
+00:00:40.390 --> 00:00:43.000
+Now we'll start by going over
+the pseudocode for the particle
+
+00:00:43.000 --> 00:00:45.250
+filter algorithm so you'll
+know what steps you'll
+
+00:00:45.250 --> 00:00:49.289
+have to execute to successfully
+implement a particle filter.
+

@@ -1,0 +1,95 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.609
+To recap what you
+learned in sensor fusion,
+
+00:00:02.609 --> 00:00:07.060
+a car's heading, or yaw
+angle, is its orientation.
+
+00:00:07.059 --> 00:00:11.219
+Yaw is often measured from
+the x-axis in map coordinates
+
+00:00:11.220 --> 00:00:14.070
+with counterclockwise
+angles being positive.
+
+00:00:14.070 --> 00:00:19.859
+In this situation, the car's yaw
+is positive pi over 4 radians.
+
+00:00:19.859 --> 00:00:22.379
+Assuming constant turn
+rate and velocity,
+
+00:00:22.379 --> 00:00:25.410
+the equations to find the new
+position of the car, which
+
+00:00:25.410 --> 00:00:28.260
+you derived previously
+in the fusion module,
+
+00:00:28.260 --> 00:00:30.070
+are shown again here.
+
+00:00:30.070 --> 00:00:34.125
+These set of equations are valid
+when the yaw rate, theta dot,
+
+00:00:34.125 --> 00:00:36.039
+is equal to zero.
+
+00:00:36.039 --> 00:00:41.070
+Here, x sub f, y sub
+f, and theta sub f,
+
+00:00:41.070 --> 00:00:45.990
+represent the final x position,
+y position, and yaw of the car,
+
+00:00:45.990 --> 00:00:50.490
+while x sub zero, y sub
+zero, and theta sub zero
+
+00:00:50.490 --> 00:00:54.000
+represent the initial
+x position, y position,
+
+00:00:54.000 --> 00:00:55.920
+and yaw of the car.
+
+00:00:55.920 --> 00:00:59.039
+Finally, v is the
+velocity of the car,
+
+00:00:59.039 --> 00:01:01.890
+and dt is the time elapsed.
+
+00:01:01.890 --> 00:01:05.900
+If the yaw rate is not zero, you
+have these equations instead,
+
+00:01:05.900 --> 00:01:08.160
+which you first saw
+in sensor fusion,
+
+00:01:08.159 --> 00:01:11.069
+because you'll have to take into
+account the change in the car's
+
+00:01:11.069 --> 00:01:13.469
+heading as it moves.
+
+00:01:13.469 --> 00:01:15.480
+Next, I want you
+to think about some
+
+00:01:15.480 --> 00:01:20.390
+of the other possible rotations
+of the vehicle besides the yaw.
+

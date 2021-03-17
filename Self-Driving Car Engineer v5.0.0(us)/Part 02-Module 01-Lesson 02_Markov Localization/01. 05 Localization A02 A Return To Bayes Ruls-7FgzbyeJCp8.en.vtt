@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.800
+So, let's have some fun. Let's talk about one of
+
+00:00:01.800 --> 00:00:04.770
+my favorite algorithm all my life called Markov Localization.
+
+00:00:04.769 --> 00:00:06.614
+The reason why it's favorite for me is,
+
+00:00:06.615 --> 00:00:09.940
+back in the day when I applied at Stanford for professorship,
+
+00:00:09.939 --> 00:00:13.529
+my talk there that got me the job was actually on Markov Localization.
+
+00:00:13.529 --> 00:00:16.199
+So it's old, I've written over 100 papers on it,
+
+00:00:16.199 --> 00:00:17.939
+so you can write a lot of stuff off it,
+
+00:00:17.940 --> 00:00:20.730
+and now it's time for you to understand Markov Localization,
+
+00:00:20.730 --> 00:00:22.004
+the very basics of it,
+
+00:00:22.004 --> 00:00:25.439
+and apply Bayesian thinking through the problem of robot localization.
+

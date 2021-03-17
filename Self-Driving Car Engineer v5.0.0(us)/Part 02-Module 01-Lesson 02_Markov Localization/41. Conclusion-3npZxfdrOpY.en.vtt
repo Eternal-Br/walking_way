@@ -1,0 +1,48 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.439
+Good job, students.
+
+00:00:01.439 --> 00:00:03.349
+In this lesson, you
+really learned a lot.
+
+00:00:03.350 --> 00:00:05.099
+You're learned to
+derive the general Bayes
+
+00:00:05.099 --> 00:00:08.879
+filter, a major framework for
+a lot of localization methods
+
+00:00:08.880 --> 00:00:11.050
+which are used in
+autonomous cars.
+
+00:00:11.050 --> 00:00:14.179
+You also learned to
+implement the filter in C++.
+
+00:00:14.179 --> 00:00:16.789
+You can handle the 1D
+localization problem,
+
+00:00:16.789 --> 00:00:18.429
+which is really amazing.
+
+00:00:18.429 --> 00:00:20.410
+In the next lessons,
+Tiffany will teach you
+
+00:00:20.410 --> 00:00:24.570
+about complex motion models,
+and a 2D localization filter
+
+00:00:24.570 --> 00:00:26.250
+based on particle filters.
+
+00:00:26.250 --> 00:00:29.160
+So enjoy, and see you later.
+

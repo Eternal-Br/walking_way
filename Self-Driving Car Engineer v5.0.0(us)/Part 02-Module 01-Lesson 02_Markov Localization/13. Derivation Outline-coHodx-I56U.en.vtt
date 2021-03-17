@@ -1,0 +1,65 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.540 --> 00:00:03.060
+After you learn the
+structure of the input data,
+
+00:00:03.060 --> 00:00:06.240
+I will talk more about the
+motivation for the following
+
+00:00:06.240 --> 00:00:07.470
+videos.
+
+00:00:07.469 --> 00:00:09.869
+Up to here, there
+are two problems
+
+00:00:09.869 --> 00:00:14.549
+if we want to estimate
+the posterior directly.
+
+00:00:14.550 --> 00:00:19.469
+The first one is the localizer
+must process on each cycle
+
+00:00:19.469 --> 00:00:21.219
+a lot of data.
+
+00:00:21.219 --> 00:00:25.890
+The second is the amount of
+data increases over time.
+
+00:00:25.890 --> 00:00:28.670
+This won't work for
+real time localizer,
+
+00:00:28.670 --> 00:00:33.050
+which should run with at least
+10 hertz in our [INAUDIBLE].
+
+00:00:33.049 --> 00:00:37.289
+In the following, I will present
+a mathematical proof showing
+
+00:00:37.289 --> 00:00:42.359
+that we can change this
+so our localizer, first,
+
+00:00:42.359 --> 00:00:46.079
+only needs to handle a
+few bytes on each update,
+
+00:00:46.079 --> 00:00:50.219
+and handles the same
+amount of data per update
+
+00:00:50.219 --> 00:00:52.600
+regardless of drive time.
+
+00:00:52.600 --> 00:00:57.260
+So let's start with an overview
+of what we want to achieve.
+

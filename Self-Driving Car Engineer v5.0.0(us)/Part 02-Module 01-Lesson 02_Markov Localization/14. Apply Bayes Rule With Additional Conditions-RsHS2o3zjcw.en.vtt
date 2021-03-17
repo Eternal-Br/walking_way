@@ -1,0 +1,127 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.250
+Before we switch to the code example,
+
+00:00:02.250 --> 00:00:04.650
+you defines the posterior in this way.
+
+00:00:04.650 --> 00:00:07.380
+You already learned that the tiny details that over
+
+00:00:07.379 --> 00:00:10.870
+here are observation vector could be a lot of data,
+
+00:00:10.869 --> 00:00:17.225
+and we do not want to carry the whole observation history to estimate the state beliefs.
+
+00:00:17.225 --> 00:00:18.480
+The idea is now,
+
+00:00:18.480 --> 00:00:22.170
+that we manipulate the posterior over here,
+
+00:00:22.170 --> 00:00:26.554
+such in a way that you get a recursive state estimator.
+
+00:00:26.554 --> 00:00:30.059
+We have to show that the current belief over here,
+
+00:00:30.059 --> 00:00:34.170
+can be expressed by a belief one step earlier and
+
+00:00:34.170 --> 00:00:40.370
+then update the current belief only with new observation information.
+
+00:00:40.369 --> 00:00:46.070
+We call this estimator the Bayes Localization Filter or Markov Localization.
+
+00:00:46.070 --> 00:00:49.289
+This will allow us to avoid having to carry
+
+00:00:49.289 --> 00:00:53.325
+around all historical observation and motion data.
+
+00:00:53.325 --> 00:00:56.025
+To achieve this recursive structure,
+
+00:00:56.024 --> 00:01:01.019
+you have to apply probabilistic rules and laws like the Bayes Rule,
+
+00:01:01.020 --> 00:01:03.970
+or The Law of Total Probability.
+
+00:01:03.969 --> 00:01:07.230
+You already heard about this in Sebastian's Lessons.
+
+00:01:07.230 --> 00:01:10.670
+So, this should not be something new for you.
+
+00:01:10.670 --> 00:01:13.635
+I will also teach about The Markov Assumption.
+
+00:01:13.635 --> 00:01:16.545
+This involves, making meaningful assumptions
+
+00:01:16.545 --> 00:01:19.890
+about the dependencies between on certain values.
+
+00:01:19.890 --> 00:01:25.930
+So our goal on the next steps is to define the posterior in a recursive way.
+
+00:01:25.930 --> 00:01:31.885
+This means, we want to fill out this box here on the right side.
+
+00:01:31.885 --> 00:01:33.870
+The first thing what I'm doing is,
+
+00:01:33.870 --> 00:01:37.215
+I split a whole observation vector into
+
+00:01:37.215 --> 00:01:42.350
+the current observations and our previous informations.
+
+00:01:42.349 --> 00:01:45.224
+This is important to achieve the recursive structure,
+
+00:01:45.224 --> 00:01:50.155
+as a reminder you see again the definition of observations on the right side.
+
+00:01:50.155 --> 00:01:52.719
+Now, we apply Bayse rule.
+
+00:01:52.719 --> 00:01:55.664
+You already learned about Bayse rule and the previous lessons.
+
+00:01:55.665 --> 00:01:57.734
+And Sebastian already told you,
+
+00:01:57.734 --> 00:02:03.450
+Bayse rule is the most fundamental consideration in probabilistic inference.
+
+00:02:03.450 --> 00:02:04.890
+The tricky part is here,
+
+00:02:04.890 --> 00:02:08.280
+that you have more than one variables on the right side.
+
+00:02:08.280 --> 00:02:12.596
+Which means you have to apply Bayse rule with multiple conditions.
+
+00:02:12.596 --> 00:02:14.580
+Now my question is for you.
+
+00:02:14.580 --> 00:02:18.645
+Could you apply Bayse rule for the localization posterior?
+
+00:02:18.645 --> 00:02:23.370
+As a hint to assume the state xt is A.
+
+00:02:23.370 --> 00:02:26.835
+And the observation vectors that T is B,
+
+00:02:26.835 --> 00:02:31.000
+and please do not forget the other conditions.
+

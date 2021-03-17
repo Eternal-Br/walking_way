@@ -1,0 +1,28 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.635
+It's project time again.
+
+00:00:01.635 --> 00:00:04.009
+This time you're going to implement, guess what?
+
+00:00:04.009 --> 00:00:09.990
+Localization. The project we've picked for you is called Sparse Localization,
+
+00:00:09.990 --> 00:00:14.775
+by which you localize relative to a sparse set of landmarks using particle filters.
+
+00:00:14.775 --> 00:00:19.710
+The reason why we choose sparse as opposed to dense variable big maps is
+
+00:00:19.710 --> 00:00:21.179
+actually much easier to code and you learn
+
+00:00:21.179 --> 00:00:24.509
+all the essentials as well as dense localization.
+
+00:00:24.510 --> 00:00:29.359
+So dive in and build your very first own end-to-end localizer.
+

@@ -1,0 +1,430 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.500 --> 00:00:03.160
+So far you have
+learned some tricks to implement
+
+00:00:03.160 --> 00:00:05.470
+the particle filter
+and how to assess
+
+00:00:05.469 --> 00:00:07.900
+the accuracy of your filter.
+
+00:00:07.900 --> 00:00:10.630
+Now I'll give you an
+overview of the code
+
+00:00:10.630 --> 00:00:14.020
+that you'll be using to
+complete your project.
+
+00:00:14.019 --> 00:00:17.919
+Let's first look at
+the file main.cvp.
+
+00:00:17.920 --> 00:00:20.470
+This file will run
+your particle filter
+
+00:00:20.469 --> 00:00:23.169
+as well as measure its
+runtime and calculate
+
+00:00:23.170 --> 00:00:26.170
+the weighted error
+at each time step.
+
+00:00:26.170 --> 00:00:27.670
+The first thing
+you'll need to do
+
+00:00:27.670 --> 00:00:30.100
+is set the number of
+particles in your filter
+
+00:00:30.100 --> 00:00:32.728
+under this To Do comment.
+
+00:00:32.728 --> 00:00:36.420
+M is the number of
+particles to draw.
+
+00:00:36.420 --> 00:00:38.609
+Here I have set
+the uncertainties
+
+00:00:38.609 --> 00:00:41.579
+for the different measurements
+that you'll be using.
+
+00:00:41.579 --> 00:00:46.469
+Next the main function reads
+in the math data, the control
+
+00:00:46.469 --> 00:00:52.329
+data, and the observation
+data for each time step.
+
+00:00:52.329 --> 00:00:54.869
+In this for loop,
+you'll implement
+
+00:00:54.869 --> 00:01:00.119
+one step of your particle filter
+under this To Do comment here.
+
+00:01:00.119 --> 00:01:01.829
+At the end of each
+time step, you
+
+00:01:01.829 --> 00:01:05.649
+will calculate and print
+out the weighted error.
+
+00:01:05.650 --> 00:01:07.440
+Finally, after your
+particle filter
+
+00:01:07.439 --> 00:01:10.140
+has gone through the
+entire driving sequence,
+
+00:01:10.140 --> 00:01:14.150
+the main function will calculate
+the runtime for your filter,
+
+00:01:14.150 --> 00:01:16.710
+and that's it for main.cvp.
+
+00:01:16.709 --> 00:01:19.140
+You will implement most of
+the particle filter code
+
+00:01:19.140 --> 00:01:21.269
+in particlefilter.cvp.
+
+00:01:21.269 --> 00:01:23.640
+This file contains all
+of the implementations
+
+00:01:23.640 --> 00:01:26.459
+of the functions of the
+particle filter class.
+
+00:01:26.459 --> 00:01:28.199
+Now we'll go over
+each function you'll
+
+00:01:28.200 --> 00:01:30.329
+have to complete to
+finish the project.
+
+00:01:30.329 --> 00:01:32.700
+The first function you'll
+have to complete is init.
+
+00:01:32.700 --> 00:01:35.840
+This function takes as
+input a GPS position,
+
+00:01:35.840 --> 00:01:39.120
+an initial heading estimate,
+and an array of uncertainties
+
+00:01:39.120 --> 00:01:40.439
+for these measurements.
+
+00:01:40.439 --> 00:01:43.200
+It then should sample from a
+Gaussion distribution centered
+
+00:01:43.200 --> 00:01:46.109
+around these measurements to
+initialize all the particles.
+
+00:01:46.109 --> 00:01:49.230
+It should also initialize
+all particle weights to 1.
+
+00:01:49.230 --> 00:01:51.570
+You can look at the details
+for the particle_struct
+
+00:01:51.569 --> 00:01:53.729
+and particle_filter.h.
+
+00:01:53.730 --> 00:01:56.130
+The particle filter class
+has an internal structure
+
+00:01:56.129 --> 00:01:57.719
+of particles that is updated.
+
+00:01:57.719 --> 00:02:00.480
+So nothing is returned
+from this function.
+
+00:02:00.480 --> 00:02:03.060
+The next function is prediction.
+
+00:02:03.060 --> 00:02:05.609
+This function takes
+as input the amount
+
+00:02:05.609 --> 00:02:09.599
+of time between time steps,
+the velocity and yaw rate
+
+00:02:09.599 --> 00:02:13.620
+measurement uncertainties, and
+the current time step velocity
+
+00:02:13.620 --> 00:02:16.030
+and yaw rate measurements.
+
+00:02:16.030 --> 00:02:17.560
+Using these
+measurements, it should
+
+00:02:17.560 --> 00:02:19.900
+update each particle's
+position estimates
+
+00:02:19.900 --> 00:02:23.830
+and account for sensor noise
+by adding Gaussian noise.
+
+00:02:23.830 --> 00:02:25.900
+Once again, you can
+add Gaussian noise
+
+00:02:25.900 --> 00:02:28.330
+by sampling from a
+Gaussion distribution
+
+00:02:28.330 --> 00:02:31.240
+with mean equal to the
+updated particle position,
+
+00:02:31.240 --> 00:02:34.090
+and standard deviation equal
+to the standard deviation
+
+00:02:34.090 --> 00:02:35.331
+of the measurements.
+
+00:02:39.020 --> 00:02:40.909
+The data association
+function here
+
+00:02:40.909 --> 00:02:45.469
+takes as input two vectors
+of landmark obs objects.
+
+00:02:45.469 --> 00:02:47.719
+You can find the
+definition for this struct
+
+00:02:47.719 --> 00:02:49.250
+in helperfunctions.h.
+
+00:02:53.139 --> 00:02:55.189
+This first vector is the
+prediction measurements
+
+00:02:55.189 --> 00:02:57.979
+between one particular
+particle and all of the map
+
+00:02:57.979 --> 00:02:59.519
+landmarks within sensor range.
+
+00:03:02.740 --> 00:03:05.590
+This other vector here is the
+actual landmark measurements
+
+00:03:05.590 --> 00:03:07.780
+gathered from the LIDAR.
+
+00:03:07.780 --> 00:03:09.879
+This function will perform
+nearest neighbor data
+
+00:03:09.879 --> 00:03:12.939
+association and assign
+each sensor observation
+
+00:03:12.939 --> 00:03:16.740
+the map landmark ID
+associated with it.
+
+00:03:16.740 --> 00:03:19.439
+Next you'll need to complete
+the update weights function.
+
+00:03:19.439 --> 00:03:22.859
+This function takes the
+range of the sensor,
+
+00:03:22.860 --> 00:03:25.880
+the landmark measurement
+uncertainties,
+
+00:03:25.879 --> 00:03:28.740
+a vector of landmark
+measurements,
+
+00:03:28.740 --> 00:03:31.237
+and the map landmarks as input.
+
+00:03:31.236 --> 00:03:32.819
+The first thing
+you'll need to do here
+
+00:03:32.819 --> 00:03:35.129
+is to predict measurements
+to all the map
+
+00:03:35.129 --> 00:03:39.609
+landmarks within sensor
+range for each particle.
+
+00:03:39.610 --> 00:03:42.040
+Once you have these predicted
+landmark measurements,
+
+00:03:42.039 --> 00:03:43.989
+you can use the data
+association function
+
+00:03:43.990 --> 00:03:47.320
+you've implemented to associate
+the sensor measurements to map
+
+00:03:47.319 --> 00:03:49.280
+landmarks.
+
+00:03:49.280 --> 00:03:51.409
+You'll need these
+associations to calculate
+
+00:03:51.409 --> 00:03:53.629
+the new weight of
+each particle by using
+
+00:03:53.629 --> 00:03:56.930
+the multivariate Gaussian
+probability density function
+
+00:03:56.930 --> 00:03:58.980
+we discussed in the lesson.
+
+00:03:58.979 --> 00:04:01.340
+Finally, you'll have to
+normalize these weights so
+
+00:04:01.340 --> 00:04:03.710
+that they'll be in
+the range 0 to 1
+
+00:04:03.710 --> 00:04:06.260
+because next you'll use these
+weights as probabilities
+
+00:04:06.259 --> 00:04:09.739
+for resampling.
+
+00:04:09.740 --> 00:04:10.909
+You're almost there.
+
+00:04:10.909 --> 00:04:13.544
+The next function is
+the resample function.
+
+00:04:13.544 --> 00:04:15.919
+You can use the weights of
+the particles in your particle
+
+00:04:15.919 --> 00:04:20.149
+filter and c++ standard
+libraries discrete distribution
+
+00:04:20.149 --> 00:04:22.819
+function to update your
+particles to the Bayesian
+
+00:04:22.819 --> 00:04:26.719
+posterior distribution.
+
+00:04:26.720 --> 00:04:28.870
+Finally, you're
+at the last step.
+
+00:04:28.870 --> 00:04:30.759
+You'll evaluate
+your particle filter
+
+00:04:30.759 --> 00:04:33.069
+by calculating the
+weighted error.
+
+00:04:33.069 --> 00:04:35.199
+This function takes the
+ground truth position
+
+00:04:35.199 --> 00:04:37.689
+at a particular
+time step as input
+
+00:04:37.689 --> 00:04:40.389
+and calculates the weighted
+error of your particle filter
+
+00:04:40.389 --> 00:04:43.819
+using the weights
+of each particle.
+
+00:04:43.819 --> 00:04:47.360
+Feel free to check out the
+files helperfunction.h,
+
+00:04:47.360 --> 00:04:52.129
+map.h, and particlefilter.h if
+you're curious about the finer
+
+00:04:52.129 --> 00:04:54.719
+details of the code.
+
+00:04:54.720 --> 00:04:57.830
+To build and run your
+code, open a terminal
+
+00:04:57.829 --> 00:05:00.949
+and simply go to the
+localization particle filter
+
+00:05:00.949 --> 00:05:06.379
+home directory,
+then type build.sh
+
+00:05:06.379 --> 00:05:11.300
+and then run.sh to run
+your particle filter.
+
+00:05:11.300 --> 00:05:13.581
+Now I'm handing it over to you.
+
+00:05:13.581 --> 00:05:16.040
+You have all the tools you'll
+need to complete the particle
+
+00:05:16.040 --> 00:05:17.510
+filter project.
+
+00:05:17.509 --> 00:05:20.469
+Have fun and see you
+on the other side.
+

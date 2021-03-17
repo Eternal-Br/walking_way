@@ -1,0 +1,45 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.500 --> 00:00:04.589
+Assume you have a 1D
+space between 0 and 30 meters.
+
+00:00:04.589 --> 00:00:06.869
+At the very beginning,
+the robot or the car
+
+00:00:06.870 --> 00:00:08.699
+has no clue where it is.
+
+00:00:08.699 --> 00:00:12.609
+So our initial belief would
+be the uniform distribution,
+
+00:00:12.609 --> 00:00:16.019
+which means maximum confusion.
+
+00:00:16.019 --> 00:00:20.820
+Now we assume the car knows it
+is parked closely to a tree.
+
+00:00:20.820 --> 00:00:25.019
+Then, the initial belief
+would look like this.
+
+00:00:25.019 --> 00:00:27.149
+And here's my question to you.
+
+00:00:27.149 --> 00:00:31.199
+How does that belief look
+like after we move 10 meters
+
+00:00:31.199 --> 00:00:39.060
+to the right with no noise, with
+low noise, and with high noise?
+
+00:00:39.060 --> 00:00:42.500
+And these are the
+four possible answers.
+

@@ -1,0 +1,115 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.040
+Great!
+
+00:00:01.040 --> 00:00:04.629
+Let's look at each of the
+possible answers from the quiz.
+
+00:00:04.629 --> 00:00:07.750
+On a slick wet road,
+wheel encoder odometry
+
+00:00:07.750 --> 00:00:10.120
+will incur large errors
+because the wheels
+
+00:00:10.119 --> 00:00:12.189
+will slip, causing
+them to travel
+
+00:00:12.189 --> 00:00:14.949
+less distance than expected.
+
+00:00:14.949 --> 00:00:16.839
+In addition, the
+wheels will also
+
+00:00:16.839 --> 00:00:21.309
+slide while braking, further
+contributing to sensor errors.
+
+00:00:21.309 --> 00:00:23.829
+On dry paved roads,
+however, the wheels
+
+00:00:23.829 --> 00:00:26.859
+will travel a distance
+very close to the expected
+
+00:00:26.859 --> 00:00:29.199
+circumference of the wheel.
+
+00:00:29.199 --> 00:00:32.859
+Roads with lots of bumps also
+create problems for odometry
+
+00:00:32.859 --> 00:00:34.839
+because we are assuming
+the car travels
+
+00:00:34.840 --> 00:00:38.080
+a straight distance in the
+direction of its heading.
+
+00:00:38.079 --> 00:00:40.729
+In reality, with a
+bumpy road, the car
+
+00:00:40.729 --> 00:00:42.639
+is traveling much
+of this distance
+
+00:00:42.640 --> 00:00:45.969
+not in a straight
+line, but up and down.
+
+00:00:45.969 --> 00:00:48.699
+On a road with lots of
+turns, wheel odometry
+
+00:00:48.700 --> 00:00:51.760
+works well because even
+though the heading of the car
+
+00:00:51.759 --> 00:00:55.089
+is changing, it's still
+moving the expected distance
+
+00:00:55.090 --> 00:00:57.220
+in the direction of its yaw.
+
+00:00:57.219 --> 00:01:00.039
+Notice that despite the fact
+that the distance vectors
+
+00:01:00.039 --> 00:01:03.049
+for this car are at
+different yaw angles,
+
+00:01:03.049 --> 00:01:06.549
+the sum of the absolute
+magnitude of all the vectors
+
+00:01:06.549 --> 00:01:10.060
+is the same as the
+expected distance traveled.
+
+00:01:10.060 --> 00:01:12.370
+Now that you know how to
+predict the car's motion
+
+00:01:12.370 --> 00:01:14.829
+at the next time
+step, next you'll
+
+00:01:14.829 --> 00:01:17.200
+learn about an algorithm
+for localization
+
+00:01:17.200 --> 00:01:19.439
+called the particle filter.
+

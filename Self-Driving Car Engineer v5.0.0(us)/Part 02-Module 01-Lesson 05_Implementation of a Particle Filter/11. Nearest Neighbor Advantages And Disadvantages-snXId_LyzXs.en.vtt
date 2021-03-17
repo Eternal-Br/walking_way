@@ -1,0 +1,279 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.780 --> 00:00:03.780
+Now that you know a simple way
+to solve the data association
+
+00:00:03.779 --> 00:00:06.789
+problem, I'll go over the quiz.
+
+00:00:06.790 --> 00:00:09.150
+And you'll learn about
+some of the advantages
+
+00:00:09.150 --> 00:00:12.839
+and disadvantages of the
+nearest neighbor technique.
+
+00:00:12.839 --> 00:00:14.719
+We'll come back to this.
+
+00:00:14.720 --> 00:00:16.679
+Nearest neighbor is
+great, because it's
+
+00:00:16.679 --> 00:00:19.949
+easy to understand
+and implement.
+
+00:00:19.949 --> 00:00:22.890
+Just take the
+closest measurement.
+
+00:00:22.890 --> 00:00:26.429
+Here, we are showing the
+association between the closest
+
+00:00:26.429 --> 00:00:31.739
+lidar measurement and each map
+landmark with the red circles.
+
+00:00:31.739 --> 00:00:35.219
+However, simple techniques
+have some disadvantages
+
+00:00:35.219 --> 00:00:39.030
+in that they are not as
+robust to difficult scenarios.
+
+00:00:39.030 --> 00:00:41.820
+For instance, a high
+density of measurements
+
+00:00:41.820 --> 00:00:44.789
+would make this technique
+very prone to errors,
+
+00:00:44.789 --> 00:00:47.159
+because one map
+landmark could be really
+
+00:00:47.159 --> 00:00:50.069
+close to multiple measurements.
+
+00:00:50.070 --> 00:00:52.799
+It's unclear which
+feature in this image
+
+00:00:52.799 --> 00:00:56.159
+corresponds to
+these map landmarks.
+
+00:00:56.159 --> 00:00:58.619
+In addition, the nearest
+neighbor algorithm
+
+00:00:58.619 --> 00:01:02.309
+is quite inefficient,
+because for each landmark
+
+00:01:02.310 --> 00:01:04.620
+you have to search through
+all of the measurements
+
+00:01:04.620 --> 00:01:07.530
+to find the one with
+the minimum distance.
+
+00:01:07.530 --> 00:01:11.460
+Therefore, the
+complexity is O of mn,
+
+00:01:11.459 --> 00:01:14.219
+where m is the number
+of map landmarks
+
+00:01:14.219 --> 00:01:17.230
+and n is the number of
+sensors measurements.
+
+00:01:17.230 --> 00:01:21.060
+If there are a lot of sensor
+measurements, or landmarks,
+
+00:01:21.060 --> 00:01:24.210
+nearest neighbor could
+become quite slow.
+
+00:01:24.209 --> 00:01:27.329
+Additionally, if a
+sensor is very noisy,
+
+00:01:27.329 --> 00:01:30.269
+you could easily match
+a spurious feature,
+
+00:01:30.269 --> 00:01:32.369
+one that doesn't
+actually correspond
+
+00:01:32.370 --> 00:01:36.540
+to any object in the real
+world to a map landmark.
+
+00:01:36.540 --> 00:01:39.810
+The landmark on the right
+has an incorrect association
+
+00:01:39.810 --> 00:01:42.140
+due to sensor noise.
+
+00:01:42.140 --> 00:01:45.170
+You can tell that this
+other match is correct,
+
+00:01:45.170 --> 00:01:49.820
+because it matches the geometry
+of this other landmark match.
+
+00:01:49.819 --> 00:01:52.429
+Another disadvantage
+of nearest neighbor
+
+00:01:52.430 --> 00:01:56.120
+is that it is not as robust to
+errors in the vehicle position
+
+00:01:56.120 --> 00:01:57.410
+estimate.
+
+00:01:57.409 --> 00:02:00.439
+If the vehicle position
+has some errors,
+
+00:02:00.439 --> 00:02:03.799
+nearest neighbor will
+also incur some errors.
+
+00:02:03.799 --> 00:02:06.469
+Here, the car is
+shifted to the right.
+
+00:02:06.469 --> 00:02:09.199
+So the measurements are
+also shifted to the right,
+
+00:02:09.199 --> 00:02:12.010
+as shown with the purple lines.
+
+00:02:12.009 --> 00:02:15.009
+However, nearest neighbor
+will not see this pattern,
+
+00:02:15.009 --> 00:02:17.810
+and will pick some
+incorrect correspondences,
+
+00:02:17.810 --> 00:02:20.240
+which are circled in black.
+
+00:02:20.240 --> 00:02:22.520
+Another disadvantage
+of nearest neighbor
+
+00:02:22.520 --> 00:02:25.100
+is that it does not take
+uncertainties of the sensor
+
+00:02:25.099 --> 00:02:26.870
+into account.
+
+00:02:26.870 --> 00:02:30.650
+For example, let's say you
+have a radar sensor that
+
+00:02:30.650 --> 00:02:33.590
+has very precise bearing
+measurements and not
+
+00:02:33.590 --> 00:02:36.650
+as precise range measurements.
+
+00:02:36.650 --> 00:02:40.129
+The green ovals here
+represent the uncertainties
+
+00:02:40.129 --> 00:02:42.500
+in the range and
+bearing dimensions
+
+00:02:42.500 --> 00:02:45.009
+for these radar measurements.
+
+00:02:45.009 --> 00:02:47.780
+Nearest neighbor
+would pick this match,
+
+00:02:47.780 --> 00:02:50.689
+but this other
+match is more likely
+
+00:02:50.689 --> 00:02:53.419
+given that the sensor is
+very accurate in the bearing
+
+00:02:53.419 --> 00:02:57.629
+dimension and not as accurate
+in the range dimension.
+
+00:02:57.629 --> 00:02:59.900
+So let's summarize.
+
+00:02:59.900 --> 00:03:02.390
+The nearest neighbor data
+association technique
+
+00:03:02.389 --> 00:03:05.569
+is easy to understand
+and implement,
+
+00:03:05.569 --> 00:03:08.939
+and it works well
+in many situations.
+
+00:03:08.939 --> 00:03:12.379
+However, it is not as
+robust to large densities
+
+00:03:12.379 --> 00:03:15.349
+of measurements,
+sensor noise, or errors
+
+00:03:15.349 --> 00:03:17.519
+in position estimates.
+
+00:03:17.520 --> 00:03:19.969
+It can be inefficient
+to compute,
+
+00:03:19.969 --> 00:03:23.974
+and also does not take sensor
+uncertainties into account.
+
+00:03:23.974 --> 00:03:25.849
+Now that you know how
+to associate the sensor
+
+00:03:25.849 --> 00:03:30.079
+measurements you get with
+landmarks in the map, next
+
+00:03:30.080 --> 00:03:32.990
+you'll learn how to implement
+the update step of the particle
+
+00:03:32.990 --> 00:03:34.540
+filter.
+

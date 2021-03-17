@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.740
+In the previous lesson, you learned about
+
+00:00:01.740 --> 00:00:05.424
+the motion model and how to implement it in C++.
+
+00:00:05.424 --> 00:00:08.644
+Now I go back to the math and I will finalize the base filter.
+
+00:00:08.644 --> 00:00:13.500
+As a reminder, you see here again the target function with the motion model,
+
+00:00:13.500 --> 00:00:17.550
+the observation model, and our normalizer.
+
+00:00:17.550 --> 00:00:20.795
+We now learn more about the observation model.
+
+00:00:20.795 --> 00:00:26.609
+The observation model describes the probability distribution of the observations set, T,
+
+00:00:26.609 --> 00:00:28.500
+given the state, x_t,
+
+00:00:28.500 --> 00:00:33.884
+our previous observations or controls, and the map.
+
+00:00:33.884 --> 00:00:38.625
+You can also represent a relationship as a diagram or graph,
+
+00:00:38.625 --> 00:00:42.894
+x_t is unknown and points to z_t,
+
+00:00:42.895 --> 00:00:47.035
+as well as all other values like the controls,
+
+00:00:47.034 --> 00:00:51.440
+the map, and the previous observations.
+
+00:00:51.441 --> 00:00:52.705
+Now my question is,
+
+00:00:52.704 --> 00:00:55.420
+could you simplify the observation model using
+
+00:00:55.420 --> 00:00:59.000
+one of the previous mentioned strategies or assumptions?
+

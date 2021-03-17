@@ -1,0 +1,282 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Particle Filter Project Visualizer
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Kidnapped Vehicle Project
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sparse Localization.html">
+       01. Sparse Localization
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Project Introduction.html">
+       02. Project Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Particle Filter Project Visualizer.html">
+       03. Particle Filter Project Visualizer
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Project Instructions.html">
+       04. Project Instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Kidnapped Vehicle Workspaces.html">
+       05. Kidnapped Vehicle Workspaces
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Share Your Success - Kidnapped Vehicle.html">
+       06. Share Your Success - Kidnapped Vehicle
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Kidnapped Vehicle.html">
+       Project Description - Kidnapped Vehicle
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Kidnapped Vehicle.html">
+       Project Rubric - Kidnapped Vehicle
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          03. Particle Filter Project Visualizer
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="particle-filter-project-visualizer">
+          Particle Filter Project Visualizer
+         </h1>
+         <p>
+          The Term 2 Simulator includes a graphical version of the Kidnapped Vehicle Project. Running the simulator you can see the path that the car drives along with all of its landmark measurements. (
+          <strong>
+           Note:
+          </strong>
+          If you choose to utilize the Workspace for this project, both the similator and related project repository are included therein, so you won't need to download/clone them locally except as desired).
+         </p>
+         <p>
+          Included in the
+          <a href="https://github.com/udacity/CarND-Kidnapped-Vehicle-Project" rel="noopener noreferrer" target="_blank">
+           Kidnapped Vehicle project Github repository
+          </a>
+          are program files that allow you to set up and run c++ uWebSocketIO, which is used to communicate with the simulator. The simulator provides the script for the noisy position data, vehicle controls, and noisy observations. The script feeds back the best particle state.
+         </p>
+         <p>
+          The simulator can also display the best particle's sensed positions, along with the corresponding map ID associations. This can be extremely helpful to make sure transition and association calculations were done correctly. Below is a video of what it looks like when the simulator successfully is able to track the car to a particle. Notice that the green laser sensors from the car nearly overlap the blue laser sensors from the particle, this means that the particle transition calculations were done correctly.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          T2 P3 PF
+         </p>
+        </h3>
+        <video controls="">
+         <source src="03. T2 P3 PF-0SbVwwY_NuQ.mp4" type="video/mp4"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="download-links-for-term-2-simulator">
+          Download Links for Term 2 Simulator
+         </h2>
+         <p>
+          <a href="https://github.com/udacity/self-driving-car-sim/releases" rel="noopener noreferrer" target="_blank">
+           Simulator Release
+          </a>
+         </p>
+         <h2 id="running-the-program">
+          Running the Program
+         </h2>
+         <ol>
+          <li>
+           <p>
+            Download the simulator and open it. In the main menu screen select Project 3: Kidnapped Vehicle.
+           </p>
+          </li>
+          <li>
+           <p>
+            Once the scene is loaded you can hit the START button to observe how the car drives and observes landmarks. At any time you can press the PAUSE button, to pause the scene or hit the RESTART button to reset the scene. Also the ARROW KEYS can be used to move the camera around, and the top left ZOOM IN/OUT buttons can be used to focus the camera. Pressing the ESCAPE KEY returns to the simulator main menu.
+           </p>
+          </li>
+          <li>
+           <p>
+            The
+            <a href="https://github.com/udacity/CarND-Kidnapped-Vehicle-Project" rel="noopener noreferrer" target="_blank">
+             Kidnapped Vehicle project Github repository README
+            </a>
+            has more detailed instructions for installing and using c++ uWebScoketIO.
+           </p>
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="04. Project Instructions.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Particle Filter Project Visualizer')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

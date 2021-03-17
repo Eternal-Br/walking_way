@@ -1,0 +1,535 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Initialize Belief State
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Markov Localization
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Return to Bayes' Rule.html">
+       01. Return to Bayes' Rule
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Overview.html">
+       02. Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Localization Posterior Introduction.html">
+       03. Localization Posterior: Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Localization Posterior Explanation and Implementation.html">
+       04. Localization Posterior Explanation and Implementation
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Bayes' Rule.html">
+       05. Bayes' Rule
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Bayes' Filter For Localization.html">
+       06. Bayes' Filter For Localization
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Calculate Localization Posterior.html">
+       07. Calculate Localization Posterior
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Initialize Belief State.html">
+       08. Initialize Belief State
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Initialize Priors Function.html">
+       09. Initialize Priors Function
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Solution Initialize Priors Function.html">
+       10. Solution: Initialize Priors Function
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Quiz How Much Data.html">
+       11. Quiz: How Much Data?
+      </a>
+     </li>
+     <li class="">
+      <a href="12. How Much Data Explanation.html">
+       12. How Much Data: Explanation
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Derivation Outline.html">
+       13. Derivation Outline
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Apply Bayes Rule with Additional Conditions.html">
+       14. Apply Bayes Rule with Additional Conditions
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Bayes Rule and Law of Total Probability.html">
+       15. Bayes Rule and Law of Total Probability
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Total Probability and Markov Assumption.html">
+       16. Total Probability and Markov Assumption
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Markov Assumption for Motion Model Quiz.html">
+       17. Markov Assumption for Motion Model: Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Markov Assumption for Motion Model Explanation.html">
+       18. Markov Assumption for Motion Model: Explanation
+      </a>
+     </li>
+     <li class="">
+      <a href="19. After Applying Markov Assumption Quiz.html">
+       19. After Applying Markov Assumption: Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Recursive Structure.html">
+       20. Recursive Structure
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Lesson Breakpoint.html">
+       21. Lesson Breakpoint
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Implementation Details for Motion Model.html">
+       22. Implementation Details for Motion Model
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Noise in Motion Model Quiz.html">
+       23. Noise in Motion Model: Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Noise in Motion Model Solution.html">
+       24. Noise in Motion Model: Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Determine Probabilities.html">
+       25. Determine Probabilities
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Motion Model Probabiity I.html">
+       26. Motion Model Probabiity I
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Motion Model Probability II.html">
+       27. Motion Model Probability II
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Coding the Motion Model.html">
+       28. Coding the Motion Model
+      </a>
+     </li>
+     <li class="">
+      <a href="29. Solution Coding the Motion Model.html">
+       29. Solution: Coding the Motion Model
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Observation Model Introduction.html">
+       30. Observation Model Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="31. Markov Assumption for Observation Model.html">
+       31. Markov Assumption for Observation Model
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Finalize the Bayes Localization Filter.html">
+       32. Finalize the Bayes Localization Filter
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Bayes Filter Theory Summary.html">
+       33. Bayes Filter Theory Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Observation Model Probability.html">
+       34. Observation Model Probability
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Get Pseudo Ranges.html">
+       35. Get Pseudo Ranges
+      </a>
+     </li>
+     <li class="">
+      <a href="36. Solution Get Pseudo Ranges.html">
+       36. Solution: Get Pseudo Ranges
+      </a>
+     </li>
+     <li class="">
+      <a href="37. Coding the Observation Model.html">
+       37. Coding the Observation Model
+      </a>
+     </li>
+     <li class="">
+      <a href="38. Solution Coding the Observation Model.html">
+       38. Solution: Coding the Observation Model
+      </a>
+     </li>
+     <li class="">
+      <a href="39. Coding the Full Filter.html">
+       39. Coding the Full Filter
+      </a>
+     </li>
+     <li class="">
+      <a href="40. Solution Coding the Full Filter.html">
+       40. Solution: Coding the Full Filter
+      </a>
+     </li>
+     <li class="">
+      <a href="41. Conclusion.html">
+       41. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          08. Initialize Belief State
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          To help develop an intuition for this filter and prepare for later coding exercises, let's walk through the process of initializing our prior belief state.  That is, what values should our initial belief state take for each possible position?  Let's say we have a 1D map extending from 0  to 25 meters.  We have landmarks at x = 5.0, 10.0, and 20.0 meters, with position standard deviation of 1.0 meter.  If we know that our car's initial position is at one of these three landmarks, how should we define our initial belief state?
+         </p>
+         <p>
+          Since we know that we are parked next to a landmark, we can set our probability of being next to a landmark as 1.0.  Accounting for a position precision of +/- 1.0 meters, this places our car at an initial position in the range
+          <strong>
+           [4, 6]
+          </strong>
+          (5 +/- 1),
+          <strong>
+           [9, 11]
+          </strong>
+          (10 +/- 1), or
+          <strong>
+           [19, 21]
+          </strong>
+          (20 +/- 1).  All other positions, not within 1.0 meter of a landmark, are initialized to 0.  We normalize these values to a total probability of 1.0 by dividing by the total number of positions that are potentially occupied.   In this case, that is 9 positions, 3 for each landmark (the landmark position and one position on either side). This gives us a value of 1.11E-01 for positions +/- 1 from our landmarks (1.0/9).  So, our initial belief state is:
+         </p>
+         <p>
+          <code>
+           {0, 0, 0, 1.11E-01, 1.11E-01, 1.11E-01, 0, 0, 1.11E-01, 1.11E-01, 1.11E-01, 0, 0, 0, 0, 0, 0, 0, 1.11E-01, 1.11E-01, 1.11E-01, 0, 0, 0, 0}
+          </code>
+         </p>
+         <p>
+          To reinforce this concept, let's practice with a quiz.
+         </p>
+         <ul>
+          <li>
+           <strong>
+            map size:
+           </strong>
+           100 meters
+          </li>
+          <li>
+           <strong>
+            landmark positions:
+           </strong>
+           {8, 15, 30, 70, 80}
+          </li>
+          <li>
+           <strong>
+            position standard deviation:
+           </strong>
+           2 meters
+          </li>
+         </ul>
+         <p>
+          Assuming we are parked next to a landmark, answer the following questions about our initial belief state.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Initial Probability for Position 11
+         </p>
+        </h3>
+        <div>
+         <div>
+          <p>
+           <strong>
+            QUESTION:
+           </strong>
+           <p>
+            What is our initial probability (initial belief state) for position 11? If the answer is non-zero, enter it in scientific notation with an accuracy of two decimal places, for example 3.14E-15.
+           </p>
+          </p>
+          <div class="" form-group"="">
+           <label for="answer">
+            <strong>
+             ANSWER:
+            </strong>
+           </label>
+           <textarea class="form-control" id="answer"></textarea>
+          </div>
+         </div>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <p>
+           <i>
+            NOTE: The solutions are expressed in RegEx pattern. Udacity uses these patterns to check the given answer
+           </i>
+          </p>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Initial Probability for Position 71
+         </p>
+        </h3>
+        <div>
+         <div>
+          <p>
+           <strong>
+            QUESTION:
+           </strong>
+           <p>
+            What is our initial probability (initial belief state) for position 71? If the answer is non-zero, enter it in scientific notation with an accuracy of two decimal places, for example 3.14E-15.
+           </p>
+          </p>
+          <div class="" form-group"="">
+           <label for="answer">
+            <strong>
+             ANSWER:
+            </strong>
+           </label>
+           <textarea class="form-control" id="answer"></textarea>
+          </div>
+         </div>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <p>
+           <i>
+            NOTE: The solutions are expressed in RegEx pattern. Udacity uses these patterns to check the given answer
+           </i>
+          </p>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <div id="spoiler_1" style="display:none">
+          To determine the initial probability we will divide 1.0 by the total number of positions within 2 meters of a landmark.  In this case we have 5 landmarks and a position standard deviation of 2.0 meters.  This gives us 5 potentially occupied positions per landmark (the landmark position and 2 each side), yielding 25 potentially occupied positions (5 landmarks * 5 positions/landmark).
+
+**1.0/25 = 4.00E-02** - remember to enter two decimal places!
+         </div>
+         <p>
+          <button onclick="if(document.getElementById('spoiler_1') .style.display=='none') {document.getElementById('spoiler_1') .style.display=''}else{document.getElementById('spoiler_1') .style.display='none'}" title="Click to show/hide content" type="button">
+           Show Solution
+          </button>
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In the next concept, we will implement belief state initialization in C++.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="09. Initialize Priors Function.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Initialize Belief State')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.185
+At the beginning of this lesson,
+
+00:00:02.185 --> 00:00:04.195
+we started with using Bayes' rule.
+
+00:00:04.195 --> 00:00:07.410
+The belief of x_t as a normalized ether,
+
+00:00:07.410 --> 00:00:11.050
+multiplied with the observation and the motion.
+
+00:00:11.050 --> 00:00:14.545
+We simplified the observation model to p of
+
+00:00:14.544 --> 00:00:20.980
+z_t only given x_t and the map using the Markov Assumption.
+
+00:00:20.980 --> 00:00:22.539
+For the motion model,
+
+00:00:22.539 --> 00:00:25.410
+we used to law of total probability and odds of
+
+00:00:25.410 --> 00:00:29.329
+the Markov Assumption to get the desired recursive structure.
+
+00:00:29.329 --> 00:00:36.024
+The motion model includes the belief at t minus one and our transition model.
+
+00:00:36.024 --> 00:00:41.324
+Finally, the belief at x_t can be written as the following.
+
+00:00:41.325 --> 00:00:45.525
+The motion model is also called the prediction step for the belief x_t
+
+00:00:45.524 --> 00:00:51.049
+which can be expressed by the belief x_t covered with a little hat.
+
+00:00:51.049 --> 00:00:53.459
+This formula represents a general base filter for localization
+
+00:00:53.460 --> 00:00:58.484
+and is also called Markov Localization.
+
+00:00:58.484 --> 00:01:04.394
+You can also represent the filter dependencies as a graph by combining both subgraphs.
+
+00:01:04.394 --> 00:01:07.795
+To estimate the new state, x_t,
+
+00:01:07.795 --> 00:01:09.510
+we only take into account
+
+00:01:09.510 --> 00:01:15.050
+the previous belief state and only the current observations and controls.
+
+00:01:15.049 --> 00:01:21.114
+The state x_t and z_t also depends on the map.
+
+00:01:21.114 --> 00:01:26.769
+In literature, you will often find the representation without the belief x_t.
+
+00:01:26.769 --> 00:01:30.140
+There's also common practice to neglect the map and the motion model.
+
+00:01:30.140 --> 00:01:31.849
+This means, we remove the map, m,
+
+00:01:31.849 --> 00:01:35.530
+over here and also remove the dependencies in the graph.
+

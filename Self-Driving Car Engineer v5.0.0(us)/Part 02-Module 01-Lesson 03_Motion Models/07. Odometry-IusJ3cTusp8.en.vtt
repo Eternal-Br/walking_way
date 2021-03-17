@@ -1,0 +1,77 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.459
+Now that you know
+one way to calculate the car's
+
+00:00:02.459 --> 00:00:05.939
+new position, let's look at
+another commonly used method
+
+00:00:05.939 --> 00:00:09.129
+using odometry, or
+motion sensor data.
+
+00:00:09.130 --> 00:00:12.830
+For mobile robots, odometry
+calmly comes from wheel sensors
+
+00:00:12.830 --> 00:00:15.929
+that measure how many times the
+wheels of the vehicle or robot
+
+00:00:15.929 --> 00:00:17.309
+have turned.
+
+00:00:17.309 --> 00:00:19.199
+For instance, the
+sensor on this wheel
+
+00:00:19.199 --> 00:00:22.140
+would tell us it
+has turned twice.
+
+00:00:22.140 --> 00:00:25.560
+Given the circumference of the
+wheel and this odometry data,
+
+00:00:25.559 --> 00:00:27.479
+you can measure the
+distance traveled,
+
+00:00:27.480 --> 00:00:30.120
+as indicated by the red line.
+
+00:00:30.120 --> 00:00:32.880
+More specifically, the
+new position of the car
+
+00:00:32.880 --> 00:00:34.890
+is the starting
+position of the car
+
+00:00:34.890 --> 00:00:39.120
+plus the x and y components
+of the odometry, multiplied
+
+00:00:39.119 --> 00:00:41.280
+by the circumference
+of the wheel.
+
+00:00:41.280 --> 00:00:42.270
+Awesome.
+
+00:00:42.270 --> 00:00:44.070
+With this knowledge,
+next I want you
+
+00:00:44.070 --> 00:00:46.380
+to think about when
+odometry measurements might
+
+00:00:46.380 --> 00:00:50.120
+fail to report accurate
+position estimates.
+
