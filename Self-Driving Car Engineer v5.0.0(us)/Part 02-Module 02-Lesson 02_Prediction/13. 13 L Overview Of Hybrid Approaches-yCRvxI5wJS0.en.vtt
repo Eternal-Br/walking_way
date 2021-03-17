@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.420
+So far you have seen that prediction can be done
+
+00:00:03.420 --> 00:00:06.930
+with model based or data driven approaches and you
+
+00:00:06.930 --> 00:00:09.975
+learned that model based approaches incorporate
+
+00:00:09.975 --> 00:00:14.205
+our knowledge of the objects motion dynamics with process models,
+
+00:00:14.205 --> 00:00:19.385
+handle uncertainty on maneuvers using multimodal estimators,
+
+00:00:19.385 --> 00:00:24.510
+and you have seen that there are many ways to implement model based approaches.
+
+00:00:24.510 --> 00:00:28.320
+In learning about data driven approaches you saw that there are
+
+00:00:28.320 --> 00:00:32.220
+many versions of "data driven" approaches and that these approaches
+
+00:00:32.220 --> 00:00:37.380
+can extract subtle patterns from training data which means they can
+
+00:00:37.380 --> 00:00:43.270
+produce predictions which are very well tailored to a specific driving situation.
+
+00:00:43.270 --> 00:00:47.010
+In practice, the best way to do prediction is often by taking
+
+00:00:47.010 --> 00:00:52.350
+a hybrid approach that takes advantage of the strengths of both types of approaches.
+
+00:00:52.350 --> 00:00:55.435
+Remember earlier when we talked about how model based approaches
+
+00:00:55.435 --> 00:00:59.730
+combine process models with a multimodal estimator?
+
+00:00:59.730 --> 00:01:05.070
+Well, the multimodal estimator could be replaced with a machine learning approach.
+
+00:01:05.070 --> 00:01:08.615
+To replace that component with a machine learning approach,
+
+00:01:08.615 --> 00:01:12.390
+the type of algorithm we need is a classifier.
+
+00:01:12.390 --> 00:01:14.820
+In the next few slides we will talk about
+
+00:01:14.820 --> 00:01:19.000
+how one such classifier known as Naive Bayes classifier works.
+

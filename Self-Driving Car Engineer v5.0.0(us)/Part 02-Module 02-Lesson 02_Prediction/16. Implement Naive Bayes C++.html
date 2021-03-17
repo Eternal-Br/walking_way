@@ -1,0 +1,750 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Implement Naive Bayes C++
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Prediction
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction and Overview.html">
+       01. Introduction and Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="02. IO Recap.html">
+       02. I/O Recap
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Model-Based vs Data-Driven Approaches.html">
+       03. Model-Based vs Data-Driven Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Which is Best.html">
+       04. Which is Best?
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Data Driven Example - Trajectory Clustering.html">
+       05. Data Driven Example - Trajectory Clustering
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Trajectory Clustering 2 - Online Prediction.html">
+       06. Trajectory Clustering 2 - Online Prediction
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Thinking about Model Based Approaches.html">
+       07. Thinking about Model Based Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Frenet Coordinates.html">
+       08. Frenet Coordinates
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Process Models.html">
+       09. Process Models
+      </a>
+     </li>
+     <li class="">
+      <a href="10. More on Process Models.html">
+       10. More on Process Models
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Multimodal Estimation.html">
+       11. Multimodal Estimation
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Summary of Data Driven and Model Based Approaches.html">
+       12. Summary of Data Driven and Model Based Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Overview of Hybrid Approaches.html">
+       13. Overview of Hybrid Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Intro to Naive Bayes.html">
+       14. Intro to Naive Bayes
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Naive Bayes Quiz.html">
+       15. Naive Bayes Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Implement Naive Bayes C++.html">
+       16. Implement Naive Bayes C++
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Implement Naive Bayes C++ (solution).html">
+       17. Implement Naive Bayes C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Conclusion.html">
+       18. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          16. Implement Naive Bayes C++
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="implementing-naive-bayes">
+          Implementing Naive Bayes
+         </h1>
+         <p>
+          In this exercise you will implement a Gaussian Naive Bayes classifier to predict the behavior of vehicles on a highway. In the image below you can see the behaviors you'll be looking for on a 3 lane highway (with lanes of 4 meter width). The dots represent the d (y axis) and s (x axis) coordinates of vehicles as they either…
+         </p>
+         <ol>
+          <li>
+           change lanes left (shown in blue)
+          </li>
+          <li>
+           keep lane (shown in black)
+          </li>
+          <li>
+           or change lanes right (shown in red)
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/naive-bayes.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Your job is to write a classifier that can predict which of these three maneuvers a vehicle is engaged in given a single coordinate (sampled from the trajectories shown below).
+         </p>
+         <p>
+          Each coordinate contains 4 features:
+         </p>
+         <ul>
+          <li>
+           <span class="mathquill ud-math">
+            s
+           </span>
+          </li>
+          <li>
+           <span class="mathquill ud-math">
+            d
+           </span>
+          </li>
+          <li>
+           <span class="mathquill ud-math">
+            \dot{s}
+           </span>
+          </li>
+          <li>
+           <span class="mathquill ud-math">
+            \dot{d}
+           </span>
+          </li>
+         </ul>
+         <p>
+          You also know the
+          <strong>
+           lane width
+          </strong>
+          is 4 meters (this might be helpful in engineering additional features for your algorithm).
+         </p>
+         <h3 id="instructions">
+          Instructions
+         </h3>
+         <ol>
+          <li>
+           <p>
+            Implement the
+            <code>
+             train(data, labels)
+            </code>
+            method in the class
+            <code>
+             GNB
+            </code>
+            in
+            <code>
+             classifier.cpp
+            </code>
+            .
+           </p>
+           <p>
+            Training a Gaussian Naive Bayes classifier consists of computing and storing the mean and standard deviation from the data for each label/feature pair. For example, given the label "change lanes left” and the feature
+            <span class="mathquill ud-math">
+             \dot{s}
+            </span>
+            , it would be necessary to compute and store the mean and standard deviation of
+            <span class="mathquill ud-math">
+             \dot{s}
+            </span>
+            over all data points with the "change lanes left” label.
+           </p>
+           <p>
+            Additionally, it will be convenient in this step to compute and store the prior probability
+            <span class="mathquill">
+             p(C_k)
+            </span>
+            for each label
+            <span class="mathquill">
+             C_k
+            </span>
+            . This can be done by keeping track of the number of times each label appears in the training data.
+           </p>
+          </li>
+          <li>
+           <p>
+            Implement the
+            <code>
+             predict(observation)
+            </code>
+            method in
+            <code>
+             classifier.cpp
+            </code>
+            .
+           </p>
+           <p>
+            Given a new data point, prediction requires two steps:
+           </p>
+           <ol>
+            <li>
+             <strong>
+              Compute the conditional probabilities for each feature/label combination
+             </strong>
+             . For a feature
+             <span class="mathquill ud-math">
+              x
+             </span>
+             and label
+             <span class="mathquill ud-math">
+              C
+             </span>
+             with mean
+             <span class="mathquill ud-math">
+              \mu
+             </span>
+             and standard deviation
+             <span class="mathquill ud-math">
+              \sigma
+             </span>
+             (computed in training), the conditional probability can be computed using the formula
+             <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Gaussian_naive_Bayes" rel="noopener noreferrer" target="_blank">
+              here
+             </a>
+             :
+            </li>
+           </ol>
+           <div class="mathquill">
+            p(x = v | C) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp^{-\frac{(v-\mu)^2}{2\sigma^2}}
+           </div>
+           <p>
+            Here
+            <span class="mathquill ud-math">
+             v
+            </span>
+            is the value of feature
+            <span class="mathquill ud-math">
+             x
+            </span>
+            in the new data point.
+           </p>
+           <ol start="2">
+            <li>
+             <strong>
+              Use the conditional probabilities in a Naive Bayes classifier.
+             </strong>
+             This can be done using the formula
+             <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Constructing_a_classifier_from_the_probability_model" rel="noopener noreferrer" target="_blank">
+              here
+             </a>
+             :
+            </li>
+           </ol>
+           <div class="mathquill">
+            y =  \underset{k\in (1,\ldots, K)}{argmax } \,\,p(C_k) \prod^n_{i=1}p(x_i = v_i| C_k)
+           </div>
+           <p>
+            In this formula, the argmax is taken over all possible labels
+            <span class="mathquill ud-math">
+             C_k
+            </span>
+            and the product is taken over all features
+            <span class="mathquill ud-math">
+             x_i
+            </span>
+            with values
+            <span class="mathquill ud-math">
+             v_i
+            </span>
+            .
+           </p>
+          </li>
+          <li>
+           <p>
+            When you want to test your classifier, run
+            <code>
+             Test Run
+            </code>
+            and check out the results.
+           </p>
+          </li>
+         </ol>
+         <p>
+          <strong>
+           NOTE
+          </strong>
+          : You are welcome to use some existing implementation of a Gaussian Naive Bayes classifier. But to get the
+          <strong>
+           best
+          </strong>
+          results you will still need to put some thought into what
+          <strong>
+           features
+          </strong>
+          you provide the algorithm when classifying. Though you will only be given the 4 coordinates listed above, you may find that by "engineering" features you may get better performance. For example: the raw value of the
+          <span class="mathquill ud-math">
+           d
+          </span>
+          coordinate may not be that useful. But
+          <code>
+           d % lane_width
+          </code>
+          might be helpful since it gives the
+          <em>
+           relative
+          </em>
+          position of a vehicle in it's lane regardless of which lane the vehicle is in.
+         </p>
+         <h3 id="helpful-resources">
+          Helpful Resources
+         </h3>
+         <ul>
+          <li>
+           <a href="http://scikit-learn.org/stable/modules/naive_bayes.html#gaussian-naive-bayes" rel="noopener noreferrer" target="_blank">
+            sklearn documentation on GaussianNB
+           </a>
+          </li>
+          <li>
+           <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Gaussian_naive_Bayes" rel="noopener noreferrer" target="_blank">
+            Wikipedia article on Naive Bayes / GNB
+           </a>
+          </li>
+         </ul>
+         <h2 id="extra-practice">
+          Extra Practice
+         </h2>
+         <p>
+          Provided in one of the links below is
+          <code>
+           python_extra_practice
+          </code>
+          , which is the same problem but written in Python that you can optionally go through for extra coding practice. The Python solution is available at the
+          <code>
+           python_solution
+          </code>
+          link. If you get stuck on the quiz see if you can convert the python solution to C++ and pass the classroom quiz with it. The last link
+          <code>
+           Nd013_Pred_Data
+          </code>
+          has all the training and testing data for this problem in case you want to run the problem offline.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="346784-main-cpp" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#346784-main-cpp" id="tab-346784-main-cpp" role="tab">
+            main.cpp
+           </a>
+           <a aria-controls="346784-classifier-cpp" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#346784-classifier-cpp" id="tab-346784-classifier-cpp" role="tab">
+            classifier.cpp
+           </a>
+           <a aria-controls="346784-classifier-h" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#346784-classifier-h" id="tab-346784-classifier-h" role="tab">
+            classifier.h
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-346784-main-cpp" class="tab-pane active show" id="346784-main-cpp" role="tabpanel">
+            <pre><code></code>#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "classifier.h"
+
+using std::cout;
+using std::endl;
+using std::ifstream;
+using std::string;
+using std::vector;
+
+// Helper functions to load .txt files
+vector&lt;vector&lt;double&gt; &gt; Load_State(string file_name);
+vector&lt;string&gt; Load_Label(string file_name);
+
+int main() {
+  vector&lt; vector&lt;double&gt; &gt; X_train = Load_State("./train_states.txt");
+  vector&lt; vector&lt;double&gt; &gt; X_test  = Load_State("./test_states.txt");
+  vector&lt; string &gt; Y_train = Load_Label("./train_labels.txt");
+  vector&lt; string &gt; Y_test  = Load_Label("./test_labels.txt");
+    
+  cout &lt;&lt; "X_train number of elements " &lt;&lt; X_train.size() &lt;&lt; endl;
+  cout &lt;&lt; "X_train element size " &lt;&lt; X_train[0].size() &lt;&lt; endl;
+  cout &lt;&lt; "Y_train number of elements " &lt;&lt; Y_train.size() &lt;&lt; endl;
+
+  GNB gnb = GNB();
+  
+  gnb.train(X_train, Y_train);
+
+  cout &lt;&lt; "X_test number of elements " &lt;&lt; X_test.size() &lt;&lt; endl;
+  cout &lt;&lt; "X_test element size " &lt;&lt; X_test[0].size() &lt;&lt; endl;
+  cout &lt;&lt; "Y_test number of elements " &lt;&lt; Y_test.size() &lt;&lt; endl;
+  
+  int score = 0;
+  for (int i = 0; i &lt; X_test.size(); ++i) {
+    vector&lt;double&gt; coords = X_test[i];
+    string predicted = gnb.predict(coords);
+    if (predicted.compare(Y_test[i]) == 0) {
+      score += 1;
+    }
+  }
+
+  float fraction_correct = float(score) / Y_test.size();
+  cout &lt;&lt; "You got " &lt;&lt; (100*fraction_correct) &lt;&lt; " correct" &lt;&lt; endl;
+
+  return 0;
+}
+
+// Load state from .txt file
+vector&lt;vector&lt;double&gt; &gt; Load_State(string file_name) {
+  ifstream in_state_(file_name.c_str(), ifstream::in);
+  vector&lt; vector&lt;double &gt;&gt; state_out;
+  string line;
+    
+  while (getline(in_state_, line)) {
+    std::istringstream iss(line);
+    vector&lt;double&gt; x_coord;
+      
+    string token;
+    while (getline(iss,token,',')) {
+      x_coord.push_back(stod(token));
+    }
+    state_out.push_back(x_coord);
+  }
+
+  return state_out;
+}
+
+// Load labels from .txt file
+vector&lt;string&gt; Load_Label(string file_name) {
+  ifstream in_label_(file_name.c_str(), ifstream::in);
+  vector&lt; string &gt; label_out;
+  string line;
+  while (getline(in_label_, line)) {
+    std::istringstream iss(line);
+    string label;
+    iss &gt;&gt; label;
+    
+    label_out.push_back(label);
+  }
+    
+  return label_out; 
+}</pre>
+           </div>
+           <div aria-labelledby="tab-346784-classifier-cpp" class="tab-pane" id="346784-classifier-cpp" role="tabpanel">
+            <pre><code></code>#include "classifier.h"
+#include &lt;math.h&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+
+using Eigen::ArrayXd;
+using std::string;
+using std::vector;
+
+// Initializes GNB
+GNB::GNB() {
+  /**
+   * TODO: Initialize GNB, if necessary. May depend on your implementation.
+   */
+  
+}
+
+GNB::~GNB() {}
+
+void GNB::train(const vector&lt;vector&lt;double&gt;&gt; &amp;data, 
+                const vector&lt;string&gt; &amp;labels) {
+  /**
+   * Trains the classifier with N data points and labels.
+   * @param data - array of N observations
+   *   - Each observation is a tuple with 4 values: s, d, s_dot and d_dot.
+   *   - Example : [[3.5, 0.1, 5.9, -0.02],
+   *                [8.0, -0.3, 3.0, 2.2],
+   *                 ...
+   *                ]
+   * @param labels - array of N labels
+   *   - Each label is one of "left", "keep", or "right".
+   *
+   * TODO: Implement the training function for your classifier.
+   */
+  
+}
+
+string GNB::predict(const vector&lt;double&gt; &amp;sample) {
+  /**
+   * Once trained, this method is called and expected to return 
+   *   a predicted behavior for the given observation.
+   * @param observation - a 4 tuple with s, d, s_dot, d_dot.
+   *   - Example: [3.5, 0.1, 8.5, -0.2]
+   * @output A label representing the best guess of the classifier. Can
+   *   be one of "left", "keep" or "right".
+   *
+   * TODO: Complete this function to return your classifier's prediction
+   */
+  
+  return this -&gt; possible_labels[1];
+}</pre>
+           </div>
+           <div aria-labelledby="tab-346784-classifier-h" class="tab-pane" id="346784-classifier-h" role="tabpanel">
+            <pre><code></code>#ifndef CLASSIFIER_H
+#define CLASSIFIER_H
+
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "Dense"
+
+using Eigen::ArrayXd;
+using std::string;
+using std::vector;
+
+class GNB {
+ public:
+  /**
+   * Constructor
+   */
+  GNB();
+
+  /**
+   * Destructor
+   */
+  virtual ~GNB();
+
+  /**
+   * Train classifier
+   */
+  void train(const vector&lt;vector&lt;double&gt;&gt; &amp;data, 
+             const vector&lt;string&gt; &amp;labels);
+
+  /**
+   * Predict with trained classifier
+   */
+  string predict(const vector&lt;double&gt; &amp;sample);
+
+  vector&lt;string&gt; possible_labels = {"left","keep","right"};
+};
+
+#endif  // CLASSIFIER_H</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="jumbotron" style="margin-top: 50px; margin-bottom: 50px;">
+         <h3>
+          INSTRUCTOR NOTE:
+         </h3>
+         <p>
+          Students have reported Load_State function in main.cpp is not loading data properly from train_states.txt and test_states.txt since istringstream is not implemented for comma (',') separated data.  Several students have found working solutions
+          <a href="https://github.com/udacity/sdc-issue-reports/issues/914" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          , that may help in determining your own solution.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="17. Implement Naive Bayes C++ (solution).html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('16. Implement Naive Bayes C++')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

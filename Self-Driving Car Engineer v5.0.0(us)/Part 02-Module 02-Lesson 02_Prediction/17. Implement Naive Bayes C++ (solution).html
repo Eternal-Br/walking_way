@@ -1,0 +1,589 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Implement Naive Bayes C++ (solution)
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Prediction
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction and Overview.html">
+       01. Introduction and Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="02. IO Recap.html">
+       02. I/O Recap
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Model-Based vs Data-Driven Approaches.html">
+       03. Model-Based vs Data-Driven Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Which is Best.html">
+       04. Which is Best?
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Data Driven Example - Trajectory Clustering.html">
+       05. Data Driven Example - Trajectory Clustering
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Trajectory Clustering 2 - Online Prediction.html">
+       06. Trajectory Clustering 2 - Online Prediction
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Thinking about Model Based Approaches.html">
+       07. Thinking about Model Based Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Frenet Coordinates.html">
+       08. Frenet Coordinates
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Process Models.html">
+       09. Process Models
+      </a>
+     </li>
+     <li class="">
+      <a href="10. More on Process Models.html">
+       10. More on Process Models
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Multimodal Estimation.html">
+       11. Multimodal Estimation
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Summary of Data Driven and Model Based Approaches.html">
+       12. Summary of Data Driven and Model Based Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Overview of Hybrid Approaches.html">
+       13. Overview of Hybrid Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Intro to Naive Bayes.html">
+       14. Intro to Naive Bayes
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Naive Bayes Quiz.html">
+       15. Naive Bayes Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Implement Naive Bayes C++.html">
+       16. Implement Naive Bayes C++
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Implement Naive Bayes C++ (solution).html">
+       17. Implement Naive Bayes C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Conclusion.html">
+       18. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          17. Implement Naive Bayes C++ (solution)
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Here's a sample solution for the previous quiz. In this solution, there has been no feature engineering, so existing features are used only. See if you can improve the results with your own solution!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="440031-main-cpp" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#440031-main-cpp" id="tab-440031-main-cpp" role="tab">
+            main.cpp
+           </a>
+           <a aria-controls="440031-classifier-cpp" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#440031-classifier-cpp" id="tab-440031-classifier-cpp" role="tab">
+            classifier.cpp
+           </a>
+           <a aria-controls="440031-classifier-h" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#440031-classifier-h" id="tab-440031-classifier-h" role="tab">
+            classifier.h
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-440031-main-cpp" class="tab-pane active show" id="440031-main-cpp" role="tabpanel">
+            <pre><code></code>#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "classifier.h"
+
+using std::cout;
+using std::endl;
+using std::ifstream;
+using std::string;
+using std::vector;
+
+// Helper functions to load .txt files
+vector&lt;vector&lt;double&gt; &gt; Load_State(string file_name);
+vector&lt;string&gt; Load_Label(string file_name);
+
+int main() {
+  vector&lt; vector&lt;double&gt; &gt; X_train = Load_State("./train_states.txt");
+  vector&lt; vector&lt;double&gt; &gt; X_test  = Load_State("./test_states.txt");
+  vector&lt; string &gt; Y_train = Load_Label("./train_labels.txt");
+  vector&lt; string &gt; Y_test  = Load_Label("./test_labels.txt");
+    
+  cout &lt;&lt; "X_train number of elements " &lt;&lt; X_train.size() &lt;&lt; endl;
+  cout &lt;&lt; "X_train element size " &lt;&lt; X_train[0].size() &lt;&lt; endl;
+  cout &lt;&lt; "Y_train number of elements " &lt;&lt; Y_train.size() &lt;&lt; endl;
+
+  GNB gnb = GNB();
+  
+  gnb.train(X_train, Y_train);
+
+  cout &lt;&lt; "X_test number of elements " &lt;&lt; X_test.size() &lt;&lt; endl;
+  cout &lt;&lt; "X_test element size " &lt;&lt; X_test[0].size() &lt;&lt; endl;
+  cout &lt;&lt; "Y_test number of elements " &lt;&lt; Y_test.size() &lt;&lt; endl;
+  
+  int score = 0;
+  for (int i = 0; i &lt; X_test.size(); ++i) {
+    vector&lt;double&gt; coords = X_test[i];
+    string predicted = gnb.predict(coords);
+    if (predicted.compare(Y_test[i]) == 0) {
+      score += 1;
+    }
+  }
+
+  float fraction_correct = float(score) / Y_test.size();
+  cout &lt;&lt; "You got " &lt;&lt; (100*fraction_correct) &lt;&lt; " correct" &lt;&lt; endl;
+
+  return 0;
+}
+
+// Load state from .txt file
+vector&lt;vector&lt;double&gt; &gt; Load_State(string file_name) {
+  ifstream in_state_(file_name.c_str(), ifstream::in);
+  vector&lt; vector&lt;double &gt;&gt; state_out;
+  string line;
+    
+  while (getline(in_state_, line)) {
+    std::istringstream iss(line);
+    vector&lt;double&gt; x_coord;
+      
+    string token;
+    while (getline(iss,token,',')) {
+      x_coord.push_back(stod(token));
+    }
+    state_out.push_back(x_coord);
+  }
+
+  return state_out;
+}
+
+// Load labels from .txt file
+vector&lt;string&gt; Load_Label(string file_name) {
+  ifstream in_label_(file_name.c_str(), ifstream::in);
+  vector&lt; string &gt; label_out;
+  string line;
+  while (getline(in_label_, line)) {
+    std::istringstream iss(line);
+    string label;
+    iss &gt;&gt; label;
+    
+    label_out.push_back(label);
+  }
+    
+  return label_out; 
+}</pre>
+           </div>
+           <div aria-labelledby="tab-440031-classifier-cpp" class="tab-pane" id="440031-classifier-cpp" role="tabpanel">
+            <pre><code></code>#include "classifier.h"
+#include &lt;math.h&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+
+using Eigen::ArrayXd;
+using std::string;
+using std::vector;
+
+// Initializes GNB
+GNB::GNB() {
+  /**
+   * TODO: Initialize GNB, if necessary. May depend on your implementation.
+   */
+  left_means = ArrayXd(4);
+  left_means &lt;&lt; 0,0,0,0;
+  
+  left_sds = ArrayXd(4);
+  left_sds &lt;&lt; 0,0,0,0;
+    
+  left_prior = 0;
+    
+  keep_means = ArrayXd(4);
+  keep_means &lt;&lt; 0,0,0,0;
+  
+  keep_sds = ArrayXd(4);
+  keep_sds &lt;&lt; 0,0,0,0;
+  
+  keep_prior = 0;
+  
+  right_means = ArrayXd(4);
+  right_means &lt;&lt; 0,0,0,0;
+  
+  right_sds = ArrayXd(4);
+  right_sds &lt;&lt; 0,0,0,0;
+  
+  right_prior = 0;
+}
+
+GNB::~GNB() {}
+
+void GNB::train(const vector&lt;vector&lt;double&gt;&gt; &amp;data, 
+                const vector&lt;string&gt; &amp;labels) {
+  /**
+   * Trains the classifier with N data points and labels.
+   * @param data - array of N observations
+   *   - Each observation is a tuple with 4 values: s, d, s_dot and d_dot.
+   *   - Example : [[3.5, 0.1, 5.9, -0.02],
+   *                [8.0, -0.3, 3.0, 2.2],
+   *                 ...
+   *                ]
+   * @param labels - array of N labels
+   *   - Each label is one of "left", "keep", or "right".
+   *
+   * TODO: Implement the training function for your classifier.
+   */
+  
+  // For each label, compute ArrayXd of means, one for each data class 
+  //   (s, d, s_dot, d_dot).
+  // These will be used later to provide distributions for conditional 
+  //   probabilites.
+  // Means are stored in an ArrayXd of size 4.
+  
+  float left_size = 0;
+  float keep_size = 0;
+  float right_size = 0;
+  
+  // For each label, compute the numerators of the means for each class
+  //   and the total number of data points given with that label.
+  for (int i=0; i&lt;labels.size(); ++i) {
+    if (labels[i] == "left") {
+      // conversion of data[i] to ArrayXd
+      left_means += ArrayXd::Map(data[i].data(), data[i].size());
+      left_size += 1;
+    } else if (labels[i] == "keep") {
+      keep_means += ArrayXd::Map(data[i].data(), data[i].size());
+      keep_size += 1;
+    } else if (labels[i] == "right") {
+      right_means += ArrayXd::Map(data[i].data(), data[i].size());
+      right_size += 1;
+    }
+  }
+
+  // Compute the means. Each result is a ArrayXd of means 
+  //   (4 means, one for each class)
+  left_means = left_means/left_size;
+  keep_means = keep_means/keep_size;
+  right_means = right_means/right_size;
+  
+  // Begin computation of standard deviations for each class/label combination.
+  ArrayXd data_point;
+  
+  // Compute numerators of the standard deviations.
+  for (int i=0; i&lt;labels.size(); ++i) {
+    data_point = ArrayXd::Map(data[i].data(), data[i].size());
+    if (labels[i] == "left"){
+      left_sds += (data_point - left_means)*(data_point - left_means);
+    } else if (labels[i] == "keep") {
+      keep_sds += (data_point - keep_means)*(data_point - keep_means);
+    } else if (labels[i] == "right") {
+      right_sds += (data_point - right_means)*(data_point - right_means);
+    }
+  }
+  
+  // compute standard deviations
+  left_sds = (left_sds/left_size).sqrt();
+  keep_sds = (keep_sds/keep_size).sqrt();
+  right_sds = (right_sds/right_size).sqrt();
+    
+  //Compute the probability of each label
+  left_prior = left_size/labels.size();
+  keep_prior = keep_size/labels.size();
+  right_prior = right_size/labels.size();
+}
+
+string GNB::predict(const vector&lt;double&gt; &amp;sample) {
+  /**
+   * Once trained, this method is called and expected to return 
+   *   a predicted behavior for the given observation.
+   * @param observation - a 4 tuple with s, d, s_dot, d_dot.
+   *   - Example: [3.5, 0.1, 8.5, -0.2]
+   * @output A label representing the best guess of the classifier. Can
+   *   be one of "left", "keep" or "right".
+   *
+   * TODO: Complete this function to return your classifier's prediction
+   */
+  
+  // Calculate product of conditional probabilities for each label.
+  double left_p = 1.0;
+  double keep_p = 1.0;
+  double right_p = 1.0; 
+
+  for (int i=0; i&lt;4; ++i) {
+    left_p *= (1.0/sqrt(2.0 * M_PI * pow(left_sds[i], 2))) 
+            * exp(-0.5*pow(sample[i] - left_means[i], 2)/pow(left_sds[i], 2));
+    keep_p *= (1.0/sqrt(2.0 * M_PI * pow(keep_sds[i], 2)))
+            * exp(-0.5*pow(sample[i] - keep_means[i], 2)/pow(keep_sds[i], 2));
+    right_p *= (1.0/sqrt(2.0 * M_PI * pow(right_sds[i], 2))) 
+            * exp(-0.5*pow(sample[i] - right_means[i], 2)/pow(right_sds[i], 2));
+  }
+
+  // Multiply each by the prior
+  left_p *= left_prior;
+  keep_p *= keep_prior;
+  right_p *= right_prior;
+    
+  double probs[3] = {left_p, keep_p, right_p};
+  double max = left_p;
+  double max_index = 0;
+
+  for (int i=1; i&lt;3; ++i) {
+    if (probs[i] &gt; max) {
+      max = probs[i];
+      max_index = i;
+    }
+  }
+  
+  return this -&gt; possible_labels[max_index];
+}</pre>
+           </div>
+           <div aria-labelledby="tab-440031-classifier-h" class="tab-pane" id="440031-classifier-h" role="tabpanel">
+            <pre><code></code>#ifndef CLASSIFIER_H
+#define CLASSIFIER_H
+
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "Dense"
+
+using Eigen::ArrayXd;
+using std::string;
+using std::vector;
+
+class GNB {
+ public:
+  /**
+   * Constructor
+   */
+  GNB();
+
+  /**
+   * Destructor
+   */
+  virtual ~GNB();
+
+  /**
+   * Train classifier
+   */
+  void train(const vector&lt;vector&lt;double&gt;&gt; &amp;data, 
+             const vector&lt;string&gt; &amp;labels);
+
+  /**
+   * Predict with trained classifier
+   */
+  string predict(const vector&lt;double&gt; &amp;sample);
+
+  vector&lt;string&gt; possible_labels = {"left","keep","right"};
+  
+  ArrayXd left_means;
+  ArrayXd left_sds;
+  double left_prior;
+  
+  ArrayXd keep_means;
+  ArrayXd keep_sds;
+  double keep_prior;
+  
+  ArrayXd right_means;
+  ArrayXd right_sds;
+  double right_prior;
+
+};
+
+#endif  // CLASSIFIER_H</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="18. Conclusion.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('17. Implement Naive Bayes C++ (solution)')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.490
+In this lesson, you learned about the prediction problem,
+
+00:00:03.490 --> 00:00:05.865
+and the two main classes of solutions.
+
+00:00:05.865 --> 00:00:08.825
+Model-based solutions and data-driven solutions.
+
+00:00:08.825 --> 00:00:12.450
+We also discussed one particular hybrid approach,
+
+00:00:12.450 --> 00:00:17.265
+which uses Gaussian Naive Bayes classifier to predict driver behavior.
+
+00:00:17.265 --> 00:00:20.025
+There is no one correct approach.
+
+00:00:20.025 --> 00:00:24.830
+That's part of what makes the prediction problems so fundamentally difficult.
+
+00:00:24.830 --> 00:00:27.060
+In this lesson, we actually made
+
+00:00:27.060 --> 00:00:31.850
+a simplifying assumption by only considering one object at a time.
+
+00:00:31.850 --> 00:00:34.920
+If you want to take into account multiple objects,
+
+00:00:34.920 --> 00:00:38.570
+then also you have to account for the interactions between objects.
+
+00:00:38.570 --> 00:00:42.070
+These interactions get very complex, very quickly.
+
+00:00:42.070 --> 00:00:46.630
+Fortunately, even when we only consider one object at a time,
+
+00:00:46.630 --> 00:00:49.530
+we can still make useful predictions.
+
+00:00:49.530 --> 00:00:53.120
+This is especially true during highway driving,
+
+00:00:53.120 --> 00:00:57.230
+which is the situation you'll be dealing with in the final Project.
+
+00:00:57.230 --> 00:00:59.290
+Good luck, and safe driving.
+

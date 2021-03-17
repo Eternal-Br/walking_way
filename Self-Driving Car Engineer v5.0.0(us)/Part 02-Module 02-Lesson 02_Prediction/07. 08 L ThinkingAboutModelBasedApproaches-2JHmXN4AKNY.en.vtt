@@ -1,0 +1,154 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.015
+Data driven approaches can be very useful
+
+00:00:03.015 --> 00:00:07.019
+particularly when we have access to plenty of training data.
+
+00:00:07.019 --> 00:00:12.480
+But in some ways purely data driven approaches are naïve since they rely
+
+00:00:12.480 --> 00:00:18.460
+solely on historical evidence to make predictions about likely future behavior.
+
+00:00:18.460 --> 00:00:22.094
+Ideally, we would also like to include, in our predictions,
+
+00:00:22.094 --> 00:00:25.349
+all the insights we have about driver behavior,
+
+00:00:25.350 --> 00:00:28.320
+physics, or vehicle dynamics.
+
+00:00:28.320 --> 00:00:31.510
+This is where model based approaches can help.
+
+00:00:31.510 --> 00:00:35.484
+The way these approaches typically work is as follows.
+
+00:00:35.484 --> 00:00:39.420
+For each object identify all the behaviors
+
+00:00:39.420 --> 00:00:43.685
+that object is likely to do in the current situation.
+
+00:00:43.685 --> 00:00:47.230
+The behavior for a vehicle could be something like change lanes,
+
+00:00:47.229 --> 00:00:49.634
+turn left and for a pedestrian,
+
+00:00:49.634 --> 00:00:52.619
+it could be cross the street on pedestrian crossing.
+
+00:00:52.619 --> 00:00:55.259
+For our intersection scenario,
+
+00:00:55.259 --> 00:00:57.719
+the behaviors could be go straight,
+
+00:00:57.719 --> 00:00:59.594
+turn left, turn right.
+
+00:00:59.594 --> 00:01:05.069
+Whatever it is, it needs to be something that we can describe mathematically.
+
+00:01:05.069 --> 00:01:10.064
+Step two, define a process model for each behavior.
+
+00:01:10.064 --> 00:01:15.340
+A process model is a mathematical description of object motion for behavior.
+
+00:01:15.340 --> 00:01:18.930
+It is a function which can be used to compute the state of
+
+00:01:18.930 --> 00:01:22.650
+the object at time t_plus_1 from the state at
+
+00:01:22.650 --> 00:01:26.130
+time t. The process model must
+
+00:01:26.129 --> 00:01:30.765
+incorporate some uncertainty which represents how much we trust our model.
+
+00:01:30.765 --> 00:01:33.209
+In our intersection example,
+
+00:01:33.209 --> 00:01:39.104
+the left turn process model would produce an uncertain future state located roughly here.
+
+00:01:39.105 --> 00:01:44.969
+The going straight process model would produce an uncertain future state located roughly
+
+00:01:44.969 --> 00:01:47.760
+here and the right turn process model would
+
+00:01:47.760 --> 00:01:51.750
+produce an uncertain future state located roughly here.
+
+00:01:51.750 --> 00:01:56.620
+If you keep running the process models your uncertainty will increase.
+
+00:01:56.620 --> 00:02:02.014
+Once we have a process model for each behavior we can go to the next step,
+
+00:02:02.013 --> 00:02:04.709
+step three, which is to use
+
+00:02:04.709 --> 00:02:08.759
+the process models to compute the probability of each behavior.
+
+00:02:08.759 --> 00:02:13.544
+This is done by taking the observed state of the object at time t_minus_1,
+
+00:02:13.544 --> 00:02:18.804
+running the process models to compute the expected state of the object at time t.
+
+00:02:18.805 --> 00:02:22.110
+Then we compare the observed state of the object at
+
+00:02:22.110 --> 00:02:25.935
+time t with what our process models predicted.
+
+00:02:25.935 --> 00:02:32.854
+And we use a multimodal estimation algorithm to derive the probability of each maneuver.
+
+00:02:32.854 --> 00:02:36.914
+The purpose of these algorithms is to maintain some belief about
+
+00:02:36.914 --> 00:02:41.340
+how likely it is that the driver intends to perform each behavior.
+
+00:02:41.340 --> 00:02:44.200
+We'll go into more detail later.
+
+00:02:44.199 --> 00:02:47.849
+But in this case the probability of going straight
+
+00:02:47.849 --> 00:02:52.859
+or turning left would be higher than the probability of turning right.
+
+00:02:52.860 --> 00:02:58.015
+The fourth and final step is to predict a trajectory for each behavior.
+
+00:02:58.014 --> 00:03:01.169
+This is done easily by iterating on
+
+00:03:01.169 --> 00:03:05.099
+the process models until the prediction horizon is reached.
+
+00:03:05.099 --> 00:03:06.974
+In the following videos,
+
+00:03:06.974 --> 00:03:12.569
+we talk more about the process models we use to model behaviors and then
+
+00:03:12.569 --> 00:03:14.219
+discuss one version of
+
+00:03:14.219 --> 00:03:19.000
+multimodal estimation algorithm that can be used to maintain beliefs.
+

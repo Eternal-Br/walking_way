@@ -1,0 +1,154 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.630
+There are many ways that machine learning algorithms can
+
+00:00:03.630 --> 00:00:07.300
+be used in purely data driven approaches for prediction.
+
+00:00:07.300 --> 00:00:10.435
+Since you already went through a machine learning class,
+
+00:00:10.435 --> 00:00:13.915
+we won't go into these techniques in too much detail.
+
+00:00:13.915 --> 00:00:15.630
+But in this video,
+
+00:00:15.630 --> 00:00:19.530
+I would like to show you one example that is representative
+
+00:00:19.530 --> 00:00:21.870
+of what these algorithms are good at...
+
+00:00:21.870 --> 00:00:23.910
+Trajectory clustering.
+
+00:00:23.910 --> 00:00:27.968
+As is the case with all data driven prediction techniques,
+
+00:00:27.968 --> 00:00:29.835
+there will be two phases.
+
+00:00:29.835 --> 00:00:34.530
+An offline training phase where the algorithm learns a model from data
+
+00:00:34.530 --> 00:00:40.075
+and online prediction phase where it uses that model to generate predictions.
+
+00:00:40.075 --> 00:00:42.865
+Let's discuss the offline phase first.
+
+00:00:42.865 --> 00:00:45.810
+The first step is to get a lot of data which you
+
+00:00:45.810 --> 00:00:49.385
+might do by placing a static camera at an intersection.
+
+00:00:49.385 --> 00:00:53.520
+Then, we have to clean the data since some of the cars we
+
+00:00:53.520 --> 00:00:58.940
+observe may be occluded or something else went wrong in the processing step.
+
+00:00:58.940 --> 00:01:01.425
+So we need to discard the bad data.
+
+00:01:01.425 --> 00:01:03.925
+Once the data is gathered and cleaned up,
+
+00:01:03.925 --> 00:01:08.800
+we would be left with a bunch of trajectories that look something like this.
+
+00:01:08.800 --> 00:01:11.760
+Next, we need to define some mathematical measure of
+
+00:01:11.760 --> 00:01:17.070
+trajectory similarity and there are many ways to do this but intuitively we want
+
+00:01:17.070 --> 00:01:21.120
+something that says a trajectory like this one in red is more
+
+00:01:21.120 --> 00:01:25.880
+similar to this one in pink than it is to this one in blue,
+
+00:01:25.880 --> 00:01:28.875
+even though they're red and blue trajectories overlap
+
+00:01:28.875 --> 00:01:32.910
+more closely for a while than the red and pink ever do.
+
+00:01:32.910 --> 00:01:35.025
+If you're interested in learning more,
+
+00:01:35.025 --> 00:01:40.305
+I will include a link to a paper that discuss measures of similarity in detail,
+
+00:01:40.305 --> 00:01:45.735
+but once we have a measure of similarity we can use a machine learning algorithm
+
+00:01:45.735 --> 00:01:51.510
+like agglomerative clustering or a spectral clustering to clustered these trajectories.
+
+00:01:51.510 --> 00:01:54.090
+In the case of a four-way stop intersection,
+
+00:01:54.090 --> 00:01:57.630
+we would expect to see 12 clusters since at each of
+
+00:01:57.630 --> 00:02:02.340
+the four stop signs cars can do one of three things: turn right,
+
+00:02:02.340 --> 00:02:04.500
+go straight or turn left.
+
+00:02:04.500 --> 00:02:09.000
+So if we were looking at just one of those four stop signs,
+
+00:02:09.000 --> 00:02:13.245
+we would expect to see a cluster of trajectories for left turns,
+
+00:02:13.245 --> 00:02:16.070
+going straight, and turning right.
+
+00:02:16.070 --> 00:02:21.425
+Note that in some situations you may obtain even more clusters than that.
+
+00:02:21.425 --> 00:02:25.815
+For example, if this lane is controlled by a traffic light instead of stop,
+
+00:02:25.815 --> 00:02:30.660
+your clustering algorithm will probably create twice as many clusters.
+
+00:02:30.660 --> 00:02:33.330
+Three of them go through the intersection without
+
+00:02:33.330 --> 00:02:37.680
+stopping and three of them stop at the traffic light first.
+
+00:02:37.680 --> 00:02:40.770
+Once the trajectories have been grouped in too clusters,
+
+00:02:40.770 --> 00:02:45.585
+it is useful to define what prototype trajectories look like for each cluster.
+
+00:02:45.585 --> 00:02:47.322
+For the left turn cluster,
+
+00:02:47.322 --> 00:02:50.295
+maybe these three trajectories are a good model.
+
+00:02:50.295 --> 00:02:52.830
+They provide a compact representation of what
+
+00:02:52.830 --> 00:02:56.445
+left turns typically look like at this intersection.
+
+00:02:56.445 --> 00:03:01.555
+At this point, we have a trained model of typical car behavior at this intersection.
+
+00:03:01.555 --> 00:03:06.000
+The next step is to use this model on the road to actually generate predictions.
+

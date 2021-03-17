@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.080
+One strategy that is often used in hybrid approaches for
+
+00:00:04.080 --> 00:00:08.620
+behavior classification is to combine a classifier with a filter.
+
+00:00:08.619 --> 00:00:10.269
+We will show why.
+
+00:00:10.269 --> 00:00:15.640
+For now we will introduce a simple behavior classifier, Naive Bayes.
+
+00:00:15.640 --> 00:00:20.740
+Let's walk through how Naive Bayes works by using an example.
+
+00:00:20.739 --> 00:00:23.579
+We are going to reason on gender using
+
+00:00:23.579 --> 00:00:27.704
+statistics of two feature variables; height and weight.
+
+00:00:27.704 --> 00:00:30.959
+As an output we want the probability that
+
+00:00:30.960 --> 00:00:34.859
+a person is male or female given their height or weight.
+
+00:00:34.859 --> 00:00:37.079
+In a Naive Bayes classifier,
+
+00:00:37.079 --> 00:00:40.979
+the probability of being male given height and weight is
+
+00:00:40.979 --> 00:00:45.494
+just the probability of the height given male times the probability of
+
+00:00:45.494 --> 00:00:51.629
+that weight given male multiplied by the prior probability of being male something
+
+00:00:51.630 --> 00:00:54.210
+close to point five divided by
+
+00:00:54.210 --> 00:00:58.410
+the probability of the height and weight in the overall population.
+
+00:00:58.409 --> 00:01:01.619
+The reason why this algorithm is called Naive Bayes is
+
+00:01:01.619 --> 00:01:05.625
+that it assumes that all features contribute independently.
+
+00:01:05.625 --> 00:01:11.435
+And while in reality there is correlation between height and weight in people.
+
+00:01:11.435 --> 00:01:16.260
+In practice the independence assumption often winds up working.
+
+00:01:16.260 --> 00:01:19.160
+The equation about can be simplified.
+
+00:01:19.159 --> 00:01:23.854
+This term will affect both probabilities male and female in the same way.
+
+00:01:23.855 --> 00:01:26.335
+It is just a normalization factor.
+
+00:01:26.334 --> 00:01:29.759
+This means we can first compute this part of the equation
+
+00:01:29.760 --> 00:01:33.930
+both for male and female and then compute the final probability
+
+00:01:33.930 --> 00:01:37.530
+of male given height and rate and probability of female
+
+00:01:37.530 --> 00:01:42.150
+given height male by normalizing them to make them sum to one.
+
+00:01:42.150 --> 00:01:44.875
+The problem is all about finding these terms.
+
+00:01:44.875 --> 00:01:49.040
+Often, we can assume it goes in distribution for the feature variables.
+
+00:01:49.040 --> 00:01:54.410
+If you make this assumption the algorithm is then called Gaussian Naive Bayes.
+
+00:01:54.409 --> 00:02:00.810
+So in practice, implementing a good Gaussian Naive Bayes classifier is all about one,
+
+00:02:00.810 --> 00:02:04.829
+selecting the correct feature variables for the classification problem.
+
+00:02:04.829 --> 00:02:08.099
+This is vary can use some human intuition combined with
+
+00:02:08.099 --> 00:02:11.159
+feature selection algorithms to anticipate what
+
+00:02:11.159 --> 00:02:15.289
+factors are relevant for a given classification situation.
+
+00:02:15.289 --> 00:02:20.384
+I call her for example would not be very useful in predicting gender.
+
+00:02:20.384 --> 00:02:25.799
+And two identifying some good means and variances for different classes.
+
+00:02:25.800 --> 00:02:32.965
+And we can either guess these numbers or we can look at lots of data to learn them.
+
+00:02:32.965 --> 00:02:36.270
+For example, if you have access to lots of data
+
+00:02:36.270 --> 00:02:40.165
+about how drivers handle intersections and if you define
+
+00:02:40.164 --> 00:02:44.879
+some good features which indicating tension's of drivers you could use
+
+00:02:44.879 --> 00:02:50.074
+Naive Bayes to compute the probability of each behavior at each time step.
+
+00:02:50.074 --> 00:02:52.174
+For the trajectory prediction part.
+
+00:02:52.175 --> 00:02:56.000
+You could use one of the following models we talked about earlier.
+

@@ -1,0 +1,220 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.970
+Let's consider some process models for
+
+00:00:02.970 --> 00:00:08.005
+a situation where a self-driving car is trying to merge onto a highway.
+
+00:00:08.005 --> 00:00:12.860
+But, let's say there is another vehicle in the rightmost lane.
+
+00:00:12.859 --> 00:00:16.629
+Now, this vehicle might do a few things.
+
+00:00:16.629 --> 00:00:18.674
+It might just ignore us,
+
+00:00:18.675 --> 00:00:22.170
+it might speed up to let us merge behind it,
+
+00:00:22.170 --> 00:00:25.090
+it might slow down to let us get ahead of it,
+
+00:00:25.089 --> 00:00:27.670
+or it might change lanes.
+
+00:00:27.670 --> 00:00:30.135
+Now, for each of these behaviors,
+
+00:00:30.135 --> 00:00:35.054
+we want to come up with a process model that formalizes the likely motion of the car.
+
+00:00:35.054 --> 00:00:36.939
+If the car ignores us,
+
+00:00:36.939 --> 00:00:41.280
+it will likely follow lane A with constant velocity.
+
+00:00:41.280 --> 00:00:44.270
+If they speed up, we may choose to model
+
+00:00:44.270 --> 00:00:48.440
+their motion as lane following with positive acceleration.
+
+00:00:48.439 --> 00:00:50.304
+If they slow down,
+
+00:00:50.304 --> 00:00:51.950
+we would do the same thing,
+
+00:00:51.950 --> 00:00:54.130
+but with negative acceleration.
+
+00:00:54.130 --> 00:01:00.200
+Lane changing, we could model as lane following on lane B, with constant velocity.
+
+00:01:00.200 --> 00:01:04.424
+You can see this term lane following show up a lot.
+
+00:01:04.424 --> 00:01:06.094
+What is lane following?
+
+00:01:06.094 --> 00:01:08.414
+How do we describe it mathematically?
+
+00:01:08.415 --> 00:01:10.800
+We have many options here.
+
+00:01:10.799 --> 00:01:13.340
+In general, there is a tradeoff between
+
+00:01:13.340 --> 00:01:17.230
+simplicity and accuracy when choosing a process model.
+
+00:01:17.230 --> 00:01:20.000
+One very simple approach is to treat
+
+00:01:20.000 --> 00:01:23.930
+the car as a point particle with holonomic properties.
+
+00:01:23.930 --> 00:01:29.605
+This means we assume the point can move in any direction at any time.
+
+00:01:29.605 --> 00:01:33.025
+Which of course is a very simplistic assumption.
+
+00:01:33.025 --> 00:01:36.075
+The simplest motion models are linear.
+
+00:01:36.075 --> 00:01:42.064
+Constant velocity lane following for any coordinates would look something like this.
+
+00:01:42.064 --> 00:01:45.799
+Where the car moves forward at each timestep,
+
+00:01:45.799 --> 00:01:50.209
+and is assumed to keep a constant distance to the lane center.
+
+00:01:50.209 --> 00:01:55.839
+In practice, linear point models usually wind up being too simplistic.
+
+00:01:55.840 --> 00:02:01.329
+The next step in complexity happens when we allow non-linearities into our model.
+
+00:02:01.329 --> 00:02:06.349
+Typically, if you start incorporating heading into our state vector,
+
+00:02:06.349 --> 00:02:10.954
+you will end up with sines and cosines in our model equations.
+
+00:02:10.955 --> 00:02:14.180
+An example of a non-linear point model of lane
+
+00:02:14.180 --> 00:02:18.015
+following could look like this in Cartesian coordinates.
+
+00:02:18.014 --> 00:02:20.619
+Note the presence of cosine and sine,
+
+00:02:20.620 --> 00:02:23.530
+which are where the non-linearity comes in.
+
+00:02:23.530 --> 00:02:26.900
+The next jump in complexity happens when we
+
+00:02:26.900 --> 00:02:30.495
+take into account that a car is a non-holonomic system.
+
+00:02:30.495 --> 00:02:34.670
+A popular approach is to use a bicycle model,
+
+00:02:34.669 --> 00:02:38.655
+which looks like this in an inertial cartesian reference frame.
+
+00:02:38.655 --> 00:02:41.750
+A bicycle model takes two inputs,
+
+00:02:41.750 --> 00:02:44.590
+the steering angle and the acceleration.
+
+00:02:44.590 --> 00:02:46.344
+For the steering angle,
+
+00:02:46.344 --> 00:02:52.125
+we could use a PID controller with the target lane center line as the reference line.
+
+00:02:52.125 --> 00:02:57.680
+For the acceleration, we could once again use a constant velocity model,
+
+00:02:57.680 --> 00:02:59.670
+or a constant acceleration model,
+
+00:02:59.669 --> 00:03:03.019
+or if we wanted more complex acceleration behavior,
+
+00:03:03.020 --> 00:03:06.860
+we could use a PID controller with the speed limit as the target.
+
+00:03:06.860 --> 00:03:10.070
+In practice, these sorts of models tend to
+
+00:03:10.069 --> 00:03:13.905
+strike a good balance between simplicity and accuracy.
+
+00:03:13.905 --> 00:03:19.594
+But you could always go more complex by including more details about vehicle dynamics.
+
+00:03:19.594 --> 00:03:23.359
+For example, you could use a dynamic bicycle model,
+
+00:03:23.360 --> 00:03:25.110
+which looks like this.
+
+00:03:25.110 --> 00:03:29.415
+Note the presence of terms like F_c, f,
+
+00:03:29.414 --> 00:03:35.014
+which represents the lateral force on the tires at the front of the vehicle,
+
+00:03:35.014 --> 00:03:41.519
+and F_c, r, which represents the lateral force on the rear tire.
+
+00:03:41.520 --> 00:03:46.590
+You could even add more complexity and model the four wheels of the car.
+
+00:03:46.590 --> 00:03:50.939
+While these models are technically more accurate than any of the others,
+
+00:03:50.939 --> 00:03:54.784
+in practice, using them doesn't usually make sense for prediction.
+
+00:03:54.784 --> 00:04:01.759
+There is so much uncertainty inherent to predicting the behaviors of other drivers that
+
+00:04:01.759 --> 00:04:05.090
+minor accuracy improvements to process models just
+
+00:04:05.090 --> 00:04:08.930
+aren't worth the computational overhead that they come with.
+
+00:04:08.930 --> 00:04:12.530
+Note how all the models contain an additional term
+
+00:04:12.530 --> 00:04:17.069
+W. This is where the uncertainty on the process model is stored.
+
+00:04:17.069 --> 00:04:23.129
+A classic choice to represent uncertainty is a multivariate Gaussian with zero mean.
+
+00:04:23.129 --> 00:04:28.204
+Next, I'm going to ask you to think a bit more about process models.
+
+00:04:28.204 --> 00:04:31.430
+Then, we will talk about how we can reason about
+
+00:04:31.430 --> 00:04:36.840
+multiple behaviors by considering multiple process models simultaneously.
+

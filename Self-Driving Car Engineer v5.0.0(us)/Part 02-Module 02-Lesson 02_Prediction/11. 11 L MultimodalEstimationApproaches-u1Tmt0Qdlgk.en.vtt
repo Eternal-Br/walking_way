@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.099
+We have talked about individual process models but we haven't yet talked
+
+00:00:05.099 --> 00:00:11.070
+about how to maintain some beliefs about which behavior the driver intends to perform.
+
+00:00:11.070 --> 00:00:15.089
+This is the role of multimodal estimation algorithms.
+
+00:00:15.089 --> 00:00:18.149
+A simple approach to multimodal estimation is called
+
+00:00:18.149 --> 00:00:21.879
+autonomous multiple model estimation or AMM.
+
+00:00:21.879 --> 00:00:25.169
+While describing AMM, I will use
+
+00:00:25.170 --> 00:00:30.240
+the same notation that is used in a paper which I will link to later.
+
+00:00:30.239 --> 00:00:34.140
+The variable M represents the number of process models or
+
+00:00:34.140 --> 00:00:40.090
+behaviors and each variable mu represents the probability of behavior.
+
+00:00:40.090 --> 00:00:43.161
+To understand how these probabilities are computed,
+
+00:00:43.161 --> 00:00:46.304
+let's go back to our T intersection example.
+
+00:00:46.304 --> 00:00:49.465
+Let's say we have two process models here.
+
+00:00:49.465 --> 00:00:56.580
+One to go straight and one to turn right and they both have Gaussian uncertainty.
+
+00:00:56.579 --> 00:01:03.945
+Let's say that we observe this state for the vehicle at time k minus one and we observe
+
+00:01:03.945 --> 00:01:08.640
+this state for the vehicle at time k. In order to
+
+00:01:08.640 --> 00:01:13.650
+compute the new probabilities for the behaviors based on the new observation,
+
+00:01:13.650 --> 00:01:16.050
+we will run our two process models for
+
+00:01:16.049 --> 00:01:20.700
+one step starting from the state at time k minus one.
+
+00:01:20.700 --> 00:01:21.945
+When we do this,
+
+00:01:21.944 --> 00:01:27.989
+we get these two expected states for time k. If we just look at what
+
+00:01:27.989 --> 00:01:30.929
+the distribution on the vehicle's s coordinate looks
+
+00:01:30.930 --> 00:01:34.335
+like for the two expected states, this is what we see.
+
+00:01:34.334 --> 00:01:41.032
+Where the red curve gives the probability density function of S for turning right,
+
+00:01:41.033 --> 00:01:43.769
+the blue curve represents going straight
+
+00:01:43.769 --> 00:01:47.564
+and the observation at timestep k is somewhere here.
+
+00:01:47.564 --> 00:01:51.179
+We can see that this observation is substantially more
+
+00:01:51.180 --> 00:01:56.040
+consistent with turn right than it is with go straight.
+
+00:01:56.040 --> 00:01:59.160
+This is measured by the likelihood of the observation as
+
+00:01:59.159 --> 00:02:02.369
+for each model and the probability of
+
+00:02:02.370 --> 00:02:05.655
+each behavior is a function of these likelihoods
+
+00:02:05.655 --> 00:02:09.390
+and of the probabilities computed in the previous timestep.
+
+00:02:09.389 --> 00:02:14.009
+The important quantity for the AMM is
+
+00:02:14.009 --> 00:02:20.274
+the ratio of these likelihoods after they get multiplied by the previous probability.
+
+00:02:20.275 --> 00:02:24.106
+The equation ends up looking like this,
+
+00:02:24.106 --> 00:02:28.335
+where this term is the probability of model I
+
+00:02:28.335 --> 00:02:32.835
+at timestep K. This term is the probability of
+
+00:02:32.835 --> 00:02:36.620
+model I at timestep K minus one and
+
+00:02:36.620 --> 00:02:43.289
+this L term is the likelihood of the observation at time K for that model.
+
+00:02:43.289 --> 00:02:49.049
+The denominator just serves to normalize our probabilities so that they all sum to one.
+
+00:02:49.050 --> 00:02:55.000
+M, in this situation would be two since we are only considering two maneuvers.
+

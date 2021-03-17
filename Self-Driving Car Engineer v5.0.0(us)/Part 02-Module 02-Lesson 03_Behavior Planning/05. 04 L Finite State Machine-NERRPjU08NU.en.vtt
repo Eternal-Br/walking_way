@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.885
+In the previous demonstration, the navigator gave various suggestions about what to do next.
+
+00:00:04.885 --> 00:00:08.160
+And the instructions they gave were about things like changing lanes,
+
+00:00:08.160 --> 00:00:10.950
+follow a lanes, turning and so on.
+
+00:00:10.950 --> 00:00:13.530
+But in fact there really aren't that many types of
+
+00:00:13.530 --> 00:00:16.385
+suggestions you would expect to hear from a navigator.
+
+00:00:16.385 --> 00:00:20.580
+In this lesson we're going to teach an approach to behavior planning that
+
+00:00:20.580 --> 00:00:24.915
+uses something called a Finite State Machine to solve the behavior planning problem.
+
+00:00:24.915 --> 00:00:29.815
+A Finite State Machine makes decisions based on a finite set of discrete states.
+
+00:00:29.815 --> 00:00:31.515
+In this example five.
+
+00:00:31.515 --> 00:00:35.436
+When initialized, a Finite State Machine begins in some start state,
+
+00:00:35.436 --> 00:00:37.170
+let's call it S0.
+
+00:00:37.170 --> 00:00:39.840
+Any pair of states within the finite state machine
+
+00:00:39.840 --> 00:00:42.880
+can be connected by one or more transitions.
+
+00:00:42.880 --> 00:00:46.335
+And sometimes there is a transition back to the same state.
+
+00:00:46.335 --> 00:00:48.300
+This is called a Self Transition.
+
+00:00:48.300 --> 00:00:50.625
+Not all transitions are necessarily possible.
+
+00:00:50.625 --> 00:00:54.030
+For example, S4 doesn't transition to any other state.
+
+00:00:54.030 --> 00:00:58.260
+In the language of finite state machines this would be called an Accepting State.
+
+00:00:58.260 --> 00:01:02.745
+For non-accepting states that can often be multiple potential successor states.
+
+00:01:02.745 --> 00:01:05.460
+To decide which state to transition to next,
+
+00:01:05.460 --> 00:01:09.060
+a Finite State Machine needs to handle some sort of input and
+
+00:01:09.060 --> 00:01:13.110
+then use a state transition function to decide what state to go next.
+
+00:01:13.110 --> 00:01:15.720
+We'll talk more about transition functions and
+
+00:01:15.720 --> 00:01:19.380
+the states associated with a self driving car in a minute.
+
+00:01:19.380 --> 00:01:23.550
+But first, we want to formalize what a Finite State Machine is,
+
+00:01:23.550 --> 00:01:25.000
+with the help of a simple example.
+

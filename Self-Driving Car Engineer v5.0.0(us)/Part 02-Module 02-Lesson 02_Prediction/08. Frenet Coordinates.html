@@ -1,0 +1,506 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Frenet Coordinates
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Prediction
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction and Overview.html">
+       01. Introduction and Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="02. IO Recap.html">
+       02. I/O Recap
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Model-Based vs Data-Driven Approaches.html">
+       03. Model-Based vs Data-Driven Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Which is Best.html">
+       04. Which is Best?
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Data Driven Example - Trajectory Clustering.html">
+       05. Data Driven Example - Trajectory Clustering
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Trajectory Clustering 2 - Online Prediction.html">
+       06. Trajectory Clustering 2 - Online Prediction
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Thinking about Model Based Approaches.html">
+       07. Thinking about Model Based Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Frenet Coordinates.html">
+       08. Frenet Coordinates
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Process Models.html">
+       09. Process Models
+      </a>
+     </li>
+     <li class="">
+      <a href="10. More on Process Models.html">
+       10. More on Process Models
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Multimodal Estimation.html">
+       11. Multimodal Estimation
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Summary of Data Driven and Model Based Approaches.html">
+       12. Summary of Data Driven and Model Based Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Overview of Hybrid Approaches.html">
+       13. Overview of Hybrid Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Intro to Naive Bayes.html">
+       14. Intro to Naive Bayes
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Naive Bayes Quiz.html">
+       15. Naive Bayes Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Implement Naive Bayes C++.html">
+       16. Implement Naive Bayes C++
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Implement Naive Bayes C++ (solution).html">
+       17. Implement Naive Bayes C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Conclusion.html">
+       18. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          08. Frenet Coordinates
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="frenet-coordinates">
+          Frenet Coordinates
+         </h1>
+         <p>
+          Before we discuss process models, we should mention "Frenet Coordinates", which are a way of representing position on a road in a more intuitive way than traditional
+          <span class="mathquill ud-math">
+           (x,y)
+          </span>
+          Cartesian Coordinates.
+         </p>
+         <p>
+          With Frenet coordinates, we use the variables
+          <span class="mathquill ud-math">
+           s
+          </span>
+          and
+          <span class="mathquill ud-math">
+           d
+          </span>
+          to describe a vehicle's position on the road. The
+          <span class="mathquill ud-math">
+           s
+          </span>
+          coordinate represents distance
+          <em>
+           along
+          </em>
+          the road (also known as
+          <strong>
+           longitudinal displacement
+          </strong>
+          ) and the
+          <span class="mathquill ud-math">
+           d
+          </span>
+          coordinate represents side-to-side position on the road (also known as
+          <strong>
+           lateral displacement
+          </strong>
+          ).
+         </p>
+         <p>
+          Why do we use Frenet coordinates? Imagine a curvy road like the one below with a Cartesian coordinate system laid on top of it…
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/frenet-1.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Using these Cartesian coordinates, we can try to describe the path a vehicle would normally follow on the road…
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/frenet-2.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/frenet-3.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          And notice how curvy that path is! If we wanted
+          <em>
+           equations
+          </em>
+          to describe this motion it wouldn't be easy!
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           x(t) = \text{?}
+          </span>
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           y(t) = \text{?}
+          </span>
+         </p>
+         <p>
+          Ideally, it should be mathematically easy to describe such common driving behavior. But how do we do that? One way is to use a new coordinate system. Now instead of laying down a normal Cartesian grid, we do something like you see below…
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/frenet-4.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Here, we've defined a new system of coordinates. At the bottom we have
+          <span class="mathquill ud-math">
+           s=0
+          </span>
+          to represent the beginning of the segment of road we are thinking about and
+          <span class="mathquill ud-math">
+           d=0
+          </span>
+          to represent the center line of that road. To the left of the center line we have negative
+          <span class="mathquill ud-math">
+           d
+          </span>
+          and to the right
+          <span class="mathquill ud-math">
+           d
+          </span>
+          is positive.
+         </p>
+         <p>
+          So what does a typical trajectory look like when presented in Frenet coordinates?
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/frenet-5.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/frenet-6.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          It looks straight!
+         </p>
+         <p>
+          In fact, if this vehicle were moving at a constant speed of
+          <span class="mathquill ud-math">
+           v_0
+          </span>
+          we could write a mathematical description of the vehicle's position as:
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           s(t) = v_0t
+          </span>
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           d(t) = 0
+          </span>
+         </p>
+         <p>
+          We'll be working with Frenet coordinates a good deal in the rest of the course, because…
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/frenet-7.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          …straight lines are so much easier than curved ones.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="09. Process Models.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Frenet Coordinates')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.654
+Imagine you're driving in a city with your friend.
+
+00:00:02.654 --> 00:00:05.000
+You have a goal that you're trying to get to.
+
+00:00:05.000 --> 00:00:08.429
+You are sitting in the passenger seat and your friend is driving.
+
+00:00:08.429 --> 00:00:10.709
+You plug that goal into Google Maps and you
+
+00:00:10.710 --> 00:00:13.434
+get some route that will get you to your destination.
+
+00:00:13.433 --> 00:00:18.329
+The driver shouldn't be concerned about the details of what the route exactly is.
+
+00:00:18.329 --> 00:00:21.689
+Right, because the driver trusts that you acting, as the navigator,
+
+00:00:21.690 --> 00:00:23.970
+will tell them what maneuvers they need to make and it's
+
+00:00:23.969 --> 00:00:26.714
+understood that they are just responsible for executing them.
+
+00:00:26.714 --> 00:00:29.730
+In this situation, the responsibilities of the passenger are
+
+00:00:29.730 --> 00:00:33.520
+analogous to the responsibilities of a behavior planner in a self-driving car.
+
+00:00:33.520 --> 00:00:36.926
+So if you tell your friend to go left, they will do that.
+
+00:00:36.926 --> 00:00:39.210
+And when you tell the driver to pass a slow vehicle,
+
+00:00:39.210 --> 00:00:42.719
+the driver won't worry about whether they have enough time to do so because they
+
+00:00:42.719 --> 00:00:44.414
+will assume that you have thought about that
+
+00:00:44.414 --> 00:00:46.460
+and that you're confident that they can make it.
+
+00:00:46.460 --> 00:00:49.350
+But the navigator is not responsible for safety.
+
+00:00:49.350 --> 00:00:53.700
+If you tell the driver to get back to the left lane but there is a vehicle in the way,
+
+00:00:53.700 --> 00:00:55.890
+you will assume that they will wait to move
+
+00:00:55.890 --> 00:00:58.820
+left until there is enough room to do so safely.
+
+00:00:58.820 --> 00:01:02.159
+The navigator will also tell the driver when to keep their lane and when it is
+
+00:01:02.159 --> 00:01:05.729
+time to turn or change lanes or maybe adjust the speed.
+
+00:01:05.730 --> 00:01:08.924
+And finally, once you're arrived at your destination,
+
+00:01:08.924 --> 00:01:10.950
+you will tell the driver to stop.
+
+00:01:10.950 --> 00:01:13.890
+So, to summarize, the behavior planner is
+
+00:01:13.890 --> 00:01:17.299
+currently a black box which takes as input a map of the world,
+
+00:01:17.299 --> 00:01:18.869
+a route to the destinations,
+
+00:01:18.870 --> 00:01:22.814
+and predictions about what other static and dynamic obstacles are likely to do,
+
+00:01:22.814 --> 00:01:26.159
+and it produces as output a adjusted maneuver for the vehicle which
+
+00:01:26.159 --> 00:01:30.539
+the trajectory planner is responsible for reaching collision-free, smooth, and safe.
+
+00:01:30.540 --> 00:01:32.160
+The goal of this lesson is to open up
+
+00:01:32.159 --> 00:01:34.965
+this black box and learn how to implement a behavior planner.
+
+00:01:34.965 --> 00:01:36.810
+So the responsibilities of
+
+00:01:36.810 --> 00:01:40.859
+the behavior module are to suggest maneuvers which are feasible,
+
+00:01:40.859 --> 00:01:43.560
+as safe as possible, legal, and efficient.
+
+00:01:43.560 --> 00:01:45.600
+What the behavior planner is not responsible
+
+00:01:45.599 --> 00:01:48.839
+for are execution details and collision avoidance.
+
+00:01:48.840 --> 00:01:51.540
+The approach to behavior planning we are going to teach in
+
+00:01:51.540 --> 00:01:55.109
+this lesson is the same one used by most of the vehicles,
+
+00:01:55.109 --> 00:01:58.480
+including the winning one in the DARPA Urban Challenge.
+
+00:01:58.480 --> 00:02:00.000
+In fact, it's the approach to
+
+00:02:00.000 --> 00:02:03.525
+behavior planning that Mercedes used in their Bertha Benz Drive,
+
+00:02:03.525 --> 00:02:05.730
+which you can see is capable of handling
+
+00:02:05.730 --> 00:02:10.240
+complex traffic situations like navigating intersections and dense urban traffic.
+
+00:02:10.240 --> 00:02:13.725
+And while this approach is not necessarily the most common anymore,
+
+00:02:13.724 --> 00:02:15.449
+for reasons we will discuss later,
+
+00:02:15.449 --> 00:02:18.389
+it is widely known in the field and it does give
+
+00:02:18.389 --> 00:02:22.589
+a very high-level understanding of what is going on in a behavior planner.
+

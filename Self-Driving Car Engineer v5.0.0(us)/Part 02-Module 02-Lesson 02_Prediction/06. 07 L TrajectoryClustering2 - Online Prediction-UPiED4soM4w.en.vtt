@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.653
+Once our clustering algorithm has identified clusters and prototype trajectories,
+
+00:00:05.653 --> 00:00:09.474
+in this case three clusters with three prototype trajectories each,
+
+00:00:09.474 --> 00:00:14.144
+we can begin the job of online prediction for a vehicle that we meet on the road.
+
+00:00:14.144 --> 00:00:18.239
+First, we observed the vehicle's partial trajectory.
+
+00:00:18.239 --> 00:00:20.279
+Next we compare it to
+
+00:00:20.280 --> 00:00:24.810
+the corresponding segments of the prototype trajectories for each cluster.
+
+00:00:24.809 --> 00:00:27.149
+This comparison is done using
+
+00:00:27.149 --> 00:00:32.269
+the same similarity measure we used earlier to perform the clustering.
+
+00:00:32.270 --> 00:00:35.700
+The belief for each cluster is updated based on
+
+00:00:35.700 --> 00:00:39.885
+how similar the partial trajectory is to the prototype trajectories.
+
+00:00:39.884 --> 00:00:43.754
+And finally, we compute a predicted trajectory for each cluster.
+
+00:00:43.755 --> 00:00:48.250
+For example, by taking the most similar prototype trajectory.
+
+00:00:48.250 --> 00:00:51.674
+Let's make this more clear by following this car forward
+
+00:00:51.674 --> 00:00:56.004
+in time from T equals zero to T equals one.
+
+00:00:56.005 --> 00:00:58.475
+Let's go through these steps.
+
+00:00:58.475 --> 00:01:03.270
+One, we observe the partial trajectory between time zero and one.
+
+00:01:03.270 --> 00:01:06.355
+It is this green line behind the vehicle.
+
+00:01:06.355 --> 00:01:12.600
+Two, well since all of the prototype trajectories overlap up to this point,
+
+00:01:12.599 --> 00:01:17.980
+the trajectory comparison step will yield the same probability for each cluster.
+
+00:01:17.980 --> 00:01:24.449
+Three, even though there is no clear winner within each cluster we still have to choose
+
+00:01:24.450 --> 00:01:28.170
+one prototype trajectory to represent each cluster and we
+
+00:01:28.170 --> 00:01:33.480
+broadcast these three trajectories with their associated probabilities.
+
+00:01:33.480 --> 00:01:38.430
+Next, a T equal two- things get more interesting.
+
+00:01:38.430 --> 00:01:45.640
+First, let's get rid of the car so we can see the trajectory more clearly.
+
+00:01:45.640 --> 00:01:48.030
+Now when you make a comparison of
+
+00:01:48.030 --> 00:01:52.004
+the partial trajectory with the nine prototype trajectories,
+
+00:01:52.004 --> 00:01:55.079
+we find that the vehicle's partial trajectory
+
+00:01:55.079 --> 00:02:00.674
+seems more similar to the red than purple or blue.
+
+00:02:00.674 --> 00:02:06.489
+When we update the associated probabilities we might get something like this.
+
+00:02:06.489 --> 00:02:13.495
+Note that red grows in probability and the blue and purple both shrink,
+
+00:02:13.495 --> 00:02:20.879
+but blue shrinks more than purple since the partial trajectory is a worse match for blue.
+
+00:02:20.879 --> 00:02:23.789
+Then, we pick the best prototype trajectory for
+
+00:02:23.789 --> 00:02:28.259
+each cluster and use them to represent the future trajectory of the car.
+
+00:02:28.259 --> 00:02:30.347
+As we continue this process,
+
+00:02:30.348 --> 00:02:34.000
+we see the probability for the red cluster quickly approaches one.
+

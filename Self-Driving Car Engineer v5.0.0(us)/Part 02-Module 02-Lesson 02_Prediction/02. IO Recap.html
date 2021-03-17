@@ -1,0 +1,553 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   I/O Recap
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Prediction
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction and Overview.html">
+       01. Introduction and Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="02. IO Recap.html">
+       02. I/O Recap
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Model-Based vs Data-Driven Approaches.html">
+       03. Model-Based vs Data-Driven Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Which is Best.html">
+       04. Which is Best?
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Data Driven Example - Trajectory Clustering.html">
+       05. Data Driven Example - Trajectory Clustering
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Trajectory Clustering 2 - Online Prediction.html">
+       06. Trajectory Clustering 2 - Online Prediction
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Thinking about Model Based Approaches.html">
+       07. Thinking about Model Based Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Frenet Coordinates.html">
+       08. Frenet Coordinates
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Process Models.html">
+       09. Process Models
+      </a>
+     </li>
+     <li class="">
+      <a href="10. More on Process Models.html">
+       10. More on Process Models
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Multimodal Estimation.html">
+       11. Multimodal Estimation
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Summary of Data Driven and Model Based Approaches.html">
+       12. Summary of Data Driven and Model Based Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Overview of Hybrid Approaches.html">
+       13. Overview of Hybrid Approaches
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Intro to Naive Bayes.html">
+       14. Intro to Naive Bayes
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Naive Bayes Quiz.html">
+       15. Naive Bayes Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Implement Naive Bayes C++.html">
+       16. Implement Naive Bayes C++
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Implement Naive Bayes C++ (solution).html">
+       17. Implement Naive Bayes C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Conclusion.html">
+       18. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          02. I/O Recap
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/prediction.jpg"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="inputs-and-outputs-to-prediction">
+          Inputs and Outputs to Prediction
+         </h1>
+         <p>
+          A prediction module uses a map and data from sensor fusion to generate predictions for what all other
+          <strong>
+           dynamic
+          </strong>
+          objects in view are likely to do. To make this clearer, let's look at an example (in
+          <code>
+           json
+          </code>
+          format) of what the
+          <strong>
+           input
+          </strong>
+          to and
+          <strong>
+           output
+          </strong>
+          from prediction might look like.
+         </p>
+         <h2 id="example-input---sensor-fusion">
+          Example Input - Sensor Fusion
+         </h2>
+         <pre><code class="json language-json">{
+    "timestamp" : 34512.21,
+    "vehicles" : [
+        {
+            "id"  : 0,
+            "x"   : -10.0,
+            "y"   : 8.1,
+            "v_x" : 8.0,
+            "v_y" : 0.0,
+            "sigma_x" : 0.031,
+            "sigma_y" : 0.040,
+            "sigma_v_x" : 0.12,
+            "sigma_v_y" : 0.03,
+        },
+        {
+            "id"  : 1,
+            "x"   : 10.0,
+            "y"   : 12.1,
+            "v_x" : -8.0,
+            "v_y" : 0.0,
+            "sigma_x" : 0.031,
+            "sigma_y" : 0.040,
+            "sigma_v_x" : 0.12,
+            "sigma_v_y" : 0.03,
+        },
+    ]
+}</code></pre>
+         <h2 id="example-output">
+          Example Output
+         </h2>
+         <pre><code class="json language-json">{
+    "timestamp" : 34512.21,
+    "vehicles" : [
+        {
+            "id" : 0,
+            "length": 3.4,
+            "width" : 1.5,
+            "predictions" : [
+                {
+                    "probability" : 0.781,
+                    "trajectory"  : [
+                        {
+                            "x": -10.0,
+                            "y": 8.1,
+                            "yaw": 0.0,
+                            "timestamp": 34512.71
+                        },
+                        {
+                            "x": -6.0,
+                            "y": 8.1,
+                            "yaw": 0.0,
+                            "timestamp": 34513.21
+                        },
+                        {
+                            "x": -2.0,
+                            "y": 8.1,
+                            "yaw": 0.0,
+                            "timestamp": 34513.71
+                        },
+                        {
+                            "x": 2.0,
+                            "y": 8.1,
+                            "yaw": 0.0,
+                            "timestamp": 34514.21
+                        },
+                        {
+                            "x": 6.0,
+                            "y": 8.1,
+                            "yaw": 0.0,
+                            "timestamp": 34514.71
+                        },
+                        {
+                            "x": 10.0,
+                            "y": 8.1,
+                            "yaw": 0.0,
+                            "timestamp": 34515.21
+                        },
+                    ]
+                },
+                {
+                    "probability" : 0.219,
+                    "trajectory"  : [
+                        {
+                            "x": -10.0,
+                            "y": 8.1,
+                            "yaw": 0.0,
+                            "timestamp": 34512.71
+                        },
+                        {
+                            "x": -7.0,
+                            "y": 7.5,
+                            "yaw": -5.2,
+                            "timestamp": 34513.21
+                        },
+                        {
+                            "x": -4.0,
+                            "y": 6.1,
+                            "yaw": -32.0,
+                            "timestamp": 34513.71
+                        },
+                        {
+                            "x": -3.0,
+                            "y": 4.1,
+                            "yaw": -73.2,
+                            "timestamp": 34514.21
+                        },
+                        {
+                            "x": -2.0,
+                            "y": 1.2,
+                            "yaw": -90.0,
+                            "timestamp": 34514.71
+                        },
+                        {
+                            "x": -2.0,
+                            "y":-2.8,
+                            "yaw": -90.0,
+                            "timestamp": 34515.21
+                        },
+                    ]
+
+                }
+            ]
+        },
+        {
+            "id" : 1,
+            "length": 3.4,
+            "width" : 1.5,
+            "predictions" : [
+                {
+                    "probability" : 1.0,
+                    "trajectory" : [
+                        {
+                            "x": 10.0,
+                            "y": 12.1,
+                            "yaw": -180.0,
+                            "timestamp": 34512.71
+                        },
+                        {
+                            "x": 6.0,
+                            "y": 12.1,
+                            "yaw": -180.0,
+                            "timestamp": 34513.21
+                        },
+                        {
+                            "x": 2.0,
+                            "y": 12.1,
+                            "yaw": -180.0,
+                            "timestamp": 34513.71
+                        },
+                        {
+                            "x": -2.0,
+                            "y": 12.1,
+                            "yaw": -180.0,
+                            "timestamp": 34514.21
+                        },
+                        {
+                            "x": -6.0,
+                            "y": 12.1,
+                            "yaw": -180.0,
+                            "timestamp": 34514.71
+                        },
+                        {
+                            "x": -10.0,
+                            "y": 12.1,
+                            "yaw": -180.0,
+                            "timestamp": 34515.21
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}</code></pre>
+         <h3 id="notes">
+          Notes
+         </h3>
+         <ol>
+          <li>
+           The predicted trajectories shown here only extend out a few seconds. In reality the predictions we make extend to a horizon of 10-20 seconds.
+          </li>
+          <li>
+           The trajectories shown have 0.5 second resolution. In reality we would generate slightly finer-grained predictions.
+          </li>
+          <li>
+           This example only shows
+           <code>
+            vehicles
+           </code>
+           but in reality we would also generate predictions for
+           <strong>
+            all
+           </strong>
+           dynamic objects in view.
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Understanding Output
+         </p>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             How many possible trajectories are given for the car on the left (with id of 0)?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1498673697701" name="340584" type="radio" value="a1498673697701"/>
+           <label for="a1498673697701">
+            <p>
+             0
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1498673767726" name="340584" type="radio" value="a1498673767726"/>
+           <label for="a1498673767726">
+            <p>
+             1
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1498673769910" name="340584" type="radio" value="a1498673769910"/>
+           <label for="a1498673769910">
+            <p>
+             2
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1498673771587" name="340584" type="radio" value="a1498673771587"/>
+           <label for="a1498673771587">
+            <p>
+             3+
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          2
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="03. Model-Based vs Data-Driven Approaches.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. I/O Recap')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
