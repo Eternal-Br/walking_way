@@ -1,0 +1,969 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627686,
+      "key": "48c5e9c4-f72b-4c7c-8375-ea4eda220e39",
+      "title": "PID Control",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn about and how to use PID controllers with Sebastian!\n",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/48c5e9c4-f72b-4c7c-8375-ea4eda220e39/627686/1538943810997/PID+Control+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/48c5e9c4-f72b-4c7c-8375-ea4eda220e39/627686/1538943805545/PID+Control+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 663279,
+          "key": "1c6e8ba7-d47d-455a-85ed-fd09464039a6",
+          "title": "Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1c6e8ba7-d47d-455a-85ed-fd09464039a6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663280,
+              "key": "5cc7c642-efbf-4bfe-9569-23402308919b",
+              "title": "L16 PID Control A01 L Welcome V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "N-SvuA8Jf5A",
+                "china_cdn_id": "N-SvuA8Jf5A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 280257,
+          "key": "f5269b3b-08da-4f78-92d5-90867170efd1",
+          "title": "PID Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f5269b3b-08da-4f78-92d5-90867170efd1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 280293,
+              "key": "400dc456-e8b7-43ca-b8b6-1f60c144c79b",
+              "title": "PID Control - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-8w0prceask",
+                "china_cdn_id": "-8w0prceask.mp4"
+              }
+            },
+            {
+              "id": 280328,
+              "key": "dc7a4a40-3a24-4151-9ff2-938aa7f9edd6",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "dc7a4a40-3a24-4151-9ff2-938aa7f9edd6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following is best suited to control the car?",
+                "answers": [
+                  {
+                    "id": "a1489538879100",
+                    "text": "Steering constant",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1489538892432",
+                    "text": "Random steering controls",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1489538901982",
+                    "text": "Steer in proportion to Cross Track Error",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 280258,
+          "key": "96fc14af-4785-4570-9639-7931ad52fa33",
+          "title": "Proportional Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "96fc14af-4785-4570-9639-7931ad52fa33",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 280294,
+              "key": "303ce803-9d1b-499c-b44c-2aebc3fbd9ad",
+              "title": "Proportional Control - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gGo-gSFqYqg",
+                "china_cdn_id": "gGo-gSFqYqg.mp4"
+              }
+            },
+            {
+              "id": 280329,
+              "key": "3a9027a1-0f68-4d35-8738-675e789f2b31",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "3a9027a1-0f68-4d35-8738-675e789f2b31",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Your steering angle, alpha, equals a proportional factor of tau to the cross track error. What will happen to the car?",
+                "answers": [
+                  {
+                    "id": "a1489539160354",
+                    "text": "Car never quite reaches reference trajectory",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1489539164448",
+                    "text": "Car overshoots",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1489539165241",
+                    "text": "Either can happen",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 280261,
+          "key": "6ec09a02-a4b3-4099-b96a-d0f145742e13",
+          "title": "Implement P Controller",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6ec09a02-a4b3-4099-b96a-d0f145742e13",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 280295,
+              "key": "2f544608-994c-433b-844b-a46c9a75f917",
+              "title": "Implement P Controller - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OrJgrTc5d04",
+                "china_cdn_id": "OrJgrTc5d04.mp4"
+              }
+            },
+            {
+              "id": 283270,
+              "key": "a9d343c7-afb0-4b43-b75d-03d9467efe6e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the following quiz you'll implement a P controller.\n\nNote that in all of the following programming quizzes the `run` function has been changed to return the x and y coordinates, or trajectory of the robot instead of printing the values. These will then be plotted against the reference line which should give you a better intuition for what the controller is doing. Thus, the code will look slightly different than in the videos but the general controller algorithms remain the same.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 280330,
+              "key": "fe3538a2-63e0-4bc6-aa0c-f2279d389b81",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "fe3538a2-63e0-4bc6-aa0c-f2279d389b81",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6434854930612224",
+                "initial_code_files": [
+                  {
+                    "text": "# -----------\n# User Instructions\n#\n# Implement a P controller by running 100 iterations\n# of robot motion. The desired trajectory for the \n# robot is the x-axis. The steering angle should be set\n# by the parameter tau so that:\n#\n# steering = -tau * crosstrack_error\n#\n# You'll only need to modify the `run` function at the bottom.\n# ------------\n \nimport random\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# ------------------------------------------------\n# \n# this is the Robot class\n#\n\nclass Robot(object):\n    def __init__(self, length=20.0):\n        \"\"\"\n        Creates robot and initializes location/orientation to 0, 0, 0.\n        \"\"\"\n        self.x = 0.0\n        self.y = 0.0\n        self.orientation = 0.0\n        self.length = length\n        self.steering_noise = 0.0\n        self.distance_noise = 0.0\n        self.steering_drift = 0.0\n\n    def set(self, x, y, orientation):\n        \"\"\"\n        Sets a robot coordinate.\n        \"\"\"\n        self.x = x\n        self.y = y\n        self.orientation = orientation % (2.0 * np.pi)\n\n    def set_noise(self, steering_noise, distance_noise):\n        \"\"\"\n        Sets the noise parameters.\n        \"\"\"\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.steering_noise = steering_noise\n        self.distance_noise = distance_noise\n\n    def set_steering_drift(self, drift):\n        \"\"\"\n        Sets the systematical steering drift parameter\n        \"\"\"\n        self.steering_drift = drift\n\n    def move(self, steering, distance, tolerance=0.001, max_steering_angle=np.pi / 4.0):\n        \"\"\"\n        steering = front wheel steering angle, limited by max_steering_angle\n        distance = total distance driven, most be non-negative\n        \"\"\"\n        if steering > max_steering_angle:\n            steering = max_steering_angle\n        if steering < -max_steering_angle:\n            steering = -max_steering_angle\n        if distance < 0.0:\n            distance = 0.0\n\n        # apply noise\n        steering2 = random.gauss(steering, self.steering_noise)\n        distance2 = random.gauss(distance, self.distance_noise)\n\n        # apply steering drift\n        steering2 += self.steering_drift\n\n        # Execute motion\n        turn = np.tan(steering2) * distance2 / self.length\n\n        if abs(turn) < tolerance:\n            # approximate by straight line motion\n            self.x += distance2 * np.cos(self.orientation)\n            self.y += distance2 * np.sin(self.orientation)\n            self.orientation = (self.orientation + turn) % (2.0 * np.pi)\n        else:\n            # approximate bicycle model for motion\n            radius = distance2 / turn\n            cx = self.x - (np.sin(self.orientation) * radius)\n            cy = self.y + (np.cos(self.orientation) * radius)\n            self.orientation = (self.orientation + turn) % (2.0 * np.pi)\n            self.x = cx + (np.sin(self.orientation) * radius)\n            self.y = cy - (np.cos(self.orientation) * radius)\n\n    def __repr__(self):\n        return '[x=%.5f y=%.5f orient=%.5f]' % (self.x, self.y, self.orientation)\n\n############## ADD / MODIFY CODE BELOW ####################\n# ------------------------------------------------------------------------\n#\n# run - does a single control run\nrobot = Robot()\nrobot.set(0, 1, 0)\n\ndef run(robot, tau, n=100, speed=1.0):\n    x_trajectory = []\n    y_trajectory = []\n    # TODO: your code here\n    return x_trajectory, y_trajectory\n    \nx_trajectory, y_trajectory = run(robot, 0.1)\nn = len(x_trajectory)\n\nfig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 8))\nax1.plot(x_trajectory, y_trajectory, 'g', label='P controller')\nax1.plot(x_trajectory, np.zeros(n), 'r', label='reference')\n",
+                    "name": "proportional.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 283333,
+          "key": "78047d57-fa81-4047-accf-f64416d8875b",
+          "title": "P Controller Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78047d57-fa81-4047-accf-f64416d8875b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283335,
+              "key": "bc667fbe-305f-4c65-9ca4-5efeec4c8f4d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\ndef run(robot, tau, n=100, speed=1.0):\n    x_trajectory = []\n    y_trajectory = []\n    for i in range(n):\n        cte = robot.y\n        steer = -tau * cte\n        robot.move(steer, speed)\n        x_trajectory.append(robot.x)\n        y_trajectory.append(robot.y)\n    return x_trajectory, y_trajectory\n```\n\nThe cross track error, `cte` is the current y position of the robot (our reference is a horizontal line) along the x-axis. To get the steering value we multiply the `tau` parameter with the cte. We then call the `move` method which causes the robot to move based on the `steer` and `speed` values. Add the x and y coordinates to the respective lists and then return them at the end.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 283334,
+              "key": "98a2a9c4-ede8-4d66-9696-8d43394d73ea",
+              "title": "Implement P Controller Solution - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wvdFPAOCb64",
+                "china_cdn_id": "wvdFPAOCb64.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 280262,
+          "key": "75fcbe79-a3bf-4784-bd34-896cc22654b0",
+          "title": "Oscillations",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "75fcbe79-a3bf-4784-bd34-896cc22654b0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 280296,
+              "key": "7095b732-178b-4a7b-9536-a459e1874cd0",
+              "title": "Oscillations - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CO3zjkxBaIc",
+                "china_cdn_id": "CO3zjkxBaIc.mp4"
+              }
+            },
+            {
+              "id": 280331,
+              "key": "4fb4dbb8-ef5a-4642-a0b5-e0a66af87b1f",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4fb4dbb8-ef5a-4642-a0b5-e0a66af87b1f",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Tau, the control parameter, changes from 0.1 to 0.3.  What happens?",
+                "answers": [
+                  {
+                    "id": "a1489540040604",
+                    "text": "Oscillates faster",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1489540066441",
+                    "text": "Oscillates slower",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1489540072081",
+                    "text": "None of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 280263,
+          "key": "634e513f-5d0e-4b0d-9885-500c555ae0db",
+          "title": "PD Controller",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "634e513f-5d0e-4b0d-9885-500c555ae0db",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 280297,
+              "key": "e737232b-c61f-40c7-b2d7-950fdd21887a",
+              "title": "PD Controller - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kVYy2kjZjhA",
+                "china_cdn_id": "kVYy2kjZjhA.mp4"
+              }
+            },
+            {
+              "id": 283275,
+              "key": "3a27034d-9705-422b-8209-09bd99202546",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the following quiz you'll implement the PD controller.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 280332,
+              "key": "d566dae5-6cf1-4700-8fd3-513f6357c80b",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "d566dae5-6cf1-4700-8fd3-513f6357c80b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5148343379558400",
+                "initial_code_files": [
+                  {
+                    "text": "# -----------\n# User Instructions\n#\n# Implement a PD controller by running 100 iterations\n# of robot motion. The steering angle should be set\n# by the parameter tau_p and tau_d so that:\n#\n# steering = -tau_p * CTE - tau_d * diff_CTE\n# where differential crosstrack error (diff_CTE)\n# is given by CTE(t) - CTE(t-1)\n#\n#\n# Only modify code at the bottom! Look for the TODO\n# ------------\n \nimport random\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# ------------------------------------------------\n# \n# this is the Robot class\n#\n\nclass Robot(object):\n    def __init__(self, length=20.0):\n        \"\"\"\n        Creates robot and initializes location/orientation to 0, 0, 0.\n        \"\"\"\n        self.x = 0.0\n        self.y = 0.0\n        self.orientation = 0.0\n        self.length = length\n        self.steering_noise = 0.0\n        self.distance_noise = 0.0\n        self.steering_drift = 0.0\n\n    def set(self, x, y, orientation):\n        \"\"\"\n        Sets a robot coordinate.\n        \"\"\"\n        self.x = x\n        self.y = y\n        self.orientation = orientation % (2.0 * np.pi)\n\n    def set_noise(self, steering_noise, distance_noise):\n        \"\"\"\n        Sets the noise parameters.\n        \"\"\"\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.steering_noise = steering_noise\n        self.distance_noise = distance_noise\n\n    def set_steering_drift(self, drift):\n        \"\"\"\n        Sets the systematical steering drift parameter\n        \"\"\"\n        self.steering_drift = drift\n\n    def move(self, steering, distance, tolerance=0.001, max_steering_angle=np.pi / 4.0):\n        \"\"\"\n        steering = front wheel steering angle, limited by max_steering_angle\n        distance = total distance driven, most be non-negative\n        \"\"\"\n        if steering > max_steering_angle:\n            steering = max_steering_angle\n        if steering < -max_steering_angle:\n            steering = -max_steering_angle\n        if distance < 0.0:\n            distance = 0.0\n\n        # apply noise\n        steering2 = random.gauss(steering, self.steering_noise)\n        distance2 = random.gauss(distance, self.distance_noise)\n\n        # apply steering drift\n        steering2 += self.steering_drift\n\n        # Execute motion\n        turn = np.tan(steering2) * distance2 / self.length\n\n        if abs(turn) < tolerance:\n            # approximate by straight line motion\n            self.x += distance2 * np.cos(self.orientation)\n            self.y += distance2 * np.sin(self.orientation)\n            self.orientation = (self.orientation + turn) % (2.0 * np.pi)\n        else:\n            # approximate bicycle model for motion\n            radius = distance2 / turn\n            cx = self.x - (np.sin(self.orientation) * radius)\n            cy = self.y + (np.cos(self.orientation) * radius)\n            self.orientation = (self.orientation + turn) % (2.0 * np.pi)\n            self.x = cx + (np.sin(self.orientation) * radius)\n            self.y = cy - (np.cos(self.orientation) * radius)\n\n    def __repr__(self):\n        return '[x=%.5f y=%.5f orient=%.5f]' % (self.x, self.y, self.orientation)\n\n############## ADD / MODIFY CODE BELOW ####################\n# ------------------------------------------------------------------------\n#\n# run - does a single control run\n\n# previous P controller\ndef run_p(robot, tau, n=100, speed=1.0):\n    x_trajectory = []\n    y_trajectory = []\n    for i in range(n):\n        cte = robot.y\n        steer = -tau * cte\n        robot.move(steer, speed)\n        x_trajectory.append(robot.x)\n        y_trajectory.append(robot.y)\n    return x_trajectory, y_trajectory\n    \nrobot = Robot()\nrobot.set(0, 1, 0)\n\ndef run(robot, tau_p, tau_d, n=100, speed=1.0):\n    x_trajectory = []\n    y_trajectory = []\n    # TODO: your code here\n    return x_trajectory, y_trajectory\n    \nx_trajectory, y_trajectory = run(robot, 0.2, 3.0)\nn = len(x_trajectory)\n\nfig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 8))\nax1.plot(x_trajectory, y_trajectory, 'g', label='PD controller')\nax1.plot(x_trajectory, np.zeros(n), 'r', label='reference')\n",
+                    "name": "pd.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 280333,
+          "key": "f6fc8d70-cc44-40d1-bf52-39ba69919430",
+          "title": "PD Controller Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f6fc8d70-cc44-40d1-bf52-39ba69919430",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283410,
+              "key": "ad7be33a-4845-45d9-a0c1-7b18c115270a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\ndef run(robot, tau_p, tau_d, n=100, speed=1.0):\n    x_trajectory = []\n    y_trajectory = []\n    prev_cte = robot.y\n    for i in range(n):\n        cte = robot.y\n        diff_cte = cte - prev_cte\n        prev_cte = cte\n        steer = -tau_p * cte - tau_d * diff_cte\n        robot.move(steer, speed)\n        x_trajectory.append(robot.x)\n        y_trajectory.append(robot.y)\n    return x_trajectory, y_trajectory\n```\n\nThis is very similar to the P controller. We've added the `prev_cte` variable which is assigned to the previous CTE and `diff_cte`, the difference between the current CTE and previous CTE. We then put it all together with the new `tau_d` parameter to calculate the new steering value, `-tau_p * cte - tau_d * diff_cte`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 283411,
+              "key": "f64e4e11-8deb-4951-b23c-213766918aea",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/March/58cc8ee2_pd/pd.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f64e4e11-8deb-4951-b23c-213766918aea",
+              "caption": "",
+              "alt": null,
+              "width": 640,
+              "height": 480,
+              "instructor_notes": null
+            },
+            {
+              "id": 283412,
+              "key": "093309e5-0287-4726-8391-8d4d30387611",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As we can see from the above image the PD controller performs much better!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 280334,
+              "key": "35be7677-db5e-4bf1-a341-a34ede20d202",
+              "title": "PD Controller Solution - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "YgomQgfFlTQ",
+                "china_cdn_id": "YgomQgfFlTQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 280264,
+          "key": "dd7258fc-3823-487c-9256-4bb12bd0939a",
+          "title": "Systematic Bias",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "dd7258fc-3823-487c-9256-4bb12bd0939a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 280298,
+              "key": "cbba4a3d-6ecd-4901-850b-bc8065215677",
+              "title": "Systematic Bias - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1wxFEcqq3_c",
+                "china_cdn_id": "1wxFEcqq3_c.mp4"
+              }
+            },
+            {
+              "id": 280335,
+              "key": "e2d46726-43f8-47d0-93cb-f5223e4d76cc",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e2d46726-43f8-47d0-93cb-f5223e4d76cc",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": " What happens when you run my proportional controller with parameter 0.2, and the differential controller set to 0?",
+                "answers": [
+                  {
+                    "id": "a1489540542364",
+                    "text": "Just as before",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1489540545995",
+                    "text": "Causes a big CTE",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 280265,
+          "key": "5689c32a-2965-458f-8dab-8c9a1d082e31",
+          "title": "Is PD Enough",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5689c32a-2965-458f-8dab-8c9a1d082e31",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 280300,
+              "key": "e8c22a34-9094-4ca5-b06d-67ac1b1f06d9",
+              "title": "Is PD Enough - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gDbpwPdStlY",
+                "china_cdn_id": "gDbpwPdStlY.mp4"
+              }
+            },
+            {
+              "id": 280336,
+              "key": "2949ba28-1a97-436d-8edf-b7b39f077b49",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "2949ba28-1a97-436d-8edf-b7b39f077b49",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Can the differential term, or D-term, solve this problem?",
+                "answers": [
+                  {
+                    "id": "a1489540819713",
+                    "text": "Yes",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1489540832221",
+                    "text": "No",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 280266,
+          "key": "d9a5a2bc-2884-4806-a0d4-b7926bf229be",
+          "title": "PID implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d9a5a2bc-2884-4806-a0d4-b7926bf229be",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 280301,
+              "key": "bd1552f3-153f-4f4d-b41e-1738cb7ed65e",
+              "title": "PID Implementation - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Ag8H3Iit9j4",
+                "china_cdn_id": "Ag8H3Iit9j4.mp4"
+              }
+            },
+            {
+              "id": 283276,
+              "key": "e79db984-4712-491d-b5df-27e485f3938d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the following quiz you'll implement the PID controller.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 280337,
+              "key": "d17720fc-6173-4b97-ba9e-c782c3f32ee3",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "d17720fc-6173-4b97-ba9e-c782c3f32ee3",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6398949540888576",
+                "initial_code_files": [
+                  {
+                    "text": "# -----------\n# User Instructions\n#\n# Implement a P controller by running 100 iterations\n# of robot motion. The steering angle should be set\n# by the parameter tau so that:\n#\n# steering = -tau_p * CTE - tau_d * diff_CTE - tau_i * int_CTE\n#\n# where the integrated crosstrack error (int_CTE) is\n# the sum of all the previous crosstrack errors.\n# This term works to cancel out steering drift.\n#\n# Only modify code at the bottom! Look for the TODO.\n# ------------\n\nimport random\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# ------------------------------------------------\n# \n# this is the Robot class\n#\n\nclass Robot(object):\n    def __init__(self, length=20.0):\n        \"\"\"\n        Creates robot and initializes location/orientation to 0, 0, 0.\n        \"\"\"\n        self.x = 0.0\n        self.y = 0.0\n        self.orientation = 0.0\n        self.length = length\n        self.steering_noise = 0.0\n        self.distance_noise = 0.0\n        self.steering_drift = 0.0\n\n    def set(self, x, y, orientation):\n        \"\"\"\n        Sets a robot coordinate.\n        \"\"\"\n        self.x = x\n        self.y = y\n        self.orientation = orientation % (2.0 * np.pi)\n\n    def set_noise(self, steering_noise, distance_noise):\n        \"\"\"\n        Sets the noise parameters.\n        \"\"\"\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.steering_noise = steering_noise\n        self.distance_noise = distance_noise\n\n    def set_steering_drift(self, drift):\n        \"\"\"\n        Sets the systematical steering drift parameter\n        \"\"\"\n        self.steering_drift = drift\n\n    def move(self, steering, distance, tolerance=0.001, max_steering_angle=np.pi / 4.0):\n        \"\"\"\n        steering = front wheel steering angle, limited by max_steering_angle\n        distance = total distance driven, most be non-negative\n        \"\"\"\n        if steering > max_steering_angle:\n            steering = max_steering_angle\n        if steering < -max_steering_angle:\n            steering = -max_steering_angle\n        if distance < 0.0:\n            distance = 0.0\n\n        # apply noise\n        steering2 = random.gauss(steering, self.steering_noise)\n        distance2 = random.gauss(distance, self.distance_noise)\n\n        # apply steering drift\n        steering2 += self.steering_drift\n\n        # Execute motion\n        turn = np.tan(steering2) * distance2 / self.length\n\n        if abs(turn) < tolerance:\n            # approximate by straight line motion\n            self.x += distance2 * np.cos(self.orientation)\n            self.y += distance2 * np.sin(self.orientation)\n            self.orientation = (self.orientation + turn) % (2.0 * np.pi)\n        else:\n            # approximate bicycle model for motion\n            radius = distance2 / turn\n            cx = self.x - (np.sin(self.orientation) * radius)\n            cy = self.y + (np.cos(self.orientation) * radius)\n            self.orientation = (self.orientation + turn) % (2.0 * np.pi)\n            self.x = cx + (np.sin(self.orientation) * radius)\n            self.y = cy - (np.cos(self.orientation) * radius)\n\n    def __repr__(self):\n        return '[x=%.5f y=%.5f orient=%.5f]' % (self.x, self.y, self.orientation)\n\n############## ADD / MODIFY CODE BELOW ####################\n# ------------------------------------------------------------------------\n#\n# run - does a single control run\n\nrobot = Robot()\nrobot.set(0, 1, 0)\n\n\ndef run(robot, tau_p, tau_d, tau_i, n=100, speed=1.0):\n    x_trajectory = []\n    y_trajectory = []\n    # TODO: your code here\n    return x_trajectory, y_trajectory\n\n\nx_trajectory, y_trajectory = run(robot, 0.2, 3.0, 0.004)\nn = len(x_trajectory)\n\nfig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8,8))\nax1.plot(x_trajectory, y_trajectory, 'g', label='PID controller')\nax1.plot(x_trajectory, np.zeros(n), 'r', label='reference')\n",
+                    "name": "pid.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 280338,
+          "key": "db31b93d-6741-4e5c-b63c-fa6dd5c170ff",
+          "title": "PID Implementation Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "db31b93d-6741-4e5c-b63c-fa6dd5c170ff",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283413,
+              "key": "7bed2520-b2f0-4c8a-9c99-97135037ca14",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\ndef run(robot, tau_p, tau_d, tau_i, n=100, speed=1.0):\n    x_trajectory = []\n    y_trajectory = []\n    prev_cte = robot.y\n    int_cte = 0\n    for i in range(n):\n        cte = robot.y\n        diff_cte = cte - prev_cte\n        prev_cte = cte\n        int_cte += cte\n        steer = -tau_p * cte - tau_d * diff_cte - tau_i * int_cte\n        robot.move(steer, speed)\n        x_trajectory.append(robot.x)\n        y_trajectory.append(robot.y)\n    return x_trajectory, y_trajectory\n```\n\nOk. With the integral term we're keeping track of all the previous CTEs, initially we set `int_cte` to 0 and then add the current `cte` term to the count `int_cte += cte`. Finally we update the steering value, `-tau_p * cte - tau_d * diff_cte - tau_i * int_cte` with the new `tau_i` parameter.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 283414,
+              "key": "48083bca-d562-485b-a4d7-21573e7b5889",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/March/58cc8ee5_pid/pid.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48083bca-d562-485b-a4d7-21573e7b5889",
+              "caption": "",
+              "alt": null,
+              "width": 640,
+              "height": 480,
+              "instructor_notes": null
+            },
+            {
+              "id": 283415,
+              "key": "f0536b0d-0164-468c-9f14-22cccf84eae4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This may not seem all that impressive. PID seems to do worse than the PD controller! The purpose of the I term is to compensate for biases, and the current robot has no bias.\n\nIn the next programming quiz we'll add steering drift and revisit this graph.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 280339,
+              "key": "18f562dc-4d61-4f03-8678-07153072047c",
+              "title": "PID Implementation Solution - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dgZnqCfyCoA",
+                "china_cdn_id": "dgZnqCfyCoA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 280267,
+          "key": "0abe5db7-d8b9-4796-9fb4-eb98614b1d3c",
+          "title": "Twiddle",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0abe5db7-d8b9-4796-9fb4-eb98614b1d3c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 280302,
+              "key": "79e0493f-58cd-4c27-a31f-48d8af67aa87",
+              "title": "Twiddle - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2uQ2BSzDvXs",
+                "china_cdn_id": "2uQ2BSzDvXs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 280268,
+          "key": "34d4a65f-44d9-462f-b246-c2e653a19c1d",
+          "title": "Parameter Optimization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "34d4a65f-44d9-462f-b246-c2e653a19c1d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 280303,
+              "key": "b9011b0a-51d5-41f8-9482-74668223bf50",
+              "title": "Parameter Optimization - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "A2b3F5Ae53Y",
+                "china_cdn_id": "A2b3F5Ae53Y.mp4"
+              }
+            },
+            {
+              "id": 283277,
+              "key": "5ce0e8ff-8176-45f8-a4be-c26091b703e8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the following quiz you'll implement the twiddle algorithm for a PID controller. Additionally, the robot has a steering drift!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 280340,
+              "key": "8b7a58ce-d511-4d61-b3e3-6f989efdf060",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Twiddle notes:\n<img src=\"//lh3.ggpht.com/a6jAptpIba0jfzmpzzp75OZgZAHSkOdojInaASfehI2baSMFi-oNR8gt_kz2OQ6Rk1SJHkd4hEHbt8UP8g=s0#w=796&h=407\">",
+              "user_state": {
+                "node_key": "8b7a58ce-d511-4d61-b3e3-6f989efdf060",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6615842168111104",
+                "initial_code_files": [
+                  {
+                    "text": "# ----------------\n# User Instructions\n#\n# Implement twiddle as shown in the previous two videos.\n# Your accumulated error should be very small!\n#\n# You don't have to use the exact values as shown in the video\n# play around with different values! This quiz isn't graded just see\n# how low of an error you can get.\n#\n# Try to get your error below 1.0e-10 with as few iterations\n# as possible (too many iterations will cause a timeout).\n#\n# No cheating!\n# ------------\n\nimport random\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# ------------------------------------------------\n# \n# this is the Robot class\n#\n\nclass Robot(object):\n    def __init__(self, length=20.0):\n        \"\"\"\n        Creates robot and initializes location/orientation to 0, 0, 0.\n        \"\"\"\n        self.x = 0.0\n        self.y = 0.0\n        self.orientation = 0.0\n        self.length = length\n        self.steering_noise = 0.0\n        self.distance_noise = 0.0\n        self.steering_drift = 0.0\n\n    def set(self, x, y, orientation):\n        \"\"\"\n        Sets a robot coordinate.\n        \"\"\"\n        self.x = x\n        self.y = y\n        self.orientation = orientation % (2.0 * np.pi)\n\n    def set_noise(self, steering_noise, distance_noise):\n        \"\"\"\n        Sets the noise parameters.\n        \"\"\"\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.steering_noise = steering_noise\n        self.distance_noise = distance_noise\n\n    def set_steering_drift(self, drift):\n        \"\"\"\n        Sets the systematical steering drift parameter\n        \"\"\"\n        self.steering_drift = drift\n\n    def move(self, steering, distance, tolerance=0.001, max_steering_angle=np.pi / 4.0):\n        \"\"\"\n        steering = front wheel steering angle, limited by max_steering_angle\n        distance = total distance driven, most be non-negative\n        \"\"\"\n        if steering > max_steering_angle:\n            steering = max_steering_angle\n        if steering < -max_steering_angle:\n            steering = -max_steering_angle\n        if distance < 0.0:\n            distance = 0.0\n\n        # apply noise\n        steering2 = random.gauss(steering, self.steering_noise)\n        distance2 = random.gauss(distance, self.distance_noise)\n\n        # apply steering drift\n        steering2 += self.steering_drift\n\n        # Execute motion\n        turn = np.tan(steering2) * distance2 / self.length\n\n        if abs(turn) < tolerance:\n            # approximate by straight line motion\n            self.x += distance2 * np.cos(self.orientation)\n            self.y += distance2 * np.sin(self.orientation)\n            self.orientation = (self.orientation + turn) % (2.0 * np.pi)\n        else:\n            # approximate bicycle model for motion\n            radius = distance2 / turn\n            cx = self.x - (np.sin(self.orientation) * radius)\n            cy = self.y + (np.cos(self.orientation) * radius)\n            self.orientation = (self.orientation + turn) % (2.0 * np.pi)\n            self.x = cx + (np.sin(self.orientation) * radius)\n            self.y = cy - (np.cos(self.orientation) * radius)\n\n    def __repr__(self):\n        return '[x=%.5f y=%.5f orient=%.5f]' % (self.x, self.y, self.orientation)\n\n############## ADD / MODIFY CODE BELOW ####################\n# ------------------------------------------------------------------------\n#\n# run - does a single control run\n\n\ndef make_robot():\n    \"\"\"\n    Resets the robot back to the initial position and drift.\n    You'll want to call this after you call `run`.\n    \"\"\"\n    robot = Robot()\n    robot.set(0, 1, 0)\n    robot.set_steering_drift(10 / 180 * np.pi)\n    return robot\n\n\n# NOTE: We use params instead of tau_p, tau_d, tau_i\ndef run(robot, params, n=100, speed=1.0):\n    x_trajectory = []\n    y_trajectory = []\n    err = 0\n    prev_cte = robot.y\n    int_cte = 0\n    for i in range(2 * n):\n        cte = robot.y\n        diff_cte = cte - prev_cte\n        int_cte += cte\n        prev_cte = cte\n        steer = -params[0] * cte - params[1] * diff_cte - params[2] * int_cte\n        robot.move(steer, speed)\n        x_trajectory.append(robot.x)\n        y_trajectory.append(robot.y)\n        if i >= n:\n            err += cte ** 2\n    return x_trajectory, y_trajectory, err / n\n\n\n# Make this tolerance bigger if you are timing out!\ndef twiddle(tol=0.2): \n    # Don't forget to call `make_robot` before every call of `run`!\n    p = [0, 0, 0]\n    dp = [1, 1, 1]\n    robot = make_robot()\n    x_trajectory, y_trajectory, best_err = run(robot, p)\n    # TODO: twiddle loop here\n    \n    return p, best_err\n\n\nparams, err = twiddle()\nprint(\"Final twiddle error = {}\".format(err))\nrobot = make_robot()\nx_trajectory, y_trajectory, err = run(robot, params)\nn = len(x_trajectory)\n\nfig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 8))\nax1.plot(x_trajectory, y_trajectory, 'g', label='Twiddle PID controller')\nax1.plot(x_trajectory, np.zeros(n), 'r', label='reference')\n",
+                    "name": "twiddle.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 280341,
+          "key": "87d07dd3-70f3-46a0-b35c-c8528792d90f",
+          "title": "Parameter Optimization Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "87d07dd3-70f3-46a0-b35c-c8528792d90f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 283418,
+              "key": "43414f04-d1bf-4537-b500-9c3fef294a12",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\ndef twiddle(tol=0.2): \n    p = [0, 0, 0]\n    dp = [1, 1, 1]\n    robot = make_robot()\n    x_trajectory, y_trajectory, best_err = run(robot, p)\n\n    it = 0\n    while sum(dp) > tol:\n        print(\"Iteration {}, best error = {}\".format(it, best_err))\n        for i in range(len(p)):\n            p[i] += dp[i]\n            robot = make_robot()\n            x_trajectory, y_trajectory, err = run(robot, p)\n\n            if err < best_err:\n                best_err = err\n                dp[i] *= 1.1\n            else:\n                p[i] -= 2 * dp[i]\n                robot = make_robot()\n                x_trajectory, y_trajectory, err = run(robot, p)\n\n                if err < best_err:\n                    best_err = err\n                    dp[i] *= 1.1\n                else:\n                    p[i] += dp[i]\n                    dp[i] *= 0.9\n        it += 1\n    return p\n```\n\nThis follows Sebastian's pseudocode very closely. Before each run we make a new `Robot` with `make_robot`, ensuring on each run the robot starts from the same position. You may find it fruitful to change the magic numbers altering `p` and `dp`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 283416,
+              "key": "ddd2fd42-36ec-4346-97a2-78743501d3f6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/March/58cc9802_twiddle/twiddle.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ddd2fd42-36ec-4346-97a2-78743501d3f6",
+              "caption": "",
+              "alt": null,
+              "width": 640,
+              "height": 480,
+              "instructor_notes": null
+            },
+            {
+              "id": 283417,
+              "key": "029a1cad-2f6b-4985-b1dd-482523ed50a6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now the PID controller outshines PD controller! Also, with twiddle the PID controller converges faster but we overshoot drastically at first so it's a tradeoff. Try tuning twiddle and see if you can reduce the overshoot.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 280342,
+              "key": "7f494af4-ae60-49d7-8df0-3bfe73537887",
+              "title": "Parameter Optimization Solution - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "YQ5Pa-OKQm0",
+                "china_cdn_id": "YQ5Pa-OKQm0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 663285,
+          "key": "a933768b-3c4c-4eb5-8793-e478db3c455c",
+          "title": "Outro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a933768b-3c4c-4eb5-8793-e478db3c455c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663286,
+              "key": "7ae72bd2-9cba-4ada-ba7b-aca042de7b7b",
+              "title": "L16 PID Control A02 L Outro V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "iMLr8K6o8cM",
+                "china_cdn_id": "iMLr8K6o8cM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 809771,
+          "key": "3b554168-a2b1-40a8-84fb-9d7525e446f4",
+          "title": "Bonus Round: Control [Optional]",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3b554168-a2b1-40a8-84fb-9d7525e446f4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 809784,
+              "key": "d8210e21-fd25-4e2d-8764-dea0a93b60f2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Resources on Control\n\nNice work reaching the end of the control content! While you still have the project left to do here, we're also providing some additional resources and recent research on the topic that you can come back to if you have time later on.\n\nReading research papers is a great way to get exposure to the latest and greatest in the field, as well as expand your learning. However, just like the project ahead, it's often best to *learn by doing* - if you find a paper that really excites you, try to implement it (or even something better) yourself!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 809785,
+              "key": "a48f0fbb-ff7f-487d-ba00-3d2f6b99443e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##### Optional Reading\n\nAll of these are completely optional reading - you could spend hours reading through the entirety of these! We suggest moving onto the project first so you have what you’ve learned fresh on your mind, before coming back to check these out. \n\nWe've categorized these papers to hopefully help you narrow down which ones might be of interest, as well as including their *Abstract* section, which summarizes the paper.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 810185,
+              "key": "0f734c72-caa7-4ee8-b7f4-7f10c59d111e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Model Predictive Control (MPC)\n\n[Vision-Based High Speed Driving with a Deep Dynamic Observer](https://arxiv.org/abs/1812.02071) by P. Drews, et. al.\n> **Abstract:** In this paper we present a framework for combining deep learning-based road detection, particle filters, and Model Predictive Control (MPC) to drive aggressively using only a monocular camera, IMU, and wheel speed sensors. This framework uses deep convolutional neural networks combined with LSTMs to learn a local cost map representation of the track in front of the vehicle. A particle filter uses this dynamic observation model to localize in a schematic map, and MPC is used to drive aggressively using this particle filter based state estimate. We show extensive real world testing results, and demonstrate reliable operation of the vehicle at the friction limits on a complex dirt track. We reach speeds above 27 mph (12 m/s) on a dirt track with a 105 foot (32m) long straight using our 1:5 scale test vehicle. [...]\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 810186,
+              "key": "2672f625-148e-45e4-a088-d8558eafc2ad",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Reinforcement Learning-based\n\n[Reinforcement Learning and Deep Learning based Lateral Control for Autonomous Driving](https://arxiv.org/abs/1810.12778) by D. Li, et. al.\n> **Abstract:** This paper investigates the vision-based autonomous driving with deep learning and reinforcement learning methods. Different from the end-to-end learning method, our method breaks the vision-based lateral control system down into a perception module and a control module. The perception module which is based on a multi-task learning neural network first takes a driver-view image as its input and predicts the track features. The control module which is based on reinforcement learning then makes a control decision based on these features. In order to improve the data efficiency, we propose visual TORCS (VTORCS), a deep reinforcement learning environment which is based on the open racing car simulator (TORCS). By means of the provided functions, one can train an agent with the input of an image or various physical sensor measurement, or evaluate the perception algorithm on this simulator. The trained reinforcement learning controller outperforms the linear quadratic regulator (LQR) controller and model predictive control (MPC) controller on different tracks. The experiments demonstrate that the perception module shows promising performance and the controller is capable of controlling the vehicle drive well along the track center with visual input.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 810187,
+              "key": "be7bc9da-d942-4d16-a378-9498e5335d81",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Behavioral Cloning\nThe below paper shows one of the techniques Waymo has researched using imitation learning (aka behavioral cloning) to drive a car.\n\n[ChauffeurNet: Learning to Drive by Imitating the Best and Synthesizing the Worst](https://arxiv.org/abs/1812.03079) by M. Bansal, A. Krizhevsky and A. Ogale\n> **Abstract:** Our goal is to train a policy for autonomous driving via imitation learning that is robust enough to drive a real vehicle. We find that standard behavior cloning is insufficient for handling complex driving scenarios, even when we leverage a perception system for preprocessing the input and a controller for executing the output on the car: 30 million examples are still not enough. We propose exposing the learner to synthesized data in the form of perturbations to the expert's driving, which creates interesting situations such as collisions and/or going off the road. Rather than purely imitating all data, we augment the imitation loss with additional losses that penalize undesirable events and encourage progress -- the perturbations then provide an important signal for these losses and lead to robustness of the learned model. We show that the ChauffeurNet model can handle complex situations in simulation, and present ablation experiments that emphasize the importance of each of our proposed changes and show that the model is responding to the appropriate causal factors. Finally, we demonstrate the model driving a car in the real world.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

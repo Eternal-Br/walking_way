@@ -1,0 +1,381 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Challenge 2
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      C++ Checkpoint
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. High Performance Computing.html">
+       01. High Performance Computing
+      </a>
+     </li>
+     <li class="">
+      <a href="02. [Optional] Beta Test our Upcoming C++ Course.html">
+       02. [Optional] Beta Test our Upcoming C++ Course
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Challenge 1.html">
+       03. Challenge 1
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Challenge 1 Solution.html">
+       04. Challenge 1 Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Challenge 2.html">
+       05. Challenge 2
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Challenge 2 Solution.html">
+       06. Challenge 2 Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Challenge 3.html">
+       07. Challenge 3
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Challenge 3 Solution.html">
+       08. Challenge 3 Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Challenge 4.html">
+       09. Challenge 4
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Challenge 4 Solution.html">
+       10. Challenge 4 Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Challenge 5.html">
+       11. Challenge 5
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Challenge 5 Solution.html">
+       12. Challenge 5 Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Outro and Advice.html">
+       13. Outro and Advice
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. Challenge 2
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="control-flow">
+          Control Flow
+         </h3>
+         <p>
+          In this quiz, I want you to write a
+          <code>
+           for
+          </code>
+          loop. Your loop will live inside a function that will be passed an int,
+          <code>
+           n
+          </code>
+          , and a string,
+          <code>
+           str
+          </code>
+          . Your loop should print the
+          <code>
+           str
+          </code>
+          <code>
+           n
+          </code>
+          times.
+         </p>
+         <p>
+          There's another twist here - you will
+          <strong>
+           not
+          </strong>
+          need to touch main.cpp this time. Instead, your code will be written inside the eponymous function in PrintString.cpp. Make note of the way that main.cpp
+          <code>
+           #include
+          </code>
+          s PrintString.h. You'll be
+          <code>
+           #include
+          </code>
+          ing files soon.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <div>
+         </div>
+         <form>
+          <fieldset>
+           <legend>
+            Task List:
+           </legend>
+           <div>
+            <input id="0fc8e158-fcda-4fcb-924e-de397cdf5737--0" type="checkbox"/>
+            <label for="0fc8e158-fcda-4fcb-924e-de397cdf5737--0">
+             <p>
+              Make sure the loop repeats n times.
+             </p>
+            </label>
+           </div>
+           <div>
+            <input id="0fc8e158-fcda-4fcb-924e-de397cdf5737--1" type="checkbox"/>
+            <label for="0fc8e158-fcda-4fcb-924e-de397cdf5737--1">
+             <p>
+              Make sure the loop prints the string (followed by a newline) each time.
+             </p>
+            </label>
+           </div>
+          </fieldset>
+         </form>
+         <div>
+          <h4>
+           Task Feedback:
+          </h4>
+          <p>
+           Awesome! Make sure you test it.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="269326-PrintString-cpp" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#269326-PrintString-cpp" id="tab-269326-PrintString-cpp" role="tab">
+            PrintString.cpp
+           </a>
+           <a aria-controls="269326-main-cpp" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#269326-main-cpp" id="tab-269326-main-cpp" role="tab">
+            main.cpp
+           </a>
+           <a aria-controls="269326-PrintString-h" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#269326-PrintString-h" id="tab-269326-PrintString-h" role="tab">
+            PrintString.h
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-269326-PrintString-cpp" class="tab-pane active show" id="269326-PrintString-cpp" role="tabpanel">
+            <pre><code></code>#include "PrintString.h"
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+void PrintString(std::string str, int n) {
+  // your code goes here! print str n times. Follow each str with a newline,
+  // eg. std::cout &lt;&lt; str &lt;&lt; std::endl;
+}
+</pre>
+           </div>
+           <div aria-labelledby="tab-269326-main-cpp" class="tab-pane" id="269326-main-cpp" role="tabpanel">
+            <pre><code></code>/**
+ * No need to change this file (unless you want to change the test case below).
+ */
+
+#include &lt;iostream&gt;
+#include "PrintString.h"
+
+int main() {
+  PrintString("This is a test.", 10);
+}
+</pre>
+           </div>
+           <div aria-labelledby="tab-269326-PrintString-h" class="tab-pane" id="269326-PrintString-h" role="tabpanel">
+            <pre><code></code>/**
+ * This header file defines the function signature for PrintString.
+ */
+
+#ifndef PRINTSTRING_H
+#define PRINTSTRING_H
+
+#include &lt;string&gt;
+
+void PrintString(std::string, int);
+
+#endif  // PRINTSTRING_H</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. Challenge 2 Solution.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Challenge 2')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

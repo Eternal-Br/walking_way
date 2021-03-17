@@ -1,0 +1,390 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627668,
+      "key": "e5de5b5a-d706-40ae-902c-ba113b088de7",
+      "title": "Motion Models",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn about vehicle movement and motion models to predict where your car will be at a future time.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/e5de5b5a-d706-40ae-902c-ba113b088de7/627668/1538942255132/Motion+Models+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/e5de5b5a-d706-40ae-902c-ba113b088de7/627668/1538942252792/Motion+Models+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 663310,
+          "key": "2fd78951-fc8e-4334-b7ce-49d3f908e3dd",
+          "title": "Motion in Autonomy",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2fd78951-fc8e-4334-b7ce-49d3f908e3dd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663311,
+              "key": "510967f6-a189-4d88-b18e-e854bced6a59",
+              "title": "05 Localization A03 Motion In Autonomy",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yiinXr2rV2M",
+                "china_cdn_id": "yiinXr2rV2M.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 279181,
+          "key": "10031f45-4715-4662-ab4a-adcc25e3b700",
+          "title": "Lesson Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "10031f45-4715-4662-ab4a-adcc25e3b700",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 286275,
+              "key": "ab266f75-2646-468e-b068-1a83f4c61a80",
+              "title": "Lesson Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-bPE6USDH3A",
+                "china_cdn_id": "-bPE6USDH3A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 279182,
+          "key": "77d6ba2d-83c5-441e-b3f2-4cd75d052801",
+          "title": "Motion Models: Bicycle Model",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "77d6ba2d-83c5-441e-b3f2-4cd75d052801",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 286274,
+              "key": "d3c86b32-6210-49e6-9ab8-5f46799de351",
+              "title": "Motion Models",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "B2bXg8LaeF0",
+                "china_cdn_id": "B2bXg8LaeF0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 279183,
+          "key": "ff7658c9-6edd-498b-b066-1578ec3f97aa",
+          "title": "Yaw Rate and Velocity",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ff7658c9-6edd-498b-b066-1578ec3f97aa",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 286276,
+              "key": "c01d597e-1053-4240-a776-b2edf6c264d7",
+              "title": "Yaw Rate & Velocity",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "tS7BYlCo3nU",
+                "china_cdn_id": "tS7BYlCo3nU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 279184,
+          "key": "7c96d077-290e-490d-8cef-53a7596c8aaa",
+          "title": "Note on Frames of Reference",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7c96d077-290e-490d-8cef-53a7596c8aaa",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 287461,
+              "key": "709a4cf0-60c3-4a58-ac4f-0f7d1cde4dc5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Note on Frames of Reference: Localization versus Sensor Fusion\n\nYou may have just noticed that the frames of reference are different than what you used during the Sensor Fusion lessons. Let’s take a look at the general similarities and differences:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 287462,
+              "key": "f90d6123-095c-41bf-8dfa-7e047160dcec",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| Localization | Sensor Fusion |\n|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|\n| Things are in vehicle coordinates OR map coordinates. The entire objective of localization is to find the transformation between vehicle coordinates and map coordinates. In other words, we’re trying to find the position of the car in the map! | Everything is in vehicle coordinates where the x axis points in the direction of the car’s heading and the y axis points to the left of the car. |\n| The position of the car is described in map coordinates. | The car is always assumed to be at the origin of the vehicle coordinate system. |\n| The sensor measurements are usually described in vehicle coordinates. Vehicle coordinates have the x-axis in the direction of the car’s heading, the y-axis pointing orthogonal to the left of the car, and the z-axis pointing upwards. | Sensor measurements are in vehicle coordinates. |\n| Map landmarks are in map coordinates. | There’s no map involved! |",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 279185,
+          "key": "72a2c3f5-32de-4bbe-b6f3-6f96557e008d",
+          "title": "Roll, Pitch and Yaw: Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "72a2c3f5-32de-4bbe-b6f3-6f96557e008d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 287463,
+              "key": "54b1dd2d-3a9b-4467-b2be-da3e9d5ce587",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Roll, Pitch and Yaw\n\nAs mentioned in the lesson, the yaw is the rotation of the car about the z-axis. The other two possible rotations, around the x-axis and y-axis, are called roll and pitch respectively. My question to you is will you need to calculate all three rotations to localize the car effectively?\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 287464,
+              "key": "2df77699-9abf-4e3f-847e-0872f8d8f0b8",
+              "title": "Roll, Pitch and Yaw Quiz",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "2df77699-9abf-4e3f-847e-0872f8d8f0b8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Will you need to calculate all three rotations to localize the car effectively?",
+                "answers": [
+                  {
+                    "id": "a1490297875384",
+                    "text": "Yes, definitely. All three rotations are almost always significant enough to make a significant impact on the position of the car.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1490297918639",
+                    "text": "It really depends on the road (i.e. the curvature and steepness)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1490297927047",
+                    "text": "No, a flat world assumption is good enough.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 279186,
+          "key": "fb8dc495-2f80-43df-ab4d-c696f838655c",
+          "title": "Odometry",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fb8dc495-2f80-43df-ab4d-c696f838655c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 286277,
+              "key": "619bbbbc-1eed-4875-ae6b-1dcd3ddcfddf",
+              "title": "Odometry",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "IusJ3cTusp8",
+                "china_cdn_id": "IusJ3cTusp8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 279188,
+          "key": "a55fb889-a85c-43da-a224-248a60018ef4",
+          "title": "Odometry Errors: Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a55fb889-a85c-43da-a224-248a60018ef4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 287467,
+              "key": "cee49753-0ce5-4e77-b3f0-c17ae8b3efce",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Odometry Errors Quiz\n\nWhen I was younger, we had a huge flood in my hometown. All the cars were slipping and sliding, and my mom and I got stuck in high water on the way to school! You can be sure I was really sad about missing school and watching Blues Clues instead.\nWith that in mind, when do you think using odometry from a wheel encoder will create large errors in your position estimates?\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 287469,
+              "key": "c99c9fc6-3ad3-4bfd-af12-d8222e79c610",
+              "title": "Odometry Errors Quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "c99c9fc6-3ad3-4bfd-af12-d8222e79c610",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "When do you think using odometry from a wheel encoder will create large errors in your position estimates?",
+                "answers": [
+                  {
+                    "id": "a1490298982034",
+                    "text": "On a slick, wet road",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1490299018262",
+                    "text": "On a dry, paved road",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1490299177119",
+                    "text": "On a road with lots of bumps",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1490299193990",
+                    "text": "On a road with lots of turns",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 279189,
+          "key": "e1e2067a-5c4e-47cc-a984-565970989cff",
+          "title": "Odometry Errors: Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e1e2067a-5c4e-47cc-a984-565970989cff",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 286278,
+              "key": "5995bc4b-3bbc-4fcd-8765-e638eb81d914",
+              "title": "Odometry Errors Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FS_5mHoszx8",
+                "china_cdn_id": "FS_5mHoszx8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 279190,
+          "key": "7056ccb7-d48e-490a-80cd-abaf6f3bfec3",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7056ccb7-d48e-490a-80cd-abaf6f3bfec3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 286281,
+              "key": "5b46231f-13be-4766-bb2a-c9d83b82923e",
+              "title": "Lesson Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "a_FvfH8OcPg",
+                "china_cdn_id": "a_FvfH8OcPg.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

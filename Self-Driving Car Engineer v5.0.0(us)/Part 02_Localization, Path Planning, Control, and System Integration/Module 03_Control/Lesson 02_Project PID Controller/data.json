@@ -1,0 +1,222 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627688,
+      "key": "b6e7a810-49ec-48eb-8ac6-bab376cb94fd",
+      "title": "Project: PID Controller",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Implement a PID controller in C++ to maneuver the vehicle around the lake race track!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/b6e7a810-49ec-48eb-8ac6-bab376cb94fd/627688/1538943999288/Project%3A+PID+Controller+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/b6e7a810-49ec-48eb-8ac6-bab376cb94fd/627688/1538943997457/Project%3A+PID+Controller+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "35cdbdc5-02bb-4c4d-81d0-6d2d46bf007a",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 17280,
+        "semantic_type": "Project",
+        "title": "PID Controller",
+        "description": "When you are confident that your PID controller is working correctly, submit your project using Github or by uploading a zipped archive of your project files. You can check out the rubric [here](https://review.udacity.com/#!/rubrics/1972/view) prior to submitting.",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1972",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://s3.amazonaws.com/video.udacity-data.com/topher/2018/August/5b7dbe7e_pid-sim/pid-sim.png",
+          "width": 1654,
+          "height": 780
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 664366,
+          "key": "2a8848c8-8c2a-4f67-af46-008de182ec00",
+          "title": "C++ On the Vehicle",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2a8848c8-8c2a-4f67-af46-008de182ec00",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 664367,
+              "key": "eef4f5f9-af85-4678-ba55-7358659aa658",
+              "title": "07 Control A01 C++ On The Vehicle",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LjlgqozwzzA",
+                "china_cdn_id": "LjlgqozwzzA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 280033,
+          "key": "6a4d8d42-6a04-4aa6-b284-1697c0fd6562",
+          "title": "Project Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6a4d8d42-6a04-4aa6-b284-1697c0fd6562",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 280050,
+              "key": "c73d1825-fbd9-4e4a-bad8-38c40cbd16bf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this project you'll revisit the lake race track from the Behavioral Cloning Project. This time, however, you'll implement a PID controller in C++ to maneuver the vehicle around the track! \n\nThe simulator will provide you the cross track error (CTE) and the velocity (mph) in order to compute the appropriate steering angle.\n\nOne more thing. The speed limit has been increased from 30 mph to 100 mph. Get ready to channel your inner Vin Diesel and try to drive **SAFELY** as fast as possible! **NOTE: you don't have to meet a minimum speed to pass.**\n\n### What You'll Receive\n\n1. A [GitHub repo with starter code](https://github.com/udacity/CarND-Controls-PID) that you can fork.\n2. A simulator, download from the [releases](https://github.com/udacity/self-driving-car-sim/releases) page of the project repo. You should download the most recent version.\n\n(**Note:** If you choose to utilize the Workspace for this project, both the simulator and related project repository are included therein, so you won't need to download/clone them locally except as desired).\n\n#### Using GitHub and Creating Effective READMEs\n\nIf you are unfamiliar with GitHub , Udacity has a brief [GitHub tutorial](http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html) to get you started. Udacity also provides a more detailed free [course on git and GitHub](https://www.udacity.com/course/how-to-use-git-and-github--ud775).\n\nTo learn about REAMDE files and Markdown, Udacity provides a free [course on READMEs](https://www.udacity.com/course/writing-readmes--ud777), as well. \n\nGitHub also provides a [tutorial](https://guides.github.com/features/mastering-markdown/) about creating Markdown files.\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 677022,
+          "key": "b776f734-ffce-41d4-9e6a-5a9f16cc867d",
+          "title": "Project Instructions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b776f734-ffce-41d4-9e6a-5a9f16cc867d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 677024,
+              "key": "be734cd1-b376-489b-baa7-46013c05dee6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Instructions #\n\n1. You can solve this project using the **workspaces** we have prepared for you [here](https://classroom.udacity.com/nanodegrees/nd013/parts/30260907-68c1-4f24-b793-89c0c2a0ad32/modules/3e2b027e-1822-4638-a58a-def1e64258a8/lessons/b6e7a810-49ec-48eb-8ac6-bab376cb94fd/concepts/6d1cbc73-9e87-4f33-adb2-0a12950a0221?contentVersion=2.0.0&contentLocale=en-us) or you can clone/fork the project's template files from the [project repository](https://github.com/udacity/CarND-Controls-PID) if you want to install all on your local machine. Have a look at the [rubric](https://review.udacity.com/#!/rubrics/1972/view) as well!\n\n2. Build a PID controller and tune the PID hyperparameters by applying the general processing flow as described in the previous lessons.\n3. Test your solution on the simulator! \n4. When the vehicle is able to drive successfully around the track, submit! Remember to include a file addressing the reflection portion of the project in .txt, .md, .html, or .pdf format.\n5. Try to see how fast you get the vehicle to **SAFELY** go!\n\n\n\n## Accessing and using the workspace:\n- Navigate to the workspace node. If you need to test your solution, enable the GPU - otherwise, you won't be able to run the simulator. Remember to turn it off when you code your solution so that you don't run out of GPU hours.\n- Navigate to the repository `CarND-PID-Control-Project` using menu on the left.\n- Complete the `TODO` in main.cpp, PID.cpp and add any helper files you need using the text editor in the workspace.\n- Navigate to the project repository in the terminal.\n\n**Note**: You can add any necessary helper files within the `src` (or other) folder by clicking on the `+` in the top left, selecting *Create New File*, and then naming your file with the relevant extension (such as `.h`, `.hpp`, `.cpp`, etc).\n\nIn order to build and compile the code, from within the main repository directory, you can:\n- `mkdir build && cd build` to create and enter the build directory\n- `cmake .. && make` to compile your project\n- `./pid` to run your code\n\nClick on the \"Simulator\" button in the bottom of the Udacity workspace, which will open a new virtual desktop. You should see a \"Simulator\" icon on the virtual desktop. Double-click the \"Simulator\" icon in that desktop to start the simulator.\n\n**Important:** You need to open a terminal before attempting to run the simulator.\n\nAll Project instructions can be found in the [README.md](https://github.com/udacity/CarND-Path-Planning-Project/blob/master/README.md) (you can view the instruction in an easy-to-read format by visiting the previous link.\n\n## Commit to GitHub\nStudents are highly encouraged to commit their project to a GitHub repo.  To do this, you must change the upstream of the current repository and add your credentials.  We have supplied a bash script to help you do this.  Please open up a terminal, navigate to the project repository, and enter: `./set_git.sh`, then follow the prompts.  This will set the upstream remote to your own repository and add your email and username to the git configuration.  At this time we are not configuring passwords, so you will need to enter your username and password for each push.  Since credentials are not persistent, it will be necessary to run this script each time you open, refresh, or reset the workspace.\n\n### Ready to Submit?###\n\nWhen you are ready to submit, just make sure you have in your files:\n1. Write up\n2. A complete solution, with all the files needed to run your project.\n\nAnd double-check your work against the [rubric](https://review.udacity.com/#!/rubrics/1972/view).\n\nIf you use **workspaces** click on the button on the right bottom and follow the instruction.  Alternatively, you may submit a link to your GitHub repo for the project or a zip file with your files in the last item in this lesson.\n\n### Using GitHub and Creating Effective READMEs\n\nIf you are unfamiliar with GitHub , Udacity has a brief [GitHub tutorial](http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html) to get you started. Udacity also provides a more detailed free [course on git and GitHub](https://www.udacity.com/course/how-to-use-git-and-github--ud775).\n\nTo learn about README files and Markdown, Udacity provides a free [course on READMEs](https://www.udacity.com/course/writing-readmes--ud777), as well. \n\nGitHub also provides a [tutorial](https://guides.github.com/features/mastering-markdown/) about creating Markdown files.\n\n\n\n## Project Support ##\n\nIf you are stuck or having difficulties with the project, don't lose hope! Remember to talk to your mentors and fellow students in your Study Group, as well as ask (and answer!) questions on [Knowledge](https://knowledge.udacity.com) tagged with the project name. We also have a previously recorded project Q&A that you can watch [here](https://youtu.be/YamBuzDjrs8)!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 676899,
+          "key": "6d1cbc73-9e87-4f33-adb2-0a12950a0221",
+          "title": "Workspaces: PID",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6d1cbc73-9e87-4f33-adb2-0a12950a0221",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676904,
+              "key": "64d2766b-17ea-4be7-b8ef-c11b4beac426",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewSJgDpIwCXQ",
+              "pool_id": "autonomousgpu",
+              "view_id": "react-S1vaLv0mQ",
+              "gpu_capable": true,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "autonomous-datasets",
+                      "paths": [
+                        {
+                          "src": "/sdc_nd",
+                          "dest": "/data/"
+                        }
+                      ]
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "echo \"Installing dependencies.\"\nsudo apt-key del 421C365BD9FF1F717815A3895523BAEEB01FA116\nsudo -E apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654\nsudo apt-get -qq update > /dev/null\nsudo apt-get -y -qq install libssl-dev >/dev/null 2>&1 &\nmkdir -p /usr/include/uWS\nln -sf /data/uWebSockets/src/*.h /usr/include/uWS/\nln -sf /data/uWebSockets/build/libuWS.so /usr/lib/\ncp -rsn /data/libuv/usr/* /usr &> /dev/null\necho \"Done. All dependencies installed.\"",
+                    "openFiles": [],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": true,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Simulator",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 708553,
+          "key": "7bc3b1b1-e2ed-4483-b323-b2915c0a368d",
+          "title": "Share Your Success - PID Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7bc3b1b1-e2ed-4483-b323-b2915c0a368d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 708554,
+              "key": "9ab63edd-86e1-465f-bf16-a40974a1ef19",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Share your project success\nPassed your project? Share the good news!\n\nWhat you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your success with your network.\n\n<iframe\n  src=\"https://platform.twitter.com/widgets/tweet_button.html?size=l&url=www.udacity.com&text=I%20completed%20the%20PID%20Controller%20Project!%20Now%20I%20can%20provide%20basic%20control%20to%20an%20autonomous%20vehicle%20with%20the%20Self-Driving%20Car%20Engineer%20Nanodegree%20@udacity%20\n[Insert%20your%20Github%20repository%20url%20here]&hashtags=selfdrivingudacity\"\nwidth=\"140\"\nheight=\"28\"\nscrolling=\"no\">\n</iframe>\n\n#### Facebook and LinkedIn\nMake sure to use **@Udacity** and **#selfdrivingudacity** in your posts!\n\n<html>\n\n<head>\n<style>\n.fb {color: white;\n  background-color: #4661b0;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.fb:hover {color: #4661b0;\n  background-color: white;\n  border-color: #4661b0;\n  transition: background-color 0.4s}\n.linkedin {color: white;\n  background-color: #0077B5;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.linkedin:hover {color: #0077B5;\n  background-color: white;\n  border-color: #0077B5;\n  transition: background-color 0.4s}\n</style>\n\n</head>\n\n<body>\n<form action=\"https://www.facebook.com/sharer.php?\">\n  Enter the full URL of your Github repository or Youtube video:<br>\n  <input type=\"url\" name=\"u\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"hashtag\" value=\"#selfdrivingudacity\">\n  <button class=\"fb\">Share on Facebook</button>\n</form>\n\n<form action=\"https://www.linkedin.com/shareArticle?mini=true\">\n  <input type=\"url\" name=\"url\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"title\" value=\"PID Controller\">\n  <input type=\"hidden\" name=\"summary\" value=\"I finished the PID Controller project in the Self-Driving Car Nanodegree @udacity #selfdrivingudacity\">\n  <button class=\"linkedin\">Share on LinkedIn</button>\n</form>\n\n</body>\n\n</html>",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

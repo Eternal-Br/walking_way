@@ -1,0 +1,418 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Challenge 5
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      C++ Checkpoint
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. High Performance Computing.html">
+       01. High Performance Computing
+      </a>
+     </li>
+     <li class="">
+      <a href="02. [Optional] Beta Test our Upcoming C++ Course.html">
+       02. [Optional] Beta Test our Upcoming C++ Course
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Challenge 1.html">
+       03. Challenge 1
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Challenge 1 Solution.html">
+       04. Challenge 1 Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Challenge 2.html">
+       05. Challenge 2
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Challenge 2 Solution.html">
+       06. Challenge 2 Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Challenge 3.html">
+       07. Challenge 3
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Challenge 3 Solution.html">
+       08. Challenge 3 Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Challenge 4.html">
+       09. Challenge 4
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Challenge 4 Solution.html">
+       10. Challenge 4 Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Challenge 5.html">
+       11. Challenge 5
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Challenge 5 Solution.html">
+       12. Challenge 5 Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Outro and Advice.html">
+       13. Outro and Advice
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          11. Challenge 5
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="references">
+          References
+         </h2>
+         <p>
+          Lower level languages, like C++, give you control over the way your objects are stored and accessed in memory. As a comparison, let's start by looking at how Python hides memory access from you.
+         </p>
+         <pre><code>def dict_modifier(d, key):
+  d.pop(key, None)
+
+sample_dict = {'some_key': 'some value'}
+dict_modifier(sample_dict, 'some_key')
+print(sample_dict)  # {}</code></pre>
+         <p>
+          In this case,
+          <code>
+           dict_modifier
+          </code>
+          removes a key from the dictionary passed to it. In effect, it treats the dictionary argument as a reference.
+         </p>
+         <p>
+          You may want to draw the conclusion that Python functions always treat arguments as references, but that's not true.
+         </p>
+         <pre><code>def adder(n):
+  n += 1
+
+i = 1
+adder(i)
+print(i)  # 1</code></pre>
+         <p>
+          Python does not pass primitives as references. As a result,
+          <code>
+           adder
+          </code>
+          receives a copy of
+          <code>
+           i
+          </code>
+          and
+          <code>
+           i
+          </code>
+          remains unchanged outside the function.
+         </p>
+         <p>
+          To be fair, the way Python handles arguments is perfectly reasonable. But what's happening behind the scenes is not perfectly obvious from the syntax alone.
+         </p>
+         <p>
+          C++, on the other hand, makes you decide how you'd like to treat function arguments. It also gives you control over how you'd like to access objects in memory, whether that's by simply referring to their address in memory or by their actual value.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="pass-by-reference">
+          Pass by Reference
+         </h3>
+         <p>
+          In this last challenge, I want you to finish the
+          <code>
+           doubler
+          </code>
+          function that doubles an
+          <code>
+           int
+          </code>
+          passed to it as a reference. You'll need to finish defining the function's parameters and body.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <div>
+         </div>
+         <form>
+          <fieldset>
+           <legend>
+            Task List:
+           </legend>
+           <div>
+            <input id="9d5bc049-640c-44a8-bf17-625f7e8ef44d--0" type="checkbox"/>
+            <label for="9d5bc049-640c-44a8-bf17-625f7e8ef44d--0">
+             <p>
+              Finish the parameter in Doubler.h.
+             </p>
+            </label>
+           </div>
+           <div>
+            <input id="9d5bc049-640c-44a8-bf17-625f7e8ef44d--1" type="checkbox"/>
+            <label for="9d5bc049-640c-44a8-bf17-625f7e8ef44d--1">
+             <p>
+              Finish the parameter and body in Doubler.cpp.
+             </p>
+            </label>
+           </div>
+          </fieldset>
+         </form>
+         <div>
+          <h4>
+           Task Feedback:
+          </h4>
+          <p>
+           Awesome! Test your code below!
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="269942-Doubler-cpp" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#269942-Doubler-cpp" id="tab-269942-Doubler-cpp" role="tab">
+            Doubler.cpp
+           </a>
+           <a aria-controls="269942-Doubler-h" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#269942-Doubler-h" id="tab-269942-Doubler-h" role="tab">
+            Doubler.h
+           </a>
+           <a aria-controls="269942-main-cpp" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#269942-main-cpp" id="tab-269942-main-cpp" role="tab">
+            main.cpp
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-269942-Doubler-cpp" class="tab-pane active show" id="269942-Doubler-cpp" role="tabpanel">
+            <pre><code></code>/** 
+ * You'll need to finish the Doubler function here AND fix the parameters 
+ *   of its signature in Doubler.h.
+ */
+
+#include "Doubler.h"
+
+// TODO: Add the relevant arguments into the function below
+void Doubler() {
+  // TODO: your code for Doubler here!
+}
+</pre>
+           </div>
+           <div aria-labelledby="tab-269942-Doubler-h" class="tab-pane" id="269942-Doubler-h" role="tabpanel">
+            <pre><code></code>#ifndef DOUBLER_H
+#define DOUBLER_H
+
+// TODO: put the right arguments here too!
+void Doubler();
+
+#endif  // DOUBLER_H</pre>
+           </div>
+           <div aria-labelledby="tab-269942-main-cpp" class="tab-pane" id="269942-main-cpp" role="tabpanel">
+            <pre><code></code>/**
+ * As before, no need to change anything here, but feel free to play 
+ *   with the test case.
+ */
+
+#include &lt;iostream&gt;
+#include "Doubler.h"
+
+int main() {
+  int value = 25;
+    
+  std::cout &lt;&lt; "Original value: " &lt;&lt; value &lt;&lt; std::endl;
+    
+  Doubler(value);
+    
+  std::cout &lt;&lt; "Doubled value: " &lt;&lt; value &lt;&lt; std::endl;
+    
+  return 0;
+}
+</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="12. Challenge 5 Solution.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. Challenge 5')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,1575 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627678,
+      "key": "45ae7b25-65be-4dd7-9c20-d96ca1896c2b",
+      "title": "Trajectory Generation",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Use C++ and the Eigen linear algebra library to build candidate trajectories for the vehicle to follow.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/45ae7b25-65be-4dd7-9c20-d96ca1896c2b/627678/1538943896076/Trajectory+Generation+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/45ae7b25-65be-4dd7-9c20-d96ca1896c2b/627678/1538943888805/Trajectory+Generation+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 664364,
+          "key": "63733044-7d0e-4b97-8162-4e6a2e72bfdf",
+          "title": "From Behavior to Trajectory",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "63733044-7d0e-4b97-8162-4e6a2e72bfdf",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 664365,
+              "key": "c7e140b7-2fdf-42ad-8064-a56a4a62b0f7",
+              "title": "06 Path Planning A04 From Behavior To Trajectory",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "7yo_HJ1_J9Q",
+                "china_cdn_id": "7yo_HJ1_J9Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340026,
+          "key": "fd1f9163-bf47-44a7-87d8-fa1b40465938",
+          "title": "Lesson Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fd1f9163-bf47-44a7-87d8-fa1b40465938",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346268,
+              "key": "a8d4ba94-c2d2-4db3-a074-5051e4739a9c",
+              "title": "01 L Lesson Overview",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "BU4oChjLv7A",
+                "china_cdn_id": "BU4oChjLv7A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340027,
+          "key": "b6ac5f90-f70a-4ece-a87d-f89a2de1b507",
+          "title": "The Motion Planning Problem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b6ac5f90-f70a-4ece-a87d-f89a2de1b507",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346269,
+              "key": "d4d0abfb-14ca-4afd-8b8a-1827bdec4827",
+              "title": "02 L The Motion Planning Problem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "daGIOru4Bi4",
+                "china_cdn_id": "daGIOru4Bi4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340028,
+          "key": "abce97f1-e7e3-41e1-bb40-65f9a5caa4cd",
+          "title": "Properties of Motion Planning Algorithms",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "abce97f1-e7e3-41e1-bb40-65f9a5caa4cd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346270,
+              "key": "d7b49622-b154-4787-abf7-2c0c1c22a497",
+              "title": "03 L Properties Of Motion Planning Algorithsm",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lNpD43L0qvw",
+                "china_cdn_id": "lNpD43L0qvw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340029,
+          "key": "8a520f8f-42d4-4e07-87a7-00f47183ed59",
+          "title": "Types of Motion Planning Algorithms",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8a520f8f-42d4-4e07-87a7-00f47183ed59",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350974,
+              "key": "49acff68-7595-43b5-8716-0ff865533b0c",
+              "title": "Types of Motion Planning Algorithms",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6-K1aLTEvk8",
+                "china_cdn_id": "6-K1aLTEvk8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340030,
+          "key": "19b75807-5884-457c-838e-6540d9e7207d",
+          "title": "A* Reminder",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "19b75807-5884-457c-838e-6540d9e7207d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345250,
+              "key": "8f4a80a7-11fc-4a9f-8a24-3946b851622d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# A\\* Reminder\n\nIf you'd like to refamiliarize yourself with the A\\* search algorithm (covered in lesson 1), feel free to watch the video below. The question at the bottom of the page will be asked again later in the lesson in regards to Hybrid A\\*.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345248,
+              "key": "451a49ff-61ec-4802-9cfc-bc1e20908b5d",
+              "title": "A* - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lxCCtgHk5Vs",
+                "china_cdn_id": "lxCCtgHk5Vs.mp4"
+              }
+            },
+            {
+              "id": 345252,
+              "key": "33f68c2b-ee53-4a89-aa3d-af0a35b48cd9",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "33f68c2b-ee53-4a89-aa3d-af0a35b48cd9",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Check all **true** statements about A*.",
+                "answers": [
+                  {
+                    "id": "a1499456238800",
+                    "text": "It uses a continuous search space.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499456302973",
+                    "text": "It uses an **optimistic** heuristic function to guide grid cell expansion.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499456324798",
+                    "text": "It always finds a solution if one exists (completeness)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499456335822",
+                    "text": "Solutions it finds are **drivable**",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499456346190",
+                    "text": "Solutions it finds are **always optimal** assuming an admissible heuristic",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 340031,
+          "key": "d570cf7b-ef69-43aa-a202-d69db75a2280",
+          "title": "A* Reminder Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d570cf7b-ef69-43aa-a202-d69db75a2280",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346274,
+              "key": "4ab2278d-d8b6-47cd-9e7f-17f8dcf3c702",
+              "title": "06 L A- Reminder Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "## Note Regarding A* Heuristics and Optimal Solutions:\n  A\\* will find an optimal solution if the heuristic is [Admissible](https://en.wikipedia.org/wiki/Admissible_heuristic).  A* may find a suboptimal path if the heuristic function is not Admissible.",
+              "video": {
+                "youtube_id": "HtQjw7qr2-o",
+                "china_cdn_id": "HtQjw7qr2-o.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340032,
+          "key": "f5fb8a42-f27e-4093-88ca-4c0edff49070",
+          "title": "Hybrid A* Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f5fb8a42-f27e-4093-88ca-4c0edff49070",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346277,
+              "key": "9d28ade6-0dbc-4449-b5e8-9638b0cd1a94",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Hybrid A\\* Introduction\n\nThe video below is an old one from a different course but does a great job of explaining Hybrid A\\*.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346275,
+              "key": "04b1ae4b-7e03-4f90-b78a-f3b6d6768b20",
+              "title": "Hybrid A* Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NuurQejBk0o",
+                "china_cdn_id": "NuurQejBk0o.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340033,
+          "key": "e926a6d2-bcb2-42ad-872d-d5de402b4cd1",
+          "title": "Hybrid A* Tradeoffs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e926a6d2-bcb2-42ad-872d-d5de402b4cd1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345256,
+              "key": "6f594fdb-b339-40f0-8fb9-534ffe42430f",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "6f594fdb-b339-40f0-8fb9-534ffe42430f",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Check all **true** statements about **Hybrid** A\\*.",
+                "answers": [
+                  {
+                    "id": "a1499456870225",
+                    "text": "It uses a continuous search space.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499456890806",
+                    "text": "It uses an **optimistic** heuristic function to guide grid cell expansion.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499456901014",
+                    "text": "It always finds a solution if one exists (completeness)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499456907086",
+                    "text": "Solutions it finds are **drivable**",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499456913526",
+                    "text": "Solutions it finds are **always optimal**.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 340034,
+          "key": "19d740cc-2e5e-4933-b0ae-202ac4e02976",
+          "title": "Hybrid A* Tradeoffs Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "19d740cc-2e5e-4933-b0ae-202ac4e02976",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346278,
+              "key": "dae9b187-f6b0-4301-9efb-631e70521b05",
+              "title": "09 L Hybrid A- Tradeoffs Solution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6yAdF5u2B04",
+                "china_cdn_id": "6yAdF5u2B04.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 346279,
+          "key": "3731a6e5-a5f3-4217-95f4-5d988244c5ad",
+          "title": "Hybrid A* in Practice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3731a6e5-a5f3-4217-95f4-5d988244c5ad",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346280,
+              "key": "2686c438-9fa8-4239-a42e-2a48b81efc1f",
+              "title": "10 L Hybrid A- In Practice",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Mkz_WjyRzag",
+                "china_cdn_id": "Mkz_WjyRzag.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340036,
+          "key": "ad282a3e-b0d3-4fd4-a2ac-6a3dbfc76e3a",
+          "title": "Hybrid A* Heuristics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ad282a3e-b0d3-4fd4-a2ac-6a3dbfc76e3a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "Junior The Stanford Entry In The Urban Challenge",
+                "uri": "http://video.udacity-data.com.s3.amazonaws.com/topher/2017/July/595fe838_junior-the-stanford-entry-in-the-urban-challenge/junior-the-stanford-entry-in-the-urban-challenge.pdf"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 345263,
+              "key": "60a94dc8-c077-48eb-a758-22e221a53397",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Hybrid A\\* Heuristics\nThe paper [Junior: The Stanford Entry in the Urban Challenge](https://d17h27t6h515a5.cloudfront.net/topher/2017/July/595fe838_junior-the-stanford-entry-in-the-urban-challenge/junior-the-stanford-entry-in-the-urban-challenge.pdf) is a good read overall, but **Section 6.3 - Free Form Navigation** is especially good and goes into detail about how the Stanford team thought about heuristics for their Hybrid A\\* algorithm (which they tended to use in parking lots).\n\nRead section 6.3 of [the paper](https://d17h27t6h515a5.cloudfront.net/topher/2017/July/595fe838_junior-the-stanford-entry-in-the-urban-challenge/junior-the-stanford-entry-in-the-urban-challenge.pdf) and then answer the following question:\n\n## Quiz: Valid Heuristics\nIf you have two individually admissible heuristic functions <span class=\"mathquill\">h_1</span> and  <span class=\"mathquill\">h_2</span>, which of the following **combinations** are also valid?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345265,
+              "key": "7405b982-b73d-41e3-b3fe-4dfdffd635d5",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "7405b982-b73d-41e3-b3fe-4dfdffd635d5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Check the box next to all **admissible** combinations.",
+                "answers": [
+                  {
+                    "id": "a1499457738585",
+                    "text": "h1 + h2",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499457980355",
+                    "text": "(h1 + h2) / 2",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499457990571",
+                    "text": "min(h1, h2)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499458002260",
+                    "text": "max(h1, h2)",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 477837,
+          "key": "9c784953-9ef3-4156-8051-68803fa179cc",
+          "title": "Hybrid A* Pseudocode",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9c784953-9ef3-4156-8051-68803fa179cc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 477839,
+              "key": "a6896da7-6dc6-4d38-ac28-481c4270a571",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Hybrid A\\* Pseudocode:\nThe pseudocode below outlines an implementation of the A\\* search algorithm using the bicycle model. The following variables and objects are used in the code but not defined there:\n\n- `State(x, y, theta, g, f)`: An object which stores `x`, `y` coordinates, direction `theta`, and current `g` and `f` values.\n- `grid`: A 2D array of 0s and 1s indicating the area to be searched. 1s correspond to obstacles, and 0s correspond to free space.\n- `SPEED`: The speed of the vehicle used in the bicycle model.\n- `LENGTH`: The length of the vehicle used in the bicycle model.\n- `NUM_THETA_CELLS`: The number of cells a circle is divided into. This is used in keeping track of which States we have visited already.\n\nThe bulk of the hybrid A\\* algorithm is contained within the `search` function. The `expand` function takes a state and goal as inputs and returns a list of possible next states for a range of steering angles. This function contains the implementation of the bicycle model and the call to the A\\* heuristic function.\n\n\n```python\ndef expand(state, goal):\n    next_states = []\n    for delta in range(-35, 40, 5): \n        # Create a trajectory with delta as the steering angle using \n        # the bicycle model:\n\n        # ---Begin bicycle model---\n        delta_rad = deg_to_rad(delta)\n        omega = SPEED/LENGTH * tan(delta_rad)\n        next_x = state.x + SPEED * cos(theta)\n        next_y = state.y + SPEED * sin(theta)\n        next_theta = normalize(state.theta + omega)\n        # ---End bicycle model-----\n\n        next_g = state.g + 1\n        next_f = next_g + heuristic(next_x, next_y, goal)\n\n        # Create a new State object with all of the \"next\" values.\n        state = State(next_x, next_y, next_theta, next_g, next_f)\n        next_states.append(state)\n\n    return next_states\n\ndef search(grid, start, goal):\n    # The opened array keeps track of the stack of States objects we are \n    # searching through.\n    opened = []\n    # 3D array of zeros with dimensions:\n    # (NUM_THETA_CELLS, grid x size, grid y size).\n    closed = [[[0 for x in range(grid[0])] for y in range(len(grid))] \n        for cell in range(NUM_THETA_CELLS)]\n    # 3D array with same dimensions. Will be filled with State() objects \n    # to keep track of the path through the grid. \n    came_from = [[[0 for x in range(grid[0])] for y in range(len(grid))] \n        for cell in range(NUM_THETA_CELLS)]\n\n    # Create new state object to start the search with.\n    x = start.x\n    y = start.y\n    theta = start.theta\n    g = 0\n    f = heuristic(start.x, start.y, goal)\n    state = State(x, y, theta, 0, f)\n    opened.append(state)\n\n    # The range from 0 to 2pi has been discretized into NUM_THETA_CELLS cells. \n    # Here, theta_to_stack_number returns the cell that theta belongs to. \n    # Smaller thetas (close to 0 when normalized  into the range from 0 to \n    # 2pi) have lower stack numbers, and larger thetas (close to 2pi when \n    # normalized) have larger stack numbers.\n    stack_num = theta_to_stack_number(state.theta)\n    closed[stack_num][index(state.x)][index(state.y)] = 1\n    \n    # Store our starting state. For other states, we will store the previous \n    # state in the path, but the starting state has no previous.\n    came_from[stack_num][index(state.x)][index(state.y)] = state\n\n    # While there are still states to explore:\n    while opened:\n        # Sort the states by f-value and start search using the state with the \n        # lowest f-value. This is crucial to the A* algorithm; the f-value \n        # improves search efficiency by indicating where to look first.\n        opened.sort(key=lambda state:state.f)\n        current = opened.pop(0)\n\n        # Check if the x and y coordinates are in the same grid cell \n        # as the goal. (Note: The idx function returns the grid index for \n        # a given coordinate.)\n        if (idx(current.x) == goal[0]) and (idx(current.y) == goal.y):\n            # If so, the trajectory has reached the goal.\n            return path\n\n        # Otherwise, expand the current state to get a list of possible \n        # next states.\n        next_states = expand(current, goal)\n        for next_s in next_states:\n            # If we have expanded outside the grid, skip this next_s.\n            if next_s is not in the grid:\n                continue\n            # Otherwise, check that we haven't already visited this cell and\n            # that there is not an obstacle in the grid there.\n            stack_num = theta_to_stack_number(next_s.theta)\n            if closed[stack_num][idx(next_s.x)][idx(next_s.y)] == 0 \n                and grid[idx(next_s.x)][idx(next_s.y)] == 0:\n                # The state can be added to the opened stack.\n                opened.append(next_s)\n                # The stack_number, idx(next_s.x), idx(next_s.y) tuple \n                # has now been visited, so it can be closed.\n                closed[stack_num][idx(next_s.x)][idx(next_s.y)] = 1\n                # The next_s came from the current state, and is recorded.\n                came_from[stack_num][idx(next_s.x)][idx(next_s.y)] = current\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 348127,
+          "key": "acefb87e-4cfb-489e-83a2-7dce42ea9301",
+          "title": "Implement Hybrid A* in C++",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "acefb87e-4cfb-489e-83a2-7dce42ea9301",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 348128,
+              "key": "10a52ac6-02cb-49d3-a25c-a31baf062c50",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementing Hybrid A*\nIn this exercise, you will be provided a working implementation of a *breadth first* search algorithm which does **not** use any heuristics to improve its efficiency. Your goal is to try to make the appropriate modifications to the algorithm so that it takes advantage of heuristic functions (possibly the ones mentioned in the previous paper) to reduce the number of grid cell expansions required.\n\n## Instructions:\n\n1. Modify the code in 'hybrid_breadth_first.cpp' and hit `Test Run` to check your results.\n2. Note the number of expansions required to solve an empty 15x15 grid (it should be about 18,000!). Modify the code to try to reduce that number. How small can you get it?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 348130,
+              "key": "4ece377d-4c7c-45e5-96e4-a90058166ac5",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "4ece377d-4c7c-45e5-96e4-a90058166ac5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6611440202022912",
+                "initial_code_files": [
+                  {
+                    "text": "#include <iostream>\n#include <vector>\n#include \"hybrid_breadth_first.h\"\n\nusing std::cout;\nusing std::endl;\n\n// Sets up maze grid\nint X = 1;\nint _ = 0;\n\n/**\n * TODO: You can change up the grid maze to test different expansions.\n */\nvector<vector<int>> GRID = {\n  {_,X,X,_,_,_,_,_,_,_,X,X,_,_,_,_,},\n  {_,X,X,_,_,_,_,_,_,X,X,_,_,_,_,_,},\n  {_,X,X,_,_,_,_,_,X,X,_,_,_,_,_,_,},\n  {_,X,X,_,_,_,_,X,X,_,_,_,X,X,X,_,},\n  {_,X,X,_,_,_,X,X,_,_,_,X,X,X,_,_,},\n  {_,X,X,_,_,X,X,_,_,_,X,X,X,_,_,_,},\n  {_,X,X,_,X,X,_,_,_,X,X,X,_,_,_,_,},\n  {_,X,X,X,X,_,_,_,X,X,X,_,_,_,_,_,},\n  {_,X,X,X,_,_,_,X,X,X,_,_,_,_,_,_,},\n  {_,X,X,_,_,_,X,X,X,_,_,X,X,X,X,X,},\n  {_,X,_,_,_,X,X,X,_,_,X,X,X,X,X,X,},\n  {_,_,_,_,X,X,X,_,_,X,X,X,X,X,X,X,},\n  {_,_,_,X,X,X,_,_,X,X,X,X,X,X,X,X,},\n  {_,_,X,X,X,_,_,X,X,X,X,X,X,X,X,X,},\n  {_,X,X,X,_,_,_,_,_,_,_,_,_,_,_,_,},\n  {X,X,X,_,_,_,_,_,_,_,_,_,_,_,_,_,}};\n\nvector<double> START = {0.0,0.0,0.0};\nvector<int> GOAL = {(int)GRID.size()-1, (int)GRID[0].size()-1};\n\nint main() {\n  cout << \"Finding path through grid:\" << endl;\n  \n  // Creates an Empty Maze and for testing the number of expansions with it\n  for(int i = 0; i < GRID.size(); ++i) {\n    cout << GRID[i][0];\n    for(int j = 1; j < GRID[0].size(); ++j) {\n      cout << \",\" << GRID[i][j];\n    }\n    cout << endl;\n  }\n\n  HBF hbf = HBF();\n\n  HBF::maze_path get_path = hbf.search(GRID,START,GOAL);\n\n  vector<HBF::maze_s> show_path = hbf.reconstruct_path(get_path.came_from, \n                                                       START, get_path.final);\n\n  cout << \"show path from start to finish\" << endl;\n  for(int i = show_path.size()-1; i >= 0; --i) {\n      HBF::maze_s step = show_path[i];\n      cout << \"##### step \" << step.g << \" #####\" << endl;\n      cout << \"x \" << step.x << endl;\n      cout << \"y \" << step.y << endl;\n      cout << \"theta \" << step.theta << endl;\n  }\n  \n  return 0;\n}",
+                    "name": "main.cpp"
+                  },
+                  {
+                    "text": "#include <math.h>\n#include <iostream>\n#include <vector>\n#include \"hybrid_breadth_first.h\"\n\n// Initializes HBF\nHBF::HBF() {}\n\nHBF::~HBF() {}\n\nint HBF::theta_to_stack_number(double theta){\n  // Takes an angle (in radians) and returns which \"stack\" in the 3D \n  //   configuration space this angle corresponds to. Angles near 0 go in the \n  //   lower stacks while angles near 2 * pi go in the higher stacks.\n  double new_theta = fmod((theta + 2 * M_PI),(2 * M_PI));\n  int stack_number = (int)(round(new_theta * NUM_THETA_CELLS / (2*M_PI))) \n                   % NUM_THETA_CELLS;\n\n  return stack_number;\n}\n\nint HBF::idx(double float_num) {\n  // Returns the index into the grid for continuous position. So if x is 3.621, \n  //   then this would return 3 to indicate that 3.621 corresponds to array \n  //   index 3.\n  return int(floor(float_num));\n}\n\n\nvector<HBF::maze_s> HBF::expand(HBF::maze_s &state) {\n  int g = state.g;\n  double x = state.x;\n  double y = state.y;\n  double theta = state.theta;\n    \n  int g2 = g+1;\n  vector<HBF::maze_s> next_states;\n\n  for(double delta_i = -35; delta_i < 40; delta_i+=5) {\n    double delta = M_PI / 180.0 * delta_i;\n    double omega = SPEED / LENGTH * tan(delta);\n    double theta2 = theta + omega;\n    if(theta2 < 0) {\n      theta2 += 2*M_PI;\n    }\n    double x2 = x + SPEED * cos(theta);\n    double y2 = y + SPEED * sin(theta);\n    HBF::maze_s state2;\n    state2.g = g2;\n    state2.x = x2;\n    state2.y = y2;\n    state2.theta = theta2;\n    next_states.push_back(state2);\n  }\n\n  return next_states;\n}\n\nvector< HBF::maze_s> HBF::reconstruct_path(\n  vector<vector<vector<HBF::maze_s>>> &came_from, vector<double> &start, \n  HBF::maze_s &final) {\n\n  vector<maze_s> path = {final};\n  \n  int stack = theta_to_stack_number(final.theta);\n\n  maze_s current = came_from[stack][idx(final.x)][idx(final.y)];\n  \n  stack = theta_to_stack_number(current.theta);\n  \n  double x = current.x;\n  double y = current.y;\n\n  while(x != start[0] || y != start[1]) {\n    path.push_back(current);\n    current = came_from[stack][idx(x)][idx(y)];\n    x = current.x;\n    y = current.y;\n    stack = theta_to_stack_number(current.theta);\n  }\n  \n  return path;\n}\n\nHBF::maze_path HBF::search(vector< vector<int> > &grid, vector<double> &start, \n                           vector<int> &goal) {\n  // Working Implementation of breadth first search. Does NOT use a heuristic\n  //   and as a result this is pretty inefficient. Try modifying this algorithm \n  //   into hybrid A* by adding heuristics appropriately.\n\n  /**\n   * TODO: Add heuristics and convert this function into hybrid A*\n   */\n  vector<vector<vector<int>>> closed(\n    NUM_THETA_CELLS, vector<vector<int>>(grid[0].size(), vector<int>(grid.size())));\n  vector<vector<vector<maze_s>>> came_from(\n    NUM_THETA_CELLS, vector<vector<maze_s>>(grid[0].size(), vector<maze_s>(grid.size())));\n  double theta = start[2];\n  int stack = theta_to_stack_number(theta);\n  int g = 0;\n\n  maze_s state;\n  state.g = g;\n  state.x = start[0];\n  state.y = start[1];\n  state.theta = theta;\n\n  closed[stack][idx(state.x)][idx(state.y)] = 1;\n  came_from[stack][idx(state.x)][idx(state.y)] = state;\n  int total_closed = 1;\n  vector<maze_s> opened = {state};\n  bool finished = false;\n  while(!opened.empty()) {\n    maze_s current = opened[0]; //grab first elment\n    opened.erase(opened.begin()); //pop first element\n\n    int x = current.x;\n    int y = current.y;\n\n    if(idx(x) == goal[0] && idx(y) == goal[1]) {\n      std::cout << \"found path to goal in \" << total_closed << \" expansions\" \n                << std::endl;\n      maze_path path;\n      path.came_from = came_from;\n      path.closed = closed;\n      path.final = current;\n\n      return path;\n    }\n\n    vector<maze_s> next_state = expand(current);\n\n    for(int i = 0; i < next_state.size(); ++i) {\n      int g2 = next_state[i].g;\n      double x2 = next_state[i].x;\n      double y2 = next_state[i].y;\n      double theta2 = next_state[i].theta;\n\n      if((x2 < 0 || x2 >= grid.size()) || (y2 < 0 || y2 >= grid[0].size())) {\n        // invalid cell\n        continue;\n      }\n\n      int stack2 = theta_to_stack_number(theta2);\n\n      if(closed[stack2][idx(x2)][idx(y2)] == 0 && grid[idx(x2)][idx(y2)] == 0) {\n        opened.push_back(next_state[i]);\n        closed[stack2][idx(x2)][idx(y2)] = 1;\n        came_from[stack2][idx(x2)][idx(y2)] = current;\n        ++total_closed;\n      }\n    }\n  }\n\n  std::cout << \"no valid path.\" << std::endl;\n  HBF::maze_path path;\n  path.came_from = came_from;\n  path.closed = closed;\n  path.final = state;\n\n  return path;\n}",
+                    "name": "hybrid_breadth_first.cpp"
+                  },
+                  {
+                    "text": "#ifndef HYBRID_BREADTH_FIRST_H_\n#define HYBRID_BREADTH_FIRST_H_\n\n#include <vector>\n\nusing std::vector;\n\nclass HBF {\n public:\n  // Constructor\n  HBF();\n\n  // Destructor\n  virtual ~HBF();\n\n  // HBF structs\n  struct maze_s {\n    int g;  // iteration\n    double x;\n    double y;\n    double theta;\n  };\n\n  struct maze_path {\n    vector<vector<vector<int>>> closed;\n    vector<vector<vector<maze_s>>> came_from;\n    maze_s final;\n  };\n  \n  // HBF functions\n  int theta_to_stack_number(double theta);\n\n  int idx(double float_num);\n\n  vector<maze_s> expand(maze_s &state);\n\n  vector<maze_s> reconstruct_path(vector<vector<vector<maze_s>>> &came_from, \n                                  vector<double> &start, HBF::maze_s &final);\n\n  maze_path search(vector<vector<int>> &grid, vector<double> &start, \n                   vector<int> &goal);\n\n private:\n  const int NUM_THETA_CELLS = 90;\n  const double SPEED = 1.45;\n  const double LENGTH = 0.5;\n};\n\n#endif  // HYBRID_BREADTH_FIRST_H_",
+                    "name": "hybrid_breadth_first.h"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 458688,
+          "key": "068e3a98-e119-4e21-821c-509f48d11041",
+          "title": "Implement Hybrid A* in C++ (solution)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "068e3a98-e119-4e21-821c-509f48d11041",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 458704,
+              "key": "4c439952-3946-4e19-b0ec-49470cc6408f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is one possible implementation for Hybrid A* using the \"distance to goal\" heuristic function. In this implementation, we have added an `f` value to the `maze_s` struct, which is set in the `expand` function. Additionally, we've added two new functions: `heuristic` and `compare_maze_s`. The `compare_maze_s` function is used for comparison of `maze_s` objects when sorting the `opened` stack.\n\nTo get an even lower number of expansions, try reducing `NUM_THETA_CELLS` in `hybrid_breadth_first.h` to reduce the total number of cells that can be searched in the `closed` array. Be careful though! Making `NUM_THETA_CELLS` too small might result in the algorithm being unable to find a path through the maze. \n\nAnother possibility for improvement is to use the regular A* algorithm to assign a cost value to each grid cell. This grid of costs can then be used as the heuristic function, which will lead to an extremely efficient search. If you are looking for additional practice, give this a try! ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 458689,
+              "key": "5e1f96d0-692e-4741-b5f4-35e6ea0dc64a",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "5e1f96d0-692e-4741-b5f4-35e6ea0dc64a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4830841071599616",
+                "initial_code_files": [
+                  {
+                    "text": "#include <iostream>\n#include <vector>\n#include \"hybrid_breadth_first.h\"\n\nusing std::cout;\nusing std::endl;\n\n// Sets up maze grid\nint X = 1;\nint _ = 0;\n\n/**\n * TODO: You can change up the grid maze to test different expansions.\n */\nvector<vector<int>> GRID = {\n  {_,X,X,_,_,_,_,_,_,_,X,X,_,_,_,_,},\n  {_,X,X,_,_,_,_,_,_,X,X,_,_,_,_,_,},\n  {_,X,X,_,_,_,_,_,X,X,_,_,_,_,_,_,},\n  {_,X,X,_,_,_,_,X,X,_,_,_,X,X,X,_,},\n  {_,X,X,_,_,_,X,X,_,_,_,X,X,X,_,_,},\n  {_,X,X,_,_,X,X,_,_,_,X,X,X,_,_,_,},\n  {_,X,X,_,X,X,_,_,_,X,X,X,_,_,_,_,},\n  {_,X,X,X,X,_,_,_,X,X,X,_,_,_,_,_,},\n  {_,X,X,X,_,_,_,X,X,X,_,_,_,_,_,_,},\n  {_,X,X,_,_,_,X,X,X,_,_,X,X,X,X,X,},\n  {_,X,_,_,_,X,X,X,_,_,X,X,X,X,X,X,},\n  {_,_,_,_,X,X,X,_,_,X,X,X,X,X,X,X,},\n  {_,_,_,X,X,X,_,_,X,X,X,X,X,X,X,X,},\n  {_,_,X,X,X,_,_,X,X,X,X,X,X,X,X,X,},\n  {_,X,X,X,_,_,_,_,_,_,_,_,_,_,_,_,},\n  {X,X,X,_,_,_,_,_,_,_,_,_,_,_,_,_,}};\n\nvector<double> START = {0.0,0.0,0.0};\nvector<int> GOAL = {(int)GRID.size()-1, (int)GRID[0].size()-1};\n\nint main() {\n  cout << \"Finding path through grid:\" << endl;\n  \n  // Creates an Empty Maze and for testing the number of expansions with it\n  for(int i = 0; i < GRID.size(); ++i) {\n    cout << GRID[i][0];\n    for(int j = 1; j < GRID[0].size(); ++j) {\n      cout << \",\" << GRID[i][j];\n    }\n    cout << endl;\n  }\n\n  HBF hbf = HBF();\n\n  HBF::maze_path get_path = hbf.search(GRID,START,GOAL);\n\n  vector<HBF::maze_s> show_path = hbf.reconstruct_path(get_path.came_from, \n                                                       START, get_path.final);\n\n  cout << \"show path from start to finish\" << endl;\n  for(int i = show_path.size()-1; i >= 0; --i) {\n      HBF::maze_s step = show_path[i];\n      cout << \"##### step \" << step.g << \" #####\" << endl;\n      cout << \"x \" << step.x << endl;\n      cout << \"y \" << step.y << endl;\n      cout << \"theta \" << step.theta << endl;\n  }\n  \n  return 0;\n}",
+                    "name": "main.cpp"
+                  },
+                  {
+                    "text": "#include <math.h>\n#include <algorithm>\n#include <iostream>\n#include <vector>\n#include \"hybrid_breadth_first.h\"\n\n// Initializes HBF\nHBF::HBF() {}\n\nHBF::~HBF() {}\n\nbool HBF::compare_maze_s(const HBF::maze_s &lhs, const HBF::maze_s &rhs) {\n  return lhs.f < rhs.f;\n}\n\ndouble HBF::heuristic(double x, double y, vector<int> &goal){\n  return fabs(y - goal[0]) + fabs(x - goal[1]); //return grid distance to goal\n}\n\nint HBF::theta_to_stack_number(double theta){\n  // Takes an angle (in radians) and returns which \"stack\" in the 3D \n  //   configuration space this angle corresponds to. Angles near 0 go in the \n  //   lower stacks while angles near 2 * pi go in the higher stacks.\n  double new_theta = fmod((theta + 2 * M_PI),(2 * M_PI));\n  int stack_number = (int)(round(new_theta * NUM_THETA_CELLS / (2*M_PI))) \n                   % NUM_THETA_CELLS;\n\n  return stack_number;\n}\n\nint HBF::idx(double float_num) {\n  // Returns the index into the grid for continuous position. So if x is 3.621, \n  //   then this would return 3 to indicate that 3.621 corresponds to array \n  //   index 3.\n  return int(floor(float_num));\n}\n\n\nvector<HBF::maze_s> HBF::expand(HBF::maze_s &state, vector<int> &goal) {\n  int g = state.g;\n  double x = state.x;\n  double y = state.y;\n  double theta = state.theta;\n    \n  int g2 = g+1;\n  vector<HBF::maze_s> next_states;\n\n  for(double delta_i = -35; delta_i < 40; delta_i+=5) {\n    double delta = M_PI / 180.0 * delta_i;\n    double omega = SPEED / LENGTH * tan(delta);\n    double theta2 = theta + omega;\n    if(theta2 < 0) {\n      theta2 += 2*M_PI;\n    }\n    double x2 = x + SPEED * cos(theta);\n    double y2 = y + SPEED * sin(theta);\n    HBF::maze_s state2;\n    state2.f = g2 + heuristic(x2, y2, goal);\n    state2.g = g2;\n    state2.x = x2;\n    state2.y = y2;\n    state2.theta = theta2;\n    next_states.push_back(state2);\n  }\n\n  return next_states;\n}\n\nvector< HBF::maze_s> HBF::reconstruct_path(\n  vector<vector<vector<HBF::maze_s>>> &came_from, vector<double> &start, \n  HBF::maze_s &final) {\n\n  vector<maze_s> path = {final};\n  \n  int stack = theta_to_stack_number(final.theta);\n\n  maze_s current = came_from[stack][idx(final.x)][idx(final.y)];\n  \n  stack = theta_to_stack_number(current.theta);\n  \n  double x = current.x;\n  double y = current.y;\n\n  while(x != start[0] || y != start[1]) {\n    path.push_back(current);\n    current = came_from[stack][idx(x)][idx(y)];\n    x = current.x;\n    y = current.y;\n    stack = theta_to_stack_number(current.theta);\n  }\n  \n  return path;\n}\n\nHBF::maze_path HBF::search(vector< vector<int> > &grid, vector<double> &start, \n                           vector<int> &goal) {\n  // Working Implementation of breadth first search. Does NOT use a heuristic\n  //   and as a result this is pretty inefficient. Try modifying this algorithm \n  //   into hybrid A* by adding heuristics appropriately.\n\n  /**\n   * TODO: Add heuristics and convert this function into hybrid A*\n   */\n  vector<vector<vector<int>>> closed(\n    NUM_THETA_CELLS, vector<vector<int>>(grid[0].size(), vector<int>(grid.size())));\n  vector<vector<vector<maze_s>>> came_from(\n    NUM_THETA_CELLS, vector<vector<maze_s>>(grid[0].size(), vector<maze_s>(grid.size())));\n  double theta = start[2];\n  int stack = theta_to_stack_number(theta);\n  int g = 0;\n\n  maze_s state;\n  state.g = g;\n  state.x = start[0];\n  state.y = start[1];\n  state.f = g + heuristic(state.x, state.y, goal);\n  state.theta = theta;\n\n  closed[stack][idx(state.x)][idx(state.y)] = 1;\n  came_from[stack][idx(state.x)][idx(state.y)] = state;\n  int total_closed = 1;\n  vector<maze_s> opened = {state};\n  bool finished = false;\n  while(!opened.empty()) {\n    sort(opened.begin(), opened.end(), compare_maze_s);\n    maze_s current = opened[0]; //grab first elment\n    opened.erase(opened.begin()); //pop first element\n\n    int x = current.x;\n    int y = current.y;\n\n    if(idx(x) == goal[0] && idx(y) == goal[1]) {\n      std::cout << \"found path to goal in \" << total_closed << \" expansions\" \n                << std::endl;\n      maze_path path;\n      path.came_from = came_from;\n      path.closed = closed;\n      path.final = current;\n\n      return path;\n    }\n\n    vector<maze_s> next_state = expand(current, goal);\n\n    for(int i = 0; i < next_state.size(); ++i) {\n      int g2 = next_state[i].g;\n      double x2 = next_state[i].x;\n      double y2 = next_state[i].y;\n      double theta2 = next_state[i].theta;\n\n      if((x2 < 0 || x2 >= grid.size()) || (y2 < 0 || y2 >= grid[0].size())) {\n        // invalid cell\n        continue;\n      }\n\n      int stack2 = theta_to_stack_number(theta2);\n\n      if(closed[stack2][idx(x2)][idx(y2)] == 0 && grid[idx(x2)][idx(y2)] == 0) {\n        opened.push_back(next_state[i]);\n        closed[stack2][idx(x2)][idx(y2)] = 1;\n        came_from[stack2][idx(x2)][idx(y2)] = current;\n        ++total_closed;\n      }\n    }\n  }\n\n  std::cout << \"no valid path.\" << std::endl;\n  HBF::maze_path path;\n  path.came_from = came_from;\n  path.closed = closed;\n  path.final = state;\n\n  return path;\n}",
+                    "name": "hybrid_breadth_first.cpp"
+                  },
+                  {
+                    "text": "#ifndef HYBRID_BREADTH_FIRST_H_\n#define HYBRID_BREADTH_FIRST_H_\n\n#include <vector>\n\nusing std::vector;\n\nclass HBF {\n public:\n  // Constructor\n  HBF();\n\n  // Destructor\n  virtual ~HBF();\n\n  // HBF structs\n  struct maze_s {\n    int g;  // iteration\n    int f;\n    double x;\n    double y;\n    double theta;\n  };\n\n  struct maze_path {\n    vector<vector<vector<int>>> closed;\n    vector<vector<vector<maze_s>>> came_from;\n    maze_s final;\n  };\n  \n  // HBF functions\n  int theta_to_stack_number(double theta);\n\n  int idx(double float_num);\n    \n  double heuristic(double x, double y, vector<int> &goal);\n\n  static bool compare_maze_s(const HBF::maze_s &lhs, const HBF::maze_s &rhs);\n\n  vector<maze_s> expand(maze_s &state, vector<int> &goal);\n\n  vector<maze_s> reconstruct_path(vector<vector<vector<maze_s>>> &came_from, \n                                  vector<double> &start, HBF::maze_s &final);\n\n  maze_path search(vector<vector<int>> &grid, vector<double> &start, \n                   vector<int> &goal);\n\n private:\n  const int NUM_THETA_CELLS = 90;\n  const double SPEED = 1.45;\n  const double LENGTH = 0.5;\n};\n\n#endif  // HYBRID_BREADTH_FIRST_H_",
+                    "name": "hybrid_breadth_first.h"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 340040,
+          "key": "30532002-e2dc-418d-971d-f561238336ca",
+          "title": "Environment Classification",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "30532002-e2dc-418d-971d-f561238336ca",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346281,
+              "key": "48c35dbe-7504-4a6c-ac57-9f231d7775f0",
+              "title": "15 L EnvironmentClassification",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "4NOvHff7WFQ",
+                "china_cdn_id": "4NOvHff7WFQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340041,
+          "key": "de6511e8-985e-46f6-8026-4d200c4d27b9",
+          "title": "Frenet Reminder",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "de6511e8-985e-46f6-8026-4d200c4d27b9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346282,
+              "key": "c9c89398-36d1-40ca-baab-4ebed2d68371",
+              "title": "16 L Frenet Reminder",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "u3TYp-hDojk",
+                "china_cdn_id": "u3TYp-hDojk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340042,
+          "key": "b0e5e9dc-f83f-469a-8724-cbd266304e55",
+          "title": "The Need for Time",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b0e5e9dc-f83f-469a-8724-cbd266304e55",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346283,
+              "key": "ee847c89-16e0-498d-aa56-dcd3f4a7a079",
+              "title": "17 L The Need For T",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "4WsqXkB8zqQ",
+                "china_cdn_id": "4WsqXkB8zqQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340043,
+          "key": "6e303e94-e577-40b4-86c7-32d09f057229",
+          "title": "s, d, and t",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6e303e94-e577-40b4-86c7-32d09f057229",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346562,
+              "key": "9cfc6702-d2ac-4af4-8a0a-86add7cd440e",
+              "title": "18 L  S D And T",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SD1iyzgFf8s",
+                "china_cdn_id": "SD1iyzgFf8s.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340044,
+          "key": "ea5868af-cac6-4629-9750-777d83cde454",
+          "title": "Trajectory Matching",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ea5868af-cac6-4629-9750-777d83cde454",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345855,
+              "key": "9d9e3419-1b46-482b-af3e-82f9a9431f7c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Trajectory Matching\nBelow you will see s vs. t and d vs. t graphs for four different trajectories (labeled Option A, B, C, and D). Match each set of graphs to the corresponding verbal description of the trajectory.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345851,
+              "key": "514d8ff2-c2c4-4c25-9873-1d7a93bdd4ea",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5965314f_untitled-presentation/untitled-presentation.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/514d8ff2-c2c4-4c25-9873-1d7a93bdd4ea",
+              "caption": "",
+              "alt": "",
+              "width": 300,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 345852,
+              "key": "a34c21d6-c947-4f51-aaa4-7628d6d38272",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/59653161_untitled-presentation-1/untitled-presentation-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a34c21d6-c947-4f51-aaa4-7628d6d38272",
+              "caption": "",
+              "alt": "",
+              "width": 300,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 345853,
+              "key": "27323d72-af83-41c1-b78d-a0b2d78a86c4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5965316f_untitled-presentation-2/untitled-presentation-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/27323d72-af83-41c1-b78d-a0b2d78a86c4",
+              "caption": "",
+              "alt": "",
+              "width": 300,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 345854,
+              "key": "f931402d-b7f5-4958-9c33-0a80b2c7299f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/59653181_untitled-presentation-3/untitled-presentation-3.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f931402d-b7f5-4958-9c33-0a80b2c7299f",
+              "caption": "",
+              "alt": "",
+              "width": 300,
+              "height": 300,
+              "instructor_notes": null
+            },
+            {
+              "id": 345850,
+              "key": "e0601809-8754-4349-a79c-0055cf7d32a8",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e0601809-8754-4349-a79c-0055cf7d32a8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the graphs to the verbal description."
+                },
+                "concepts_label": "Verbal Description",
+                "answers_label": "Graph Number",
+                "concepts": [
+                  {
+                    "text": "Slow down in lane",
+                    "correct_answer": {
+                      "id": "a1499803092140",
+                      "text": "A"
+                    }
+                  },
+                  {
+                    "text": "Swerve quickly",
+                    "correct_answer": {
+                      "id": "a1499803160829",
+                      "text": "C"
+                    }
+                  },
+                  {
+                    "text": "Pass vehicle",
+                    "correct_answer": {
+                      "id": "a1499803170696",
+                      "text": "B"
+                    }
+                  },
+                  {
+                    "text": "Pull over and stop",
+                    "correct_answer": {
+                      "id": "a1499803193638",
+                      "text": "D"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1499803193638",
+                    "text": "D"
+                  },
+                  {
+                    "id": "a1499803092140",
+                    "text": "A"
+                  },
+                  {
+                    "id": "a1499803160829",
+                    "text": "C"
+                  },
+                  {
+                    "id": "a1499803170696",
+                    "text": "B"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 340045,
+          "key": "263947ea-291a-49fa-8253-66ceff003ebe",
+          "title": "Structured Trajectory Generation Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "263947ea-291a-49fa-8253-66ceff003ebe",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346284,
+              "key": "8804d433-fb33-4a88-8543-65d51c849e6c",
+              "title": "20 L Structures Trajectory Generation Overview",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "N2cwqKR63x8",
+                "china_cdn_id": "N2cwqKR63x8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340046,
+          "key": "d1a54cb0-920c-49b5-8a8b-40d211682a2b",
+          "title": "Trajectories with Boundary Conditions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d1a54cb0-920c-49b5-8a8b-40d211682a2b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346285,
+              "key": "54e27798-ee1d-4adf-956e-258fa62fb620",
+              "title": "21 L TrajectoriesWithBoundaryConditions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "p73Jma9nW-Q",
+                "china_cdn_id": "p73Jma9nW-Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340047,
+          "key": "c8dac41a-7430-4002-9408-63f940807bcd",
+          "title": "Jerk Minimizing Trajectories",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c8dac41a-7430-4002-9408-63f940807bcd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346564,
+              "key": "149ca7d1-daec-4583-80c8-10a7b55d99d8",
+              "title": "22 Jerk Minimizing Trajectories",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "pomDFkzy2bk",
+                "china_cdn_id": "pomDFkzy2bk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340049,
+          "key": "0013ad18-3bb8-43fa-8095-f19aaf0d5a76",
+          "title": "Derivation Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0013ad18-3bb8-43fa-8095-f19aaf0d5a76",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346286,
+              "key": "674a1d69-f708-4de1-8a70-789884fd1375",
+              "title": "23 L DerivationOverview",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "There is an error on multiple occasions with equation <span class=\"mathquill\">\\ddot{s}</span> - the <span class=\"mathquill\">\\alpha_6</span> should be <span class=\"mathquill\">\\alpha_3</span>.",
+              "video": {
+                "youtube_id": "TuVp_HhQq7A",
+                "china_cdn_id": "TuVp_HhQq7A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340051,
+          "key": "de856a9f-00b1-4060-a5f1-c3698b603ad8",
+          "title": "Derivation Details 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "de856a9f-00b1-4060-a5f1-c3698b603ad8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345266,
+              "key": "4f2dbe64-9f59-4271-82b0-ab68afded0f7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Derivation Details\nIn the previous videos we have:\n\n1. Stated that Jerk Minimizing Polynomials are degree 5 polynomials with 6 tunable parameters.\n2. Given an overview of how to calculate the coefficients for such a polynomial given the boundary conditions  <span class=\"mathquill\">[s_i, \\dot{s}_i, \\ddot{s}_i]</span> and <span class=\"mathquill\">[s_f, \\dot{s}_f, \\ddot{s}_f]</span> (or the corresponding d coordinates).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 340050,
+          "key": "33801092-7e7f-4d1a-a1a1-d39a50ab53fb",
+          "title": "Polynomial Trajectory Generation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "33801092-7e7f-4d1a-a1a1-d39a50ab53fb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346287,
+              "key": "b42aa0f7-63b5-4ae2-b85b-336b5ddac973",
+              "title": "25 L How Polynomial Trajectory Generation Works",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5ZzYOqYZZ3I",
+                "china_cdn_id": "5ZzYOqYZZ3I.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 348218,
+          "key": "35ae38e8-3f68-4edf-9ea7-5b324d014d72",
+          "title": "Implement Quintic Polynomial Solver C++",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "35ae38e8-3f68-4edf-9ea7-5b324d014d72",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 348221,
+              "key": "119636c4-2735-4480-ae4c-37a06ec65967",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implement a Quintic Polynomial Solver\nIn this exercise you will implement a quintic polynomial solver. This will let you take boundary conditions as input and generate a polynomial trajectory which matches those conditions with minimal jerk.\n\n### Inputs \nYour solver will take three inputs.\n\n1. `start` - <span class=\"mathquill\">[s_i, \\dot{s_i}, \\ddot{s_i}]</span>\n2. `end` - <span class=\"mathquill\">[s_f,  \\dot{s_f}, \\ddot{s_f}]</span>\n3. `T` - the duration of maneuver in seconds.\n\n### Instructions\n\n1. Implement the `JMT(start, end, T)` function in `main.cpp`\n3. Hit `Test Run` and see if you're correct!\n\n### Tips\nRemember, you are solving a system of equations: matrices will be helpful! The Eigen library used from Sensor Fusion is included.\n\nThe equations for position, velocity, and acceleration are given by:\n\n<div class=\"mathquill\">s(t) = s_i + \\dot{s_i}t + \\frac{\\ddot{s_i}}{2}t^2 + \\alpha_3t^3 + \\alpha_4t^4 + \\alpha_5t^5</div>\n\n<div class=\"mathquill\">\\dot{s}(t) = \\dot{s_i} + \\ddot{s_i}t + 3 \\alpha_3t^2 + 4\\alpha_4t^3 + 5\\alpha_5t^4 </div>\n\n<div class=\"mathquill\">\\ddot{s}(t) = \\ddot{s_i}  + 6 \\alpha_3t + 12\\alpha_4t^2 + 20\\alpha_5t^3 \n</div>\n\nand if you evaluate these at <span class=\"mathquill\">t=0</span> you find the first three coeffecients of your JMT are:\n\n<span class=\"mathquill\">[\\alpha_0,  \\alpha_1, \\alpha_2] = [s_i, \\dot{s_i}, \\frac{1}{2}\\ddot{s_i}]</span>\n\nand you can get the last three coefficients by evaluating these equations at <span class=\"mathquill\">t = T</span>. When you carry out the math and write the problem in matrix form you get the following:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 348280,
+              "key": "74ad163f-9e76-4022-963f-276c137cd6ed",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/596e6a9c_codecogseqn-6/codecogseqn-6.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/74ad163f-9e76-4022-963f-276c137cd6ed",
+              "caption": "",
+              "alt": null,
+              "width": 2343,
+              "height": 435,
+              "instructor_notes": null
+            },
+            {
+              "id": 348225,
+              "key": "60f95aa7-30ef-45be-bcf4-0c01dbc88ff0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "All these quantities are known except for <span class=\"mathquill\">\\alpha_3, \\alpha_4, \\alpha_5</span>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 348226,
+              "key": "511fa19f-8b92-486d-bfb2-25df15190d63",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "511fa19f-8b92-486d-bfb2-25df15190d63",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6593986662891520",
+                "initial_code_files": [
+                  {
+                    "text": "#include <cmath>\n#include <iostream>\n#include <vector>\n\n#include \"Dense\"\n#include \"grader.h\"\n\nusing std::vector;\nusing Eigen::MatrixXd;\nusing Eigen::VectorXd;\n\n/**\n * TODO: complete this function\n */\nvector<double> JMT(vector<double> &start, vector<double> &end, double T) {\n  /**\n   * Calculate the Jerk Minimizing Trajectory that connects the initial state\n   * to the final state in time T.\n   *\n   * @param start - the vehicles start location given as a length three array\n   *   corresponding to initial values of [s, s_dot, s_double_dot]\n   * @param end - the desired end state for vehicle. Like \"start\" this is a\n   *   length three array.\n   * @param T - The duration, in seconds, over which this maneuver should occur.\n   *\n   * @output an array of length 6, each value corresponding to a coefficent in \n   *   the polynomial:\n   *   s(t) = a_0 + a_1 * t + a_2 * t**2 + a_3 * t**3 + a_4 * t**4 + a_5 * t**5\n   *\n   * EXAMPLE\n   *   > JMT([0, 10, 0], [10, 10, 0], 1)\n   *     [0.0, 10.0, 0.0, 0.0, 0.0, 0.0]\n   */\n\n  return {1,2,3,4,5,6};\n}\n\nint main() {\n\n  // create test cases\n  vector< test_case > tc = create_tests();\n\n  bool total_correct = true;\n\n  for(int i = 0; i < tc.size(); ++i) {\n    vector<double> jmt = JMT(tc[i].start, tc[i].end, tc[i].T);\n    bool correct = close_enough(jmt, answers[i]);\n    total_correct &= correct;\n  }\n\n  if(!total_correct) {\n    std::cout << \"Try again!\" << std::endl;\n  } else {\n    std::cout << \"Nice work!\" << std::endl;\n  }\n\n  return 0;\n}",
+                    "name": "main.cpp"
+                  },
+                  {
+                    "text": "#ifndef GRADER_H\n#define GRADER_H\n\n#include <cmath>\n#include <vector>\n\nusing std::vector;\n\nstruct test_case {\n    vector<double> start;\n    vector<double> end;\n    double T;\n};\n\nbool close_enough(vector<double> &poly, vector<double> &target_poly, \n                  double eps=0.01) {\n  if (poly.size() != target_poly.size()) {\n    std::cout << \"Your solution didn't have the correct number of terms\" \n              << std::endl;\n    return false;\n  }\n\n  for (int i = 0; i < poly.size(); ++i) {\n    double diff = poly[i]-target_poly[i];\n    if (abs(diff) > eps) {\n      std::cout << \"At least one of your terms differed from target by more than \" \n                << eps << std::endl;\n      return false;\n    }\n  }\n\n  return true;\n}\n\nvector<test_case> create_tests() {\n  // Create test case vector\n  vector<test_case> tc;\n\n  test_case tc1;\n  tc1.start = {0,10,0};\n  tc1.end = {10,10,0};\n  tc1.T = 1;\n  tc.push_back(tc1);\n\n  test_case tc2;\n  tc2.start = {0,10,0};\n  tc2.end = {20,15,20};\n  tc2.T = 2;\n  tc.push_back(tc2);\n\n  test_case tc3;\n  tc3.start = {5,10,2};\n  tc3.end = {-30,-20,-4};\n  tc3.T = 5;\n  tc.push_back(tc3);\n  \n  return tc;\n}\n\nvector<vector<double>> answers = {{0.0, 10.0, 0.0, 0.0, 0.0, 0.0},\n                                  {0.0,10.0,0.0,0.0,-0.625,0.3125},\n                                  {5.0,10.0,1.0,-3.0,0.64,-0.0432}};\n\n#endif  // GRADER_H",
+                    "name": "grader.h"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 348289,
+          "key": "82d9de8d-1eb3-4d49-9f45-78fc33fa5ac3",
+          "title": "Implement Quintic Polynomial Solver Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82d9de8d-1eb3-4d49-9f45-78fc33fa5ac3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 814591,
+              "key": "c65ed17b-cc4a-4b21-ad26-e4f3843675b5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quintic Polynomial Solver Solution\nBelow is one potential solution for the quintic polynomial solver.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 348290,
+              "key": "c5946afd-8b95-42bc-83d7-87ac12ef987a",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "c5946afd-8b95-42bc-83d7-87ac12ef987a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4695444151205888",
+                "initial_code_files": [
+                  {
+                    "text": "#include <cmath>\n#include <iostream>\n#include <vector>\n\n#include \"Dense\"\n#include \"grader.h\"\n\nusing std::vector;\nusing Eigen::MatrixXd;\nusing Eigen::VectorXd;\n\n/**\n * TODO: complete this function\n */\nvector<double> JMT(vector<double> &start, vector<double> &end, double T) {\n  /**\n   * Calculate the Jerk Minimizing Trajectory that connects the initial state\n   * to the final state in time T.\n   *\n   * @param start - the vehicles start location given as a length three array\n   *   corresponding to initial values of [s, s_dot, s_double_dot]\n   * @param end - the desired end state for vehicle. Like \"start\" this is a\n   *   length three array.\n   * @param T - The duration, in seconds, over which this maneuver should occur.\n   *\n   * @output an array of length 6, each value corresponding to a coefficent in \n   *   the polynomial:\n   *   s(t) = a_0 + a_1 * t + a_2 * t**2 + a_3 * t**3 + a_4 * t**4 + a_5 * t**5\n   *\n   * EXAMPLE\n   *   > JMT([0, 10, 0], [10, 10, 0], 1)\n   *     [0.0, 10.0, 0.0, 0.0, 0.0, 0.0]\n   */\n  MatrixXd A = MatrixXd(3, 3);\n  A << T*T*T, T*T*T*T, T*T*T*T*T,\n       3*T*T, 4*T*T*T,5*T*T*T*T,\n       6*T, 12*T*T, 20*T*T*T;\n    \n  MatrixXd B = MatrixXd(3,1);     \n  B << end[0]-(start[0]+start[1]*T+.5*start[2]*T*T),\n       end[1]-(start[1]+start[2]*T),\n       end[2]-start[2];\n          \n  MatrixXd Ai = A.inverse();\n  \n  MatrixXd C = Ai*B;\n  \n  vector <double> result = {start[0], start[1], .5*start[2]};\n\n  for(int i = 0; i < C.size(); ++i) {\n    result.push_back(C.data()[i]);\n  }\n\n  return result;\n}\n\nint main() {\n\n  // create test cases\n  vector< test_case > tc = create_tests();\n\n  bool total_correct = true;\n\n  for(int i = 0; i < tc.size(); ++i) {\n    vector<double> jmt = JMT(tc[i].start, tc[i].end, tc[i].T);\n    bool correct = close_enough(jmt, answers[i]);\n    total_correct &= correct;\n  }\n\n  if(!total_correct) {\n    std::cout << \"Try again!\" << std::endl;\n  } else {\n    std::cout << \"Nice work!\" << std::endl;\n  }\n\n  return 0;\n}",
+                    "name": "main.cpp"
+                  },
+                  {
+                    "text": "#ifndef GRADER_H\n#define GRADER_H\n\n#include <cmath>\n#include <vector>\n\nusing std::vector;\n\nstruct test_case {\n    vector<double> start;\n    vector<double> end;\n    double T;\n};\n\nbool close_enough(vector<double> &poly, vector<double> &target_poly, \n                  double eps=0.01) {\n  if (poly.size() != target_poly.size()) {\n    std::cout << \"Your solution didn't have the correct number of terms\" \n              << std::endl;\n    return false;\n  }\n\n  for (int i = 0; i < poly.size(); ++i) {\n    double diff = poly[i]-target_poly[i];\n    if (abs(diff) > eps) {\n      std::cout << \"At least one of your terms differed from target by more than \" \n                << eps << std::endl;\n      return false;\n    }\n  }\n\n  return true;\n}\n\nvector<test_case> create_tests() {\n  // Create test case vector\n  vector<test_case> tc;\n\n  test_case tc1;\n  tc1.start = {0,10,0};\n  tc1.end = {10,10,0};\n  tc1.T = 1;\n  tc.push_back(tc1);\n\n  test_case tc2;\n  tc2.start = {0,10,0};\n  tc2.end = {20,15,20};\n  tc2.T = 2;\n  tc.push_back(tc2);\n\n  test_case tc3;\n  tc3.start = {5,10,2};\n  tc3.end = {-30,-20,-4};\n  tc3.T = 5;\n  tc.push_back(tc3);\n  \n  return tc;\n}\n\nvector<vector<double>> answers = {{0.0, 10.0, 0.0, 0.0, 0.0, 0.0},\n                                  {0.0,10.0,0.0,0.0,-0.625,0.3125},\n                                  {5.0,10.0,1.0,-3.0,0.64,-0.0432}};\n\n#endif  // GRADER_H",
+                    "name": "grader.h"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 340055,
+          "key": "8c6e4c86-84d3-4a8d-9b30-0bb56c9177e0",
+          "title": "What should be checked?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8c6e4c86-84d3-4a8d-9b30-0bb56c9177e0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345269,
+              "key": "e07b44fa-5be3-48d7-8f1c-e9e526d373a9",
+              "title": "What Should be Checked",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e07b44fa-5be3-48d7-8f1c-e9e526d373a9",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "When evaluating the **feasibility** of a potential trajectory, which of the following quantities should be checked? Select all that apply.",
+                "answers": [
+                  {
+                    "id": "a1499458989515",
+                    "text": "Maximum velocity (with respect to car's capabilities and speed limit)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499459046698",
+                    "text": "Minimum velocity",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499459052866",
+                    "text": "Maximum acceleration",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499459059250",
+                    "text": "Minimum acceleration",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499459065714",
+                    "text": "Steering angle",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 346288,
+              "key": "b078feb8-03d5-4f01-ac0d-8b496cd836e8",
+              "title": "27 L WhatShouldBeCheckedSolution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "E2TBXjyYb_Y",
+                "china_cdn_id": "E2TBXjyYb_Y.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340056,
+          "key": "81b7031c-dfa7-4ade-8bc2-8b06b871016f",
+          "title": "Implementing Feasibility",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "81b7031c-dfa7-4ade-8bc2-8b06b871016f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346289,
+              "key": "c1806139-d6c5-4dc0-bd56-84c3efa4517b",
+              "title": "29 L Implementing Feasibility",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8tD8Os9_gKc",
+                "china_cdn_id": "8tD8Os9_gKc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340058,
+          "key": "1b40c61c-2933-4df5-b25d-98131cc30fc2",
+          "title": "Putting it All Together",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1b40c61c-2933-4df5-b25d-98131cc30fc2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346290,
+              "key": "5558a3e0-b7e3-46cf-b48c-8ab576769067",
+              "title": "31 L PuttingItAllTogether",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UhrmXmnKhQE",
+                "china_cdn_id": "UhrmXmnKhQE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340059,
+          "key": "0b10291e-5549-4c2c-b392-64ccfb21b1a2",
+          "title": "Polynomial Trajectory Reading (optional)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0b10291e-5549-4c2c-b392-64ccfb21b1a2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "Optimal Trajectory Generation For Dynamic Street Scenarios In A Frenet Frame",
+                "uri": "http://video.udacity-data.com.s3.amazonaws.com/topher/2017/July/595fd482_werling-optimal-trajectory-generation-for-dynamic-street-scenarios-in-a-frenet-frame/werling-optimal-trajectory-generation-for-dynamic-street-scenarios-in-a-frenet-frame.pdf"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 345235,
+              "key": "ec1a66a2-d0dd-45fe-8f8b-8c362feb7a41",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Polynomial Trajectory Generation\n\nIf you are interested in learning more about PTG, I've included a link to a paper (below) titled \"Optimal Trajectory Generation for Dynamic Street Scenarios in a Frenet Frame\". It is short and discusses some interesting (and potentially useful) topics like:\n\n1. Cost Functions.\n2. Differences between high speed and low speed trajectory generation.\n3. Implementation of specific maneuvers relevant to highway driving like following, merging, and velocity keeping.\n4. How to combining lateral and longitudinal trajectories.\n5. A derivation of the transformation from Frenet coordinates to global coordinates (in the appendix).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 340060,
+          "key": "16ed4c00-76c6-49f2-9d53-20ecd26644e0",
+          "title": "Polynomial Trajectory Generation Playground",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "16ed4c00-76c6-49f2-9d53-20ecd26644e0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "Trajectoryexercise2",
+                "uri": "http://video.udacity-data.com.s3.amazonaws.com/topher/2017/October/59d5bfcb_trajectoryexercise2/trajectoryexercise2.zip"
+              },
+              {
+                "name": "Trajectoryexercise2_python3",
+                "uri": "https://d17h27t6h515a5.cloudfront.net/topher/2017/December/5a3ea459_trajectoryexercise2-python3/trajectoryexercise2-python3.zip"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 345228,
+              "key": "c794e853-6eab-46e0-8e7d-1488e6762751",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Polynomial Playground (making PTG work)\n\nBefore you begin the final project we'd like to give you a chance to play around with cost function design and weight tweaking. In the Python code you will be provided, you will have a working Polynomial Trajectory Generator. You can see it in action by doing the following:\n\n### Getting Started\n1. Download the project code by clicking **TrajectoryExercise2** at the bottom of this page.\n2. From the project's directory, run `python evaluate_ptg.py`. You should see a plot similar to the one below. This plot shows the s (x-axis) and d(y-axis) trajectories followed by a vehicle in traffic (red) and a self driving car (blue).\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345230,
+              "key": "a4f722fe-d339-42f9-bf36-19801f569d74",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/595fd1b3_figure-1/figure-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a4f722fe-d339-42f9-bf36-19801f569d74",
+              "caption": "",
+              "alt": null,
+              "width": 800,
+              "height": 600,
+              "instructor_notes": null
+            },
+            {
+              "id": 345232,
+              "key": "44d528ab-f360-4182-ac5d-e585b0c97e32",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this situation, the self driving car was trying to get behind the target vehicle, but the cost functions it was using weren't weighted appropriately and so it didn't behave as expected.\n\n### Fixing the Problem(s)\n\nThere are 5 files in the provided code. You'll probably want to start by modifying cost function weights in `ptg.py` but may also want to add cost functions of your own. As a bonus challenge try implementing this same code in C++.\n\n**File Descriptions**\n\n1. `ptg.py` - The primary code for generating a polynomial trajectory for some constraints. This is also where weights are assigned to cost functions. Adjusting these weights (and possibly adding new cost functions), can have a big effect on vehicle behavior.\n2. `cost_functions.py` - This file contains many cost functions which are used in ptg.py when selecting the best trajectory. Some cost functions aren't yet implemented...\n3. `evaluate_ptg.py` - This file sets a start state, goal, and traffic conditions and runs the PTG code. Feel free to modify the goal, add traffic, etc... to test your vehicle's trajectory generation ability.\n4. `constants.py` - constants like speed limit, vehicle size, etc... \n5. `helpers.py` - helper functions used by other files.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 340062,
+          "key": "b201e26b-64de-4f4d-afcc-042e0dea1df2",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b201e26b-64de-4f4d-afcc-042e0dea1df2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346291,
+              "key": "45d9de51-89c2-4ceb-8ea6-21fdcd291017",
+              "title": "35 L Conclusion",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "R56iixkZvEE",
+                "china_cdn_id": "R56iixkZvEE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 809770,
+          "key": "13811653-e3b6-4f03-af15-cfc5fdcc688c",
+          "title": "Bonus Round: Path Planning [Optional]",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "13811653-e3b6-4f03-af15-cfc5fdcc688c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 809782,
+              "key": "695fa31d-7d66-45bd-b211-a17cde5e878e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Resources on Path Planning\n\nNice work reaching the end of the path planning content! While you still have the project left to do here, we're also providing some additional resources and recent research on the topic that you can come back to if you have time later on.\n\nReading research papers is a great way to get exposure to the latest and greatest in the field, as well as expand your learning. However, just like the project ahead, it's often best to *learn by doing* - if you find a paper that really excites you, try to implement it (or even something better) yourself!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 809783,
+              "key": "d4706044-8605-4f12-a484-8b33c46db274",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##### Optional Reading\n\nAll of these are completely optional reading - you could spend hours reading through the entirety of these! We suggest moving onto the project first so you have what you’ve learned fresh on your mind, before coming back to check these out. \n\nWe've categorized these papers to hopefully help you narrow down which ones might be of interest, as well including their *Abstract* section, which summarizes the paper.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 810153,
+              "key": "2b7074f4-13f3-4a11-a4e4-ed73a1f909eb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Indoors\n\n[Intention-Net: Integrating Planning and Deep Learning for Goal-Directed Autonomous Navigation](https://arxiv.org/abs/1710.05627) by S. W. Gao, et. al.\n> **Abstract:** How can a delivery robot navigate reliably to a destination in a new office building, with minimal prior information? To tackle this challenge, this paper introduces a two-level hierarchical approach, which integrates model-free deep learning and model-based path planning. At the low level, a neural-network motion controller, called the intention-net, is trained end-to-end to provide robust local navigation. The intention-net maps images from a single monocular camera and \"intentions\" directly to robot controls. At the high level, a path planner uses a crude map, e.g., a 2-D floor plan, to compute a path from the robot's current location to the goal. The planned path provides intentions to the intention-net. Preliminary experiments suggest that the learned motion controller is robust against perceptual uncertainty and by integrating with a path planner, it generalizes effectively to new environments and goals.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 810155,
+              "key": "f44f3c37-2659-4d9e-ad43-2299ea780e9e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### City Navigation\n\n[Learning to Navigate in Cities Without a Map](https://arxiv.org/abs/1804.00168) by P. Mirowski, et. al.\n> **Abstract:** Navigating through unstructured environments is a basic capability of intelligent creatures, and thus is of fundamental interest in the study and development of artificial intelligence. Long-range navigation is a complex cognitive task that relies on developing an internal representation of space, grounded by recognizable landmarks and robust visual processing, that can simultaneously support continuous self-localization (\"I am here\") and a representation of the goal (\"I am going there\"). Building upon recent research that applies deep reinforcement learning to maze navigation problems, we present an end-to-end deep reinforcement learning approach that can be applied on a city scale. [...] We present an interactive navigation environment that uses Google StreetView for its photographic content and worldwide coverage, and demonstrate that our learning method allows agents to learn to navigate multiple cities and to traverse to target destinations that may be kilometers away. [...]\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 810157,
+              "key": "1aef660d-b5a2-467e-95fc-91dccc32624b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Intersections\n\n[A Look at Motion Planning for Autonomous Vehicles at an Intersection](https://arxiv.org/abs/1806.07834) by S. Krishnan, et. al.\n> **Abstract:** Autonomous Vehicles are currently being tested in a variety of scenarios. As we move towards Autonomous Vehicles, how should intersections look? To answer that question, we break down an intersection management into the different conundrums and scenarios involved in the trajectory planning and current approaches to solve them. Then, a brief analysis of current works in autonomous intersection is conducted. With a critical eye, we try to delve into the discrepancies of existing solutions while presenting some critical and important factors that have been addressed. Furthermore, open issues that have to be addressed are also emphasized. We also try to answer the question of how to benchmark intersection management algorithms by providing some factors that impact autonomous navigation at intersection.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 810159,
+              "key": "e7f44ed2-b33e-4e64-b5de-65cb32a0dc2d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Planning in Traffic with Deep Reinforcement Learning\n\n[DeepTraffic: Crowdsourced Hyperparameter Tuning of Deep Reinforcement Learning Systems for Multi-Agent Dense Traffic Navigation](https://arxiv.org/abs/1801.02805) by L. Fridman, J. Terwilliger and B. Jenik\n> **Abstract:** We present a traffic simulation named DeepTraffic where the planning systems for a subset of the vehicles are handled by a neural network as part of a model-free, off-policy reinforcement learning process. The primary goal of DeepTraffic is to make the hands-on study of deep reinforcement learning accessible to thousands of students, educators, and researchers in order to inspire and fuel the exploration and evaluation of deep Q-learning network variants and hyperparameter configurations through large-scale, open competition. This paper investigates the crowd-sourced hyperparameter tuning of the policy network that resulted from the first iteration of the DeepTraffic competition where thousands of participants actively searched through the hyperparameter space.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

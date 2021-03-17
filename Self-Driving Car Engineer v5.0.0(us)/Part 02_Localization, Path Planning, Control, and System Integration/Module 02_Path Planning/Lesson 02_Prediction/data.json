@@ -1,0 +1,1086 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627674,
+      "key": "9acfbc49-0e0f-44ed-8919-18602f69ff9a",
+      "title": "Prediction",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Use data from sensor fusion to generate predictions about the likely behavior of moving objects.\n",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/9acfbc49-0e0f-44ed-8919-18602f69ff9a/627674/1538943949084/Prediction+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/9acfbc49-0e0f-44ed-8919-18602f69ff9a/627674/1538943945557/Prediction+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 331553,
+          "key": "7659a025-d759-4755-8e75-30e57a102f78",
+          "title": "Introduction and Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7659a025-d759-4755-8e75-30e57a102f78",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342225,
+              "key": "152e2e48-7a61-454c-b472-8aecda80256a",
+              "title": "01 L Introduction And Overview",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "aHmVFZ6hMjc",
+                "china_cdn_id": "aHmVFZ6hMjc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 339991,
+          "key": "2d09215e-9950-4180-9063-73f92750a8fc",
+          "title": "I/O Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2d09215e-9950-4180-9063-73f92750a8fc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 340583,
+              "key": "c28b979a-12fd-487f-a017-d3337daf245e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/June/5953efab_prediction/prediction.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c28b979a-12fd-487f-a017-d3337daf245e",
+              "caption": "",
+              "alt": null,
+              "width": 686,
+              "height": 356,
+              "instructor_notes": null
+            },
+            {
+              "id": 340581,
+              "key": "31ad2724-7f17-45e2-87e9-50e866ccc851",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Inputs and Outputs to Prediction\nA prediction module uses a map and data from sensor fusion to generate predictions for what all other **dynamic** objects in view are likely to do. To make this clearer, let's look at an example (in `json` format) of what the **input** to and **output** from prediction might look like.\n\n## Example Input - Sensor Fusion\n```json\n{\n\t\"timestamp\" : 34512.21,\n\t\"vehicles\" : [\n\t\t{\n\t\t\t\"id\"  : 0,\n\t\t\t\"x\"   : -10.0,\n\t\t\t\"y\"   : 8.1,\n\t\t\t\"v_x\" : 8.0,\n\t\t\t\"v_y\" : 0.0,\n\t\t\t\"sigma_x\" : 0.031,\n\t\t\t\"sigma_y\" : 0.040,\n\t\t\t\"sigma_v_x\" : 0.12,\n\t\t\t\"sigma_v_y\" : 0.03,\n\t\t},\n\t\t{\n\t\t\t\"id\"  : 1,\n\t\t\t\"x\"   : 10.0,\n\t\t\t\"y\"   : 12.1,\n\t\t\t\"v_x\" : -8.0,\n\t\t\t\"v_y\" : 0.0,\n\t\t\t\"sigma_x\" : 0.031,\n\t\t\t\"sigma_y\" : 0.040,\n\t\t\t\"sigma_v_x\" : 0.12,\n\t\t\t\"sigma_v_y\" : 0.03,\n\t\t},\n\t]\n}\n```\n\n## Example Output\n```json\n{\n\t\"timestamp\" : 34512.21,\n\t\"vehicles\" : [\n\t\t{\n\t\t\t\"id\" : 0,\n\t\t\t\"length\": 3.4,\n\t\t\t\"width\" : 1.5,\n\t\t\t\"predictions\" : [\n\t\t\t\t{\n\t\t\t\t\t\"probability\" : 0.781,\n\t\t\t\t\t\"trajectory\"  : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": -10.0,\n\t\t\t\t\t\t\t\"y\": 8.1,\n\t\t\t\t\t\t\t\"yaw\": 0.0,\n\t\t\t\t\t\t\t\"timestamp\": 34512.71\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": -6.0,\n\t\t\t\t\t\t\t\"y\": 8.1,\n\t\t\t\t\t\t\t\"yaw\": 0.0,\n\t\t\t\t\t\t\t\"timestamp\": 34513.21\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": -2.0,\n\t\t\t\t\t\t\t\"y\": 8.1,\n\t\t\t\t\t\t\t\"yaw\": 0.0,\n\t\t\t\t\t\t\t\"timestamp\": 34513.71\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": 2.0,\n\t\t\t\t\t\t\t\"y\": 8.1,\n\t\t\t\t\t\t\t\"yaw\": 0.0,\n\t\t\t\t\t\t\t\"timestamp\": 34514.21\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": 6.0,\n\t\t\t\t\t\t\t\"y\": 8.1,\n\t\t\t\t\t\t\t\"yaw\": 0.0,\n\t\t\t\t\t\t\t\"timestamp\": 34514.71\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": 10.0,\n\t\t\t\t\t\t\t\"y\": 8.1,\n\t\t\t\t\t\t\t\"yaw\": 0.0,\n\t\t\t\t\t\t\t\"timestamp\": 34515.21\n\t\t\t\t\t\t},\n\t\t\t\t\t]\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"probability\" : 0.219,\n\t\t\t\t\t\"trajectory\"  : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": -10.0,\n\t\t\t\t\t\t\t\"y\": 8.1,\n\t\t\t\t\t\t\t\"yaw\": 0.0,\n\t\t\t\t\t\t\t\"timestamp\": 34512.71\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": -7.0,\n\t\t\t\t\t\t\t\"y\": 7.5,\n\t\t\t\t\t\t\t\"yaw\": -5.2,\n\t\t\t\t\t\t\t\"timestamp\": 34513.21\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": -4.0,\n\t\t\t\t\t\t\t\"y\": 6.1,\n\t\t\t\t\t\t\t\"yaw\": -32.0,\n\t\t\t\t\t\t\t\"timestamp\": 34513.71\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": -3.0,\n\t\t\t\t\t\t\t\"y\": 4.1,\n\t\t\t\t\t\t\t\"yaw\": -73.2,\n\t\t\t\t\t\t\t\"timestamp\": 34514.21\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": -2.0,\n\t\t\t\t\t\t\t\"y\": 1.2,\n\t\t\t\t\t\t\t\"yaw\": -90.0,\n\t\t\t\t\t\t\t\"timestamp\": 34514.71\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": -2.0,\n\t\t\t\t\t\t\t\"y\":-2.8,\n\t\t\t\t\t\t\t\"yaw\": -90.0,\n\t\t\t\t\t\t\t\"timestamp\": 34515.21\n\t\t\t\t\t\t},\n\t\t\t\t\t]\n\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"id\" : 1,\n\t\t\t\"length\": 3.4,\n\t\t\t\"width\" : 1.5,\n\t\t\t\"predictions\" : [\n\t\t\t\t{\n\t\t\t\t\t\"probability\" : 1.0,\n\t\t\t\t\t\"trajectory\" : [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": 10.0,\n\t\t\t\t\t\t\t\"y\": 12.1,\n\t\t\t\t\t\t\t\"yaw\": -180.0,\n\t\t\t\t\t\t\t\"timestamp\": 34512.71\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": 6.0,\n\t\t\t\t\t\t\t\"y\": 12.1,\n\t\t\t\t\t\t\t\"yaw\": -180.0,\n\t\t\t\t\t\t\t\"timestamp\": 34513.21\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": 2.0,\n\t\t\t\t\t\t\t\"y\": 12.1,\n\t\t\t\t\t\t\t\"yaw\": -180.0,\n\t\t\t\t\t\t\t\"timestamp\": 34513.71\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": -2.0,\n\t\t\t\t\t\t\t\"y\": 12.1,\n\t\t\t\t\t\t\t\"yaw\": -180.0,\n\t\t\t\t\t\t\t\"timestamp\": 34514.21\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": -6.0,\n\t\t\t\t\t\t\t\"y\": 12.1,\n\t\t\t\t\t\t\t\"yaw\": -180.0,\n\t\t\t\t\t\t\t\"timestamp\": 34514.71\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"x\": -10.0,\n\t\t\t\t\t\t\t\"y\": 12.1,\n\t\t\t\t\t\t\t\"yaw\": -180.0,\n\t\t\t\t\t\t\t\"timestamp\": 34515.21\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}\n```\n\n### Notes\n1. The predicted trajectories shown here only extend out a few seconds. In reality the predictions we make extend to a horizon of 10-20 seconds. \n2. The trajectories shown have 0.5 second resolution. In reality we would generate slightly finer-grained predictions. \n3. This example only shows `vehicles` but in reality we would also generate predictions for **all** dynamic objects in view.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 340584,
+              "key": "bb76d341-88d5-463e-98bb-e07c856c2b9e",
+              "title": "Understanding Output",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bb76d341-88d5-463e-98bb-e07c856c2b9e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "How many possible trajectories are given for the car on the left (with id of 0)?",
+                "answers": [
+                  {
+                    "id": "a1498673697701",
+                    "text": "0",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498673767726",
+                    "text": "1",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498673769910",
+                    "text": "2",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1498673771587",
+                    "text": "3+",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 339992,
+          "key": "cb364c5b-e9bf-432e-81af-aa6b8ca0907a",
+          "title": "Model-Based vs Data-Driven Approaches",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cb364c5b-e9bf-432e-81af-aa6b8ca0907a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342226,
+              "key": "bcef2b80-31da-4f19-8557-1b5e2e197742",
+              "title": "04 L Model Vs Data Driven Approaches",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ehfA_NC7Ka4",
+                "china_cdn_id": "ehfA_NC7Ka4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 339993,
+          "key": "78849892-6a80-4e6f-bb91-bcc0658dee2f",
+          "title": "Which is Best?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78849892-6a80-4e6f-bb91-bcc0658dee2f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 340587,
+              "key": "914ee870-60fa-4823-8bc8-7d29c175eb3a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Which is best?\nNeither approach (**model based** or **data driven**) is strictly better than the other but there are certain situations in which one is more useful than the other. Think about the following situations and whether model-based or data-driven approaches would be more useful.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 340591,
+              "key": "137f1251-4453-4376-9978-068f1de2b961",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "137f1251-4453-4376-9978-068f1de2b961",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Determining maximum safe turning speed on a wet road.",
+                "answers": [
+                  {
+                    "id": "a1498675031516",
+                    "text": "Model Based",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1498675042794",
+                    "text": "Data Driven",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 340594,
+              "key": "4c4d90d5-5cc6-43cf-9b26-d343e1f00b50",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4c4d90d5-5cc6-43cf-9b26-d343e1f00b50",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Predicting the behavior of an unidentified object sitting on the road.",
+                "answers": [
+                  {
+                    "id": "a1498675327912",
+                    "text": "Model Based",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498675390967",
+                    "text": "Data Driven",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 340595,
+              "key": "3bde2bc7-24d2-4ffe-bdce-8006cbd1f211",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "3bde2bc7-24d2-4ffe-bdce-8006cbd1f211",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Predicting the behavior of a vehicle on a two lane highway in light traffic.",
+                "answers": [
+                  {
+                    "id": "a1498675476958",
+                    "text": "Model Based",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1498675530286",
+                    "text": "Data Driven",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 339994,
+          "key": "fbe8638a-e90d-4564-a0f2-3548ff11d1c8",
+          "title": "Data Driven Example - Trajectory Clustering",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fbe8638a-e90d-4564-a0f2-3548ff11d1c8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "Trajectory Clustering for Motion Prediction - Sung, Feldman, and Rus",
+                "uri": "http://video.udacity-data.com.s3.amazonaws.com/topher/2017/July/5978c2c6_trajectory-clustering/trajectory-clustering.pdf"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 342228,
+              "key": "3aae5e6b-1f74-4ab1-9837-496161c6a2b0",
+              "title": "06 L Data Driven Example Trajectory Clustering",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jbFeQ9P2V9A",
+                "china_cdn_id": "jbFeQ9P2V9A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 339995,
+          "key": "50d51789-0643-450b-9a36-820122620d5e",
+          "title": "Trajectory Clustering 2 - Online Prediction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "50d51789-0643-450b-9a36-820122620d5e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342230,
+              "key": "f04a3f2f-2d24-441b-bf19-9d28ac5078a3",
+              "title": "07 L TrajectoryClustering2 - Online Prediction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UPiED4soM4w",
+                "china_cdn_id": "UPiED4soM4w.mp4"
+              }
+            },
+            {
+              "id": 372566,
+              "key": "7ebb893c-2d52-4197-ab67-6387268d68e2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note:** At the end of the video the red cluster is associated with a  probability of 0.99 rather than 0.009 as depicted.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 339996,
+          "key": "cb863140-ee49-402e-93eb-1e6593e24f30",
+          "title": "Thinking about Model Based Approaches",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cb863140-ee49-402e-93eb-1e6593e24f30",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342231,
+              "key": "3775510a-e671-4897-9ab5-e1a84c11eae7",
+              "title": "08 L ThinkingAboutModelBasedApproaches",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2JHmXN4AKNY",
+                "china_cdn_id": "2JHmXN4AKNY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 342413,
+          "key": "22efc114-c9cb-4bb4-9835-3dc1f4bdc5fe",
+          "title": "Frenet Coordinates",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "22efc114-c9cb-4bb4-9835-3dc1f4bdc5fe",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342424,
+              "key": "5595ce58-5f27-4233-847e-38ebeb2580e6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Frenet Coordinates\nBefore we discuss process models, we should mention \"Frenet Coordinates\", which are a way of representing position on a road in a more intuitive way than traditional <span class=\"mathquill\">(x,y)</span> Cartesian Coordinates.\n\nWith Frenet coordinates, we use the variables <span class=\"mathquill\">s</span> and <span class=\"mathquill\">d</span> to describe a vehicle's position on the road. The <span class=\"mathquill\">s</span> coordinate represents distance *along* the road (also known as **longitudinal displacement**) and the <span class=\"mathquill\">d</span> coordinate represents side-to-side position on the road (also known as **lateral displacement**). \n\nWhy do we use Frenet coordinates? Imagine a curvy road like the one below with a Cartesian coordinate system laid on top of it...",
+              "instructor_notes": ""
+            },
+            {
+              "id": 342415,
+              "key": "b99c5d9e-6798-48c7-8194-2d27a3d2b197",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/595e74a0_frenet-1/frenet-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b99c5d9e-6798-48c7-8194-2d27a3d2b197",
+              "caption": "",
+              "alt": null,
+              "width": 356,
+              "height": 524,
+              "instructor_notes": null
+            },
+            {
+              "id": 342425,
+              "key": "815343f2-73a2-447f-9d44-48b46bac9563",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Using these Cartesian coordinates, we can try to describe the path a vehicle would normally follow on the road...",
+              "instructor_notes": ""
+            },
+            {
+              "id": 342417,
+              "key": "70e87d8e-2075-440a-871c-816826983bc3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/595e74ae_frenet-2/frenet-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/70e87d8e-2075-440a-871c-816826983bc3",
+              "caption": "",
+              "alt": null,
+              "width": 345,
+              "height": 505,
+              "instructor_notes": null
+            },
+            {
+              "id": 342418,
+              "key": "a74df7cb-4d33-48f7-ae0b-e31a87bd6352",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/595e74c0_frenet-3/frenet-3.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a74df7cb-4d33-48f7-ae0b-e31a87bd6352",
+              "caption": "",
+              "alt": null,
+              "width": 265,
+              "height": 501,
+              "instructor_notes": null
+            },
+            {
+              "id": 342426,
+              "key": "2c98b73a-c611-40ab-a602-d2da365ad005",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "And notice how curvy that path is! If we wanted *equations* to describe this motion it wouldn't be easy!\n\n<span class=\"mathquill\">x(t) = \\text{?}</span>\n\n<span class=\"mathquill\">y(t) = \\text{?}</span>\n\nIdeally, it should be mathematically easy to describe such common driving behavior. But how do we do that? One way is to use a new coordinate system. Now instead of laying down a normal Cartesian grid, we do something like you see below...",
+              "instructor_notes": ""
+            },
+            {
+              "id": 342420,
+              "key": "1ef601f0-2505-418d-9b21-b41e0aa04244",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/595e74ce_frenet-4/frenet-4.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1ef601f0-2505-418d-9b21-b41e0aa04244",
+              "caption": "",
+              "alt": null,
+              "width": 385,
+              "height": 503,
+              "instructor_notes": null
+            },
+            {
+              "id": 342427,
+              "key": "cb0bd1dc-f547-4ad0-9b82-bff1c171f868",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here, we've defined a new system of coordinates. At the bottom we have <span class=\"mathquill\">s=0</span> to represent the beginning of the segment of road we are thinking about and <span class=\"mathquill\">d=0</span> to represent the center line of that road. To the left of the center line we have negative <span class=\"mathquill\">d</span> and to the right <span class=\"mathquill\">d</span> is positive.\n\nSo what does a typical trajectory look like when presented in Frenet coordinates?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 342421,
+              "key": "7f821f89-9f4a-4bb1-8c3d-2b26057f5702",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/595e74e6_frenet-5/frenet-5.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7f821f89-9f4a-4bb1-8c3d-2b26057f5702",
+              "caption": "",
+              "alt": null,
+              "width": 382,
+              "height": 494,
+              "instructor_notes": null
+            },
+            {
+              "id": 342422,
+              "key": "4f635d9e-6878-4e63-8867-00f70bc9c14a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/595e74f6_frenet-6/frenet-6.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4f635d9e-6878-4e63-8867-00f70bc9c14a",
+              "caption": "",
+              "alt": null,
+              "width": 266,
+              "height": 479,
+              "instructor_notes": null
+            },
+            {
+              "id": 342432,
+              "key": "5e4cd22d-d769-4fee-bb04-183e839c4bd6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "It looks straight!\n\nIn fact, if this vehicle were moving at a constant speed of <span class=\"mathquill\">v_0</span> we could write a mathematical description of the vehicle's position as:\n\n<span class=\"mathquill\">s(t) = v_0t</span>\n\n<span class=\"mathquill\">d(t) = 0</span>\n\nWe'll be working with Frenet coordinates a good deal in the rest of the course, because...",
+              "instructor_notes": ""
+            },
+            {
+              "id": 342423,
+              "key": "644484e3-36f5-4d50-a43a-a2241fbaf32c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/595e7504_frenet-7/frenet-7.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/644484e3-36f5-4d50-a43a-a2241fbaf32c",
+              "caption": "",
+              "alt": null,
+              "width": 726,
+              "height": 491,
+              "instructor_notes": null
+            },
+            {
+              "id": 342431,
+              "key": "f28c4d6d-158b-4473-aab8-a94222894b9c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "...straight lines are so much easier than curved ones.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 339997,
+          "key": "1216605d-eaa7-4696-b821-d7df3461167d",
+          "title": "Process Models",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1216605d-eaa7-4696-b821-d7df3461167d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 377329,
+              "key": "a0fb8b71-bad6-4b47-84df-36bb234f7846",
+              "title": "09 L ProcessModels",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "VcRDsKBn7tc",
+                "china_cdn_id": "VcRDsKBn7tc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 339998,
+          "key": "4339e4fd-785e-4128-a19a-6633834bda8a",
+          "title": "More on Process Models",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4339e4fd-785e-4128-a19a-6633834bda8a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "A comparative study of multiple-model algorithms for maneuvering target tracking",
+                "uri": "http://video.udacity-data.com.s3.amazonaws.com/topher/2017/June/5953fc34_a-comparative-study-of-multiple-model-algorithms-for-maneuvering-target-tracking/a-comparative-study-of-multiple-model-algorithms-for-maneuvering-target-tracking.pdf"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 340615,
+              "key": "21d93315-23fe-4cf7-a698-aff5501469f6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# More on Process Models\nLater in the lesson I'm going to ask you to read a paper titled [\"A comparative study of multiple-model algorithms for maneuvering target tracking\"](https://d17h27t6h515a5.cloudfront.net/topher/2017/June/5953fc34_a-comparative-study-of-multiple-model-algorithms-for-maneuvering-target-tracking/a-comparative-study-of-multiple-model-algorithms-for-maneuvering-target-tracking.pdf) but for now I'd like you to take a look at **section 3.1 and 3.2 only**. This section, titled MM Tracking Algorithms' Design, discusses the 9 process models used in the earlier part of the paper. \n\nBefore you read the section, I'll explain some of the uncommon notation you will see.\n\n### Notes on Notation\n#### 1. Matrix Notation\nWhen you see something like the following:\n <div class=\"mathquill\">\nF_{CV} = \\text{diag}[F_2, F_2], \n F_2 = \\begin{bmatrix}\n1 & T \\\\ \n0 & 1 \n\\end{bmatrix}</div>\n\nit means that <span class=\"mathquill\">F</span> is a 4x4 matrix, with  <span class=\"mathquill\">F_{2_{}}</span> as blocks along the diagonal. Written out fully, this means:\n <div class=\"mathquill\">\nF_{CV} =  \\begin{bmatrix}\n1 & T & 0 & 0\\\\ \n0 & 1 & 0 & 0 \\\\\n0 & 0 & 1 & T \\\\\n0 & 0 & 0 & 1\n\\end{bmatrix}</div>\n \n#### 2. State Space\nThe process models all use cartesian coordinates. The state space is \n <div class=\"mathquill\">\n \\mathbf{x} = \\begin{bmatrix}\nx\\\\ \n\\dot{x} \\\\\ny \\\\\n\\dot{y}\n\\end{bmatrix}</div>\n\n#### 3. Variables\nThe equation <span class=\"mathquill\">x_{k} = Fx_{k-1} + Gu_{k-1} + Gw_k, \\ \\ w_k \\sim \\mathcal{N}(0,Q)</span> should be read as follows:\n> the **predicted state at time k** (<span class=\"mathquill\">x_{k_{}}</span>) is given by **evolving** (<span class=\"mathquill\">F</span>) the **previous state** (<span class=\"mathquill\">x_{k-1_{}}</span>), **incorporating** (<span class=\"mathquill\">G</span>) the **controls** (<span class=\"mathquill\">u_{k-1_{}}</span>) given at the previous time step, and **adding normally distributed noise** (<span class=\"mathquill\">w_k</span>).\n\n## The Paper\nYou can find the paper here: [A comparative study of multiple-model algorithms for maneuvering target tracking](https://d17h27t6h515a5.cloudfront.net/topher/2017/June/5953fc34_a-comparative-study-of-multiple-model-algorithms-for-maneuvering-target-tracking/a-comparative-study-of-multiple-model-algorithms-for-maneuvering-target-tracking.pdf)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 339999,
+          "key": "b9889e2b-8e57-44b8-a227-bb7c4517b61d",
+          "title": "Multimodal Estimation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b9889e2b-8e57-44b8-a227-bb7c4517b61d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342234,
+              "key": "3796e66e-c0ca-463d-b4dd-b0f8a992d05e",
+              "title": "11 L MultimodalEstimationApproaches",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "u1Tmt0Qdlgk",
+                "china_cdn_id": "u1Tmt0Qdlgk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340000,
+          "key": "043780c3-f412-4ed4-9212-7e457804f175",
+          "title": "Summary of Data Driven and Model Based Approaches",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "043780c3-f412-4ed4-9212-7e457804f175",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 340619,
+              "key": "fed195ae-ef46-4c01-ab5a-795fd8c06cc9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Summary so Far\nSo far you have learned about the two main approaches to prediction.\n## 1. Data-Driven Approaches\nData-driven approaches solve the prediction problem in two phases:\n1. Offline training\n2. Online Prediction\n\n### 1.1 Offline Training\nIn this phase the goal is to feed some machine learning algorithm a lot of data to train it. For the trajectory clustering example this involved:\n\n1. **Define similarity** - we first need a definition of similarity that agrees with human common-sense definition.\n2. **Unsupervised clustering** - at this step some machine learning algorithm clusters the trajectories we've observed. \n3. **Define Prototype Trajectories** - for each cluster identify some small number of typical \"prototype\" trajectories.\n\n### 1.2 Online Prediction\nOnce the algorithm is trained we bring it onto the road. When we encounter a situation for which the trained algorithm is appropriate (returning to an intersection for example) we can use that algorithm to actually predict the trajectory of the vehicle. For the intersection example this meant:\n\n1. **Observe Partial Trajectory** - As the target vehicle drives we can think of it leaving a \"partial trajectory\" behind it.\n2. **Compare to Prototype Trajectories** - We can compare this partial trajectory to the *corresponding parts* of the prototype trajectories. When these partial trajectories are more similar (using the same notion of similarity defined earlier) their likelihoods should increase relative to the other trajectories.\n3. **Generate Predictions** - For each cluster we identify the most likely prototype trajectory. We broadcast each of these trajectories along with the associated probability (see the image below).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 340620,
+              "key": "b2ff0528-4e09-4699-b9fc-29dc89b04619",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/June/595407d1_prediction-1/prediction-1.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b2ff0528-4e09-4699-b9fc-29dc89b04619",
+              "caption": "",
+              "alt": null,
+              "width": 523,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 340631,
+              "key": "08fa3f6d-d3cf-4eb4-8da7-cf1064a4abbf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## 2. Model Based Approaches\nYou can think of model based solutions to the prediction problem as also having an \"offline\" and online component. In that view, this approach requires:\n1. *Defining* process models (offline).\n3. *Using* process models to compare driver behavior to what would be expected for each model.\n4. *Probabilistically classifying* driver intent by comparing the likelihoods of various behaviors with a multiple-model algorithm.\n5. *Extrapolating* process models to generate trajectories.\n\n### 2.1 Defining Process Models\nYou saw how process models can vary in complexity from very simple...\n<div class=\"mathquill\">\\large\n\\begin{bmatrix}\n\\dot{s}\\\\ \n\\dot{d}\n\\end{bmatrix} = \n\\begin{bmatrix}\ns_{0} \\\\\n0\n \\end{bmatrix} + \n\\mathbf{w}\n</div>\n\nto very complex...\n\n<div class=\"mathquill\">\\large\n\\begin{bmatrix}\n\\ddot{s} \\\\\n\\ddot{d} \\\\\n\\ddot{\\theta}\n \\end{bmatrix} = \n\\begin{bmatrix}\n\\dot{\\theta}\\dot{d} + a_s \\\\\n-\\dot{\\theta}\\dot{s} + \\frac{2}{m}(F_{c,f}\\cos\\delta + F_{c,r}) \\\\\n\\frac{2}{I_z} (l_f F_{c,f} - l_rF_{c,r})\n \\end{bmatrix} +\n\\mathbf{w}\n</div>\n\n\n\n### 2.2 Using Process Models\nProcess Models are first used to compare a target vehicle's observed behavior to the behavior we would expect for each of the maneuvers we've created models for. The pictures below help explain how process models are used to calculate these likelihoods.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 340659,
+              "key": "9c97d4ea-8f07-4a9b-b256-6b7f41997e2a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/June/5954264b_prediction-2/prediction-2.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9c97d4ea-8f07-4a9b-b256-6b7f41997e2a",
+              "caption": "",
+              "alt": null,
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 340660,
+              "key": "ffd4d4c9-6a57-4755-b00e-794b5816cc4a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "On the left we see two images of a car. At time <span class=\"mathquill\">k-1</span> we predicted where the car would be if it were to go straight vs go right. Then at time <span class=\"mathquill\">k</span> we look at where the car actually is. The graph on the right shows the car's observed <span class=\"mathquill\">s</span> coordinate along with the probability distributions for where we *expected* the car to be at that time.  In this case, the <span class=\"mathquill\">s</span> that we observe is substantially more consistent with turning right than going straight.\n\n### 2.3 Classifying Intent with Multiple Model Algorithm\n\nIn the image at the top of the page you can see a bar chart representing probabilities of various *clusters* over time. Multiple model algorithms serve a similar purpose for model based approaches: they are responsible for maintaining beliefs for the probability of each maneuver. The algorithm we discussed is called the **Autonomous Multiple Model** algorithm (AMM). AMM can be summarized with this equation:\n\n<div class=\"mathquill\">\\large\n\\mu_k^{(i)} = \\frac{\\mu_{k-1}^{(i)}L_k^{(i)}}{\\sum_{j=1}^M\\mu_{k-1}^{(j)}L_k^{(j)}}\n</div>\n\nor, if we ignore the denominator (since it just serves to normalize the probabilities), we can capture the essence of this algorithm with\n\n<div class=\"mathquill\">\n\\mu_k^{(i)} \\propto \\mu_{k-1}^{(i)}L_k^{(i)}\n</div>\n\nwhere the <span class=\"mathquill\">\\mu_k^{(i)}</span> is the probability that model number <span class=\"mathquill\">i</span> is the correct model at time <span class=\"mathquill\">k</span> and <span class=\"mathquill\">L_k^{(i)}</span> is the **likelihood** for that model (as computed by comparison to process model).\n\nThe paper, [\"A comparative study of multiple model algorithms for maneuvering target tracking\"](https://d17h27t6h515a5.cloudfront.net/topher/2017/June/5953fc34_a-comparative-study-of-multiple-model-algorithms-for-maneuvering-target-tracking/a-comparative-study-of-multiple-model-algorithms-for-maneuvering-target-tracking.pdf) is a good reference to learn more.\n\n### 2.4 Trajectory Generation\nTrajectory generation is straightforward once we have a process model. We simply iterate our model over and over until we've generated a prediction that spans whatever time horizon we are supposed to cover. Note that each iteration of the process model will necessarily add uncertainty to our prediction.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 340001,
+          "key": "5957818b-d15b-4105-80bb-d97745d8878d",
+          "title": "Overview of Hybrid Approaches",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5957818b-d15b-4105-80bb-d97745d8878d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342300,
+              "key": "a033aa22-da69-4950-9598-7f73a5be7c4c",
+              "title": "13 L Overview Of Hybrid Approaches",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yCRvxI5wJS0",
+                "china_cdn_id": "yCRvxI5wJS0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340002,
+          "key": "2b0d1dac-dc94-47f4-9c79-b26ae6784061",
+          "title": "Intro to Naive Bayes",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2b0d1dac-dc94-47f4-9c79-b26ae6784061",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342235,
+              "key": "51d58c33-0778-43ab-8f61-fc3d2a4e4e55",
+              "title": "14 L IntroToNaiveBayes",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AkrC_WP1MWk",
+                "china_cdn_id": "AkrC_WP1MWk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340003,
+          "key": "6b719a99-1180-4980-8ba9-dc7736c287d8",
+          "title": "Naive Bayes Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6b719a99-1180-4980-8ba9-dc7736c287d8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 340664,
+              "key": "9686b3f7-08cf-4239-b559-69c26c9599b4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/June/59542b7d_prediction-3/prediction-3.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9686b3f7-08cf-4239-b559-69c26c9599b4",
+              "caption": "",
+              "alt": null,
+              "width": 952,
+              "height": 321,
+              "instructor_notes": null
+            },
+            {
+              "id": 340668,
+              "key": "52890f59-a930-4db9-aa02-e8f408c065a5",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "52890f59-a930-4db9-aa02-e8f408c065a5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "A car on a highway is approaching an exit ramp. We want to classify the driver's intent as \"go straight\" or \"exit right\". Which of the following state variables would be **least** useful to this classification?",
+                "answers": [
+                  {
+                    "id": "a1498688651425",
+                    "text": "<span class=\"mathquill\"> s </span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1498688686240",
+                    "text": "<span class=\"mathquill\"> s rate of change (ds/dt) </span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498688687387",
+                    "text": "<span class=\"mathquill\"> d </span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498688688850",
+                    "text": "<span class=\"mathquill\"> d rate of change (dd/dt) </span>",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 346779,
+          "key": "e2ce2c1b-5d5c-4fe4-bc16-19202e37df09",
+          "title": "Implement Naive Bayes C++",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e2ce2c1b-5d5c-4fe4-bc16-19202e37df09",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "Nd013 Pred Data",
+                "uri": "http://video.udacity-data.com.s3.amazonaws.com/topher/2017/July/59695c4b_nd013-pred-data/nd013-pred-data.zip"
+              },
+              {
+                "name": "python_extra_practice",
+                "uri": "http://video.udacity-data.com.s3.amazonaws.com/topher/2017/July/59750f3d_predictionexercise/predictionexercise.zip"
+              },
+              {
+                "name": "python_solution",
+                "uri": "http://video.udacity-data.com.s3.amazonaws.com/topher/2017/July/59751005_predicition-solution/predicition-solution.zip"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 346780,
+              "key": "3ef04059-7ff4-4400-9976-0133698f06c0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implementing Naive Bayes\nIn this exercise you will implement a Gaussian Naive Bayes classifier to predict the behavior of vehicles on a highway. In the image below you can see the behaviors you'll be looking for on a 3 lane highway (with lanes of 4 meter width). The dots represent the d (y axis) and s (x axis) coordinates of vehicles as they either...\n\n1. change lanes left (shown in blue)\n2. keep lane (shown in black)\n3. or change lanes right (shown in red)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346781,
+              "key": "659e950b-a0dc-4b31-910b-efcdb86e1b36",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/596940c9_naive-bayes/naive-bayes.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/659e950b-a0dc-4b31-910b-efcdb86e1b36",
+              "caption": "",
+              "alt": null,
+              "width": 1194,
+              "height": 561,
+              "instructor_notes": null
+            },
+            {
+              "id": 476045,
+              "key": "f96dba16-0621-491e-b766-f7803602005f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Your job is to write a classifier that can predict which of these three maneuvers a vehicle is engaged in given a single coordinate (sampled from the trajectories shown below). \n\nEach coordinate contains 4 features: \n\n* <span class=\"mathquill\">s</span>\n* <span class=\"mathquill\">d</span>\n* <span class=\"mathquill\">\\dot{s}</span>\n* <span class=\"mathquill\">\\dot{d}</span>\n\nYou also know the **lane width** is 4 meters (this might be helpful in engineering additional features for your algorithm).\n\n### Instructions\n\n1. Implement the `train(data, labels)` method in the class `GNB` in `classifier.cpp`. \n  \n  Training a Gaussian Naive Bayes classifier consists of computing and storing the mean and standard deviation from the data for each label/feature pair. For example, given the label \"change lanes left” and the feature <span class=\"mathquill\">\\dot{s}</span>, it would be necessary to compute and store the mean and standard deviation of <span class=\"mathquill\">\\dot{s}</span> over all data points with the \"change lanes left” label.\n\n Additionally, it will be convenient in this step to compute and store the prior probability <span class=\"mathquill\" >p(C_k)</span> for each label <span class=\"mathquill\" >C_k</span>. This can be done by keeping track of the number of times each label appears in the training data.\n2. Implement the `predict(observation)` method in `classifier.cpp`. \n\n  Given a new data point, prediction requires two steps: \n    1. **Compute the conditional probabilities for each feature/label combination**. For a feature <span class=\"mathquill\">x</span> and label <span class=\"mathquill\">C</span> with mean <span class=\"mathquill\">\\mu</span> and standard deviation <span class=\"mathquill\">\\sigma</span> (computed in training), the conditional probability can be computed using the formula [here](https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Gaussian_naive_Bayes): \n\n    <div class=\"mathquill\">p(x = v | C) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} \\exp^{-\\frac{(v-\\mu)^2}{2\\sigma^2}}</div>\n\n    Here <span class=\"mathquill\">v</span> is the value of feature <span class=\"mathquill\">x</span> in the new data point.\n\n 2. **Use the conditional probabilities in a Naive Bayes classifier.** This can be done using the formula [here](https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Constructing_a_classifier_from_the_probability_model):\n\n    <div class=\"mathquill\"> y =  \\underset{k\\in (1,\\ldots, K)}{argmax } \\,\\,p(C_k) \\prod^n_{i=1}p(x_i = v_i| C_k) </div>\n\n    In this formula, the argmax is taken over all possible labels <span class=\"mathquill\">C_k</span> and the product is taken over all features <span class=\"mathquill\">x_i</span> with values <span class=\"mathquill\">v_i</span>.\n\n3. When you want to test your classifier, run `Test Run` and check out the results.\n\n**NOTE**: You are welcome to use some existing implementation of a Gaussian Naive Bayes classifier. But to get the **best** results you will still need to put some thought into what **features** you provide the algorithm when classifying. Though you will only be given the 4 coordinates listed above, you may find that by \"engineering\" features you may get better performance. For example: the raw value of the <span class=\"mathquill\">d</span> coordinate may not be that useful. But `d % lane_width` might be helpful since it gives the *relative* position of a vehicle in it's lane regardless of which lane the vehicle is in.\n\n### Helpful Resources\n* [sklearn documentation on GaussianNB](http://scikit-learn.org/stable/modules/naive_bayes.html#gaussian-naive-bayes)\n* [Wikipedia article on Naive Bayes / GNB](https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Gaussian_naive_Bayes)\n\n## Extra Practice\nProvided in one of the links below is `python_extra_practice`, which is the same problem but written in Python that you can optionally go through for extra coding practice. The Python solution is available at the `python_solution` link. If you get stuck on the quiz see if you can convert the python solution to C++ and pass the classroom quiz with it. The last link `Nd013_Pred_Data` has all the training and testing data for this problem in case you want to run the problem offline.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346784,
+              "key": "830f2574-7f2a-42f2-a54d-583019cb723c",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Students have reported Load_State function in main.cpp is not loading data properly from train_states.txt and test_states.txt since istringstream is not implemented for comma (',') separated data.  Several students have found working solutions [here](https://github.com/udacity/sdc-issue-reports/issues/914), that may help in determining your own solution.\n",
+              "user_state": {
+                "node_key": "830f2574-7f2a-42f2-a54d-583019cb723c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4640981147320320",
+                "initial_code_files": [
+                  {
+                    "text": "#include <fstream>\n#include <iostream>\n#include <string>\n#include <vector>\n#include \"classifier.h\"\n\nusing std::cout;\nusing std::endl;\nusing std::ifstream;\nusing std::string;\nusing std::vector;\n\n// Helper functions to load .txt files\nvector<vector<double> > Load_State(string file_name);\nvector<string> Load_Label(string file_name);\n\nint main() {\n  vector< vector<double> > X_train = Load_State(\"./train_states.txt\");\n  vector< vector<double> > X_test  = Load_State(\"./test_states.txt\");\n  vector< string > Y_train = Load_Label(\"./train_labels.txt\");\n  vector< string > Y_test  = Load_Label(\"./test_labels.txt\");\n    \n  cout << \"X_train number of elements \" << X_train.size() << endl;\n  cout << \"X_train element size \" << X_train[0].size() << endl;\n  cout << \"Y_train number of elements \" << Y_train.size() << endl;\n\n  GNB gnb = GNB();\n  \n  gnb.train(X_train, Y_train);\n\n  cout << \"X_test number of elements \" << X_test.size() << endl;\n  cout << \"X_test element size \" << X_test[0].size() << endl;\n  cout << \"Y_test number of elements \" << Y_test.size() << endl;\n  \n  int score = 0;\n  for (int i = 0; i < X_test.size(); ++i) {\n    vector<double> coords = X_test[i];\n    string predicted = gnb.predict(coords);\n    if (predicted.compare(Y_test[i]) == 0) {\n      score += 1;\n    }\n  }\n\n  float fraction_correct = float(score) / Y_test.size();\n  cout << \"You got \" << (100*fraction_correct) << \" correct\" << endl;\n\n  return 0;\n}\n\n// Load state from .txt file\nvector<vector<double> > Load_State(string file_name) {\n  ifstream in_state_(file_name.c_str(), ifstream::in);\n  vector< vector<double >> state_out;\n  string line;\n    \n  while (getline(in_state_, line)) {\n    std::istringstream iss(line);\n    vector<double> x_coord;\n      \n    string token;\n    while (getline(iss,token,',')) {\n      x_coord.push_back(stod(token));\n    }\n    state_out.push_back(x_coord);\n  }\n\n  return state_out;\n}\n\n// Load labels from .txt file\nvector<string> Load_Label(string file_name) {\n  ifstream in_label_(file_name.c_str(), ifstream::in);\n  vector< string > label_out;\n  string line;\n  while (getline(in_label_, line)) {\n    std::istringstream iss(line);\n    string label;\n    iss >> label;\n    \n    label_out.push_back(label);\n  }\n    \n  return label_out; \n}",
+                    "name": "main.cpp"
+                  },
+                  {
+                    "text": "#include \"classifier.h\"\n#include <math.h>\n#include <string>\n#include <vector>\n\nusing Eigen::ArrayXd;\nusing std::string;\nusing std::vector;\n\n// Initializes GNB\nGNB::GNB() {\n  /**\n   * TODO: Initialize GNB, if necessary. May depend on your implementation.\n   */\n  \n}\n\nGNB::~GNB() {}\n\nvoid GNB::train(const vector<vector<double>> &data, \n                const vector<string> &labels) {\n  /**\n   * Trains the classifier with N data points and labels.\n   * @param data - array of N observations\n   *   - Each observation is a tuple with 4 values: s, d, s_dot and d_dot.\n   *   - Example : [[3.5, 0.1, 5.9, -0.02],\n   *                [8.0, -0.3, 3.0, 2.2],\n   *                 ...\n   *                ]\n   * @param labels - array of N labels\n   *   - Each label is one of \"left\", \"keep\", or \"right\".\n   *\n   * TODO: Implement the training function for your classifier.\n   */\n  \n}\n\nstring GNB::predict(const vector<double> &sample) {\n  /**\n   * Once trained, this method is called and expected to return \n   *   a predicted behavior for the given observation.\n   * @param observation - a 4 tuple with s, d, s_dot, d_dot.\n   *   - Example: [3.5, 0.1, 8.5, -0.2]\n   * @output A label representing the best guess of the classifier. Can\n   *   be one of \"left\", \"keep\" or \"right\".\n   *\n   * TODO: Complete this function to return your classifier's prediction\n   */\n  \n  return this -> possible_labels[1];\n}",
+                    "name": "classifier.cpp"
+                  },
+                  {
+                    "text": "#ifndef CLASSIFIER_H\n#define CLASSIFIER_H\n\n#include <string>\n#include <vector>\n#include \"Dense\"\n\nusing Eigen::ArrayXd;\nusing std::string;\nusing std::vector;\n\nclass GNB {\n public:\n  /**\n   * Constructor\n   */\n  GNB();\n\n  /**\n   * Destructor\n   */\n  virtual ~GNB();\n\n  /**\n   * Train classifier\n   */\n  void train(const vector<vector<double>> &data, \n             const vector<string> &labels);\n\n  /**\n   * Predict with trained classifier\n   */\n  string predict(const vector<double> &sample);\n\n  vector<string> possible_labels = {\"left\",\"keep\",\"right\"};\n};\n\n#endif  // CLASSIFIER_H",
+                    "name": "classifier.h"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 440030,
+          "key": "31e7a12d-746c-40cf-828a-b88cbb6772d6",
+          "title": "Implement Naive Bayes C++ (solution)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "31e7a12d-746c-40cf-828a-b88cbb6772d6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 440042,
+              "key": "4641bd19-86e5-4584-9185-ae7c0ee0ae48",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here's a sample solution for the previous quiz. In this solution, there has been no feature engineering, so existing features are used only. See if you can improve the results with your own solution!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 440031,
+              "key": "e71dde46-ce68-4b42-9920-582472911ed7",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "e71dde46-ce68-4b42-9920-582472911ed7",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5154583861657600",
+                "initial_code_files": [
+                  {
+                    "text": "#include <fstream>\n#include <iostream>\n#include <string>\n#include <vector>\n#include \"classifier.h\"\n\nusing std::cout;\nusing std::endl;\nusing std::ifstream;\nusing std::string;\nusing std::vector;\n\n// Helper functions to load .txt files\nvector<vector<double> > Load_State(string file_name);\nvector<string> Load_Label(string file_name);\n\nint main() {\n  vector< vector<double> > X_train = Load_State(\"./train_states.txt\");\n  vector< vector<double> > X_test  = Load_State(\"./test_states.txt\");\n  vector< string > Y_train = Load_Label(\"./train_labels.txt\");\n  vector< string > Y_test  = Load_Label(\"./test_labels.txt\");\n    \n  cout << \"X_train number of elements \" << X_train.size() << endl;\n  cout << \"X_train element size \" << X_train[0].size() << endl;\n  cout << \"Y_train number of elements \" << Y_train.size() << endl;\n\n  GNB gnb = GNB();\n  \n  gnb.train(X_train, Y_train);\n\n  cout << \"X_test number of elements \" << X_test.size() << endl;\n  cout << \"X_test element size \" << X_test[0].size() << endl;\n  cout << \"Y_test number of elements \" << Y_test.size() << endl;\n  \n  int score = 0;\n  for (int i = 0; i < X_test.size(); ++i) {\n    vector<double> coords = X_test[i];\n    string predicted = gnb.predict(coords);\n    if (predicted.compare(Y_test[i]) == 0) {\n      score += 1;\n    }\n  }\n\n  float fraction_correct = float(score) / Y_test.size();\n  cout << \"You got \" << (100*fraction_correct) << \" correct\" << endl;\n\n  return 0;\n}\n\n// Load state from .txt file\nvector<vector<double> > Load_State(string file_name) {\n  ifstream in_state_(file_name.c_str(), ifstream::in);\n  vector< vector<double >> state_out;\n  string line;\n    \n  while (getline(in_state_, line)) {\n    std::istringstream iss(line);\n    vector<double> x_coord;\n      \n    string token;\n    while (getline(iss,token,',')) {\n      x_coord.push_back(stod(token));\n    }\n    state_out.push_back(x_coord);\n  }\n\n  return state_out;\n}\n\n// Load labels from .txt file\nvector<string> Load_Label(string file_name) {\n  ifstream in_label_(file_name.c_str(), ifstream::in);\n  vector< string > label_out;\n  string line;\n  while (getline(in_label_, line)) {\n    std::istringstream iss(line);\n    string label;\n    iss >> label;\n    \n    label_out.push_back(label);\n  }\n    \n  return label_out; \n}",
+                    "name": "main.cpp"
+                  },
+                  {
+                    "text": "#include \"classifier.h\"\n#include <math.h>\n#include <string>\n#include <vector>\n\nusing Eigen::ArrayXd;\nusing std::string;\nusing std::vector;\n\n// Initializes GNB\nGNB::GNB() {\n  /**\n   * TODO: Initialize GNB, if necessary. May depend on your implementation.\n   */\n  left_means = ArrayXd(4);\n  left_means << 0,0,0,0;\n  \n  left_sds = ArrayXd(4);\n  left_sds << 0,0,0,0;\n    \n  left_prior = 0;\n    \n  keep_means = ArrayXd(4);\n  keep_means << 0,0,0,0;\n  \n  keep_sds = ArrayXd(4);\n  keep_sds << 0,0,0,0;\n  \n  keep_prior = 0;\n  \n  right_means = ArrayXd(4);\n  right_means << 0,0,0,0;\n  \n  right_sds = ArrayXd(4);\n  right_sds << 0,0,0,0;\n  \n  right_prior = 0;\n}\n\nGNB::~GNB() {}\n\nvoid GNB::train(const vector<vector<double>> &data, \n                const vector<string> &labels) {\n  /**\n   * Trains the classifier with N data points and labels.\n   * @param data - array of N observations\n   *   - Each observation is a tuple with 4 values: s, d, s_dot and d_dot.\n   *   - Example : [[3.5, 0.1, 5.9, -0.02],\n   *                [8.0, -0.3, 3.0, 2.2],\n   *                 ...\n   *                ]\n   * @param labels - array of N labels\n   *   - Each label is one of \"left\", \"keep\", or \"right\".\n   *\n   * TODO: Implement the training function for your classifier.\n   */\n  \n  // For each label, compute ArrayXd of means, one for each data class \n  //   (s, d, s_dot, d_dot).\n  // These will be used later to provide distributions for conditional \n  //   probabilites.\n  // Means are stored in an ArrayXd of size 4.\n  \n  float left_size = 0;\n  float keep_size = 0;\n  float right_size = 0;\n  \n  // For each label, compute the numerators of the means for each class\n  //   and the total number of data points given with that label.\n  for (int i=0; i<labels.size(); ++i) {\n    if (labels[i] == \"left\") {\n      // conversion of data[i] to ArrayXd\n      left_means += ArrayXd::Map(data[i].data(), data[i].size());\n      left_size += 1;\n    } else if (labels[i] == \"keep\") {\n      keep_means += ArrayXd::Map(data[i].data(), data[i].size());\n      keep_size += 1;\n    } else if (labels[i] == \"right\") {\n      right_means += ArrayXd::Map(data[i].data(), data[i].size());\n      right_size += 1;\n    }\n  }\n\n  // Compute the means. Each result is a ArrayXd of means \n  //   (4 means, one for each class)\n  left_means = left_means/left_size;\n  keep_means = keep_means/keep_size;\n  right_means = right_means/right_size;\n  \n  // Begin computation of standard deviations for each class/label combination.\n  ArrayXd data_point;\n  \n  // Compute numerators of the standard deviations.\n  for (int i=0; i<labels.size(); ++i) {\n    data_point = ArrayXd::Map(data[i].data(), data[i].size());\n    if (labels[i] == \"left\"){\n      left_sds += (data_point - left_means)*(data_point - left_means);\n    } else if (labels[i] == \"keep\") {\n      keep_sds += (data_point - keep_means)*(data_point - keep_means);\n    } else if (labels[i] == \"right\") {\n      right_sds += (data_point - right_means)*(data_point - right_means);\n    }\n  }\n  \n  // compute standard deviations\n  left_sds = (left_sds/left_size).sqrt();\n  keep_sds = (keep_sds/keep_size).sqrt();\n  right_sds = (right_sds/right_size).sqrt();\n    \n  //Compute the probability of each label\n  left_prior = left_size/labels.size();\n  keep_prior = keep_size/labels.size();\n  right_prior = right_size/labels.size();\n}\n\nstring GNB::predict(const vector<double> &sample) {\n  /**\n   * Once trained, this method is called and expected to return \n   *   a predicted behavior for the given observation.\n   * @param observation - a 4 tuple with s, d, s_dot, d_dot.\n   *   - Example: [3.5, 0.1, 8.5, -0.2]\n   * @output A label representing the best guess of the classifier. Can\n   *   be one of \"left\", \"keep\" or \"right\".\n   *\n   * TODO: Complete this function to return your classifier's prediction\n   */\n  \n  // Calculate product of conditional probabilities for each label.\n  double left_p = 1.0;\n  double keep_p = 1.0;\n  double right_p = 1.0; \n\n  for (int i=0; i<4; ++i) {\n    left_p *= (1.0/sqrt(2.0 * M_PI * pow(left_sds[i], 2))) \n            * exp(-0.5*pow(sample[i] - left_means[i], 2)/pow(left_sds[i], 2));\n    keep_p *= (1.0/sqrt(2.0 * M_PI * pow(keep_sds[i], 2)))\n            * exp(-0.5*pow(sample[i] - keep_means[i], 2)/pow(keep_sds[i], 2));\n    right_p *= (1.0/sqrt(2.0 * M_PI * pow(right_sds[i], 2))) \n            * exp(-0.5*pow(sample[i] - right_means[i], 2)/pow(right_sds[i], 2));\n  }\n\n  // Multiply each by the prior\n  left_p *= left_prior;\n  keep_p *= keep_prior;\n  right_p *= right_prior;\n    \n  double probs[3] = {left_p, keep_p, right_p};\n  double max = left_p;\n  double max_index = 0;\n\n  for (int i=1; i<3; ++i) {\n    if (probs[i] > max) {\n      max = probs[i];\n      max_index = i;\n    }\n  }\n  \n  return this -> possible_labels[max_index];\n}",
+                    "name": "classifier.cpp"
+                  },
+                  {
+                    "text": "#ifndef CLASSIFIER_H\n#define CLASSIFIER_H\n\n#include <string>\n#include <vector>\n#include \"Dense\"\n\nusing Eigen::ArrayXd;\nusing std::string;\nusing std::vector;\n\nclass GNB {\n public:\n  /**\n   * Constructor\n   */\n  GNB();\n\n  /**\n   * Destructor\n   */\n  virtual ~GNB();\n\n  /**\n   * Train classifier\n   */\n  void train(const vector<vector<double>> &data, \n             const vector<string> &labels);\n\n  /**\n   * Predict with trained classifier\n   */\n  string predict(const vector<double> &sample);\n\n  vector<string> possible_labels = {\"left\",\"keep\",\"right\"};\n  \n  ArrayXd left_means;\n  ArrayXd left_sds;\n  double left_prior;\n  \n  ArrayXd keep_means;\n  ArrayXd keep_sds;\n  double keep_prior;\n  \n  ArrayXd right_means;\n  ArrayXd right_sds;\n  double right_prior;\n\n};\n\n#endif  // CLASSIFIER_H",
+                    "name": "classifier.h"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 340005,
+          "key": "ce06834e-02bc-4397-a34e-3bf8eaf8866d",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ce06834e-02bc-4397-a34e-3bf8eaf8866d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 372840,
+              "key": "d9b373d2-0ae3-427b-b8b1-bbb2bf69c5b5",
+              "title": "Mahni Prediction Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hRozwCcoocY",
+                "china_cdn_id": "hRozwCcoocY.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

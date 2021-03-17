@@ -1,0 +1,1294 @@
+{
+  "data": {
+    "lesson": {
+      "id": 640599,
+      "key": "577df894-269c-44db-a9ce-1ee30f1f96b5",
+      "title": "Search",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn about discrete path planning and algorithms for solving the path planning problem.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/577df894-269c-44db-a9ce-1ee30f1f96b5/640599/1556758883236/Search+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/577df894-269c-44db-a9ce-1ee30f1f96b5/640599/1556758872296/Search+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 663314,
+          "key": "c4fbf752-e295-4f6b-96dd-b78c036ab464",
+          "title": "Motion Planning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c4fbf752-e295-4f6b-96dd-b78c036ab464",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663315,
+              "key": "1e89c323-2a13-4d61-ab92-476227609f9d",
+              "title": "06 Path Planning A01 Motion Planning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JlBs1RxKvHE",
+                "china_cdn_id": "JlBs1RxKvHE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 372864,
+          "key": "3496f5bc-b99b-412f-80b6-4d500e5f656a",
+          "title": "Introduction to Path Planning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3496f5bc-b99b-412f-80b6-4d500e5f656a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 372865,
+              "key": "ac0a391b-c484-4801-ba75-3ac2fa45ab74",
+              "title": "01 L Intro Group",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "f7lpxAQDxVI",
+                "china_cdn_id": "f7lpxAQDxVI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340063,
+          "key": "48e0e5ef-5c6a-4858-b967-2a331d82ed73",
+          "title": "About this Lesson",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "48e0e5ef-5c6a-4858-b967-2a331d82ed73",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342324,
+              "key": "c68d2bfa-c7d3-4823-b55c-e8a27c8b08f2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# About this Lesson\nThis lesson is taught by Sebastian Thrun (Udacity's former CEO) and comes from one of Udacity's first courses. The production style is a little different than what you may be used to but the content is very good. \n\nThis lesson covers **discrete** path planning and in the last lesson you will learn about **continuous** path planning. Even though the real world is continuous, there are many situations where *discretizing* the world makes it easier and computationally faster to solve path planning problems.\n\nIn addition to the practical benefits of these algorithms, it's also conceptually useful to learn about them because they deal with some of the same concepts that we will keep coming back to in this lesson. Those concepts include:\n\n* **Cost functions** and how to include human insights (like \"it's easier to make right turns than left turns\") into our planning algorithms.\n* **Optimality**  and the tradeoffs associated with finding *the best* solution vs finding a solution that is *good enough*.\n* **Online vs Offline algorithms** and how we can avoid complex computation on the road by precomputing best paths whenever possible.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 626,
+          "key": "486837620923",
+          "title": "Motion Planning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "486837620923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 48953,
+              "key": "48683762",
+              "title": "Motion Planning",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "KHAu5A_flcQ",
+                "china_cdn_id": "KHAu5A_flcQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 18933,
+          "key": "487332520923",
+          "title": "Compute Cost",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487332520923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 58161,
+              "key": "48733252",
+              "title": "Compute Cost",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48733252",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "dBA94pR6JYw",
+                  "china_cdn_id": "dBA94pR6JYw.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Compute Cost",
+                "alt_text": "There is a pathway made of several squares. In the bottom middle of the pathway, a car is robot is currently sitting. Straight forward from the robot, there are three empty squares. At the third empty square, there is a four-way intersection, with squares to the left, right, and above the third empty square. To the left, the pathway extends three squares. To the right, the pathway extends three squares. Up, the pathway extends two squares. The result is a cross with three squares each on the left, right, and bottom branches and two squares on the top branch. The tip of the top branch and the tip of the right branch are also connected. A pathway extends three squares to the right from the end of the top branch, and two squares up from the end of the right branch. These two paths thus connect at their last square. The robot is sitting at the bottom of the cross, and the goal is at the end of the left branch of the cross. The robot has two possible actions: move to the space directly in front of it, or turn 90 degrees in one direction. The question is: how many actions does it take to move from its current position to the goal? Write your answer in Box 1.",
+                "background_image": "//lh4.ggpht.com/6LI9FYD0gsbn8PrzOr2hC4DxdYlinbJw5rLX2Xtoi7yTfUZZ73BKpMFFdW5Dsad7eO4-DS0bZAZe3CpvNFg=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48733252",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48667985",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "Box 1",
+                    "marker": "1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 1,
+                    "placement": {
+                      "height": 0.11086474501108648,
+                      "width": 0.15211970074812967,
+                      "x": 0.5906929529813162,
+                      "y": 0.5362451811323145
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "7-yOaHVeATk",
+                  "china_cdn_id": "7-yOaHVeATk.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 29049,
+          "key": "487276520923",
+          "title": "Compute Cost 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487276520923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 33366,
+              "key": "48727652",
+              "title": "Compute Cost 2",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48727652",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "n9_th4V4qE4",
+                  "china_cdn_id": "n9_th4V4qE4.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Compute Cost 2",
+                "alt_text": "The chart on the left is the same chart as the previous problem, but the actions have changed. There is a pathway made of several squares. In the bottom middle of the pathway, a car is robot is currently sitting. Straight forward from the robot, there are three empty squares. At the third empty square, there is a four-way intersection, with squares to the left, right, and above the third empty square. To the left, the pathway extends three squares. To the right, the pathway extends three squares. Up, the pathway extends two squares. The result is a cross with three squares each on the left, right, and bottom branches and two squares on the top branch. The tip of the top branch and the tip of the right branch are also connected. A pathway extends three squares to the right from the end of the top branch, and two squares up from the end of the right branch. These two paths thus connect at their last square. The robot is sitting at the bottom of the cross, and the goal is at the end of the left branch of the cross. The robot has three possible actions: move directly forward, turn left and move forward, or turn right and move forward. The question is: how many actions does it take to move from its current position to the goal? Write your answer in Box 1.",
+                "background_image": "//lh3.ggpht.com/KY0d7qkzSIIRfguCdC3djv-wFFetC1ECavYYUEPupx4JNIztDCq-5H_BHg0WF-PI-g4lTftI-JpY_dhUKxY=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48727652",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48667989",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "Box 1",
+                    "marker": "1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 1,
+                    "placement": {
+                      "height": 0.10421286031042129,
+                      "width": 0.14962593516209477,
+                      "x": 0.5902501817356024,
+                      "y": 0.5334420891400187
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "OXIESpN0KaE",
+                  "china_cdn_id": "OXIESpN0KaE.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 27098,
+          "key": "487372210923",
+          "title": "Optimal Path",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487372210923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 125569,
+              "key": "48737221",
+              "title": "Optimal Path",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48737221",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "Exl_kCyUc8U",
+                  "china_cdn_id": "Exl_kCyUc8U.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Optimal Path",
+                "alt_text": "The chart on the left is the same chart as the previous problem. The actions are the same, but the cost of the actions has changed. There is a pathway made of several squares. In the bottom middle of the pathway, a car is robot is currently sitting. Straight forward from the robot, there are three empty squares. At the third empty square, there is a four-way intersection, with squares to the left, right, and above the third empty square. To the left, the pathway extends three squares. To the right, the pathway extends three squares. Up, the pathway extends two squares. The result is a cross with three squares each on the left, right, and bottom branches and two squares on the top branch. The tip of the top branch and the tip of the right branch are also connected. A pathway extends three squares to the right from the end of the top branch, and two squares up from the end of the right branch. These two paths thus connect at their last square. The robot is sitting at the bottom of the cross, and the goal is at the end of the left branch of the cross. The robot has three possible actions: move directly forward, turn left and move forward, or turn right and move forward. A left turn, however, counts as 10 actions, while a forward move and a right turn only cost 1 action. What is the minimum number of actions required to move from the start to the goal? Write your answer in Box 1.",
+                "background_image": "//lh6.ggpht.com/wsVTKzGQneeJQY5qgrGHu0xCc6_bPTV2jn56vKW6W24aX3PrpwIe3-8Lun8EPx0QC_iuWaF4wrd8Ax9t6cY=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48737221",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48667982",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "Box 1",
+                    "marker": "1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 1,
+                    "placement": {
+                      "height": 0.11529933481152993,
+                      "width": 0.15336658354114713,
+                      "x": 0.5902501817356024,
+                      "y": 0.5312373971198985
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "wLz-nF2CrHc",
+                  "china_cdn_id": "wLz-nF2CrHc.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 11851,
+          "key": "487431510923",
+          "title": "Optimal Path 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487431510923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 44211,
+              "key": "48743151",
+              "title": "Optimal Path 2",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Enter the cost of the optimal (lowest cost) path.",
+              "user_state": {
+                "node_key": "48743151",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "GvCSZOR3hLQ",
+                  "china_cdn_id": "GvCSZOR3hLQ.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Optimal Path 2",
+                "alt_text": "The chart on the left is the same chart as the previous problem. The actions are the same, but the cost of the actions has changed. There is a pathway made of several squares. In the bottom middle of the pathway, a car is robot is currently sitting. Straight forward from the robot, there are three empty squares. At the third empty square, there is a four-way intersection, with squares to the left, right, and above the third empty square. To the left, the pathway extends three squares. To the right, the pathway extends three squares. Up, the pathway extends two squares. The result is a cross with three squares each on the left, right, and bottom branches and two squares on the top branch. The tip of the top branch and the tip of the right branch are also connected. A pathway extends three squares to the right from the end of the top branch, and two squares up from the end of the right branch. These two paths thus connect at their last square. The robot is sitting at the bottom of the cross, and the goal is at the end of the left branch of the cross. The robot has three possible actions: move directly forward, turn left and move forward, or turn right and move forward. A left turn, however, counts as 20 actions, while a forward move and a right turn only cost 1 action. What is the minimum number of actions required to move from the start to the goal? Write your answer in Box 1.",
+                "background_image": "//lh4.ggpht.com/qkLhkC3fH42DMOP64XF0GiTy2PNyL91HXHsHhYAraO0sSoK1j2fkiTE7R6YKsAbp7iJYGEcfO3pGO633Bnc=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48743151",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48735020",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "Box 1",
+                    "marker": "1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 1,
+                    "placement": {
+                      "height": 0.11086474501108648,
+                      "width": 0.14962593516209477,
+                      "x": 0.5906044443943851,
+                      "y": 0.5314263388217156
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "qFswCrEUZSM",
+                  "china_cdn_id": "qFswCrEUZSM.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 20071,
+          "key": "487431520923",
+          "title": "Maze",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487431520923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 130565,
+              "key": "48743152",
+              "title": "Maze",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48743152",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "ge_-o0RfrgM",
+                  "china_cdn_id": "ge_-o0RfrgM.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Maze",
+                "alt_text": "There is a grid with three rows and four columns. Three cells are blocked out: Row 1, Column 2; Row 2, Column 2; and Row 3, Column 4. A robot sits in Row 1, Column 1. The goal is in Row 1, Column 4. The robot can move up, down, left, and right. How many moves does it take to get from the start to the goal? Write your answer in Box 1.",
+                "background_image": "//lh3.ggpht.com/oIc9N82QuxfU1436INdexTPn19HMP1ddY9R_NifdgizO__RNZTkhJkMK9ufmWWkXv4fXfHVviD10ZhS0fSfz=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48743152",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48700499",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "Box 1",
+                    "marker": "1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 1,
+                    "placement": {
+                      "height": 0.0824074074074074,
+                      "width": 0.11979166666666669,
+                      "x": 0.6300347010294597,
+                      "y": 0.7496913556699399
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "yVh0lVlerWs",
+                  "china_cdn_id": "yVh0lVlerWs.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 41335,
+          "key": "487332530923",
+          "title": "Maze 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487332530923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 90793,
+              "key": "48733253",
+              "title": "Maze 2",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48733253",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "YwAyqkznxa0",
+                  "china_cdn_id": "YwAyqkznxa0.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Maze 2",
+                "alt_text": "There is a grid with five rows and six columns. Seven cells in the grid are blocked off: Row 1, Column 3; Row 2, Column 3; Row 4, Column 3; Row 4, Column 4; Row 3, Column 5; Row 4, Column 5; Row 5, Column 5. A robot is in the top left at Row 1, Column 1, and the goal is in the bottom right at Row 5, Column 6. The robot can move up, down, left, and right. What is the minimum number of moves to get from the start to the goal? Write your answer in Box 1.",
+                "background_image": "//lh4.ggpht.com/mLdWqqQ7X8ho7xgvxWa5naM9Bqxa31RbJPUEVHi7CtVTlPBEjXiJINzdV_Orub4evjltT4hnBrGDZae7Kgw=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48733253",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48738127",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "Box 1",
+                    "marker": "1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 1,
+                    "placement": {
+                      "height": 0.09312638580931264,
+                      "width": 0.1371571072319202,
+                      "x": 0.6087320760598504,
+                      "y": 0.6588483924611973
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "aBUxPyEDOWw",
+                  "china_cdn_id": "aBUxPyEDOWw.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 641801,
+          "key": "112e9f79-63cd-44ee-883f-652677e64d31",
+          "title": "First Search Program",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "112e9f79-63cd-44ee-883f-652677e64d31",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 641812,
+              "key": "ef51ef30-5519-435f-81c5-91598090db04",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Instructions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 641808,
+              "key": "f3df1118-dd37-49b7-870c-cd575be4add0",
+              "title": "Seb Edit - First-Search-Program-Artificial-Intelligence-For-Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "vYpKfHHBZJg",
+                "china_cdn_id": "vYpKfHHBZJg.mp4"
+              }
+            },
+            {
+              "id": 714238,
+              "key": "dc516bc2-190f-4259-971f-d0732635c790",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "_Note: we have updated the quiz using the Jupyter Notebook. If you are not familiar with it, check out this free course from Udacity: [Anaconda and Jupyter Notebooks](https://classroom.udacity.com/courses/ud1111/lessons/b15ba0a2-015d-4c5a-87ae-9efba2cabb43/concepts/75e1eee0-5f81-4d5b-a1ca-eaebe3c91759). When you are ready to go, instead of clicking the `test` and `submit` button, simply run the code blocks and review the result of it._",
+              "instructor_notes": ""
+            },
+            {
+              "id": 641809,
+              "key": "7556e5f1-f19c-43f6-ae48-37c795da52d6",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view05f9d871",
+              "pool_id": "jupyter",
+              "view_id": "05f9d871-f895-4e62-a5e1-344b6ef8e385",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/first_search.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            },
+            {
+              "id": 641811,
+              "key": "91509830-3465-4c3a-adf8-c8aeba761af2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Solution",
+              "instructor_notes": ""
+            },
+            {
+              "id": 682786,
+              "key": "59011aa4-155c-4d0c-b1ca-0f1891962ff2",
+              "title": "First Search Program Solution - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cl8Kdkr4Gbg",
+                "china_cdn_id": "cl8Kdkr4Gbg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 641802,
+          "key": "c1705d77-0b01-44b4-bacc-efbcdc32e5b5",
+          "title": "Expansion Grid",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c1705d77-0b01-44b4-bacc-efbcdc32e5b5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 641806,
+              "key": "c39a8926-10a1-4041-8ad1-ba8550a9a77c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Instructions",
+              "instructor_notes": ""
+            },
+            {
+              "id": 641804,
+              "key": "376d4153-4005-4d62-b325-a8b6d6dd2aa2",
+              "title": "Expansion Grid - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1l7bWfz8sJw",
+                "china_cdn_id": "1l7bWfz8sJw.mp4"
+              }
+            },
+            {
+              "id": 641803,
+              "key": "a75e8f75-95bd-45f2-ac3a-655d7e2a490f",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view457b1fb2",
+              "pool_id": "jupyter",
+              "view_id": "457b1fb2-3533-4750-a114-c606205e263f",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/expansion_grid.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            },
+            {
+              "id": 641805,
+              "key": "10bb8697-4822-4dbd-8a10-c228090dec34",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Solution",
+              "instructor_notes": ""
+            },
+            {
+              "id": 641807,
+              "key": "e1cf2e7c-9c67-41b3-b85c-0583d3ec2234",
+              "title": "Expansion Grid Solution - Artificial Intelligence for Robotics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "pH6sDfBalaw",
+                "china_cdn_id": "pH6sDfBalaw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 1138,
+          "key": "487263480923",
+          "title": "Print Path",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487263480923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 20222,
+              "key": "48726348",
+              "title": "Print Path",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "List comprehensions populating the grid in the video are written in a somewhat confusing way, with row and col variables mixed up. The comprehension should be written as:\n\n    [[' ' for col in range(len(grid[0]))] for row in range(len(grid))]",
+              "user_state": {
+                "node_key": "48726348",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "6UJFZf40aBg",
+                  "china_cdn_id": "6UJFZf40aBg.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Print Path",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48713683",
+                "initial_code_files": [
+                  {
+                    "text": "# -----------\n# User Instructions:\n#\n# Modify the the search function so that it returns\n# a shortest path as follows:\n# \n# [['>', 'v', ' ', ' ', ' ', ' '],\n#  [' ', '>', '>', '>', '>', 'v'],\n#  [' ', ' ', ' ', ' ', ' ', 'v'],\n#  [' ', ' ', ' ', ' ', ' ', 'v'],\n#  [' ', ' ', ' ', ' ', ' ', '*']]\n#\n# Where '>', '<', '^', and 'v' refer to right, left, \n# up, and down motions. Note that the 'v' should be \n# lowercase. '*' should mark the goal cell.\n#\n# You may assume that all test cases for this function\n# will have a path from init to goal.\n# ----------\n\ngrid = [[0, 0, 1, 0, 0, 0],\n        [0, 0, 0, 0, 0, 0],\n        [0, 0, 1, 0, 1, 0],\n        [0, 0, 1, 0, 1, 0],\n        [0, 0, 1, 0, 1, 0]]\ninit = [0, 0]\ngoal = [len(grid)-1, len(grid[0])-1]\ncost = 1\n\ndelta = [[-1, 0 ], # go up\n         [ 0, -1], # go left\n         [ 1, 0 ], # go down\n         [ 0, 1 ]] # go right\n\ndelta_name = ['^', '<', 'v', '>']\n\ndef search(grid,init,goal,cost):\n    # ----------------------------------------\n    # modify code below\n    # ----------------------------------------\n    closed = [[0 for row in range(len(grid[0]))] for col in range(len(grid))]\n    closed[init[0]][init[1]] = 1\n\n    x = init[0]\n    y = init[1]\n    g = 0\n\n    open = [[g, x, y]]\n\n    found = False  # flag that is set when search is complete\n    resign = False # flag set if we can't find expand\n\n    while not found and not resign:\n        if len(open) == 0:\n            resign = True\n            return 'fail'\n        else:\n            open.sort()\n            open.reverse()\n            next = open.pop()\n            x = next[1]\n            y = next[2]\n            g = next[0]\n            \n            if x == goal[0] and y == goal[1]:\n                found = True\n            else:\n                for i in range(len(delta)):\n                    x2 = x + delta[i][0]\n                    y2 = y + delta[i][1]\n                    if x2 >= 0 and x2 < len(grid) and y2 >=0 and y2 < len(grid[0]):\n                        if closed[x2][y2] == 0 and grid[x2][y2] == 0:\n                            g2 = g + cost\n                            open.append([g2, x2, y2])\n                            closed[x2][y2] = 1\n\n    return expand # make sure you return the shortest path\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "CyQ2gl-9W4o",
+                  "china_cdn_id": "CyQ2gl-9W4o.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 90141,
+          "key": "487510240923",
+          "title": "A*",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487510240923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 22957,
+              "key": "48751024",
+              "title": "A*",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "lxCCtgHk5Vs",
+                "china_cdn_id": "lxCCtgHk5Vs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 19714,
+          "key": "486468390923",
+          "title": "Implement A*",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "486468390923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 2482,
+              "key": "48646839",
+              "title": "Implement A*",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "List comprehensions populating the grid in the video are written in a somewhat confusing way, with row and col variables mixed up. The comprehension should be written as:\n\n    [[-1 for col in range(len(grid[0]))] for row in range(len(grid))]",
+              "user_state": {
+                "node_key": "48646839",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "V0Ppaw5G2Pg",
+                  "china_cdn_id": "V0Ppaw5G2Pg.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Implement A*",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48750036",
+                "initial_code_files": [
+                  {
+                    "text": "# -----------\n# User Instructions:\n#\n# Modify the the search function so that it becomes\n# an A* search algorithm as defined in the previous\n# lectures.\n#\n# Your function should return the expanded grid\n# which shows, for each element, the count when\n# it was expanded or -1 if the element was never expanded.\n# \n# If there is no path from init to goal,\n# the function should return the string 'fail'\n# ----------\n\ngrid = [[0, 1, 0, 0, 0, 0],\n        [0, 1, 0, 0, 0, 0],\n        [0, 1, 0, 0, 0, 0],\n        [0, 1, 0, 0, 0, 0],\n        [0, 0, 0, 0, 1, 0]]\nheuristic = [[9, 8, 7, 6, 5, 4],\n             [8, 7, 6, 5, 4, 3],\n             [7, 6, 5, 4, 3, 2],\n             [6, 5, 4, 3, 2, 1],\n             [5, 4, 3, 2, 1, 0]]\n\ninit = [0, 0]\ngoal = [len(grid)-1, len(grid[0])-1]\ncost = 1\n\ndelta = [[-1, 0 ], # go up\n         [ 0, -1], # go left\n         [ 1, 0 ], # go down\n         [ 0, 1 ]] # go right\n\ndelta_name = ['^', '<', 'v', '>']\n\ndef search(grid,init,goal,cost,heuristic):\n    # ----------------------------------------\n    # modify the code below\n    # ----------------------------------------\n    closed = [[0 for col in range(len(grid[0]))] for row in range(len(grid))]\n    closed[init[0]][init[1]] = 1\n\n    expand = [[-1 for col in range(len(grid[0]))] for row in range(len(grid))]\n    action = [[-1 for col in range(len(grid[0]))] for row in range(len(grid))]\n\n    x = init[0]\n    y = init[1]\n    g = 0\n\n    open = [[g, x, y]]\n\n    found = False  # flag that is set when search is complete\n    resign = False # flag set if we can't find expand\n    count = 0\n    \n    while not found and not resign:\n        if len(open) == 0:\n            resign = True\n            return \"Fail\"\n        else:\n            open.sort()\n            open.reverse()\n            next = open.pop()\n            x = next[1]\n            y = next[2]\n            g = next[0]\n            expand[x][y] = count\n            count += 1\n            \n            if x == goal[0] and y == goal[1]:\n                found = True\n            else:\n                for i in range(len(delta)):\n                    x2 = x + delta[i][0]\n                    y2 = y + delta[i][1]\n                    if x2 >= 0 and x2 < len(grid) and y2 >=0 and y2 < len(grid[0]):\n                        if closed[x2][y2] == 0 and grid[x2][y2] == 0:\n                            g2 = g + cost\n                            open.append([g2, x2, y2])\n                            closed[x2][y2] = 1\n\n    return expand\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "SSyvcCZKlqo",
+                  "china_cdn_id": "SSyvcCZKlqo.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 300,
+          "key": "487161640923",
+          "title": "A* in Action",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487161640923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 85329,
+              "key": "48716164",
+              "title": "A* in Action",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "qXZt-B7iUyw",
+                "china_cdn_id": "qXZt-B7iUyw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 22955,
+          "key": "486679840923",
+          "title": "Dynamic Programming",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "486679840923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 41926,
+              "key": "48667984",
+              "title": "Dynamic Programming",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "r2bPY2s9wII",
+                "china_cdn_id": "r2bPY2s9wII.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 16312,
+          "key": "486488330923",
+          "title": "Computing Value",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "486488330923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 109285,
+              "key": "48648833",
+              "title": "Computing Value",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48648833",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "Sn-ZUbZdOn8",
+                  "china_cdn_id": "Sn-ZUbZdOn8.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Computing Value",
+                "alt_text": "There is a grid with 5 rows and 7 columns. 11 cells are blocked out: Row 2, Column 1; Row 1, Column 3; Row 2, Column 3; Row 3, Column 3; Row 5, Column 3; Row 2, Column 5; Row 3, Column 5; Row 4, Column 5; Row 5, Column 5; Row 2, Column 6; Row 4, Column 7. What is the value of the cell in the bottom right at Row 5, Column 7? Write your answer in Box 1.",
+                "background_image": "//lh5.ggpht.com/-0Hdjgc7G9dtz23x0cvXkyfCtD_GALNca8p4-fx-xa8dKxEz7buEhaDmAnHzS9k1zwBkPk3cBPYKt9uUuw=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48648833",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48736143",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "Box 1",
+                    "marker": "1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 1,
+                    "placement": {
+                      "height": 0.10643015521064302,
+                      "width": 0.13341645885286782,
+                      "x": 0.685201021798531,
+                      "y": 0.3874281991083183
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "ebFQqd7Uhek",
+                  "china_cdn_id": "ebFQqd7Uhek.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 29725,
+          "key": "485327590923",
+          "title": "Computing Value 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "485327590923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 13152,
+              "key": "48532759",
+              "title": "Computing Value 2",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48532759",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "yTV3JPJk1kE",
+                  "china_cdn_id": "yTV3JPJk1kE.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Computing Value 2",
+                "alt_text": "The grid is the same as the grid in the previous problem. There is a grid with 5 rows and 7 columns. 11 cells are blocked out: Row 2, Column 1; Row 1, Column 3; Row 2, Column 3; Row 3, Column 3; Row 5, Column 3; Row 2, Column 5; Row 3, Column 5; Row 4, Column 5; Row 5, Column 5; Row 2, Column 6; Row 4, Column 7. What is the value of the cell in the bottom left at Row 5, Column 1? Write your answer in Box 1.",
+                "background_image": "//lh6.ggpht.com/BdULF-9YAkq9rRoYJu0bIqtzuYVBP_ZPqIXo9FJnqSSgQ8M2dzWEQRYKSL3JnK8fqUD0ACReb6rd_VSM5g=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48532759",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48722135",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "Box 1",
+                    "marker": "1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 1,
+                    "placement": {
+                      "height": 0.0975609756097561,
+                      "width": 0.12468827930174564,
+                      "x": 0.30898016646615883,
+                      "y": 0.7692858913785338
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "t2aT92C2ruA",
+                  "china_cdn_id": "t2aT92C2ruA.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 136497,
+          "key": "487174190923",
+          "title": "Value Program",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487174190923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 82926,
+              "key": "48717419",
+              "title": "Value Program",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48717419",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "RXpuBRA-cpo",
+                  "china_cdn_id": "RXpuBRA-cpo.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Value Program",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48271827",
+                "initial_code_files": [
+                  {
+                    "text": "# ----------\n# User Instructions:\n# \n# Create a function compute_value which returns\n# a grid of values. The value of a cell is the minimum\n# number of moves required to get from the cell to the goal. \n#\n# If a cell is a wall or it is impossible to reach the goal from a cell,\n# assign that cell a value of 99.\n# ----------\n\ngrid = [[0, 1, 0, 0, 0, 0],\n        [0, 1, 0, 0, 0, 0],\n        [0, 1, 0, 0, 0, 0],\n        [0, 1, 0, 0, 0, 0],\n        [0, 0, 0, 0, 1, 0]]\ngoal = [len(grid)-1, len(grid[0])-1]\ncost = 1 # the cost associated with moving from a cell to an adjacent one\n\ndelta = [[-1, 0 ], # go up\n         [ 0, -1], # go left\n         [ 1, 0 ], # go down\n         [ 0, 1 ]] # go right\n\ndelta_name = ['^', '<', 'v', '>']\n\ndef compute_value(grid,goal,cost):\n    # ----------------------------------------\n    # insert code below\n    # ----------------------------------------\n    \n    # make sure your function returns a grid of values as \n    # demonstrated in the previous video.\n    return value \n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "FdT1g_Bzjm0",
+                  "china_cdn_id": "FdT1g_Bzjm0.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 36082,
+          "key": "485327600923",
+          "title": "Optimum Policy",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "485327600923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 65678,
+              "key": "48532760",
+              "title": "Optimum Policy",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Make sure to mark the goal with an asterisk character '*' (which was not shown in the video). If not, your submission will not be accepted.\n\nMake sure to output a \"*\" in the goal position. Your policy should also ignore any squares not connected to the goal.",
+              "user_state": {
+                "node_key": "48532760",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "MMDcirk9QPM",
+                  "china_cdn_id": "MMDcirk9QPM.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Optimum Policy",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48667988",
+                "initial_code_files": [
+                  {
+                    "text": "# ----------\n# User Instructions:\n# \n# Write a function optimum_policy that returns\n# a grid which shows the optimum policy for robot\n# motion. This means there should be an optimum\n# direction associated with each navigable cell from\n# which the goal can be reached.\n# \n# Unnavigable cells as well as cells from which \n# the goal cannot be reached should have a string \n# containing a single space (' '), as shown in the \n# previous video. The goal cell should have '*'.\n# ----------\n\ngrid = [[0, 1, 0, 0, 0, 0],\n        [0, 1, 0, 0, 0, 0],\n        [0, 1, 0, 0, 0, 0],\n        [0, 1, 0, 0, 0, 0],\n        [0, 0, 0, 0, 1, 0]]\ninit = [0, 0]\ngoal = [len(grid)-1, len(grid[0])-1]\ncost = 1 # the cost associated with moving from a cell to an adjacent one\n\ndelta = [[-1, 0 ], # go up\n         [ 0, -1], # go left\n         [ 1, 0 ], # go down\n         [ 0, 1 ]] # go right\n\ndelta_name = ['^', '<', 'v', '>']\n\ndef optimum_policy(grid,goal,cost):\n    # ----------------------------------------\n    # modify code below\n    # ----------------------------------------\n    value = [[99 for row in range(len(grid[0]))] for col in range(len(grid))]\n    change = True\n\n    while change:\n        change = False\n\n        for x in range(len(grid)):\n            for y in range(len(grid[0])):\n                if goal[0] == x and goal[1] == y:\n                    if value[x][y] > 0:\n                        value[x][y] = 0\n\n                        change = True\n\n                elif grid[x][y] == 0:\n                    for a in range(len(delta)):\n                        x2 = x + delta[a][0]\n                        y2 = y + delta[a][1]\n\n                        if x2 >= 0 and x2 < len(grid) and y2 >= 0 and y2 < len(grid[0]) and grid[x2][y2] == 0:\n                            v2 = value[x2][y2] + cost\n\n                            if v2 < value[x][y]:\n                                change = True\n                                value[x][y] = v2\n\n    return policy\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "7kllZxX-Nso",
+                  "china_cdn_id": "7kllZxX-Nso.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 25624,
+          "key": "486468400923",
+          "title": "Left Turn Policy",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "486468400923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 97507,
+              "key": "48646840",
+              "title": "Left Turn Policy",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Creating <b>new</b> global variables (other than forward, forward_name, action, and action_name) that you rely on in your function(s) may cause the grading script to reject your submission.",
+              "user_state": {
+                "node_key": "48646840",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "bQA2ELDNmmg",
+                  "china_cdn_id": "bQA2ELDNmmg.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Left Turn Policy",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48632737",
+                "initial_code_files": [
+                  {
+                    "text": "# ----------\n# User Instructions:\n# \n# Implement the function optimum_policy2D below.\n#\n# You are given a car in grid with initial state\n# init. Your task is to compute and return the car's \n# optimal path to the position specified in goal; \n# the costs for each motion are as defined in cost.\n#\n# There are four motion directions: up, left, down, and right.\n# Increasing the index in this array corresponds to making a\n# a left turn, and decreasing the index corresponds to making a \n# right turn.\n\nforward = [[-1,  0], # go up\n           [ 0, -1], # go left\n           [ 1,  0], # go down\n           [ 0,  1]] # go right\nforward_name = ['up', 'left', 'down', 'right']\n\n# action has 3 values: right turn, no turn, left turn\naction = [-1, 0, 1]\naction_name = ['R', '#', 'L']\n\n# EXAMPLE INPUTS:\n# grid format:\n#     0 = navigable space\n#     1 = unnavigable space \ngrid = [[1, 1, 1, 0, 0, 0],\n        [1, 1, 1, 0, 1, 0],\n        [0, 0, 0, 0, 0, 0],\n        [1, 1, 1, 0, 1, 1],\n        [1, 1, 1, 0, 1, 1]]\n\ninit = [4, 3, 0] # given in the form [row,col,direction]\n                 # direction = 0: up\n                 #             1: left\n                 #             2: down\n                 #             3: right\n                \ngoal = [2, 0] # given in the form [row,col]\n\ncost = [2, 1, 20] # cost has 3 values, corresponding to making \n                  # a right turn, no turn, and a left turn\n\n# EXAMPLE OUTPUT:\n# calling optimum_policy2D with the given parameters should return \n# [[' ', ' ', ' ', 'R', '#', 'R'],\n#  [' ', ' ', ' ', '#', ' ', '#'],\n#  ['*', '#', '#', '#', '#', 'R'],\n#  [' ', ' ', ' ', '#', ' ', ' '],\n#  [' ', ' ', ' ', '#', ' ', ' ']]\n# ----------\n\n# ----------------------------------------\n# modify code below\n# ----------------------------------------\n\ndef optimum_policy2D(grid,init,goal,cost):\n\n    return policy2D\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "rH5DKpwYQLY",
+                  "china_cdn_id": "rH5DKpwYQLY.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 11454,
+          "key": "487381290923",
+          "title": "Planning Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487381290923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 11129,
+              "key": "48738129",
+              "title": "Planning Conclusion",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "M7ZJ74RVHqo",
+                "china_cdn_id": "M7ZJ74RVHqo.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    }
+  ]
+}

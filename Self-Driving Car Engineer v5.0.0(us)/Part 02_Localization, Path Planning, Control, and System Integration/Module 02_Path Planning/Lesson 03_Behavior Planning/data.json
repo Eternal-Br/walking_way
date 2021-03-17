@@ -1,0 +1,1434 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627676,
+      "key": "59e5ec59-905b-4c37-9784-27099661f9e5",
+      "title": "Behavior Planning",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn how to think about high-level behavior planning in a self-driving car.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/59e5ec59-905b-4c37-9784-27099661f9e5/627676/1538943428967/Behavior+Planning+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/59e5ec59-905b-4c37-9784-27099661f9e5/627676/1538943423496/Behavior+Planning+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 664362,
+          "key": "0dbd6a02-1bc8-4075-99ca-4c4a5f608b93",
+          "title": "Where To",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0dbd6a02-1bc8-4075-99ca-4c4a5f608b93",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 664363,
+              "key": "70c124f2-0696-40f0-ac99-7514077f2e2b",
+              "title": "06 Path Planning A03 Where To-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9ZrXlxPH4L4",
+                "china_cdn_id": "9ZrXlxPH4L4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340006,
+          "key": "b3f64d3e-6638-49a8-bea0-c7a1a1ab266e",
+          "title": "Lesson Outline",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b3f64d3e-6638-49a8-bea0-c7a1a1ab266e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342246,
+              "key": "bad36543-0838-4fe0-a06e-0bc185b28996",
+              "title": "01 L Lesson Outline",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qyH-1BMCiUY",
+                "china_cdn_id": "qyH-1BMCiUY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340007,
+          "key": "01aa1e55-ea30-44e8-8314-b921460ad003",
+          "title": "Understanding Output",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "01aa1e55-ea30-44e8-8314-b921460ad003",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 340676,
+              "key": "fc47793d-2a84-47fe-9a30-372eaa33a345",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Understanding Output\nIt's possible to suggest a wide variety of behaviors by specifying only a few quantities. For example by specifying only a target lane, a target vehicle (to follow), a target speed, and a time to reach these targets, we can make suggestions as nuanced as \"stay in your lane but get behind that vehicle in the right lane so that you can pass it when the gap gets big enough.\"\n\nLook at the picture below and 5 potential `json` representations of output and see if you can match the `json` representation with the corresponding verbal suggestion.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 340671,
+              "key": "184ec4ad-4d20-4a2f-b7e8-8775609e4c85",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/June/59543217_prediction-and-behavior-1/prediction-and-behavior-1.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/184ec4ad-4d20-4a2f-b7e8-8775609e4c85",
+              "caption": "",
+              "alt": null,
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 340669,
+              "key": "2f843751-ccba-4885-843b-0de2c8a5cb59",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Output A\n\n```json\n{\n\t\"target_lane_id\" : 2,\n\t\"target_leading_vehicle_id\": 3,\n\t\"target_speed\" : null,\n\t\"seconds_to_reach_target\" : null,\n}\n```\n---------\n#### Output B\n\n```json\n{\n\t\"target_lane_id\" : 3,\n\t\"target_leading_vehicle_id\": null,\n\t\"target_speed\" : 20.0,\n\t\"seconds_to_reach_target\" : 5.0,\n}\n```\n-----\n#### Output C\n```json\n{\n\t\"target_lane_id\" : 2,\n\t\"target_leading_vehicle_id\": null,\n\t\"target_speed\" : 15.0,\n\t\"seconds_to_reach_target\" : 10.0,\n}\n```\n\n-----\n#### Output D\n```json\n{\n\t\"target_lane_id\" : 2,\n\t\"target_leading_vehicle_id\": 2,\n\t\"target_speed\" : null,\n\t\"seconds_to_reach_target\" : 5.0,\n}\n```\n\n-----\n#### Output E\n```json\n{\n\t\"target_lane_id\" : 1,\n\t\"target_leading_vehicle_id\": 2,\n\t\"target_speed\" : null,\n\t\"seconds_to_reach_target\" : 5.0,\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 340675,
+              "key": "b6ba0df0-265e-425f-905e-cc4aebad77bb",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b6ba0df0-265e-425f-905e-cc4aebad77bb",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the verbal description of each behavior to the corresponding `json` representation."
+                },
+                "concepts_label": "Verbal Description",
+                "answers_label": "json Output",
+                "concepts": [
+                  {
+                    "text": "\"Just stay in your lane and keep following the  car in front of you\"",
+                    "correct_answer": {
+                      "id": "a1498690658593",
+                      "text": "A"
+                    }
+                  },
+                  {
+                    "text": "\"Let's pass this car! Get in the left lane and follow that car\"",
+                    "correct_answer": {
+                      "id": "a1498690717055",
+                      "text": "E"
+                    }
+                  },
+                  {
+                    "text": "\"Let's pass this car! But first we have to match speeds with the car in the left lane. Stay in this lane but get behind that car in the left lane and match their speed.\"",
+                    "correct_answer": {
+                      "id": "a1498690763935",
+                      "text": "D"
+                    }
+                  },
+                  {
+                    "text": "\"Whoa! This car we've been following is going too fast. Stop trying to follow it and just try to go the speed limit.\"",
+                    "correct_answer": {
+                      "id": "a1498690847049",
+                      "text": "C"
+                    }
+                  },
+                  {
+                    "text": "\"Get in the right lane soon.\"",
+                    "correct_answer": {
+                      "id": "a1498690895975",
+                      "text": "B"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1498690895975",
+                    "text": "B"
+                  },
+                  {
+                    "id": "a1498690717055",
+                    "text": "E"
+                  },
+                  {
+                    "id": "a1498690658593",
+                    "text": "A"
+                  },
+                  {
+                    "id": "a1498690847049",
+                    "text": "C"
+                  },
+                  {
+                    "id": "a1498690763935",
+                    "text": "D"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 340008,
+          "key": "98767d2e-b854-403c-90c3-7f49bf38a096",
+          "title": "The Behavior Problem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "98767d2e-b854-403c-90c3-7f49bf38a096",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342248,
+              "key": "c4ad1c48-a578-4c14-9c35-4c52ffb9707c",
+              "title": "03 L The Behavior Problem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5t-oVAZagT8",
+                "china_cdn_id": "5t-oVAZagT8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340009,
+          "key": "b56a371a-3114-466c-8556-cb3075c60229",
+          "title": "Finite State Machines",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b56a371a-3114-466c-8556-cb3075c60229",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342249,
+              "key": "ea2fcc67-12cd-4102-b52a-4967950057a4",
+              "title": "04 L Finite State Machine",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NERRPjU08NU",
+                "china_cdn_id": "NERRPjU08NU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340010,
+          "key": "10f984cb-4c83-4f31-b028-6f6726df8148",
+          "title": "Formalizing Finite State Machines",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "10f984cb-4c83-4f31-b028-6f6726df8148",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342251,
+              "key": "b63c5a8a-f38c-436f-8083-7402eb3b0747",
+              "title": "05 L Formalizing FSMs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "sEZn3iZgOaI",
+                "china_cdn_id": "sEZn3iZgOaI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340011,
+          "key": "c9423c65-1b8b-4c2e-951d-365999f46c1e",
+          "title": "FSM Intuition",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c9423c65-1b8b-4c2e-951d-365999f46c1e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 340695,
+              "key": "0bc5fa2a-60bf-4fc4-9abe-b8645e23e33a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/June/595459f1_prediction-and-behavior-2/prediction-and-behavior-2.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0bc5fa2a-60bf-4fc4-9abe-b8645e23e33a",
+              "caption": "",
+              "alt": null,
+              "width": 619,
+              "height": 411,
+              "instructor_notes": null
+            },
+            {
+              "id": 340696,
+              "key": "ec35124e-180e-4fdc-baa4-a7367c386071",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ec35124e-180e-4fdc-baa4-a7367c386071",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which state in the vending machine example was the **start state**?",
+                "answers": [
+                  {
+                    "id": "a1498700293815",
+                    "text": "0 cents",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1498700321386",
+                    "text": "5 cents",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498700326278",
+                    "text": "10 cents",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498700329624",
+                    "text": "15 cents",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498700334724",
+                    "text": "20 cents",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498700338260",
+                    "text": "25 cents",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 340697,
+              "key": "d3c14dba-df4f-4a1d-b031-83bd320e7960",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d3c14dba-df4f-4a1d-b031-83bd320e7960",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which state(s) were **accepting states**?",
+                "answers": [
+                  {
+                    "id": "a1498700456327",
+                    "text": "0 cents",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498700483439",
+                    "text": "5 cents",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498700486251",
+                    "text": "10 cents",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498700489631",
+                    "text": "15 cents",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498700492958",
+                    "text": "20 cents",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498700496188",
+                    "text": "25 cents",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 340698,
+              "key": "d07cb129-d36b-4846-80e5-89927a5eec08",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d07cb129-d36b-4846-80e5-89927a5eec08",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "If we wanted this machine to also accept pennies (1 cent coin) how many additional **states** would we have to add?",
+                "answers": [
+                  {
+                    "id": "a1498700766036",
+                    "text": "0",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498700820900",
+                    "text": "1",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498700823363",
+                    "text": "20",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1498700860710",
+                    "text": "25",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 340012,
+          "key": "8dde96a3-ee52-4994-be65-89f45707d429",
+          "title": "States for Self Driving Cars",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8dde96a3-ee52-4994-be65-89f45707d429",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342252,
+              "key": "ae9d52b5-c3a9-47e7-9482-42ff0741ae4c",
+              "title": "07 L StatesForASelfDrivingCar",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zoN0-IPe0I4",
+                "china_cdn_id": "zoN0-IPe0I4.mp4"
+              }
+            },
+            {
+              "id": 354130,
+              "key": "751458b1-bd71-4afd-a028-c3d8d2bdd764",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "751458b1-bd71-4afd-a028-c3d8d2bdd764",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What states do you think would make sense to use to model a car driving on a highway?",
+                "answers": [
+                  {
+                    "id": "a1501608980717",
+                    "text": "Keep Lane",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501609009928",
+                    "text": "Change Lane",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501609014424",
+                    "text": "Follow Vehicle",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501609019573",
+                    "text": "Stop",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501609026734",
+                    "text": "Slow Down",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501609042589",
+                    "text": "Change Lane Left",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501609050775",
+                    "text": "Change Lane Right",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501609055630",
+                    "text": "Pass Vehicle",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501609073592",
+                    "text": "Keep Target Speed",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501609082020",
+                    "text": "Prepare for Lane Change Left",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501609091536",
+                    "text": "Prepare for Lane Change Right",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 340014,
+          "key": "3f7d087c-8608-41a7-b19d-19b299bba95a",
+          "title": "The States We'll Use",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3f7d087c-8608-41a7-b19d-19b299bba95a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342253,
+              "key": "62bccc78-5b5f-4991-834a-9fbd5861e808",
+              "title": "08 L StatesForASelfDrivingCarSolution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QXU6ptbxfyo",
+                "china_cdn_id": "QXU6ptbxfyo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340015,
+          "key": "38042db5-e8e4-4196-944c-29e0a82f672e",
+          "title": "Inputs to Transition Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "38042db5-e8e4-4196-944c-29e0a82f672e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342254,
+              "key": "58c531a6-0ee4-440d-bca0-c9ec55dc385b",
+              "title": "09 Q InputsToTransitionFunctions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8jStt2d_SYc",
+                "china_cdn_id": "8jStt2d_SYc.mp4"
+              }
+            },
+            {
+              "id": 342306,
+              "key": "5d98f103-17e4-4e40-90db-d80c84cb31a3",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5d98f103-17e4-4e40-90db-d80c84cb31a3",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What data will we need to pass to our transition functions as input?",
+                "answers": [
+                  {
+                    "id": "a1499295258275",
+                    "text": "Predictions",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499295281222",
+                    "text": "Map",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499295284631",
+                    "text": "Speed Limit",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499295288681",
+                    "text": "Localization Data",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499295292990",
+                    "text": "Current State",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499295297028",
+                    "text": "Previous State",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 342255,
+              "key": "09e5e3c5-8663-4331-9cc8-c45a858c9b33",
+              "title": "09 S InputsToTransitionFunctions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AjMSl8zR-P0",
+                "china_cdn_id": "AjMSl8zR-P0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340016,
+          "key": "e9f08f5f-0b8f-488d-8940-45bc474b4913",
+          "title": "Behavior Planning Pseudocode",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e9f08f5f-0b8f-488d-8940-45bc474b4913",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342316,
+              "key": "847afbc9-aaa7-4cf7-9b42-7bc2b7c6ce7c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Behavior Planning Pseudocode\n\nOne way to implement a transition function is by generating rough trajectories for each accessible \"next state\" and then finding the best. To \"find the best\" we generally use **cost functions**. We can then figure out how costly each rough trajectory is and then select the state with the lowest cost trajectory. \n\nWe'll discuss this in more detail later, but first read carefully through the pseudocode below to get a better sense for how a transition function might work.\n\n```python\ndef transition_function(predictions, current_fsm_state, current_pose, cost_functions, weights):\n\t# only consider states which can be reached from current FSM state.\n\tpossible_successor_states = successor_states(current_fsm_state)\n\n\t# keep track of the total cost of each state.\n\tcosts = []\n\tfor state in possible_successor_states:\n\t\t# generate a rough idea of what trajectory we would\n        # follow IF we chose this state.\n\t\ttrajectory_for_state = generate_trajectory(state, current_pose, predictions)\n\n\t\t# calculate the \"cost\" associated with that trajectory.\n\t\tcost_for_state = 0\n\t\tfor i in range(len(cost_functions)) :\n\t\t\t# apply each cost function to the generated trajectory\n\t\t\tcost_function = cost_functions[i]\n\t\t\tcost_for_cost_function = cost_function(trajectory_for_state, predictions)\n\n\t\t\t# multiply the cost by the associated weight\n\t\t\tweight = weights[i]\n\t\t\tcost_for_state += weight * cost_for_cost_function\n\t\t costs.append({'state' : state, 'cost' : cost_for_state})\n\n\t# Find the minimum cost state.\n\tbest_next_state = None\n\tmin_cost = 9999999\n\tfor i in range(len(possible_successor_states)):\n\t\tstate = possible_successor_states[i]\n\t\tcost  = costs[i]\n\t\tif cost < min_cost:\n\t\t\tmin_cost = cost\n\t\t\tbest_next_state = state \n\n\treturn best_next_state\n```\n\nObviously we are glossing over some important details here. Namely: what **are** these cost functions and how do we create them? We'll talk about that next!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 340019,
+          "key": "d34ef8ed-02c5-4bcb-88c3-e080d4133563",
+          "title": "Create a Cost Function - Speed Penalty",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d34ef8ed-02c5-4bcb-88c3-e080d4133563",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342317,
+              "key": "7b514445-832c-4df9-b5a3-c1bfc10b46a2",
+              "title": "12 L CreateACostFunctionSpeedPenalty",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wGRDT2wTnn8",
+                "china_cdn_id": "wGRDT2wTnn8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340020,
+          "key": "35e02c8c-6ec6-4652-941e-4cf46092900d",
+          "title": "Example Cost Function - Lane Change Penalty",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "35e02c8c-6ec6-4652-941e-4cf46092900d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 341369,
+              "key": "2132ac95-35ec-43f0-b3aa-30f0b6185326",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/June/595699ff_prediction-and-behavior-1/prediction-and-behavior-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2132ac95-35ec-43f0-b3aa-30f0b6185326",
+              "caption": "",
+              "alt": null,
+              "width": 848,
+              "height": 304,
+              "instructor_notes": null
+            },
+            {
+              "id": 341388,
+              "key": "8f91042d-ddea-4d24-bafc-c6790469cc0e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the image above, the blue self driving car (bottom left) is trying to get to the goal (gold star). It's currently in the correct lane but the green car is going very slowly, so it considers whether it should perform a lane change (LC) or just keep lane (KL). These options are shown as lighter blue vehicles with a dashed outline.\n\nIf we want to design a cost function that deals with lane choice, it will be helpful to establish what the relevant variables are. In this case, we can define:\n\n* **<span class=\"mathquill\">\\Delta s = s_G - s</span>**       how much distance the vehicle will have before it has to get into the goal lane.\n* **<span class=\"mathquill\">\\Delta d = d_G - d_{LC/KL}</span>**   the lateral distance between the goal lane and the options being considered. In this case <span class=\"mathquill\">\\Delta d_{KL} = d_G - d_{KL}</span>  would be zero and  <span class=\"mathquill\">\\Delta d_{LC} = d_G - d_{LC}</span> would not.\n\n\nBefore we define an actual cost function, let's think of some of the properties we want it to have...\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 341391,
+              "key": "cbc3069a-4c77-4e94-8f83-e8ea267cd357",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "cbc3069a-4c77-4e94-8f83-e8ea267cd357",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "First, thinking **only** about delta d: Would we prefer the absolute value of <span class=\"mathquill\">\\Delta d</span> to be **big** or **small**?",
+                "answers": [
+                  {
+                    "id": "a1498848253341",
+                    "text": "Big",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498848486322",
+                    "text": "Small",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 341392,
+              "key": "e37449bb-79c2-4e7d-a63e-359ad4880876",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e37449bb-79c2-4e7d-a63e-359ad4880876",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Now let's think about how s factors into our considerations of lane cost. Should costs associated with lane change be more important when we are **far** from the goal (in s coordinate) or **close** to the goal?",
+                "answers": [
+                  {
+                    "id": "a1498848615380",
+                    "text": "Far",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498848700651",
+                    "text": "Close",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 341397,
+              "key": "32dfa377-3b07-4543-97cf-4bd12f6da333",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "So we want a cost function that penalizes large <span class=\"mathquill\">|\\Delta d|</span> and we want that penalty to be bigger when  <span class=\"mathquill\">\\Delta s</span> is small. \n\nFurthermore, we want to make sure that the **maximum** cost of this cost function never exceeds one and that the **minimum** never goes below zero. \n\nWhich of the following proposals meets these criteria?\n\n**Option 1**: <span class=\"mathquill\">\\text{cost} = |\\Delta d| + \\frac{1}{\\Delta s}</span>\n\n**Option 2**: <span class=\"mathquill\">\\text{cost} = \\frac{|\\Delta d|}{\\Delta s}</span>\n\n**Option 3**: <span class=\"mathquill\">\\text{cost} = 1 - e^{- \\frac{|\\Delta d|}{\\Delta s}}</span>\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 341399,
+              "key": "132ddf7f-766b-43fc-b9dd-f0137f2700e8",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "132ddf7f-766b-43fc-b9dd-f0137f2700e8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the options shown above meet the criteria we want (assume <span class='mathquill'>\\Delta s</span> is always positive)?",
+                "answers": [
+                  {
+                    "id": "a1498849777443",
+                    "text": "Option 1",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498849809920",
+                    "text": "Option 2",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1498849813968",
+                    "text": "Option 3",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 341400,
+              "key": "cfb435b3-d639-4291-9715-f62c9608a30e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this example, we found that the ratio <span class=\"mathquill\">\\LARGE \\frac{|\\Delta d|}{\\Delta s}</span> was important. If we call that ratio <span class=\"mathquill\">x</span> we can then \nuse that ratio in any function with bounded range. These functions tend to be useful when designing cost functions. These types of functions are called Sigmoid Functions. You can learn more in the [Wikipedia article](https://en.wikipedia.org/wiki/Sigmoid_function) if you're interested.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 463899,
+          "key": "4039a497-00e1-4d5f-84b9-1c869f65c5ef",
+          "title": "Implement a Cost Function in C++",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4039a497-00e1-4d5f-84b9-1c869f65c5ef",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 463916,
+              "key": "d2fed14a-3ec4-465d-8757-a0f7fab75c23",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the previous quizzes, you designed a cost function to choose a lane when trying to reach a goal in highway driving: \n\n<div class=\"mathquill\">\\text{cost} = 1 - e^{- \\frac{|\\Delta d|}{\\Delta s}}</div>\n\nHere, <span class=\"mathquill\">\\Delta d </span> was the lateral distance between the goal lane and the final chosen lane, and <span class=\"mathquill\">\\Delta s</span> was the longitudinal distance from the vehicle to the goal. \n\nIn this quiz, we'd like you to implement the cost function in C++, but with one important change. The finite state machine we use for vehicle behavior also includes states for planning a lane change right or left (PLCR or PLCL), and the cost function should incorporate this information. We will provide the following four inputs to the function:\n\n- Intended lane: the intended lane for the given behavior. For PLCR, PLCL, LCR, and LCL, this would be the one lane over from the current lane.\n- Final lane: the immediate resulting lane of the given behavior. For LCR and LCL, this would be one lane over.\n- The <span class=\"mathquill\">\\Delta s</span> distance to the goal.\n- The goal lane.\n\nYour task in the implementation will be to modify <span class=\"mathquill\">|\\Delta d|</span>  in the equation above so that it satisifes:\n- <span class=\"mathquill\">|\\Delta d|</span> is smaller as both intended lane and final lane are closer to the goal lane.\n- The cost function provides different costs for each possible behavior: KL, PLCR/PLCL, LCR/LCL.\n- The values produced by the cost function are in the range 0 to 1.\n\nYou can implement your solution in `cost.cpp` below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 463918,
+              "key": "60706a68-733d-4c02-a6ea-d30cb22eb4c1",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "60706a68-733d-4c02-a6ea-d30cb22eb4c1",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6141360197992448",
+                "initial_code_files": [
+                  {
+                    "text": "#include <iostream>\n#include \"cost.h\"\n\nusing std::cout;\nusing std::endl;\n\nint main() {\n  int goal_lane = 0;\n    \n  // Test cases used for grading - do not change.\n  double cost;\n  cout << \"Costs for (intended_lane, final_lane, goal_distance):\" << endl;\n  cout << \"---------------------------------------------------------\" << endl;\n  cost = goal_distance_cost(goal_lane, 2, 2, 1.0);\n  cout << \"The cost is \" << cost << \" for \" << \"(2, 2, 1.0)\" << endl;\n  cost = goal_distance_cost(goal_lane, 2, 2, 10.0);\n  cout << \"The cost is \" << cost << \" for \" << \"(2, 2, 10.0)\" << endl;\n  cost = goal_distance_cost(goal_lane, 2, 2, 100.0);\n  cout << \"The cost is \" << cost << \" for \" << \"(2, 2, 100.0)\" << endl;\n  cost = goal_distance_cost(goal_lane, 1, 2, 100.0);\n  cout << \"The cost is \" << cost << \" for \" << \"(1, 2, 100.0)\" << endl;\n  cost = goal_distance_cost(goal_lane, 1, 1, 100.0);\n  cout << \"The cost is \" << cost << \" for \" << \"(1, 1, 100.0)\" << endl;\n  cost = goal_distance_cost(goal_lane, 0, 1, 100.0);\n  cout << \"The cost is \" << cost << \" for \" << \"(0, 1, 100.0)\" << endl;\n  cost = goal_distance_cost(goal_lane, 0, 0, 100.0);\n  cout << \"The cost is \" << cost << \" for \" << \"(0, 0, 100.0)\" << endl;\n    \n  return 0;\n}",
+                    "name": "main.cpp"
+                  },
+                  {
+                    "text": "#include \"cost.h\"\n#include <cmath>\n\ndouble goal_distance_cost(int goal_lane, int intended_lane, int final_lane, \n                          double distance_to_goal) {\n  // The cost increases with both the distance of intended lane from the goal\n  //   and the distance of the final lane from the goal. The cost of being out \n  //   of the goal lane also becomes larger as the vehicle approaches the goal.\n    \n  /**\n   * TODO: Replace cost = 0 with an appropriate cost function.\n   */\n  double cost = 0;\n    \n  return cost;\n}",
+                    "name": "cost.cpp"
+                  },
+                  {
+                    "text": "#ifndef COST_H\n#define COST_H\n\ndouble goal_distance_cost(int goal_lane, int intended_lane, int final_lane, \n                          double distance_to_goal);\n\n#endif  // COST_H",
+                    "name": "cost.h"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 463929,
+          "key": "27ad6986-1e50-4c96-90e5-56077c8398f2",
+          "title": "Implement a Cost Function in C++ (solution)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "27ad6986-1e50-4c96-90e5-56077c8398f2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 463930,
+              "key": "1b50c39d-78a0-4c70-af0b-fa5458edd54a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is one possible solution for the previous quiz:\n\n```\ndouble goal_distance_cost(int goal_lane, int intended_lane, int final_lane, \n                          double distance_to_goal) {\n  // The cost increases with both the distance of intended lane from the goal\n  //   and the distance of the final lane from the goal. The cost of being out \n  //   of the goal lane also becomes larger as the vehicle approaches the goal.\n  int delta_d = 2.0 * goal_lane - intended_lane - final_lane;\n  double cost = 1 - exp(-(std::abs(delta_d) / distance_to_goal));\n  \n  return cost;\n}\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 477650,
+          "key": "452dbd41-b03d-4097-8bf8-b07fc9d0e617",
+          "title": "Implement a Second Cost Function in C++",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "452dbd41-b03d-4097-8bf8-b07fc9d0e617",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 477713,
+              "key": "e0c47d12-44e3-4d6c-8feb-5a2f5869e859",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In most situations, a single cost function will not be sufficient to produce complex vehicle behavior. In this quiz, we'd like you to implement one more cost function in C++. We will use these two C++ cost functions later in the lesson. The goal with this quiz is to create a cost function that would make the vehicle drive in the fastest possible lane, given several behavior options. We will provide the following four inputs to the function:\n\n- Target speed: Currently set as 10 (unitless), the speed at which you would like the vehicle to travel.\n- Intended lane: the intended lane for the given behavior. For PLCR, PLCL, LCR, and LCL, this would be the one lane over from the current lane.\n- Final lane: the immediate resulting lane of the given behavior. For LCR and LCL, this would be one lane over.\n- A vector of lane speeds, based on traffic in that lane: {6, 7, 8, 9}.\n\nYour task in the implementation will be to create a cost function that satisifes:\n- The cost decreases as both intended lane and final lane are higher speed lanes.\n- The cost function provides different costs for each possible behavior: KL, PLCR/PLCL, LCR/LCL.\n- The values produced by the cost function are in the range 0 to 1.\n\nYou can implement your solution in `cost.cpp` below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 477653,
+              "key": "fdf7f070-b855-4c5d-bbb1-4908db95b65b",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "fdf7f070-b855-4c5d-bbb1-4908db95b65b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6582345084305408",
+                "initial_code_files": [
+                  {
+                    "text": "#include <iostream>\n#include <vector>\n#include \"cost.h\"\n\nusing std::cout;\nusing std::endl;\n\nint main() {\n  // Target speed of our vehicle\n  int target_speed = 10;\n\n  // Lane speeds for each lane\n  std::vector<int> lane_speeds = {6, 7, 8, 9};\n    \n  // Test cases used for grading - do not change.\n  double cost;\n  cout << \"Costs for (intended_lane, final_lane):\" << endl;\n  cout << \"---------------------------------------------------------\" << endl;\n  cost = inefficiency_cost(target_speed, 3, 3, lane_speeds);\n  cout << \"The cost is \" << cost << \" for \" << \"(3, 3)\" << endl;\n  cost = inefficiency_cost(target_speed, 2, 3, lane_speeds);\n  cout << \"The cost is \" << cost << \" for \" << \"(2, 3)\" << endl;\n  cost = inefficiency_cost(target_speed, 2, 2, lane_speeds);\n  cout << \"The cost is \" << cost << \" for \" << \"(2, 2)\" << endl;\n  cost = inefficiency_cost(target_speed, 1, 2, lane_speeds);\n  cout << \"The cost is \" << cost << \" for \" << \"(1, 2)\" << endl;\n  cost = inefficiency_cost(target_speed, 1, 1, lane_speeds);\n  cout << \"The cost is \" << cost << \" for \" << \"(1, 1)\" << endl;\n  cost = inefficiency_cost(target_speed, 0, 1, lane_speeds);\n  cout << \"The cost is \" << cost << \" for \" << \"(0, 1)\" << endl;\n  cost = inefficiency_cost(target_speed, 0, 0, lane_speeds);\n  cout << \"The cost is \" << cost << \" for \" << \"(0, 0)\" << endl;\n    \n  return 0;\n}",
+                    "name": "main.cpp"
+                  },
+                  {
+                    "text": "#include \"cost.h\"\n\ndouble inefficiency_cost(int target_speed, int intended_lane, int final_lane, \n                         const std::vector<int> &lane_speeds) {\n  // Cost becomes higher for trajectories with intended lane and final lane \n  //   that have traffic slower than target_speed.\n\n  /**\n   * TODO: Replace cost = 0 with an appropriate cost function.\n   */\n  double cost = 0;\n    \n  return cost;\n}",
+                    "name": "cost.cpp"
+                  },
+                  {
+                    "text": "#ifndef COST_H\n#define COST_H\n\n#include <vector>\n\ndouble inefficiency_cost(int target_speed, int intended_lane, int final_lane, \n                         const std::vector<int> &lane_speeds);\n\n#endif  // COST_H",
+                    "name": "cost.h"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 477690,
+          "key": "d9e94da3-e539-41cd-bcd0-8580bad79b53",
+          "title": "Implement a Second Cost Function in C++ (solution)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d9e94da3-e539-41cd-bcd0-8580bad79b53",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 477691,
+              "key": "23efc35e-605f-4789-b98f-bbdfb2e4b353",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "One possible solution for the previous quiz is the following:\n```\ndouble inefficiency_cost(int target_speed, int intended_lane, int final_lane, \n                         const std::vector<int> &lane_speeds) {\n  // Cost becomes higher for trajectories with intended lane and final lane \n  //   that have traffic slower than target_speed.\n  double speed_intended = lane_speeds[intended_lane];\n  double speed_final = lane_speeds[final_lane];\n  double cost = (2.0*target_speed - speed_intended - speed_final)/target_speed;\n  \n  return cost;\n}\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 340021,
+          "key": "4ee00953-8172-477f-b356-58c0ce35ff85",
+          "title": "Cost Function Design and Weight Tweaking",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4ee00953-8172-477f-b356-58c0ce35ff85",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342319,
+              "key": "cce66930-4c46-4722-9f1e-9c1f61c1ba72",
+              "title": "14 L CostFunctionDesignWeightTweaking",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NK6SP-r4dGs",
+                "china_cdn_id": "NK6SP-r4dGs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 340022,
+          "key": "82aadeb1-70f8-41c2-b41f-3e73a68a278a",
+          "title": "Cost Function Matching",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82aadeb1-70f8-41c2-b41f-3e73a68a278a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342320,
+              "key": "390537de-e12e-42a6-a0e4-150721a664fd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Cost Function Matching\nConsider the following cost functions. What purpose does each serve?\n\n##### Cost Function 1\n<div class=\"mathquill\">\n\\begin{cases} \n      1 & \\ddot{s} \\geq a\\_{\\text{max}} \\\\\n      0 & \\ddot{s} < a\\_{\\text{max}}\n   \\end{cases}\n</div>\n\n##### Cost Function 2\n<div class=\"mathquill\">\n\\begin{cases} \n      1 & d \\geq d\\_{\\text{max}} \\\\\n      1 & d \\leq d\\_{\\text{min}} \\\\\n      0 & d\\_{\\text{min}} < d < d\\_{\\text{max}}\n   \\end{cases}\n</div>\n\n##### Cost Function 3\n<div class=\"mathquill\">\n\\begin{cases} \n      1 & \\dot{s} \\geq v\\_{\\text{speed limit}} \\\\\n      0 &  \\dot{s} < v\\_{\\text{speed limit}}\n   \\end{cases}\n</div>\n\n##### Cost Function 4\n<div class=\"mathquill\">\n\\frac{1}{1 + e^{-(d - d\\_{\\text{lane center}})^2}}\n</div>\n\n##### Cost Function 5\n<div class=\"mathquill\">\n(\\text{lane number} - \\text{target lane number}) ^ 2\n</div>\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 342321,
+              "key": "63e32eab-82c8-4ac1-872c-be72c59ed8ca",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "63e32eab-82c8-4ac1-872c-be72c59ed8ca",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the verbal descriptions of each cost function to the appropriate number from above."
+                },
+                "concepts_label": "Cost Function Verbal Description",
+                "answers_label": "Cost Function Number",
+                "concepts": [
+                  {
+                    "text": "Penalizes trajectories that do not stay near the center of the lane.",
+                    "correct_answer": {
+                      "id": "a1499298809977",
+                      "text": "4"
+                    }
+                  },
+                  {
+                    "text": "Penalizes trajectories that attempt to accelerate at a rate which is not possible for the vehicle.",
+                    "correct_answer": {
+                      "id": "a1499298864053",
+                      "text": "1"
+                    }
+                  },
+                  {
+                    "text": "Rewards trajectories that stay near the target lane.",
+                    "correct_answer": {
+                      "id": "a1499298956990",
+                      "text": "5"
+                    }
+                  },
+                  {
+                    "text": "Penalizes trajectories that drive off the road.",
+                    "correct_answer": {
+                      "id": "a1499298986173",
+                      "text": "2"
+                    }
+                  },
+                  {
+                    "text": "Penalizes trajectories that exceed the speed limit.",
+                    "correct_answer": {
+                      "id": "a1499299007807",
+                      "text": "3"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1499298986173",
+                    "text": "2"
+                  },
+                  {
+                    "id": "a1499299007807",
+                    "text": "3"
+                  },
+                  {
+                    "id": "a1499298864053",
+                    "text": "1"
+                  },
+                  {
+                    "id": "a1499298956990",
+                    "text": "5"
+                  },
+                  {
+                    "id": "a1499298809977",
+                    "text": "4"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 340023,
+          "key": "ddd20ed5-17ed-483d-b5ec-68e878c60803",
+          "title": "Scheduling Compute Time",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ddd20ed5-17ed-483d-b5ec-68e878c60803",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342258,
+              "key": "e3febc43-57fc-403a-9d8b-2676c58cc07f",
+              "title": "16 L SchedulingComputeTime",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "N6AlIUczqRM",
+                "china_cdn_id": "N6AlIUczqRM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 440911,
+          "key": "2c4a8fdd-4072-425f-b5ae-95849d5fd4d8",
+          "title": "Implement Behavior Planner in C++",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2c4a8fdd-4072-425f-b5ae-95849d5fd4d8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "python_3_practice",
+                "uri": "http://video.udacity-data.com.s3.amazonaws.com/topher/2017/November/5a024c18_python-3-practice/python-3-practice.zip"
+              },
+              {
+                "name": "python_3_solution",
+                "uri": "http://video.udacity-data.com.s3.amazonaws.com/topher/2017/November/5a024c70_python-3-solution/python-3-solution.zip"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 440913,
+              "key": "9a5c8bee-a304-486c-89f1-06fe95fc10f5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Implement a Behavior Planner\nIn this exercise you will implement a behavior planner and cost functions for highway driving. The planner will use prediction data to set the state of the ego vehicle to one of 5 values and generate a corresponding vehicle trajectory: \n* `\"KL\"` - Keep Lane\n* `\"LCL\"` / `\"LCR\"`- Lane Change Left / Lane Change Right\n* `\"PLCL\"` / `\"PLCR\"` - Prepare Lane Change Left / Prepare Lane Change Right\n\nThe objective of the quiz is to navigate through traffic to the goal in as little time as possible. Note that the goal lane and s value, as well as the traffic speeds for each lane, are set in `main.cpp` below. Since the goal is in the slowest lane, in order to get the lowest time, you'll want to choose cost functions and weights to drive in faster lanes when appropriate. We've provided two suggested cost functions in `cost.cpp`.\n\n### Instructions\n\n1. **Implement the `choose_next_state` method in the `vehicle.cpp` class.** You can use the [Behavior Planning Pseudocode concept](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/27800789-bc8e-4adc-afe0-ec781e82ceae/lessons/56274ea4-277d-4d1e-bd95-ce5afbad64fd/concepts/e9f08f5f-0b8f-488d-8940-45bc474b4913) as a guideline for your implementation. In this quiz, there are a couple of small differences from that pseudocode: you'll be returning a best trajectory corresponding to the best state instead of the state itself. Additionally, the function inputs will be slightly different in this quiz than in the classroom concept. For this part of the quiz, we have provided several useful functions:\n    1. `successor_states()` - Uses the current state to return a vector of possible successor states for the finite \n       state machine.\n    2. `generate_trajectory()` - Returns a vector of Vehicle objects representing a vehicle trajectory, given a state and predictions. Note that trajectory vectors might have size 0 if no possible trajectory exists for the state. \n    3. `calculate_cost()` - Included from cost.cpp, computes the cost for a trajectory.\n2. **Choose appropriate weights for the cost functions in `cost.cpp` to induce the desired vehicle behavior.** Two suggested cost functions have been implemented based on previous quizzes, but you are free to experiment with your own cost functions. The `get_helper_data()` function in `cost.cpp` provides some preprocessing of vehicle data that may be useful in your cost functions. See if you can get the vehicle to move into a fast lane for a portion of the track and then move back to reach the goal!\n3. Hit Test Run and see how your car does! How fast can you get to the goal?\n\n## Extra Practice\nProvided in one of the links below is a zip file `python_3_practice`, which is the same problem written in Python 3 - you can optionally use this file for additional coding practice. In the `python_3_solution` link, the solution is provided as well. If you get stuck on the quiz see if you can convert the python solution to C++ and pass the classroom quiz with it. You can run the python quiz with `python simulate_behavior.py`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 440921,
+              "key": "de8de445-ff09-43c2-a928-5e0b7c88407e",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "de8de445-ff09-43c2-a928-5e0b7c88407e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6400009621340160",
+                "initial_code_files": [
+                  {
+                    "text": "#include <iostream>\n#include <vector>\n#include \"road.h\"\n#include \"vehicle.h\"\n\nusing std::cout;\nusing std::endl;\n\n// impacts default behavior for most states\nint SPEED_LIMIT = 10;\n\n// all traffic in lane (besides ego) follow these speeds\nvector<int> LANE_SPEEDS = {6,7,8,9}; \n\n// Number of available \"cells\" which should have traffic\ndouble TRAFFIC_DENSITY = 0.15;\n\n// At each timestep, ego can set acceleration to value between \n//   -MAX_ACCEL and MAX_ACCEL\nint MAX_ACCEL = 2;\n\n// s value and lane number of goal.\nvector<int> GOAL = {300, 0};\n\n// These affect the visualization\nint FRAMES_PER_SECOND = 4;\nint AMOUNT_OF_ROAD_VISIBLE = 40;\n\nint main() {\n  Road road = Road(SPEED_LIMIT, TRAFFIC_DENSITY, LANE_SPEEDS);\n\n  road.update_width = AMOUNT_OF_ROAD_VISIBLE;\n\n  road.populate_traffic();\n\n  int goal_s = GOAL[0];\n  int goal_lane = GOAL[1];\n\n  // configuration data: speed limit, num_lanes, goal_s, goal_lane, \n  //   and max_acceleration\n  int num_lanes = LANE_SPEEDS.size();\n  vector<int> ego_config = {SPEED_LIMIT,num_lanes,goal_s,goal_lane,MAX_ACCEL};\n   \n  road.add_ego(2,0, ego_config);\n  int timestep = 0;\n  \n  while (road.get_ego().s <= GOAL[0]) {\n    ++timestep;\n    if (timestep > 100) {\n      break;\n    }\n    road.advance();\n    road.display(timestep);\n    //time.sleep(float(1.0) / FRAMES_PER_SECOND);\n  }\n\n  Vehicle ego = road.get_ego();\n  if (ego.lane == GOAL[1]) {\n    cout << \"You got to the goal in \" << timestep << \" seconds!\" << endl;\n    if(timestep > 35) {\n      cout << \"But it took too long to reach the goal. Go faster!\" << endl;\n    }\n  } else {\n    cout << \"You missed the goal. You are in lane \" << ego.lane \n         << \" instead of \" << GOAL[1] << \".\" << endl;\n  }\n\n  return 0;\n}",
+                    "name": "main.cpp"
+                  },
+                  {
+                    "text": "#include \"vehicle.h\"\n#include <algorithm>\n#include <iterator>\n#include <map>\n#include <string>\n#include <vector>\n#include \"cost.h\"\n\nusing std::string;\nusing std::vector;\n\n// Initializes Vehicle\nVehicle::Vehicle(){}\n\nVehicle::Vehicle(int lane, float s, float v, float a, string state) {\n  this->lane = lane;\n  this->s = s;\n  this->v = v;\n  this->a = a;\n  this->state = state;\n  max_acceleration = -1;\n}\n\nVehicle::~Vehicle() {}\n\nvector<Vehicle> Vehicle::choose_next_state(map<int, vector<Vehicle>> &predictions) {\n  /**\n   * Here you can implement the transition_function code from the Behavior \n   *   Planning Pseudocode classroom concept.\n   *\n   * @param A predictions map. This is a map of vehicle id keys with predicted\n   *   vehicle trajectories as values. Trajectories are a vector of Vehicle \n   *   objects representing the vehicle at the current timestep and one timestep\n   *   in the future.\n   * @output The best (lowest cost) trajectory corresponding to the next ego \n   *   vehicle state.\n   *\n   * Functions that will be useful:\n   * 1. successor_states - Uses the current state to return a vector of possible\n   *    successor states for the finite state machine.\n   * 2. generate_trajectory - Returns a vector of Vehicle objects representing \n   *    a vehicle trajectory, given a state and predictions. Note that \n   *    trajectory vectors might have size 0 if no possible trajectory exists \n   *    for the state. \n   * 3. calculate_cost - Included from cost.cpp, computes the cost for a trajectory.\n   *\n   * TODO: Your solution here.\n   */\n\n\n  /**\n   * TODO: Change return value here:\n   */\n  return generate_trajectory(\"KL\", predictions);\n}\n\nvector<string> Vehicle::successor_states() {\n  // Provides the possible next states given the current state for the FSM \n  //   discussed in the course, with the exception that lane changes happen \n  //   instantaneously, so LCL and LCR can only transition back to KL.\n  vector<string> states;\n  states.push_back(\"KL\");\n  string state = this->state;\n  if(state.compare(\"KL\") == 0) {\n    states.push_back(\"PLCL\");\n    states.push_back(\"PLCR\");\n  } else if (state.compare(\"PLCL\") == 0) {\n    if (lane != lanes_available - 1) {\n      states.push_back(\"PLCL\");\n      states.push_back(\"LCL\");\n    }\n  } else if (state.compare(\"PLCR\") == 0) {\n    if (lane != 0) {\n      states.push_back(\"PLCR\");\n      states.push_back(\"LCR\");\n    }\n  }\n    \n  // If state is \"LCL\" or \"LCR\", then just return \"KL\"\n  return states;\n}\n\nvector<Vehicle> Vehicle::generate_trajectory(string state, \n                                             map<int, vector<Vehicle>> &predictions) {\n  // Given a possible next state, generate the appropriate trajectory to realize\n  //   the next state.\n  vector<Vehicle> trajectory;\n  if (state.compare(\"CS\") == 0) {\n    trajectory = constant_speed_trajectory();\n  } else if (state.compare(\"KL\") == 0) {\n    trajectory = keep_lane_trajectory(predictions);\n  } else if (state.compare(\"LCL\") == 0 || state.compare(\"LCR\") == 0) {\n    trajectory = lane_change_trajectory(state, predictions);\n  } else if (state.compare(\"PLCL\") == 0 || state.compare(\"PLCR\") == 0) {\n    trajectory = prep_lane_change_trajectory(state, predictions);\n  }\n\n  return trajectory;\n}\n\nvector<float> Vehicle::get_kinematics(map<int, vector<Vehicle>> &predictions, \n                                      int lane) {\n  // Gets next timestep kinematics (position, velocity, acceleration) \n  //   for a given lane. Tries to choose the maximum velocity and acceleration, \n  //   given other vehicle positions and accel/velocity constraints.\n  float max_velocity_accel_limit = this->max_acceleration + this->v;\n  float new_position;\n  float new_velocity;\n  float new_accel;\n  Vehicle vehicle_ahead;\n  Vehicle vehicle_behind;\n\n  if (get_vehicle_ahead(predictions, lane, vehicle_ahead)) {\n    if (get_vehicle_behind(predictions, lane, vehicle_behind)) {\n      // must travel at the speed of traffic, regardless of preferred buffer\n      new_velocity = vehicle_ahead.v;\n    } else {\n      float max_velocity_in_front = (vehicle_ahead.s - this->s \n                                  - this->preferred_buffer) + vehicle_ahead.v \n                                  - 0.5 * (this->a);\n      new_velocity = std::min(std::min(max_velocity_in_front, \n                                       max_velocity_accel_limit), \n                                       this->target_speed);\n    }\n  } else {\n    new_velocity = std::min(max_velocity_accel_limit, this->target_speed);\n  }\n    \n  new_accel = new_velocity - this->v; // Equation: (v_1 - v_0)/t = acceleration\n  new_position = this->s + new_velocity + new_accel / 2.0;\n    \n  return{new_position, new_velocity, new_accel};\n}\n\nvector<Vehicle> Vehicle::constant_speed_trajectory() {\n  // Generate a constant speed trajectory.\n  float next_pos = position_at(1);\n  vector<Vehicle> trajectory = {Vehicle(this->lane,this->s,this->v,this->a,this->state), \n                                Vehicle(this->lane,next_pos,this->v,0,this->state)};\n  return trajectory;\n}\n\nvector<Vehicle> Vehicle::keep_lane_trajectory(map<int, vector<Vehicle>> &predictions) {\n  // Generate a keep lane trajectory.\n  vector<Vehicle> trajectory = {Vehicle(lane, this->s, this->v, this->a, state)};\n  vector<float> kinematics = get_kinematics(predictions, this->lane);\n  float new_s = kinematics[0];\n  float new_v = kinematics[1];\n  float new_a = kinematics[2];\n  trajectory.push_back(Vehicle(this->lane, new_s, new_v, new_a, \"KL\"));\n  \n  return trajectory;\n}\n\nvector<Vehicle> Vehicle::prep_lane_change_trajectory(string state, \n                                                     map<int, vector<Vehicle>> &predictions) {\n  // Generate a trajectory preparing for a lane change.\n  float new_s;\n  float new_v;\n  float new_a;\n  Vehicle vehicle_behind;\n  int new_lane = this->lane + lane_direction[state];\n  vector<Vehicle> trajectory = {Vehicle(this->lane, this->s, this->v, this->a, \n                                        this->state)};\n  vector<float> curr_lane_new_kinematics = get_kinematics(predictions, this->lane);\n\n  if (get_vehicle_behind(predictions, this->lane, vehicle_behind)) {\n    // Keep speed of current lane so as not to collide with car behind.\n    new_s = curr_lane_new_kinematics[0];\n    new_v = curr_lane_new_kinematics[1];\n    new_a = curr_lane_new_kinematics[2];    \n  } else {\n    vector<float> best_kinematics;\n    vector<float> next_lane_new_kinematics = get_kinematics(predictions, new_lane);\n    // Choose kinematics with lowest velocity.\n    if (next_lane_new_kinematics[1] < curr_lane_new_kinematics[1]) {\n      best_kinematics = next_lane_new_kinematics;\n    } else {\n      best_kinematics = curr_lane_new_kinematics;\n    }\n    new_s = best_kinematics[0];\n    new_v = best_kinematics[1];\n    new_a = best_kinematics[2];\n  }\n\n  trajectory.push_back(Vehicle(this->lane, new_s, new_v, new_a, state));\n  \n  return trajectory;\n}\n\nvector<Vehicle> Vehicle::lane_change_trajectory(string state, \n                                                map<int, vector<Vehicle>> &predictions) {\n  // Generate a lane change trajectory.\n  int new_lane = this->lane + lane_direction[state];\n  vector<Vehicle> trajectory;\n  Vehicle next_lane_vehicle;\n  // Check if a lane change is possible (check if another vehicle occupies \n  //   that spot).\n  for (map<int, vector<Vehicle>>::iterator it = predictions.begin(); \n       it != predictions.end(); ++it) {\n    next_lane_vehicle = it->second[0];\n    if (next_lane_vehicle.s == this->s && next_lane_vehicle.lane == new_lane) {\n      // If lane change is not possible, return empty trajectory.\n      return trajectory;\n    }\n  }\n  trajectory.push_back(Vehicle(this->lane, this->s, this->v, this->a, \n                               this->state));\n  vector<float> kinematics = get_kinematics(predictions, new_lane);\n  trajectory.push_back(Vehicle(new_lane, kinematics[0], kinematics[1], \n                               kinematics[2], state));\n  return trajectory;\n}\n\nvoid Vehicle::increment(int dt = 1) {\n  this->s = position_at(dt);\n}\n\nfloat Vehicle::position_at(int t) {\n  return this->s + this->v*t + this->a*t*t/2.0;\n}\n\nbool Vehicle::get_vehicle_behind(map<int, vector<Vehicle>> &predictions, \n                                 int lane, Vehicle &rVehicle) {\n  // Returns a true if a vehicle is found behind the current vehicle, false \n  //   otherwise. The passed reference rVehicle is updated if a vehicle is found.\n  int max_s = -1;\n  bool found_vehicle = false;\n  Vehicle temp_vehicle;\n  for (map<int, vector<Vehicle>>::iterator it = predictions.begin(); \n       it != predictions.end(); ++it) {\n    temp_vehicle = it->second[0];\n    if (temp_vehicle.lane == this->lane && temp_vehicle.s < this->s \n        && temp_vehicle.s > max_s) {\n      max_s = temp_vehicle.s;\n      rVehicle = temp_vehicle;\n      found_vehicle = true;\n    }\n  }\n  \n  return found_vehicle;\n}\n\nbool Vehicle::get_vehicle_ahead(map<int, vector<Vehicle>> &predictions, \n                                int lane, Vehicle &rVehicle) {\n  // Returns a true if a vehicle is found ahead of the current vehicle, false \n  //   otherwise. The passed reference rVehicle is updated if a vehicle is found.\n  int min_s = this->goal_s;\n  bool found_vehicle = false;\n  Vehicle temp_vehicle;\n  for (map<int, vector<Vehicle>>::iterator it = predictions.begin(); \n       it != predictions.end(); ++it) {\n    temp_vehicle = it->second[0];\n    if (temp_vehicle.lane == this->lane && temp_vehicle.s > this->s \n        && temp_vehicle.s < min_s) {\n      min_s = temp_vehicle.s;\n      rVehicle = temp_vehicle;\n      found_vehicle = true;\n    }\n  }\n  \n  return found_vehicle;\n}\n\nvector<Vehicle> Vehicle::generate_predictions(int horizon) {\n  // Generates predictions for non-ego vehicles to be used in trajectory \n  //   generation for the ego vehicle.\n  vector<Vehicle> predictions;\n  for(int i = 0; i < horizon; ++i) {\n    float next_s = position_at(i);\n    float next_v = 0;\n    if (i < horizon-1) {\n      next_v = position_at(i+1) - s;\n    }\n    predictions.push_back(Vehicle(this->lane, next_s, next_v, 0));\n  }\n  \n  return predictions;\n}\n\nvoid Vehicle::realize_next_state(vector<Vehicle> &trajectory) {\n  // Sets state and kinematics for ego vehicle using the last state of the trajectory.\n  Vehicle next_state = trajectory[1];\n  this->state = next_state.state;\n  this->lane = next_state.lane;\n  this->s = next_state.s;\n  this->v = next_state.v;\n  this->a = next_state.a;\n}\n\nvoid Vehicle::configure(vector<int> &road_data) {\n  // Called by simulator before simulation begins. Sets various parameters which\n  //   will impact the ego vehicle.\n  target_speed = road_data[0];\n  lanes_available = road_data[1];\n  goal_s = road_data[2];\n  goal_lane = road_data[3];\n  max_acceleration = road_data[4];\n}",
+                    "name": "vehicle.cpp"
+                  },
+                  {
+                    "text": "#ifndef VEHICLE_H\n#define VEHICLE_H\n\n#include <map>\n#include <string>\n#include <vector>\n\nusing std::map;\nusing std::string;\nusing std::vector;\n\nclass Vehicle {\n public:\n  // Constructors\n  Vehicle();\n  Vehicle(int lane, float s, float v, float a, string state=\"CS\");\n\n  // Destructor\n  virtual ~Vehicle();\n\n  // Vehicle functions\n  vector<Vehicle> choose_next_state(map<int, vector<Vehicle>> &predictions);\n\n  vector<string> successor_states();\n\n  vector<Vehicle> generate_trajectory(string state, \n                                      map<int, vector<Vehicle>> &predictions);\n\n  vector<float> get_kinematics(map<int, vector<Vehicle>> &predictions, int lane);\n\n  vector<Vehicle> constant_speed_trajectory();\n\n  vector<Vehicle> keep_lane_trajectory(map<int, vector<Vehicle>> &predictions);\n\n  vector<Vehicle> lane_change_trajectory(string state, \n                                         map<int, vector<Vehicle>> &predictions);\n\n  vector<Vehicle> prep_lane_change_trajectory(string state, \n                                              map<int, vector<Vehicle>> &predictions);\n\n  void increment(int dt);\n\n  float position_at(int t);\n\n  bool get_vehicle_behind(map<int, vector<Vehicle>> &predictions, int lane, \n                          Vehicle &rVehicle);\n\n  bool get_vehicle_ahead(map<int, vector<Vehicle>> &predictions, int lane, \n                         Vehicle &rVehicle);\n\n  vector<Vehicle> generate_predictions(int horizon=2);\n\n  void realize_next_state(vector<Vehicle> &trajectory);\n\n  void configure(vector<int> &road_data);\n\n  // public Vehicle variables\n  struct collider{\n    bool collision; // is there a collision?\n    int  time; // time collision happens\n  };\n\n  map<string, int> lane_direction = {{\"PLCL\", 1}, {\"LCL\", 1}, \n                                     {\"LCR\", -1}, {\"PLCR\", -1}};\n\n  int L = 1;\n\n  int preferred_buffer = 6; // impacts \"keep lane\" behavior.\n\n  int lane, s, goal_lane, goal_s, lanes_available;\n\n  float v, target_speed, a, max_acceleration;\n\n  string state;\n};\n\n#endif  // VEHICLE_H",
+                    "name": "vehicle.h"
+                  },
+                  {
+                    "text": "#include \"cost.h\"\n#include <cmath>\n#include <functional>\n#include <iterator>\n#include <map>\n#include <string>\n#include <vector>\n#include \"vehicle.h\"\n\nusing std::string;\nusing std::vector;\n\n/**\n * TODO: change weights for cost functions.\n */\nconst float REACH_GOAL = 0;\nconst float EFFICIENCY = 0;\n\n// Here we have provided two possible suggestions for cost functions, but feel \n//   free to use your own! The weighted cost over all cost functions is computed\n//   in calculate_cost. The data from get_helper_data will be very useful in \n//   your implementation of the cost functions below. Please see get_helper_data\n//   for details on how the helper data is computed.\n\nfloat goal_distance_cost(const Vehicle &vehicle, \n                         const vector<Vehicle> &trajectory, \n                         const map<int, vector<Vehicle>> &predictions, \n                         map<string, float> &data) {\n  // Cost increases based on distance of intended lane (for planning a lane \n  //   change) and final lane of trajectory.\n  // Cost of being out of goal lane also becomes larger as vehicle approaches \n  //   goal distance.\n  // This function is very similar to what you have already implemented in the \n  //   \"Implement a Cost Function in C++\" quiz.\n  float cost;\n  float distance = data[\"distance_to_goal\"];\n  if (distance > 0) {\n    cost = 1 - 2*exp(-(abs(2.0*vehicle.goal_lane - data[\"intended_lane\"] \n         - data[\"final_lane\"]) / distance));\n  } else {\n    cost = 1;\n  }\n\n  return cost;\n}\n\nfloat inefficiency_cost(const Vehicle &vehicle, \n                        const vector<Vehicle> &trajectory, \n                        const map<int, vector<Vehicle>> &predictions, \n                        map<string, float> &data) {\n  // Cost becomes higher for trajectories with intended lane and final lane \n  //   that have traffic slower than vehicle's target speed.\n  // You can use the lane_speed function to determine the speed for a lane. \n  // This function is very similar to what you have already implemented in \n  //   the \"Implement a Second Cost Function in C++\" quiz.\n  float proposed_speed_intended = lane_speed(predictions, data[\"intended_lane\"]);\n  if (proposed_speed_intended < 0) {\n    proposed_speed_intended = vehicle.target_speed;\n  }\n\n  float proposed_speed_final = lane_speed(predictions, data[\"final_lane\"]);\n  if (proposed_speed_final < 0) {\n    proposed_speed_final = vehicle.target_speed;\n  }\n    \n  float cost = (2.0*vehicle.target_speed - proposed_speed_intended \n             - proposed_speed_final)/vehicle.target_speed;\n\n  return cost;\n}\n\nfloat lane_speed(const map<int, vector<Vehicle>> &predictions, int lane) {\n  // All non ego vehicles in a lane have the same speed, so to get the speed \n  //   limit for a lane, we can just find one vehicle in that lane.\n  for (map<int, vector<Vehicle>>::const_iterator it = predictions.begin(); \n       it != predictions.end(); ++it) {\n    int key = it->first;\n    Vehicle vehicle = it->second[0];\n    if (vehicle.lane == lane && key != -1) {\n      return vehicle.v;\n    }\n  }\n  // Found no vehicle in the lane\n  return -1.0;\n}\n\nfloat calculate_cost(const Vehicle &vehicle, \n                     const map<int, vector<Vehicle>> &predictions, \n                     const vector<Vehicle> &trajectory) {\n  // Sum weighted cost functions to get total cost for trajectory.\n  map<string, float> trajectory_data = get_helper_data(vehicle, trajectory, \n                                                       predictions);\n  float cost = 0.0;\n\n  // Add additional cost functions here.\n  vector<std::function<float(const Vehicle &, const vector<Vehicle> &, \n                             const map<int, vector<Vehicle>> &, \n                             map<string, float> &)\n    >> cf_list = {goal_distance_cost, inefficiency_cost};\n  vector<float> weight_list = {REACH_GOAL, EFFICIENCY};\n    \n  for (int i = 0; i < cf_list.size(); ++i) {\n    float new_cost = weight_list[i]*cf_list[i](vehicle, trajectory, predictions, \n                                               trajectory_data);\n    cost += new_cost;\n  }\n\n  return cost;\n}\n\nmap<string, float> get_helper_data(const Vehicle &vehicle, \n                                   const vector<Vehicle> &trajectory, \n                                   const map<int, vector<Vehicle>> &predictions) {\n  // Generate helper data to use in cost functions:\n  // intended_lane: the current lane +/- 1 if vehicle is planning or \n  //   executing a lane change.\n  // final_lane: the lane of the vehicle at the end of the trajectory.\n  // distance_to_goal: the distance of the vehicle to the goal.\n\n  // Note that intended_lane and final_lane are both included to help \n  //   differentiate between planning and executing a lane change in the \n  //   cost functions.\n  map<string, float> trajectory_data;\n  Vehicle trajectory_last = trajectory[1];\n  float intended_lane;\n\n  if (trajectory_last.state.compare(\"PLCL\") == 0) {\n    intended_lane = trajectory_last.lane + 1;\n  } else if (trajectory_last.state.compare(\"PLCR\") == 0) {\n    intended_lane = trajectory_last.lane - 1;\n  } else {\n    intended_lane = trajectory_last.lane;\n  }\n\n  float distance_to_goal = vehicle.goal_s - trajectory_last.s;\n  float final_lane = trajectory_last.lane;\n  trajectory_data[\"intended_lane\"] = intended_lane;\n  trajectory_data[\"final_lane\"] = final_lane;\n  trajectory_data[\"distance_to_goal\"] = distance_to_goal;\n    \n  return trajectory_data;\n}",
+                    "name": "cost.cpp"
+                  },
+                  {
+                    "text": "#ifndef COST_H\n#define COST_H\n\n#include \"vehicle.h\"\n\nusing std::map;\nusing std::string;\nusing std::vector;\n\nfloat calculate_cost(const Vehicle &vehicle, \n                     const map<int, vector<Vehicle>> &predictions, \n                     const vector<Vehicle> &trajectory);\n\nfloat goal_distance_cost(const Vehicle &vehicle,  \n                         const vector<Vehicle> &trajectory,  \n                         const map<int, vector<Vehicle>> &predictions, \n                         map<string, float> &data);\n\nfloat inefficiency_cost(const Vehicle &vehicle, \n                        const vector<Vehicle> &trajectory, \n                        const map<int, vector<Vehicle>> &predictions, \n                        map<string, float> &data);\n\nfloat lane_speed(const map<int, vector<Vehicle>> &predictions, int lane);\n\nmap<string, float> get_helper_data(const Vehicle &vehicle, \n                                   const vector<Vehicle> &trajectory, \n                                   const map<int, vector<Vehicle>> &predictions);\n\n#endif  // COST_H",
+                    "name": "cost.h"
+                  },
+                  {
+                    "text": "#include <iostream>\n#include <iterator>\n#include <map>\n#include <sstream>\n#include <string>\n#include <vector>\n#include \"road.h\"\n#include \"vehicle.h\"\n\nusing std::map;\nusing std::string;\nusing std::vector;\n\n// Initializes Road\nRoad::Road(int speed_limit, double traffic_density, vector<int> &lane_speeds) {\n  this->num_lanes = lane_speeds.size();\n  this->lane_speeds = lane_speeds;\n  this->speed_limit = speed_limit;\n  this->density = traffic_density;\n  this->camera_center = this->update_width/2;\n}\n\nRoad::~Road() {}\n\nVehicle Road::get_ego() {\n  return this->vehicles.find(this->ego_key)->second;\n}\n\nvoid Road::populate_traffic() {\n  int start_s = std::max(this->camera_center - (this->update_width/2), 0);\n\n  for (int l = 0; l < this->num_lanes; ++l) {\n    int lane_speed = this->lane_speeds[l];\n    bool vehicle_just_added = false;\n\n    for (int s = start_s; s < start_s+this->update_width; ++s) {\n      if (vehicle_just_added) {\n        vehicle_just_added = false;\n      }\n      \n      if (((double) rand() / (RAND_MAX)) < this->density) {\n        Vehicle vehicle = Vehicle(l,s,lane_speed,0);\n        vehicle.state = \"CS\";\n        this->vehicles_added += 1;\n        this->vehicles.insert(std::pair<int,Vehicle>(vehicles_added,vehicle));\n        vehicle_just_added = true;\n      }\n    }\n  }\n}\n\nvoid Road::advance() {\n  map<int ,vector<Vehicle> > predictions;\n\n  map<int, Vehicle>::iterator it = this->vehicles.begin();\n\n  while (it != this->vehicles.end()) {\n    int v_id = it->first;\n    vector<Vehicle> preds = it->second.generate_predictions();\n    predictions[v_id] = preds;\n    ++it;\n  }\n  \n  it = this->vehicles.begin();\n\n  while (it != this->vehicles.end()) {\n    int v_id = it->first;\n    if (v_id == ego_key) {   \n      vector<Vehicle> trajectory = it->second.choose_next_state(predictions);\n      it->second.realize_next_state(trajectory);\n    } else {\n      it->second.increment(1);\n    }\n    ++it;\n  }   \n}\n\nvoid Road::add_ego(int lane_num, int s, vector<int> &config_data) {\n  map<int, Vehicle>::iterator it = this->vehicles.begin();\n\n  while (it != this->vehicles.end()) {\n    int v_id = it->first;\n    Vehicle v = it->second;\n    if (v.lane == lane_num && v.s == s) {\n      this->vehicles.erase(v_id);\n    }\n    ++it;\n  }\n    \n  Vehicle ego = Vehicle(lane_num, s, this->lane_speeds[lane_num], 0);\n  ego.configure(config_data);\n  ego.state = \"KL\";\n  this->vehicles.insert(std::pair<int,Vehicle>(ego_key,ego));\n}\n\nvoid Road::display(int timestep) {\n  Vehicle ego = this->vehicles.find(this->ego_key)->second;\n  int s = ego.s;\n  string state = ego.state;\n\n  this->camera_center = std::max(s, this->update_width/2);\n  int s_min = std::max(this->camera_center - this->update_width/2, 0);\n  int s_max = s_min + this->update_width;\n\n  vector<vector<string>> road;\n\n  for (int i = 0; i < this->update_width; ++i) {\n    vector<string> road_lane;\n    for (int ln = 0; ln < this->num_lanes; ++ln) {\n      road_lane.push_back(\"     \");\n    }\n    road.push_back(road_lane);\n  }\n\n  map<int, Vehicle>::iterator it = this->vehicles.begin();\n\n  while (it != this->vehicles.end()) {\n    int v_id = it->first;\n    Vehicle v = it->second;\n\n    if (s_min <= v.s && v.s < s_max) {\n      string marker = \"\";\n\n      if (v_id == this->ego_key) {\n        marker = this->ego_rep;\n      } else {\n        std::stringstream oss;\n        std::stringstream buffer;\n        buffer << \" \";\n        oss << v_id;\n\n        for (int buffer_i = oss.str().length(); buffer_i < 3; ++buffer_i) {\n          buffer << \"0\";\n        }\n        buffer << oss.str() << \" \";\n        marker = buffer.str();\n      }\n      road[int(v.s - s_min)][int(v.lane)] = marker;\n    }\n    ++it;\n  }\n    \n  std::ostringstream oss;\n  oss << \"+Meters ======================+ step: \" << timestep << std::endl;\n  int i = s_min;\n\n  for (int lj = 0; lj < road.size(); ++lj) {\n    if (i%20 ==0) {\n      std::stringstream buffer;\n      std::stringstream dis;\n      dis << i;\n      \n      for (int buffer_i = dis.str().length(); buffer_i < 3; ++buffer_i) {\n        buffer << \"0\";\n      }\n      \n      oss << buffer.str() << dis.str() << \" - \";\n    } else {\n      oss << \"      \";\n    }          \n    ++i;\n    for (int li = 0; li < road[0].size(); ++li) {\n      oss << \"|\" << road[lj][li];\n    }\n      oss << \"|\";\n      oss << \"\\n\";\n  }\n\n  std::cout << oss.str();\n}",
+                    "name": "road.cpp"
+                  },
+                  {
+                    "text": "#ifndef ROAD_H\n#define ROAD_H\n\n#include <map>\n#include <string>\n#include <vector>\n#include \"vehicle.h\"\n\nclass Road {\n public:\n  // Constructor\n  Road(int speed_limit, double traffic_density, std::vector<int> &lane_speeds);\n\n  // Destructor\n  virtual ~Road();\n\n  // Road functions\n  Vehicle get_ego();\n\n  void populate_traffic();\n\n  void advance();\n\n  void display(int timestep);\n\n  void add_ego(int lane_num, int s, std::vector<int> &config_data);\n\n  void cull();\n\n  // Road variables\n  int update_width = 70;\n\n  int vehicles_added = 0;\n\n  int ego_key = -1;\n\n  int num_lanes, speed_limit, camera_center;\n\n  double density; \n\n  std::map<int, Vehicle> vehicles;\n\n  std::string ego_rep = \" *** \";\n\n  std::vector<int> lane_speeds; \n};\n\n#endif  // ROAD_H",
+                    "name": "road.h"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 457491,
+          "key": "e68aaa56-9607-4725-a148-f807b2664db9",
+          "title": "Implement Behavior Planner in C++ (solution)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e68aaa56-9607-4725-a148-f807b2664db9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 457636,
+              "key": "d9006bd0-6de8-4507-bb6d-20ec4ce9f52c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is one possible solution to the previous quiz using the two suggested cost functions.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 457632,
+              "key": "db0d87d4-3bf1-4414-81eb-6963acc403a3",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "db0d87d4-3bf1-4414-81eb-6963acc403a3",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6575382699048960",
+                "initial_code_files": [
+                  {
+                    "text": "#include <iostream>\n#include <vector>\n#include \"road.h\"\n#include \"vehicle.h\"\n\nusing std::cout;\nusing std::endl;\n\n// impacts default behavior for most states\nint SPEED_LIMIT = 10;\n\n// all traffic in lane (besides ego) follow these speeds\nvector<int> LANE_SPEEDS = {6,7,8,9}; \n\n// Number of available \"cells\" which should have traffic\ndouble TRAFFIC_DENSITY = 0.15;\n\n// At each timestep, ego can set acceleration to value between \n//   -MAX_ACCEL and MAX_ACCEL\nint MAX_ACCEL = 2;\n\n// s value and lane number of goal.\nvector<int> GOAL = {300, 0};\n\n// These affect the visualization\nint FRAMES_PER_SECOND = 4;\nint AMOUNT_OF_ROAD_VISIBLE = 40;\n\nint main() {\n  Road road = Road(SPEED_LIMIT, TRAFFIC_DENSITY, LANE_SPEEDS);\n\n  road.update_width = AMOUNT_OF_ROAD_VISIBLE;\n\n  road.populate_traffic();\n\n  int goal_s = GOAL[0];\n  int goal_lane = GOAL[1];\n\n  // configuration data: speed limit, num_lanes, goal_s, goal_lane, \n  //   and max_acceleration\n  int num_lanes = LANE_SPEEDS.size();\n  vector<int> ego_config = {SPEED_LIMIT,num_lanes,goal_s,goal_lane,MAX_ACCEL};\n   \n  road.add_ego(2,0, ego_config);\n  int timestep = 0;\n  \n  while (road.get_ego().s <= GOAL[0]) {\n    ++timestep;\n    if (timestep > 100) {\n      break;\n    }\n    road.advance();\n    road.display(timestep);\n    //time.sleep(float(1.0) / FRAMES_PER_SECOND);\n  }\n\n  Vehicle ego = road.get_ego();\n  if (ego.lane == GOAL[1]) {\n    cout << \"You got to the goal in \" << timestep << \" seconds!\" << endl;\n    if(timestep > 35) {\n      cout << \"But it took too long to reach the goal. Go faster!\" << endl;\n    }\n  } else {\n    cout << \"You missed the goal. You are in lane \" << ego.lane \n         << \" instead of \" << GOAL[1] << \".\" << endl;\n  }\n\n  return 0;\n}",
+                    "name": "main.cpp"
+                  },
+                  {
+                    "text": "#include \"vehicle.h\"\n#include <algorithm>\n#include <iterator>\n#include <map>\n#include <string>\n#include <vector>\n#include \"cost.h\"\n\nusing std::string;\nusing std::vector;\n\n// Initializes Vehicle\nVehicle::Vehicle(){}\n\nVehicle::Vehicle(int lane, float s, float v, float a, string state) {\n  this->lane = lane;\n  this->s = s;\n  this->v = v;\n  this->a = a;\n  this->state = state;\n  max_acceleration = -1;\n}\n\nVehicle::~Vehicle() {}\n\nvector<Vehicle> Vehicle::choose_next_state(map<int, vector<Vehicle>> &predictions) {\n  /**\n   * Here you can implement the transition_function code from the Behavior \n   *   Planning Pseudocode classroom concept.\n   *\n   * @param A predictions map. This is a map of vehicle id keys with predicted\n   *   vehicle trajectories as values. Trajectories are a vector of Vehicle \n   *   objects representing the vehicle at the current timestep and one timestep\n   *   in the future.\n   * @output The best (lowest cost) trajectory corresponding to the next ego \n   *   vehicle state.\n   *\n   * Functions that will be useful:\n   * 1. successor_states - Uses the current state to return a vector of possible\n   *    successor states for the finite state machine.\n   * 2. generate_trajectory - Returns a vector of Vehicle objects representing \n   *    a vehicle trajectory, given a state and predictions. Note that \n   *    trajectory vectors might have size 0 if no possible trajectory exists \n   *    for the state. \n   * 3. calculate_cost - Included from cost.cpp, computes the cost for a trajectory.\n   *\n   * TODO: Your solution here.\n   */\n  vector<string> states = successor_states();\n  float cost;\n  vector<float> costs;\n  vector<vector<Vehicle>> final_trajectories;\n\n  for (vector<string>::iterator it = states.begin(); it != states.end(); ++it) {\n    vector<Vehicle> trajectory = generate_trajectory(*it, predictions);\n    if (trajectory.size() != 0) {\n      cost = calculate_cost(*this, predictions, trajectory);\n      costs.push_back(cost);\n      final_trajectories.push_back(trajectory);\n    }\n  }\n\n  vector<float>::iterator best_cost = min_element(begin(costs), end(costs));\n  int best_idx = distance(begin(costs), best_cost);\n\n  /**\n   * TODO: Change return value here:\n   */\n  return final_trajectories[best_idx];\n}\n\nvector<string> Vehicle::successor_states() {\n  // Provides the possible next states given the current state for the FSM \n  //   discussed in the course, with the exception that lane changes happen \n  //   instantaneously, so LCL and LCR can only transition back to KL.\n  vector<string> states;\n  states.push_back(\"KL\");\n  string state = this->state;\n  if(state.compare(\"KL\") == 0) {\n    states.push_back(\"PLCL\");\n    states.push_back(\"PLCR\");\n  } else if (state.compare(\"PLCL\") == 0) {\n    if (lane != lanes_available - 1) {\n      states.push_back(\"PLCL\");\n      states.push_back(\"LCL\");\n    }\n  } else if (state.compare(\"PLCR\") == 0) {\n    if (lane != 0) {\n      states.push_back(\"PLCR\");\n      states.push_back(\"LCR\");\n    }\n  }\n    \n  // If state is \"LCL\" or \"LCR\", then just return \"KL\"\n  return states;\n}\n\nvector<Vehicle> Vehicle::generate_trajectory(string state, \n                                             map<int, vector<Vehicle>> &predictions) {\n  // Given a possible next state, generate the appropriate trajectory to realize\n  //   the next state.\n  vector<Vehicle> trajectory;\n  if (state.compare(\"CS\") == 0) {\n    trajectory = constant_speed_trajectory();\n  } else if (state.compare(\"KL\") == 0) {\n    trajectory = keep_lane_trajectory(predictions);\n  } else if (state.compare(\"LCL\") == 0 || state.compare(\"LCR\") == 0) {\n    trajectory = lane_change_trajectory(state, predictions);\n  } else if (state.compare(\"PLCL\") == 0 || state.compare(\"PLCR\") == 0) {\n    trajectory = prep_lane_change_trajectory(state, predictions);\n  }\n\n  return trajectory;\n}\n\nvector<float> Vehicle::get_kinematics(map<int, vector<Vehicle>> &predictions, \n                                      int lane) {\n  // Gets next timestep kinematics (position, velocity, acceleration) \n  //   for a given lane. Tries to choose the maximum velocity and acceleration, \n  //   given other vehicle positions and accel/velocity constraints.\n  float max_velocity_accel_limit = this->max_acceleration + this->v;\n  float new_position;\n  float new_velocity;\n  float new_accel;\n  Vehicle vehicle_ahead;\n  Vehicle vehicle_behind;\n\n  if (get_vehicle_ahead(predictions, lane, vehicle_ahead)) {\n    if (get_vehicle_behind(predictions, lane, vehicle_behind)) {\n      // must travel at the speed of traffic, regardless of preferred buffer\n      new_velocity = vehicle_ahead.v;\n    } else {\n      float max_velocity_in_front = (vehicle_ahead.s - this->s \n                                  - this->preferred_buffer) + vehicle_ahead.v \n                                  - 0.5 * (this->a);\n      new_velocity = std::min(std::min(max_velocity_in_front, \n                                       max_velocity_accel_limit), \n                                       this->target_speed);\n    }\n  } else {\n    new_velocity = std::min(max_velocity_accel_limit, this->target_speed);\n  }\n    \n  new_accel = new_velocity - this->v; // Equation: (v_1 - v_0)/t = acceleration\n  new_position = this->s + new_velocity + new_accel / 2.0;\n    \n  return{new_position, new_velocity, new_accel};\n}\n\nvector<Vehicle> Vehicle::constant_speed_trajectory() {\n  // Generate a constant speed trajectory.\n  float next_pos = position_at(1);\n  vector<Vehicle> trajectory = {Vehicle(this->lane,this->s,this->v,this->a,this->state), \n                                Vehicle(this->lane,next_pos,this->v,0,this->state)};\n  return trajectory;\n}\n\nvector<Vehicle> Vehicle::keep_lane_trajectory(map<int, vector<Vehicle>> &predictions) {\n  // Generate a keep lane trajectory.\n  vector<Vehicle> trajectory = {Vehicle(lane, this->s, this->v, this->a, state)};\n  vector<float> kinematics = get_kinematics(predictions, this->lane);\n  float new_s = kinematics[0];\n  float new_v = kinematics[1];\n  float new_a = kinematics[2];\n  trajectory.push_back(Vehicle(this->lane, new_s, new_v, new_a, \"KL\"));\n  \n  return trajectory;\n}\n\nvector<Vehicle> Vehicle::prep_lane_change_trajectory(string state, \n                                                     map<int, vector<Vehicle>> &predictions) {\n  // Generate a trajectory preparing for a lane change.\n  float new_s;\n  float new_v;\n  float new_a;\n  Vehicle vehicle_behind;\n  int new_lane = this->lane + lane_direction[state];\n  vector<Vehicle> trajectory = {Vehicle(this->lane, this->s, this->v, this->a, \n                                        this->state)};\n  vector<float> curr_lane_new_kinematics = get_kinematics(predictions, this->lane);\n\n  if (get_vehicle_behind(predictions, this->lane, vehicle_behind)) {\n    // Keep speed of current lane so as not to collide with car behind.\n    new_s = curr_lane_new_kinematics[0];\n    new_v = curr_lane_new_kinematics[1];\n    new_a = curr_lane_new_kinematics[2];    \n  } else {\n    vector<float> best_kinematics;\n    vector<float> next_lane_new_kinematics = get_kinematics(predictions, new_lane);\n    // Choose kinematics with lowest velocity.\n    if (next_lane_new_kinematics[1] < curr_lane_new_kinematics[1]) {\n      best_kinematics = next_lane_new_kinematics;\n    } else {\n      best_kinematics = curr_lane_new_kinematics;\n    }\n    new_s = best_kinematics[0];\n    new_v = best_kinematics[1];\n    new_a = best_kinematics[2];\n  }\n\n  trajectory.push_back(Vehicle(this->lane, new_s, new_v, new_a, state));\n  \n  return trajectory;\n}\n\nvector<Vehicle> Vehicle::lane_change_trajectory(string state, \n                                                map<int, vector<Vehicle>> &predictions) {\n  // Generate a lane change trajectory.\n  int new_lane = this->lane + lane_direction[state];\n  vector<Vehicle> trajectory;\n  Vehicle next_lane_vehicle;\n  // Check if a lane change is possible (check if another vehicle occupies \n  //   that spot).\n  for (map<int, vector<Vehicle>>::iterator it = predictions.begin(); \n       it != predictions.end(); ++it) {\n    next_lane_vehicle = it->second[0];\n    if (next_lane_vehicle.s == this->s && next_lane_vehicle.lane == new_lane) {\n      // If lane change is not possible, return empty trajectory.\n      return trajectory;\n    }\n  }\n  trajectory.push_back(Vehicle(this->lane, this->s, this->v, this->a, \n                               this->state));\n  vector<float> kinematics = get_kinematics(predictions, new_lane);\n  trajectory.push_back(Vehicle(new_lane, kinematics[0], kinematics[1], \n                               kinematics[2], state));\n  return trajectory;\n}\n\nvoid Vehicle::increment(int dt = 1) {\n  this->s = position_at(dt);\n}\n\nfloat Vehicle::position_at(int t) {\n  return this->s + this->v*t + this->a*t*t/2.0;\n}\n\nbool Vehicle::get_vehicle_behind(map<int, vector<Vehicle>> &predictions, \n                                 int lane, Vehicle &rVehicle) {\n  // Returns a true if a vehicle is found behind the current vehicle, false \n  //   otherwise. The passed reference rVehicle is updated if a vehicle is found.\n  int max_s = -1;\n  bool found_vehicle = false;\n  Vehicle temp_vehicle;\n  for (map<int, vector<Vehicle>>::iterator it = predictions.begin(); \n       it != predictions.end(); ++it) {\n    temp_vehicle = it->second[0];\n    if (temp_vehicle.lane == this->lane && temp_vehicle.s < this->s \n        && temp_vehicle.s > max_s) {\n      max_s = temp_vehicle.s;\n      rVehicle = temp_vehicle;\n      found_vehicle = true;\n    }\n  }\n  \n  return found_vehicle;\n}\n\nbool Vehicle::get_vehicle_ahead(map<int, vector<Vehicle>> &predictions, \n                                int lane, Vehicle &rVehicle) {\n  // Returns a true if a vehicle is found ahead of the current vehicle, false \n  //   otherwise. The passed reference rVehicle is updated if a vehicle is found.\n  int min_s = this->goal_s;\n  bool found_vehicle = false;\n  Vehicle temp_vehicle;\n  for (map<int, vector<Vehicle>>::iterator it = predictions.begin(); \n       it != predictions.end(); ++it) {\n    temp_vehicle = it->second[0];\n    if (temp_vehicle.lane == this->lane && temp_vehicle.s > this->s \n        && temp_vehicle.s < min_s) {\n      min_s = temp_vehicle.s;\n      rVehicle = temp_vehicle;\n      found_vehicle = true;\n    }\n  }\n  \n  return found_vehicle;\n}\n\nvector<Vehicle> Vehicle::generate_predictions(int horizon) {\n  // Generates predictions for non-ego vehicles to be used in trajectory \n  //   generation for the ego vehicle.\n  vector<Vehicle> predictions;\n  for(int i = 0; i < horizon; ++i) {\n    float next_s = position_at(i);\n    float next_v = 0;\n    if (i < horizon-1) {\n      next_v = position_at(i+1) - s;\n    }\n    predictions.push_back(Vehicle(this->lane, next_s, next_v, 0));\n  }\n  \n  return predictions;\n}\n\nvoid Vehicle::realize_next_state(vector<Vehicle> &trajectory) {\n  // Sets state and kinematics for ego vehicle using the last state of the trajectory.\n  Vehicle next_state = trajectory[1];\n  this->state = next_state.state;\n  this->lane = next_state.lane;\n  this->s = next_state.s;\n  this->v = next_state.v;\n  this->a = next_state.a;\n}\n\nvoid Vehicle::configure(vector<int> &road_data) {\n  // Called by simulator before simulation begins. Sets various parameters which\n  //   will impact the ego vehicle.\n  target_speed = road_data[0];\n  lanes_available = road_data[1];\n  goal_s = road_data[2];\n  goal_lane = road_data[3];\n  max_acceleration = road_data[4];\n}",
+                    "name": "vehicle.cpp"
+                  },
+                  {
+                    "text": "#ifndef VEHICLE_H\n#define VEHICLE_H\n\n#include <map>\n#include <string>\n#include <vector>\n\nusing std::map;\nusing std::string;\nusing std::vector;\n\nclass Vehicle {\n public:\n  // Constructors\n  Vehicle();\n  Vehicle(int lane, float s, float v, float a, string state=\"CS\");\n\n  // Destructor\n  virtual ~Vehicle();\n\n  // Vehicle functions\n  vector<Vehicle> choose_next_state(map<int, vector<Vehicle>> &predictions);\n\n  vector<string> successor_states();\n\n  vector<Vehicle> generate_trajectory(string state, \n                                      map<int, vector<Vehicle>> &predictions);\n\n  vector<float> get_kinematics(map<int, vector<Vehicle>> &predictions, int lane);\n\n  vector<Vehicle> constant_speed_trajectory();\n\n  vector<Vehicle> keep_lane_trajectory(map<int, vector<Vehicle>> &predictions);\n\n  vector<Vehicle> lane_change_trajectory(string state, \n                                         map<int, vector<Vehicle>> &predictions);\n\n  vector<Vehicle> prep_lane_change_trajectory(string state, \n                                              map<int, vector<Vehicle>> &predictions);\n\n  void increment(int dt);\n\n  float position_at(int t);\n\n  bool get_vehicle_behind(map<int, vector<Vehicle>> &predictions, int lane, \n                          Vehicle &rVehicle);\n\n  bool get_vehicle_ahead(map<int, vector<Vehicle>> &predictions, int lane, \n                         Vehicle &rVehicle);\n\n  vector<Vehicle> generate_predictions(int horizon=2);\n\n  void realize_next_state(vector<Vehicle> &trajectory);\n\n  void configure(vector<int> &road_data);\n\n  // public Vehicle variables\n  struct collider{\n    bool collision; // is there a collision?\n    int  time; // time collision happens\n  };\n\n  map<string, int> lane_direction = {{\"PLCL\", 1}, {\"LCL\", 1}, \n                                     {\"LCR\", -1}, {\"PLCR\", -1}};\n\n  int L = 1;\n\n  int preferred_buffer = 6; // impacts \"keep lane\" behavior.\n\n  int lane, s, goal_lane, goal_s, lanes_available;\n\n  float v, target_speed, a, max_acceleration;\n\n  string state;\n};\n\n#endif  // VEHICLE_H",
+                    "name": "vehicle.h"
+                  },
+                  {
+                    "text": "#include \"cost.h\"\n#include <cmath>\n#include <functional>\n#include <iterator>\n#include <map>\n#include <string>\n#include <vector>\n#include \"vehicle.h\"\n\nusing std::string;\nusing std::vector;\n\n/**\n * TODO: change weights for cost functions.\n */\nconst float REACH_GOAL = pow(10, 6);\nconst float EFFICIENCY = pow(10, 5);\n\n// Here we have provided two possible suggestions for cost functions, but feel \n//   free to use your own! The weighted cost over all cost functions is computed\n//   in calculate_cost. The data from get_helper_data will be very useful in \n//   your implementation of the cost functions below. Please see get_helper_data\n//   for details on how the helper data is computed.\n\nfloat goal_distance_cost(const Vehicle &vehicle, \n                         const vector<Vehicle> &trajectory, \n                         const map<int, vector<Vehicle>> &predictions, \n                         map<string, float> &data) {\n  // Cost increases based on distance of intended lane (for planning a lane \n  //   change) and final lane of trajectory.\n  // Cost of being out of goal lane also becomes larger as vehicle approaches \n  //   goal distance.\n  // This function is very similar to what you have already implemented in the \n  //   \"Implement a Cost Function in C++\" quiz.\n  float cost;\n  float distance = data[\"distance_to_goal\"];\n  if (distance > 0) {\n    cost = 1 - 2*exp(-(abs(2.0*vehicle.goal_lane - data[\"intended_lane\"] \n         - data[\"final_lane\"]) / distance));\n  } else {\n    cost = 1;\n  }\n\n  return cost;\n}\n\nfloat inefficiency_cost(const Vehicle &vehicle, \n                        const vector<Vehicle> &trajectory, \n                        const map<int, vector<Vehicle>> &predictions, \n                        map<string, float> &data) {\n  // Cost becomes higher for trajectories with intended lane and final lane \n  //   that have traffic slower than vehicle's target speed.\n  // You can use the lane_speed function to determine the speed for a lane. \n  // This function is very similar to what you have already implemented in \n  //   the \"Implement a Second Cost Function in C++\" quiz.\n  float proposed_speed_intended = lane_speed(predictions, data[\"intended_lane\"]);\n  if (proposed_speed_intended < 0) {\n    proposed_speed_intended = vehicle.target_speed;\n  }\n\n  float proposed_speed_final = lane_speed(predictions, data[\"final_lane\"]);\n  if (proposed_speed_final < 0) {\n    proposed_speed_final = vehicle.target_speed;\n  }\n    \n  float cost = (2.0*vehicle.target_speed - proposed_speed_intended \n             - proposed_speed_final)/vehicle.target_speed;\n\n  return cost;\n}\n\nfloat lane_speed(const map<int, vector<Vehicle>> &predictions, int lane) {\n  // All non ego vehicles in a lane have the same speed, so to get the speed \n  //   limit for a lane, we can just find one vehicle in that lane.\n  for (map<int, vector<Vehicle>>::const_iterator it = predictions.begin(); \n       it != predictions.end(); ++it) {\n    int key = it->first;\n    Vehicle vehicle = it->second[0];\n    if (vehicle.lane == lane && key != -1) {\n      return vehicle.v;\n    }\n  }\n  // Found no vehicle in the lane\n  return -1.0;\n}\n\nfloat calculate_cost(const Vehicle &vehicle, \n                     const map<int, vector<Vehicle>> &predictions, \n                     const vector<Vehicle> &trajectory) {\n  // Sum weighted cost functions to get total cost for trajectory.\n  map<string, float> trajectory_data = get_helper_data(vehicle, trajectory, \n                                                       predictions);\n  float cost = 0.0;\n\n  // Add additional cost functions here.\n  vector<std::function<float(const Vehicle &, const vector<Vehicle> &, \n                             const map<int, vector<Vehicle>> &, \n                             map<string, float> &)\n    >> cf_list = {goal_distance_cost, inefficiency_cost};\n  vector<float> weight_list = {REACH_GOAL, EFFICIENCY};\n    \n  for (int i = 0; i < cf_list.size(); ++i) {\n    float new_cost = weight_list[i]*cf_list[i](vehicle, trajectory, predictions, \n                                               trajectory_data);\n    cost += new_cost;\n  }\n\n  return cost;\n}\n\nmap<string, float> get_helper_data(const Vehicle &vehicle, \n                                   const vector<Vehicle> &trajectory, \n                                   const map<int, vector<Vehicle>> &predictions) {\n  // Generate helper data to use in cost functions:\n  // intended_lane: the current lane +/- 1 if vehicle is planning or \n  //   executing a lane change.\n  // final_lane: the lane of the vehicle at the end of the trajectory.\n  // distance_to_goal: the distance of the vehicle to the goal.\n\n  // Note that intended_lane and final_lane are both included to help \n  //   differentiate between planning and executing a lane change in the \n  //   cost functions.\n  map<string, float> trajectory_data;\n  Vehicle trajectory_last = trajectory[1];\n  float intended_lane;\n\n  if (trajectory_last.state.compare(\"PLCL\") == 0) {\n    intended_lane = trajectory_last.lane + 1;\n  } else if (trajectory_last.state.compare(\"PLCR\") == 0) {\n    intended_lane = trajectory_last.lane - 1;\n  } else {\n    intended_lane = trajectory_last.lane;\n  }\n\n  float distance_to_goal = vehicle.goal_s - trajectory_last.s;\n  float final_lane = trajectory_last.lane;\n  trajectory_data[\"intended_lane\"] = intended_lane;\n  trajectory_data[\"final_lane\"] = final_lane;\n  trajectory_data[\"distance_to_goal\"] = distance_to_goal;\n    \n  return trajectory_data;\n}",
+                    "name": "cost.cpp"
+                  },
+                  {
+                    "text": "#ifndef COST_H\n#define COST_H\n\n#include \"vehicle.h\"\n\nusing std::map;\nusing std::string;\nusing std::vector;\n\nfloat calculate_cost(const Vehicle &vehicle, \n                     const map<int, vector<Vehicle>> &predictions, \n                     const vector<Vehicle> &trajectory);\n\nfloat goal_distance_cost(const Vehicle &vehicle,  \n                         const vector<Vehicle> &trajectory,  \n                         const map<int, vector<Vehicle>> &predictions, \n                         map<string, float> &data);\n\nfloat inefficiency_cost(const Vehicle &vehicle, \n                        const vector<Vehicle> &trajectory, \n                        const map<int, vector<Vehicle>> &predictions, \n                        map<string, float> &data);\n\nfloat lane_speed(const map<int, vector<Vehicle>> &predictions, int lane);\n\nmap<string, float> get_helper_data(const Vehicle &vehicle, \n                                   const vector<Vehicle> &trajectory, \n                                   const map<int, vector<Vehicle>> &predictions);\n\n#endif  // COST_H",
+                    "name": "cost.h"
+                  },
+                  {
+                    "text": "#include <iostream>\n#include <iterator>\n#include <map>\n#include <sstream>\n#include <string>\n#include <vector>\n#include \"road.h\"\n#include \"vehicle.h\"\n\nusing std::map;\nusing std::string;\nusing std::vector;\n\n// Initializes Road\nRoad::Road(int speed_limit, double traffic_density, vector<int> &lane_speeds) {\n  this->num_lanes = lane_speeds.size();\n  this->lane_speeds = lane_speeds;\n  this->speed_limit = speed_limit;\n  this->density = traffic_density;\n  this->camera_center = this->update_width/2;\n}\n\nRoad::~Road() {}\n\nVehicle Road::get_ego() {\n  return this->vehicles.find(this->ego_key)->second;\n}\n\nvoid Road::populate_traffic() {\n  int start_s = std::max(this->camera_center - (this->update_width/2), 0);\n\n  for (int l = 0; l < this->num_lanes; ++l) {\n    int lane_speed = this->lane_speeds[l];\n    bool vehicle_just_added = false;\n\n    for (int s = start_s; s < start_s+this->update_width; ++s) {\n      if (vehicle_just_added) {\n        vehicle_just_added = false;\n      }\n      \n      if (((double) rand() / (RAND_MAX)) < this->density) {\n        Vehicle vehicle = Vehicle(l,s,lane_speed,0);\n        vehicle.state = \"CS\";\n        this->vehicles_added += 1;\n        this->vehicles.insert(std::pair<int,Vehicle>(vehicles_added,vehicle));\n        vehicle_just_added = true;\n      }\n    }\n  }\n}\n\nvoid Road::advance() {\n  map<int ,vector<Vehicle> > predictions;\n\n  map<int, Vehicle>::iterator it = this->vehicles.begin();\n\n  while (it != this->vehicles.end()) {\n    int v_id = it->first;\n    vector<Vehicle> preds = it->second.generate_predictions();\n    predictions[v_id] = preds;\n    ++it;\n  }\n  \n  it = this->vehicles.begin();\n\n  while (it != this->vehicles.end()) {\n    int v_id = it->first;\n    if (v_id == ego_key) {   \n      vector<Vehicle> trajectory = it->second.choose_next_state(predictions);\n      it->second.realize_next_state(trajectory);\n    } else {\n      it->second.increment(1);\n    }\n    ++it;\n  }   \n}\n\nvoid Road::add_ego(int lane_num, int s, vector<int> &config_data) {\n  map<int, Vehicle>::iterator it = this->vehicles.begin();\n\n  while (it != this->vehicles.end()) {\n    int v_id = it->first;\n    Vehicle v = it->second;\n    if (v.lane == lane_num && v.s == s) {\n      this->vehicles.erase(v_id);\n    }\n    ++it;\n  }\n    \n  Vehicle ego = Vehicle(lane_num, s, this->lane_speeds[lane_num], 0);\n  ego.configure(config_data);\n  ego.state = \"KL\";\n  this->vehicles.insert(std::pair<int,Vehicle>(ego_key,ego));\n}\n\nvoid Road::display(int timestep) {\n  Vehicle ego = this->vehicles.find(this->ego_key)->second;\n  int s = ego.s;\n  string state = ego.state;\n\n  this->camera_center = std::max(s, this->update_width/2);\n  int s_min = std::max(this->camera_center - this->update_width/2, 0);\n  int s_max = s_min + this->update_width;\n\n  vector<vector<string>> road;\n\n  for (int i = 0; i < this->update_width; ++i) {\n    vector<string> road_lane;\n    for (int ln = 0; ln < this->num_lanes; ++ln) {\n      road_lane.push_back(\"     \");\n    }\n    road.push_back(road_lane);\n  }\n\n  map<int, Vehicle>::iterator it = this->vehicles.begin();\n\n  while (it != this->vehicles.end()) {\n    int v_id = it->first;\n    Vehicle v = it->second;\n\n    if (s_min <= v.s && v.s < s_max) {\n      string marker = \"\";\n\n      if (v_id == this->ego_key) {\n        marker = this->ego_rep;\n      } else {\n        std::stringstream oss;\n        std::stringstream buffer;\n        buffer << \" \";\n        oss << v_id;\n\n        for (int buffer_i = oss.str().length(); buffer_i < 3; ++buffer_i) {\n          buffer << \"0\";\n        }\n        buffer << oss.str() << \" \";\n        marker = buffer.str();\n      }\n      road[int(v.s - s_min)][int(v.lane)] = marker;\n    }\n    ++it;\n  }\n    \n  std::ostringstream oss;\n  oss << \"+Meters ======================+ step: \" << timestep << std::endl;\n  int i = s_min;\n\n  for (int lj = 0; lj < road.size(); ++lj) {\n    if (i%20 ==0) {\n      std::stringstream buffer;\n      std::stringstream dis;\n      dis << i;\n      \n      for (int buffer_i = dis.str().length(); buffer_i < 3; ++buffer_i) {\n        buffer << \"0\";\n      }\n      \n      oss << buffer.str() << dis.str() << \" - \";\n    } else {\n      oss << \"      \";\n    }          \n    ++i;\n    for (int li = 0; li < road[0].size(); ++li) {\n      oss << \"|\" << road[lj][li];\n    }\n      oss << \"|\";\n      oss << \"\\n\";\n  }\n\n  std::cout << oss.str();\n}",
+                    "name": "road.cpp"
+                  },
+                  {
+                    "text": "#ifndef ROAD_H\n#define ROAD_H\n\n#include <map>\n#include <string>\n#include <vector>\n#include \"vehicle.h\"\n\nclass Road {\n public:\n  // Constructor\n  Road(int speed_limit, double traffic_density, std::vector<int> &lane_speeds);\n\n  // Destructor\n  virtual ~Road();\n\n  // Road functions\n  Vehicle get_ego();\n\n  void populate_traffic();\n\n  void advance();\n\n  void display(int timestep);\n\n  void add_ego(int lane_num, int s, std::vector<int> &config_data);\n\n  void cull();\n\n  // Road variables\n  int update_width = 70;\n\n  int vehicles_added = 0;\n\n  int ego_key = -1;\n\n  int num_lanes, speed_limit, camera_center;\n\n  double density; \n\n  std::map<int, Vehicle> vehicles;\n\n  std::string ego_rep = \" *** \";\n\n  std::vector<int> lane_speeds; \n};\n\n#endif  // ROAD_H",
+                    "name": "road.h"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 340024,
+          "key": "ebdaff08-f3f0-449c-a385-564c4dc7db28",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ebdaff08-f3f0-449c-a385-564c4dc7db28",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 372842,
+              "key": "c8ee100d-784d-4c5f-ad13-e5295f0b4c13",
+              "title": "Toby Ben Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Hzk5-lezrJk",
+                "china_cdn_id": "Hzk5-lezrJk.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

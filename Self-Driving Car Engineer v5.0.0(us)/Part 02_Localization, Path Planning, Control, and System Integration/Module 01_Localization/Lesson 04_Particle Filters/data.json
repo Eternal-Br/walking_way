@@ -1,0 +1,1790 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627667,
+      "key": "6ff7cfc9-35b4-497e-8913-3993ae7f2c04",
+      "title": "Particle Filters",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Sebastian will teach you what a particle filter is, as well as the theory and math behind the filter.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/6ff7cfc9-35b4-497e-8913-3993ae7f2c04/627667/1538943491787/Particle+Filters+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/6ff7cfc9-35b4-497e-8913-3993ae7f2c04/627667/1538943482020/Particle+Filters+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 46896,
+          "key": "487500080923",
+          "title": "Field Trip",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487500080923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 11797,
+              "key": "48750008",
+              "title": "Field Trip",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "2ocy_7PJtfA",
+                "china_cdn_id": "2ocy_7PJtfA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 57085,
+          "key": "487550360923",
+          "title": "State Space",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487550360923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 128754,
+              "key": "48755036",
+              "title": "State Space",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48755036",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "G7nvigL0aDw",
+                  "china_cdn_id": "G7nvigL0aDw.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "State Space",
+                "alt_text": "State Space  There is a table with four rows and two columns.  The second row is labelled Class 1 Histogram Filters. The third row is labelled Class 2 Kalman Filters. The fourth row is labelled Class 3 Particle Filters.  The first column is labelled quiz. The second column is labeled State Space.  For Class 1 Histogram Filters, the state space can be either Discrete or Continuous. For Class 2 Kalman Filters, the state space can be either Discrete or Continuous.",
+                "background_image": "//lh6.ggpht.com/x1twY_MA-V_ycSE2f9aXeDKSkV0k_aIlCXcLifUK3fV7F_AmA88WGLXRRIhrKpAkUbM17Dm1j-oeCZbRrjQ=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48755036",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48738105",
+                "widgets": [
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "This is the class 1 discrete option.",
+                    "marker": "2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 2,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.25915679551122195,
+                      "y": 0.19962583148558757
+                    }
+                  },
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "This is the class 1 continuous option.",
+                    "marker": "3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 3,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.2593905860349127,
+                      "y": 0.2737319844789357
+                    }
+                  },
+                  {
+                    "group": "multipleChoice6",
+                    "initial_value": "false",
+                    "label": "This is class 2 discrete option.",
+                    "marker": "7",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 7,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.26957995635910226,
+                      "y": 0.4192419623059867
+                    }
+                  },
+                  {
+                    "group": "multipleChoice6",
+                    "initial_value": "false",
+                    "label": "This is class 2 continuous option.",
+                    "marker": "8",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 8,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.2631312344139651,
+                      "y": 0.5122297671840355
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "oyw7WEHMvVY",
+                  "china_cdn_id": "oyw7WEHMvVY.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 29608,
+          "key": "487043290923",
+          "title": "Belief Modality",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487043290923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 110547,
+              "key": "48704329",
+              "title": "Belief Modality",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48704329",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "5vdbYPc7tWw",
+                  "china_cdn_id": "5vdbYPc7tWw.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Belief Modality",
+                "alt_text": "Belief Modality  A third column was added to the existing graph.   There is now a table with four rows and three columns.   The second row is labelled Class 1 Histogram Filters. The third row is labelled Class 2 Kalman Filters. The fourth row is labelled Class 3 Particle Filters.  The first column is labelled quiz. The second column is labeled State Space. The third column is labeled Belief.  For Class 1 Histogram Filters, the belief could be either unimodal or multimodal. For Class 2 Kalman Filters, the belief could be either unimodal or multimodal.",
+                "background_image": "//lh3.ggpht.com/Z4NHWdL9sPOLpQQQUsv71nWVLPXzQN57ENTdnGXbsVuorqZWRELuhQbVu0SCYrwK9rCCB3Xr9vpGUhtzfx8=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48704329",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48683735",
+                "widgets": [
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "This is the class 1 unimodal option.",
+                    "marker": "2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 2,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.45815149625935164,
+                      "y": 0.1932857538802661
+                    }
+                  },
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "This is the class 1 multimodal option.",
+                    "marker": "3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 3,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.4556577306733167,
+                      "y": 0.2782358647450111
+                    }
+                  },
+                  {
+                    "group": "multipleChoice4",
+                    "initial_value": "false",
+                    "label": "This is class 2 unimodal option.",
+                    "marker": "5",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 5,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.4533393079800499,
+                      "y": 0.40815548780487804
+                    }
+                  },
+                  {
+                    "group": "multipleChoice4",
+                    "initial_value": "false",
+                    "label": "This is class 2 multimodal option.",
+                    "marker": "6",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 6,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.450455891521197,
+                      "y": 0.4982330931263858
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "NhKyyhNl70A",
+                  "china_cdn_id": "NhKyyhNl70A.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 3741,
+          "key": "484805910923",
+          "title": "Efficiency",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "484805910923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 11029,
+              "key": "48480591",
+              "title": "Efficiency",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48480591",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "7CNEY8lRrGE",
+                  "china_cdn_id": "7CNEY8lRrGE.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Efficiency",
+                "alt_text": "Efficiency  A fourth column was added to the existing graph.   There is now a table with four rows and four columns.   The second row is labelled Class 1 Histogram Filters. The third row is labelled Class 2 Kalman Filters. The fourth row is labelled Class 3 Particle Filters.  The first column is labelled quiz. The second column is labeled State Space. The third column is labeled Belief. The fourth column is labelled Efficiency.   For Class 1 Histogram Filters, the efficiency could be either quadratic or exponential. For Class 2 Kalman Filters, the belief could be either unimodal or multimodal.",
+                "background_image": "//lh4.ggpht.com/xDc4q653dLED2y2gXC3UzjoSPFTWNWdQeHy9w9PML3cmiB-rXFUjOOAVpsNLZDMeNRKerCDwhaqScUmqKCE=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48480591",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48740087",
+                "widgets": [
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "Option A, class 1 Histogram filters are quadratic.",
+                    "marker": "2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 2,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.6639845698254364,
+                      "y": 0.19269678492239467
+                    }
+                  },
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "Option B, class 1 Histogram filters are exponential.",
+                    "marker": "3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 3,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.6630883728179551,
+                      "y": 0.2651399667405765
+                    }
+                  },
+                  {
+                    "group": "multipleChoice7",
+                    "initial_value": "false",
+                    "label": "Option A, class 2 Kalman Filters are quadratic.",
+                    "marker": "8",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 8,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.6512624688279302,
+                      "y": 0.4130058203991131
+                    }
+                  },
+                  {
+                    "group": "multipleChoice7",
+                    "initial_value": "false",
+                    "label": "Option B, class 2 Kalman Filters are exponential.",
+                    "marker": "9",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 9,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.6487102556109726,
+                      "y": 0.49885670731707316
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "rA8ZpMR6yXM",
+                  "china_cdn_id": "rA8ZpMR6yXM.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 40296,
+          "key": "487590010923",
+          "title": "Exact or Approximate",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487590010923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 134643,
+              "key": "48759001",
+              "title": "Exact or Approximate",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48759001",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "WKlm2aO2QGY",
+                  "china_cdn_id": "WKlm2aO2QGY.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Exact or Approximate",
+                "alt_text": null,
+                "background_image": "//lh4.ggpht.com/7LP1fgcz4yANRUYLd3Vr27PISXW3HjnGLbBlT7gyiA0F0MlwtBCsG3sFGuOnf09snFod6QnMVF3B4YJ7lA=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48759001",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48750007",
+                "widgets": [
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "option2",
+                    "marker": "2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 2,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.8256312344139651,
+                      "y": 0.20004157427937916
+                    }
+                  },
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "option3",
+                    "marker": "3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 3,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.8169615024937655,
+                      "y": 0.28939162971175164
+                    }
+                  },
+                  {
+                    "group": "multipleChoice4",
+                    "initial_value": "false",
+                    "label": "option5",
+                    "marker": "5",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 5,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.8164549563591023,
+                      "y": 0.4125900776053215
+                    }
+                  },
+                  {
+                    "group": "multipleChoice4",
+                    "initial_value": "false",
+                    "label": "option6",
+                    "marker": "6",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 6,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.8139611907730673,
+                      "y": 0.49411031042128606
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "1N3_RnTDFqU",
+                  "china_cdn_id": "1N3_RnTDFqU.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 35217,
+          "key": "486649920923",
+          "title": "Particle Filters",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "486649920923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 39786,
+              "key": "48664992",
+              "title": "Particle Filters",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "4S-sx5_cmLU",
+                "china_cdn_id": "4S-sx5_cmLU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 122772,
+          "key": "486837300923",
+          "title": "Using Robot Class",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "486837300923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 10629,
+              "key": "48683730",
+              "title": "Using Robot Class",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "1hgVZtRIjFU",
+                "china_cdn_id": "1hgVZtRIjFU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 122717,
+          "key": "487004760923",
+          "title": "Robot Class Details",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487004760923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 29549,
+              "key": "48700476",
+              "title": "Robot Class Details",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "ZFqEh8JylvI",
+                "china_cdn_id": "ZFqEh8JylvI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 137398,
+          "key": "484805920923",
+          "title": "Moving Robot",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "484805920923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 113594,
+              "key": "48480592",
+              "title": "Moving Robot",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48480592",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "SFcHsK2SWrI",
+                  "china_cdn_id": "SFcHsK2SWrI.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Moving Robot",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48699551",
+                "initial_code_files": [
+                  {
+                    "text": "# Make a robot called myrobot that starts at\n# coordinates 30, 50 heading north (pi/2).\n# Have your robot turn clockwise by pi/2, move\n# 15 m, and sense. Then have it turn clockwise\n# by pi/2 again, move 10 m, and sense again.\n#\n# Your program should print out the result of\n# your two sense measurements.\n#\n# Don't modify the code below. Please enter\n# your code at the bottom.\n\nfrom math import *\nimport random\n\n\n\nlandmarks  = [[20.0, 20.0], [80.0, 80.0], [20.0, 80.0], [80.0, 20.0]]\nworld_size = 100.0\n\n\nclass robot:\n    def __init__(self):\n        self.x = random.random() * world_size\n        self.y = random.random() * world_size\n        self.orientation = random.random() * 2.0 * pi\n        self.forward_noise = 0.0;\n        self.turn_noise    = 0.0;\n        self.sense_noise   = 0.0;\n    \n    def set(self, new_x, new_y, new_orientation):\n        if new_x < 0 or new_x >= world_size:\n            raise ValueError, 'X coordinate out of bound'\n        if new_y < 0 or new_y >= world_size:\n            raise ValueError, 'Y coordinate out of bound'\n        if new_orientation < 0 or new_orientation >= 2 * pi:\n            raise ValueError, 'Orientation must be in [0..2pi]'\n        self.x = float(new_x)\n        self.y = float(new_y)\n        self.orientation = float(new_orientation)\n    \n    \n    def set_noise(self, new_f_noise, new_t_noise, new_s_noise):\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.forward_noise = float(new_f_noise);\n        self.turn_noise    = float(new_t_noise);\n        self.sense_noise   = float(new_s_noise);\n    \n    \n    def sense(self):\n        Z = []\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            dist += random.gauss(0.0, self.sense_noise)\n            Z.append(dist)\n        return Z\n    \n    \n    def move(self, turn, forward):\n        if forward < 0:\n            raise ValueError, 'Robot cant move backwards'         \n        \n        # turn, and add randomness to the turning command\n        orientation = self.orientation + float(turn) + random.gauss(0.0, self.turn_noise)\n        orientation %= 2 * pi\n        \n        # move, and add randomness to the motion command\n        dist = float(forward) + random.gauss(0.0, self.forward_noise)\n        x = self.x + (cos(orientation) * dist)\n        y = self.y + (sin(orientation) * dist)\n        x %= world_size    # cyclic truncate\n        y %= world_size\n        \n        # set particle\n        res = robot()\n        res.set(x, y, orientation)\n        res.set_noise(self.forward_noise, self.turn_noise, self.sense_noise)\n        return res\n    \n    def Gaussian(self, mu, sigma, x):\n        \n        # calculates the probability of x for 1-dim Gaussian with mean mu and var. sigma\n        return exp(- ((mu - x) ** 2) / (sigma ** 2) / 2.0) / sqrt(2.0 * pi * (sigma ** 2))\n    \n    \n    def measurement_prob(self, measurement):\n        \n        # calculates how likely a measurement should be\n        \n        prob = 1.0;\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            prob *= self.Gaussian(dist, self.sense_noise, measurement[i])\n        return prob\n    \n    \n    \n    def __repr__(self):\n        return '[x=%.6s y=%.6s orient=%.6s]' % (str(self.x), str(self.y), str(self.orientation))\n\n\n\ndef eval(r, p):\n    sum = 0.0;\n    for i in range(len(p)): # calculate mean error\n        dx = (p[i].x - r.x + (world_size/2.0)) % world_size - (world_size/2.0)\n        dy = (p[i].y - r.y + (world_size/2.0)) % world_size - (world_size/2.0)\n        err = sqrt(dx * dx + dy * dy)\n        sum += err\n    return sum / float(len(p))\n\n\n\n####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####\n\nmyrobot = robot()\n\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "_37pf6lV15s",
+                  "china_cdn_id": "_37pf6lV15s.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 55891,
+          "key": "487590020923",
+          "title": "Add Noise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487590020923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 30083,
+              "key": "48759002",
+              "title": "Add Noise",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48759002",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "ajOKsQLxoJI",
+                  "china_cdn_id": "ajOKsQLxoJI.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Add Noise",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48687770",
+                "initial_code_files": [
+                  {
+                    "text": "\n# Now add noise to your robot as follows:\n# forward_noise = 5.0, turn_noise = 0.1,\n# sense_noise = 5.0.\n#\n# Once again, your robot starts at 30, 50,\n# heading north (pi/2), then turns clockwise\n# by pi/2, moves 15 meters, senses,\n# then turns clockwise by pi/2 again, moves\n# 10 m, then senses again.\n#\n# Your program should print out the result of\n# your two sense measurements.\n#\n# Don't modify the code below. Please enter\n# your code at the bottom.\n\nfrom math import *\nimport random\n\n\n\nlandmarks  = [[20.0, 20.0], [80.0, 80.0], [20.0, 80.0], [80.0, 20.0]]\nworld_size = 100.0\n\n\nclass robot:\n    def __init__(self):\n        self.x = random.random() * world_size\n        self.y = random.random() * world_size\n        self.orientation = random.random() * 2.0 * pi\n        self.forward_noise = 0.0;\n        self.turn_noise    = 0.0;\n        self.sense_noise   = 0.0;\n    \n    def set(self, new_x, new_y, new_orientation):\n        if new_x < 0 or new_x >= world_size:\n            raise ValueError, 'X coordinate out of bound'\n        if new_y < 0 or new_y >= world_size:\n            raise ValueError, 'Y coordinate out of bound'\n        if new_orientation < 0 or new_orientation >= 2 * pi:\n            raise ValueError, 'Orientation must be in [0..2pi]'\n        self.x = float(new_x)\n        self.y = float(new_y)\n        self.orientation = float(new_orientation)\n    \n    \n    def set_noise(self, new_f_noise, new_t_noise, new_s_noise):\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.forward_noise = float(new_f_noise);\n        self.turn_noise    = float(new_t_noise);\n        self.sense_noise   = float(new_s_noise);\n    \n    \n    def sense(self):\n        Z = []\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            dist += random.gauss(0.0, self.sense_noise)\n            Z.append(dist)\n        return Z\n    \n    \n    def move(self, turn, forward):\n        if forward < 0:\n            raise ValueError, 'Robot cant move backwards'         \n        \n        # turn, and add randomness to the turning command\n        orientation = self.orientation + float(turn) + random.gauss(0.0, self.turn_noise)\n        orientation %= 2 * pi\n        \n        # move, and add randomness to the motion command\n        dist = float(forward) + random.gauss(0.0, self.forward_noise)\n        x = self.x + (cos(orientation) * dist)\n        y = self.y + (sin(orientation) * dist)\n        x %= world_size    # cyclic truncate\n        y %= world_size\n        \n        # set particle\n        res = robot()\n        res.set(x, y, orientation)\n        res.set_noise(self.forward_noise, self.turn_noise, self.sense_noise)\n        return res\n    \n    def Gaussian(self, mu, sigma, x):\n        \n        # calculates the probability of x for 1-dim Gaussian with mean mu and var. sigma\n        return exp(- ((mu - x) ** 2) / (sigma ** 2) / 2.0) / sqrt(2.0 * pi * (sigma ** 2))\n    \n    \n    def measurement_prob(self, measurement):\n        \n        # calculates how likely a measurement should be\n        \n        prob = 1.0;\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            prob *= self.Gaussian(dist, self.sense_noise, measurement[i])\n        return prob\n    \n    \n    \n    def __repr__(self):\n        return '[x=%.6s y=%.6s orient=%.6s]' % (str(self.x), str(self.y), str(self.orientation))\n\n\n\ndef eval(r, p):\n    sum = 0.0;\n    for i in range(len(p)): # calculate mean error\n        dx = (p[i].x - r.x + (world_size/2.0)) % world_size - (world_size/2.0)\n        dy = (p[i].y - r.y + (world_size/2.0)) % world_size - (world_size/2.0)\n        err = sqrt(dx * dx + dy * dy)\n        sum += err\n    return sum / float(len(p))\n\n\n\n####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####\n\nmyrobot = robot()\n# enter code here\nmyrobot.set(30.0, 50.0, pi/2)\nmyrobot = myrobot.move(-pi/2, 15.0)\nprint myrobot.sense()\nmyrobot = myrobot.move(-pi/2, 10.0)\nprint myrobot.sense()\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "FQEeI3qzaOM",
+                  "china_cdn_id": "FQEeI3qzaOM.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 90674,
+          "key": "487004640923",
+          "title": "Robot World",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487004640923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 24891,
+              "key": "48700464",
+              "title": "Robot World",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "qq5h-Xw4DGg",
+                "china_cdn_id": "qq5h-Xw4DGg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 86391,
+          "key": "486058540923",
+          "title": "Creating Particles",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "486058540923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 13325,
+              "key": "48605854",
+              "title": "Creating Particles",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48605854",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "dH6uzx78lBA",
+                  "china_cdn_id": "dH6uzx78lBA.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Creating Particles",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48750010",
+                "initial_code_files": [
+                  {
+                    "text": "# Now we want to create particles,\n# p[i] = robot(). In this assignment, write\n# code that will assign 1000 such particles\n# to a list.\n#\n# Your program should print out the length\n# of your list (don't cheat by making an\n# arbitrary list of 1000 elements!)\n#\n# Don't modify the code below. Please enter\n# your code at the bottom.\n\nfrom math import *\nimport random\n\n\nlandmarks  = [[20.0, 20.0], [80.0, 80.0], [20.0, 80.0], [80.0, 20.0]]\nworld_size = 100.0\n\n\nclass robot:\n    def __init__(self):\n        self.x = random.random() * world_size\n        self.y = random.random() * world_size\n        self.orientation = random.random() * 2.0 * pi\n        self.forward_noise = 0.0;\n        self.turn_noise    = 0.0;\n        self.sense_noise   = 0.0;\n    \n    def set(self, new_x, new_y, new_orientation):\n        if new_x < 0 or new_x >= world_size:\n            raise ValueError, 'X coordinate out of bound'\n        if new_y < 0 or new_y >= world_size:\n            raise ValueError, 'Y coordinate out of bound'\n        if new_orientation < 0 or new_orientation >= 2 * pi:\n            raise ValueError, 'Orientation must be in [0..2pi]'\n        self.x = float(new_x)\n        self.y = float(new_y)\n        self.orientation = float(new_orientation)\n    \n    \n    def set_noise(self, new_f_noise, new_t_noise, new_s_noise):\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.forward_noise = float(new_f_noise);\n        self.turn_noise    = float(new_t_noise);\n        self.sense_noise   = float(new_s_noise);\n    \n    \n    def sense(self):\n        Z = []\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            dist += random.gauss(0.0, self.sense_noise)\n            Z.append(dist)\n        return Z\n    \n    \n    def move(self, turn, forward):\n        if forward < 0:\n            raise ValueError, 'Robot cant move backwards'         \n        \n        # turn, and add randomness to the turning command\n        orientation = self.orientation + float(turn) + random.gauss(0.0, self.turn_noise)\n        orientation %= 2 * pi\n        \n        # move, and add randomness to the motion command\n        dist = float(forward) + random.gauss(0.0, self.forward_noise)\n        x = self.x + (cos(orientation) * dist)\n        y = self.y + (sin(orientation) * dist)\n        x %= world_size    # cyclic truncate\n        y %= world_size\n        \n        # set particle\n        res = robot()\n        res.set(x, y, orientation)\n        res.set_noise(self.forward_noise, self.turn_noise, self.sense_noise)\n        return res\n    \n    def Gaussian(self, mu, sigma, x):\n        \n        # calculates the probability of x for 1-dim Gaussian with mean mu and var. sigma\n        return exp(- ((mu - x) ** 2) / (sigma ** 2) / 2.0) / sqrt(2.0 * pi * (sigma ** 2))\n    \n    \n    def measurement_prob(self, measurement):\n        \n        # calculates how likely a measurement should be\n        \n        prob = 1.0;\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            prob *= self.Gaussian(dist, self.sense_noise, measurement[i])\n        return prob\n    \n    def __repr__(self):\n        return '[x=%.6s y=%.6s orient=%.6s]' % (str(self.x), str(self.y), str(self.orientation))\n\n\n#myrobot = robot()\n#myrobot.set_noise(5.0, 0.1, 5.0)\n#myrobot.set(30.0, 50.0, pi/2)\n#myrobot = myrobot.move(-pi/2, 15.0)\n#print myrobot.sense()\n#myrobot = myrobot.move(-pi/2, 10.0)\n#print myrobot.sense()\n\n####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####\n\nN = 1000\np = []\n\n#enter code here\n\nprint len(p)\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "JNI9O9FjfDQ",
+                  "china_cdn_id": "JNI9O9FjfDQ.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 2597,
+          "key": "487550370923",
+          "title": "Robot Particles",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487550370923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 20270,
+              "key": "48755037",
+              "title": "Robot Particles",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48755037",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "-HQf6pkcebQ",
+                  "china_cdn_id": "-HQf6pkcebQ.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Robot Particles",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48740072",
+                "initial_code_files": [
+                  {
+                    "text": "# Now we want to simulate robot\n# motion with our particles.\n# Each particle should turn by 0.1\n# and then move by 5. \n#\n#\n# Don't modify the code below. Please enter\n# your code at the bottom.\n\nfrom math import *\nimport random\n\n\nlandmarks  = [[20.0, 20.0], [80.0, 80.0], [20.0, 80.0], [80.0, 20.0]]\nworld_size = 100.0\n\n\nclass robot:\n    def __init__(self):\n        self.x = random.random() * world_size\n        self.y = random.random() * world_size\n        self.orientation = random.random() * 2.0 * pi\n        self.forward_noise = 0.0;\n        self.turn_noise    = 0.0;\n        self.sense_noise   = 0.0;\n    \n    def set(self, new_x, new_y, new_orientation):\n        if new_x < 0 or new_x >= world_size:\n            raise ValueError, 'X coordinate out of bound'\n        if new_y < 0 or new_y >= world_size:\n            raise ValueError, 'Y coordinate out of bound'\n        if new_orientation < 0 or new_orientation >= 2 * pi:\n            raise ValueError, 'Orientation must be in [0..2pi]'\n        self.x = float(new_x)\n        self.y = float(new_y)\n        self.orientation = float(new_orientation)\n    \n    \n    def set_noise(self, new_f_noise, new_t_noise, new_s_noise):\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.forward_noise = float(new_f_noise);\n        self.turn_noise    = float(new_t_noise);\n        self.sense_noise   = float(new_s_noise);\n    \n    \n    def sense(self):\n        Z = []\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            dist += random.gauss(0.0, self.sense_noise)\n            Z.append(dist)\n        return Z\n    \n    \n    def move(self, turn, forward):\n        if forward < 0:\n            raise ValueError, 'Robot cant move backwards'         \n        \n        # turn, and add randomness to the turning command\n        orientation = self.orientation + float(turn) + random.gauss(0.0, self.turn_noise)\n        orientation %= 2 * pi\n        \n        # move, and add randomness to the motion command\n        dist = float(forward) + random.gauss(0.0, self.forward_noise)\n        x = self.x + (cos(orientation) * dist)\n        y = self.y + (sin(orientation) * dist)\n        x %= world_size    # cyclic truncate\n        y %= world_size\n        \n        # set particle\n        res = robot()\n        res.set(x, y, orientation)\n        res.set_noise(self.forward_noise, self.turn_noise, self.sense_noise)\n        return res\n    \n    def Gaussian(self, mu, sigma, x):\n        \n        # calculates the probability of x for 1-dim Gaussian with mean mu and var. sigma\n        return exp(- ((mu - x) ** 2) / (sigma ** 2) / 2.0) / sqrt(2.0 * pi * (sigma ** 2))\n    \n    \n    def measurement_prob(self, measurement):\n        \n        # calculates how likely a measurement should be\n        \n        prob = 1.0;\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            prob *= self.Gaussian(dist, self.sense_noise, measurement[i])\n        return prob\n    \n    def __repr__(self):\n        return '[x=%.6s y=%.6s orient=%.6s]' % (str(self.x), str(self.y), str(self.orientation))\n    \n\n#myrobot = robot()\n#myrobot.set_noise(5.0, 0.1, 5.0)\n#myrobot.set(30.0, 50.0, pi/2)\n#myrobot = myrobot.move(-pi/2, 15.0)\n#print myrobot.sense()\n#myrobot = myrobot.move(-pi/2, 10.0)\n#print myrobot.sense()\n\n####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####\n\nN = 1000\np = []\nfor i in range(N):\n    x = robot()\n    p.append(x)\n\nprint p #PLEASE LEAVE THIS HERE FOR GRADING PURPOSES\n\n\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "-gNoDMlRwyc",
+                  "china_cdn_id": "-gNoDMlRwyc.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 29181,
+          "key": "483118650923",
+          "title": "Importance Weight",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "483118650923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 39049,
+              "key": "48311865",
+              "title": "Importance Weight",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48311865",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "xP9PrSTJPz0",
+                  "china_cdn_id": "xP9PrSTJPz0.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Importance Weight",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48736105",
+                "initial_code_files": [
+                  {
+                    "text": "# Now we want to give weight to our \n# particles. This program will print a\n# list of 1000 particle weights.\n#\n# Don't modify the code below. Please enter\n# your code at the bottom.\n\nfrom math import *\nimport random\n\n\nlandmarks  = [[20.0, 20.0], [80.0, 80.0], [20.0, 80.0], [80.0, 20.0]]\nworld_size = 100.0\n\n\nclass robot:\n    def __init__(self):\n        self.x = random.random() * world_size\n        self.y = random.random() * world_size\n        self.orientation = random.random() * 2.0 * pi\n        self.forward_noise = 0.0;\n        self.turn_noise    = 0.0;\n        self.sense_noise   = 0.0;\n    \n    def set(self, new_x, new_y, new_orientation):\n        if new_x < 0 or new_x >= world_size:\n            raise ValueError, 'X coordinate out of bound'\n        if new_y < 0 or new_y >= world_size:\n            raise ValueError, 'Y coordinate out of bound'\n        if new_orientation < 0 or new_orientation >= 2 * pi:\n            raise ValueError, 'Orientation must be in [0..2pi]'\n        self.x = float(new_x)\n        self.y = float(new_y)\n        self.orientation = float(new_orientation)\n    \n    \n    def set_noise(self, new_f_noise, new_t_noise, new_s_noise):\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.forward_noise = float(new_f_noise);\n        self.turn_noise    = float(new_t_noise);\n        self.sense_noise   = float(new_s_noise);\n    \n    \n    def sense(self):\n        Z = []\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            dist += random.gauss(0.0, self.sense_noise)\n            Z.append(dist)\n        return Z\n    \n    \n    def move(self, turn, forward):\n        if forward < 0:\n            raise ValueError, 'Robot cant move backwards'         \n        \n        # turn, and add randomness to the turning command\n        orientation = self.orientation + float(turn) + random.gauss(0.0, self.turn_noise)\n        orientation %= 2 * pi\n        \n        # move, and add randomness to the motion command\n        dist = float(forward) + random.gauss(0.0, self.forward_noise)\n        x = self.x + (cos(orientation) * dist)\n        y = self.y + (sin(orientation) * dist)\n        x %= world_size    # cyclic truncate\n        y %= world_size\n        \n        # set particle\n        res = robot()\n        res.set(x, y, orientation)\n        res.set_noise(self.forward_noise, self.turn_noise, self.sense_noise)\n        return res\n    \n    def Gaussian(self, mu, sigma, x):\n        \n        # calculates the probability of x for 1-dim Gaussian with mean mu and var. sigma\n        return exp(- ((mu - x) ** 2) / (sigma ** 2) / 2.0) / sqrt(2.0 * pi * (sigma ** 2))\n    \n    \n    def measurement_prob(self, measurement):\n        \n        # calculates how likely a measurement should be\n        \n        prob = 1.0;\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            prob *= self.Gaussian(dist, self.sense_noise, measurement[i])\n        return prob\n     \n    def __repr__(self):\n        return '[x=%.6s y=%.6s orient=%.6s]' % (str(self.x), str(self.y), str(self.orientation))\n\n\n#myrobot = robot()\n#myrobot.set_noise(5.0, 0.1, 5.0)\n#myrobot.set(30.0, 50.0, pi/2)\n#myrobot = myrobot.move(-pi/2, 15.0)\n#print myrobot.sense()\n#myrobot = myrobot.move(-pi/2, 10.0)\n#print myrobot.sense()\n\n####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####\nmyrobot = robot()\nmyrobot = myrobot.move(0.1, 5.0)\nZ = myrobot.sense()\n\nN = 1000\np = []\nfor i in range(N):\n    x = robot()\n    x.set_noise(0.05, 0.05, 5.0)\n    p.append(x)\n\np2 = []\nfor i in range(N):\n    p2.append(p[i].move(0.1, 5.0))\np = p2\n\nw = []\n#insert code here!\nprint w #Please print w for grading purposes.\n\n\n\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "VJvBzdTPlAQ",
+                  "china_cdn_id": "VJvBzdTPlAQ.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 19627,
+          "key": "484805930923",
+          "title": "Resampling",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "484805930923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 16232,
+              "key": "48480593",
+              "title": "Resampling",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48480593",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "zlCJQmxvrkE",
+                  "china_cdn_id": "zlCJQmxvrkE.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Resampling",
+                "alt_text": "Resampling  Quiz  N equals 5 for P1, P2, P3, P4, P5  W1 = 0.6 W2 = 1.2 W3 = 2.4 W4 = 0.6 W5 = 1.2",
+                "background_image": "//lh4.ggpht.com/D73j4hfWpftq0tKPkDFUOhNche_9TqzKnjuW2hEuxjy1LPP_AFfM29MFjFBpT46itBT0A36w3BaWPvt56Q=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48480593",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48665986",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "What is the probability of p1. Provide your answer in this textbox.",
+                    "marker": "1",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 1,
+                    "placement": {
+                      "height": 0.09977827050997783,
+                      "width": 0.14089775561097256,
+                      "x": 0.6816410435702736,
+                      "y": 0.16525776053215077
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "What is the probability of P2. Provide your answer in this textbox.",
+                    "marker": "2",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 2,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.14962593516209477,
+                      "x": 0.6747159125501675,
+                      "y": 0.2919018527620912
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "What is the probability of P3. Provide your answer in this textbox.",
+                    "marker": "3",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 3,
+                    "placement": {
+                      "height": 0.07760532150776053,
+                      "width": 0.15586034912718205,
+                      "x": 0.6726968056543212,
+                      "y": 0.37785349505439303
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "What is the probability of P4. Provide your answer in this textbox.",
+                    "marker": "4",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 4,
+                    "placement": {
+                      "height": 0.07538802660753881,
+                      "width": 0.1571072319201995,
+                      "x": 0.6698629326951177,
+                      "y": 0.47070271900117794
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "What is the probability of P5. Provide your answer in this textbox.",
+                    "marker": "5",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 5,
+                    "placement": {
+                      "height": 0.08869179600886919,
+                      "width": 0.15835411471321695,
+                      "x": 0.6647798152933097,
+                      "y": 0.5592055902248476
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "FjRX_i3SsJA",
+                  "china_cdn_id": "FjRX_i3SsJA.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 13659,
+          "key": "487590030923",
+          "title": "Never Sampled 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487590030923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 99432,
+              "key": "48759003",
+              "title": "Never Sampled 1",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48759003",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "8ffPkDiDioI",
+                  "china_cdn_id": "8ffPkDiDioI.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Never Sampled 1",
+                "alt_text": "Never Sampled 1  Quiz  N equals 5 for P1, P2, P3, P4, P5  W1 = 0.6, Probability of P1 is 0.1.  W2 = 1.2, Probability of P2 is 0.2  W3 = 2.4, Probability of P3 is 0.4  W4 = 0.6, Probability of P4 is 0.1. W5 = 1.2, Probability of P5 is 0.2.  Is it possible that P1 is never sampled?",
+                "background_image": "//lh3.ggpht.com/x9zfOk8_qIEPilFYkcuNXatJfIZu64iEWwDp-CwSxZH3geGC3b1VVPP0e2fimmi_4wNtCSmyYGhK-pd4LiM=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48759003",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48665994",
+                "widgets": [
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "Option A, Yes.",
+                    "marker": "2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 2,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.6420861907730673,
+                      "y": 0.5792682926829268
+                    }
+                  },
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "Option B, No.",
+                    "marker": "3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 3,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.8097724438902744,
+                      "y": 0.5585504434589801
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "MhhM1uh0-3w",
+                  "china_cdn_id": "MhhM1uh0-3w.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 136577,
+          "key": "487480810923",
+          "title": "Never Sampled 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487480810923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 15344,
+              "key": "48748081",
+              "title": "Never Sampled 2",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48748081",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "q95KMAIqDDY",
+                  "china_cdn_id": "q95KMAIqDDY.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Never Sampled 2",
+                "alt_text": "Never Sampled 2  Quiz  N equals 5 for P1, P2, P3, P4, P5  W1 = 0.6, Probability of P1 is 0.1.  W2 = 1.2, Probability of P2 is 0.2  W3 = 2.4, Probability of P3 is 0.4  W4 = 0.6, Probability of P4 is 0.1. W5 = 1.2, Probability of P5 is 0.2.  Is it possible that P3 is never sampled?",
+                "background_image": "//lh3.ggpht.com/ZzPo0a85z8myku9XUP0JMrQ55-bKU0m2y1iFyFoxSIdsPYu6AmEwykQrOrz92zcgksLP5Gs-yPd3wiXpM5Pe=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48748081",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48687765",
+                "widgets": [
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "Option A, yes.",
+                    "marker": "2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 2,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.6329099127182045,
+                      "y": 0.5885185698447893
+                    }
+                  },
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "Option B, no.",
+                    "marker": "3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 3,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.8075124688279302,
+                      "y": 0.5585504434589801
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "i457B5Iyg-8",
+                  "china_cdn_id": "i457B5Iyg-8.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 1970,
+          "key": "486867620923",
+          "title": "Never Sampled 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "486867620923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 49934,
+              "key": "48686762",
+              "title": "Never Sampled 3",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48686762",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "Z1oQl-1cUeE",
+                  "china_cdn_id": "Z1oQl-1cUeE.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Never Sampled 3",
+                "alt_text": "Never Sampled 3  Quiz  N equals 5 for P1, P2, P3, P4, P5  W1 = 0.6, Probability of P1 is 0.1.  W2 = 1.2, Probability of P2 is 0.2  W3 = 2.4, Probability of P3 is 0.4  W4 = 0.6, Probability of P4 is 0.1.  W5 = 1.2, Probability of P5 is 0.2.  What is the probability of never sampling P3?",
+                "background_image": "//lh6.ggpht.com/yt0V6BGbYXN33-ItoE9h2FUz6YZpHjk3Umw1BRbCtUz7hC0jhd5oDaY5ZDssGWB94IpZKJRHXiVm_wNMng=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48686762",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48699547",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "0",
+                    "label": "Respond in this textbox.",
+                    "marker": "2",
+                    "model": "NumericInputWidget",
+                    "is_text_area": null,
+                    "tabindex": 2,
+                    "placement": {
+                      "height": 0.11529933481152993,
+                      "width": 0.18079800498753118,
+                      "x": 0.7294653990024937,
+                      "y": 0.7889758869179601
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "hcoKwWBvB6Y",
+                  "china_cdn_id": "hcoKwWBvB6Y.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 90122,
+          "key": "487590040923",
+          "title": "New Particle",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487590040923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 23085,
+              "key": "48759004",
+              "title": "New Particle",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48759004",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "AROtzVxDDx4",
+                  "china_cdn_id": "AROtzVxDDx4.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "New Particle",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48751004",
+                "initial_code_files": [
+                  {
+                    "text": "# In this exercise, try to write a program that\n# will resample particles according to their weights.\n# Particles with higher weights should be sampled\n# more frequently (in proportion to their weight).\n\n# Don't modify anything below. Please scroll to the \n# bottom to enter your code.\n\nfrom math import *\nimport random\n\nlandmarks  = [[20.0, 20.0], [80.0, 80.0], [20.0, 80.0], [80.0, 20.0]]\nworld_size = 100.0\n\nclass robot:\n    def __init__(self):\n        self.x = random.random() * world_size\n        self.y = random.random() * world_size\n        self.orientation = random.random() * 2.0 * pi\n        self.forward_noise = 0.0;\n        self.turn_noise    = 0.0;\n        self.sense_noise   = 0.0;\n    \n    def set(self, new_x, new_y, new_orientation):\n        if new_x < 0 or new_x >= world_size:\n            raise ValueError, 'X coordinate out of bound'\n        if new_y < 0 or new_y >= world_size:\n            raise ValueError, 'Y coordinate out of bound'\n        if new_orientation < 0 or new_orientation >= 2 * pi:\n            raise ValueError, 'Orientation must be in [0..2pi]'\n        self.x = float(new_x)\n        self.y = float(new_y)\n        self.orientation = float(new_orientation)\n    \n    \n    def set_noise(self, new_f_noise, new_t_noise, new_s_noise):\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.forward_noise = float(new_f_noise);\n        self.turn_noise    = float(new_t_noise);\n        self.sense_noise   = float(new_s_noise);\n    \n    \n    def sense(self):\n        Z = []\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            dist += random.gauss(0.0, self.sense_noise)\n            Z.append(dist)\n        return Z\n    \n    \n    def move(self, turn, forward):\n        if forward < 0:\n            raise ValueError, 'Robot cant move backwards'         \n        \n        # turn, and add randomness to the turning command\n        orientation = self.orientation + float(turn) + random.gauss(0.0, self.turn_noise)\n        orientation %= 2 * pi\n        \n        # move, and add randomness to the motion command\n        dist = float(forward) + random.gauss(0.0, self.forward_noise)\n        x = self.x + (cos(orientation) * dist)\n        y = self.y + (sin(orientation) * dist)\n        x %= world_size    # cyclic truncate\n        y %= world_size\n        \n        # set particle\n        res = robot()\n        res.set(x, y, orientation)\n        res.set_noise(self.forward_noise, self.turn_noise, self.sense_noise)\n        return res\n    \n    def Gaussian(self, mu, sigma, x):\n        \n        # calculates the probability of x for 1-dim Gaussian with mean mu and var. sigma\n        return exp(- ((mu - x) ** 2) / (sigma ** 2) / 2.0) / sqrt(2.0 * pi * (sigma ** 2))\n    \n    \n    def measurement_prob(self, measurement):\n        \n        # calculates how likely a measurement should be\n        \n        prob = 1.0;\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            prob *= self.Gaussian(dist, self.sense_noise, measurement[i])\n        return prob\n    \n    def __repr__(self):\n        return '[x=%.6s y=%.6s orient=%.6s]' % (str(self.x), str(self.y), str(self.orientation))\n\n\n#myrobot = robot()\n#myrobot.set_noise(5.0, 0.1, 5.0)\n#myrobot.set(30.0, 50.0, pi/2)\n#myrobot = myrobot.move(-pi/2, 15.0)\n#print myrobot.sense()\n#myrobot = myrobot.move(-pi/2, 10.0)\n#print myrobot.sense()\n\nmyrobot = robot()\nmyrobot = myrobot.move(0.1, 5.0)\nZ = myrobot.sense()\n\nN = 1000\np = []\nfor i in range(N):\n    x = robot()\n    x.set_noise(0.05, 0.05, 5.0)\n    p.append(x)\n\np2 = []\nfor i in range(N):\n    p2.append(p[i].move(0.1, 5.0))\np = p2\n\nw = []\nfor i in range(N):\n    w.append(p[i].measurement_prob(Z))\n\n\n#### DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####\n# You should make sure that p3 contains a list with particles\n# resampled according to their weights.\n# Also, DO NOT MODIFY p.\n\np3 = []\n\n\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "LJXbHoq5EZk",
+                  "china_cdn_id": "LJXbHoq5EZk.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 112445,
+          "key": "487480820923",
+          "title": "Resampling Wheel",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487480820923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 3468,
+              "key": "48748082",
+              "title": "Resampling Wheel",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "The pseudocode in the video should be like this (instead of an if-else block):\n\n    while w[index] < beta:\n        beta = beta - w[index]\n        index = index + 1\n\n    select p[index]",
+              "user_state": {
+                "node_key": "48748082",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "wNQVo6uOgYA",
+                  "china_cdn_id": "wNQVo6uOgYA.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Resampling Wheel",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48665974",
+                "initial_code_files": [
+                  {
+                    "text": "# In this exercise, you should implement the\n# resampler shown in the previous video.\n\nfrom math import *\nimport random\n\nlandmarks  = [[20.0, 20.0], [80.0, 80.0], [20.0, 80.0], [80.0, 20.0]]\nworld_size = 100.0\n\nclass robot:\n    def __init__(self):\n        self.x = random.random() * world_size\n        self.y = random.random() * world_size\n        self.orientation = random.random() * 2.0 * pi\n        self.forward_noise = 0.0;\n        self.turn_noise    = 0.0;\n        self.sense_noise   = 0.0;\n    \n    def set(self, new_x, new_y, new_orientation):\n        if new_x < 0 or new_x >= world_size:\n            raise ValueError, 'X coordinate out of bound'\n        if new_y < 0 or new_y >= world_size:\n            raise ValueError, 'Y coordinate out of bound'\n        if new_orientation < 0 or new_orientation >= 2 * pi:\n            raise ValueError, 'Orientation must be in [0..2pi]'\n        self.x = float(new_x)\n        self.y = float(new_y)\n        self.orientation = float(new_orientation)\n    \n    \n    def set_noise(self, new_f_noise, new_t_noise, new_s_noise):\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.forward_noise = float(new_f_noise);\n        self.turn_noise    = float(new_t_noise);\n        self.sense_noise   = float(new_s_noise);\n    \n    \n    def sense(self):\n        Z = []\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            dist += random.gauss(0.0, self.sense_noise)\n            Z.append(dist)\n        return Z\n    \n    \n    def move(self, turn, forward):\n        if forward < 0:\n            raise ValueError, 'Robot cant move backwards'         \n        \n        # turn, and add randomness to the turning command\n        orientation = self.orientation + float(turn) + random.gauss(0.0, self.turn_noise)\n        orientation %= 2 * pi\n        \n        # move, and add randomness to the motion command\n        dist = float(forward) + random.gauss(0.0, self.forward_noise)\n        x = self.x + (cos(orientation) * dist)\n        y = self.y + (sin(orientation) * dist)\n        x %= world_size    # cyclic truncate\n        y %= world_size\n        \n        # set particle\n        res = robot()\n        res.set(x, y, orientation)\n        res.set_noise(self.forward_noise, self.turn_noise, self.sense_noise)\n        return res\n    \n    def Gaussian(self, mu, sigma, x):\n        \n        # calculates the probability of x for 1-dim Gaussian with mean mu and var. sigma\n        return exp(- ((mu - x) ** 2) / (sigma ** 2) / 2.0) / sqrt(2.0 * pi * (sigma ** 2))\n    \n    \n    def measurement_prob(self, measurement):\n        \n        # calculates how likely a measurement should be\n        \n        prob = 1.0;\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            prob *= self.Gaussian(dist, self.sense_noise, measurement[i])\n        return prob    \n    \n    def __repr__(self):\n        return '[x=%.6s y=%.6s orient=%.6s]' % (str(self.x), str(self.y), str(self.orientation))\n\n\n#myrobot = robot()\n#myrobot.set_noise(5.0, 0.1, 5.0)\n#myrobot.set(30.0, 50.0, pi/2)\n#myrobot = myrobot.move(-pi/2, 15.0)\n#print myrobot.sense()\n#myrobot = myrobot.move(-pi/2, 10.0)\n#print myrobot.sense()\n\n####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####\nmyrobot = robot()\nmyrobot = myrobot.move(0.1, 5.0)\nZ = myrobot.sense()\n\nN = 1000\np = []\nfor i in range(N):\n    x = robot()\n    x.set_noise(0.05, 0.05, 5.0)\n    p.append(x)\n\np2 = []\nfor i in range(N):\n    p2.append(p[i].move(0.1, 5.0))\np = p2\n\nw = []\nfor i in range(N):\n    w.append(p[i].measurement_prob(Z))\n\np3 = []\n\np = p3\nprint p #please leave this print statement here for grading!\n\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "aHLslaWO-AQ",
+                  "china_cdn_id": "aHLslaWO-AQ.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 1942,
+          "key": "486867640923",
+          "title": "Orientation 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "486867640923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 94530,
+              "key": "48686764",
+              "title": "Orientation 1",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48686764",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "cupiUHaKvdI",
+                  "china_cdn_id": "cupiUHaKvdI.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Orientation 1",
+                "alt_text": "Orientation 1  Quiz  Will Orientation Never play a role?",
+                "background_image": "//lh3.ggpht.com/gyN-MOcBu0WefSmxXpbs3fN7Pa0VZgO35TxzFbkwl0O0XFKUcidw71ZWYxUuipjrLTqEkj_b23wFpHo2xcM=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48686764",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48738099",
+                "widgets": [
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "Option A: Yes, Never",
+                    "marker": "2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 2,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.39333307356608477,
+                      "y": 0.5563331485587583
+                    }
+                  },
+                  {
+                    "group": "multipleChoice1",
+                    "initial_value": "false",
+                    "label": "Option B: No, Eventually they matter",
+                    "marker": "3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": 3,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.3804161471321696,
+                      "y": 0.7185421286031042
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "-lq0uzHd9T0",
+                  "china_cdn_id": "-lq0uzHd9T0.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 90185,
+          "key": "487590050923",
+          "title": "Orientation 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487590050923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 136920,
+              "key": "48759005",
+              "title": "Orientation 2",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48759005",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "17FoJwLiQkg",
+                  "china_cdn_id": "17FoJwLiQkg.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Orientation 2",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48664994",
+                "initial_code_files": [
+                  {
+                    "text": "# In this exercise, write a program that will\n# run your previous code twice.\n# Please only modify the indicated area below!\n\nfrom math import *\nimport random\n\nlandmarks  = [[20.0, 20.0], [80.0, 80.0], [20.0, 80.0], [80.0, 20.0]]\nworld_size = 100.0\n\nclass robot:\n    def __init__(self):\n        self.x = random.random() * world_size\n        self.y = random.random() * world_size\n        self.orientation = random.random() * 2.0 * pi\n        self.forward_noise = 0.0;\n        self.turn_noise    = 0.0;\n        self.sense_noise   = 0.0;\n    \n    def set(self, new_x, new_y, new_orientation):\n        if new_x < 0 or new_x >= world_size:\n            raise ValueError, 'X coordinate out of bound'\n        if new_y < 0 or new_y >= world_size:\n            raise ValueError, 'Y coordinate out of bound'\n        if new_orientation < 0 or new_orientation >= 2 * pi:\n            raise ValueError, 'Orientation must be in [0..2pi]'\n        self.x = float(new_x)\n        self.y = float(new_y)\n        self.orientation = float(new_orientation)\n    \n    \n    def set_noise(self, new_f_noise, new_t_noise, new_s_noise):\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.forward_noise = float(new_f_noise);\n        self.turn_noise    = float(new_t_noise);\n        self.sense_noise   = float(new_s_noise);\n    \n    \n    def sense(self):\n        Z = []\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            dist += random.gauss(0.0, self.sense_noise)\n            Z.append(dist)\n        return Z\n    \n    \n    def move(self, turn, forward):\n        if forward < 0:\n            raise ValueError, 'Robot cant move backwards'         \n        \n        # turn, and add randomness to the turning command\n        orientation = self.orientation + float(turn) + random.gauss(0.0, self.turn_noise)\n        orientation %= 2 * pi\n        \n        # move, and add randomness to the motion command\n        dist = float(forward) + random.gauss(0.0, self.forward_noise)\n        x = self.x + (cos(orientation) * dist)\n        y = self.y + (sin(orientation) * dist)\n        x %= world_size    # cyclic truncate\n        y %= world_size\n        \n        # set particle\n        res = robot()\n        res.set(x, y, orientation)\n        res.set_noise(self.forward_noise, self.turn_noise, self.sense_noise)\n        return res\n    \n    def Gaussian(self, mu, sigma, x):\n        \n        # calculates the probability of x for 1-dim Gaussian with mean mu and var. sigma\n        return exp(- ((mu - x) ** 2) / (sigma ** 2) / 2.0) / sqrt(2.0 * pi * (sigma ** 2))\n    \n    \n    def measurement_prob(self, measurement):\n        \n        # calculates how likely a measurement should be\n        \n        prob = 1.0;\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            prob *= self.Gaussian(dist, self.sense_noise, measurement[i])\n        return prob\n      \n    def __repr__(self):\n        return '[x=%.6s y=%.6s orient=%.6s]' % (str(self.x), str(self.y), str(self.orientation))\n\n\n#myrobot = robot()\n#myrobot.set_noise(5.0, 0.1, 5.0)\n#myrobot.set(30.0, 50.0, pi/2)\n#myrobot = myrobot.move(-pi/2, 15.0)\n#print myrobot.sense()\n#myrobot = myrobot.move(-pi/2, 10.0)\n#print myrobot.sense()\n\n####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER/MODIFY CODE BELOW ####\nmyrobot = robot()\nmyrobot = myrobot.move(0.1, 5.0)\nZ = myrobot.sense()\n\nN = 1000\np = []\nfor i in range(N):\n    x = robot()\n    x.set_noise(0.05, 0.05, 5.0)\n    p.append(x)\n\np2 = []\nfor i in range(N):\n    p2.append(p[i].move(0.1, 5.0))\np = p2\n\nw = []\nfor i in range(N):\n    w.append(p[i].measurement_prob(Z))\n\np3 = []\nindex = int(random.random() * N)\nbeta = 0.0\nmw = max(w)\nfor i in range(N):\n    beta += random.random() * 2.0 * mw\n    while beta > w[index]:\n        beta -= w[index]\n        index = (index + 1) % N\n    p3.append(p[index])\np = p3\n\nprint p #Leave this print statement for grading purposes!\n\n\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "Ex0su1DnIuw",
+                  "china_cdn_id": "Ex0su1DnIuw.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 131417,
+          "key": "487480830923",
+          "title": "Error",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487480830923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 124132,
+              "key": "48748083",
+              "title": "Error",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48748083",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "UAdcKWLi9G8",
+                  "china_cdn_id": "UAdcKWLi9G8.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Error",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "48736100",
+                "initial_code_files": [
+                  {
+                    "text": "# Please only modify the indicated area below!\n\nfrom math import *\nimport random\n\nlandmarks  = [[20.0, 20.0], [80.0, 80.0], [20.0, 80.0], [80.0, 20.0]]\nworld_size = 100.0\n\nclass robot:\n    def __init__(self):\n        self.x = random.random() * world_size\n        self.y = random.random() * world_size\n        self.orientation = random.random() * 2.0 * pi\n        self.forward_noise = 0.0;\n        self.turn_noise    = 0.0;\n        self.sense_noise   = 0.0;\n    \n    def set(self, new_x, new_y, new_orientation):\n        if new_x < 0 or new_x >= world_size:\n            raise ValueError, 'X coordinate out of bound'\n        if new_y < 0 or new_y >= world_size:\n            raise ValueError, 'Y coordinate out of bound'\n        if new_orientation < 0 or new_orientation >= 2 * pi:\n            raise ValueError, 'Orientation must be in [0..2pi]'\n        self.x = float(new_x)\n        self.y = float(new_y)\n        self.orientation = float(new_orientation)\n    \n    \n    def set_noise(self, new_f_noise, new_t_noise, new_s_noise):\n        # makes it possible to change the noise parameters\n        # this is often useful in particle filters\n        self.forward_noise = float(new_f_noise);\n        self.turn_noise    = float(new_t_noise);\n        self.sense_noise   = float(new_s_noise);\n    \n    \n    def sense(self):\n        Z = []\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            dist += random.gauss(0.0, self.sense_noise)\n            Z.append(dist)\n        return Z\n    \n    \n    def move(self, turn, forward):\n        if forward < 0:\n            raise ValueError, 'Robot cant move backwards'         \n        \n        # turn, and add randomness to the turning command\n        orientation = self.orientation + float(turn) + random.gauss(0.0, self.turn_noise)\n        orientation %= 2 * pi\n        \n        # move, and add randomness to the motion command\n        dist = float(forward) + random.gauss(0.0, self.forward_noise)\n        x = self.x + (cos(orientation) * dist)\n        y = self.y + (sin(orientation) * dist)\n        x %= world_size    # cyclic truncate\n        y %= world_size\n        \n        # set particle\n        res = robot()\n        res.set(x, y, orientation)\n        res.set_noise(self.forward_noise, self.turn_noise, self.sense_noise)\n        return res\n    \n    def Gaussian(self, mu, sigma, x):\n        \n        # calculates the probability of x for 1-dim Gaussian with mean mu and var. sigma\n        return exp(- ((mu - x) ** 2) / (sigma ** 2) / 2.0) / sqrt(2.0 * pi * (sigma ** 2))\n    \n    \n    def measurement_prob(self, measurement):\n        \n        # calculates how likely a measurement should be\n        \n        prob = 1.0;\n        for i in range(len(landmarks)):\n            dist = sqrt((self.x - landmarks[i][0]) ** 2 + (self.y - landmarks[i][1]) ** 2)\n            prob *= self.Gaussian(dist, self.sense_noise, measurement[i])\n        return prob\n      \n    def __repr__(self):\n        return '[x=%.6s y=%.6s orient=%.6s]' % (str(self.x), str(self.y), str(self.orientation))\n\n\n\ndef eval(r, p):\n    sum = 0.0;\n    for i in range(len(p)): # calculate mean error\n        dx = (p[i].x - r.x + (world_size/2.0)) % world_size - (world_size/2.0)\n        dy = (p[i].y - r.y + (world_size/2.0)) % world_size - (world_size/2.0)\n        err = sqrt(dx * dx + dy * dy)\n        sum += err\n    return sum / float(len(p))\n\n#myrobot = robot()\n#myrobot.set_noise(5.0, 0.1, 5.0)\n#myrobot.set(30.0, 50.0, pi/2)\n#myrobot = myrobot.move(-pi/2, 15.0)\n#print myrobot.sense()\n#myrobot = myrobot.move(-pi/2, 10.0)\n#print myrobot.sense()\n\n####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER/MODIFY CODE BELOW ####\nmyrobot = robot()\nmyrobot = myrobot.move(0.1, 5.0)\nZ = myrobot.sense()\nN = 1000\nT = 10 #Leave this as 10 for grading purposes.\n\np = []\nfor i in range(N):\n    r = robot()\n    r.set_noise(0.05, 0.05, 5.0)\n    p.append(r)\n\nfor t in range(T):\n    myrobot = myrobot.move(0.1, 5.0)\n    Z = myrobot.sense()\n\n    p2 = []\n    for i in range(N):\n        p2.append(p[i].move(0.1, 5.0))\n    p = p2\n\n    w = []\n    for i in range(N):\n        w.append(p[i].measurement_prob(Z))\n\n    p3 = []\n    index = int(random.random() * N)\n    beta = 0.0\n    mw = max(w)\n    for i in range(N):\n        beta += random.random() * 2.0 * mw\n        while beta > w[index]:\n            beta -= w[index]\n            index = (index + 1) % N\n        p3.append(p[index])\n    p = p3\n    #enter code here, make sure that you output 10 print statements.\n \n\n\n",
+                    "name": "studentMain.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "3kOrzhYCXz8",
+                  "china_cdn_id": "3kOrzhYCXz8.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 29863,
+          "key": "486659950923",
+          "title": "You and Sebastian",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "486659950923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 40839,
+              "key": "48665995",
+              "title": "You and Sebastian",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "gTMe0E6SM_M",
+                "china_cdn_id": "gTMe0E6SM_M.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 33730,
+          "key": "487033400923",
+          "title": "Filters",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487033400923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 85009,
+              "key": "48703340",
+              "title": "Filters",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "48703340",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "bjZy-RVms_8",
+                  "china_cdn_id": "bjZy-RVms_8.mp4"
+                },
+                "text": null
+              },
+              "question": {
+                "title": "Filters",
+                "alt_text": "Filters  Which filters did sebastian use in his job talk at Stanford?  Select all that apply.",
+                "background_image": "//lh5.ggpht.com/fLl6ueN_5yZypK5AVjjnenQg5DOF-S8uk7f60Et5Inn6ZNhoIUD4YWPvIHsxrrGYah1wB-6s-UsbWS0_osA=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/48703340",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "48684714",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": "This option is historical filters.",
+                    "marker": "2",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": 2,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.7251987219451371,
+                      "y": 0.4681610310421286
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": "This option is Kalman Filters.",
+                    "marker": "3",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": 3,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.7254130299251871,
+                      "y": 0.5863012749445676
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": "This option is Particle Filters.",
+                    "marker": "4",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": 4,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.7006312344139651,
+                      "y": 0.7044761640798226
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "false",
+                    "label": "This option is none of the above.",
+                    "marker": "5",
+                    "model": "CheckboxWidget",
+                    "is_text_area": null,
+                    "tabindex": 5,
+                    "placement": {
+                      "height": 0.04,
+                      "width": 0.04,
+                      "x": 0.7006312344139651,
+                      "y": 0.8318666851441242
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": null,
+                "video": {
+                  "youtube_id": "d_DXbkU7iPY",
+                  "china_cdn_id": "d_DXbkU7iPY.mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 39720,
+          "key": "487380950923",
+          "title": "2012",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "487380950923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 13797,
+              "key": "48738095",
+              "title": "2012",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "QgOUu2sUDzg",
+                "china_cdn_id": "QgOUu2sUDzg.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    }
+  ]
+}

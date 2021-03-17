@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.945
+High-performance computing, we're now ready to move into C++.
+
+00:00:05.945 --> 00:00:09.000
+Well so far, everything we've done has been in Python and
+
+00:00:09.000 --> 00:00:12.230
+Python is a great language to learn how to program computers.
+
+00:00:12.230 --> 00:00:15.265
+It's a great language to do rapid prototyping,
+
+00:00:15.265 --> 00:00:17.990
+but it's not very good for interfacing to
+
+00:00:17.989 --> 00:00:20.719
+low-level hardware and is not good for computing.
+
+00:00:20.719 --> 00:00:23.304
+It has to be very precise in its timing.
+
+00:00:23.304 --> 00:00:25.939
+When you talk to self-driving car companies,
+
+00:00:25.940 --> 00:00:28.870
+most of their code is actually written in C++,
+
+00:00:28.870 --> 00:00:31.760
+because it's much more precise in its execution.
+
+00:00:31.760 --> 00:00:36.530
+So, we want you now to move into C++,
+
+00:00:36.530 --> 00:00:38.520
+but before we do this,
+
+00:00:38.520 --> 00:00:42.700
+we want you to self-diagnose what your knowledge level really is.
+
+00:00:42.700 --> 00:00:44.530
+So, we are going to start with a few questions,
+
+00:00:44.530 --> 00:00:45.835
+you don't have to answer them,
+
+00:00:45.835 --> 00:00:48.679
+but if you have a hard time answering those questions,
+
+00:00:48.679 --> 00:00:52.799
+you might want to brush up a little bit before you dive into the Hallstein C++.
+

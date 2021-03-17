@@ -1,0 +1,306 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627673,
+      "key": "2c07aa97-8e89-4a23-b790-c8405a69132a",
+      "title": "Kidnapped Vehicle Project",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this project, you'll build a particle filter and combine it with a real map to localize a vehicle!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/2c07aa97-8e89-4a23-b790-c8405a69132a/627673/1538943530942/Kidnapped+Vehicle+Project+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/2c07aa97-8e89-4a23-b790-c8405a69132a/627673/1538943528842/Kidnapped+Vehicle+Project+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "e130bab8-5d04-4962-b3be-b6ef1232789b",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 30240,
+        "semantic_type": "Project",
+        "title": "Kidnapped Vehicle",
+        "description": "When you are confident that your particle filter is working correctly, submit your project using Github or by uploading a zipped archive of your project files. You can check out the rubric [here](https://review.udacity.com/#!/rubrics/1965/view) prior to submitting.",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1965",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://s3.amazonaws.com/video.udacity-data.com/topher/2018/July/5b4eba97_07-l-data-association-nearest-neighbor.00-00-58-04.still001/07-l-data-association-nearest-neighbor.00-00-58-04.still001.png",
+          "width": 500,
+          "height": 500
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 663308,
+          "key": "97dfb8dc-612d-4122-bbf9-f079252136c1",
+          "title": "Sparse Localization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "97dfb8dc-612d-4122-bbf9-f079252136c1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663309,
+              "key": "08eccc07-ee3f-4862-ab32-112d9d938ced",
+              "title": "05 Localization A01 Sparse Localization",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DBZ7QdXPldc",
+                "china_cdn_id": "DBZ7QdXPldc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 263450,
+          "key": "7859a45d-fc70-4378-bdb6-a9456f14c6c6",
+          "title": "Project Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7859a45d-fc70-4378-bdb6-a9456f14c6c6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 289113,
+              "key": "7323c673-8046-47ba-93d1-e515919321fd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Localization Project Introduction\n\nIn this project you will implement a 2 dimensional particle filter in C++. Your particle filter will be given a map and some initial localization information (analogous to what a GPS would provide). At each time step your filter will also get observation and control data.\n\nYou can find the project rubric [here](https://review.udacity.com/#!/rubrics/747/view).\n\n### Using GitHub and Creating Effective READMEs\n\nIf you are unfamiliar with GitHub, Udacity has a brief [GitHub tutorial](http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html) to get you started. Udacity also provides a more detailed free [course on git and GitHub](https://www.udacity.com/course/how-to-use-git-and-github--ud775).\n\nTo learn about README files and Markdown, Udacity provides a free [course on READMEs](https://www.udacity.com/course/writing-readmes--ud777), as well. \n\nGitHub also provides a [tutorial](https://guides.github.com/features/mastering-markdown/) about creating Markdown files.\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 289118,
+              "key": "9fe9d7d4-8384-4d0a-a00b-538855d5f515",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Click **Next** to see information about where to find starter code and project instructions.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 306078,
+          "key": "1adb633f-8035-4c78-9649-dd8cebecf76a",
+          "title": "Particle Filter Project Visualizer",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1adb633f-8035-4c78-9649-dd8cebecf76a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 306079,
+              "key": "33baac4f-243d-4b74-9348-55a2aaad1c56",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Particle Filter Project Visualizer\nThe Term 2 Simulator includes a graphical version of the Kidnapped Vehicle Project. Running the simulator you can see the path that the car drives along with all of its landmark measurements. (**Note:** If you choose to utilize the Workspace for this project, both the similator and related project repository are included therein, so you won't need to download/clone them locally except as desired).\n\nIncluded in the [Kidnapped Vehicle project Github repository](https://github.com/udacity/CarND-Kidnapped-Vehicle-Project) are program files that allow you to set up and run c++ uWebSocketIO, which is used to communicate with the simulator. The simulator provides the script for the noisy position data, vehicle controls, and noisy observations. The script feeds back the best particle state. \n\nThe simulator can also display the best particle's sensed positions, along with the corresponding map ID associations. This can be extremely helpful to make sure transition and association calculations were done correctly. Below is a video of what it looks like when the simulator successfully is able to track the car to a particle. Notice that the green laser sensors from the car nearly overlap the blue laser sensors from the particle, this means that the particle transition calculations were done correctly.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 306080,
+              "key": "d8e88de2-d3f1-41e6-9c04-45f3b304fc3d",
+              "title": "T2 P3 PF",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0SbVwwY_NuQ",
+                "china_cdn_id": "0SbVwwY_NuQ.mp4"
+              }
+            },
+            {
+              "id": 306142,
+              "key": "b2999de2-35fc-4904-8a6e-e50a2858a986",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Download Links for Term 2 Simulator\n\n[Simulator Release](https://github.com/udacity/self-driving-car-sim/releases)\n\n## Running the Program\n\n1. Download the simulator and open it. In the main menu screen select Project 3: Kidnapped Vehicle.\n\n2. Once the scene is loaded you can hit the START button to observe how the car drives and observes landmarks. At any time you can press the PAUSE button, to pause the scene or hit the RESTART button to reset the scene. Also the ARROW KEYS can be used to move the camera around, and the top left ZOOM IN/OUT buttons can be used to focus the camera. Pressing the ESCAPE KEY returns to the simulator main menu.\n\n\n3. The [Kidnapped Vehicle project Github repository README](https://github.com/udacity/CarND-Kidnapped-Vehicle-Project)  has more detailed instructions for installing and using c++ uWebScoketIO.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 677027,
+          "key": "b252419c-ee06-490c-9881-02d0b979a6a3",
+          "title": "Project Instructions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b252419c-ee06-490c-9881-02d0b979a6a3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 689329,
+              "key": "3fe70374-aec4-4b41-bd07-8481cfd3ff63",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#  Running the Kidnapped Vehicle project.\n\nThis workspace is designed to be a simple, easy to use environment in which you can code and run the\nKidnapped Vehicle project. If you prefer to run the project on your computer, you can clone/fork the [repository](https://github.com/udacity/CarND-Kidnapped-Vehicle-Project) in your local setup.\n\nFor tips on workspace use, please review the Workspaces lesson from Term 1.\n\n## Accessing and using the workspace:\n- Navigate to the workspace node. If you need to test your solution, enable the GPU - otherwise, you won't be able to run the simulator. Remember to turn it off when you code your solution so that you don't run out of GPU hours.\n- Navigate to the repository `CarND-Kidnapped-Vehicle-Project` using menu on the left.\n- Complete the `TODO` in particle_filter.cpp and particle_filter.h using the text editor in the workspace.\n- Navigate to the project repository in the terminal.\n\nThe main program can be built and run by doing the following from the project top directory:\n1. In the terminal execute `./clean.sh`to make sure you don't have old files in the directory.\n2. In the terminal execute `./build.sh` to build the project.\n3. In the terminal execute  `./run.sh` to execute your solution.\n\nAll Project instructions can be found in the [README.md](https://github.com/udacity/CarND-Kidnapped-Vehicle-Project/blob/master/README.md) (you can view the instruction in an easy-to-read format by visiting the previous link).\n\nClick on the \"Simulator\" button in the bottom of the Udacity workspace, which will open a new virtual desktop. You should see a \"Simulator\" icon on the virtual desktop. Double-click the \"Simulator\" icon in that desktop to start the simulator.\n\n**Important: ** You need to open a terminal before attempting to run the simulator. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 689369,
+              "key": "59457658-d11d-4994-8a9e-28d8e2dcd133",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Using GitHub and Creating Effective READMEs\n\nIf you are unfamiliar with GitHub , Udacity has a brief [GitHub tutorial](http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html) to get you started. Udacity also provides a more detailed free [course on git and GitHub](https://www.udacity.com/course/how-to-use-git-and-github--ud775).\n\nTo learn about README files and Markdown, Udacity provides a free [course on READMEs](https://www.udacity.com/course/writing-readmes--ud777), as well. \n\nGitHub also provides a [tutorial](https://guides.github.com/features/mastering-markdown/) about creating Markdown files.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 689383,
+              "key": "0988df5e-872b-41ea-9e27-3251385a4020",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ## Commit to GitHub\nStudents are highly encouraged to commit their project to a GitHub repo.  To do this, you must change the upstream of the current repository and add your credentials.  We have supplied a bash script to help you do this.  Please open up a terminal, navigate to the project repository, and enter: `./set_git.sh`, then follow the prompts.  This will set the upstream remote to your own repository and add your email and username to the git configuration.  At this time we are not configuring passwords, so you will need to enter your username and password for each push.  Since credentials are not persistent, it will be necessary to run this script each time you open, refresh, or reset the workspace.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 689331,
+              "key": "5e9726d4-d7fd-4432-b287-a838113dfbf4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Submitting your project\n\nWhen you are confident that your particle filter is working correctly, submit your project using Github or by uploading a zipped archive of your project files. Or if using **workspaces ** click on the button on the right bottom and follow the instructions. You can check out the rubric [here](https://review.udacity.com/#!/rubrics/1965/view) prior to submitting.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 689330,
+              "key": "56f32df0-2e56-4715-acb7-c16a90ef82ba",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Support #\n\nIf you are stuck or having difficulties with the project, don't lose hope! Remember to talk to your mentors and fellow students in your Study Group, as well as ask (and answer!) questions on [Knowledge](https://knowledge.udacity.com) tagged with the project name. We also have a previously recorded project Q&A that you can watch [here](https://youtu.be/-3HI3Iw3Z9g)!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 676848,
+          "key": "c316f5c9-0acb-4f7f-af51-0c46361ab2af",
+          "title": "Kidnapped Vehicle Workspaces",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c316f5c9-0acb-4f7f-af51-0c46361ab2af",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676849,
+              "key": "545316ac-2692-4c56-b3b5-dd2cdf455091",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewrJle92E0QQ",
+              "pool_id": "autonomousgpu",
+              "view_id": "react-H1eq3VCXQ",
+              "gpu_capable": true,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": {
+                      "id": "autonomous-datasets",
+                      "paths": [
+                        {
+                          "src": "/sdc_nd",
+                          "dest": "/data/"
+                        }
+                      ]
+                    },
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "echo \"Installing dependencies.\"\nsudo apt-key del 421C365BD9FF1F717815A3895523BAEEB01FA116\nsudo -E apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654\nsudo apt-get -y -qq install libssl-dev >/dev/null 2>&1 &\nmkdir -p /usr/include/uWS\nln -sf /data/uWebSockets/src/*.h /usr/include/uWS/\nln -sf /data/uWebSockets/build/libuWS.so /usr/lib/\ncp -rsn /data/libuv/usr/* /usr &> /dev/null\necho \"Done. All dependencies installed.\"",
+                    "openFiles": [],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": true,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Simulator",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 708547,
+          "key": "111d2421-7043-465d-8895-2f7932a20e15",
+          "title": "Share Your Success - Kidnapped Vehicle",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "111d2421-7043-465d-8895-2f7932a20e15",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 708548,
+              "key": "38400f54-5787-48e5-858c-41500f973c0b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Share your project success\nPassed your project? Share the good news!\n\nWhat you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your success with your network.\n\n<iframe\n  src=\"https://platform.twitter.com/widgets/tweet_button.html?size=l&url=www.udacity.com&text=I%20completed%20the%20Kidnapped%20Vehicle%20Project!%20I'm%20now%20getting%20started%20in%20Term%202%20of%20the%20Self-Driving%20Car%20Engineer%20Nanodegree%20@udacity%20\n[Insert%20your%20Github%20repository%20url%20here]&hashtags=selfdrivingudacity\"\nwidth=\"140\"\nheight=\"28\"\nscrolling=\"no\">\n</iframe>\n\n#### Facebook and LinkedIn\nMake sure to use **@Udacity** and **#selfdrivingudacity** in your posts!\n\n<html>\n\n<head>\n<style>\n.fb {color: white;\n  background-color: #4661b0;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.fb:hover {color: #4661b0;\n  background-color: white;\n  border-color: #4661b0;\n  transition: background-color 0.4s}\n.linkedin {color: white;\n  background-color: #0077B5;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.linkedin:hover {color: #0077B5;\n  background-color: white;\n  border-color: #0077B5;\n  transition: background-color 0.4s}\n</style>\n\n</head>\n\n<body>\n<form action=\"https://www.facebook.com/sharer.php?\">\n  Enter the full URL of your Github repository or Youtube video:<br>\n  <input type=\"url\" name=\"u\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"hashtag\" value=\"#selfdrivingudacity\">\n  <button class=\"fb\">Share on Facebook</button>\n</form>\n\n<form action=\"https://www.linkedin.com/shareArticle?mini=true\">\n  <input type=\"url\" name=\"url\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"title\" value=\"Kidnapped Vehicle Project\">\n  <input type=\"hidden\" name=\"summary\" value=\"I finished the Kidnapped Vehicle project in the Self-Driving Car Nanodegree @udacity #selfdrivingudacity\">\n  <button class=\"linkedin\">Share on LinkedIn</button>\n</form>\n\n</body>\n\n</html>",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

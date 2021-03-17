@@ -1,0 +1,75 @@
+{
+  "id": 1969,
+  "project_id": 331,
+  "upload_types": [
+    "repo",
+    "zip"
+  ],
+  "file_filter_regex": "\\A(?!(((.*/)?(__MACOSX|\\.git|node_modules|bower_components|jspm_packages|\\.idea|build|.ipynb_checkpoints|\\.Trash-0|logs)(\\Z|/))))((.*\\.(css|docx|gradle|htm|html|java|js|markdown|md|pdf|py|rmd|rst|sql|swift|txt|xml|yaml|yml)\\Z)|((.*/)?(README|Readme|readme|Makefile)\\Z))",
+  "nomination_eligible": false,
+  "stand_out": "",
+  "hide_criteria": false,
+  "created_at": "2018-06-04T18:04:59.366Z",
+  "updated_at": "2020-04-03T09:40:19.715Z",
+  "hashtag": "",
+  "max_upload_size_mb": 500,
+  "estimated_sla": "7 days",
+  "project_assistant_enabled": false,
+  "checkmate_enabled": false,
+  "checkmate_metadata": null,
+  "available_for_cert_project": false,
+  "classroom_node_id": 634675,
+  "classroom_project_key": "5b78067c-a7fd-4342-8940-e2985927d470",
+  "language": "en-us",
+  "ndkeys": [
+    "nd013-ent",
+    "nd013",
+    "nd026",
+    "nd013beta",
+    "nd013-ent-wipro"
+  ],
+  "coursekeys": [],
+  "sections": [
+    {
+      "id": 3989,
+      "name": "Vehicle Operation",
+      "created_at": "2018-06-04T18:22:03.688Z",
+      "updated_at": "2018-06-04T18:22:24.211Z",
+      "deleted_at": null,
+      "position": 0,
+      "rubric_id": 1969,
+      "rubric_items": [
+        {
+          "id": 11668,
+          "section_id": 3989,
+          "passed_description": "The submitted code must work successfully to navigate Carla around the test track.",
+          "exceeded_description": "",
+          "created_at": "2018-06-04T18:22:24.366Z",
+          "updated_at": "2019-09-26T17:04:19.001Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Did the car navigate the track successfully?",
+          "exceedable": false
+        }
+      ]
+    }
+  ],
+  "project": {
+    "id": 331,
+    "name": "Programming a Real Self-Driving Car",
+    "nanodegree_key": "nd013",
+    "is_cert_project": false,
+    "audit_project_id": null,
+    "hashtag": null,
+    "audit_rubric_id": 1144,
+    "entitlement_required": false,
+    "is_career": false,
+    "recruitment_family_id": 9,
+    "created_at": "2017-08-14T17:05:24.254Z",
+    "updated_at": "2020-05-21T03:33:18.003Z",
+    "price": "5.0",
+    "ungradeable_price": "3.0",
+    "audit_price": "0.0"
+  }
+}

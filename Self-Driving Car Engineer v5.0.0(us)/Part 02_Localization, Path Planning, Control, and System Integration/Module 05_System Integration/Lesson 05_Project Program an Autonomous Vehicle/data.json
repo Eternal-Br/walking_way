@@ -1,0 +1,853 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627696,
+      "key": "e43b2e6d-6def-4d3a-b332-7a58b847bfa4",
+      "title": "Project: Program an Autonomous Vehicle",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Run your code on Carla, Udacity's own autonomous vehicle!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/e43b2e6d-6def-4d3a-b332-7a58b847bfa4/627696/1538943442167/Project%3A+Program+an+Autonomous+Vehicle+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/e43b2e6d-6def-4d3a-b332-7a58b847bfa4/627696/1538943437072/Project%3A+Program+an+Autonomous+Vehicle+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "5b78067c-a7fd-4342-8940-e2985927d470",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 37440,
+        "semantic_type": "Project",
+        "title": "Programming a Real Self-Driving Car",
+        "description": "# Submission checklist and requirements\n\nOnce your team's project is able to drive the vehicle successfully in the simulator, you may be ready to submit the project for testing on the Udacity vehicle. At this point, your project should:\n\n- Launch correctly using the launch files provided in the capstone repo. ***Please note that we will not be able to accommodate special launch instructions or run additional scripts from your submission to download files.*** *The `launch/styx.launch` and `launch/site.launch` files will be used to test code in the simulator and on the vehicle respectively. The submission size limit for this project has been increased to 2GB. *\n- Smoothly follow waypoints in the simulator.\n- Respect the target top speed set for the waypoints' `twist.twist.linear.x` in `waypoint_loader.py`. *Be sure to check that this is working by testing with different values for kph `velocity` parameter in `/ros/src/waypoint_loader/launch/waypoint_loader.launch`. If your vehicle adheres to the kph target top speed set here, then you have satisfied this requirement.*\n- Stop at traffic lights when needed.\n- Stop and restart PID controllers depending on the state of `/vehicle/dbw_enabled`.\n- Publish throttle, steering, and brake commands at 50hz.\n\n\nUdacity engineers will be evaluating your project on Carla, an autonomous Lincoln MKZ, at their test site in Palo Alto, California. Due to the time-consuming nature of testing project submissions on a physical vehicle, ***it typically takes up to a week before you will receive your project feedback.*** The project that is evaluated on the vehicle should not have any external libraries that aren't included in the [starter repo](https://github.com/udacity/CarND-Capstone). Your team should be aware of the hardware specifications of the Udacity vehicle when designing your solution. \n\nUdacity Self-Driving Car Harware Specs\n* 31.4 GiB Memory\n* Intel Core i7-6700K CPU @ 4 GHz x 8 \n* TITAN X Graphics\n* 64-bit OS\n\nAfter your team has confirmed that traffic light detection is working in the simulator, you should test it out using [ROS `bags`](http://wiki.ros.org/Bags) that were recorded at the test site: [Traffic Light Detection Test Video](https://drive.google.com/file/d/0B2_h37bMVw3iYkdJTlRSUlJIamM/view?usp=sharing).\n\n# Project submission instructions\n\nOnce your project satisfies the conditions above, please follow these instructions to submit the project. Note that we require a separate submission from each student, even though the project is done in teams. \n\nTo prevent identical code from being run on Carla multiple times, there are **different submission instructions for Team Leads and Team Members** - please be sure to follow the correct set of instructions. Only Team Lead submissions will be tested, and Team Leads will receive the feedback for the entire team. Team Member submissions are automatically passed through our review system without being tested.\n\n***Note that it typically takes up to a week to receive feedback for this project, so plan accordingly.***\n\n## Team Lead submission instructions\n\n**Submissions or resubmissions intended for review should include:**\n- All code for your project, submitted via a zipped file or through GitHub. **Please use the same directory structure as the project repo, ensuring that all files are included.**\n- A README file in .txt, .md, or .pdf format. This file should contain the full names and Udacity account emails of your team members. For additional resources on creating READMEs or using Markdown, see [here](https://guides.github.com/features/wikis/) or [here.](https://guides.github.com/features/mastering-markdown/)\n- **Important: Please include the names and Udacity account emails of you and your team members in the “Notes to Reviewer” section when uploading your submission. Without these, we will not be able to test your code properly. If you are an individual submitting not as part of a team, please include your name and email address and note that you are submitting as an individual.**\n- The “Notes to Reviewer” section is only to indicate who you and your team members are. Please note that we cannot accommodate special launch instructions or other requests.\n\nWhen your project is reviewed, you will be notified and provided with a link to download your team’s feedback. Your team members will be instructed to check with you to see the team’s feedback. This link expires after 20 days, so be sure to download the feedback promptly and share it with your team members.\n\nWhen your team is satisfied with the results of your project - whatever this means to you - **please resubmit with the Notes to Reviewer field blank** to close your submission. You do not need to wait for this submission to be reviewed before applying to graduate.\n\n\n\n## Team Member submission instructions\n\n**Submissions should include:**\n- All code for your project, submitted via a zipped file or through GitHub. **Please use the same directory structure as the project repo, ensuring that all files are included.**\n- A README file in .txt, .md, or .pdf format. This file should contain the full names and Udacity account emails of your team members. For additional resources on creating READMEs or using Markdown, see [here](https://guides.github.com/features/wikis/) or [here.](https://guides.github.com/features/mastering-markdown/)\n- ### ***Important:*** Make sure to leave the **“Notes to Reviewer”** field EMPTY when uploading your submission. Do not include ANY text.\n\nYou will be notified when your project is reviewed, and can then check with your Team Lead to see your team’s feedback.\n\n\n# Graduation\nAs soon as your team is satisfied with the results of your project, you can close your submission and apply for graduation! The only formal requirement for graduation is to have submitted the capstone project, so it’s up to you to decide when you are ready to graduate. The next lesson, “Completing the Program,” includes instructions for how to apply for graduation.\n\n# Questions?\nThe submission and review process for this project is different than the other projects in this Nanodegree program. We’ve put together a document of frequently asked questions about this project [here.](https://docs.google.com/document/d/1L8MB3PwXD1UmQ6e3J7WRPgt8KliF4FFpGw0flKdYGHU/edit?usp=sharing) If you have a question about team formation, project submission, or the review process that is not answered in this document, you can email selfdrivingcar-support@udacity.com for assistance.\n\n\n# Share your project success\nPassed your project? Share the good news!\n\nWhat you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your success with your network.\n\n<iframe\n  src=\"https://platform.twitter.com/widgets/tweet_button.html?size=l&url=www.udacity.com&text=I%20completed%20Programming%20a%20Real%20Self-Driving%20Car!%20In%20this%20Capstone%20project%20in%20the%20Self-Driving%20Car%20Engineer%20Nanodegree%20@udacity%20my%20team%20ran%20code%20to%20drive%20a%20real%20autonomous%20vehicle!%20\n[Insert%20your%20Github%20repository%20url%20here]&hashtags=selfdrivingudacity\"\nwidth=\"140\"\nheight=\"28\"\nscrolling=\"no\">\n</iframe>\n\n#### Facebook and LinkedIn\nMake sure to use **@Udacity** and **#selfdrivingudacity** in your posts!\n\n<html>\n\n<head>\n<style>\n.fb {color: white;\n  background-color: #4661b0;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.fb:hover {color: #4661b0;\n  background-color: white;\n  border-color: #4661b0;\n  transition: background-color 0.4s}\n.linkedin {color: white;\n  background-color: #0077B5;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.linkedin:hover {color: #0077B5;\n  background-color: white;\n  border-color: #0077B5;\n  transition: background-color 0.4s}\n</style>\n\n</head>\n\n<body>\n<form action=\"https://www.facebook.com/sharer.php?\">\n  Enter the full URL of your Github repository or Youtube video:<br>\n  <input type=\"url\" name=\"u\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"hashtag\" value=\"#selfdrivingudacity\">\n  <button class=\"fb\">Share on Facebook</button>\n</form>\n\n<form action=\"https://www.linkedin.com/shareArticle?mini=true\">\n  <input type=\"url\" name=\"url\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"title\" value=\"Programming a Real Self-Driving Car\">\n  <input type=\"hidden\" name=\"summary\" value=\"I ran code on a real Self-Driving Car in the Self-Driving Car Nanodegree @udacity #selfdrivingudacity\">\n  <button class=\"linkedin\">Share on LinkedIn</button>\n</form>\n\n</body>\n\n</html>",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1969",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://s3.amazonaws.com/video.udacity-data.com/topher/2018/July/5b4ebb62_carla/carla.jpg",
+          "width": 1200,
+          "height": 900
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 664382,
+          "key": "de15b804-763b-444f-b144-436005a8c105",
+          "title": "Have Fun!",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "de15b804-763b-444f-b144-436005a8c105",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 664383,
+              "key": "7f46c111-0212-4777-9e63-b16d50ab3fbe",
+              "title": "08 System Integration A02 Have Fun!",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Wx3tVLt74b8",
+                "china_cdn_id": "Wx3tVLt74b8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 663292,
+          "key": "addf15cf-d10e-4414-98dd-870d7368a542",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "addf15cf-d10e-4414-98dd-870d7368a542",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663293,
+              "key": "d86489a9-a29d-4cfa-b184-7b1654f2f7bd",
+              "title": "L27 System Integration Project A01 L Project Introduction V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FWnUzjnT95M",
+                "china_cdn_id": "FWnUzjnT95M.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 369576,
+          "key": "1f6c617c-c8f2-4b44-9906-d192ba7ff924",
+          "title": "Getting Started",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1f6c617c-c8f2-4b44-9906-d192ba7ff924",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 369579,
+              "key": "5c992d26-f621-49cf-87a1-0e3d42ae0c98",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Setup\n\nThe project will require the use of Ubuntu Linux (the operating system of Carla) and a new simulator. To reduce installation difficulties, we have provided an in-browser Workspace for you to work with. You can find instructions for the Workspace and the Workspace itself later in this lesson.\n\nIf you prefer not to use the Workspace, follow the steps below to get set up:\n\n- Because ROS is used, you will need to use Ubuntu to develop and test your project code. You may use\n  - Ubuntu 14.04 with ROS Indigo \n  - Ubuntu 16.04 with ROS Kinetic\n\n You are welcome to use your own Ubuntu installation or virtual machine (unsupported), or you can use the VM provided in *Your Virtual Machine* in the \"Introduction to ROS\" lesson. The provided VM has ROS and Dataspeed DBW installed already.\n- *Windows 10 users* - your fellow students have suggested that the best local option is to use the VM for ROS, while running the simulator natively (and making sure to open ports between the two for communication).\n- The project repo can be found [here](https://github.com/udacity/CarND-Capstone). Clone or download the project code before the next sections so you can follow along with the code descriptions! In the README, you should be able find any additional dependencies needed for the project.\n- The system integration project uses its own simulator which will interface with your ROS code and has traffic light detection. You can download the simulator [here](https://github.com/udacity/CarND-Capstone/releases). To improve performance while using a VM, we recommend downloading the simulator for your host operating system and using this outside of the VM. You will be able to run project code within the VM while running the simulator natively in the host using port forwarding on port `4567`. For more information on how to set up port forwarding, see the end of the classroom concept [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Port+Forwarding.pdf).\n- The rubric for this project is fairly simple - does the vehicle successfully navigate the track? If you are in the three-term version, check the [rubric here](https://review.udacity.com/#!/rubrics/1140/view), or for the two-term version see the [rubric here](https://review.udacity.com/#!/rubrics/1969/view).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 369852,
+              "key": "6e33f468-2519-407d-8b5d-415e18bb9fec",
+              "title": "Traffic Lights 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "PzIRniXv0z0",
+                "china_cdn_id": "PzIRniXv0z0.mp4"
+              }
+            },
+            {
+              "id": 480772,
+              "key": "b7402b79-61ed-491c-a095-32efcb62b18e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Note that the latest version of the simulator has two test tracks: \n- A highway test track with traffic lights\n- A testing lot test track similar to where we will run Carla\n\nTo use the second test lot, you will need to update your code to specify a new set of waypoints. We'll discuss how to do this in a later lesson. Additionally, the first track has a toggle button for camera data. Many students have experienced latency when running the simulator together with a virtual machine, and leaving the camera  data off as you develop the car's controllers will help with this issue.\n\nFinally, the simulator displays vehicle velocity in units of mph. However, *all values used within the project code are use the metric system (m or m/s), including current velocity data coming from the simulator.*",
+              "instructor_notes": ""
+            },
+            {
+              "id": 369602,
+              "key": "b6289272-e4c2-454b-a07c-20087173fb44",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Group formation\nFor this project, you will be working in a team of up to 5 students as either a Team Lead or a Team Member! If you would like to be a Team Lead, add your name in the Team Lead section of the sign-up sheet to create a new team. Otherwise, find a team with available space and add your name as a Team Member. We encourage a minimum team size of 4, so if you find that your team is not large enough you may merge with another team on the spreadsheet.\n\n**Please read the *Instructions* tab in the sign-up sheet before making any changes.** The sign-up sheet can be found [here.](https://docs.google.com/spreadsheets/d/1A68l0XSnv6oPgGfaBci32wboQTuB6h6GXe59ysXuPv8/edit?usp=sharing)\n\nUdacity will be fairly hands-off in the team formation process, so you are welcome to structure your team and divide the work as you see fit. Feel free to set up meeting times, contribute to a shared repo, etc!\n\nIf you would like a refresher on using GitHub, Udacity has a brief [GitHub tutorial](https://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html) to get you started. Udacity also has a [free course](https://www.udacity.com/course/version-control-with-git--ud123) on using GitHub for collaboration.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 348495,
+          "key": "455f33f0-2c2d-489d-9ab2-201698fbf21a",
+          "title": "Project Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "455f33f0-2c2d-489d-9ab2-201698fbf21a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350972,
+              "key": "2d18f56a-8ab2-4a79-93df-f96d14bb80f9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# System Architecture Diagram\n\nFor this project, you'll be writing ROS nodes to implement core functionality of the autonomous vehicle system, including traffic light detection, control, and waypoint following! You will test your code using a simulator, and when you are ready, your group can submit the project to be run on Carla.\n\nThe following is a system architecture diagram showing the ROS nodes and topics used in the project. You can refer to the diagram throughout the project as needed. The ROS nodes and topics shown in the diagram are described briefly in the **Code Structure** section below, and more detail is provided for each node in later classroom concepts of this lesson.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 394557,
+              "key": "c64ae1fc-2453-49f0-b27f-906d617b29d5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59b6d115_final-project-ros-graph-v2/final-project-ros-graph-v2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c64ae1fc-2453-49f0-b27f-906d617b29d5",
+              "caption": "",
+              "alt": "",
+              "width": 1392,
+              "height": 959,
+              "instructor_notes": null
+            },
+            {
+              "id": 384338,
+              "key": "121e6757-7d82-4f66-a681-b768e48c08a2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Code Structure\n\nBelow is a brief overview of the repo structure, along with descriptions of the ROS nodes. The code that you will need to modify for the project will be contained entirely within the `(path_to_project_repo)/ros/src/` directory.  Within this directory, you will find the following ROS packages:\n\n## (path_to_project_repo)/ros/src/tl_detector/\n\nThis package contains the traffic light detection node: `tl_detector.py`. This node takes in data from the `/image_color`, `/current_pose`, and `/base_waypoints` topics and publishes the locations to stop for red traffic lights to the `/traffic_waypoint` topic. \n\nThe `/current_pose` topic provides the vehicle's current position, and `/base_waypoints` provides a complete list of waypoints the car will be following. \n\nYou will build both a traffic light detection node and a traffic light classification node. Traffic light detection should take place within `tl_detector.py`, whereas traffic light classification should take place within `../tl_detector/light_classification_model/tl_classfier.py`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 394558,
+              "key": "4ebc4376-55e8-4164-9d8d-d2ea0b9df82f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59b6d189_tl-detector-ros-graph/tl-detector-ros-graph.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4ebc4376-55e8-4164-9d8d-d2ea0b9df82f",
+              "caption": "",
+              "alt": "",
+              "width": 640,
+              "height": 180,
+              "instructor_notes": null
+            },
+            {
+              "id": 384336,
+              "key": "835d0900-3548-48e6-be86-f2fe0ca47b4d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## (path_to_project_repo)/ros/src/waypoint_updater/\n\nThis package contains the waypoint updater node: `waypoint_updater.py`. The purpose of this node is to update the target velocity property of each waypoint based on traffic light and obstacle detection data. This node will subscribe to the `/base_waypoints`, `/current_pose`, `/obstacle_waypoint`, and `/traffic_waypoint`  topics, and publish a list of waypoints ahead of the car with target velocities to the `/final_waypoints` topic.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 369291,
+              "key": "e59be442-e932-4910-9a5c-f52d38b2452c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/August/598d31bf_waypoint-updater-ros-graph/waypoint-updater-ros-graph.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e59be442-e932-4910-9a5c-f52d38b2452c",
+              "caption": "",
+              "alt": null,
+              "width": 640,
+              "height": 180,
+              "instructor_notes": null
+            },
+            {
+              "id": 369240,
+              "key": "42f43a28-ebc8-41f3-a7e1-3a4303e98c09",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n\n## (path_to_project_repo)/ros/src/twist_controller/\n\nCarla is equipped with a drive-by-wire (dbw) system, meaning the throttle, brake, and steering have electronic control. This package contains the files that are responsible for control of the vehicle: the node `dbw_node.py` and the file `twist_controller.py`, along with a pid and lowpass filter that you can use in your implementation. The `dbw_node` subscribes to the `/current_velocity` topic along with the `/twist_cmd` topic to receive target linear and angular velocities. Additionally, this node will subscribe to `/vehicle/dbw_enabled`, which indicates if the car is under dbw or driver control. This node will publish throttle, brake, and steering commands to the `/vehicle/throttle_cmd`, `/vehicle/brake_cmd`, and `/vehicle/steering_cmd`  topics.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 369292,
+              "key": "362632d5-433e-4d9a-91ba-849de84aebfb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/August/598d32e7_dbw-node-ros-graph/dbw-node-ros-graph.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/362632d5-433e-4d9a-91ba-849de84aebfb",
+              "caption": "",
+              "alt": null,
+              "width": 640,
+              "height": 180,
+              "instructor_notes": null
+            },
+            {
+              "id": 369247,
+              "key": "a4b4827f-d3b7-4b2c-a3a5-e23f544a3715",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In addition to these packages you will find the following, which are not necessary to change for the project. The `styx` and `styx_msgs` packages are used to provide a link between the simulator and ROS, and to provide custom ROS message types:\n\n- ### (path_to_project_repo)/ros/src/styx/\n  A package that contains a server for communicating with the simulator, and a bridge to translate and publish simulator messages to ROS topics.\n- ### (path_to_project_repo)/ros/src/styx_msgs/\n  A package which includes definitions of the custom ROS message types used in the project.\n- ### (path_to_project_repo)/ros/src/waypoint_loader/\n  A package which loads the static waypoint data and publishes to `/base_waypoints`.\n- ### (path_to_project_repo)/ros/src/waypoint_follower/\n  A package containing code from [Autoware](https://github.com/CPFL/Autoware) which subscribes to `/final_waypoints` and publishes target vehicle linear and angular velocities in the form of twist commands to the `/twist_cmd` topic. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350640,
+              "key": "0626503b-478f-4ca5-9e0f-3624b2e82e4d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Suggested Order of Project Development\n\nBecause you will be writing code across several packages with some nodes depending on messages published by other nodes, we suggest completing the project in the following order:\n\n1. Waypoint Updater Node (Partial): Complete a partial waypoint updater which subscribes to `/base_waypoints` and `/current_pose` and publishes to `/final_waypoints`.\n2. DBW Node: Once your waypoint updater is publishing `/final_waypoints`,  the `waypoint_follower` node will start publishing messages to the`/twist_cmd` topic. At this point, you have everything needed to build the  `dbw_node`. After completing this step, the car should drive in the simulator, ignoring the traffic lights.\n3. Traffic Light Detection: This can be split into 2 parts:\n  * Detection: Detect the traffic light and its color from the `/image_color`. The topic `/vehicle/traffic_lights` contains the exact location and status of all traffic lights in simulator, so you can test your output.\n  * Waypoint publishing: Once you have correctly identified the traffic light and determined its position, you can convert it to a waypoint index and publish it.\n4. Waypoint Updater (Full): Use `/traffic_waypoint` to change the waypoint target velocities before publishing to `/final_waypoints`. Your car should now stop at red traffic lights and move when they are green.\n\nIn the next few classroom concepts, we'll cover each component of the project. You can use these concepts as a guide for the suggested order of project completion, but feel free to ignore these steps and implement the project how you please! ***Note that it typically takes around a week to receive reviews for this project, so plan accordingly.***",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 350641,
+          "key": "e1f2a5cf-c697-4880-afb2-b88f3f83d07b",
+          "title": "Waypoint Updater Node (Partial)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e1f2a5cf-c697-4880-afb2-b88f3f83d07b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 352421,
+              "key": "15cfe1bb-f257-452e-bbdc-bc6b772cc069",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Waypoint Updater Node Overview\n\nBefore the car can move in the simulator, it will be necessary to write a first version of the `waypoint_updater` node. You can find class and method stubs for the node in\n\n```\n(path_to_project_repo)/ros/src/waypoint_updater/waypoint_updater.py\n``` \n\nThe eventual purpose of this node is to publish a fixed number of waypoints ahead of the vehicle with the correct target velocities, depending on traffic lights and obstacles. The goal for the first version of the node should be simply to subscribe to the topics \n- `/base_waypoints` \n- `/current_pose`\n\nand publish a list of waypoints to \n- `/final_waypoints`\n\nThe `/base_waypoints` topic publishes a list of all waypoints for the track, so this list includes waypoints both before and after the vehicle (note that the publisher for `/base_waypoints` publishes only once). For this step in the project, the list published to `/final_waypoints` should include just a fixed number of waypoints currently ahead of the vehicle:\n- The first waypoint in the list published to `/final_waypoints` should be the first waypoint that is currently ahead of the car. \n- The total number of waypoints ahead of the vehicle that should be included in the `/final_waypoints` list is provided by the `LOOKAHEAD_WPS` variable in `waypoint_updater.py`.\n\nThe next section includes details about the message type used to publish to `/final_waypoints`.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350987,
+              "key": "e43d58b8-21b7-4b3a-b525-0de96e807807",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Waypoint Message Descriptions\n\nThis section will demonstrate use of `rostopic` and `rosmsg` to learn more about the messages being transmitted on `/base_waypoints` and `/final_waypoints`. If you are already familiar with these ROS commands and feel comfortable exploring ROS messages on your own, feel free to skip this section!\n\nFrom the code in `waypoint_updater.py`, we can see that both the `/final_waypoints` and `/base_waypoints` topics have message type `Lane`. You can look at the details about this message type in `<path_to_project_repo>/ros/src/styx_msgs/msg/`, but this can also be done from the command line after launching the ROS project using `rostopic` and `rosmsg` as follows:\n\nAfter opening a new terminal window and sourcing `devel/setup.bash`, you can see see all topics by executing:\n\n```\n$ rostopic list\n```\n\nYou should see `/final_waypoints` among the topics. Executing:\n\n```\n$ rostopic info /final_waypoints\n```\n will provide info about the message type being used in `/final_waypoints`:\n```\nType: styx_msgs/Lane\n```\nNext executing:\n```\n$ rosmsg info styx_msgs/Lane\n```\nprovides the following message information:\n```\nstd_msgs/Header header\n  uint32 seq\n  time stamp\n  string frame_id\nstyx_msgs/Waypoint[] waypoints\n  geometry_msgs/PoseStamped pose\n    std_msgs/Header header\n      uint32 seq\n      time stamp\n      string frame_id\n    geometry_msgs/Pose pose\n      geometry_msgs/Point position\n        float64 x\n        float64 y\n        float64 z\n      geometry_msgs/Quaternion orientation\n        float64 x\n        float64 y\n        float64 z\n        float64 w\n  geometry_msgs/TwistStamped twist\n    std_msgs/Header header\n      uint32 seq\n      time stamp\n      string frame_id\n    geometry_msgs/Twist twist\n      geometry_msgs/Vector3 linear\n        float64 x\n        float64 y\n        float64 z\n      geometry_msgs/Vector3 angular\n        float64 x\n        float64 y\n        float64 z\n```\nFrom here you can see that the messages contain a `header` and a `Waypoint` list named `waypoints`. Each waypoint has `pose` and `twist` data. Going further, you can see that `twist.twist` data contains 3D `linear` and `angular` velocities. For more information about twist messages, [see documentation here](http://docs.ros.org/jade/api/geometry_msgs/html/msg/Twist.html). \n\nCheck to be sure you can explore the messages sent in `/base_waypoints` and `/current_pose` as well using the steps above!\n\n## Lane message example\n\nAs a use-case example, given a single `styx_msgs/Lane` message `my_lane_msg`, you can access the x direction linear velocity of the first waypoint in Python with:\n```\nmy_lane_msg[0].twist.twist.linear.x\n```\nNote that the coordinates for linear velocity are vehicle-centered, so only the x-direction linear velocity should be nonzero.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350981,
+              "key": "1af04ef5-9dcb-4ae0-ab50-8f82697c62c8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Topics and message types\n\nFor convenience, we have provided the following table with topic and message info for this step of the project:\n\n| **Topic**                    | **Msg Type**                         | **Notes**                                      |\n|--------------------------|------------------------------|--------------------------------------------|\n|/base_waypoints|styx_msgs/Lane|Waypoints as provided by a static .csv file.|\n|/current_pose|geometry_msgs/PoseStamped|Current position of the vehicle, provided by the simulator or localization.|\n|/final_waypoints|styx_msgs/Lane|This is a subset of /base_waypoints. The first waypoint is the one in /base_waypoints which is closest to the car.|",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 578094,
+          "key": "e4ed7b44-6330-48a2-bfb0-fd65fff1b4d1",
+          "title": "Waypoint Updater Partial Walkthrough",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e4ed7b44-6330-48a2-bfb0-fd65fff1b4d1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 578095,
+              "key": "f641f741-0d51-43e6-ae1c-7fcda22b1c9f",
+              "title": "SDC Capstone Portfolio Part 1 V1 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6GIFyUzhaQo",
+                "china_cdn_id": "6GIFyUzhaQo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 350642,
+          "key": "877ed434-6955-4371-afcc-ff5b8769f0ce",
+          "title": "DBW Node",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "877ed434-6955-4371-afcc-ff5b8769f0ce",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 352425,
+              "key": "d3d7d6f3-b8ca-4b63-8d0b-5894fef71bad",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# DBW Node Overview\n\nOnce messages are being published to `/final_waypoints`, the vehicle's waypoint follower will publish twist commands to the `/twist_cmd` topic. The goal for this part of the project is to implement the drive-by-wire node (`dbw_node.py`) which will subscribe to `/twist_cmd` and use various controllers to provide appropriate throttle, brake, and steering commands. These commands can then be published to the following topics:\n- `/vehicle/throttle_cmd`\n- `/vehicle/brake_cmd`\n- `/vehicle/steering_cmd`\n\nSince a safety driver may take control of the car during testing, you should not assume that the car is always following your commands. If a safety driver does take over, your PID controller will mistakenly accumulate error, so you will need to be mindful of DBW status. The DBW status can be found by subscribing to `/vehicle/dbw_enabled`. \n\nWhen operating the simulator please check DBW status and ensure that it is in the desired state.  DBW can be toggled by clicking \"Manual\" in the simulator GUI.\n\nAll code necessary to implement the drive-by-wire node can be found in the package:\n```\n(path_to_project_repo)/ros/src/twist_controller\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 352450,
+              "key": "d308d66a-b105-4f5a-8a2b-f0e2a6ba0ab3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Twist controller package files\n\nWithin the twist controller package, you will find the following:\n\n- ### dbw_node.py\n\n  This python file implements the `dbw_node` publishers and subscribers. You will need to write ROS subscribers for the `/current_velocity`, `/twist_cmd`, and `/vehicle/dbw_enabled` topics. This file also imports the `Controller` class from `twist_controller.py` which will be used for implementing the necessary controllers. The function used to publish throttle, brake, and steering is `publish`. \n\n  Note that throttle values passed to `publish` should be in the range 0 to 1, although a throttle of 1 means the vehicle throttle will be fully engaged. Brake values passed to `publish` should be in units of torque (N*m). The correct values for brake can be computed using the desired acceleration, weight of the vehicle, and wheel radius.\n\n\n- ### twist_controller.py\n\n  This file contains a stub of the `Controller` class. You can use this class to implement vehicle control. For example, the `control` method can take twist data as input and return throttle, brake, and steering values. Within this class, you can import and use the provided `pid.py` and `lowpass.py` if needed for acceleration, and `yaw_controller.py` for steering. Note that it is not required for you to use these, and you are free to write and import other controllers.\n\n\n- ### yaw_controller.py\n\n  A controller that can be used to convert target linear and angular velocity to steering commands.\n\n\n- ### pid.py\n\n  A generic PID controller that can be used in `twist_controller.py`.\n\n- ### lowpass.py\n\n  A generic low pass filter that can be used in `twist_controller.py`.\n\n- ### dbw_test.py\n\n You can use this file to test your DBW code against a bag recorded with a reference implementation.\n The bag can be found at https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/reference.bag.zip\n\n Detailed use instructions can be found in the `dbw_test.py` file.\n\n## Testing with the simulator",
+              "instructor_notes": ""
+            },
+            {
+              "id": 480774,
+              "key": "a0fbd0c9-927e-4bde-8b57-173869acc896",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/December/5a331a87_screen-shot-2017-12-14-at-4.42.24-pm/screen-shot-2017-12-14-at-4.42.24-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a0fbd0c9-927e-4bde-8b57-173869acc896",
+              "caption": "",
+              "alt": "",
+              "width": 640,
+              "height": 481,
+              "instructor_notes": null
+            },
+            {
+              "id": 480775,
+              "key": "b46064bc-3bc1-4781-933e-30e82b4ef765",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Highway\nAt this point in the project, it is unnecessary to use camera data. If you are experiencing system latency or dropped ROS messages, be sure to keep the camera toggle unchecked in the first test track in the simulator. \n\n### Test Lot\nThe `CarND-Capstone/ros/src/waypoint_loader/launch/waypoint_loader.launch` file is set up to load the waypoints for the first track. To test using the second track, you will need to change\n```\n<param name=\"path\" value=\"$(find styx)../../../data/wp_yaw_const.csv\" />\n```\nto use the `churchlot_with_cars.csv` as follows: \n```\n<param name=\"path\" value=\"$(find styx)../../../data/churchlot_with_cars.csv\"/>\n```\nNote that the second track does not send any camera data.\n\n# Important:\n`dbw_node.py` is currently set up to publish steering, throttle, and brake commands at 50hz. The DBW system on Carla expects messages at this frequency, and will disengage (reverting control back to the driver) if control messages are published at less than 10hz. This is a safety feature on the car intended to return control to the driver if the software system crashes. You are welcome to modify how the `dbw_node.py` code is structured, but please ensure that control commands are published at 50hz.\n\nAdditionally, although the simulator displays speed in mph, all units in the project code use the metric system, including the units of messages in the `/current_velocity` topic (which have linear velocity in m/s).\n\nFinally, Carla has an automatic transmission, which means the car will roll forward if no brake and no throttle is applied. To prevent Carla from moving requires about 700 Nm of torque.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 578096,
+          "key": "6546d82d-6028-4210-a4b0-9d559662a881",
+          "title": "DBW Walkthrough",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6546d82d-6028-4210-a4b0-9d559662a881",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 578097,
+              "key": "26daeac0-6299-4767-b6cb-8ce8a8270ac5",
+              "title": "SDC Capstone Portfolio Part 2 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kdfXo6atphY",
+                "china_cdn_id": "kdfXo6atphY.mp4"
+              }
+            },
+            {
+              "id": 628545,
+              "key": "f84135f1-f93f-4efc-9329-251b24f482b0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Note\nIn the walkthrough, only 400 Nm of torque is applied to hold the vehicle stationary. This turns out to be slightly less than the amount of force needed, and Carla will roll forward with only 400Nm of torque. To prevent Carla from moving you should apply approximately 700 Nm of torque.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 350643,
+          "key": "d58e2c6a-1fd2-4e33-8912-861051ab301b",
+          "title": "Traffic Light Detection Node",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d58e2c6a-1fd2-4e33-8912-861051ab301b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 354796,
+              "key": "0964b22d-6958-4103-801a-f41e9ec2b975",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Traffic Light Detection Node Overview\n\nOnce the vehicle is able to process waypoints, generate steering and throttle commands, and traverse the course, it will also need stop for obstacles. Traffic lights are the first obstacle that we'll focus on.\n\nThe traffic light detection node (`tl_detector.py`) subscribes to four topics:\n\n- `/base_waypoints` provides the complete list of waypoints for the course. \n- `/current_pose` can be used to determine the vehicle's location.\n- `/image_color` which provides an image stream from the car's camera. These images are used to determine the color of upcoming traffic lights.\n- `/vehicle/traffic_lights` provides the (x, y, z) coordinates of all traffic lights.\n\nThe node should publish the *index* of the waypoint for nearest upcoming red light's stop line to a single topic:\n\n- `/traffic_waypoint`\n\nFor example, if `waypoints` is the complete list of waypoints, and an upcoming red light's stop line is nearest to `waypoints[12]`, then `12` should be published `/traffic_waypoint`. This index can later be used by the waypoint updater node to set the target velocity for `waypoints[12]` to 0 and smoothly decrease the vehicle velocity in the waypoints leading up to `waypoints[12]`.\n\nThe permanent `(x, y)` coordinates for each traffic light's stop line are provided by the `config` dictionary, which is imported from the `traffic_light_config` file:\n\n```\nconfig_string = rospy.get_param(\"/traffic_light_config\")\nself.config = yaml.load(config_string)\n```\n\nYour task for this portion of the project can be broken into two steps:\n\n1. Use the vehicle's location and the `(x, y)` coordinates for traffic lights to find the nearest visible traffic light ahead of the vehicle. This takes place in the `process_traffic_lights` method of `tl_detector.py`. You will want to use the `get_closest_waypoint` method to find the closest waypoints to the vehicle and lights. Using these waypoint indices, you can determine which light is ahead of the vehicle along the list of waypoints.\n2. Use the camera image data to classify the color of the traffic light. The core functionality of this step takes place in the `get_light_state` method of `tl_detector.py`. There are a number of approaches you could take for this task. One of the simpler approaches is to train a deep learning classifier to classify the entire image as containing either a red light, yellow light, green light, or no light. One resource that's available to you is the traffic light's position in 3D space via the `vehicle/traffic_lights` topic.\n\nNote that the code to publish the results of `process_traffic_lights` is written for you already in the `image_cb` method.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354787,
+              "key": "29922ce4-1508-4da7-a61c-315d5840a71a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Traffic Light Detection package files\n\nWithin the traffic light detection package, you will find the following:\n\n- ### tl_detector.py\n  \n  This python file processes the incoming traffic light data and camera images. It uses the light classifier to get a color prediction, and publishes the location of any upcoming red lights.\n\n\n- ### tl_classifier.py\n\n  This file contains the `TLClassifier` class. You can use this class to implement traffic light classification. For example, the `get_classification` method can take a camera image as input and return an ID corresponding to the color state of the traffic light in the image. Note that it is not required for you to use this class. It only exists to help you break down the classification problem into more manageable chunks. Also note that Carla currently has TensorFlow 1.3.0 installed. If you are using TensorFlow, please be sure to test your code with this version before submission.\n\n- ### traffic_light_config\n\n  This config file contains information about the camera (such as focal length) and the 2D position of the traffic lights's stop line in world coordinates.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354801,
+              "key": "594cbc6c-874d-4d04-acf4-e9937fd5402b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Helper Tool in the Simulator\n\nIn order to help you acquire an accurate ground truth data source for the traffic light classifier, the Udacity simulator publishes the current color state of all traffic lights in the simulator to the `/vehicle/traffic_lights` topic in addition to the light location. This state can be used to generate classified images or subbed into your solution to help you work on another single component of the node. The state component of the topic won't be available when running your solution in real life so don't rely on it in the final submission. However, you can still reference this topic in real life to get the 3D world position of the traffic light.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 674597,
+              "key": "5394e47c-b20f-46c9-a355-cddd229a7fcd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Using Different Classification Models for the Simulator and Site\n\nWe will test your team's code both in the simulator and on the testing site. Due to differences in the appearance of the site and simulator traffic lights, using the same traffic light classification model for both might not be appropriate. The `self.config` dictionary found in the `TLDetector` class of `tl_detector.py` contains an `is_site` boolean. You can use this boolean to load a different classification model depending on the context.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 412976,
+          "key": "4ab7a82d-2280-4e44-8b75-9a88b82fa8bb",
+          "title": "Object Detection Lab",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4ab7a82d-2280-4e44-8b75-9a88b82fa8bb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 412989,
+              "key": "d8d7dd35-1728-4e9d-aa97-fb147a14c221",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59ce92b2_car-bound-box-clip/car-bound-box-clip.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d8d7dd35-1728-4e9d-aa97-fb147a14c221",
+              "caption": "",
+              "alt": "",
+              "width": 600,
+              "height": 338,
+              "instructor_notes": null
+            },
+            {
+              "id": 412988,
+              "key": "bee3e1e4-5d5f-4d33-b82a-8dfa5a33c1b2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This optional lab exercise is an opportunity to practice rapid object detection suitable for implementation in autonomous vehicles.  The current lab is focused on a general understanding of used SSD for object detection, as applied to detecting other vehicles from a driving video.  The proficiency and understanding developed in this lab can ultimately be used to detect other relevant objects, such as Traffic lights.\n\nIn lab this you will:\n\n* Learn about *MobileNets* and separable depthwise convolutions.\n* The SSD (Single Shot Detection) architecture used for object detection\n* Use pretrained TensorFlow object detection inference models to detect objects\n* Use different architectures and weigh the tradeoffs.\n* Apply an object detection pipeline to a video.\n\nClone the GitHub repository at https://github.com/udacity/CarND-Object-Detection-Lab, open the notebook and work through it!  \n\n### Requirements\n\nInstall environment with [Anaconda](https://www.continuum.io/downloads):\n\n```sh\nconda env create -f environment.yml\n```\n\nChange TensorFlow pip installation from `tensorflow-gpu` to `tensorflow` if you don't have a GPU available.\n\nThe environment should be listed via `conda info --envs`:\n\n```sh\n# conda environments:\n#\ncarnd-advdl-odlab        /usr/local/anaconda3/envs/carnd-advdl-odlab\nroot                  *  /usr/local/anaconda3\n```\n\nFurther documentation on [working with Anaconda environments](https://conda.io/docs/using/envs.html#managing-environments). \n\nParticularly useful sections:\n\nhttps://conda.io/docs/using/envs.html#change-environments-activate-deactivate\nhttps://conda.io/docs/using/envs.html#remove-an-environment\n\n### Resources\n\n* TensorFlow object detection [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)\n* [Driving video](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/advanced_deep_learning/driving.mp4)\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 578098,
+          "key": "1776782c-5f60-4ada-b224-319cc61ef202",
+          "title": "Detection Walkthrough",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1776782c-5f60-4ada-b224-319cc61ef202",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 667291,
+              "key": "ceb97e3a-e26a-421a-b919-0c4963baed1d",
+              "title": "SDC Capstone Portfolio Part 3 V1 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "oTfArPhstQU",
+                "china_cdn_id": "oTfArPhstQU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 350644,
+          "key": "afb9f3b2-58d7-4ec6-88f3-fc4f84d9a8a1",
+          "title": "Waypoint Updater Node (Full)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "afb9f3b2-58d7-4ec6-88f3-fc4f84d9a8a1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 352463,
+              "key": "a09ad5f4-b059-4cd0-846f-42bf2ac0fc5b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Waypoint Updater Node Revisited\n\nOnce traffic light detection is working properly, you can incorporate the traffic light data into your waypoint updater node. To do this, you will need to add a subscriber for the `/traffic_waypoint` topic and implement the `traffic_cb ` callback for this subscriber. \n\nThere are several helpful methods that you can use:\n\n- `get_waypoint_velocity(self, waypoint)`: gets the linear velocity (x-direction) for a single waypoint.\n- `set_waypoint_velocity(self, waypoints, waypoint, velocity)`: sets the linear velocity (x-direction) for a single waypoint in a list of waypoints. Here, `waypoints` is a list of waypoints, `waypoint` is a waypoint index in the list, and `velocity` is the desired velocity.\n- `distance(self, waypoints, wp1, wp2)`: Computes the distance between two waypoints in a list along the piecewise linear arc connecting all waypoints between the two. Here, `waypoints` is a list of waypoints, and `wp1` and `wp2` are the indices of two waypoints in the list. This method may be helpful in determining the velocities for a sequence of waypoints leading up to a red light (the velocities should gradually decrease to zero starting some distance from the light).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 352465,
+              "key": "9f209b8b-2fa8-4c4b-8597-1ef7eaf0a7ce",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "To accomplish this part of the project successfully, you will need to adjust the target velocities for the waypoints leading up to red traffic lights or other obstacles in order to bring the vehicle to a smooth and full stop. You should aim to have a smooth decrease in velocity leading up to the stopping point. \n\nIt will be up to you determine what the deceleration should be for the vehicle, and how this deceleration corresponds to waypoint target velocities. As in the Path Planning project, acceleration should not exceed 10 m/s^2 and jerk should not exceed 10 m/s^3. \n\n### Important: \nBe sure to limit the top speed of the vehicle to the km/h velocity set by the `velocity` rosparam in `waypoint_loader`. Reviewers will test on the simulator with an adjusted top speed prior to testing on Carla.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 578100,
+          "key": "6e0119de-5a6f-4c62-a22b-a0659d0d235e",
+          "title": "Full Waypoint Walkthrough",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6e0119de-5a6f-4c62-a22b-a0659d0d235e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 578101,
+              "key": "21c2c1d1-1b74-4d71-a470-fd15b0540a00",
+              "title": "SDC Capstone Portfolio Part 4 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2tDrj8KjIL4",
+                "china_cdn_id": "2tDrj8KjIL4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 461549,
+          "key": "3251f513-2f82-4d5d-88b6-9d646bbd9101",
+          "title": "Project Submission and Getting Feedback",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3251f513-2f82-4d5d-88b6-9d646bbd9101",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 461551,
+              "key": "00dae5c6-5101-4e24-a42c-75159d87b801",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project submission and review\n\nTo submit this project, you will be submitting either as a Team Lead or a Team Member. Only Team Lead submissions are tested - Team Member submissions are passed through our system automatically with no testing. This is so we have a submission record for each individual student, but do not have to test the same code multiple times for a multi-person team. ***Team Leads and Team Members have different submission instructions, so please help us out by following the correct set of instructions in the Project concept!***\n\nThis project is unlike other projects this Nanodegree program so far, in that there is no formal code review or pass/fail status for this project. Once your project is submitted, it will be tested first in the Udacity simulator and then (if it passes the simulator testing) run on Carla, our self-driving car! Your Team Lead will receive the [ROS bag data](http://wiki.ros.org/Bags) and log files from these tests to share with the team. You can use this data to observe your code’s performance, as well as to debug and modify your code. When your team is satisfied with the test results, your Team Lead will be able to close your submission and you will then be able to apply for graduation. We’ll go into how to do this in the Project concept.\n\n**Please note that we will not be able to accomodate special launch instructions or run additional scripts from your submission to download files - this includes any changes to the `requirements.txt` file.**\n\n\n# Getting and using rosbag feedback\n\nOnce your team submits the project, the Team Lead’s submission will first be tested using a simulator to ensure that the vehicle is following waypoints and adhering to the km/h velocity limit set by the velocity rosparam in `waypoint_loader`. Once this is verified, our capstone reviewer will take your project to the Udacity test track for real-world testing on Carla!\n\nAfter both the simulator test and the Carla test are complete, your Team Lead will receive a link to download the team’s feedback in the form of log files and a [ROS bag](http://wiki.ros.org/Bags) recording of Carla on our test track. ***Note that it typically takes up to a week to receive feedback for this project, so plan accordingly.***\n\nThe ROS bag file contains all messages passed on all topics in ROS while Carla is driving, providing your team with a full recording of all available data (including camera data) created at the time of testing. ***Note that the download link to this feedback expires after 20 days, so Team Leads should be sure to download all data and feedback promptly.***\n\n\nTo replay the ROS bag using the workspace, use the following steps:\n1. Navigate to a temporary storage folder, so as not to exceed the 2GB limit in `/home/workspace`. Download the rosbag using `wget` and the download link:\n \n   ```\n  cd /opt\n  wget <link_to_your_download>\n  ```\n2. Unzip the download:\n  ```\n  unzip /opt/path/to/your/download.zip\n  ```\n3. Open a terminal and start `roscore`.\n4. Open another terminal and run `rosbag play -l /opt/path/to/your.bag`\n5. Click the \"Go To Desktop\" button.\n6. From the XWindows desktop, open terminator, and run `rviz`. You can change the RViz configuration to Udacity's .config file by navigating to `/home/workspace/default.rviz` from `File > Open Config` in RViz.\n\n\nIf you are not using a workspace, use the following steps:\n1. Download the [rviz config file here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/default.rviz). \n2. Open a terminal and start `roscore`.\n3. Open another terminal and run `rosbag play -l /path/to/your.bag`\n4. Open one more terminal and run `rviz`. You can change the RViz configuration to the Udacity download by navigating to your config file from `File > Open Config` in RViz. Alternatively, if you'd like to make the Udacity config file your default, you can replace the rviz config file found in `~/.rviz/default.rviz`.\n\nYou should see something similar to the following in RViz:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 461550,
+              "key": "4b75eccf-8c06-4177-8047-cea0d21c0a93",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/November/5a0a3f9a_rosbag-play/rosbag-play.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4b75eccf-8c06-4177-8047-cea0d21c0a93",
+              "caption": "",
+              "alt": "",
+              "width": 1219,
+              "height": 722,
+              "instructor_notes": null
+            },
+            {
+              "id": 461561,
+              "key": "a69ecf49-01cb-4059-961a-35ac69c79c63",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "While the bag is playing, you can use ROS commands to list or echo topics, grep and pipe messages, or use any other debugging techniques that might be useful. This may be helpful, for example, if you wanted to see the ROS messages sent over the `/vehicle/throttle_cmd` topic as the vehicle was driving around the lot. If you've used logging in your ROS nodes, remember that all log messages except for debugging messages are published to the `/rosout` topic by default, so you will be able to view logging messages using the ROS bag as well. If you'd like debugging messages to also show up in the logs, be sure to set the `log_level` when initializing your ROS nodes:\n```\nrospy.init_node('my_node', log_level=rospy.DEBUG)\n```\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 350975,
+          "key": "d7a280ee-cd72-41d2-ab6d-9dae26dd42d4",
+          "title": "Project Workspace Instructions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d7a280ee-cd72-41d2-ab6d-9dae26dd42d4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350977,
+              "key": "8ea715a5-7fad-49a8-a39a-bd52b1f2a84f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Capstone project workspace\nCongratulations, you've made it to the capstone project! The workspace you will use to complete the capstone is designed to be a simple, easy to use environment in which you can code and run the project. The project repo and simulator are already included.\n\n## Accessing and using the workspace:\n- Go to the workspace node. You will be asked if you want to use a GPU-enabled workspace - click \"Yes\". **Note that this workspace cannot be run without GPU support.**\n- Once the workspace loads (see figure below), you should see a list of directories and files on the left, central panes in which you can open files and terminal windows, and two buttons in the lower right corner - the standard \"Next\" button, and a button which will take you to the workspace desktop.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 633505,
+              "key": "9b65e90b-9d49-406b-90db-078322eb21da",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/May/5b0f295b_workspace-home/workspace-home.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9b65e90b-9d49-406b-90db-078322eb21da",
+              "caption": "Workspace home screen",
+              "alt": "",
+              "width": 1508,
+              "height": 1209,
+              "instructor_notes": null
+            },
+            {
+              "id": 968722,
+              "key": "7ab6b1b5-b281-49f5-8595-87c159239b16",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n- In the workspace, the `.student_bashrc` and `simulator.desktop`  files do not need to be changed for this project (they provide the correct environment for the terminal and the desktop launcher for the simulator).\n- The project repo is already in the workspace at `/home/workspace/CarND-Capstone`.\n- You can run the project from your workspace terminal using the commands found in the project repo's README under \"Make and run styx\". Same set of commands are given here:\n  ```\n  cd /home/workspace\n  cd CarND-Capstone\n  pip install -r requirements.txt\n  cd ros\n  catkin_make\n  source devel/setup.sh\n  roslaunch launch/styx.launch\n  ```\n- After launching the project, click \"Go To Desktop\" to open the workspace desktop. This will open up the VNC client - “noVNC” in another tab (see figure below). \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 968723,
+              "key": "f35cdf4b-df02-4856-9837-0963c806fb98",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/January/5e2ab721_screenshot-2020-01-24-at-2.44.55-pm/screenshot-2020-01-24-at-2.44.55-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f35cdf4b-df02-4856-9837-0963c806fb98",
+              "caption": "VNC client - “noVNC”",
+              "alt": "",
+              "width": 1341,
+              "height": 697,
+              "instructor_notes": null
+            },
+            {
+              "id": 968726,
+              "key": "650293bd-eb4b-40b8-84d1-e9c692889703",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "- Double click on the “Capstone Simulator” file available on the desktop. This will start the simulator. \n-  In the simulator, test car drive in two separate ways while the car is in “Manual” mode:\n    * Camera mode OFF - Test car drive with manual handling. \n    * Camera mode ON - Test car drive while the car is stationary. \n-  In the workspace, make the necessary changes to the project. If needed, you can refresh the workspace by clicking the “Menu” on the bottom left corner of the workspace screen.\n-  Once you have made the changes in the project, restart the simulator and test your code in the \"Camera\" mode. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 633506,
+              "key": "8c27fb13-2732-458b-9e6d-f5f5e5fe51de",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Project submission when using the workspace:\n- To submit your project, you will need to download your work from the workspace. After doing so, follow the submission instructions (different for Team Leads and Team Members) found in the final concept for this project.\n\n## Things to keep in mind:\n- If you leave your workspace unattended, it will time out and need to be refreshed. Your most recent work will be restored, but the list of open files or any running shell sessions will not be restored.\n- Only work in the /home/workspace directory will be saved. Files downloaded to /opt, for example, will not be kept.\n- If you upload additional files, be mindful of file size since the workspace storage capacity is limited to 2GB. If you need to store large files temporarily, you can put them in the `/opt` directory. These will be removed automatically at the end of your session.\n- To download files into the workspace from a URL, you can use `wget` from the command line. For example, to download the testing rosbag to the `/opt` directory, the following could be used:\n  ```\n  cd /opt\n  wget https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/traffic_light_bag_file.zip\n  ```\n- You will be limited to 50 hours of time using the GPU-enabled workspace.\n\n\n\n## Suggestions:\n- If you are having trouble with latency when turning on camera images in the simulator, try classifying only every third or fourth camera image.\n- If you are uploading your own previous work, be sure to make all Python files executable. In Ubuntu, this can be done from the command line with the `chmod` command. The following command should add executable permissions to all Python files in the specified directory:\n\n  `find /home/workspace/your/directory -type f -iname \"*.py\" -exec chmod +x {} \\;` \n- Additionally, if you are uploading your own previous work, you will need to add the folder found in `/home/workspace/CarND-Capstone/ros/src/dbw_mkz_msgs` to your project.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 492650,
+          "key": "51c2ea21-5317-4bbd-ab82-047e5fd6849b",
+          "title": "Capstone Project Workspace",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "51c2ea21-5317-4bbd-ab82-047e5fd6849b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629225,
+              "key": "32004aba-191e-402c-bada-f45a984be156",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6a0900b6",
+              "pool_id": "autonomousgpu",
+              "view_id": "6a0900b6-9b37-4b4f-8d50-f0a6b8184678",
+              "gpu_capable": true,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false,
+                    "terminalTitle": "BASH",
+                    "actionButtonText": "Go To Desktop",
+                    "openTerminalOnStartup": true
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

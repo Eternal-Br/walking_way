@@ -1,0 +1,630 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627691,
+      "key": "0114d1f2-4e21-4b3c-825e-ea7c4fbb6f8c",
+      "title": "Autonomous Vehicle Architecture",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn about the system architecture for Carla, Udacity's autonomous vehicle!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/0114d1f2-4e21-4b3c-825e-ea7c4fbb6f8c/627691/1538943992467/Autonomous+Vehicle+Architecture+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/0114d1f2-4e21-4b3c-825e-ea7c4fbb6f8c/627691/1538943989418/Autonomous+Vehicle+Architecture+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 664379,
+          "key": "c53bf88d-658a-4ebf-b2d5-599e6d320aa7",
+          "title": "Putting Everything Together",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c53bf88d-658a-4ebf-b2d5-599e6d320aa7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 664380,
+              "key": "d172268b-20b0-4936-8061-79787626d8ab",
+              "title": "08 System Integration A01 Putting Everything Together",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gxGk4undFEM",
+                "china_cdn_id": "gxGk4undFEM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 663288,
+          "key": "edfa8960-d7f2-4cd9-a827-1a5da8c3fcc5",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "edfa8960-d7f2-4cd9-a827-1a5da8c3fcc5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663289,
+              "key": "78314fe7-1de5-42dd-a8ff-ff265dd42508",
+              "title": "L23 AAutonomous Vehicle Architecture A01 L Lesson Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "K2NbMBkRmVY",
+                "china_cdn_id": "K2NbMBkRmVY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 360218,
+          "key": "5e83757a-56fd-486a-b75d-8eedeb2d15be",
+          "title": "The Sensor Subsystem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5e83757a-56fd-486a-b75d-8eedeb2d15be",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 360226,
+              "key": "88db229c-3726-46b1-9245-52f0bb40ed1b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Sensors are the hardware components your car uses to observe the world. By now, you are probably familiar with some of the most common types of autonomous vehicle sensors, such as:\n\n### Cameras\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 360230,
+              "key": "39217b40-a6e1-4e7e-9c02-01e3ba621d1b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/August/598b72b9_point-grey/point-grey.jpeg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/39217b40-a6e1-4e7e-9c02-01e3ba621d1b",
+              "caption": "",
+              "alt": null,
+              "width": 1600,
+              "height": 1111,
+              "instructor_notes": null
+            },
+            {
+              "id": 360228,
+              "key": "62a7c132-90ac-4c16-a0a0-e7980296c2b3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lidar",
+              "instructor_notes": ""
+            },
+            {
+              "id": 360227,
+              "key": "2d634dc2-5a23-4fae-bf64-054996fb4e7f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/August/598b7215_lidar-and-point-cloud/lidar-and-point-cloud.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2d634dc2-5a23-4fae-bf64-054996fb4e7f",
+              "caption": "",
+              "alt": null,
+              "width": 1200,
+              "height": 500,
+              "instructor_notes": null
+            },
+            {
+              "id": 360229,
+              "key": "f6d0c48e-6e0b-47c0-be1a-531d49bfc0a3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "But there are many other types of sensors used in autonomous vehicles. In the following exercise, test your knowledge of other types of sensors you might encounter. If you haven’t seen them before, here is more information about [IMU](https://en.wikipedia.org/wiki/Inertial_measurement_unit) and [Ultrasonic sensors](https://en.wikipedia.org/wiki/Parking_sensor).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 360235,
+              "key": "2d399b22-629e-444d-a3c9-b1eccf37757f",
+              "title": "Sensor quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "2d399b22-629e-444d-a3c9-b1eccf37757f",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following would most likely belong to the sensor subsystem?",
+                "answers": [
+                  {
+                    "id": "a1502311190642",
+                    "text": "GPS",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502311226028",
+                    "text": "Lane detection",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1502311234927",
+                    "text": "IMU (Inertial measurement unit)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502311243331",
+                    "text": "Ultrasonic sensors",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502311249125",
+                    "text": "Radar",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502311256370",
+                    "text": "Sensor fusion",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 360219,
+          "key": "5d9a16c5-4e0f-4445-96e5-8fb0bfe0f310",
+          "title": "The Perception Subsystem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5d9a16c5-4e0f-4445-96e5-8fb0bfe0f310",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 369664,
+              "key": "f8763378-f9d1-4ff8-8b4b-3116475491be",
+              "title": "L1 04 L Perception Subsystem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zo_JO5Sytuc",
+                "china_cdn_id": "zo_JO5Sytuc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 360221,
+          "key": "e9899bd1-d3d0-47f7-adf6-fc57c99a3925",
+          "title": "Perception Subsystem Components",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e9899bd1-d3d0-47f7-adf6-fc57c99a3925",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 360243,
+              "key": "13934a17-50c1-4918-9a0f-377ba556f547",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the following quizzes, you can test your knowledge of perception subsystem components:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 360238,
+              "key": "1f5eabe3-b1e2-477e-a43b-8962be8c60ff",
+              "title": "Component inputs",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "1f5eabe3-b1e2-477e-a43b-8962be8c60ff",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "The object detection component of the perception subsystem might process data from which of the following sensors?",
+                "answers": [
+                  {
+                    "id": "a1502311638333",
+                    "text": "Camera",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502311661829",
+                    "text": "Lidar",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502311667354",
+                    "text": "Radar",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502311671842",
+                    "text": "IMU",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1502311675959",
+                    "text": "GPS",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 360242,
+              "key": "376b356c-b92e-4179-b2d1-486f28a4b812",
+              "title": "Localization quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "376b356c-b92e-4179-b2d1-486f28a4b812",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "The localization component primarily uses data from which of the following sensors?",
+                "answers": [
+                  {
+                    "id": "a1502312229337",
+                    "text": "Camera",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1502312255073",
+                    "text": "Lidar",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502312260777",
+                    "text": "Radar",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1502312266368",
+                    "text": "IMU",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1502312271768",
+                    "text": "GPS",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 369665,
+              "key": "d563639b-8aa0-4b13-a6d3-0c059f1a4da2",
+              "title": "L1 07 L Components Inputs Wrapup",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "f3qloIYf16k",
+                "china_cdn_id": "f3qloIYf16k.mp4"
+              }
+            },
+            {
+              "id": 394111,
+              "key": "2f738b23-f2c3-4866-ae63-a1dcf3505d96",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "It is more accurate to depict a connection of the camera to free space detection, as in the following figure.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 394110,
+              "key": "e2d93037-77a1-422d-b79e-afc6ee64a5d3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59b3856e_camera-freespace-redline/camera-freespace-redline.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e2d93037-77a1-422d-b79e-afc6ee64a5d3",
+              "caption": "",
+              "alt": "",
+              "width": 1024,
+              "height": 514,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 360222,
+          "key": "55ae3cb4-4b8c-4424-aad5-c193c1d09e03",
+          "title": "The Planning Subsystem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "55ae3cb4-4b8c-4424-aad5-c193c1d09e03",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 369666,
+              "key": "933ff037-7b0b-497e-bd20-940e065a02d5",
+              "title": "L1 08 L Planning Subsystem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MxG9DtKiSqM",
+                "china_cdn_id": "MxG9DtKiSqM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 360223,
+          "key": "8bb13675-7a2e-4a73-9f25-bda2a4b3eb47",
+          "title": "Planning Subsystem Components",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8bb13675-7a2e-4a73-9f25-bda2a4b3eb47",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 360244,
+              "key": "33081a86-b377-40b5-b6d8-26989262910c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The major components of the planning subsystem components are route planning, prediction, behavioral planning, and path planning.\n\n## Route planning\nThe route planning component is responsible for high-level decisions about the path of the vehicle between two points on a map; for example which roads, highways, or freeways to take. This component is similar to the route planning feature found on many smartphones or modern car navigation systems. \n\n## Prediction\nThe prediction component estimates what actions other objects might take in the future. For example, if another vehicle were identified, the prediction component would estimate its future trajectory.\n\n## Behavioral planning\nThe behavioral planning component determines what behavior the vehicle should exhibit at any point in time. For example stopping at a traffic light or intersection, changing lanes, accelerating, or making a left turn onto a new street are all maneuvers that may be issued by this component.\n\n## Trajectory planning\nBased on the desired immediate behavior, the trajectory planning component will determine which trajectory is best for executing this behavior.\n\n\nHave a look at the quizzes below to test your knowledge of the planning subsystem:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 360246,
+              "key": "96af3844-ff0c-4e41-85cf-514c059e2e5c",
+              "title": "Prediction quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "96af3844-ff0c-4e41-85cf-514c059e2e5c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following perception components would provide useful information for the prediction component?",
+                "answers": [
+                  {
+                    "id": "a1502313477265",
+                    "text": "Lane detection",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502313517789",
+                    "text": "Free space detection",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502313525305",
+                    "text": "Vehicle detection",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502313531773",
+                    "text": "Traffic sign classification",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502313538140",
+                    "text": "Localization",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 369499,
+              "key": "a84d5158-b0b8-4117-a407-671ae65c2e45",
+              "title": "Behavioral planning quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a84d5158-b0b8-4117-a407-671ae65c2e45",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following perception components would provide useful information for behavioral planning?",
+                "answers": [
+                  {
+                    "id": "a1502474623742",
+                    "text": "Lane detection",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502474653920",
+                    "text": "Free space detection",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502474661525",
+                    "text": "Vehicle detection",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502474673506",
+                    "text": "Traffic sign classification",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1502474676150",
+                    "text": "Localization",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 369667,
+              "key": "2129c48d-a11d-4706-993a-cc44430706bf",
+              "title": "L1 12 L Planning Subsystem Connections",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5c752eVAR3I",
+                "china_cdn_id": "5c752eVAR3I.mp4"
+              }
+            },
+            {
+              "id": 369502,
+              "key": "6247785e-62ef-4301-9866-fee90b277368",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/August/598ba75e_systems-int-2/systems-int-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6247785e-62ef-4301-9866-fee90b277368",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 663290,
+          "key": "1ce77b68-1a42-475f-8fe8-f096b9b81fe1",
+          "title": "The Control Subsystem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1ce77b68-1a42-475f-8fe8-f096b9b81fe1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 663291,
+              "key": "92b51d82-4573-4419-9a44-12bc27ccf020",
+              "title": "L23 Autonomous Vehicle Architecture 13 L Control Subsystem-",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6pFy9q_AOJA",
+                "china_cdn_id": "6pFy9q_AOJA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 360225,
+          "key": "495a5e1b-eee9-46da-9511-a066b8cb0ba4",
+          "title": "On to the code!",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "495a5e1b-eee9-46da-9511-a066b8cb0ba4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 369669,
+              "key": "eb1030d0-1595-4347-9dea-fda0e6af07e8",
+              "title": "L1 15 L On To The Code",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_jhipYTqp3U",
+                "china_cdn_id": "_jhipYTqp3U.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

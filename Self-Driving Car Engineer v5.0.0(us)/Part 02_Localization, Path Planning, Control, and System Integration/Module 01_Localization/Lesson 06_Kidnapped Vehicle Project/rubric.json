@@ -1,0 +1,121 @@
+{
+  "id": 1965,
+  "project_id": 292,
+  "upload_types": [
+    "repo",
+    "zip"
+  ],
+  "file_filter_regex": "\\A(?!(((.*/)?(__MACOSX|\\.git|node_modules|bower_components|jspm_packages|\\.idea|build|.ipynb_checkpoints|\\.Trash-0|logs)(\\Z|/))))((.*\\.(css|docx|gradle|htm|html|java|js|markdown|md|pdf|py|rmd|rst|sql|swift|txt|xml|yaml|yml)\\Z)|((.*/)?(README|Readme|readme|Makefile)\\Z))",
+  "nomination_eligible": false,
+  "stand_out": "",
+  "hide_criteria": false,
+  "created_at": "2018-06-03T20:37:51.846Z",
+  "updated_at": "2019-03-26T19:39:08.626Z",
+  "hashtag": "",
+  "max_upload_size_mb": 500,
+  "estimated_sla": null,
+  "project_assistant_enabled": false,
+  "checkmate_enabled": false,
+  "checkmate_metadata": null,
+  "available_for_cert_project": false,
+  "classroom_node_id": 634537,
+  "classroom_project_key": "e130bab8-5d04-4962-b3be-b6ef1232789b",
+  "language": "en-us",
+  "ndkeys": [
+    "nd013-ent",
+    "nd013",
+    "nd026"
+  ],
+  "coursekeys": [],
+  "sections": [
+    {
+      "id": 3996,
+      "name": "Accuracy",
+      "created_at": "2018-06-04T20:51:26.508Z",
+      "updated_at": "2018-06-04T20:51:34.322Z",
+      "deleted_at": null,
+      "position": 0,
+      "rubric_id": 1965,
+      "rubric_items": [
+        {
+          "id": 11686,
+          "section_id": 3996,
+          "passed_description": "This criteria is checked automatically when you do ./run.sh in the terminal. If the output says \"Success! Your particle filter passed!\" then it means you’ve met this criteria.",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T20:51:34.611Z",
+          "updated_at": "2018-06-04T20:51:59.255Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Does your particle filter localize the vehicle to within the desired accuracy? ",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 3997,
+      "name": "Performance",
+      "created_at": "2018-06-04T20:51:27.372Z",
+      "updated_at": "2018-06-04T20:51:59.263Z",
+      "deleted_at": null,
+      "position": 1,
+      "rubric_id": 1965,
+      "rubric_items": [
+        {
+          "id": 11687,
+          "section_id": 3997,
+          "passed_description": "This criteria is checked automatically when you do ./run.sh in the terminal. If the output says \"Success! Your particle filter passed!\" then it means you’ve met this criteria.",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T20:51:59.464Z",
+          "updated_at": "2018-06-04T20:52:31.945Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Does your particle run within the specified time of 100 seconds?\n",
+          "exceedable": false
+        }
+      ]
+    },
+    {
+      "id": 3998,
+      "name": "General",
+      "created_at": "2018-06-04T20:51:28.301Z",
+      "updated_at": "2018-06-04T20:52:31.956Z",
+      "deleted_at": null,
+      "position": 2,
+      "rubric_id": 1965,
+      "rubric_items": [
+        {
+          "id": 11688,
+          "section_id": 3998,
+          "passed_description": "There may be ways to “beat” the automatic grader without actually implementing the full particle filter. You will meet this criteria if the methods you write in particle_filter.cpp behave as expected.",
+          "exceeded_description": null,
+          "created_at": "2018-06-04T20:52:32.176Z",
+          "updated_at": "2018-06-04T20:52:41.248Z",
+          "deleted_at": null,
+          "optional": false,
+          "position": 0,
+          "criteria": "Does your code use a particle filter to localize the robot?\n",
+          "exceedable": false
+        }
+      ]
+    }
+  ],
+  "project": {
+    "id": 292,
+    "name": "Kidnapped Vehicle",
+    "nanodegree_key": "nd013",
+    "is_cert_project": false,
+    "audit_project_id": null,
+    "hashtag": null,
+    "audit_rubric_id": 1144,
+    "entitlement_required": null,
+    "is_career": null,
+    "recruitment_family_id": 9,
+    "created_at": "2017-03-20T17:20:51.775Z",
+    "updated_at": "2020-05-21T05:29:00.118Z",
+    "price": "10.0",
+    "ungradeable_price": "3.0",
+    "audit_price": "20.0"
+  }
+}

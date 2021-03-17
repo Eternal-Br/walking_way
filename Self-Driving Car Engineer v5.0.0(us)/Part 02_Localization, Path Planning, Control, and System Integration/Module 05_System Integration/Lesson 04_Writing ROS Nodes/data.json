@@ -1,0 +1,997 @@
+{
+  "data": {
+    "lesson": {
+      "id": 627695,
+      "key": "2e660a17-2932-495e-be80-4005224154f9",
+      "title": "Writing ROS Nodes",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn to write ROS Nodes in Python.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/2e660a17-2932-495e-be80-4005224154f9/627695/1538943938283/Writing+ROS+Nodes+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/2e660a17-2932-495e-be80-4005224154f9/627695/1538943934436/Writing+ROS+Nodes+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 664432,
+          "key": "d7867545-15d5-449f-b344-da482cab809c",
+          "title": "Closing In",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d7867545-15d5-449f-b344-da482cab809c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 664433,
+              "key": "73cd48f2-7db3-498e-800b-d77227c07426",
+              "title": "08 System Integration A05 Closing In",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mFoFGT9AtfQ",
+                "china_cdn_id": "mFoFGT9AtfQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 371650,
+          "key": "b75eca8c-1ea5-4c49-bf84-455212f14bca",
+          "title": "Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b75eca8c-1ea5-4c49-bf84-455212f14bca",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 371653,
+              "key": "fa0757e6-f469-42a4-8342-f4344dec1722",
+              "title": "ROS L3 Overview",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LPbq_YwrzME",
+                "china_cdn_id": "LPbq_YwrzME.mp4"
+              }
+            },
+            {
+              "id": 372532,
+              "key": "2b57c23b-372b-4bab-9efa-3f7645029576",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this lesson, you’ll be learning how to write nodes in Python.\n\nThe first node that you will be writing is called `simple_mover`. `simple_mover` does nothing more than publish joint angle commands to `simple_arm`.\n\nAfter you've developed a basic understanding of the general structure of a ROS Node written in Python, you will be writing another node called `arm_mover`. `arm_mover` provides a service called `safe_move`, which allows the arm to be moved to any position within its workspace which has been deemed to be “safe”. The safe zone is bounded by minimum and maximum joint angles, and is configurable via the ROS’ parameter server.\n\nThe last node you’ll write in this lesson is the `look_away` node. This node subscribes to a topic where camera data is being published. When the camera detects an image with uniform color, meaning it’s looking at the sky, the node will call the `safe_move` service to move the arm to a new position.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 354011,
+          "key": "5e7b749d-6ec9-4f6f-a81e-18d5f1e64739",
+          "title": "ROS Publishers",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5e7b749d-6ec9-4f6f-a81e-18d5f1e64739",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 354015,
+              "key": "7938f0a7-c4f1-4e4b-86a1-a9319c40d747",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# ROS Publishers\n\nBefore you see the code for `simple_mover`, it may be helpful to see how ROS Publishers work in Python.\n\nPublishers allow a node to send messages to a topic, so that data from the node can be used in other parts of the ROS system. In Python, ROS publishers typically have the following definition format, although other parameters and arguments are possible:\n\n```python\npub1 = rospy.Publisher(\"/topic_name\", message_type, queue_size=size)\n```\nThe `\"/topic_name\"` indicates which topic the publisher will be publishing to. The message_type is the type of message being published on \"/topic_name\". \n\nROS publishing can be either synchronous or asynchronous:\n- Synchronous publishing means that a publisher will attempt to publish to a topic but may be blocked if that topic is being published to by a different publisher. In this situation, the second publisher is blocked until the first publisher has serialized all messages to a buffer and the buffer has written the messages to each of the topic's subscribers. This is the default behavior of a `rospy.Publisher` if the `queue_size` parameter is not used or set to `None`.\n- Asynchronous publishing means that a publisher can store messages in a queue until the messages can be sent. If the number of messages published exceeds the size of the queue, the oldest messages are dropped. The queue size can be set using the `queue_size` parameter.\n\nOnce the publisher has been created as above, a `message` with the specified data type can be published as follows:\n\n```python\npub1.publish(message)\n```\nFor more information about ROS publishers, see [the documentation here](http://docs.ros.org/kinetic/api/rospy/html/rospy.topics.Publisher-class.html). \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354300,
+              "key": "aaec7362-3ca0-4fd0-8b0e-c0c656be61d8",
+              "title": "Publisher queue_size",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "aaec7362-3ca0-4fd0-8b0e-c0c656be61d8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Assume that a queued message is typically picked up in an average time of 1/10th of a second with a standard deviation of 1/20th of a second, and your publisher is publishing at a frequency of 10Hz. Of the options below, which would be the best setting for `queue_size`?",
+                "answers": [
+                  {
+                    "id": "a1501635624802",
+                    "text": "`queue_size=None`",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501635658041",
+                    "text": "`queue_size=2`",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501635715383",
+                    "text": "`queue_size=10`",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501635735678",
+                    "text": "`queue_size=0`",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 354301,
+              "key": "2dfee65f-ad44-4a4d-8993-ba71c3ff698a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's get started with `simple_mover`!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 308610,
+          "key": "faa4d5c5-54e9-4e35-9fb1-08e17b2bd97e",
+          "title": "Simple Mover",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "faa4d5c5-54e9-4e35-9fb1-08e17b2bd97e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308617,
+              "key": "cbdc07a7-acd2-4b70-ae79-8c380d851c9d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You will now go through the process of implementing your first ROS node in python.\nThis node is called `simple_mover`. As it’s name implies, this node only has one responsibility, and that is to command joint movements for `simple_arm`.\n\nTo do so, it must publish joint angle command messages to the following topics:\n\n|**Topic Name**    | /simple_arm/joint_1_position_controller/command |\n|-|-|\n| **Message Type**| std_msgs/Float64                                                            |\n|**Description**      | Commands joint 1 to move counter-clockwise, units in radians |\n\n|**Topic Name **    | /simple_arm/joint_2_position_controller/command |\n|-|-|\n|**Message Type**| std_msgs/Float64                                                            |\n|**Description**     | Commands joint 2 to move counter-clockwise, units in radians |\n\n**Note**: If you no longer have the catkin workspace from the previous lesson, you can download a copy of it [here](https://github.com/udacity/simple_arm_01). Alternately, If you’d prefer to skip to the punch, you can download the entire, complete simple_arm package from [here](https://github.com/udacity/simple_arm).\n\n## Adding the scripts directory \nIn order to create a new node in python, you must first create the `scripts` directory within the `simple_arm` package, as it does not yet exist. \n\n```sh\n$ cd ~/catkin_ws/src/simple_arm/\n$ mkdir scripts\n```\n\n## Creating a new script ##\nOnce the scripts directory has been created, executable scripts can be added to the package. However, in order for `rosrun` to find them, their permissions must be changed to allow execution. Let’s add a simple bash script that prints “Hello World” to the console.\n\n```sh\n$ cd scripts\n$ echo '#!/bin/bash' >> hello\n$ echo 'echo Hello World' >> hello\n```\n\nAfter setting the appropriate execution permissions on the file, rebuilding the workspace, and sourcing the newly created environment, you will be able to run the script.\n\n```sh\n$ chmod u+x hello\n$ cd ~/catkin_ws\n$ catkin_make\n$ source devel/setup.bash\n$ rosrun simple_arm hello\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308646,
+              "key": "c65eca14-57b5-45fe-8120-cfa45da60acb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5911032c_02/02.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c65eca14-57b5-45fe-8120-cfa45da60acb",
+              "caption": "",
+              "alt": null,
+              "width": 1125,
+              "height": 238,
+              "instructor_notes": null
+            },
+            {
+              "id": 308618,
+              "key": "f2f451d3-b359-4976-b18c-7596137aba1e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\nAnd there you have it! You have now added a script\n\n## Creating the empty simple_mover node script\nTo create the simple_mover node script, you will must simply follow the same basic routine introduced a moment ago.\n\n```sh \n$ cd ~/catkin_ws/src/simple_arm\n$ cd scripts\n$ touch simple_mover\n$ chmod u+x simple_mover\n```\nYou can now edit the empty `simple_mover` script with your favorite text editor.\n\nLet’s write the code!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 308611,
+          "key": "5789f0e3-3cf1-46c5-8702-f456c035d4af",
+          "title": "Simple Mover: The Code",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5789f0e3-3cf1-46c5-8702-f456c035d4af",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 620956,
+              "key": "f47aafe1-ba2c-4553-ae27-12735470790b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Simple Mover: The Code",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308619,
+              "key": "f4ea0acf-a1ee-4aea-b061-ca34fcab0867",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Below is the complete code for the `simple_mover` node, in it’s entirety, followed by a step-by-step explanation of what is happening.  You can copy and paste this code into the `simple_mover` script you created in the `~/catkin_ws/src/simple_arm/scripts/` directory like this:\n\nFirst, open a new terminal, next: \n\n```sh\n$ cd ~/catkin_ws/src/simple_arm/scripts/\n$ nano simple_mover\n```\nYou have opened the `simple_mover` script with the **nano** editor, now copy and paste the code below into the script and use `ctrl-x` followed by `y` then `enter` to save the script.  \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308620,
+              "key": "24975bad-12b7-4b8f-a5ae-30fbfe51abad",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## simple_mover\n```python\n#!/usr/bin/env python\n\nimport math\nimport rospy\nfrom std_msgs.msg import Float64\n\ndef mover():\n    pub_j1 = rospy.Publisher('/simple_arm/joint_1_position_controller/command',\n                             Float64, queue_size=10)\n    pub_j2 = rospy.Publisher('/simple_arm/joint_2_position_controller/command',\n                             Float64, queue_size=10)\n    rospy.init_node('arm_mover')\n    rate = rospy.Rate(10)\n    start_time = 0\n\n    while not start_time:\n        start_time = rospy.Time.now().to_sec()\n\n    while not rospy.is_shutdown():\n        elapsed = rospy.Time.now().to_sec() - start_time\n        pub_j1.publish(math.sin(2*math.pi*0.1*elapsed)*(math.pi/2))\n        pub_j2.publish(math.sin(2*math.pi*0.1*elapsed)*(math.pi/2))\n        rate.sleep()\n\nif __name__ == '__main__':\n    try:\n        mover()\n    except rospy.ROSInterruptException:\n        pass\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 371683,
+              "key": "9f962485-90a6-4e54-a490-e53243ca3126",
+              "title": "L3 Simple Mover Code",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jEO_4xxA_mI",
+                "china_cdn_id": "jEO_4xxA_mI.mp4"
+              }
+            },
+            {
+              "id": 308622,
+              "key": "0233cca0-a2e4-4c97-9886-2dabec4d8126",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## The code: Explained \n```python\n#!/usr/bin/env python\n\nimport math\nimport rospy\n```\nrospy is the official Python client library for ROS. It provides most of the fundamental functionality required for interfacing with ROS via Python. It has interfaces for creating Nodes, interfacing with Topics, Services, Parameters, and more. It will certainly be worth your time to check out the API documentation [here](http://docs.ros.org/kinetic/api/rospy/html/). General information about rospy, including other tutorials may be found on the [ROS Wiki](http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber).\n \n```python\nfrom std_msgs.msg import Float64\n```\nFrom the `std_msgs` package, we import Float64, which is one of the primitive message types in ROS. The [std_msgs](http://wiki.ros.org/std_msgs) package also contains all of the other primitive types. Later on in this script, we will be publishing Float64 messages to the position command topics for each joint.\n\n```python\ndef mover():\n    pub_j1 = rospy.Publisher('/simple_arm/joint_1_position_controller/command',\n                             Float64, queue_size= 10)\n    pub_j2 = rospy.Publisher('/simple_arm/joint_2_position_controller/command',\n                             Float64, queue_size=10)\n```\nAt the top of the mover function, two publishers are declared, one for joint 1 commands, and one for joint 2 commands. Here, the `queue_size` parameter is used to determine the maximum number messages that may be stored in the publisher queue before messages are dropped.  More information about this parameter can be found [here](http://wiki.ros.org/rospy/Overview/Publishers%20and%20Subscribers#queue_size:_publish.28.29_behavior_and_queuing).\n\n```python\n rospy.init_node('arm_mover')\n```\nInitializes a client node and registers it with the master. Here “arm_mover” is the name of the node. `init_node()` must be called before any other rospy package functions are called.  The argument `anonymous=True` makes sure that you always have a unique name for your node\n\n\n```python\n rate = rospy.Rate(10)\n```\nThe `rate` object is created here with a value of 10 Hertz. Rates are used to limit the frequency at which certain loops spin in ROS. Choosing a rate  which is too high may result in unnecessarily high CPU usage, while choosing a value too low could result in high overall system latency. Choosing sensible values for all of the nodes in a ROS system is a bit of a fine-art.\n\n```python\n    start_time = 0\n\n    while not start_time:\n        start_time = rospy.Time.now().to_sec()\n```\n`start_time` is used to determine how much time has elapsed. When using ROS with simulated time (as we are doing here), `rospy.Time.now()` will initially return 0, until the first message has been received on the `/clock` topic. This is why `start_time` is set and polled continuously until a nonzero value is returned (more information [here](http://wiki.ros.org/rospy/Overview/Time)). \n\n```python\n    while not rospy.is_shutdown():\n        elapsed = rospy.Time.now().to_sec() - start_time\n        pub_j1.publish(math.sin(2*math.pi*0.1*elapsed)*(math.pi/2))\n        pub_j2.publish(math.sin(2*math.pi*0.1*elapsed)*(math.pi/2))\n        rate.sleep()\n```\nThis the main loop. Due to the call to `rate.sleep()`, the loop is traversed at approximately 10 Hertz. Each trip through the body of the loop will result in two joint command messages being published. The joint angles are sampled from a sine wave with a period of 10 seconds, and in magnitude from  [<span class=\"mathquill\">-\\pi/2, +\\pi/2</span>]. When the node receives the signal to shut down (either from the master, or via SIGINT signal in a console window), the loop will be exited.\n\n```python\nif __name__ == '__main__':\n    try:\n        mover()\n    except rospy.ROSInterruptException:\n        pass\n```\nIf the name variable is set to “__main__”, indicating that this script is being executed directly, the `mover()` function will be called. The try/except blocks here are significant as rospy uses exceptions extensively. The particular exception being caught here is the `ROSInterruptException`. This exception is raised when the node has been signaled for shutdown. If there was perhaps some sort of cleanup needing to be done before the node shuts down, it would be done here. More information about rospy exceptions can be found [here](http://wiki.ros.org/rospy/Overview/Exceptions).\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308624,
+              "key": "93897a8d-babc-4a29-8478-d990cd009bde",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Running simple_mover \nAssuming that your workspace has recently been built, and it’s `setup.bash` has been sourced, you can launch `simple_arm` as follows:\n\n```sh\n$ cd ~/catkin_ws\n$ roslaunch simple_arm robot_spawn.launch\n```\n\nOnce ROS Master, Gazebo, and all of our relevant nodes are up and running, we can finally launch `simple_mover`. To do so, open a new terminal and type the following commands:\n\n```sh\n$ cd ~/catkin_ws\n$ source devel/setup.bash\n$ rosrun simple_arm simple_mover\n```\n\nBelow is a video showing you what the expected movements should look like.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 322161,
+              "key": "b3ce0af7-44a9-4ea9-899d-97785d518e38",
+              "title": "Simple Arm",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Ki5LkE_xir4",
+                "china_cdn_id": "Ki5LkE_xir4.mp4"
+              }
+            },
+            {
+              "id": 308625,
+              "key": "1421b1ab-5bd6-42a5-a9d9-f47bbb116fcb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Congratulations! You’ve now written your first ROS node!\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 354034,
+          "key": "375eb9e3-2fd2-4fda-96c2-d5c88d382909",
+          "title": "ROS Services",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "375eb9e3-2fd2-4fda-96c2-d5c88d382909",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 620960,
+              "key": "babc53d9-c383-46e7-afcb-2b8e3c2c4bed",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# ROS Services",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354043,
+              "key": "cde42705-ac90-416a-923b-596bf637e1a0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now that you've written your first ROS node, you've seen how publishing to a topic works, and you were able control the robotic arm by publishing to the `/simple_arm/joint_2_position_controller/command` topic. Next up, we'll see another node called `arm_mover` which implements the `safe_move` service to allow the arm to be controlled with service calls.\n\n### Defining services\nA ROS service allows request/response communication to exist between nodes. Within the node providing the service, request messages are handled by functions or methods. Once the requests have been handled successfully, the node providing the service sends a message back to the requester node. In Python, a ROS service can be created using the following definition format:\n```python\nservice = rospy.Service('service_name', serviceClassName, handler)\n```\nHere, the `service_name` is the name given to the service. Other nodes will use this name to specify which service they are sending requests to.\n\nThe `serviceClassName` comes from the file name where the service definition exists. You will see more about this in the next classroom concept, but each service has a definition provided in an `.srv` file; this is a text file that provides the proper message type for both requests and responses.\n\nThe `handler` is the name of the function or method that handles the incoming service message. This function is called each time the service is called, and the message from the service call is passed to the `handler` as an argument. The `handler` should return an appropriate service response message.\n\n## Using Services\n\nServices can be called directly from the command line, and you will see an example of this in the upcoming `arm_mover` classroom concepts.\n\nOn the other hand, to use a ROS service from within another node, you will define a `ServiceProxy`, which provides the interface for sending messages to the service:\n```python\nservice_proxy = rospy.ServiceProxy('service_name', serviceClassName)\n```\nOne way the `ServiceProxy` can then be used to send requests is as follows:\n```python\nmsg = serviceClassNameRequest()\n#update msg attributes here to have correct data\nresponse = service_proxy(msg)\n```\nIn the code above, a new service message is created by calling the `serviceClassNameRequest()` method. This method is provided by rospy, and its name is given by appending `Request()` to the name used for `serviceClassName`. Since the message is new, the message attributes should be updated to have the appropriate data. Next, the `service_proxy` can be called with the message, and the response stored.\n\nFor other ways to pass data to `service_proxy`, see the ROS documentation [here](http://wiki.ros.org/rospy/Overview/Services).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354311,
+              "key": "ae149461-7310-4725-b75f-d2eed458b69d",
+              "title": "Services quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ae149461-7310-4725-b75f-d2eed458b69d",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following ROS nodes might best be implemented using a service?\n",
+                "answers": [
+                  {
+                    "id": "a1501644013759",
+                    "text": "A node for an autonomous vehicle that provides lidar data for other nodes to use in localization.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501644038980",
+                    "text": "A node for a lunar rover that shuts down a robotic arm by folding the arm and killing all related processes.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501644039887",
+                    "text": "A node that sets a given parameter on request. For example, a node in turtlesim that sets the pen color in the turtlesim window.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501644040494",
+                    "text": "A node which executes movement for a robotic arm, checking that the arm joints are within specified bounds.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 354305,
+              "key": "df5093ff-214b-4491-891f-1bfe6f704d46",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's get started with the `arm_mover` code, so you can see how to combine the `safe_move` service along with publishers in a node!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 354359,
+          "key": "16750505-3028-41f9-b17b-0b1bd14d96e2",
+          "title": "Arm Mover",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "16750505-3028-41f9-b17b-0b1bd14d96e2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 354360,
+              "key": "afde6f26-ecb3-4633-95e5-9bb922bdc310",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You’ve written your first ROS node! This was no trivial task. You’ve had to learn quite a few things to get to this point. But before you will be prepared for the final project, we have some more ground to cover.\n\nNamely, we still need to cover:\n* Custom message generation\n* Services\n* Parameters\n* Launch Files\n* Subscribers\n* Logging\n\nIn order to gain an understanding of some of the above, you will be writing another node called `arm_mover`. \n\n## Description of Arm Mover ##\nIn many respects, `arm_mover` is quite similar to `simple_mover`. Like `simple_mover`, it is responsible for commanding the arm to move. However, instead of simply commanding the arm to follow a predetermined trajectory, the `arm_mover` node provides the service `move_arm`, which allows other nodes in the system to send `movement_commands`.\n\nIn addition to allowing movements via a service interface, `arm_mover` also allows for configurable minimum and maximum joint angles, by using parameters.\n\n## Creating a new service definition ##\nAs you learned earlier, an interaction with a service consists of two messages being passed. A request passed to the service, and a response received from the service. The definitions of the request and response message type are contained within .srv files living in the `srv` directory under the package’s root.\n\nLet’s define a new service for simple_arm. We shall call it `GoToPosition`.\n\n```sh\n$ cd ~/catkin_ws/src/simple_arm/\n$ mkdir srv\n$ cd srv\n$ touch GoToPosition.srv\n```\n\nYou should now edit `GoToPosition.srv`, so it contains the following:\n\n```text\nfloat64 joint_1\nfloat64 joint_2\n---\nduration time_elapsed\n```\n\nService definitions always contain two sections, separated by a ‘---’ line. The first section is the definition of the request message. Here, a request consists of two float64 fields, one for each of `simple_arm`’s joints. The second section contains is the service response. The response contains only a single field, time_elapsed. The `time_elapsed` field is of type duration, and is responsible for indicating how long it took the arm to perform the movement.\n\nNote: Defining a custom message type is very similar, with the only differences being that message definitions live within the `msg` directory of the package root, have a “.msg” extension, rather than `.srv`, and do not contain the “---” section divider. You can find more detailed information on creating messages and services [here](http://wiki.ros.org/msg), and [here](http://wiki.ros.org/srv), respectively.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354361,
+              "key": "43ad489d-f27d-432d-bf63-51462a4496ae",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Modifying CMakeLists.txt \nIn order for catkin to generate the python modules or C++ libraries which allow you to utilize messages in your code you must first modify `simple_arm`’s `CMakeLists.txt` (`~/catkin_ws/src/simple_arm/CMakeLists.txt`).\n\nCMake is the build tool underlying catkin, and `CMakeLists.txt` is nothing more than a CMake script used by catkin. If you’re familiar with GNU make, and the concept of makefiles, this is a similar concept.\n\nFirst, ensure that the `find_package()` macro lists `std_msgs` and ` message_generation` as required packages. The `find_package()` macro should look as follows:\n\n```text\nfind_package(catkin REQUIRED COMPONENTS\n        std_msgs\n        message_generation\n)\n```\nAs the names might imply, the `std_msgs` package contains all of the basic message types, and `message_generation` is required to generate message libraries for all the supported languages (cpp, lisp, python, javascript). \n\n**Note**: In your `CMakeLists.txt`, you may also see `controller_manager` listed as a required package. In actuality this package is not required. It was simply added as a means to demonstrate a build failure in the previous lesson. You may remove it from the list of REQUIRED COMPONENTS if you choose.\n\nNext, uncomment the commented-out `add_service_files()` macro so it looks like this:\n\n```text\n## Generate services in the 'srv' folder\nadd_service_files(\n   FILES\n   GoToPosition.srv\n)\n\n```\nThis tells catkin which files to generate code for.\n\nLastly, make sure that the `generate_messages()` macro is uncommented, as follows:\n```text\ngenerate_messages(\n   DEPENDENCIES\n   std_msgs  # Or other packages containing msgs\n)\n\n```\nIt is this macro that is actually responsible for generating the code.\nFor more information about `CMakeLists.txt` check out [this page](http://wiki.ros.org/catkin/CMakeLists.txt) on the ROS wiki.\n\n## Modifying package.xml ##\nNow that the `CMakeLists.txt` file has been covered, you should technically be able to build the project. However, there’s one more file which needs to be modified, `package.xml`.\n\n`package.xml` is responsible for defining many of the package’s properties, such as the name of the package, version numbers, authors, maintainers, and dependencies.\n\nRight now, we’re worried about the dependencies. In the previous lesson you learned about build-time dependencies and run-time package dependencies. When `rosdep` is searching for these dependencies, it’s the `package.xml` file that is being parsed. Let’s add the `message_generation` and `message_runtime` dependencies.\n\n```text\n  <buildtool_depend>catkin</buildtool_depend>\n  <build_depend>message_generation</build_depend>\n\n  <run_depend>controller_manager</run_depend>\n  <run_depend>effort_controllers</run_depend>\n  <run_depend>gazebo_plugins</run_depend>\n  <run_depend>gazebo_ros</run_depend>\n  <run_depend>gazebo_ros_control</run_depend>\n  <run_depend>joint_state_controller</run_depend>\n  <run_depend>joint_state_publisher</run_depend>\n  <run_depend>robot_state_publisher</run_depend>\n  <run_depend>message_runtime</run_depend>\n  <run_depend>xacro</run_depend>\n\n```\n\nYou are now ready to build the package! For more information about `package.xml`, check out the [ROS Wiki](http://wiki.ros.org/catkin/package.xml).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354362,
+              "key": "9b3e4a16-a719-4384-a874-7d1aea8ad9b4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Building the package \nIf you build the workspace successfully, you should now find that a python package containing a module for the new service `GoToPosition` has been created deep down in the `devel` directory.\n\n```sh\n$ cd ~/catkin_ws\n$ catkin_make\n$ cd devel/lib/python2.7/dist-packages\n$ ls\n```\n\nAfter sourcing the newly created `setup.bash`, the new `simple_arm` package has now become part of your `PYTHONPATH` environment variable, and is ready for use!\n\n```sh\n$ env | grep PYTHONPATH\n```\n\n## Creating the empty arm_mover node script \nThe steps you take to create the arm_mover node are exactly the same as the steps you took to create the simple_mover script, excepting the actual name of the script itself.\n\n```sh\n$ cd ~/catkin_ws\n$ cd src/simple_arm/scripts\n$ touch arm_mover\n$ chmod u+x arm_mover\n```\n\nYou can now edit the empty arm_mover script with your favorite text editor.\n\nLet’s move onto the code for `arm_mover`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 308613,
+          "key": "ee8b24b2-bfbb-4c8d-a173-72591e661e12",
+          "title": "Arm Mover: The Code",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ee8b24b2-bfbb-4c8d-a173-72591e661e12",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 620963,
+              "key": "a28fd71e-f8cd-4af2-8e49-0250574381bb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Arm Mover: The Code",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308633,
+              "key": "b563ecd8-d549-4699-87bf-d8f10fd2da15",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# arm_mover #\n\n```python\n#!/usr/bin/env python\n\nimport math\nimport rospy\nfrom std_msgs.msg import Float64\nfrom sensor_msgs.msg import JointState\nfrom simple_arm.srv import *\n\ndef at_goal(pos_j1, goal_j1, pos_j2, goal_j2):\n    tolerance = .05\n    result = abs(pos_j1 - goal_j1) <= abs(tolerance)\n    result = result and abs(pos_j2 - goal_j2) <= abs(tolerance)\n    return result\n\ndef clamp_at_boundaries(requested_j1, requested_j2):\n    clamped_j1 = requested_j1\n    clamped_j2 = requested_j2\n\n    min_j1 = rospy.get_param('~min_joint_1_angle', 0)\n    max_j1 = rospy.get_param('~max_joint_1_angle', 2*math.pi)\n    min_j2 = rospy.get_param('~min_joint_2_angle', 0)\n    max_j2 = rospy.get_param('~max_joint_2_angle', 2*math.pi)\n\n    if not min_j1 <= requested_j1 <= max_j1:\n        clamped_j1 = min(max(requested_j1, min_j1), max_j1)\n        rospy.logwarn('j1 is out of bounds, valid range (%s,%s), clamping to: %s',\n                      min_j1, max_j1, clamped_j1)\n\n    if not min_j2 <= requested_j2 <= max_j2:\n        clamped_j2 = min(max(requested_j2, min_j2), max_j2)\n        rospy.logwarn('j2 is out of bounds, valid range (%s,%s), clamping to: %s',\n                      min_j2, max_j2, clamped_j2)\n\n    return clamped_j1, clamped_j2\n\ndef move_arm(pos_j1, pos_j2):\n    time_elapsed = rospy.Time.now()\n    j1_publisher.publish(pos_j1)\n    j2_publisher.publish(pos_j2)\n\n    while True:\n        joint_state = rospy.wait_for_message('/simple_arm/joint_states', JointState)\n        if at_goal(joint_state.position[0], pos_j1, joint_state.position[1], pos_j2):\n            time_elapsed = joint_state.header.stamp - time_elapsed\n            break\n\n    return time_elapsed\n\ndef handle_safe_move_request(req):\n    rospy.loginfo('GoToPositionRequest Received - j1:%s, j2:%s',\n                   req.joint_1, req.joint_2)\n    clamp_j1, clamp_j2 = clamp_at_boundaries(req.joint_1, req.joint_2)\n    time_elapsed = move_arm(clamp_j1, clamp_j2)\n\n    return GoToPositionResponse(time_elapsed)\n\ndef mover_service():\n    rospy.init_node('arm_mover')\n    service = rospy.Service('~safe_move', GoToPosition, handle_safe_move_request)\n    rospy.spin()\n\nif __name__ == '__main__':\n    j1_publisher = rospy.Publisher('/simple_arm/joint_1_position_controller/command',\n                                   Float64, queue_size=10)\n    j2_publisher = rospy.Publisher('/simple_arm/joint_2_position_controller/command',\n                                   Float64, queue_size=10)\n\n    try:\n        mover_service()\n    except rospy.ROSInterruptException:\n        pass\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 371684,
+              "key": "c8fb423a-219a-4624-ae88-3028b51c75e3",
+              "title": "L3 Arm Mover The Code",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0Li845bwxyM",
+                "china_cdn_id": "0Li845bwxyM.mp4"
+              }
+            },
+            {
+              "id": 308635,
+              "key": "31aa35a5-e5b3-43a4-9d1d-3ffa614b3fd4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## The code: explained \n```python\n#!/usr/bin/env python\n\nimport math\nimport rospy\nfrom std_msgs.msg import Float64\nfrom sensor_msgs.msg import JointState\nfrom simple_arm.srv import *\n```\nThe imported modules for `arm_mover` are the same as `simple_arm`, with the exception of two new imports. Namely, the `JointState` message, and the `simple_arm.srv` module.\n\n`JointState` messages are published to the `/simple_arm/joint_states` topic, and are used for monitoring the position of the arm.\n\nThe `simple_arm` package, and the `srv` module are automatically generated by catkin as part of the build process.\n\n```python\ndef at_goal(pos_j1, goal_j1, pos_j2, goal_j2):\n    tolerance = .05\n    result = abs(pos_j1 - goal_j1) <= abs(tolerance)\n    result = result and abs(pos_j2 - goal_j2) <= abs(tolerance)\n    return result\n```\nThis function returns `True` if the joint positions are close to the goals. When taking measurements from sensors in the real world, there will always be some amount of noise.  The same is true of the joint positions reported by the gazebo simulator. If both joint positions are within .05 radians of the goal, `True` is returned.\n\n\n```python\ndef clamp_at_boundaries(requested_j1, requested_j2):\n    clamped_j1 = requested_j1\n    clamped_j2 = requested_j2\n```\n`clamp_at_boundaries()` is responsible for enforcing the minimum and maximum joint angles for each joint. If the joint angles passed in are outside of the operable range, they will be “clamped” to the nearest allowable value.\n\n```python\n    min_j1 = rospy.get_param('~min_joint_1_angle', 0)\n    max_j1 = rospy.get_param('~max_joint_1_angle', 2*math.pi)\n    min_j2 = rospy.get_param('~min_joint_2_angle', 0)\n    max_j2 = rospy.get_param('~max_joint_2_angle', 2*math.pi)\n```\nThe minimum and maximum joint angles are retrieved from the parameter server each time `clamp_at_boundaries()` is called. The “~” is the private namespace qualifier, and indicates that the parameter we wish to get is within this node’s [private namespace](http://wiki.ros.org/Names#Resolving) `/arm_mover/` (e.g. `~min_joint_1_angle` resolves to `/arm_mover/min_joint_1_angle`). The second parameter is the default value to be returned, in the case that `rospy.get_param()` was unable to get the parameter from the param server.\n\n```python\n    if not min_j1 <= requested_j1 <= max_j1:\n        clamped_j1 = min(max(requested_j1, min_j1), max_j1)\n        rospy.logwarn('j1 is out of bounds, valid range (%s,%s), clamping to: %s',\n                      min_j1, max_j1, clamped_j1)\n\n    if not min_j2 <= requested_j2 <= max_j2:\n        clamped_j2 = min(max(requested_j2, min_j2), max_j2)\n        rospy.logwarn('j2 is out of bounds, valid range (%s,%s), clamping to: %s',\n                      min_j2, max_j2, clamped_j2)\n\n    return clamped_j1, clamped_j2\n```\nThe rest of this function simply clamps the joint angle if necessary. Warning messages are logged if  the requested joint angles are out of bounds.\n\n\n```python\ndef move_arm(pos_j1, pos_j2):\n    time_elapsed = rospy.Time.now()\n    j1_publisher.publish(pos_j1)\n    j2_publisher.publish(pos_j2)\n\n    while True:\n        joint_state = rospy.wait_for_message('/simple_arm/joint_states', JointState)\n        if at_goal(joint_state.position[0], pos_j1, joint_state.position[1], pos_j2):\n            time_elapsed = joint_state.header.stamp - time_elapsed\n            break\n\n    return time_elapsed\n```\n`move_arm()` commands the arm to move, returning the amount of time that elapsed while the arm was moving.\n\nNote:\nWithin the function we are using the `rospy.wait_for_message()` call to receive `JointState` messages from the `/simple_arm/joint_states` topic. This is  blocking function call, meaning that it will not return until a message has been received on the `/simple_arm/joint_states` topic.\n\nIn general, you should not use `wait_for_message()`. We simply use it here for the sake of clarity, and because move_arm is being called from the `handle_safe_move_request()` function, which demands that the response message is passed back as a return parameter. More discussion on this below.\n\n\n```python\ndef handle_safe_move_request(req):\n    rospy.loginfo('GoToPositionRequest Received - j1:%s, j2:%s',\n                   req.joint_1, req.joint_2)\n    clamp_j1, clamp_j2 = clamp_at_boundaries(req.joint_1, req.joint_2)\n    time_elapsed = move_arm(clamp_j1, clamp_j2)\n\n    return GoToPositionResponse(time_elapsed)\n```\nThis is the service handler function. When a service client sends a `GoToPosition` request message to the `safe_move` service, this function is called. The function parameter req is of type `GoToPositionRequest`. The service response is of type `GoToPositionResponse`.\n\nThis is the service handler function, it is called whenever a new service request is received. The response to the service request is returned from the function.\n\nNote:\n`move_arm()` is blocking, and will not return until the arm has finished its movement. Incoming messages cannot be processed, and no other useful work can be done in the python script while the arm is performing it’s movement command.  While this poses no real problem for this example, it is a practice that should generally be avoided. One great way to avoid blocking the thread of execution would be to use [Action](http://wiki.ros.org/actionlib). Here’s some [informative documentation](http://wiki.ros.org/ROS/Patterns/Communication#Communication_via_Topics_vs_Services_vs_X) describing when it’s best to use a Topic versus a Service, versus an Action.\n\n\n```python\ndef mover_service():\n    rospy.init_node('arm_mover')\n    service = rospy.Service('~safe_move', GoToPosition, handle_safe_move_request)\n    rospy.spin()\n```\nHere the node is initialized with the name “arm_mover”, and the `GoToPosition` service is created with the name “safe_move”. As mentioned previously, the “~” qualifier identifies that safe_move is meant to belong to this node’s private namespace. The resulting service name will be `/arm_mover/safe_move` . The third parameter to the `rospy.Service()` call is the function that should be called when a service request is received.  Lastly, `rospy.spin()` simply blocks until a shutdown request is received by the node. Failure to include this line would result in `mover_service()` returning, and the script completing execution.\n\n```python\nif __name__ == '__main__':\n    j1_publisher = rospy.Publisher('/simple_arm/joint_1_position_controller/command', Float64, queue_size=10)\n    j2_publisher = rospy.Publisher('/simple_arm/joint_2_position_controller/command', Float64, queue_size=10)\n\n    try:\n        mover_service()\n    except rospy.ROSInterruptException:\n        pass\n```\nThis section of code is similar, to that of `simple_mover()`.\n\n# Next steps #\n\nNow that you've written the `arm_mover` node, the next step is to launch it, and then test it out by interacting with the service via the command line!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 308614,
+          "key": "97441329-61f1-4fba-9097-963cff15ea61",
+          "title": "Arm Mover: Launch and Interact",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "97441329-61f1-4fba-9097-963cff15ea61",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 620966,
+              "key": "638c900d-3636-4357-ab16-94281f71b179",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Arm Mover: Launch and Interact",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308638,
+              "key": "6b429f82-4063-49a3-83a4-cba12ed04383",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Launching the project with the new service ##\nTo get the `arm_mover` node, and accompanying `safe_move` service to launch along with all of the other nodes, you will modify `robot_spawn.launch`.\n\nLaunch files, when they exist, are located within the `launch` directory in the root of a catkin package. `simple_arm`’s launch file is located in `~/catkin_ws/src/simple_arm/launch`\n\nTo get the arm_mover node to launch, simply add the following:\n\n```xml\n  <!-- The arm mover node -->\n  <node name=\"arm_mover\" type=\"arm_mover\" pkg=\"simple_arm\">\n    <rosparam>\n      min_joint_1_angle: 0\n      max_joint_1_angle: 1.57\n      min_joint_2_angle: 0\n      max_joint_2_angle: 1.0\n    </rosparam>\n  </node>\n```\n\nMore information on the format of the launch file can be found [here](http://wiki.ros.org/roslaunch/XML).\n\n## Testing the new service ##\nNow that you've modified the launch file, you are ready to test everything out.\n\nTo do so, launch the `simple_arm`, verify that the `arm_mover` node is running, and that the `safe_move` service is listed:\n\n**Note:** You will need to make sure that you've exited out of your previous `roslaunch` session before re-launching.\n\n```sh\n$ cd ~/catkin_ws\n$ catkin_make\n$ source devel/setup.bash\n$ roslaunch simple_arm robot_spawn.launch\n```\n\nThen, in a new terminal, verify that the node and service have indeed launched.\n\n```text\n$ rosnode list\n$ rosservice list\n```\n\nAssuming that both the service (`/arm_mover/safe_move`) and the node (`/arm_mover`) show up as expected (If they've not, check the logs in the `roscore` console), you can now interact with the service using `rosservice`.\n\nTo view the camera image stream, you can use the command `rqt_image_view` (you can learn more about rqt and the associated tools [here](http://wiki.ros.org/rqt)):\n\n```sh\n$ rqt_image_view /rgb_camera/image_raw\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308649,
+              "key": "a22f261e-0337-4ded-97eb-9f46c8bd1a9f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5911036a_06/06.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a22f261e-0337-4ded-97eb-9f46c8bd1a9f",
+              "caption": "",
+              "alt": null,
+              "width": 774,
+              "height": 723,
+              "instructor_notes": null
+            },
+            {
+              "id": 620975,
+              "key": "6a3cc148-053b-4fc9-bc23-2539e80f65ae",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Adjusting the view",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308639,
+              "key": "0b6b96c9-b75e-4c77-9e9b-69b9127178e5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The camera is displaying a gray image. This is as to be expected, given that it is straight up, towards the gray sky of our gazebo world.\n\nTo point the camera towards the numbered blocks on the counter top, we would need to rotate both joint 1 and joint 2 by approximately pi/2 radians. Let’s give it a try:\n\n```sh\n$ cd ~/catkin_ws/\n$ source devel/setup.bash\n$ rosservice call /arm_mover/safe_move \"joint_1: 1.57\njoint_2: 1.57\"\n```\n\nNote: `rosservice call` can tab-complete the request message, so that you don’t have to worry about writing it out by hand. Also, be sure to include a line break between the two joint parameters.\n\nUpon entering the command, you should be able to see the arm move, and eventually stop, reporting the amount of time it took to move the arm to the console. This is as expected.\n\nWhat was not expected is the resulting position of the arm. Looking at the `roscore` console, we can very clearly see what the problem was. The requested angle for joint 2 was out of the safe bounds. We requested 1.57 radians, but the maximum joint angle was set to 1.0 radians.\n\nBy setting the `max_joint_2_angle` on the parameter server, we should be able to bring the blocks into view the next time a service call is made. To increase joint 2’s maximum angle, you can use the command `rosparam`\n\n```sh\n$ rosparam set /arm_mover/max_joint_2_angle 1.57\n```\n\nNow we should be able to move the arm such that all of the blocks are within the field of view of the camera:\n\n```sh\nrosservice call /arm_mover/safe_move \"joint_1: 1.57\njoint_2: 1.57\"\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308650,
+              "key": "9a114e46-6f6c-4ca0-8c5d-ec942b74418d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/59110381_06b/06b.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9a114e46-6f6c-4ca0-8c5d-ec942b74418d",
+              "caption": "",
+              "alt": null,
+              "width": 774,
+              "height": 722,
+              "instructor_notes": null
+            },
+            {
+              "id": 308640,
+              "key": "3ad7abc5-396f-4333-9850-28bd5d2b9329",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "And there you have it. All of the blocks are within the field of view!\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 352805,
+          "key": "2c1bd8c9-14c2-4179-a469-b8fd06f6883a",
+          "title": "ROS Subscribers",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2c1bd8c9-14c2-4179-a469-b8fd06f6883a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 352821,
+              "key": "f175e0aa-43df-4f35-aa9b-e775e4acaad5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now that you've written Arm Mover, you have gained an understanding of custom message generation, publishing to a topic, ROS services, parameters, and launch files. Before you are ready to write code, you'll still need to learn to use ROS Subscribers.\n## ROS Subscribers\n A Subscriber enables your node to read messages from a topic, allowing useful data to be streamed into the node. In Python, ROS subscribers frequently have the following format, although other parameters and arguments are possible:\n\n```python\nsub1 = rospy.Subscriber(\"/topic_name\", message_type, callback_function)\n```\nThe `\"/topic_name\"` indicates which topic the Subscriber should listen to. \n\nThe `message_type` is the type of message being published on `\"/topic_name\"`.\n\n The `callback_function` is the name of the function that should be called with each incoming message. Each time a message is received, it is passed as an argument to `callback_function`. Typically, this function is defined in your node to perform a useful action with the incoming data. Note that unlike service handler functions, the `callback_function` is not required to return anything.\n\nFor more information about subscribers, see [the documentation here](http://docs.ros.org/api/rospy/html/rospy.topics.Subscriber-class.html). Let's move on to the `look_away` node so you can see subscribers in action!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 352825,
+              "key": "00d02548-e019-4c80-864e-5a5cae1bb6a8",
+              "title": "Subscriber quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "00d02548-e019-4c80-864e-5a5cae1bb6a8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following ROS nodes would likely need a Subscriber?",
+                "answers": [
+                  {
+                    "id": "a1501285838649",
+                    "text": "A node for an autonomous vehicle that implements pedestrian detection using camera data.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501285879899",
+                    "text": "A node for a robotic arm that implements a service for moving the arm.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501285880776",
+                    "text": "A node for a robot which implements a random number generator and publishes new random numbers at a frequency of 50Hz.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501285881407",
+                    "text": "A controller node for a lunar rover which implements the actuation of the throttle and brake given target velocities as input.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 352467,
+          "key": "10f0543e-444a-4201-8281-5e4298492ac6",
+          "title": "Look Away",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "10f0543e-444a-4201-8281-5e4298492ac6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 352486,
+              "key": "3360e910-b56c-465e-9bc8-8318111064d7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Look Away\n\nTo see a Subscriber in action, you'll write a node called `look_away`. The `look_away` node will subscribe to the `/rgb_camera/image_raw` topic, which has image data from the camera mounted on the end of the robotic arm. Whenever the camera is pointed towards an uninteresting image - in this case, an image with uniform color - the callback function will move the arm to something more interesting. There are a few extra pieces in the code to ensure that this procedure is executed smoothly, but you will learn more about them later.\n\n## Creating the empty look_away node script\n\nJust as before when you created the `arm_mover` and `simple_mover` nodes, you can create the `look_away node` as follows:\n\n```\n$ cd ~/catkin_ws\n$ cd src/simple_arm/scripts\n$ touch look_away\n$ chmod u+x look_away\n```\n\nLet's have a look at the code for `look_away`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 594399,
+              "key": "9bd108ae-7e56-4845-9ea7-bd13aeb28b04",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Troubleshooting look_away\n\nIn some cases `look_away` is executing when running it manually but is not executing automatically with `roslaunch`.  This is typically  a timing issue.  If `look_away` starts before the system has fully initialized, then `look_away` hangs in the call to `safe_move`.  Student *jsteinbae* offered a great solution to this issue:\n\n*My workaround was to add `wait_for_message` to the look_away node before subscribing to the topics.\nThis ensures that the callbacks are not called before the gazebo simulation (publishing these topics) is fully initialized.*\n\n    def __init__(self):\n        rospy.init_node('look_away')\n        self.last_position = None\n        self.arm_moving = False\n\n        rospy.wait_for_message('/simple_arm/joint_states', JointState)\n        rospy.wait_for_message('/rgb_camera/image_raw', Image)\n\n        self.sub1 = rospy.Subscriber('/simple_arm/joint_states', \n                                     JointState, self.joint_states_callback)\n        self.sub2 = rospy.Subscriber('/rgb_camera/image_raw', \n                                     Image, self.look_away_callback)\n        self.safe_move = rospy.ServiceProxy('/arm_mover/safe_move', \n                                     GoToPosition)\n        rospy.spin()",
+              "instructor_notes": ""
+            },
+            {
+              "id": 352599,
+              "key": "1f4d6c49-5dce-4371-a938-4d1fd76e3426",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Updating the launch file\n\nJust as you did with the `arm_mover` node, to get `look_away` to launch with the rest of the nodes, you will need to modify `robot_spawn.launch`, which can be found in  `~/catkin_ws/src/simple_arm/launch`. You can add the following code there:\n```xml\n  <!-- The look away node -->\n  <node name=\"look_away\" type=\"look_away\" pkg=\"simple_arm\"/>\n```\n\nWhile editing this file, it will be helpful to set `max_joint_2_angle: 1.57` in `arm_mover` so that it isn't necessary to set it again from the command line:\n```xml\n  <!-- The arm mover node -->\n  <node name=\"arm_mover\" type=\"arm_mover\" pkg=\"simple_arm\">\n    <rosparam>\n      min_joint_1_angle: 0\n      max_joint_1_angle: 1.57\n      min_joint_2_angle: 0\n      max_joint_2_angle: 1.57\n    </rosparam>\n  </node>\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 349834,
+          "key": "a1656809-298d-4f6e-a352-7efda55f9c62",
+          "title": "Look Away: The Code",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a1656809-298d-4f6e-a352-7efda55f9c62",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 352493,
+              "key": "438ef4ba-2919-4a9e-9d2e-484d1b185519",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Look Away: The Code\n\nBelow is the complete code for `look_away`, followed by a step-by-step explanation of what is happening. You can copy and paste this code into the `look_away` script you created in the directory:\n\n```text\n~/catkin_ws/src/simple_arm/scripts\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350132,
+              "key": "1fdc1de8-1623-4034-a5ad-30e7b910b80c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## The look_away code\n```python\n#!/usr/bin/env python\n\nimport math\nimport rospy\nfrom sensor_msgs.msg import Image, JointState\nfrom simple_arm.srv import *\n\n\nclass LookAway(object):\n    def __init__(self):\n        rospy.init_node('look_away')\n\n        self.sub1 = rospy.Subscriber('/simple_arm/joint_states', \n                                     JointState, self.joint_states_callback)\n        self.sub2 = rospy.Subscriber(\"rgb_camera/image_raw\", \n                                     Image, self.look_away_callback)\n        self.safe_move = rospy.ServiceProxy('/arm_mover/safe_move', \n                                     GoToPosition)\n\n        self.last_position = None\n        self.arm_moving = False\n\n        rospy.spin()\n\n    def uniform_image(self, image):\n        return all(value == image[0] for value in image)\n        \n    def coord_equal(self, coord_1, coord_2):\n        if coord_1 is None or coord_2 is None:\n            return False\n        tolerance = .0005\n        result = abs(coord_1[0] - coord_2[0]) <= abs(tolerance)\n        result = result and abs(coord_1[1] - coord_2[1]) <= abs(tolerance)\n        return result\n\n    def joint_states_callback(self, data):\n        if self.coord_equal(data.position, self.last_position):\n            self.arm_moving = False\n        else:\n            self.last_position = data.position\n            self.arm_moving = True\n\n    def look_away_callback(self, data):\n        if not self.arm_moving and self.uniform_image(data.data):\n            try:\n                rospy.wait_for_service('/arm_mover/safe_move')\n                msg = GoToPositionRequest()\n                msg.joint_1 = 1.57\n                msg.joint_2 = 1.57\n                response = self.safe_move(msg)\n\n                rospy.logwarn(\"Camera detecting uniform image. \\\n                               Elapsed time to look at something nicer:\\n%s\", \n                               response)\n\n            except rospy.ServiceException, e:\n                rospy.logwarn(\"Service call failed: %s\", e)\n\n\n\nif __name__ == '__main__':\n    try: \n        LookAway()\n    except rospy.ROSInterruptException:\n        pass\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 373386,
+              "key": "7a762a11-2385-4179-8ec1-9d1c68732695",
+              "title": "Look Away: The Code ",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "pOZW8SdyYsk",
+                "china_cdn_id": "pOZW8SdyYsk.mp4"
+              }
+            },
+            {
+              "id": 352602,
+              "key": "e6670819-b29e-4a34-a86c-031ca45ff35a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## The code: explained\n\n### Import statements\n```python\n#!/usr/bin/env python\n\nimport math\nimport rospy\nfrom sensor_msgs.msg import Image, JointState\nfrom simple_arm.srv import *\n```\nThe imported modules are similar to those in `simple_arm`, except this time, we have the `Image` message type being imported so that the camera data can be used.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 352640,
+              "key": "45593408-d3f6-49b4-92fa-eae79204a978",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### The LookAway Class and `__init__` method\n```python\nclass LookAway(object):\n    def __init__(self):\n        rospy.init_node('look_away')\n\n        self.sub1 = rospy.Subscriber('/simple_arm/joint_states', \n                                     JointState, self.joint_states_callback)\n        self.sub2 = rospy.Subscriber(\"rgb_camera/image_raw\", \n                                     Image, self.look_away_callback)\n        self.safe_move = rospy.ServiceProxy('/arm_mover/safe_move', \n                                     GoToPosition)\n\n        self.last_position = None\n        self.arm_moving = False\n\n        rospy.spin()\n```\nWe define a class for this node to better keep track of the robot arm's current movement state and position history. Just as in the node definitions before, the node is initialized using `ropsy.init_node`, and at the end of the method `rospy.spin()` is used to block until a shutdown request is received by the node.\n\nThe first subscriber, `self.sub1`, subscribes to the `/simple_arm/joint_states` topic. The node is written to check the camera only when the arm is not moving, and by subscribing to `/simple_arm/joint_states`, changes in the position of the arm can be tracked. The message type for this topic is `JointState`, and with each message, the message data is passed to the `joint_states_callback` function.\n\nThe second subscriber, `self.sub2`, subscribes to the `/rgb_camera/image_raw` topic. The message type here is `Image`, and with each message, the `look_away_callback` function is called.\n\nA `ServiceProxy` is how rospy enables calling a service from a node. The `ServiceProxy` here is created using the name of the service you wish to call along with the service class definition: in this case `/arm_mover/safe_move` and `GoToPosition`. The actual calls to the service will take place in the `look_away_callback` method below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 352670,
+              "key": "e44b9db4-3663-4175-bc48-7f5e1491ccb8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### The helper methods\n```python\n    def uniform_image(self, image):\n        return all(value == image[0] for value in image)\n\n    def coord_equal(self, coord_1, coord_2):\n        if coord_1 is None or coord_2 is None:\n            return False\n        tolerance = .0005\n        result = abs(coord_1[0] - coord_2[0]) <= abs(tolerance)\n        result = result and abs(coord_1[1] - coord_2[1]) <= abs(tolerance)\n        return result\n```\nThere are two helper methods defined in the code: `uniform_image` and `coord_equal`. The `uniform_image` method takes an image as input and checks if all color values in the image are the same as the value of the first pixel. This essentially checks that all the color values in the image are the same.\n\nThe `coord_equal` method returns True if the coordinates `coord_1` and `coord_2` have equal components up to the specified tolerance. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 352659,
+              "key": "c9de12c3-d8b6-4120-8f4a-04ab77369549",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### The callback functions\n\n``` \n    def joint_states_callback(self, data):\n        if self.coord_equal(data.position, self.last_position):\n            self.arm_moving = False\n        else:\n            self.last_position = data.position\n            self.arm_moving = True\n\n    def look_away_callback(self, data):\n        if not self.arm_moving and self.uniform_image(data.data):\n            try:\n                rospy.wait_for_service('/arm_mover/safe_move')\n                msg = GoToPositionRequest()\n                msg.joint_1 = 1.57\n                msg.joint_2 = 1.57\n                response = self.safe_move(msg)\n\n                rospy.logwarn(\"Camera detecting uniform image. \\\n                               Elapsed time to look at something nicer:\\n%s\", \n                               response)\n\n            except rospy.ServiceException, e:\n                rospy.logwarn(\"Service call failed: %s\", e)\n\n```\nWhen `self.sub1` receives a message on `/simple_arm/joint_states` topic, the message is passed to the `joint_states_callback` in the variable `data`. The `joint_states_callback` uses the `coord_equal` helper method to check if the current joint states provided in `data` are the same as the previous joint states, which are stored in `self.last_position`. If the current and previous joint states are the same (up to the specified tolerance), then the the arm has stopped moving, so the `self.arm_moving` flag is set to `False`. If the current and previous joint states are different, then the arm is still moving. In this case, the method updates `self.last_position` with current position data and sets `self.arm_moving` to `True`.\n\nThe `look_away_callback` is receiving data from the `/rgb_camera/image_raw` topic. The first line of this method verifies that the arm is not moving and also checks if the the image is uniform. If the arm isn't moving and the image is uniform, then a `GoToPositionRequest()` message is created and sent using the `safe_move` service, moving both joint angles to `1.57`. The method also logs a message warning you that the camera has detected a uniform image along with the elapsed time to return to a nicer image.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 352764,
+          "key": "99495feb-b402-4e29-b01a-da70d725dbff",
+          "title": "Look Away: Launch and Interact",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "99495feb-b402-4e29-b01a-da70d725dbff",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 620978,
+              "key": "c1a6da3f-c231-4ea0-bd14-b07c8ee200c1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Look Away: Launch and Interact",
+              "instructor_notes": ""
+            },
+            {
+              "id": 352773,
+              "key": "284fbaff-a5f5-4f64-b425-63f8e97d1fa2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You can now launch and interact with `simple_arm` just as before:\n```sh\n$ cd ~/catkin_ws\n$ catkin_make\n$ source devel/setup.bash\n$ roslaunch simple_arm robot_spawn.launch\n```\n\n**Please note that if you are having trouble with roslaunch simple_arm robot_spawn.launch please try the safe_spawner.sh script in the scripts folder. You can launch by using $ ./safe_spawner.sh in a terminal of your choice.**\n\nAfter launching, the arm should move away from the grey sky and look towards the blocks. To view the camera image stream, you can use the same command as before:\n```sh\n$ rqt_image_view /rgb_camera/image_raw\n```\nTo check that everything is working as expected, open a new terminal, source `devel/setup.bash`, and send a service call to point the arm directly up towards the sky (note that the line break in the message is necessary):\n```sh\nrosservice call /arm_mover/safe_move \"joint_1: 0\njoint_2: 0\"\n```\nWhat happens?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 352789,
+              "key": "b53f7791-1faa-42f5-ac71-3c1aac0a0727",
+              "title": "Look Away service call results",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b53f7791-1faa-42f5-ac71-3c1aac0a0727",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Check all the things that happen to the arm after executing the rosservice call above:",
+                "answers": [
+                  {
+                    "id": "a1501282591643",
+                    "text": "The arm moves to point towards the sky.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501282670717",
+                    "text": "The arm does not move.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501282700844",
+                    "text": "The arm moves back to pointing towards the blocks.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501282763057",
+                    "text": "The arm stops when pointing at the sky and does not move again.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 350979,
+          "key": "828147cb-cf85-4d12-94b5-a18fd70f9d23",
+          "title": "Logging",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "828147cb-cf85-4d12-94b5-a18fd70f9d23",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 354049,
+              "key": "77224993-f6f3-4c80-b120-d4b5abc44de3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Logging overview\n\nIn the code for the `simple_mover`, `arm_mover`, and `look_away` nodes, you may have noticed logging statements such as:\n\n```\nrospy.logwarn('j1 is out of bounds, valid range (%s,%s), clamping to: %s', \n               min_j1, max_j1, clamped_j1)\n```\nand\n```\nrospy.loginfo('GoToPositionRequest Received - j1:%s, j2:%s', \n               req.joint_1, req.joint_2)\n```\n\nLogging statements allow ROS nodes to send messages to a log file or the console. This allows errors and warnings to be surfaced to the user, or log data to be used later for debugging.\n\nBy default all logging messages for a node are written to the node's log file which can be found in `~/.ros/log` or `ROS_ROOT/log` . If `roscore` is running, you can use `roscd` to find log file directory by opening a new terminal window and typing:\n```\nroscd log\n```\nIn this directory, you should see directories from runs of your ROS code, along with a `latest` directory with log files from the most recent run.\n\nBelow, we'll show some of the options available for logging different types of messages, filtering messages, and changing how messages are surfaced to a user.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354162,
+              "key": "cfbacc5f-261e-4771-b34e-bce1d1e8a20a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Logging levels and outputs\n\nRospy has several message levels and provides a variety of options for how to display or store these messages:\n```\nrospy.logdebug(...)\nrospy.loginfo(...)\nrospy.logwarn(...)\nrospy.logerr(...)\nrospy.logfatal(...)\n```\n\nAll levels of logging messages are recorded in ROS log files, but some message levels may also be sent to Python `stdout`, Python `stderr`, or the ROS topic `/rosout`. \n\nThe `loginfo` messages are written to Python's `stdout`, while `logwarn`, `logerr`, and `logfatal` are written to Python's `stderr` by default. Additionally, `loginfo`, `logwarn`, `logerr`, and `logfatal` are written to `/rosout`.\n\nThe following table summarizes the default locations log messages are written to (source [here](http://wiki.ros.org/rospy/Overview/Logging)):\n\n| |Debug | Info| Warn | Error | Fatal|\n|--------|:----------:|:-------:|:--------:|:--------:|:--------:|\n|stdout|  | X | |||\n|stderr|  |  |X  |X  |X|\n|log file|X|X |X|X|X|\n|/rosout||X|X|X|X||",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354160,
+              "key": "da2e6c8f-072f-4124-aaf8-98111caf088c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Filtering and saving log messages from `/rosout`\n\nNote that for messages written to `/rosout`, you can see the messages in real time as your program is running by echoing: \n\n```\nrostopic echo /rosout\n``` \n\nAlthough it can be helpful to view messages this way, because of the volume of messages written to that topic, it can sometimes be helpful to filter messages by piping them to [grep](https://en.wikipedia.org/wiki/Grep). These grepped messages can also be saved to a file for debugging:\n```\nrostopic echo /rosout | grep insert_search_expression_here\n```\n```\nrostopic echo /rosout | grep insert_search_expression_here > path_to_output/output.txt\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354159,
+              "key": "32e00dd1-4b8e-44d4-88da-53e053617616",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Modifying message level sent to /rosout\n\nAlthough `logdebug` messages are not written to `/rosout` by default, it is possible to modify the level of logging messages written to `/rosout` to display them there, or change the level of logging messages written to `/rosout` to be more restrictive. To do this you must set the `log_level` attribute within the `rospy.init_node` code. For example, if you'd like to allow lodebug messages to be written to `/rosout`, that can be done as follows:\n```\nrospy.init_node('my_node', log_level=rospy.DEBUG)\n```\nOther possible `rospy` options for `log_level` are `INFO`,  `WARN`,  `ERROR`, and `FATAL`.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354237,
+              "key": "76b4751c-ab83-40cd-bd0f-a208f0ea1089",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Modifying display of messages sent to `stdout` and `stderr`\n\nIt is also possible to change how messages to `stdout` and `stderr` are displayed or logged. Within a package's `.launch` file, the `output` attribute for a node tag can be set to `\"screen\"` or `\"log\"`.  The following table summarizes how the different output options change the display of the node's `stdout` and `stderr` messages:\n\n| | `stdout` | `stderr` |\n|--------|--------|--------|\n|`\"screen\"`| screen|screen|\n|`\"log\"`|log|screen and log||\n\n\nFor example, setting `output=\"screen\"` for the `look_away` node in `robot_spawn.launch` will display both `stdout` and `stderr` messages in the screen:\n```\n  <!-- The look away node -->\n  <node name=\"look_away\" type=\"look_away\" pkg=\"simple_arm\" output=\"screen\"/>\n```\nIf the `output` attribute is left empty, the default is `\"log\"`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354228,
+              "key": "91e9e263-2743-46c9-acbc-606415c4cee7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As you continue on with the project, the ROS systems that you write will become increasingly complex. Being able to use logging effectively  may prove extremely useful for debugging!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 308615,
+          "key": "c6903e51-674c-4aa3-9f32-ca2aad5edc39",
+          "title": "Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c6903e51-674c-4aa3-9f32-ca2aad5edc39",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 323002,
+              "key": "63a38f5b-845f-4dbf-a8c4-c31e5034ffd3",
+              "title": "Recap",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "7G5xOFeSrh0",
+                "china_cdn_id": "7G5xOFeSrh0.mp4"
+              }
+            },
+            {
+              "id": 308643,
+              "key": "19970349-d775-4d06-af21-abed51e00b74",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Congratulations! \nYou’ve now come the conclusion of the ROS Basics!\n\nArmed with the basic understanding of ROS you’ve learned here you should now  be prepared for the projects which follow!\n\n## Additional Resources \nWhile we’ve done our best to give you a solid understanding of the fundamental concepts of ROS, the lessons here are by no means comprehensive. Fortunately, there are a wealth of resources available online.\n\n### [ROS Wiki](http://wiki.ros.org)\nThis is the official source of documentation for all ROS packages. Additionally, there are many helpful tutorials here. Aside from a simple search on google, this is probably the first place you should go if you are having a ROS-related problem.\n\n### [ROS Answers](http://answers.ros.org/) \nIf the wiki does not provide the answers you are looking for, ROS Answers will be the next best bet.  With over 33,000 questions asked on ROS answers, there’s a good chance that somebody has already addressed the problem that you are dealing with.\n\n### [ROS Cheat Sheet](https://github.com/ros/cheatsheet/releases/download/0.0.1/ROScheatsheet_catkin.pdf) \nThis is the official ROS cheat sheet. Even though the title indicates that it is for the indigo distribution, almost all of the commands still work in Kinetic, the distribution that we are using for this program.\n\n### [A gentle Introduction to ROS](https://cse.sc.edu/~jokane/agitr/) \nThis is a great book, and is distributed not only in paperback form, but also for free as a PDF download.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 369507,
+          "key": "4b5402a3-4304-40e6-ab31-3ef3f91950c1",
+          "title": "Outro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4b5402a3-4304-40e6-ab31-3ef3f91950c1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 369671,
+              "key": "e209458a-5249-490e-b3a7-a1cf8e01ffcd",
+              "title": "L4 01 L Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LwI4UmDGLeM",
+                "china_cdn_id": "LwI4UmDGLeM.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}
