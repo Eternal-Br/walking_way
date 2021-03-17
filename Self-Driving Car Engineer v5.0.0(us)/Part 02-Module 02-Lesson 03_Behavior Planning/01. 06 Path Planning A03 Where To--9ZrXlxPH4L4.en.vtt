@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.825
+In the self-driving car behavior selection,
+
+00:00:02.825 --> 00:00:05.880
+you're facing now one of the most challenging task of building
+
+00:00:05.879 --> 00:00:09.179
+a self-driving car where the topic is, what to do next.
+
+00:00:09.179 --> 00:00:11.309
+And not on this minute level of like
+
+00:00:11.310 --> 00:00:13.440
+what exact control input to give a steering wheel but more of
+
+00:00:13.439 --> 00:00:16.169
+a macroscopic level whether to the left or
+
+00:00:16.170 --> 00:00:19.380
+right or change lanes of a highway or take an exit.
+
+00:00:19.379 --> 00:00:22.049
+So we're going to look into finite state machines have govern
+
+00:00:22.050 --> 00:00:24.900
+the complex behavior of a driving car.
+
+00:00:24.899 --> 00:00:27.314
+And one thing I can promise you, once you've done it,
+
+00:00:27.315 --> 00:00:31.280
+you will never look at your own driving skills the same way as before.
+

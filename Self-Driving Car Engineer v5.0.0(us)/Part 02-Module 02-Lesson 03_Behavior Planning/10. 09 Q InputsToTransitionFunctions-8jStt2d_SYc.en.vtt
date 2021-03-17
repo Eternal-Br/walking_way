@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.049
+You just saw how the states we choose to use can impact the behavior of the vehicle.
+
+00:00:06.049 --> 00:00:09.660
+But deciding how those states transition and what inputs
+
+00:00:09.660 --> 00:00:12.359
+the transition functions use is crucial to
+
+00:00:12.359 --> 00:00:15.924
+the actual implementation of a finite-state machine.
+
+00:00:15.925 --> 00:00:18.269
+For the example with the vending machine,
+
+00:00:18.269 --> 00:00:20.695
+the only input was the coin.
+
+00:00:20.695 --> 00:00:23.795
+The self-driving car is more complicated.
+
+00:00:23.795 --> 00:00:25.405
+So the question is,
+
+00:00:25.405 --> 00:00:30.035
+what data will we need to pass into our transition function as input.
+
+00:00:30.035 --> 00:00:32.000
+Check all that apply.
+

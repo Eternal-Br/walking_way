@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.620
+In this lesson, you learned about
+
+00:00:01.620 --> 00:00:05.235
+finite state machines which are a solution to the behavior planning problem.
+
+00:00:05.235 --> 00:00:08.699
+Finite state machines generally do well for small state spaces,
+
+00:00:08.699 --> 00:00:10.684
+like when you're on a highway, for example.
+
+00:00:10.685 --> 00:00:13.225
+For more complex scenarios like urban driving,
+
+00:00:13.224 --> 00:00:14.910
+other approaches might be more suitable.
+
+00:00:14.910 --> 00:00:16.246
+In the final project,
+
+00:00:16.246 --> 00:00:20.250
+you'll be programming a planner for highway driving where you will have the chance
+
+00:00:20.250 --> 00:00:24.420
+to gain experience working with your own finite state machine. So, safe driving.
+
+00:00:24.420 --> 00:00:26.000
+And happy decision making.
+

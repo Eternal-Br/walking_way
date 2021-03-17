@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.299
+A key part of getting transitions to happen when we want
+
+00:00:03.299 --> 00:00:06.674
+them to is the design of reasonable cost functions.
+
+00:00:06.674 --> 00:00:10.285
+We want to penalize and reward the right things.
+
+00:00:10.285 --> 00:00:12.390
+I'm going to work through an example of
+
+00:00:12.390 --> 00:00:15.880
+one way you might think about designing a cost function.
+
+00:00:15.880 --> 00:00:20.810
+Let's consider how we would design a cost function for vehicle speed.
+
+00:00:20.809 --> 00:00:24.704
+On one hand, we want to get to our destination quickly,
+
+00:00:24.704 --> 00:00:26.039
+but on the other hand,
+
+00:00:26.039 --> 00:00:28.089
+we don't want to break the law.
+
+00:00:28.089 --> 00:00:34.234
+An essential quantity we have to control is the desired velocity of the car.
+
+00:00:34.234 --> 00:00:36.519
+Some velocities are more beneficial,
+
+00:00:36.520 --> 00:00:38.480
+some are even illegal.
+
+00:00:38.479 --> 00:00:43.509
+Let's fill in this graph and try to assign some costs to every velocity.
+
+00:00:43.509 --> 00:00:45.384
+For the sake of simplicity,
+
+00:00:45.384 --> 00:00:51.140
+let's assume that all of the cost functions will have an output between zero and one.
+
+00:00:51.140 --> 00:00:56.465
+We will adjust the importance of each cost function later by adjusting the weights.
+
+00:00:56.465 --> 00:01:00.200
+Let's say the speed limit for the road we are on is here.
+
+00:01:00.200 --> 00:01:04.045
+Well, we know that if we're going well above the speed limit,
+
+00:01:04.045 --> 00:01:06.579
+that should be maximum cost.
+
+00:01:06.579 --> 00:01:08.694
+And maybe we want to set
+
+00:01:08.694 --> 00:01:11.289
+an ideal zero cost speed that's
+
+00:01:11.290 --> 00:01:15.145
+slightly below the speed limit so that we have some buffer.
+
+00:01:15.144 --> 00:01:20.679
+And then we can think about how much we want to penalize not moving at all.
+
+00:01:20.680 --> 00:01:23.095
+Obviously, not moving is bad,
+
+00:01:23.094 --> 00:01:25.944
+but maybe not as bad as breaking the speed limit,
+
+00:01:25.944 --> 00:01:28.334
+so we would put it here.
+
+00:01:28.334 --> 00:01:30.109
+To keep it simple,
+
+00:01:30.109 --> 00:01:34.539
+we could just say there is a linear cost between zero and the target speed.
+
+00:01:34.540 --> 00:01:37.345
+And since breaking the law is a binary thing,
+
+00:01:37.344 --> 00:01:43.185
+let's just say any speed greater than or equal the speed limit has maximal cost.
+
+00:01:43.185 --> 00:01:47.010
+And again, we can arbitrarily connect these points with
+
+00:01:47.010 --> 00:01:53.439
+a linear function and the flat maximum cost for anything above the speed limit.
+
+00:01:53.439 --> 00:01:57.349
+Now, in practice, we might actually want to parametrize some of
+
+00:01:57.349 --> 00:02:02.414
+these quantities so that we could later adjust them until we got the right behavior.
+
+00:02:02.415 --> 00:02:06.290
+So first, we might define a parameter called Stop Cost for
+
+00:02:06.290 --> 00:02:09.564
+the zero-velocity case and a parameter called
+
+00:02:09.564 --> 00:02:13.995
+buffer velocity which would probably be a few miles per hour.
+
+00:02:13.995 --> 00:02:18.694
+Then, our overall cost function has three domains.
+
+00:02:18.694 --> 00:02:21.114
+If we're going less than the target speed,
+
+00:02:21.115 --> 00:02:23.465
+the cost function would look like this.
+
+00:02:23.465 --> 00:02:25.390
+If we are above the speed limit,
+
+00:02:25.389 --> 00:02:27.194
+the cost is just one.
+
+00:02:27.194 --> 00:02:29.079
+And if we are between,
+
+00:02:29.080 --> 00:02:32.050
+the cost would look like this. Awesome.
+

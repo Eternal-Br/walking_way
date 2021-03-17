@@ -1,0 +1,1190 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Implement Behavior Planner in C++ (solution)
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Behavior Planning
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Where To.html">
+       01. Where To
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Lesson Outline.html">
+       02. Lesson Outline
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Understanding Output.html">
+       03. Understanding Output
+      </a>
+     </li>
+     <li class="">
+      <a href="04. The Behavior Problem.html">
+       04. The Behavior Problem
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Finite State Machines.html">
+       05. Finite State Machines
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Formalizing Finite State Machines.html">
+       06. Formalizing Finite State Machines
+      </a>
+     </li>
+     <li class="">
+      <a href="07. FSM Intuition.html">
+       07. FSM Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="08. States for Self Driving Cars.html">
+       08. States for Self Driving Cars
+      </a>
+     </li>
+     <li class="">
+      <a href="09. The States We'll Use.html">
+       09. The States We'll Use
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Inputs to Transition Functions.html">
+       10. Inputs to Transition Functions
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Behavior Planning Pseudocode.html">
+       11. Behavior Planning Pseudocode
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Create a Cost Function - Speed Penalty.html">
+       12. Create a Cost Function - Speed Penalty
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Example Cost Function - Lane Change Penalty.html">
+       13. Example Cost Function - Lane Change Penalty
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Implement a Cost Function in C++.html">
+       14. Implement a Cost Function in C++
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Implement a Cost Function in C++ (solution).html">
+       15. Implement a Cost Function in C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Implement a Second Cost Function in C++.html">
+       16. Implement a Second Cost Function in C++
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Implement a Second Cost Function in C++ (solution).html">
+       17. Implement a Second Cost Function in C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Cost Function Design and Weight Tweaking.html">
+       18. Cost Function Design and Weight Tweaking
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Cost Function Matching.html">
+       19. Cost Function Matching
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Scheduling Compute Time.html">
+       20. Scheduling Compute Time
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Implement Behavior Planner in C++.html">
+       21. Implement Behavior Planner in C++
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Implement Behavior Planner in C++ (solution).html">
+       22. Implement Behavior Planner in C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Conclusion.html">
+       23. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          22. Implement Behavior Planner in C++ (solution)
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Here is one possible solution to the previous quiz using the two suggested cost functions.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="457632-main-cpp" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#457632-main-cpp" id="tab-457632-main-cpp" role="tab">
+            main.cpp
+           </a>
+           <a aria-controls="457632-vehicle-cpp" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#457632-vehicle-cpp" id="tab-457632-vehicle-cpp" role="tab">
+            vehicle.cpp
+           </a>
+           <a aria-controls="457632-vehicle-h" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#457632-vehicle-h" id="tab-457632-vehicle-h" role="tab">
+            vehicle.h
+           </a>
+           <a aria-controls="457632-cost-cpp" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#457632-cost-cpp" id="tab-457632-cost-cpp" role="tab">
+            cost.cpp
+           </a>
+           <a aria-controls="457632-cost-h" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#457632-cost-h" id="tab-457632-cost-h" role="tab">
+            cost.h
+           </a>
+           <a aria-controls="457632-road-cpp" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#457632-road-cpp" id="tab-457632-road-cpp" role="tab">
+            road.cpp
+           </a>
+           <a aria-controls="457632-road-h" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#457632-road-h" id="tab-457632-road-h" role="tab">
+            road.h
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-457632-main-cpp" class="tab-pane active show" id="457632-main-cpp" role="tabpanel">
+            <pre><code></code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include "road.h"
+#include "vehicle.h"
+
+using std::cout;
+using std::endl;
+
+// impacts default behavior for most states
+int SPEED_LIMIT = 10;
+
+// all traffic in lane (besides ego) follow these speeds
+vector&lt;int&gt; LANE_SPEEDS = {6,7,8,9}; 
+
+// Number of available "cells" which should have traffic
+double TRAFFIC_DENSITY = 0.15;
+
+// At each timestep, ego can set acceleration to value between 
+//   -MAX_ACCEL and MAX_ACCEL
+int MAX_ACCEL = 2;
+
+// s value and lane number of goal.
+vector&lt;int&gt; GOAL = {300, 0};
+
+// These affect the visualization
+int FRAMES_PER_SECOND = 4;
+int AMOUNT_OF_ROAD_VISIBLE = 40;
+
+int main() {
+  Road road = Road(SPEED_LIMIT, TRAFFIC_DENSITY, LANE_SPEEDS);
+
+  road.update_width = AMOUNT_OF_ROAD_VISIBLE;
+
+  road.populate_traffic();
+
+  int goal_s = GOAL[0];
+  int goal_lane = GOAL[1];
+
+  // configuration data: speed limit, num_lanes, goal_s, goal_lane, 
+  //   and max_acceleration
+  int num_lanes = LANE_SPEEDS.size();
+  vector&lt;int&gt; ego_config = {SPEED_LIMIT,num_lanes,goal_s,goal_lane,MAX_ACCEL};
+   
+  road.add_ego(2,0, ego_config);
+  int timestep = 0;
+  
+  while (road.get_ego().s &lt;= GOAL[0]) {
+    ++timestep;
+    if (timestep &gt; 100) {
+      break;
+    }
+    road.advance();
+    road.display(timestep);
+    //time.sleep(float(1.0) / FRAMES_PER_SECOND);
+  }
+
+  Vehicle ego = road.get_ego();
+  if (ego.lane == GOAL[1]) {
+    cout &lt;&lt; "You got to the goal in " &lt;&lt; timestep &lt;&lt; " seconds!" &lt;&lt; endl;
+    if(timestep &gt; 35) {
+      cout &lt;&lt; "But it took too long to reach the goal. Go faster!" &lt;&lt; endl;
+    }
+  } else {
+    cout &lt;&lt; "You missed the goal. You are in lane " &lt;&lt; ego.lane 
+         &lt;&lt; " instead of " &lt;&lt; GOAL[1] &lt;&lt; "." &lt;&lt; endl;
+  }
+
+  return 0;
+}</pre>
+           </div>
+           <div aria-labelledby="tab-457632-vehicle-cpp" class="tab-pane" id="457632-vehicle-cpp" role="tabpanel">
+            <pre><code></code>#include "vehicle.h"
+#include &lt;algorithm&gt;
+#include &lt;iterator&gt;
+#include &lt;map&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "cost.h"
+
+using std::string;
+using std::vector;
+
+// Initializes Vehicle
+Vehicle::Vehicle(){}
+
+Vehicle::Vehicle(int lane, float s, float v, float a, string state) {
+  this-&gt;lane = lane;
+  this-&gt;s = s;
+  this-&gt;v = v;
+  this-&gt;a = a;
+  this-&gt;state = state;
+  max_acceleration = -1;
+}
+
+Vehicle::~Vehicle() {}
+
+vector&lt;Vehicle&gt; Vehicle::choose_next_state(map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions) {
+  /**
+   * Here you can implement the transition_function code from the Behavior 
+   *   Planning Pseudocode classroom concept.
+   *
+   * @param A predictions map. This is a map of vehicle id keys with predicted
+   *   vehicle trajectories as values. Trajectories are a vector of Vehicle 
+   *   objects representing the vehicle at the current timestep and one timestep
+   *   in the future.
+   * @output The best (lowest cost) trajectory corresponding to the next ego 
+   *   vehicle state.
+   *
+   * Functions that will be useful:
+   * 1. successor_states - Uses the current state to return a vector of possible
+   *    successor states for the finite state machine.
+   * 2. generate_trajectory - Returns a vector of Vehicle objects representing 
+   *    a vehicle trajectory, given a state and predictions. Note that 
+   *    trajectory vectors might have size 0 if no possible trajectory exists 
+   *    for the state. 
+   * 3. calculate_cost - Included from cost.cpp, computes the cost for a trajectory.
+   *
+   * TODO: Your solution here.
+   */
+  vector&lt;string&gt; states = successor_states();
+  float cost;
+  vector&lt;float&gt; costs;
+  vector&lt;vector&lt;Vehicle&gt;&gt; final_trajectories;
+
+  for (vector&lt;string&gt;::iterator it = states.begin(); it != states.end(); ++it) {
+    vector&lt;Vehicle&gt; trajectory = generate_trajectory(*it, predictions);
+    if (trajectory.size() != 0) {
+      cost = calculate_cost(*this, predictions, trajectory);
+      costs.push_back(cost);
+      final_trajectories.push_back(trajectory);
+    }
+  }
+
+  vector&lt;float&gt;::iterator best_cost = min_element(begin(costs), end(costs));
+  int best_idx = distance(begin(costs), best_cost);
+
+  /**
+   * TODO: Change return value here:
+   */
+  return final_trajectories[best_idx];
+}
+
+vector&lt;string&gt; Vehicle::successor_states() {
+  // Provides the possible next states given the current state for the FSM 
+  //   discussed in the course, with the exception that lane changes happen 
+  //   instantaneously, so LCL and LCR can only transition back to KL.
+  vector&lt;string&gt; states;
+  states.push_back("KL");
+  string state = this-&gt;state;
+  if(state.compare("KL") == 0) {
+    states.push_back("PLCL");
+    states.push_back("PLCR");
+  } else if (state.compare("PLCL") == 0) {
+    if (lane != lanes_available - 1) {
+      states.push_back("PLCL");
+      states.push_back("LCL");
+    }
+  } else if (state.compare("PLCR") == 0) {
+    if (lane != 0) {
+      states.push_back("PLCR");
+      states.push_back("LCR");
+    }
+  }
+    
+  // If state is "LCL" or "LCR", then just return "KL"
+  return states;
+}
+
+vector&lt;Vehicle&gt; Vehicle::generate_trajectory(string state, 
+                                             map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions) {
+  // Given a possible next state, generate the appropriate trajectory to realize
+  //   the next state.
+  vector&lt;Vehicle&gt; trajectory;
+  if (state.compare("CS") == 0) {
+    trajectory = constant_speed_trajectory();
+  } else if (state.compare("KL") == 0) {
+    trajectory = keep_lane_trajectory(predictions);
+  } else if (state.compare("LCL") == 0 || state.compare("LCR") == 0) {
+    trajectory = lane_change_trajectory(state, predictions);
+  } else if (state.compare("PLCL") == 0 || state.compare("PLCR") == 0) {
+    trajectory = prep_lane_change_trajectory(state, predictions);
+  }
+
+  return trajectory;
+}
+
+vector&lt;float&gt; Vehicle::get_kinematics(map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, 
+                                      int lane) {
+  // Gets next timestep kinematics (position, velocity, acceleration) 
+  //   for a given lane. Tries to choose the maximum velocity and acceleration, 
+  //   given other vehicle positions and accel/velocity constraints.
+  float max_velocity_accel_limit = this-&gt;max_acceleration + this-&gt;v;
+  float new_position;
+  float new_velocity;
+  float new_accel;
+  Vehicle vehicle_ahead;
+  Vehicle vehicle_behind;
+
+  if (get_vehicle_ahead(predictions, lane, vehicle_ahead)) {
+    if (get_vehicle_behind(predictions, lane, vehicle_behind)) {
+      // must travel at the speed of traffic, regardless of preferred buffer
+      new_velocity = vehicle_ahead.v;
+    } else {
+      float max_velocity_in_front = (vehicle_ahead.s - this-&gt;s 
+                                  - this-&gt;preferred_buffer) + vehicle_ahead.v 
+                                  - 0.5 * (this-&gt;a);
+      new_velocity = std::min(std::min(max_velocity_in_front, 
+                                       max_velocity_accel_limit), 
+                                       this-&gt;target_speed);
+    }
+  } else {
+    new_velocity = std::min(max_velocity_accel_limit, this-&gt;target_speed);
+  }
+    
+  new_accel = new_velocity - this-&gt;v; // Equation: (v_1 - v_0)/t = acceleration
+  new_position = this-&gt;s + new_velocity + new_accel / 2.0;
+    
+  return{new_position, new_velocity, new_accel};
+}
+
+vector&lt;Vehicle&gt; Vehicle::constant_speed_trajectory() {
+  // Generate a constant speed trajectory.
+  float next_pos = position_at(1);
+  vector&lt;Vehicle&gt; trajectory = {Vehicle(this-&gt;lane,this-&gt;s,this-&gt;v,this-&gt;a,this-&gt;state), 
+                                Vehicle(this-&gt;lane,next_pos,this-&gt;v,0,this-&gt;state)};
+  return trajectory;
+}
+
+vector&lt;Vehicle&gt; Vehicle::keep_lane_trajectory(map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions) {
+  // Generate a keep lane trajectory.
+  vector&lt;Vehicle&gt; trajectory = {Vehicle(lane, this-&gt;s, this-&gt;v, this-&gt;a, state)};
+  vector&lt;float&gt; kinematics = get_kinematics(predictions, this-&gt;lane);
+  float new_s = kinematics[0];
+  float new_v = kinematics[1];
+  float new_a = kinematics[2];
+  trajectory.push_back(Vehicle(this-&gt;lane, new_s, new_v, new_a, "KL"));
+  
+  return trajectory;
+}
+
+vector&lt;Vehicle&gt; Vehicle::prep_lane_change_trajectory(string state, 
+                                                     map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions) {
+  // Generate a trajectory preparing for a lane change.
+  float new_s;
+  float new_v;
+  float new_a;
+  Vehicle vehicle_behind;
+  int new_lane = this-&gt;lane + lane_direction[state];
+  vector&lt;Vehicle&gt; trajectory = {Vehicle(this-&gt;lane, this-&gt;s, this-&gt;v, this-&gt;a, 
+                                        this-&gt;state)};
+  vector&lt;float&gt; curr_lane_new_kinematics = get_kinematics(predictions, this-&gt;lane);
+
+  if (get_vehicle_behind(predictions, this-&gt;lane, vehicle_behind)) {
+    // Keep speed of current lane so as not to collide with car behind.
+    new_s = curr_lane_new_kinematics[0];
+    new_v = curr_lane_new_kinematics[1];
+    new_a = curr_lane_new_kinematics[2];    
+  } else {
+    vector&lt;float&gt; best_kinematics;
+    vector&lt;float&gt; next_lane_new_kinematics = get_kinematics(predictions, new_lane);
+    // Choose kinematics with lowest velocity.
+    if (next_lane_new_kinematics[1] &lt; curr_lane_new_kinematics[1]) {
+      best_kinematics = next_lane_new_kinematics;
+    } else {
+      best_kinematics = curr_lane_new_kinematics;
+    }
+    new_s = best_kinematics[0];
+    new_v = best_kinematics[1];
+    new_a = best_kinematics[2];
+  }
+
+  trajectory.push_back(Vehicle(this-&gt;lane, new_s, new_v, new_a, state));
+  
+  return trajectory;
+}
+
+vector&lt;Vehicle&gt; Vehicle::lane_change_trajectory(string state, 
+                                                map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions) {
+  // Generate a lane change trajectory.
+  int new_lane = this-&gt;lane + lane_direction[state];
+  vector&lt;Vehicle&gt; trajectory;
+  Vehicle next_lane_vehicle;
+  // Check if a lane change is possible (check if another vehicle occupies 
+  //   that spot).
+  for (map&lt;int, vector&lt;Vehicle&gt;&gt;::iterator it = predictions.begin(); 
+       it != predictions.end(); ++it) {
+    next_lane_vehicle = it-&gt;second[0];
+    if (next_lane_vehicle.s == this-&gt;s &amp;&amp; next_lane_vehicle.lane == new_lane) {
+      // If lane change is not possible, return empty trajectory.
+      return trajectory;
+    }
+  }
+  trajectory.push_back(Vehicle(this-&gt;lane, this-&gt;s, this-&gt;v, this-&gt;a, 
+                               this-&gt;state));
+  vector&lt;float&gt; kinematics = get_kinematics(predictions, new_lane);
+  trajectory.push_back(Vehicle(new_lane, kinematics[0], kinematics[1], 
+                               kinematics[2], state));
+  return trajectory;
+}
+
+void Vehicle::increment(int dt = 1) {
+  this-&gt;s = position_at(dt);
+}
+
+float Vehicle::position_at(int t) {
+  return this-&gt;s + this-&gt;v*t + this-&gt;a*t*t/2.0;
+}
+
+bool Vehicle::get_vehicle_behind(map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, 
+                                 int lane, Vehicle &amp;rVehicle) {
+  // Returns a true if a vehicle is found behind the current vehicle, false 
+  //   otherwise. The passed reference rVehicle is updated if a vehicle is found.
+  int max_s = -1;
+  bool found_vehicle = false;
+  Vehicle temp_vehicle;
+  for (map&lt;int, vector&lt;Vehicle&gt;&gt;::iterator it = predictions.begin(); 
+       it != predictions.end(); ++it) {
+    temp_vehicle = it-&gt;second[0];
+    if (temp_vehicle.lane == this-&gt;lane &amp;&amp; temp_vehicle.s &lt; this-&gt;s 
+        &amp;&amp; temp_vehicle.s &gt; max_s) {
+      max_s = temp_vehicle.s;
+      rVehicle = temp_vehicle;
+      found_vehicle = true;
+    }
+  }
+  
+  return found_vehicle;
+}
+
+bool Vehicle::get_vehicle_ahead(map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, 
+                                int lane, Vehicle &amp;rVehicle) {
+  // Returns a true if a vehicle is found ahead of the current vehicle, false 
+  //   otherwise. The passed reference rVehicle is updated if a vehicle is found.
+  int min_s = this-&gt;goal_s;
+  bool found_vehicle = false;
+  Vehicle temp_vehicle;
+  for (map&lt;int, vector&lt;Vehicle&gt;&gt;::iterator it = predictions.begin(); 
+       it != predictions.end(); ++it) {
+    temp_vehicle = it-&gt;second[0];
+    if (temp_vehicle.lane == this-&gt;lane &amp;&amp; temp_vehicle.s &gt; this-&gt;s 
+        &amp;&amp; temp_vehicle.s &lt; min_s) {
+      min_s = temp_vehicle.s;
+      rVehicle = temp_vehicle;
+      found_vehicle = true;
+    }
+  }
+  
+  return found_vehicle;
+}
+
+vector&lt;Vehicle&gt; Vehicle::generate_predictions(int horizon) {
+  // Generates predictions for non-ego vehicles to be used in trajectory 
+  //   generation for the ego vehicle.
+  vector&lt;Vehicle&gt; predictions;
+  for(int i = 0; i &lt; horizon; ++i) {
+    float next_s = position_at(i);
+    float next_v = 0;
+    if (i &lt; horizon-1) {
+      next_v = position_at(i+1) - s;
+    }
+    predictions.push_back(Vehicle(this-&gt;lane, next_s, next_v, 0));
+  }
+  
+  return predictions;
+}
+
+void Vehicle::realize_next_state(vector&lt;Vehicle&gt; &amp;trajectory) {
+  // Sets state and kinematics for ego vehicle using the last state of the trajectory.
+  Vehicle next_state = trajectory[1];
+  this-&gt;state = next_state.state;
+  this-&gt;lane = next_state.lane;
+  this-&gt;s = next_state.s;
+  this-&gt;v = next_state.v;
+  this-&gt;a = next_state.a;
+}
+
+void Vehicle::configure(vector&lt;int&gt; &amp;road_data) {
+  // Called by simulator before simulation begins. Sets various parameters which
+  //   will impact the ego vehicle.
+  target_speed = road_data[0];
+  lanes_available = road_data[1];
+  goal_s = road_data[2];
+  goal_lane = road_data[3];
+  max_acceleration = road_data[4];
+}</pre>
+           </div>
+           <div aria-labelledby="tab-457632-vehicle-h" class="tab-pane" id="457632-vehicle-h" role="tabpanel">
+            <pre><code></code>#ifndef VEHICLE_H
+#define VEHICLE_H
+
+#include &lt;map&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+
+using std::map;
+using std::string;
+using std::vector;
+
+class Vehicle {
+ public:
+  // Constructors
+  Vehicle();
+  Vehicle(int lane, float s, float v, float a, string state="CS");
+
+  // Destructor
+  virtual ~Vehicle();
+
+  // Vehicle functions
+  vector&lt;Vehicle&gt; choose_next_state(map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions);
+
+  vector&lt;string&gt; successor_states();
+
+  vector&lt;Vehicle&gt; generate_trajectory(string state, 
+                                      map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions);
+
+  vector&lt;float&gt; get_kinematics(map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, int lane);
+
+  vector&lt;Vehicle&gt; constant_speed_trajectory();
+
+  vector&lt;Vehicle&gt; keep_lane_trajectory(map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions);
+
+  vector&lt;Vehicle&gt; lane_change_trajectory(string state, 
+                                         map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions);
+
+  vector&lt;Vehicle&gt; prep_lane_change_trajectory(string state, 
+                                              map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions);
+
+  void increment(int dt);
+
+  float position_at(int t);
+
+  bool get_vehicle_behind(map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, int lane, 
+                          Vehicle &amp;rVehicle);
+
+  bool get_vehicle_ahead(map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, int lane, 
+                         Vehicle &amp;rVehicle);
+
+  vector&lt;Vehicle&gt; generate_predictions(int horizon=2);
+
+  void realize_next_state(vector&lt;Vehicle&gt; &amp;trajectory);
+
+  void configure(vector&lt;int&gt; &amp;road_data);
+
+  // public Vehicle variables
+  struct collider{
+    bool collision; // is there a collision?
+    int  time; // time collision happens
+  };
+
+  map&lt;string, int&gt; lane_direction = {{"PLCL", 1}, {"LCL", 1}, 
+                                     {"LCR", -1}, {"PLCR", -1}};
+
+  int L = 1;
+
+  int preferred_buffer = 6; // impacts "keep lane" behavior.
+
+  int lane, s, goal_lane, goal_s, lanes_available;
+
+  float v, target_speed, a, max_acceleration;
+
+  string state;
+};
+
+#endif  // VEHICLE_H</pre>
+           </div>
+           <div aria-labelledby="tab-457632-cost-cpp" class="tab-pane" id="457632-cost-cpp" role="tabpanel">
+            <pre><code></code>#include "cost.h"
+#include &lt;cmath&gt;
+#include &lt;functional&gt;
+#include &lt;iterator&gt;
+#include &lt;map&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "vehicle.h"
+
+using std::string;
+using std::vector;
+
+/**
+ * TODO: change weights for cost functions.
+ */
+const float REACH_GOAL = pow(10, 6);
+const float EFFICIENCY = pow(10, 5);
+
+// Here we have provided two possible suggestions for cost functions, but feel 
+//   free to use your own! The weighted cost over all cost functions is computed
+//   in calculate_cost. The data from get_helper_data will be very useful in 
+//   your implementation of the cost functions below. Please see get_helper_data
+//   for details on how the helper data is computed.
+
+float goal_distance_cost(const Vehicle &amp;vehicle, 
+                         const vector&lt;Vehicle&gt; &amp;trajectory, 
+                         const map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, 
+                         map&lt;string, float&gt; &amp;data) {
+  // Cost increases based on distance of intended lane (for planning a lane 
+  //   change) and final lane of trajectory.
+  // Cost of being out of goal lane also becomes larger as vehicle approaches 
+  //   goal distance.
+  // This function is very similar to what you have already implemented in the 
+  //   "Implement a Cost Function in C++" quiz.
+  float cost;
+  float distance = data["distance_to_goal"];
+  if (distance &gt; 0) {
+    cost = 1 - 2*exp(-(abs(2.0*vehicle.goal_lane - data["intended_lane"] 
+         - data["final_lane"]) / distance));
+  } else {
+    cost = 1;
+  }
+
+  return cost;
+}
+
+float inefficiency_cost(const Vehicle &amp;vehicle, 
+                        const vector&lt;Vehicle&gt; &amp;trajectory, 
+                        const map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, 
+                        map&lt;string, float&gt; &amp;data) {
+  // Cost becomes higher for trajectories with intended lane and final lane 
+  //   that have traffic slower than vehicle's target speed.
+  // You can use the lane_speed function to determine the speed for a lane. 
+  // This function is very similar to what you have already implemented in 
+  //   the "Implement a Second Cost Function in C++" quiz.
+  float proposed_speed_intended = lane_speed(predictions, data["intended_lane"]);
+  if (proposed_speed_intended &lt; 0) {
+    proposed_speed_intended = vehicle.target_speed;
+  }
+
+  float proposed_speed_final = lane_speed(predictions, data["final_lane"]);
+  if (proposed_speed_final &lt; 0) {
+    proposed_speed_final = vehicle.target_speed;
+  }
+    
+  float cost = (2.0*vehicle.target_speed - proposed_speed_intended 
+             - proposed_speed_final)/vehicle.target_speed;
+
+  return cost;
+}
+
+float lane_speed(const map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, int lane) {
+  // All non ego vehicles in a lane have the same speed, so to get the speed 
+  //   limit for a lane, we can just find one vehicle in that lane.
+  for (map&lt;int, vector&lt;Vehicle&gt;&gt;::const_iterator it = predictions.begin(); 
+       it != predictions.end(); ++it) {
+    int key = it-&gt;first;
+    Vehicle vehicle = it-&gt;second[0];
+    if (vehicle.lane == lane &amp;&amp; key != -1) {
+      return vehicle.v;
+    }
+  }
+  // Found no vehicle in the lane
+  return -1.0;
+}
+
+float calculate_cost(const Vehicle &amp;vehicle, 
+                     const map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, 
+                     const vector&lt;Vehicle&gt; &amp;trajectory) {
+  // Sum weighted cost functions to get total cost for trajectory.
+  map&lt;string, float&gt; trajectory_data = get_helper_data(vehicle, trajectory, 
+                                                       predictions);
+  float cost = 0.0;
+
+  // Add additional cost functions here.
+  vector&lt;std::function&lt;float(const Vehicle &amp;, const vector&lt;Vehicle&gt; &amp;, 
+                             const map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;, 
+                             map&lt;string, float&gt; &amp;)
+    &gt;&gt; cf_list = {goal_distance_cost, inefficiency_cost};
+  vector&lt;float&gt; weight_list = {REACH_GOAL, EFFICIENCY};
+    
+  for (int i = 0; i &lt; cf_list.size(); ++i) {
+    float new_cost = weight_list[i]*cf_list[i](vehicle, trajectory, predictions, 
+                                               trajectory_data);
+    cost += new_cost;
+  }
+
+  return cost;
+}
+
+map&lt;string, float&gt; get_helper_data(const Vehicle &amp;vehicle, 
+                                   const vector&lt;Vehicle&gt; &amp;trajectory, 
+                                   const map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions) {
+  // Generate helper data to use in cost functions:
+  // intended_lane: the current lane +/- 1 if vehicle is planning or 
+  //   executing a lane change.
+  // final_lane: the lane of the vehicle at the end of the trajectory.
+  // distance_to_goal: the distance of the vehicle to the goal.
+
+  // Note that intended_lane and final_lane are both included to help 
+  //   differentiate between planning and executing a lane change in the 
+  //   cost functions.
+  map&lt;string, float&gt; trajectory_data;
+  Vehicle trajectory_last = trajectory[1];
+  float intended_lane;
+
+  if (trajectory_last.state.compare("PLCL") == 0) {
+    intended_lane = trajectory_last.lane + 1;
+  } else if (trajectory_last.state.compare("PLCR") == 0) {
+    intended_lane = trajectory_last.lane - 1;
+  } else {
+    intended_lane = trajectory_last.lane;
+  }
+
+  float distance_to_goal = vehicle.goal_s - trajectory_last.s;
+  float final_lane = trajectory_last.lane;
+  trajectory_data["intended_lane"] = intended_lane;
+  trajectory_data["final_lane"] = final_lane;
+  trajectory_data["distance_to_goal"] = distance_to_goal;
+    
+  return trajectory_data;
+}</pre>
+           </div>
+           <div aria-labelledby="tab-457632-cost-h" class="tab-pane" id="457632-cost-h" role="tabpanel">
+            <pre><code></code>#ifndef COST_H
+#define COST_H
+
+#include "vehicle.h"
+
+using std::map;
+using std::string;
+using std::vector;
+
+float calculate_cost(const Vehicle &amp;vehicle, 
+                     const map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, 
+                     const vector&lt;Vehicle&gt; &amp;trajectory);
+
+float goal_distance_cost(const Vehicle &amp;vehicle,  
+                         const vector&lt;Vehicle&gt; &amp;trajectory,  
+                         const map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, 
+                         map&lt;string, float&gt; &amp;data);
+
+float inefficiency_cost(const Vehicle &amp;vehicle, 
+                        const vector&lt;Vehicle&gt; &amp;trajectory, 
+                        const map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, 
+                        map&lt;string, float&gt; &amp;data);
+
+float lane_speed(const map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions, int lane);
+
+map&lt;string, float&gt; get_helper_data(const Vehicle &amp;vehicle, 
+                                   const vector&lt;Vehicle&gt; &amp;trajectory, 
+                                   const map&lt;int, vector&lt;Vehicle&gt;&gt; &amp;predictions);
+
+#endif  // COST_H</pre>
+           </div>
+           <div aria-labelledby="tab-457632-road-cpp" class="tab-pane" id="457632-road-cpp" role="tabpanel">
+            <pre><code></code>#include &lt;iostream&gt;
+#include &lt;iterator&gt;
+#include &lt;map&gt;
+#include &lt;sstream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "road.h"
+#include "vehicle.h"
+
+using std::map;
+using std::string;
+using std::vector;
+
+// Initializes Road
+Road::Road(int speed_limit, double traffic_density, vector&lt;int&gt; &amp;lane_speeds) {
+  this-&gt;num_lanes = lane_speeds.size();
+  this-&gt;lane_speeds = lane_speeds;
+  this-&gt;speed_limit = speed_limit;
+  this-&gt;density = traffic_density;
+  this-&gt;camera_center = this-&gt;update_width/2;
+}
+
+Road::~Road() {}
+
+Vehicle Road::get_ego() {
+  return this-&gt;vehicles.find(this-&gt;ego_key)-&gt;second;
+}
+
+void Road::populate_traffic() {
+  int start_s = std::max(this-&gt;camera_center - (this-&gt;update_width/2), 0);
+
+  for (int l = 0; l &lt; this-&gt;num_lanes; ++l) {
+    int lane_speed = this-&gt;lane_speeds[l];
+    bool vehicle_just_added = false;
+
+    for (int s = start_s; s &lt; start_s+this-&gt;update_width; ++s) {
+      if (vehicle_just_added) {
+        vehicle_just_added = false;
+      }
+      
+      if (((double) rand() / (RAND_MAX)) &lt; this-&gt;density) {
+        Vehicle vehicle = Vehicle(l,s,lane_speed,0);
+        vehicle.state = "CS";
+        this-&gt;vehicles_added += 1;
+        this-&gt;vehicles.insert(std::pair&lt;int,Vehicle&gt;(vehicles_added,vehicle));
+        vehicle_just_added = true;
+      }
+    }
+  }
+}
+
+void Road::advance() {
+  map&lt;int ,vector&lt;Vehicle&gt; &gt; predictions;
+
+  map&lt;int, Vehicle&gt;::iterator it = this-&gt;vehicles.begin();
+
+  while (it != this-&gt;vehicles.end()) {
+    int v_id = it-&gt;first;
+    vector&lt;Vehicle&gt; preds = it-&gt;second.generate_predictions();
+    predictions[v_id] = preds;
+    ++it;
+  }
+  
+  it = this-&gt;vehicles.begin();
+
+  while (it != this-&gt;vehicles.end()) {
+    int v_id = it-&gt;first;
+    if (v_id == ego_key) {   
+      vector&lt;Vehicle&gt; trajectory = it-&gt;second.choose_next_state(predictions);
+      it-&gt;second.realize_next_state(trajectory);
+    } else {
+      it-&gt;second.increment(1);
+    }
+    ++it;
+  }   
+}
+
+void Road::add_ego(int lane_num, int s, vector&lt;int&gt; &amp;config_data) {
+  map&lt;int, Vehicle&gt;::iterator it = this-&gt;vehicles.begin();
+
+  while (it != this-&gt;vehicles.end()) {
+    int v_id = it-&gt;first;
+    Vehicle v = it-&gt;second;
+    if (v.lane == lane_num &amp;&amp; v.s == s) {
+      this-&gt;vehicles.erase(v_id);
+    }
+    ++it;
+  }
+    
+  Vehicle ego = Vehicle(lane_num, s, this-&gt;lane_speeds[lane_num], 0);
+  ego.configure(config_data);
+  ego.state = "KL";
+  this-&gt;vehicles.insert(std::pair&lt;int,Vehicle&gt;(ego_key,ego));
+}
+
+void Road::display(int timestep) {
+  Vehicle ego = this-&gt;vehicles.find(this-&gt;ego_key)-&gt;second;
+  int s = ego.s;
+  string state = ego.state;
+
+  this-&gt;camera_center = std::max(s, this-&gt;update_width/2);
+  int s_min = std::max(this-&gt;camera_center - this-&gt;update_width/2, 0);
+  int s_max = s_min + this-&gt;update_width;
+
+  vector&lt;vector&lt;string&gt;&gt; road;
+
+  for (int i = 0; i &lt; this-&gt;update_width; ++i) {
+    vector&lt;string&gt; road_lane;
+    for (int ln = 0; ln &lt; this-&gt;num_lanes; ++ln) {
+      road_lane.push_back("     ");
+    }
+    road.push_back(road_lane);
+  }
+
+  map&lt;int, Vehicle&gt;::iterator it = this-&gt;vehicles.begin();
+
+  while (it != this-&gt;vehicles.end()) {
+    int v_id = it-&gt;first;
+    Vehicle v = it-&gt;second;
+
+    if (s_min &lt;= v.s &amp;&amp; v.s &lt; s_max) {
+      string marker = "";
+
+      if (v_id == this-&gt;ego_key) {
+        marker = this-&gt;ego_rep;
+      } else {
+        std::stringstream oss;
+        std::stringstream buffer;
+        buffer &lt;&lt; " ";
+        oss &lt;&lt; v_id;
+
+        for (int buffer_i = oss.str().length(); buffer_i &lt; 3; ++buffer_i) {
+          buffer &lt;&lt; "0";
+        }
+        buffer &lt;&lt; oss.str() &lt;&lt; " ";
+        marker = buffer.str();
+      }
+      road[int(v.s - s_min)][int(v.lane)] = marker;
+    }
+    ++it;
+  }
+    
+  std::ostringstream oss;
+  oss &lt;&lt; "+Meters ======================+ step: " &lt;&lt; timestep &lt;&lt; std::endl;
+  int i = s_min;
+
+  for (int lj = 0; lj &lt; road.size(); ++lj) {
+    if (i%20 ==0) {
+      std::stringstream buffer;
+      std::stringstream dis;
+      dis &lt;&lt; i;
+      
+      for (int buffer_i = dis.str().length(); buffer_i &lt; 3; ++buffer_i) {
+        buffer &lt;&lt; "0";
+      }
+      
+      oss &lt;&lt; buffer.str() &lt;&lt; dis.str() &lt;&lt; " - ";
+    } else {
+      oss &lt;&lt; "      ";
+    }          
+    ++i;
+    for (int li = 0; li &lt; road[0].size(); ++li) {
+      oss &lt;&lt; "|" &lt;&lt; road[lj][li];
+    }
+      oss &lt;&lt; "|";
+      oss &lt;&lt; "\n";
+  }
+
+  std::cout &lt;&lt; oss.str();
+}</pre>
+           </div>
+           <div aria-labelledby="tab-457632-road-h" class="tab-pane" id="457632-road-h" role="tabpanel">
+            <pre><code></code>#ifndef ROAD_H
+#define ROAD_H
+
+#include &lt;map&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include "vehicle.h"
+
+class Road {
+ public:
+  // Constructor
+  Road(int speed_limit, double traffic_density, std::vector&lt;int&gt; &amp;lane_speeds);
+
+  // Destructor
+  virtual ~Road();
+
+  // Road functions
+  Vehicle get_ego();
+
+  void populate_traffic();
+
+  void advance();
+
+  void display(int timestep);
+
+  void add_ego(int lane_num, int s, std::vector&lt;int&gt; &amp;config_data);
+
+  void cull();
+
+  // Road variables
+  int update_width = 70;
+
+  int vehicles_added = 0;
+
+  int ego_key = -1;
+
+  int num_lanes, speed_limit, camera_center;
+
+  double density; 
+
+  std::map&lt;int, Vehicle&gt; vehicles;
+
+  std::string ego_rep = " *** ";
+
+  std::vector&lt;int&gt; lane_speeds; 
+};
+
+#endif  // ROAD_H</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="23. Conclusion.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('22. Implement Behavior Planner in C++ (solution)')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

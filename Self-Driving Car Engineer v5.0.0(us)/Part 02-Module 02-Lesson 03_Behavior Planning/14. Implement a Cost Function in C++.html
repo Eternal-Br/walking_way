@@ -1,0 +1,436 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Implement a Cost Function in C++
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Behavior Planning
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Where To.html">
+       01. Where To
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Lesson Outline.html">
+       02. Lesson Outline
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Understanding Output.html">
+       03. Understanding Output
+      </a>
+     </li>
+     <li class="">
+      <a href="04. The Behavior Problem.html">
+       04. The Behavior Problem
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Finite State Machines.html">
+       05. Finite State Machines
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Formalizing Finite State Machines.html">
+       06. Formalizing Finite State Machines
+      </a>
+     </li>
+     <li class="">
+      <a href="07. FSM Intuition.html">
+       07. FSM Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="08. States for Self Driving Cars.html">
+       08. States for Self Driving Cars
+      </a>
+     </li>
+     <li class="">
+      <a href="09. The States We'll Use.html">
+       09. The States We'll Use
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Inputs to Transition Functions.html">
+       10. Inputs to Transition Functions
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Behavior Planning Pseudocode.html">
+       11. Behavior Planning Pseudocode
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Create a Cost Function - Speed Penalty.html">
+       12. Create a Cost Function - Speed Penalty
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Example Cost Function - Lane Change Penalty.html">
+       13. Example Cost Function - Lane Change Penalty
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Implement a Cost Function in C++.html">
+       14. Implement a Cost Function in C++
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Implement a Cost Function in C++ (solution).html">
+       15. Implement a Cost Function in C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Implement a Second Cost Function in C++.html">
+       16. Implement a Second Cost Function in C++
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Implement a Second Cost Function in C++ (solution).html">
+       17. Implement a Second Cost Function in C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Cost Function Design and Weight Tweaking.html">
+       18. Cost Function Design and Weight Tweaking
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Cost Function Matching.html">
+       19. Cost Function Matching
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Scheduling Compute Time.html">
+       20. Scheduling Compute Time
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Implement Behavior Planner in C++.html">
+       21. Implement Behavior Planner in C++
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Implement Behavior Planner in C++ (solution).html">
+       22. Implement Behavior Planner in C++ (solution)
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Conclusion.html">
+       23. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          14. Implement a Cost Function in C++
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In the previous quizzes, you designed a cost function to choose a lane when trying to reach a goal in highway driving:
+         </p>
+         <div class="mathquill">
+          \text{cost} = 1 - e^{- \frac{|\Delta d|}{\Delta s}}
+         </div>
+         <p>
+          Here,
+          <span class="mathquill ud-math">
+           \Delta d
+          </span>
+          was the lateral distance between the goal lane and the final chosen lane, and
+          <span class="mathquill ud-math">
+           \Delta s
+          </span>
+          was the longitudinal distance from the vehicle to the goal.
+         </p>
+         <p>
+          In this quiz, we'd like you to implement the cost function in C++, but with one important change. The finite state machine we use for vehicle behavior also includes states for planning a lane change right or left (PLCR or PLCL), and the cost function should incorporate this information. We will provide the following four inputs to the function:
+         </p>
+         <ul>
+          <li>
+           Intended lane: the intended lane for the given behavior. For PLCR, PLCL, LCR, and LCL, this would be the one lane over from the current lane.
+          </li>
+          <li>
+           Final lane: the immediate resulting lane of the given behavior. For LCR and LCL, this would be one lane over.
+          </li>
+          <li>
+           The
+           <span class="mathquill ud-math">
+            \Delta s
+           </span>
+           distance to the goal.
+          </li>
+          <li>
+           The goal lane.
+          </li>
+         </ul>
+         <p>
+          Your task in the implementation will be to modify
+          <span class="mathquill ud-math">
+           |\Delta d|
+          </span>
+          in the equation above so that it satisifes:
+         </p>
+         <ul>
+          <li>
+           <span class="mathquill ud-math">
+            |\Delta d|
+           </span>
+           is smaller as both intended lane and final lane are closer to the goal lane.
+          </li>
+          <li>
+           The cost function provides different costs for each possible behavior: KL, PLCR/PLCL, LCR/LCL.
+          </li>
+          <li>
+           The values produced by the cost function are in the range 0 to 1.
+          </li>
+         </ul>
+         <p>
+          You can implement your solution in
+          <code>
+           cost.cpp
+          </code>
+          below.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="463918-main-cpp" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#463918-main-cpp" id="tab-463918-main-cpp" role="tab">
+            main.cpp
+           </a>
+           <a aria-controls="463918-cost-cpp" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#463918-cost-cpp" id="tab-463918-cost-cpp" role="tab">
+            cost.cpp
+           </a>
+           <a aria-controls="463918-cost-h" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#463918-cost-h" id="tab-463918-cost-h" role="tab">
+            cost.h
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-463918-main-cpp" class="tab-pane active show" id="463918-main-cpp" role="tabpanel">
+            <pre><code></code>#include &lt;iostream&gt;
+#include "cost.h"
+
+using std::cout;
+using std::endl;
+
+int main() {
+  int goal_lane = 0;
+    
+  // Test cases used for grading - do not change.
+  double cost;
+  cout &lt;&lt; "Costs for (intended_lane, final_lane, goal_distance):" &lt;&lt; endl;
+  cout &lt;&lt; "---------------------------------------------------------" &lt;&lt; endl;
+  cost = goal_distance_cost(goal_lane, 2, 2, 1.0);
+  cout &lt;&lt; "The cost is " &lt;&lt; cost &lt;&lt; " for " &lt;&lt; "(2, 2, 1.0)" &lt;&lt; endl;
+  cost = goal_distance_cost(goal_lane, 2, 2, 10.0);
+  cout &lt;&lt; "The cost is " &lt;&lt; cost &lt;&lt; " for " &lt;&lt; "(2, 2, 10.0)" &lt;&lt; endl;
+  cost = goal_distance_cost(goal_lane, 2, 2, 100.0);
+  cout &lt;&lt; "The cost is " &lt;&lt; cost &lt;&lt; " for " &lt;&lt; "(2, 2, 100.0)" &lt;&lt; endl;
+  cost = goal_distance_cost(goal_lane, 1, 2, 100.0);
+  cout &lt;&lt; "The cost is " &lt;&lt; cost &lt;&lt; " for " &lt;&lt; "(1, 2, 100.0)" &lt;&lt; endl;
+  cost = goal_distance_cost(goal_lane, 1, 1, 100.0);
+  cout &lt;&lt; "The cost is " &lt;&lt; cost &lt;&lt; " for " &lt;&lt; "(1, 1, 100.0)" &lt;&lt; endl;
+  cost = goal_distance_cost(goal_lane, 0, 1, 100.0);
+  cout &lt;&lt; "The cost is " &lt;&lt; cost &lt;&lt; " for " &lt;&lt; "(0, 1, 100.0)" &lt;&lt; endl;
+  cost = goal_distance_cost(goal_lane, 0, 0, 100.0);
+  cout &lt;&lt; "The cost is " &lt;&lt; cost &lt;&lt; " for " &lt;&lt; "(0, 0, 100.0)" &lt;&lt; endl;
+    
+  return 0;
+}</pre>
+           </div>
+           <div aria-labelledby="tab-463918-cost-cpp" class="tab-pane" id="463918-cost-cpp" role="tabpanel">
+            <pre><code></code>#include "cost.h"
+#include &lt;cmath&gt;
+
+double goal_distance_cost(int goal_lane, int intended_lane, int final_lane, 
+                          double distance_to_goal) {
+  // The cost increases with both the distance of intended lane from the goal
+  //   and the distance of the final lane from the goal. The cost of being out 
+  //   of the goal lane also becomes larger as the vehicle approaches the goal.
+    
+  /**
+   * TODO: Replace cost = 0 with an appropriate cost function.
+   */
+  double cost = 0;
+    
+  return cost;
+}</pre>
+           </div>
+           <div aria-labelledby="tab-463918-cost-h" class="tab-pane" id="463918-cost-h" role="tabpanel">
+            <pre><code></code>#ifndef COST_H
+#define COST_H
+
+double goal_distance_cost(int goal_lane, int intended_lane, int final_lane, 
+                          double distance_to_goal);
+
+#endif  // COST_H</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="15. Implement a Cost Function in C++ (solution).html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('14. Implement a Cost Function in C++')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

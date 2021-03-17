@@ -1,0 +1,298 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.585
+In planning this lesson, we knew we wanted to focus on highway driving,
+
+00:00:03.585 --> 00:00:07.714
+but we still debated what states we should use for our finite state machine.
+
+00:00:07.714 --> 00:00:09.644
+We quickly agreed on three,
+
+00:00:09.644 --> 00:00:11.279
+since it seemed to us like these were
+
+00:00:11.279 --> 00:00:15.750
+the bare minimum and that a single lane change wouldn't suffice.
+
+00:00:15.750 --> 00:00:19.259
+And we also agreed to rule out a lot of states because most of
+
+00:00:19.260 --> 00:00:22.860
+these can be thought of as various implementations of the keep lane state.
+
+00:00:22.859 --> 00:00:24.750
+But these last two, prepare lane change
+
+00:00:24.750 --> 00:00:27.579
+left and prepare lane change right, we were unsure about.
+
+00:00:27.579 --> 00:00:31.195
+Eventually, we did decide to use these states for these lessons.
+
+00:00:31.195 --> 00:00:34.325
+So we should probably clarify what we mean by these states.
+
+00:00:34.325 --> 00:00:36.510
+Let's start by imagining what vehicle behavior would
+
+00:00:36.509 --> 00:00:39.086
+look like without these two prep states.
+
+00:00:39.087 --> 00:00:42.365
+First, let me explain how this example will work.
+
+00:00:42.365 --> 00:00:46.535
+Up here we have a two-lane highway with traffic driving to the right.
+
+00:00:46.534 --> 00:00:50.579
+This is our self-driving car and other traffic is shown in red.
+
+00:00:50.579 --> 00:00:51.780
+As you watch this animation,
+
+00:00:51.780 --> 00:00:54.344
+you should imagine watching from a helicopter which is flying
+
+00:00:54.344 --> 00:00:57.960
+above the highway at the self-driving car's target speed.
+
+00:00:57.960 --> 00:01:01.679
+These red trails indicate the relative speed of other vehicles.
+
+00:01:01.679 --> 00:01:04.829
+In this situation, the vehicles in lane one are moving faster
+
+00:01:04.829 --> 00:01:08.204
+than we are while the vehicles in lane two are moving slower.
+
+00:01:08.204 --> 00:01:11.609
+When we only have three states plus a fourth ready state,
+
+00:01:11.609 --> 00:01:13.984
+the finite state machine looks like this.
+
+00:01:13.984 --> 00:01:19.465
+We'll assume that as we begin watching we are already in the keep lane state.
+
+00:01:19.465 --> 00:01:23.640
+Now before we watch what happens to our vehicle when it uses this finite state machine,
+
+00:01:23.640 --> 00:01:25.829
+let me explain what these states mean.
+
+00:01:25.829 --> 00:01:28.010
+The lane keep state attempts to stay in
+
+00:01:28.010 --> 00:01:31.295
+the current lane by staying near the center line for that lane.
+
+00:01:31.295 --> 00:01:32.900
+So thinking in finite coordinates,
+
+00:01:32.900 --> 00:01:37.385
+we might just say that target d for the vehicle is whatever the d for the lane is.
+
+00:01:37.385 --> 00:01:38.900
+And for the s direction,
+
+00:01:38.900 --> 00:01:42.765
+keep lane state attempts to drive at the vehicle's target speed when that's feasible,
+
+00:01:42.765 --> 00:01:46.969
+but when it's not, it will try to drive at whatever speed is safest for the lane.
+
+00:01:46.969 --> 00:01:51.519
+For lane changes the goal is to move from the initial lane to the target lane.
+
+00:01:51.519 --> 00:01:55.484
+The d behavior is what you might expect to move left or right as appropriate.
+
+00:01:55.484 --> 00:01:58.090
+So the target d is the d for whatever lane is to
+
+00:01:58.090 --> 00:02:00.823
+the left or right of the ego's current lane.
+
+00:02:00.823 --> 00:02:03.509
+For s, the same rules as lane keeping apply.
+
+00:02:03.510 --> 00:02:05.969
+The vehicle will try to drive at the target speed,
+
+00:02:05.969 --> 00:02:07.215
+but if that's not feasible,
+
+00:02:07.215 --> 00:02:11.039
+then it will drive at whatever speed is safe for the initial lane.
+
+00:02:11.039 --> 00:02:14.804
+Now, let's observe the vehicle's behavior as we move forward in time.
+
+00:02:14.805 --> 00:02:16.550
+For the first few timesteps,
+
+00:02:16.550 --> 00:02:19.260
+we see that the ego-vehicle gets closer and closer to vehicle
+
+00:02:19.259 --> 00:02:23.185
+2.2 while the vehicle in the left lane pas the ego-vehicle.
+
+00:02:23.185 --> 00:02:25.860
+And during this time the vehicle remains in the lane keep state
+
+00:02:25.860 --> 00:02:29.470
+since there isn't really enough gap to make a safe lane change.
+
+00:02:29.469 --> 00:02:31.439
+Note that at this point the ego-vehicle does
+
+00:02:31.439 --> 00:02:34.139
+begin to slow down even though it doesn't change state.
+
+00:02:34.139 --> 00:02:37.079
+That's because the lane keep state contains this behavior.
+
+00:02:37.080 --> 00:02:39.145
+When the target speed is no longer feasible,
+
+00:02:39.145 --> 00:02:41.340
+it will adjust speed to something safe for the lane.
+
+00:02:41.340 --> 00:02:46.800
+At this point, the vehicle has decided that the lane change left is the best move.
+
+00:02:46.800 --> 00:02:48.250
+Now, in the lane change state,
+
+00:02:48.250 --> 00:02:52.645
+you can see the vehicle has moved left in its lane but hasn't adjusted its speed.
+
+00:02:52.645 --> 00:02:56.685
+This is consistent with the rules we defined for lane change behavior.
+
+00:02:56.685 --> 00:02:59.115
+At this point, the vehicle has crossed the dotted line,
+
+00:02:59.115 --> 00:03:01.435
+so its current lane is the left lane.
+
+00:03:01.435 --> 00:03:05.383
+Now it wants to transition back to the lane keep state to stay in this lane,
+
+00:03:05.383 --> 00:03:06.750
+and when it does that,
+
+00:03:06.750 --> 00:03:12.030
+it immediately starts accelerating so it can get to a speed that's safe for this lane.
+
+00:03:12.030 --> 00:03:15.224
+Right now it is moving at the same speed as other traffic in the left lane,
+
+00:03:15.224 --> 00:03:19.634
+which it can continue doing until it passes the vehicles on the right.
+
+00:03:19.634 --> 00:03:22.109
+Even though this worked, there were some problems.
+
+00:03:22.110 --> 00:03:24.600
+First, even when it was clear that there was
+
+00:03:24.599 --> 00:03:26.969
+a gap we could probably move into on the left,
+
+00:03:26.969 --> 00:03:30.840
+we had no way to tell the vehicle to try to get alongside that gap.
+
+00:03:30.840 --> 00:03:33.950
+We had to just wait for the gap to get close to us.
+
+00:03:33.949 --> 00:03:36.959
+Second, this lane change wasn't all that safe.
+
+00:03:36.960 --> 00:03:39.060
+Ideally, we would have been able to get closer to
+
+00:03:39.060 --> 00:03:42.719
+the left lane speed before actually making the lane change.
+
+00:03:42.719 --> 00:03:46.500
+Third, it isn't clear when we would have turned on the turn signal in this scenario.
+
+00:03:46.500 --> 00:03:50.115
+The turn signal is the responsibility of the behavior team and
+
+00:03:50.115 --> 00:03:52.050
+ideally we would like to turn it on
+
+00:03:52.050 --> 00:03:55.250
+a few seconds before we actually start changing lanes.
+
+00:03:55.250 --> 00:03:56.715
+Using this finite state machine,
+
+00:03:56.715 --> 00:03:58.575
+it would have been hard to do that.
+
+00:03:58.574 --> 00:04:00.149
+To address that problem,
+
+00:04:00.150 --> 00:04:02.700
+we can introduce a prepare for lane change state.
+
+00:04:02.699 --> 00:04:06.989
+In this state we do whatever we can to prepare for a lane change left or right,
+
+00:04:06.990 --> 00:04:09.240
+which means in the d directions we still can
+
+00:04:09.240 --> 00:04:11.670
+stay in this current lane but in the s direction we
+
+00:04:11.669 --> 00:04:16.560
+tried to match the position and speed of some gap in one of the adjacent lanes.
+
+00:04:16.560 --> 00:04:20.089
+This is also when we would turn on the appropriate signal.
+
+00:04:20.089 --> 00:04:24.250
+We also changed the finite state machine to look like this.
+
+00:04:24.250 --> 00:04:29.589
+And note that the only way to change lanes is to first prepare for a lane change.
+
+00:04:29.589 --> 00:04:32.099
+Let's see what that would look like.
+
+00:04:32.100 --> 00:04:34.939
+At the first timestep we can decide to prepare
+
+00:04:34.939 --> 00:04:37.264
+for a lane change by tracking this gap over here,
+
+00:04:37.264 --> 00:04:40.365
+which allows us to immediately start slowing down.
+
+00:04:40.365 --> 00:04:42.800
+At this point, the car may begin slowly increasing
+
+00:04:42.800 --> 00:04:46.160
+speed to get closer to the left lane speed,
+
+00:04:46.160 --> 00:04:50.245
+and at this point the vehicle has reached the same speed as the left lane traffic
+
+00:04:50.245 --> 00:04:55.170
+and is in a good position to execute a lane change, which it begins here.
+
+00:04:55.170 --> 00:04:58.410
+From here on, everything looks pretty similar to before.
+
+00:04:58.410 --> 00:05:00.005
+With these added states,
+
+00:05:00.004 --> 00:05:03.000
+we're now able to perform a lane change more safely and efficiently.
+
