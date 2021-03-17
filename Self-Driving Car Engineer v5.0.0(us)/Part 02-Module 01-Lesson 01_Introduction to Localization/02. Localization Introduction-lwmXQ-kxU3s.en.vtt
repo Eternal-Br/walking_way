@@ -1,0 +1,114 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.690 --> 00:00:03.359
+Hi I'm Tiffany, and I'm
+a self-driving car engineer
+
+00:00:03.359 --> 00:00:04.740
+at Mercedes-Benz.
+
+00:00:04.740 --> 00:00:08.108
+I work on the localization team
+and by the end of this module,
+
+00:00:08.108 --> 00:00:10.650
+you'll have a good
+understanding of what I do.
+
+00:00:10.650 --> 00:00:14.850
+At the moment we are in
+our Garage at MBRDNA.
+
+00:00:14.849 --> 00:00:15.390
+Hi.
+
+00:00:15.390 --> 00:00:17.160
+My name is
+Maximilian, and I also
+
+00:00:17.160 --> 00:00:19.679
+work on self-driving
+cars at Mercedes-Benz
+
+00:00:19.679 --> 00:00:22.000
+as part of the localization
+team in Sunnyvale.
+
+00:00:22.000 --> 00:00:24.839
+In the previous lessons you
+learned about sensor fusion
+
+00:00:24.839 --> 00:00:26.309
+and how to combine
+different sensor
+
+00:00:26.309 --> 00:00:28.559
+readings like lidar
+and radar data
+
+00:00:28.559 --> 00:00:30.419
+with the help of common filters.
+
+00:00:30.420 --> 00:00:33.660
+You also learned how to
+write complex code in C++,
+
+00:00:33.659 --> 00:00:35.969
+which will be necessary to
+be successful in the field
+
+00:00:35.969 --> 00:00:37.320
+of autonomous driving.
+
+00:00:37.320 --> 00:00:40.000
+Today you will learn
+about localization.
+
+00:00:40.000 --> 00:00:42.030
+Localization is what
+allows an autonomous car
+
+00:00:42.030 --> 00:00:43.920
+to know precisely where it is.
+
+00:00:43.920 --> 00:00:46.920
+It's an amazing topic, and I
+love working in this field.
+
+00:00:46.920 --> 00:00:49.079
+And of course, localization
+is really important
+
+00:00:49.079 --> 00:00:50.640
+to drive autonomously.
+
+00:00:50.640 --> 00:00:53.490
+Without localization it would
+be impossible for a self-driving
+
+00:00:53.490 --> 00:00:56.190
+car to drive safely.
+
+00:00:56.189 --> 00:00:58.409
+At the end also localization
+lesson you will be able
+
+00:00:58.409 --> 00:01:01.889
+to implement high performance
+localization software and C++
+
+00:01:01.890 --> 00:01:03.149
+for autonomous cars.
+
+00:01:03.149 --> 00:01:05.159
+So, what is localization?
+
+00:01:05.159 --> 00:01:07.060
+That's what we are
+going to cover next.
+
+00:01:07.060 --> 00:01:09.230
+So let's dive in.
+

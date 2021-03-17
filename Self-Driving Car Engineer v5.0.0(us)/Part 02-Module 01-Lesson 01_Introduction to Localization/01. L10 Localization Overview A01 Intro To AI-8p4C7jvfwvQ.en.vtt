@@ -1,0 +1,154 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.990
+So, my interest in self-driving cars started with
+
+00:00:03.990 --> 00:00:11.050
+the DARPA Grand Challenge in 2004 in which my team at Stanford developed Stanley,
+
+00:00:11.050 --> 00:00:14.005
+a robot that could drive itself through the Mojave Desert.
+
+00:00:14.005 --> 00:00:17.100
+The vehicle was based on a Volkswagen Touareg,
+
+00:00:17.100 --> 00:00:19.330
+was equipped with all kinds of sensors,
+
+00:00:19.329 --> 00:00:21.029
+like GPS and laser.
+
+00:00:21.030 --> 00:00:25.569
+It was able to make its own decisions without any human input whatsoever.
+
+00:00:25.568 --> 00:00:30.945
+The DARPA Grand Challenge was a government-sponsored race that took place in 2005.
+
+00:00:30.945 --> 00:00:33.435
+Here, we see our robot, Stanley,
+
+00:00:33.435 --> 00:00:37.310
+moving through deserts completely without a human on board.
+
+00:00:37.310 --> 00:00:41.289
+The task was to drive a desert trail for about 130 miles.
+
+00:00:41.289 --> 00:00:44.314
+Whoever was fastest would win the race.
+
+00:00:44.314 --> 00:00:46.339
+He look passing a different robot by
+
+00:00:46.340 --> 00:00:51.140
+Carnegie Mellon University about a 110 miles into the race.
+
+00:00:51.140 --> 00:00:54.274
+Our robot was able to navigate with these steep,
+
+00:00:54.274 --> 00:01:00.670
+mountainous roads and able to avoid collisions with rocks or falling down a cliff,
+
+00:01:00.670 --> 00:01:05.810
+all based on its ability to use what I'm going to teach you in this class.
+
+00:01:05.810 --> 00:01:09.340
+After almost seven hours and 131 miles,
+
+00:01:09.340 --> 00:01:12.250
+everybody returned all the way to the starting base as
+
+00:01:12.250 --> 00:01:15.790
+the first robot to ever finish a DARPA Grand Challenge,
+
+00:01:15.790 --> 00:01:18.385
+winning Stanford University two million bucks,
+
+00:01:18.385 --> 00:01:24.205
+and Stanley, a place in the Smithsonian Museum of American History.
+
+00:01:24.204 --> 00:01:30.394
+This work led to the Urban Challenge in which we build another robot called Junior,
+
+00:01:30.394 --> 00:01:32.250
+that eventually took second place.
+
+00:01:32.250 --> 00:01:35.064
+The Urban Challenge was a follow-up raised by DARPA,
+
+00:01:35.064 --> 00:01:37.590
+which cars were asked to drive in traffic.
+
+00:01:37.590 --> 00:01:42.260
+So, whereas the Grand Challenge was kind of a motionless desert floor,
+
+00:01:42.260 --> 00:01:45.800
+this was a mock urban city where the Rover was able to
+
+00:01:45.799 --> 00:01:47.629
+interact with other traffic and had to follow
+
+00:01:47.629 --> 00:01:50.439
+traffic rules as in this left turn over here.
+
+00:01:50.439 --> 00:01:54.109
+Had to be able to stay on lanes with very high precision,
+
+00:01:54.109 --> 00:01:57.980
+accommodate oncoming traffic and just drive
+
+00:01:57.980 --> 00:02:02.409
+confidently in a situation that resemble the small city.
+
+00:02:02.409 --> 00:02:08.750
+This led at Google to a sequence of experiments known as the Google self-driving car.
+
+00:02:08.750 --> 00:02:12.969
+I believe these are the best robotic cars out there today.
+
+00:02:12.969 --> 00:02:17.120
+Here we see one of our Priuses on University Avenue in Palo Alto,
+
+00:02:17.120 --> 00:02:20.110
+undetected driving just like a human driver,
+
+00:02:20.110 --> 00:02:22.275
+but this car is driving by itself.
+
+00:02:22.275 --> 00:02:26.245
+Our cars have been able to drive hundreds of thousands of miles,
+
+00:02:26.245 --> 00:02:29.335
+all across California and some of Nevada,
+
+00:02:29.335 --> 00:02:32.195
+in downtown areas like San Francisco,
+
+00:02:32.194 --> 00:02:37.794
+on busy highways, here in Monterey,
+
+00:02:37.794 --> 00:02:42.179
+as well a coastal city in California with lots and lots of pedestrians.
+
+00:02:42.180 --> 00:02:47.340
+These are all completely self-driving moments where the car is
+
+00:02:47.340 --> 00:02:52.629
+able to accommodate things like deers in the headlight in the middle of the night,
+
+00:02:52.629 --> 00:02:59.219
+or even crooked Lombard Street in San Francisco as shown in this video.
+
+00:02:59.219 --> 00:03:02.104
+This is what I'm doing on my day job.
+
+00:03:02.104 --> 00:03:04.979
+I really love- with my team,
+
+00:03:04.979 --> 00:03:08.894
+building self-driving cars, we believe it's going to be change the world.
+
+00:03:08.895 --> 00:03:14.960
+In this class, that's what I hope to enable you to do. So, let's dive in.
+

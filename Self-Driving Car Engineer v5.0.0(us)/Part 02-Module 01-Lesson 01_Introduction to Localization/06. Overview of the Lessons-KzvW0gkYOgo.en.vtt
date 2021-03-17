@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.310 --> 00:00:02.660
+Now that you know what
+localization is in general,
+
+00:00:02.660 --> 00:00:04.880
+here's what will be happening
+in the next lessons.
+
+00:00:04.879 --> 00:00:07.209
+In the first part, you will
+learn in an intuitive way
+
+00:00:07.209 --> 00:00:08.910
+what localization is.
+
+00:00:08.910 --> 00:00:10.710
+You will do also
+a lot of quizzes,
+
+00:00:10.710 --> 00:00:13.160
+and you will also implement
+the first localization system
+
+00:00:13.160 --> 00:00:14.179
+in Python.
+
+00:00:14.179 --> 00:00:16.670
+Then, we will go deeper in
+the math of Bayesian filters
+
+00:00:16.670 --> 00:00:19.270
+and implement a
+1D example in C++.
+
+00:00:19.269 --> 00:00:21.640
+After that, we'll
+dive into motion models.
+
+00:00:21.640 --> 00:00:24.810
+And finally, you'll implement
+your own 2D particle filter
+
+00:00:24.809 --> 00:00:26.070
+in C++.
+
+00:00:26.070 --> 00:00:28.140
+Pretty cool, right?
+

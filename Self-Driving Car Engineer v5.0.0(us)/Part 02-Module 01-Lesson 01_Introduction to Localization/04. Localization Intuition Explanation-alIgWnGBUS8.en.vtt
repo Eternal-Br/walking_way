@@ -1,0 +1,57 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.500 --> 00:00:03.270
+If you recognized
+this as the Eiffel Tower,
+
+00:00:03.270 --> 00:00:07.109
+then you will probably say
+something like Paris or France.
+
+00:00:07.110 --> 00:00:09.089
+This may not seem
+very impressive,
+
+00:00:09.089 --> 00:00:11.160
+but it's actually remarkable.
+
+00:00:11.160 --> 00:00:13.289
+Before the blindfold
+was removed,
+
+00:00:13.289 --> 00:00:17.549
+you had zero understanding of
+where you were in the world.
+
+00:00:17.550 --> 00:00:19.800
+You could have made a
+guess, but you would have
+
+00:00:19.800 --> 00:00:21.990
+had no idea if you were right.
+
+00:00:21.989 --> 00:00:27.029
+But after being shown a tiny
+amount of data, a single image,
+
+00:00:27.030 --> 00:00:33.299
+you reduce that uncertainty
+to a few kilometer radius.
+
+00:00:33.299 --> 00:00:37.250
+This is the main intuition
+behind localization.
+
+00:00:37.250 --> 00:00:41.399
+A robot gathers information
+about its current environment
+
+00:00:41.399 --> 00:00:46.019
+and compares that to a
+known map to understand
+
+00:00:46.020 --> 00:00:49.130
+where it is in the world.
+
