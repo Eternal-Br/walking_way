@@ -1,0 +1,655 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Look Away: The Code
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Writing ROS Nodes
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Closing In.html">
+       01. Closing In
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Overview.html">
+       02. Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="03. ROS Publishers.html">
+       03. ROS Publishers
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Simple Mover.html">
+       04. Simple Mover
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Simple Mover The Code.html">
+       05. Simple Mover: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="06. ROS Services.html">
+       06. ROS Services
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Arm Mover.html">
+       07. Arm Mover
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Arm Mover The Code.html">
+       08. Arm Mover: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Arm Mover Launch and Interact.html">
+       09. Arm Mover: Launch and Interact
+      </a>
+     </li>
+     <li class="">
+      <a href="10. ROS Subscribers.html">
+       10. ROS Subscribers
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Look Away.html">
+       11. Look Away
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Look Away The Code.html">
+       12. Look Away: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Look Away Launch and Interact.html">
+       13. Look Away: Launch and Interact
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Logging.html">
+       14. Logging
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Recap.html">
+       15. Recap
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Outro.html">
+       16. Outro
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          12. Look Away: The Code
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="look-away-the-code">
+          Look Away: The Code
+         </h1>
+         <p>
+          Below is the complete code for
+          <code>
+           look_away
+          </code>
+          , followed by a step-by-step explanation of what is happening. You can copy and paste this code into the
+          <code>
+           look_away
+          </code>
+          script you created in the directory:
+         </p>
+         <pre><code class="text language-text">~/catkin_ws/src/simple_arm/scripts</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="the-look_away-code">
+          The look_away code
+         </h2>
+         <pre><code class="python language-python">#!/usr/bin/env python
+
+import math
+import rospy
+from sensor_msgs.msg import Image, JointState
+from simple_arm.srv import *
+
+
+class LookAway(object):
+    def __init__(self):
+        rospy.init_node('look_away')
+
+        self.sub1 = rospy.Subscriber('/simple_arm/joint_states', 
+                                     JointState, self.joint_states_callback)
+        self.sub2 = rospy.Subscriber("rgb_camera/image_raw", 
+                                     Image, self.look_away_callback)
+        self.safe_move = rospy.ServiceProxy('/arm_mover/safe_move', 
+                                     GoToPosition)
+
+        self.last_position = None
+        self.arm_moving = False
+
+        rospy.spin()
+
+    def uniform_image(self, image):
+        return all(value == image[0] for value in image)
+
+    def coord_equal(self, coord_1, coord_2):
+        if coord_1 is None or coord_2 is None:
+            return False
+        tolerance = .0005
+        result = abs(coord_1[0] - coord_2[0]) &lt;= abs(tolerance)
+        result = result and abs(coord_1[1] - coord_2[1]) &lt;= abs(tolerance)
+        return result
+
+    def joint_states_callback(self, data):
+        if self.coord_equal(data.position, self.last_position):
+            self.arm_moving = False
+        else:
+            self.last_position = data.position
+            self.arm_moving = True
+
+    def look_away_callback(self, data):
+        if not self.arm_moving and self.uniform_image(data.data):
+            try:
+                rospy.wait_for_service('/arm_mover/safe_move')
+                msg = GoToPositionRequest()
+                msg.joint_1 = 1.57
+                msg.joint_2 = 1.57
+                response = self.safe_move(msg)
+
+                rospy.logwarn("Camera detecting uniform image. \
+                               Elapsed time to look at something nicer:\n%s", 
+                               response)
+
+            except rospy.ServiceException, e:
+                rospy.logwarn("Service call failed: %s", e)
+
+
+
+if __name__ == '__main__':
+    try: 
+        LookAway()
+    except rospy.ROSInterruptException:
+        pass</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Look Away: The Code
+         </p>
+        </h3>
+        <video controls="">
+         <source src="12. Look Away The Code -pOZW8SdyYsk.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="12. Look Away The Code -pOZW8SdyYsk.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="JP" src="12. Look Away The Code -pOZW8SdyYsk.ja-JP.vtt" srclang="JP"/>
+         <track default="false" kind="subtitles" label="CN" src="12. Look Away The Code -pOZW8SdyYsk.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="the-code-explained">
+          The code: explained
+         </h2>
+         <h3 id="import-statements">
+          Import statements
+         </h3>
+         <pre><code class="python language-python">#!/usr/bin/env python
+
+import math
+import rospy
+from sensor_msgs.msg import Image, JointState
+from simple_arm.srv import *</code></pre>
+         <p>
+          The imported modules are similar to those in
+          <code>
+           simple_arm
+          </code>
+          , except this time, we have the
+          <code>
+           Image
+          </code>
+          message type being imported so that the camera data can be used.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="the-lookaway-class-and-__init__-method">
+          The LookAway Class and
+          <code>
+           __init__
+          </code>
+          method
+         </h3>
+         <pre><code class="python language-python">class LookAway(object):
+    def __init__(self):
+        rospy.init_node('look_away')
+
+        self.sub1 = rospy.Subscriber('/simple_arm/joint_states', 
+                                     JointState, self.joint_states_callback)
+        self.sub2 = rospy.Subscriber("rgb_camera/image_raw", 
+                                     Image, self.look_away_callback)
+        self.safe_move = rospy.ServiceProxy('/arm_mover/safe_move', 
+                                     GoToPosition)
+
+        self.last_position = None
+        self.arm_moving = False
+
+        rospy.spin()</code></pre>
+         <p>
+          We define a class for this node to better keep track of the robot arm's current movement state and position history. Just as in the node definitions before, the node is initialized using
+          <code>
+           ropsy.init_node
+          </code>
+          , and at the end of the method
+          <code>
+           rospy.spin()
+          </code>
+          is used to block until a shutdown request is received by the node.
+         </p>
+         <p>
+          The first subscriber,
+          <code>
+           self.sub1
+          </code>
+          , subscribes to the
+          <code>
+           /simple_arm/joint_states
+          </code>
+          topic. The node is written to check the camera only when the arm is not moving, and by subscribing to
+          <code>
+           /simple_arm/joint_states
+          </code>
+          , changes in the position of the arm can be tracked. The message type for this topic is
+          <code>
+           JointState
+          </code>
+          , and with each message, the message data is passed to the
+          <code>
+           joint_states_callback
+          </code>
+          function.
+         </p>
+         <p>
+          The second subscriber,
+          <code>
+           self.sub2
+          </code>
+          , subscribes to the
+          <code>
+           /rgb_camera/image_raw
+          </code>
+          topic. The message type here is
+          <code>
+           Image
+          </code>
+          , and with each message, the
+          <code>
+           look_away_callback
+          </code>
+          function is called.
+         </p>
+         <p>
+          A
+          <code>
+           ServiceProxy
+          </code>
+          is how rospy enables calling a service from a node. The
+          <code>
+           ServiceProxy
+          </code>
+          here is created using the name of the service you wish to call along with the service class definition: in this case
+          <code>
+           /arm_mover/safe_move
+          </code>
+          and
+          <code>
+           GoToPosition
+          </code>
+          . The actual calls to the service will take place in the
+          <code>
+           look_away_callback
+          </code>
+          method below.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="the-helper-methods">
+          The helper methods
+         </h3>
+         <pre><code class="python language-python">    def uniform_image(self, image):
+        return all(value == image[0] for value in image)
+
+    def coord_equal(self, coord_1, coord_2):
+        if coord_1 is None or coord_2 is None:
+            return False
+        tolerance = .0005
+        result = abs(coord_1[0] - coord_2[0]) &lt;= abs(tolerance)
+        result = result and abs(coord_1[1] - coord_2[1]) &lt;= abs(tolerance)
+        return result</code></pre>
+         <p>
+          There are two helper methods defined in the code:
+          <code>
+           uniform_image
+          </code>
+          and
+          <code>
+           coord_equal
+          </code>
+          . The
+          <code>
+           uniform_image
+          </code>
+          method takes an image as input and checks if all color values in the image are the same as the value of the first pixel. This essentially checks that all the color values in the image are the same.
+         </p>
+         <p>
+          The
+          <code>
+           coord_equal
+          </code>
+          method returns True if the coordinates
+          <code>
+           coord_1
+          </code>
+          and
+          <code>
+           coord_2
+          </code>
+          have equal components up to the specified tolerance.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="the-callback-functions">
+          The callback functions
+         </h3>
+         <pre><code>    def joint_states_callback(self, data):
+        if self.coord_equal(data.position, self.last_position):
+            self.arm_moving = False
+        else:
+            self.last_position = data.position
+            self.arm_moving = True
+
+    def look_away_callback(self, data):
+        if not self.arm_moving and self.uniform_image(data.data):
+            try:
+                rospy.wait_for_service('/arm_mover/safe_move')
+                msg = GoToPositionRequest()
+                msg.joint_1 = 1.57
+                msg.joint_2 = 1.57
+                response = self.safe_move(msg)
+
+                rospy.logwarn("Camera detecting uniform image. \
+                               Elapsed time to look at something nicer:\n%s", 
+                               response)
+
+            except rospy.ServiceException, e:
+                rospy.logwarn("Service call failed: %s", e)</code></pre>
+         <p>
+          When
+          <code>
+           self.sub1
+          </code>
+          receives a message on
+          <code>
+           /simple_arm/joint_states
+          </code>
+          topic, the message is passed to the
+          <code>
+           joint_states_callback
+          </code>
+          in the variable
+          <code>
+           data
+          </code>
+          . The
+          <code>
+           joint_states_callback
+          </code>
+          uses the
+          <code>
+           coord_equal
+          </code>
+          helper method to check if the current joint states provided in
+          <code>
+           data
+          </code>
+          are the same as the previous joint states, which are stored in
+          <code>
+           self.last_position
+          </code>
+          . If the current and previous joint states are the same (up to the specified tolerance), then the the arm has stopped moving, so the
+          <code>
+           self.arm_moving
+          </code>
+          flag is set to
+          <code>
+           False
+          </code>
+          . If the current and previous joint states are different, then the arm is still moving. In this case, the method updates
+          <code>
+           self.last_position
+          </code>
+          with current position data and sets
+          <code>
+           self.arm_moving
+          </code>
+          to
+          <code>
+           True
+          </code>
+          .
+         </p>
+         <p>
+          The
+          <code>
+           look_away_callback
+          </code>
+          is receiving data from the
+          <code>
+           /rgb_camera/image_raw
+          </code>
+          topic. The first line of this method verifies that the arm is not moving and also checks if the the image is uniform. If the arm isn't moving and the image is uniform, then a
+          <code>
+           GoToPositionRequest()
+          </code>
+          message is created and sent using the
+          <code>
+           safe_move
+          </code>
+          service, moving both joint angles to
+          <code>
+           1.57
+          </code>
+          . The method also logs a message warning you that the camera has detected a uniform image along with the elapsed time to return to a nicer image.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="13. Look Away Launch and Interact.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('12. Look Away: The Code')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.960
+Now that you've created a KAT can workspace and added the simple arm package to it,
+
+00:00:03.960 --> 00:00:05.835
+you're ready to write some Ross nodes.
+
+00:00:05.835 --> 00:00:10.589
+In this lesson, you'll be writing notes in Python that publish and subscribe to topics.
+
+00:00:10.589 --> 00:00:12.330
+And you'll write a Ross service that can be called
+
+00:00:12.330 --> 00:00:14.914
+from other nodes or from the command line.
+
+00:00:14.914 --> 00:00:17.535
+The first node that you'll be writing is called simple mover.
+
+00:00:17.535 --> 00:00:22.214
+The simple mover node does nothing more than publish joint angle commands to simple arm.
+
+00:00:22.214 --> 00:00:26.634
+After you've developed a basic understanding of the general structure of a Ross node,
+
+00:00:26.635 --> 00:00:29.170
+you'll be writing another node called arm mover.
+
+00:00:29.170 --> 00:00:32.579
+The arm mover node provides a service called safe move,
+
+00:00:32.579 --> 00:00:35.009
+which allows the arm to be moved to any position
+
+00:00:35.009 --> 00:00:38.244
+within its workspace which has been deemed to be safe.
+
+00:00:38.244 --> 00:00:39.839
+The safe zone is bounded by
+
+00:00:39.840 --> 00:00:45.210
+minimum and maximum joint angles and it's configurable via the Ross parameter server.
+
+00:00:45.210 --> 00:00:48.075
+The last node you'll write in this lesson, is the look away node.
+
+00:00:48.075 --> 00:00:51.620
+This node subscribes to a topic where camera data is being published.
+
+00:00:51.619 --> 00:00:54.195
+When the camera detects an image with uniform color,
+
+00:00:54.195 --> 00:00:56.045
+meaning that it's looking at the sky,
+
+00:00:56.045 --> 00:01:00.429
+the node will call the safe move service to move the arm to a new position.
+
+00:01:00.429 --> 00:01:03.049
+With these new skills, you'll have everything you need to
+
+00:01:03.049 --> 00:01:05.390
+tackle the upcoming projects in this program.
+

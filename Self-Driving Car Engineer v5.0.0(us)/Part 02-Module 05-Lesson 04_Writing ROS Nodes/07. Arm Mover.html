@@ -1,0 +1,627 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Arm Mover
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Writing ROS Nodes
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Closing In.html">
+       01. Closing In
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Overview.html">
+       02. Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="03. ROS Publishers.html">
+       03. ROS Publishers
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Simple Mover.html">
+       04. Simple Mover
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Simple Mover The Code.html">
+       05. Simple Mover: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="06. ROS Services.html">
+       06. ROS Services
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Arm Mover.html">
+       07. Arm Mover
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Arm Mover The Code.html">
+       08. Arm Mover: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Arm Mover Launch and Interact.html">
+       09. Arm Mover: Launch and Interact
+      </a>
+     </li>
+     <li class="">
+      <a href="10. ROS Subscribers.html">
+       10. ROS Subscribers
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Look Away.html">
+       11. Look Away
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Look Away The Code.html">
+       12. Look Away: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Look Away Launch and Interact.html">
+       13. Look Away: Launch and Interact
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Logging.html">
+       14. Logging
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Recap.html">
+       15. Recap
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Outro.html">
+       16. Outro
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          07. Arm Mover
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          You’ve written your first ROS node! This was no trivial task. You’ve had to learn quite a few things to get to this point. But before you will be prepared for the final project, we have some more ground to cover.
+         </p>
+         <p>
+          Namely, we still need to cover:
+         </p>
+         <ul>
+          <li>
+           Custom message generation
+          </li>
+          <li>
+           Services
+          </li>
+          <li>
+           Parameters
+          </li>
+          <li>
+           Launch Files
+          </li>
+          <li>
+           Subscribers
+          </li>
+          <li>
+           Logging
+          </li>
+         </ul>
+         <p>
+          In order to gain an understanding of some of the above, you will be writing another node called
+          <code>
+           arm_mover
+          </code>
+          .
+         </p>
+         <h2 id="description-of-arm-mover">
+          Description of Arm Mover
+         </h2>
+         <p>
+          In many respects,
+          <code>
+           arm_mover
+          </code>
+          is quite similar to
+          <code>
+           simple_mover
+          </code>
+          . Like
+          <code>
+           simple_mover
+          </code>
+          , it is responsible for commanding the arm to move. However, instead of simply commanding the arm to follow a predetermined trajectory, the
+          <code>
+           arm_mover
+          </code>
+          node provides the service
+          <code>
+           move_arm
+          </code>
+          , which allows other nodes in the system to send
+          <code>
+           movement_commands
+          </code>
+          .
+         </p>
+         <p>
+          In addition to allowing movements via a service interface,
+          <code>
+           arm_mover
+          </code>
+          also allows for configurable minimum and maximum joint angles, by using parameters.
+         </p>
+         <h2 id="creating-a-new-service-definition">
+          Creating a new service definition
+         </h2>
+         <p>
+          As you learned earlier, an interaction with a service consists of two messages being passed. A request passed to the service, and a response received from the service. The definitions of the request and response message type are contained within .srv files living in the
+          <code>
+           srv
+          </code>
+          directory under the package’s root.
+         </p>
+         <p>
+          Let’s define a new service for simple_arm. We shall call it
+          <code>
+           GoToPosition
+          </code>
+          .
+         </p>
+         <pre><code class="sh language-sh">$ cd ~/catkin_ws/src/simple_arm/
+$ mkdir srv
+$ cd srv
+$ touch GoToPosition.srv</code></pre>
+         <p>
+          You should now edit
+          <code>
+           GoToPosition.srv
+          </code>
+          , so it contains the following:
+         </p>
+         <pre><code class="text language-text">float64 joint_1
+float64 joint_2
+---
+duration time_elapsed</code></pre>
+         <p>
+          Service definitions always contain two sections, separated by a ‘---’ line. The first section is the definition of the request message. Here, a request consists of two float64 fields, one for each of
+          <code>
+           simple_arm
+          </code>
+          ’s joints. The second section contains is the service response. The response contains only a single field, time_elapsed. The
+          <code>
+           time_elapsed
+          </code>
+          field is of type duration, and is responsible for indicating how long it took the arm to perform the movement.
+         </p>
+         <p>
+          Note: Defining a custom message type is very similar, with the only differences being that message definitions live within the
+          <code>
+           msg
+          </code>
+          directory of the package root, have a “.msg” extension, rather than
+          <code>
+           .srv
+          </code>
+          , and do not contain the “---” section divider. You can find more detailed information on creating messages and services
+          <a href="http://wiki.ros.org/msg" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          , and
+          <a href="http://wiki.ros.org/srv" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          , respectively.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="modifying-cmakeliststxt">
+          Modifying CMakeLists.txt
+         </h2>
+         <p>
+          In order for catkin to generate the python modules or C++ libraries which allow you to utilize messages in your code you must first modify
+          <code>
+           simple_arm
+          </code>
+          ’s
+          <code>
+           CMakeLists.txt
+          </code>
+          (
+          <code>
+           ~/catkin_ws/src/simple_arm/CMakeLists.txt
+          </code>
+          ).
+         </p>
+         <p>
+          CMake is the build tool underlying catkin, and
+          <code>
+           CMakeLists.txt
+          </code>
+          is nothing more than a CMake script used by catkin. If you’re familiar with GNU make, and the concept of makefiles, this is a similar concept.
+         </p>
+         <p>
+          First, ensure that the
+          <code>
+           find_package()
+          </code>
+          macro lists
+          <code>
+           std_msgs
+          </code>
+          and
+          <code>
+           message_generation
+          </code>
+          as required packages. The
+          <code>
+           find_package()
+          </code>
+          macro should look as follows:
+         </p>
+         <pre><code class="text language-text">find_package(catkin REQUIRED COMPONENTS
+        std_msgs
+        message_generation
+)</code></pre>
+         <p>
+          As the names might imply, the
+          <code>
+           std_msgs
+          </code>
+          package contains all of the basic message types, and
+          <code>
+           message_generation
+          </code>
+          is required to generate message libraries for all the supported languages (cpp, lisp, python, javascript).
+         </p>
+         <p>
+          <strong>
+           Note
+          </strong>
+          : In your
+          <code>
+           CMakeLists.txt
+          </code>
+          , you may also see
+          <code>
+           controller_manager
+          </code>
+          listed as a required package. In actuality this package is not required. It was simply added as a means to demonstrate a build failure in the previous lesson. You may remove it from the list of REQUIRED COMPONENTS if you choose.
+         </p>
+         <p>
+          Next, uncomment the commented-out
+          <code>
+           add_service_files()
+          </code>
+          macro so it looks like this:
+         </p>
+         <pre><code class="text language-text">## Generate services in the 'srv' folder
+add_service_files(
+   FILES
+   GoToPosition.srv
+)</code></pre>
+         <p>
+          This tells catkin which files to generate code for.
+         </p>
+         <p>
+          Lastly, make sure that the
+          <code>
+           generate_messages()
+          </code>
+          macro is uncommented, as follows:
+         </p>
+         <pre><code class="text language-text">generate_messages(
+   DEPENDENCIES
+   std_msgs  # Or other packages containing msgs
+)</code></pre>
+         <p>
+          It is this macro that is actually responsible for generating the code.
+          <br/>
+          For more information about
+          <code>
+           CMakeLists.txt
+          </code>
+          check out
+          <a href="http://wiki.ros.org/catkin/CMakeLists.txt" rel="noopener noreferrer" target="_blank">
+           this page
+          </a>
+          on the ROS wiki.
+         </p>
+         <h2 id="modifying-packagexml">
+          Modifying package.xml
+         </h2>
+         <p>
+          Now that the
+          <code>
+           CMakeLists.txt
+          </code>
+          file has been covered, you should technically be able to build the project. However, there’s one more file which needs to be modified,
+          <code>
+           package.xml
+          </code>
+          .
+         </p>
+         <p>
+          <code>
+           package.xml
+          </code>
+          is responsible for defining many of the package’s properties, such as the name of the package, version numbers, authors, maintainers, and dependencies.
+         </p>
+         <p>
+          Right now, we’re worried about the dependencies. In the previous lesson you learned about build-time dependencies and run-time package dependencies. When
+          <code>
+           rosdep
+          </code>
+          is searching for these dependencies, it’s the
+          <code>
+           package.xml
+          </code>
+          file that is being parsed. Let’s add the
+          <code>
+           message_generation
+          </code>
+          and
+          <code>
+           message_runtime
+          </code>
+          dependencies.
+         </p>
+         <pre><code class="text language-text">  &lt;buildtool_depend&gt;catkin&lt;/buildtool_depend&gt;
+  &lt;build_depend&gt;message_generation&lt;/build_depend&gt;
+
+  &lt;run_depend&gt;controller_manager&lt;/run_depend&gt;
+  &lt;run_depend&gt;effort_controllers&lt;/run_depend&gt;
+  &lt;run_depend&gt;gazebo_plugins&lt;/run_depend&gt;
+  &lt;run_depend&gt;gazebo_ros&lt;/run_depend&gt;
+  &lt;run_depend&gt;gazebo_ros_control&lt;/run_depend&gt;
+  &lt;run_depend&gt;joint_state_controller&lt;/run_depend&gt;
+  &lt;run_depend&gt;joint_state_publisher&lt;/run_depend&gt;
+  &lt;run_depend&gt;robot_state_publisher&lt;/run_depend&gt;
+  &lt;run_depend&gt;message_runtime&lt;/run_depend&gt;
+  &lt;run_depend&gt;xacro&lt;/run_depend&gt;</code></pre>
+         <p>
+          You are now ready to build the package! For more information about
+          <code>
+           package.xml
+          </code>
+          , check out the
+          <a href="http://wiki.ros.org/catkin/package.xml" rel="noopener noreferrer" target="_blank">
+           ROS Wiki
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="building-the-package">
+          Building the package
+         </h2>
+         <p>
+          If you build the workspace successfully, you should now find that a python package containing a module for the new service
+          <code>
+           GoToPosition
+          </code>
+          has been created deep down in the
+          <code>
+           devel
+          </code>
+          directory.
+         </p>
+         <pre><code class="sh language-sh">$ cd ~/catkin_ws
+$ catkin_make
+$ cd devel/lib/python2.7/dist-packages
+$ ls</code></pre>
+         <p>
+          After sourcing the newly created
+          <code>
+           setup.bash
+          </code>
+          , the new
+          <code>
+           simple_arm
+          </code>
+          package has now become part of your
+          <code>
+           PYTHONPATH
+          </code>
+          environment variable, and is ready for use!
+         </p>
+         <pre><code class="sh language-sh">$ env | grep PYTHONPATH</code></pre>
+         <h2 id="creating-the-empty-arm_mover-node-script">
+          Creating the empty arm_mover node script
+         </h2>
+         <p>
+          The steps you take to create the arm_mover node are exactly the same as the steps you took to create the simple_mover script, excepting the actual name of the script itself.
+         </p>
+         <pre><code class="sh language-sh">$ cd ~/catkin_ws
+$ cd src/simple_arm/scripts
+$ touch arm_mover
+$ chmod u+x arm_mover</code></pre>
+         <p>
+          You can now edit the empty arm_mover script with your favorite text editor.
+         </p>
+         <p>
+          Let’s move onto the code for
+          <code>
+           arm_mover
+          </code>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="08. Arm Mover The Code.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Arm Mover')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

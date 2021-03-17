@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.774
+Congratulations.
+
+00:00:01.774 --> 00:00:03.014
+In the past few lessons,
+
+00:00:03.015 --> 00:00:06.435
+you've explored ROS topics and messages from the command line,
+
+00:00:06.434 --> 00:00:08.144
+written and launched ROS nodes,
+
+00:00:08.144 --> 00:00:10.929
+and both published and subscribed to topics.
+
+00:00:10.929 --> 00:00:16.289
+Great work. You're ready to start the final project of the entire nanodegree program.
+
+00:00:16.289 --> 00:00:19.559
+In this project, you'll write ROS nodes to implement and
+
+00:00:19.559 --> 00:00:23.134
+integrate various features of the car's autonomous driving system.
+
+00:00:23.135 --> 00:00:24.720
+At the end of the project,
+
+00:00:24.719 --> 00:00:27.629
+you'll run your code on Carla. Let's get started.
+

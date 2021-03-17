@@ -1,0 +1,169 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.430
+Okay, so let's go ahead and move through,
+
+00:00:02.430 --> 00:00:05.115
+step by step and talk about the LookAway node.
+
+00:00:05.115 --> 00:00:08.381
+The imported modules are similar to those in simple arm,
+
+00:00:08.381 --> 00:00:09.839
+except this time we have
+
+00:00:09.839 --> 00:00:14.375
+the image message type being imported so that the camera data can be used.
+
+00:00:14.375 --> 00:00:17.429
+Here, we define a class for this node to better keep track of
+
+00:00:17.429 --> 00:00:20.850
+the robot arms current movement state and position history.
+
+00:00:20.850 --> 00:00:23.175
+Just as in the node definitions before,
+
+00:00:23.175 --> 00:00:27.120
+the node is initialized using the rospy.init_node function.
+
+00:00:27.120 --> 00:00:28.380
+And at the end of the method,
+
+00:00:28.379 --> 00:00:33.240
+rospy.spin is used to block until a shutdown request is received by the node.
+
+00:00:33.240 --> 00:00:36.179
+The first subscriber, self.sub1,
+
+00:00:36.179 --> 00:00:40.079
+subscribes to the simple_arm/joint_states topic.
+
+00:00:40.079 --> 00:00:43.934
+The node is written to check the camera only when the arm is not moving.
+
+00:00:43.935 --> 00:00:46.800
+And by subscribing to simple_arm/joint_state,
+
+00:00:46.799 --> 00:00:49.709
+changes in the position of the arm can be tracked.
+
+00:00:49.710 --> 00:00:54.450
+The message type for this topic is joint_state and with each message,
+
+00:00:54.450 --> 00:00:58.410
+the message data is passed to the joint_states_callback function.
+
+00:00:58.409 --> 00:01:00.884
+The second subscriber, self.sub2,
+
+00:01:00.884 --> 00:01:04.364
+subscribes to the rgb_camera/image _raw topic.
+
+00:01:04.364 --> 00:01:07.829
+The message type here is image and with each message,
+
+00:01:07.829 --> 00:01:10.064
+the look_away_callback function is called.
+
+00:01:10.064 --> 00:01:14.545
+A service proxy is how rospy enables calling a service from a node.
+
+00:01:14.545 --> 00:01:18.765
+The service proxy here is created using the name of the service you wish to call,
+
+00:01:18.765 --> 00:01:21.060
+along with the service class definition.
+
+00:01:21.060 --> 00:01:25.935
+In this case, arm_mover/safe_move, and go to position.
+
+00:01:25.935 --> 00:01:30.609
+The actual calls to the service will take place in the look_away_callback method.
+
+00:01:30.609 --> 00:01:32.594
+There are two helpers defined in the code,
+
+00:01:32.594 --> 00:01:36.614
+uniform underscore image, and coord underscore equa.l.
+
+00:01:36.614 --> 00:01:40.784
+The uniform_image method takes an image as input and checks if
+
+00:01:40.784 --> 00:01:45.149
+all color values in the image are the same as the color value as the first pixel.
+
+00:01:45.150 --> 00:01:48.705
+This essentially checks that all color values in the image are the same.
+
+00:01:48.704 --> 00:01:52.890
+The coord_equal method returns true if the coordinates coord_1
+
+00:01:52.890 --> 00:01:57.545
+and coord_2 have equal components up to the specified tolerance.
+
+00:01:57.545 --> 00:02:02.219
+When self.sub1 receives a message on the simple_arm/joint _states topic,
+
+00:02:02.219 --> 00:02:06.510
+the message is passed to the joint_states_callback in the variable data.
+
+00:02:06.510 --> 00:02:10.500
+The joint_states_callback uses the coord_equal helper function to check if
+
+00:02:10.500 --> 00:02:14.759
+the current joint_states provided in data are the same as the previous joint_states,
+
+00:02:14.759 --> 00:02:18.299
+which are stored in self.last_position.
+
+00:02:18.300 --> 00:02:20.925
+If the current and previous joint_states are the same,
+
+00:02:20.925 --> 00:02:22.439
+up to the specified tolerance,
+
+00:02:22.439 --> 00:02:24.335
+then the arm has stopped moving.
+
+00:02:24.335 --> 00:02:27.735
+So, the self.arm_moving flag is set to false.
+
+00:02:27.735 --> 00:02:30.755
+If the current and previous joint_states are different,
+
+00:02:30.754 --> 00:02:32.400
+the arm is still moving.
+
+00:02:32.400 --> 00:02:36.180
+In this case, the method updates self.last_position with
+
+00:02:36.180 --> 00:02:40.795
+current position data and sets self.arm_moving to true.
+
+00:02:40.794 --> 00:02:48.299
+The look_away_ callback is receiving data from the rgb_camera/image_raw topic.
+
+00:02:48.300 --> 00:02:52.995
+The first line of this method verifies that the arm is not moving and also checks
+
+00:02:52.995 --> 00:02:54.680
+if the image is uniform.
+
+00:02:54.680 --> 00:02:57.780
+If the arm isn't moving and the image is uniform,
+
+00:02:57.780 --> 00:03:03.185
+then GoToPositionRequest message is created and sent using the safe_move service,
+
+00:03:03.185 --> 00:03:06.425
+moving both joint angles to 1.57.
+
+00:03:06.425 --> 00:03:10.260
+The method also logs a message warning you that the camera has detected
+
+00:03:10.259 --> 00:03:14.649
+a uniform image along with the elapsed time to return a nicer.
+

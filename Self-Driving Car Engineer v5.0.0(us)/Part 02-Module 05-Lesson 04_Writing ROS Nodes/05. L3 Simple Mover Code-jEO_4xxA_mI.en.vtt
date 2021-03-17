@@ -1,0 +1,205 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.160
+Here, I'll step through the code for
+
+00:00:02.160 --> 00:00:06.150
+the simple mover node and explain what's happening at each step of the way.
+
+00:00:06.150 --> 00:00:09.804
+Rospy is the official Python client library for ROS.
+
+00:00:09.804 --> 00:00:11.939
+It provides most of the fundamental functionality
+
+00:00:11.939 --> 00:00:14.924
+required for interfacing with ROS via Python.
+
+00:00:14.925 --> 00:00:18.030
+It has tools for creating nodes interfacing with topics,
+
+00:00:18.030 --> 00:00:20.429
+services, parameters, and more.
+
+00:00:20.429 --> 00:00:22.140
+It will certainly be worth your time to check out
+
+00:00:22.140 --> 00:00:25.289
+the Rospy API documentation and the links below.
+
+00:00:25.289 --> 00:00:26.640
+General information about rospy,
+
+00:00:26.640 --> 00:00:30.660
+including other tutorials may be found on the ROS wiki.
+
+00:00:30.660 --> 00:00:33.149
+First off, from the standard messages package,
+
+00:00:33.149 --> 00:00:38.119
+we import Float64, which is one of the primitive message types in ROS.
+
+00:00:38.119 --> 00:00:41.289
+This package also contains all of the other primitive types.
+
+00:00:41.289 --> 00:00:42.574
+Later on in this script,
+
+00:00:42.575 --> 00:00:47.010
+we will be publishing a Float64 message to the position command topics for each joint.
+
+00:00:47.009 --> 00:00:48.739
+At the top of the mover function,
+
+00:00:48.740 --> 00:00:50.414
+two publishers are declared.
+
+00:00:50.414 --> 00:00:52.199
+One for joint one commands,
+
+00:00:52.200 --> 00:00:55.484
+and one for joint two commands.
+
+00:00:55.484 --> 00:00:58.950
+Here, the queue size parameter is used to determine the maximum number of
+
+00:00:58.950 --> 00:01:03.385
+messages that may be stored in the publisher before messages are dropped.
+
+00:01:03.384 --> 00:01:06.465
+More information about this parameter can be found in the links below.
+
+00:01:06.465 --> 00:01:10.700
+Here, I'm initializing a client node and registering it with the master.
+
+00:01:10.700 --> 00:01:12.460
+Our mover is the name of the node,
+
+00:01:12.459 --> 00:01:14.729
+and the init node function must be called before
+
+00:01:14.730 --> 00:01:17.400
+any other Rospy package functions are called.
+
+00:01:17.400 --> 00:01:20.900
+On line 13, the rate object is created.
+
+00:01:20.900 --> 00:01:23.670
+And here, we set it with a value of 10 hertz.
+
+00:01:23.670 --> 00:01:27.829
+Rates are used to limit the frequency at which certain loops spin in ROS.
+
+00:01:27.829 --> 00:01:32.954
+Choosing a rate which is too high may result in unnecessarily high CPU usage,
+
+00:01:32.954 --> 00:01:37.144
+while choosing a rate that's too low could result in high overall system latency.
+
+00:01:37.144 --> 00:01:41.579
+Choosing sensible values for all of the nodes in a ROS system is a bit of a fine art.
+
+00:01:41.579 --> 00:01:44.774
+Start time is used to determine how much time has elapsed.
+
+00:01:44.775 --> 00:01:46.950
+When using ROS with simulated time,
+
+00:01:46.950 --> 00:01:48.180
+as we're doing here,
+
+00:01:48.180 --> 00:01:51.120
+rospy.time.now will initially return
+
+00:01:51.120 --> 00:01:56.100
+zero until the first message has been received on the clock topic.
+
+00:01:56.099 --> 00:02:01.530
+This is why start time is set and pulled continuously until a non-zero value is returned.
+
+00:02:01.530 --> 00:02:05.135
+Here, we have the main loop due to the call to rate.sleep,
+
+00:02:05.135 --> 00:02:07.785
+the loop is traversed at approximately 10 hertz.
+
+00:02:07.784 --> 00:02:09.974
+Each trip through the body of the loop will result
+
+00:02:09.974 --> 00:02:12.599
+in two joint command messages being published.
+
+00:02:12.599 --> 00:02:16.125
+The joint angles are sampled from a sine wave with a period of 10 seconds
+
+00:02:16.125 --> 00:02:19.907
+and in magnitude from negative pi over two to positive pi over two.
+
+00:02:19.907 --> 00:02:22.200
+When the node receives the signal to shut down,
+
+00:02:22.199 --> 00:02:23.429
+either from the master,
+
+00:02:23.430 --> 00:02:25.620
+or via SIGINT via the console window,
+
+00:02:25.620 --> 00:02:28.460
+the loop will be exited and the program will continue.
+
+00:02:28.460 --> 00:02:31.695
+Here, if the name variable is set to main
+
+00:02:31.694 --> 00:02:34.935
+indicating that this script is being executed directly,
+
+00:02:34.935 --> 00:02:37.094
+the mover function will be called.
+
+00:02:37.094 --> 00:02:42.525
+The try-except blocks here are significant as Rospy uses exceptions extensively.
+
+00:02:42.525 --> 00:02:46.349
+The particular exception being caught here is the ROS interrupt exception.
+
+00:02:46.349 --> 00:02:50.129
+This exception is raised when the node has been signaled for shut down.
+
+00:02:50.129 --> 00:02:52.439
+If there was perhaps some sort of cleanup needing to be done
+
+00:02:52.439 --> 00:02:55.409
+before the node shuts down, it would be done here.
+
+00:02:55.409 --> 00:02:59.555
+More information about Rospy exceptions can be found in the links below.
+
+00:02:59.555 --> 00:03:01.620
+Assuming that your work space has recently been
+
+00:03:01.620 --> 00:03:03.914
+built and it's setup.bash has been sourced,
+
+00:03:03.914 --> 00:03:08.009
+you can launch simple arm as follows.
+
+00:03:08.009 --> 00:03:15.179
+Once the ROS master,
+
+00:03:15.180 --> 00:03:18.015
+gazebo and all of our relevant nodes are up and running,
+
+00:03:18.014 --> 00:03:20.209
+we can finally launch the simple mover node.
+
+00:03:20.210 --> 00:03:29.932
+All right,
+
+00:03:29.931 --> 00:03:34.959
+and here's what it should look like.
+
+00:03:34.960 --> 00:03:38.129
+Congratulations. You've now written your first ROS node.
+

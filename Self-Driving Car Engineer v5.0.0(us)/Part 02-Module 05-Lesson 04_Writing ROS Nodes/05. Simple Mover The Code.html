@@ -1,0 +1,559 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Simple Mover: The Code
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Writing ROS Nodes
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Closing In.html">
+       01. Closing In
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Overview.html">
+       02. Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="03. ROS Publishers.html">
+       03. ROS Publishers
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Simple Mover.html">
+       04. Simple Mover
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Simple Mover The Code.html">
+       05. Simple Mover: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="06. ROS Services.html">
+       06. ROS Services
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Arm Mover.html">
+       07. Arm Mover
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Arm Mover The Code.html">
+       08. Arm Mover: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Arm Mover Launch and Interact.html">
+       09. Arm Mover: Launch and Interact
+      </a>
+     </li>
+     <li class="">
+      <a href="10. ROS Subscribers.html">
+       10. ROS Subscribers
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Look Away.html">
+       11. Look Away
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Look Away The Code.html">
+       12. Look Away: The Code
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Look Away Launch and Interact.html">
+       13. Look Away: Launch and Interact
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Logging.html">
+       14. Logging
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Recap.html">
+       15. Recap
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Outro.html">
+       16. Outro
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. Simple Mover: The Code
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="simple-mover-the-code">
+          Simple Mover: The Code
+         </h1>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Below is the complete code for the
+          <code>
+           simple_mover
+          </code>
+          node, in it’s entirety, followed by a step-by-step explanation of what is happening.  You can copy and paste this code into the
+          <code>
+           simple_mover
+          </code>
+          script you created in the
+          <code>
+           ~/catkin_ws/src/simple_arm/scripts/
+          </code>
+          directory like this:
+         </p>
+         <p>
+          First, open a new terminal, next:
+         </p>
+         <pre><code class="sh language-sh">$ cd ~/catkin_ws/src/simple_arm/scripts/
+$ nano simple_mover</code></pre>
+         <p>
+          You have opened the
+          <code>
+           simple_mover
+          </code>
+          script with the
+          <strong>
+           nano
+          </strong>
+          editor, now copy and paste the code below into the script and use
+          <code>
+           ctrl-x
+          </code>
+          followed by
+          <code>
+           y
+          </code>
+          then
+          <code>
+           enter
+          </code>
+          to save the script.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="simple_mover">
+          simple_mover
+         </h2>
+         <pre><code class="python language-python">#!/usr/bin/env python
+
+import math
+import rospy
+from std_msgs.msg import Float64
+
+def mover():
+    pub_j1 = rospy.Publisher('/simple_arm/joint_1_position_controller/command',
+                             Float64, queue_size=10)
+    pub_j2 = rospy.Publisher('/simple_arm/joint_2_position_controller/command',
+                             Float64, queue_size=10)
+    rospy.init_node('arm_mover')
+    rate = rospy.Rate(10)
+    start_time = 0
+
+    while not start_time:
+        start_time = rospy.Time.now().to_sec()
+
+    while not rospy.is_shutdown():
+        elapsed = rospy.Time.now().to_sec() - start_time
+        pub_j1.publish(math.sin(2*math.pi*0.1*elapsed)*(math.pi/2))
+        pub_j2.publish(math.sin(2*math.pi*0.1*elapsed)*(math.pi/2))
+        rate.sleep()
+
+if __name__ == '__main__':
+    try:
+        mover()
+    except rospy.ROSInterruptException:
+        pass</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L3 Simple Mover Code
+         </p>
+        </h3>
+        <video controls="">
+         <source src="05. L3 Simple Mover Code-jEO_4xxA_mI.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="05. L3 Simple Mover Code-jEO_4xxA_mI.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="JP" src="05. L3 Simple Mover Code-jEO_4xxA_mI.ja-JP.vtt" srclang="JP"/>
+         <track default="false" kind="subtitles" label="CN" src="05. L3 Simple Mover Code-jEO_4xxA_mI.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="the-code-explained">
+          The code: Explained
+         </h2>
+         <pre><code class="python language-python">#!/usr/bin/env python
+
+import math
+import rospy</code></pre>
+         <p>
+          rospy is the official Python client library for ROS. It provides most of the fundamental functionality required for interfacing with ROS via Python. It has interfaces for creating Nodes, interfacing with Topics, Services, Parameters, and more. It will certainly be worth your time to check out the API documentation
+          <a href="http://docs.ros.org/kinetic/api/rospy/html/" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          . General information about rospy, including other tutorials may be found on the
+          <a href="http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber" rel="noopener noreferrer" target="_blank">
+           ROS Wiki
+          </a>
+          .
+         </p>
+         <pre><code class="python language-python">from std_msgs.msg import Float64</code></pre>
+         <p>
+          From the
+          <code>
+           std_msgs
+          </code>
+          package, we import Float64, which is one of the primitive message types in ROS. The
+          <a href="http://wiki.ros.org/std_msgs" rel="noopener noreferrer" target="_blank">
+           std_msgs
+          </a>
+          package also contains all of the other primitive types. Later on in this script, we will be publishing Float64 messages to the position command topics for each joint.
+         </p>
+         <pre><code class="python language-python">def mover():
+    pub_j1 = rospy.Publisher('/simple_arm/joint_1_position_controller/command',
+                             Float64, queue_size= 10)
+    pub_j2 = rospy.Publisher('/simple_arm/joint_2_position_controller/command',
+                             Float64, queue_size=10)</code></pre>
+         <p>
+          At the top of the mover function, two publishers are declared, one for joint 1 commands, and one for joint 2 commands. Here, the
+          <code>
+           queue_size
+          </code>
+          parameter is used to determine the maximum number messages that may be stored in the publisher queue before messages are dropped.  More information about this parameter can be found
+          <a href="http://wiki.ros.org/rospy/Overview/Publishers%20and%20Subscribers#queue_size:_publish.28.29_behavior_and_queuing" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          .
+         </p>
+         <pre><code class="python language-python"> rospy.init_node('arm_mover')</code></pre>
+         <p>
+          Initializes a client node and registers it with the master. Here “arm_mover” is the name of the node.
+          <code>
+           init_node()
+          </code>
+          must be called before any other rospy package functions are called.  The argument
+          <code>
+           anonymous=True
+          </code>
+          makes sure that you always have a unique name for your node
+         </p>
+         <pre><code class="python language-python"> rate = rospy.Rate(10)</code></pre>
+         <p>
+          The
+          <code>
+           rate
+          </code>
+          object is created here with a value of 10 Hertz. Rates are used to limit the frequency at which certain loops spin in ROS. Choosing a rate  which is too high may result in unnecessarily high CPU usage, while choosing a value too low could result in high overall system latency. Choosing sensible values for all of the nodes in a ROS system is a bit of a fine-art.
+         </p>
+         <pre><code class="python language-python">    start_time = 0
+
+    while not start_time:
+        start_time = rospy.Time.now().to_sec()</code></pre>
+         <p>
+          <code>
+           start_time
+          </code>
+          is used to determine how much time has elapsed. When using ROS with simulated time (as we are doing here),
+          <code>
+           rospy.Time.now()
+          </code>
+          will initially return 0, until the first message has been received on the
+          <code>
+           /clock
+          </code>
+          topic. This is why
+          <code>
+           start_time
+          </code>
+          is set and polled continuously until a nonzero value is returned (more information
+          <a href="http://wiki.ros.org/rospy/Overview/Time" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          ).
+         </p>
+         <pre><code class="python language-python">    while not rospy.is_shutdown():
+        elapsed = rospy.Time.now().to_sec() - start_time
+        pub_j1.publish(math.sin(2*math.pi*0.1*elapsed)*(math.pi/2))
+        pub_j2.publish(math.sin(2*math.pi*0.1*elapsed)*(math.pi/2))
+        rate.sleep()</code></pre>
+         <p>
+          This the main loop. Due to the call to
+          <code>
+           rate.sleep()
+          </code>
+          , the loop is traversed at approximately 10 Hertz. Each trip through the body of the loop will result in two joint command messages being published. The joint angles are sampled from a sine wave with a period of 10 seconds, and in magnitude from  [
+          <span class="mathquill ud-math">
+           -\pi/2, +\pi/2
+          </span>
+          ]. When the node receives the signal to shut down (either from the master, or via SIGINT signal in a console window), the loop will be exited.
+         </p>
+         <pre><code class="python language-python">if __name__ == '__main__':
+    try:
+        mover()
+    except rospy.ROSInterruptException:
+        pass</code></pre>
+         <p>
+          If the name variable is set to “
+          <strong>
+           main
+          </strong>
+          ”, indicating that this script is being executed directly, the
+          <code>
+           mover()
+          </code>
+          function will be called. The try/except blocks here are significant as rospy uses exceptions extensively. The particular exception being caught here is the
+          <code>
+           ROSInterruptException
+          </code>
+          . This exception is raised when the node has been signaled for shutdown. If there was perhaps some sort of cleanup needing to be done before the node shuts down, it would be done here. More information about rospy exceptions can be found
+          <a href="http://wiki.ros.org/rospy/Overview/Exceptions" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="running-simple_mover">
+          Running simple_mover
+         </h2>
+         <p>
+          Assuming that your workspace has recently been built, and it’s
+          <code>
+           setup.bash
+          </code>
+          has been sourced, you can launch
+          <code>
+           simple_arm
+          </code>
+          as follows:
+         </p>
+         <pre><code class="sh language-sh">$ cd ~/catkin_ws
+$ roslaunch simple_arm robot_spawn.launch</code></pre>
+         <p>
+          Once ROS Master, Gazebo, and all of our relevant nodes are up and running, we can finally launch
+          <code>
+           simple_mover
+          </code>
+          . To do so, open a new terminal and type the following commands:
+         </p>
+         <pre><code class="sh language-sh">$ cd ~/catkin_ws
+$ source devel/setup.bash
+$ rosrun simple_arm simple_mover</code></pre>
+         <p>
+          Below is a video showing you what the expected movements should look like.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Simple Arm
+         </p>
+        </h3>
+        <video controls="">
+         <source src="05. Simple Arm-Ki5LkE_xir4.mp4" type="video/mp4"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Congratulations! You’ve now written your first ROS node!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. ROS Services.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Simple Mover: The Code')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
