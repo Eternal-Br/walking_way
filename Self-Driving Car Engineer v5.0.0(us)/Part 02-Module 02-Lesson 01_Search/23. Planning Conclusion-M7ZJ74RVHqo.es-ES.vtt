@@ -1,0 +1,92 @@
+WEBVTT
+Kind: captions
+Language: es-ES
+
+00:00:00.000 --> 00:00:05.000
+Esta es una simulación de Junior, nuestro carro de competencia de Stanford
+
+00:00:05.000 --> 00:00:10.000
+usando exactamente el mismo algoritmo para manejar.
+
+00:00:10.000 --> 00:00:17.000
+Podemos ver que el carro gira a la derecha y luego cambia de carril.
+
+00:00:17.000 --> 00:00:20.000
+Estas son acciones discretas que el carro ejecuta
+
+00:00:20.000 --> 00:00:23.000
+para llegar a la meta que es el círculo anaranjado.
+
+00:00:23.000 --> 00:00:28.000
+Pero si incrementamos el costo asociado con un cambio de carril
+
+00:00:28.000 --> 00:00:31.000
+tal como incrementamos anteriormente el costo de un giro a la izquierda
+
+00:00:31.000 --> 00:00:34.000
+entonces el carro seleccionará un camino diferente.
+
+00:00:34.000 --> 00:00:41.000
+Irá hacia adelante, luego girará a la izquierda (que es este momento no es una opción costosa),
+
+00:00:41.000 --> 00:00:46.000
+y luego gira a la izquierda dos veces para ubicarse
+
+00:00:46.000 --> 00:00:51.000
+en el carril donde está localizada la meta.
+
+00:00:51.000 --> 00:00:57.000
+Este es el resultado de modificar los costos de las functiones de nuestor algoritmo de programacion dinámica
+
+00:00:57.000 --> 00:01:02.000
+en el mismo escenario 3-D que acabamos de estudiar y que Ud. yá programó.
+
+00:01:02.000 --> 00:01:07.000
+Su programa ya puede manejar este carro y cambiando estos costos,
+
+00:01:07.000 --> 00:01:11.000
+como vemos, el carro será capaz de llegar a la meta
+
+00:01:11.000 --> 00:01:16.000
+de una manera óptima dados los costos que hemos asignado.
+
+00:01:16.000 --> 00:01:19.000
+Felicitaciones. Ud. acaba de finalizar mi primera clase de planeación de trayectorias.
+
+00:01:19.000 --> 00:01:22.000
+Hoy asumimos que el mundo es discreto,
+
+00:01:22.000 --> 00:01:28.000
+y estudiamos 2 algorítmos de planeacion: A-estrella, que usa un heurístico para hallar un camino,
+
+00:01:28.000 --> 00:01:33.000
+y Programación Dinámica, 
+que nos da un plan para cada posición.
+
+00:01:33.000 --> 00:01:35.000
+Hemos programado los dos.
+
+00:01:35.000 --> 00:01:40.000
+De hecho, en el caso de programación Dinámica, lo hemos hecho hasta en 3-D, lo cual es un gran logro.
+
+00:01:40.000 --> 00:01:42.000
+Quiero felicitarlo por haber llegado hasta aquí.
+
+00:01:42.000 --> 00:01:45.000
+Ud. realmente entiende ahora 2 de los más importantes estrategias
+
+00:01:45.000 --> 00:01:48.000
+usadas por nuestors robots para tomar decisiones,
+
+00:01:48.000 --> 00:01:52.000
+y, que en general, son también de gran importancia en toda area de Inteligencia Artificial.
+
+00:01:52.000 --> 00:01:58.000
+En nuestra próxima clase hablaremos de como usar esto para conseguir que el robot se mueva.
+
+00:01:58.000 --> 00:02:04.000
+Hablaremos de estados de espacio continuos y de control
+
+00:02:04.000 --> 00:02:08.000
+usados para mover al robot. Nos vemos la próxima semana.
+

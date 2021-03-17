@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.629
+So, now onto motion planning.
+
+00:00:02.629 --> 00:00:05.044
+So far, you've learned a lot about perception,
+
+00:00:05.043 --> 00:00:06.974
+like how to perceive the world.
+
+00:00:06.974 --> 00:00:10.890
+But while the car brains will taking vision in, eventually,
+
+00:00:10.890 --> 00:00:12.605
+you have to also do something with that,
+
+00:00:12.605 --> 00:00:14.150
+we have to steer,
+
+00:00:14.150 --> 00:00:16.789
+and you have to break, and give gas.
+
+00:00:16.789 --> 00:00:18.750
+So, motion planning is a step in that direction.
+
+00:00:18.750 --> 00:00:20.190
+It comes in multiple segments.
+
+00:00:20.190 --> 00:00:23.580
+It starts out with a predictive task where
+
+00:00:23.579 --> 00:00:28.414
+the motion planner tries to understand what are other vehicles about to do in the future.
+
+00:00:28.414 --> 00:00:32.979
+Then the vehicle will pick a behavior kind of simply speaking,
+
+00:00:32.979 --> 00:00:34.634
+whether to left or right.
+
+00:00:34.634 --> 00:00:39.009
+Eventually, it generates a maneuver trajectory as to where to go.
+
+00:00:39.009 --> 00:00:42.195
+The trajectory is not just a curve in space in X and Y.
+
+00:00:42.195 --> 00:00:44.500
+It also has a time dimension because
+
+00:00:44.500 --> 00:00:47.280
+we have to set the speed of the vehicle at the same time.
+
+00:00:47.280 --> 00:00:49.310
+So, now, in this unit,
+
+00:00:49.310 --> 00:00:52.370
+you will actually be asked to write a lot of software.
+
+00:00:52.369 --> 00:00:56.464
+It's very coding intents to build this very important package.
+
+00:00:56.465 --> 00:00:58.540
+By the end of the unit, you have a flavor for
+
+00:00:58.539 --> 00:01:02.759
+how complicated as not much fun it is to make a car move.
+
