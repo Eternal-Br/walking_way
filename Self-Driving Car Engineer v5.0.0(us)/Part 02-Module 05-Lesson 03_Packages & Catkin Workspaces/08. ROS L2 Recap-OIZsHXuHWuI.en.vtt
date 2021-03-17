@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.620
+Congratulations.
+
+00:00:01.620 --> 00:00:04.095
+You now have some experience creating workspaces,
+
+00:00:04.094 --> 00:00:05.865
+working with packages and dependencies,
+
+00:00:05.865 --> 00:00:07.800
+and troubleshooting build errors.
+
+00:00:07.799 --> 00:00:10.064
+Additionally you've had your first peek at Gazebo,
+
+00:00:10.064 --> 00:00:12.209
+a powerful tool for simulation that you'll be
+
+00:00:12.210 --> 00:00:14.730
+using over and over again throughout this curriculum.
+
+00:00:14.730 --> 00:00:17.580
+In the next lesson you'll be writing additional ROS nodes for
+
+00:00:17.579 --> 00:00:20.879
+the simple arm package that you've already added to your catkin workspace.
+
+00:00:20.879 --> 00:00:24.689
+Before you actually begin writing ROS nodes make sure to take a peek at the links
+
+00:00:24.690 --> 00:00:29.145
+to the official ROS wiki documentation surrounding the topics I've discussed here.
+
+00:00:29.144 --> 00:00:31.800
+The documentation is an extremely useful resource for
+
+00:00:31.800 --> 00:00:36.000
+ROS developers and will be very valuable to you throughout the rest of the program.
+

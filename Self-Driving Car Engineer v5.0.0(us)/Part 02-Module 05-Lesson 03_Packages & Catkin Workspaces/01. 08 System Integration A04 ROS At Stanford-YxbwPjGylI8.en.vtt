@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.640
+So, now that they know the basics about ROS,
+
+00:00:02.640 --> 00:00:07.480
+let's dive into how to bundle packages together and build a software system.
+
+00:00:07.480 --> 00:00:10.080
+It might sound like a detour
+
+00:00:10.080 --> 00:00:13.470
+to do this in ROS as opposed to just one thread in Python but,
+
+00:00:13.470 --> 00:00:16.650
+I can tell you once you build a self-driving car you often
+
+00:00:16.649 --> 00:00:19.719
+have up to 50 processes running at the same time.
+
+00:00:19.719 --> 00:00:22.229
+Some might even crash while you're driving and having
+
+00:00:22.230 --> 00:00:25.420
+a flexible architecture like ROS wrapped around it,
+
+00:00:25.420 --> 00:00:28.440
+it would be supremely helpful to build scalable software.
+

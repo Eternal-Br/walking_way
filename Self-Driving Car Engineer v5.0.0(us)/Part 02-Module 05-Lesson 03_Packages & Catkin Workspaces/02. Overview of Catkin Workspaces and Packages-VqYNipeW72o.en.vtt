@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.440
+ROS provides a powerful build and package management system called Catkin.
+
+00:00:04.440 --> 00:00:06.620
+Willow Garage, the early developers of ROS,
+
+00:00:06.620 --> 00:00:10.980
+named Catkin after the flowers on the willow trees surrounding their office.
+
+00:00:10.980 --> 00:00:13.380
+A Catkin workspace is essentially a directory where
+
+00:00:13.380 --> 00:00:16.739
+Catkin packages are built, modified and installed.
+
+00:00:16.739 --> 00:00:19.839
+Typically when you're developing a ROS based robot or project,
+
+00:00:19.838 --> 00:00:22.500
+you will be working out of a single workspace.
+
+00:00:22.500 --> 00:00:26.324
+This singular workspace will hold a wide variety of Catkin packages.
+
+00:00:26.324 --> 00:00:30.958
+All ROS software components are organized into and distributed as Catkin packages.
+
+00:00:30.958 --> 00:00:33.990
+Similar to workspaces, Catkin packages are
+
+00:00:33.990 --> 00:00:37.439
+nothing more than directories containing a variety of resources which,
+
+00:00:37.439 --> 00:00:41.445
+when considered together constitute some sort of useful module.
+
+00:00:41.445 --> 00:00:44.689
+Catkin packages may contain source code for nodes,
+
+00:00:44.689 --> 00:00:48.228
+useful scripts, configuration files and more.
+
+00:00:48.228 --> 00:00:49.545
+In the sections that follow,
+
+00:00:49.545 --> 00:00:51.664
+you will see how to create a Catkin workspace,
+
+00:00:51.664 --> 00:00:53.060
+add packages to it,
+
+00:00:53.060 --> 00:00:55.134
+manage inner package dependencies,
+
+00:00:55.134 --> 00:00:58.329
+and lastly, how to successfully compile everything.
+

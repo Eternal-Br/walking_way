@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.949
+I just launched my robotic arm for
+
+00:00:01.949 --> 00:00:06.040
+the first time only to discover that it was swinging around loosely.
+
+00:00:06.040 --> 00:00:08.789
+I challenged you to figure out why and I gave you a hint.
+
+00:00:08.789 --> 00:00:10.529
+Assuming that you're up for the challenge,
+
+00:00:10.529 --> 00:00:12.330
+you might have seen the following warning line,
+
+00:00:12.330 --> 00:00:17.530
+"Controller Spawner couldn't find the expected controller manager ROS interface."
+
+00:00:17.530 --> 00:00:19.690
+I'm going to jump right to the punch line here.
+
+00:00:19.690 --> 00:00:22.785
+It turns out that we were missing a runtime dependency.
+
+00:00:22.785 --> 00:00:25.681
+ROS packages have two different types of dependencies;
+
+00:00:25.681 --> 00:00:28.405
+build dependencies, and run dependencies.
+
+00:00:28.405 --> 00:00:31.260
+You fix the first build dependency by using a combination of
+
+00:00:31.260 --> 00:00:35.859
+Google search and apt-get to install the ROS kinetic controller manager package.
+
+00:00:35.859 --> 00:00:38.850
+Doing this allowed the package to build without complaints but when you
+
+00:00:38.850 --> 00:00:42.509
+ran it you got a warning and things didn't function as expected.
+
+00:00:42.509 --> 00:00:45.100
+This is where the rosdep tool comes in handy.
+
+00:00:45.100 --> 00:00:48.643
+The rosdep tool will check for a packages missing dependencies,
+
+00:00:48.643 --> 00:00:51.140
+download them and install them.
+
+00:00:51.140 --> 00:00:52.380
+Let's go ahead and take a look at
+
+00:00:52.380 --> 00:00:55.350
+the dependencies that were missing from the simple_arm package.
+
+00:00:55.350 --> 00:00:58.715
+Let's first go ahead and kill Gazebo and all of the running nodes.
+
+00:00:58.715 --> 00:01:02.950
+You can do so by entering Ctrl C in the ROS Master console window.
+
+00:01:02.950 --> 00:01:06.789
+Now in the root of your catkin workspace with setup, ".Bash source."
+
+00:01:06.789 --> 00:01:08.549
+You're going to want to type the command "rosdep
+
+00:01:08.549 --> 00:01:12.620
+check," and then the name of your package.
+
+00:01:12.620 --> 00:01:16.555
+Here it's, "simple_arm," and then hit enter.
+
+00:01:16.555 --> 00:01:18.150
+And there you have it, a list of
+
+00:01:18.150 --> 00:01:21.170
+the system dependencies that are missing and where to get them.
+
+00:01:21.170 --> 00:01:25.504
+Now we could have just use apt-get to install these but I'm going to show you a trick.
+
+00:01:25.504 --> 00:01:27.450
+You can simply let rosdep do it.
+
+00:01:27.450 --> 00:01:29.584
+To make rosdep install packages,
+
+00:01:29.584 --> 00:01:33.049
+invoke the following command from the root of the catkin workspace.
+
+00:01:33.049 --> 00:01:41.680
+Rosdep Install -I simple_arm, and then hit enter.
+
+00:01:41.680 --> 00:01:46.090
+The script will then install the missing Debian packages and there you have it.
+
+00:01:46.090 --> 00:01:50.909
+Now, when you launch the simple_arm package everything should be operating as expected.
+
+00:01:50.909 --> 00:01:53.849
+The joint controller, now that it's actually on your system,
+
+00:01:53.849 --> 00:01:58.069
+will be loaded and the arm will no longer swing around loosely. There we go.
+
+00:01:58.069 --> 00:02:01.844
+Gazebo has been launched and as you can see the arm is rigid.
+
+00:02:01.844 --> 00:02:04.144
+With all packages properly installed,
+
+00:02:04.144 --> 00:02:06.359
+you will now learn more about ROS packages in
+
+00:02:06.359 --> 00:02:09.110
+preparation for writing your own nodes in the next lesson.
+

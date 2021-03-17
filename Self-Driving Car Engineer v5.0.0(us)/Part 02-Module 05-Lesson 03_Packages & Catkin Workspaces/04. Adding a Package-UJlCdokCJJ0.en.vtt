@@ -1,0 +1,79 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.669
+One of the biggest benefits of using ROS is that it has
+
+00:00:02.669 --> 00:00:05.168
+a really large community of users and developers,
+
+00:00:05.168 --> 00:00:06.900
+so there's a lot of code that you can use.
+
+00:00:06.900 --> 00:00:10.984
+Let's clone an existing package and add it to our newly created workspace.
+
+00:00:10.984 --> 00:00:13.679
+You'll start by navigating to the source directory.
+
+00:00:13.679 --> 00:00:18.070
+Then you'll use Git to clone the simple arm package for this lesson from its GitHub repo.
+
+00:00:18.070 --> 00:00:21.809
+Don't worry about trying to pause the video to copy the url that I've shown here,
+
+00:00:21.809 --> 00:00:24.420
+as it's provided in the text module below.
+
+00:00:24.420 --> 00:00:26.489
+After the repo is finished cloning,
+
+00:00:26.489 --> 00:00:29.640
+you can change the directory to the top level of the ROS workspace and
+
+00:00:29.640 --> 00:00:33.015
+build the new package using the command catkin-make.
+
+00:00:33.015 --> 00:00:34.679
+I have seen an error.
+
+00:00:34.679 --> 00:00:39.329
+"Could not find a package configuration file provided by 'controller_manager.'"
+
+00:00:39.329 --> 00:00:43.798
+I happen to know that controller_manager refers to a ROS package from ROS control.
+
+00:00:43.798 --> 00:00:47.380
+We can fix this by installing the associated Debian package.
+
+00:00:47.380 --> 00:00:48.780
+If I didn't already know this,
+
+00:00:48.780 --> 00:00:50.908
+I would probably have to rely on a Google search to
+
+00:00:50.908 --> 00:00:54.039
+figure out the exact name of the package required.
+
+00:00:54.039 --> 00:00:57.340
+OK. Now that we have the controller_manager package installed,
+
+00:00:57.340 --> 00:00:58.825
+let's try building again.
+
+00:00:58.825 --> 00:01:00.475
+I'm still in the top level directories,
+
+00:01:00.475 --> 00:01:03.600
+so I can just type catkin-make and hit Enter.
+
+00:01:03.600 --> 00:01:05.683
+Awesome. So, it look like the build worked.
+
+00:01:05.683 --> 00:01:07.584
+Great. That wasn't so bad.
+
+00:01:07.584 --> 00:01:10.430
+Now we can run some of the code from this package that we just cloned.
+

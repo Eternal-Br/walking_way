@@ -1,0 +1,178 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.360
+Up until this point you've been launching nodes using the venerable Rosrun command.
+
+00:00:04.360 --> 00:00:05.580
+As I mentioned previously,
+
+00:00:05.580 --> 00:00:08.429
+a Ros system usually consists of many running nodes.
+
+00:00:08.429 --> 00:00:11.435
+Running all of the nodes by hand though can be torturous.
+
+00:00:11.435 --> 00:00:14.314
+This is where the roslaunch command comes to save the day.
+
+00:00:14.314 --> 00:00:18.105
+Roslaunch allows you to launch multiple nodes with one simple command,
+
+00:00:18.105 --> 00:00:20.429
+set default parameters in the pram server,
+
+00:00:20.428 --> 00:00:23.564
+automatically respond processes that have died and more.
+
+00:00:23.565 --> 00:00:25.559
+To use roslaunch, you must first make
+
+00:00:25.559 --> 00:00:27.960
+sure that your work space has been built and sourced.
+
+00:00:27.960 --> 00:00:30.054
+Recall, to build the work space,
+
+00:00:30.053 --> 00:00:33.515
+you use the command catkin_make while you're in the root of the work space.
+
+00:00:33.515 --> 00:00:35.535
+So, let's move to the root of the work space
+
+00:00:35.534 --> 00:00:38.173
+and let's issue the build command, catkin_make.
+
+00:00:38.173 --> 00:00:39.945
+Once the work space has been built,
+
+00:00:39.945 --> 00:00:41.670
+you can source its set up script.
+
+00:00:41.670 --> 00:00:43.048
+The set up script lives in
+
+00:00:43.048 --> 00:00:46.094
+the newly created directory devel in the root of the work space.
+
+00:00:46.094 --> 00:00:50.399
+In the same fashion as the setup.bash script in the OPT Ros directory,
+
+00:00:50.399 --> 00:00:54.390
+the work space is setup.bash is responsible for setting up the environment variables,
+
+00:00:54.390 --> 00:00:57.435
+which are responsible for letting the system find all of the packages,
+
+00:00:57.435 --> 00:01:01.618
+libraries and other resources provided by your catkin work space.
+
+00:01:01.618 --> 00:01:03.270
+So let's go ahead and source that now.
+
+00:01:03.270 --> 00:01:04.896
+With your work space sourced,
+
+00:01:04.896 --> 00:01:06.495
+you can now launch simple arm.
+
+00:01:06.495 --> 00:01:08.775
+To do so, use the command roslaunch,
+
+00:01:08.775 --> 00:01:13.534
+followed by the package name rossimple_arm and then the name of the launch file.
+
+00:01:13.534 --> 00:01:17.534
+And here, I'm just going to use tab completion robot_spawn.launch.
+
+00:01:17.534 --> 00:01:19.349
+Awesome. There we go. I've launched the arm
+
+00:01:19.349 --> 00:01:21.870
+using the launch file and the simple arm package.
+
+00:01:21.870 --> 00:01:23.640
+A number of things just happened.
+
+00:01:23.640 --> 00:01:25.108
+Perhaps the most apparent is that,
+
+00:01:25.108 --> 00:01:28.134
+I now have a robotic arm running in simulation.
+
+00:01:28.135 --> 00:01:30.174
+The simulator is called gazebo.
+
+00:01:30.174 --> 00:01:33.174
+You continue to use it many times throughout this program.
+
+00:01:33.174 --> 00:01:34.840
+It is our surrogate for the real world,
+
+00:01:34.840 --> 00:01:37.560
+it's responsible for simulating forces and torques,
+
+00:01:37.560 --> 00:01:38.864
+the passage of time,
+
+00:01:38.864 --> 00:01:42.540
+as well as interactions between objects such as collisions.
+
+00:01:42.540 --> 00:01:46.855
+The robot I'm simulating here is a simple two degree of freedom robotic arm.
+
+00:01:46.855 --> 00:01:50.575
+It's perhaps hard to tell but there is a little black ball on the end of the arm.
+
+00:01:50.575 --> 00:01:52.109
+The ball represents a camera.
+
+00:01:52.109 --> 00:01:55.674
+Gazebo can also simulate a wide variety of sensors.
+
+00:01:55.674 --> 00:01:57.814
+It's not just gazebo that's running though.
+
+00:01:57.813 --> 00:02:00.193
+If you switch over to the console window and scroll up,
+
+00:02:00.194 --> 00:02:01.950
+you can see that roslaunch has provided
+
+00:02:01.950 --> 00:02:04.439
+the brief summary of all of the nodes which have been launched,
+
+00:02:04.438 --> 00:02:07.509
+and all of the parameters which have been set.
+
+00:02:07.510 --> 00:02:09.879
+I won't spend any time talking about all the details of
+
+00:02:09.878 --> 00:02:12.459
+the launch file here but I encourage you to check it out.
+
+00:02:12.460 --> 00:02:15.854
+It's in the launch directory within the simple arm package.
+
+00:02:15.854 --> 00:02:18.084
+Now, that you understand how to create a work space,
+
+00:02:18.084 --> 00:02:20.365
+add a package, build and launch everything,
+
+00:02:20.365 --> 00:02:21.865
+you're prepared for the next step,
+
+00:02:21.865 --> 00:02:25.935
+figuring out why the arm is just swinging around loosely in simulation.
+
+00:02:25.935 --> 00:02:28.539
+While I'll be explaining it thoroughly in the next section,
+
+00:02:28.538 --> 00:02:31.478
+I encourage you to try to figure it out before I spill the beans.
+
+00:02:31.479 --> 00:02:35.000
+Here's a hint. Check the log messages in the ros master console.
+
