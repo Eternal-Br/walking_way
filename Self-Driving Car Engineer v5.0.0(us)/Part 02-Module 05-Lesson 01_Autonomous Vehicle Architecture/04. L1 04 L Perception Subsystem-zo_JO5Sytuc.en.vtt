@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.019
+The perception subsystem, processes data from sensors into
+
+00:00:04.019 --> 00:00:08.314
+structured information that can eventually be used for path planning or control.
+
+00:00:08.314 --> 00:00:12.209
+This is where most of the vehicles analysis of the environment takes place.
+
+00:00:12.210 --> 00:00:14.370
+So we can think of the perception subsystem as
+
+00:00:14.369 --> 00:00:18.259
+the vehicle center of understanding about its environment.
+
+00:00:18.259 --> 00:00:22.844
+Broadly speaking, we can further divide the perception subsystem itself
+
+00:00:22.844 --> 00:00:28.169
+into two underlying subsystems; detection and localization.
+
+00:00:28.170 --> 00:00:31.230
+The localization subsystem is responsible for using
+
+00:00:31.230 --> 00:00:35.160
+sensor and map data to determine the vehicle's precise location.
+
+00:00:35.159 --> 00:00:39.944
+The detection subsystem is responsible for understanding the surrounding environment.
+
+00:00:39.945 --> 00:00:44.325
+This subsystem includes software components such as; lane detection,
+
+00:00:44.325 --> 00:00:48.344
+traffic sign and traffic light detection classification,
+
+00:00:48.344 --> 00:00:52.135
+object detection and tracking and free space detection.
+
+00:00:52.136 --> 00:00:56.865
+Each component of the perception subsystem relies on a different group of sensors.
+
+00:00:56.865 --> 00:01:01.340
+Let's look at how the sensor subsystem and the perception subsystem are connected.
+

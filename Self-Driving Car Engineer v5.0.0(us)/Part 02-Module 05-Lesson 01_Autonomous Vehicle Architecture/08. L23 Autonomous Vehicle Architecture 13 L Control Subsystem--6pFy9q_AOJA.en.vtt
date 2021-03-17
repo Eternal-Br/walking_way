@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.259
+The last subsystem in the vehicle is the control subsystem.
+
+00:00:04.259 --> 00:00:07.799
+This subsystem contains software components to ensure that
+
+00:00:07.799 --> 00:00:12.085
+the vehicle follows the path specified by the planning subsystem.
+
+00:00:12.085 --> 00:00:17.660
+The control subsystem may include components such as PID controllers,
+
+00:00:17.660 --> 00:00:22.350
+model predictive controllers, or other controllers.
+
+00:00:23.250 --> 00:00:27.410
+The control subsystem sense acceleration,
+
+00:00:27.410 --> 00:00:30.370
+braking, and steering commands to the vehicle.
+
+00:00:30.370 --> 00:00:34.515
+This completes the chain of information from sensors to actuation,
+
+00:00:34.515 --> 00:00:37.380
+and allows the vehicle to drive.
+

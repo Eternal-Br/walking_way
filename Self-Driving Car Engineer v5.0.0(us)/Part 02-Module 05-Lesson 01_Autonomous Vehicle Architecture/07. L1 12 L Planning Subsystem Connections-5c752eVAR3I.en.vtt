@@ -1,0 +1,19 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.955
+The planning subsystem takes in data
+
+00:00:02.955 --> 00:00:06.330
+from all of the components of the perception subsystem.
+
+00:00:06.330 --> 00:00:10.644
+Additionally, map data is used for long range planning.
+
+00:00:10.644 --> 00:00:16.399
+Once the vehicle has a planned trajectory the next step is to execute that trajectory.
+
+00:00:16.399 --> 00:00:19.289
+This is the responsibility of the control subsystem.
+

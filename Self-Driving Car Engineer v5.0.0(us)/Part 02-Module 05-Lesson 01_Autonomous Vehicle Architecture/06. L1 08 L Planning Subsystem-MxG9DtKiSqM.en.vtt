@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.819
+Once data from the sensors has been processed by
+
+00:00:02.819 --> 00:00:07.709
+the perception subsystem the vehicle can use that information to plan its path.
+
+00:00:07.710 --> 00:00:10.259
+There are several components of the planning system which you might
+
+00:00:10.259 --> 00:00:13.259
+remember from the path planning module: route planning,
+
+00:00:13.259 --> 00:00:16.718
+which is the high level path of the vehicle between two points on a map;
+
+00:00:16.718 --> 00:00:19.844
+prediction, which is what identifies which maneuver
+
+00:00:19.844 --> 00:00:23.234
+other objects on the road might take; behavior planning,
+
+00:00:23.234 --> 00:00:26.051
+which decides what maneuver our vehicle should take;
+
+00:00:26.051 --> 00:00:31.369
+and trajectory generation, which plots the precise path we'd like our vehicle to follow.
+
+00:00:31.370 --> 00:00:33.469
+Let's have a closer look at these components.
+

@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.015
+Welcome to System Integration,
+
+00:00:02.015 --> 00:00:06.195
+the final module of the Udacity self-driving car nanodegree program.
+
+00:00:06.195 --> 00:00:07.970
+Over the course of this program,
+
+00:00:07.969 --> 00:00:11.580
+you've built the major components of an autonomous vehicle system.
+
+00:00:11.580 --> 00:00:15.599
+In this module, we'll be discussing the system architecture used in
+
+00:00:15.599 --> 00:00:19.754
+the Udacity self-driving car so that you can fit all of the pieces together.
+
+00:00:19.754 --> 00:00:22.375
+Karla, the Udacity self-driving car,
+
+00:00:22.375 --> 00:00:24.675
+has four major subsystems.
+
+00:00:24.675 --> 00:00:27.660
+The first subsystem is the sensor subsystem,
+
+00:00:27.660 --> 00:00:31.884
+which consists of the hardware components that gather data about the environment.
+
+00:00:31.885 --> 00:00:34.375
+This subsystem includes LIDAR,
+
+00:00:34.375 --> 00:00:38.340
+radar, cameras, and even GPS sensors mounted on the car.
+
+00:00:38.340 --> 00:00:41.740
+The second subsystem, the perception subsystem,
+
+00:00:41.740 --> 00:00:45.010
+consists of software to process sensor data.
+
+00:00:45.009 --> 00:00:47.759
+You've built components of this subsystem already.
+
+00:00:47.759 --> 00:00:53.509
+Components in the perception subsystem combine sensor data into meaningful information.
+
+00:00:53.509 --> 00:00:57.844
+The planning subsystem is the third subsystem on the vehicle.
+
+00:00:57.844 --> 00:01:01.299
+The planning subsystem uses the output from perception for
+
+00:01:01.299 --> 00:01:05.984
+behavior planning and for both short and long range path planning.
+
+00:01:05.984 --> 00:01:09.670
+The final subsystem is the control subsystem,
+
+00:01:09.670 --> 00:01:12.579
+which ensures that the vehicle follows the path provided by
+
+00:01:12.579 --> 00:01:16.079
+the planning subsystem and sends control commands to the vehicle.
+
+00:01:16.079 --> 00:01:21.250
+As we'll see, information generally flows through the sub-systems from left to right,
+
+00:01:21.250 --> 00:01:25.140
+starting with sensor input and ending with control commands for the vehicle.
+
+00:01:25.140 --> 00:01:26.570
+As we go through this lesson,
+
+00:01:26.569 --> 00:01:28.254
+we'll go into more detail about
+
+00:01:28.254 --> 00:01:31.159
+each subsystem and how it connects to the rest of the vehicle.
+

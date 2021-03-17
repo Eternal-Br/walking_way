@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.169
+Different components in the detection and localization subsystems
+
+00:00:04.169 --> 00:00:07.644
+draw information from different sensors.
+
+00:00:07.644 --> 00:00:10.949
+Additionally, the localization subsystem requires
+
+00:00:10.949 --> 00:00:14.954
+map data which it uses to identify the vehicle's location.
+
+00:00:14.955 --> 00:00:17.820
+The perception subsystem passes the data from
+
+00:00:17.820 --> 00:00:21.300
+localization and detection to the planning subsystem.
+
+00:00:21.300 --> 00:00:26.140
+The planning subsystem determines what maneuver the vehicle should undertake next.
+

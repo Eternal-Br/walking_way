@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.730
+Boy, I'm so impressed how far you've come,
+
+00:00:02.730 --> 00:00:06.290
+and I hope you're impressed too because you learn a lot of stuff here.
+
+00:00:06.290 --> 00:00:09.419
+Perception, sensor fusion, localization,
+
+00:00:09.419 --> 00:00:13.835
+path planning, control, all these wonderful building blocks that make a self-driving car.
+
+00:00:13.835 --> 00:00:15.380
+So, for this final units,
+
+00:00:15.380 --> 00:00:17.589
+it's now time for the truth.
+
+00:00:17.589 --> 00:00:22.050
+The building blocks are one thing but we have to put them together into one system.
+
+00:00:22.050 --> 00:00:25.250
+So, this is the time and we take all these building blocks and turn them into
+
+00:00:25.250 --> 00:00:30.079
+one big system and actually control a self-driving car end-to-end.
+
+00:00:30.079 --> 00:00:34.730
+This is actually how I spent most of my life building self-driving cars tucked away in
+
+00:00:34.729 --> 00:00:38.299
+a small Volkswagen Touareg in front of a computer keyboard putting
+
+00:00:38.299 --> 00:00:40.149
+building blocks together and then realizing
+
+00:00:40.149 --> 00:00:42.629
+the car was drived on a ditch and you made a mistake.
+
+00:00:42.630 --> 00:00:44.740
+That is my life for many many years,
+
+00:00:44.740 --> 00:00:48.920
+is life for every self-driving car engineer and is possibly the hardest thing to
+
+00:00:48.920 --> 00:00:51.460
+do but it's also the most fulfilling because in
+
+00:00:51.460 --> 00:00:54.060
+the end of the day it's not about understanding building blocks,
+
+00:00:54.060 --> 00:00:56.830
+it's about building self-driving cars.
+
+00:00:56.829 --> 00:00:58.479
+So, please dive in.
+
