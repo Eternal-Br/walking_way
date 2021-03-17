@@ -1,0 +1,565 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Programming a Real Self-Driving Car
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Program an Autonomous Vehicle
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Have Fun!.html">
+       01. Have Fun!
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction.html">
+       02. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Getting Started.html">
+       03. Getting Started
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Project Overview.html">
+       04. Project Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Waypoint Updater Node (Partial).html">
+       05. Waypoint Updater Node (Partial)
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Waypoint Updater Partial Walkthrough.html">
+       06. Waypoint Updater Partial Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="07. DBW Node.html">
+       07. DBW Node
+      </a>
+     </li>
+     <li class="">
+      <a href="08. DBW Walkthrough.html">
+       08. DBW Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Traffic Light Detection Node.html">
+       09. Traffic Light Detection Node
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Object Detection Lab.html">
+       10. Object Detection Lab
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Detection Walkthrough.html">
+       11. Detection Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Waypoint Updater Node (Full).html">
+       12. Waypoint Updater Node (Full)
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Full Waypoint Walkthrough.html">
+       13. Full Waypoint Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Project Submission and Getting Feedback.html">
+       14. Project Submission and Getting Feedback
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Project Workspace Instructions.html">
+       15. Project Workspace Instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Capstone Project Workspace.html">
+       16. Capstone Project Workspace
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Programming a Real Self-Driving Car.html">
+       Project Description - Programming a Real Self-Driving Car
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Programming a Real Self-Driving Car.html">
+       Project Rubric - Programming a Real Self-Driving Car
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          Programming a Real Self-Driving Car
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <h1 id="submission-checklist-and-requirements">
+        Submission checklist and requirements
+       </h1>
+       <p>
+        Once your team's project is able to drive the vehicle successfully in the simulator, you may be ready to submit the project for testing on the Udacity vehicle. At this point, your project should:
+       </p>
+       <ul>
+        <li>
+         Launch correctly using the launch files provided in the capstone repo.
+         <strong>
+          <em>
+           Please note that we will not be able to accommodate special launch instructions or run additional scripts from your submission to download files.
+          </em>
+         </strong>
+         *The
+         <code>
+          launch/styx.launch
+         </code>
+         and
+         <code>
+          launch/site.launch
+         </code>
+         files will be used to test code in the simulator and on the vehicle respectively. The submission size limit for this project has been increased to 2GB. *
+        </li>
+        <li>
+         Smoothly follow waypoints in the simulator.
+        </li>
+        <li>
+         Respect the target top speed set for the waypoints'
+         <code>
+          twist.twist.linear.x
+         </code>
+         in
+         <code>
+          waypoint_loader.py
+         </code>
+         .
+         <em>
+          Be sure to check that this is working by testing with different values for kph
+          <code>
+           velocity
+          </code>
+          parameter in
+          <code>
+           /ros/src/waypoint_loader/launch/waypoint_loader.launch
+          </code>
+          . If your vehicle adheres to the kph target top speed set here, then you have satisfied this requirement.
+         </em>
+        </li>
+        <li>
+         Stop at traffic lights when needed.
+        </li>
+        <li>
+         Stop and restart PID controllers depending on the state of
+         <code>
+          /vehicle/dbw_enabled
+         </code>
+         .
+        </li>
+        <li>
+         Publish throttle, steering, and brake commands at 50hz.
+        </li>
+       </ul>
+       <p>
+        Udacity engineers will be evaluating your project on Carla, an autonomous Lincoln MKZ, at their test site in Palo Alto, California. Due to the time-consuming nature of testing project submissions on a physical vehicle,
+        <strong>
+         <em>
+          it typically takes up to a week before you will receive your project feedback.
+         </em>
+        </strong>
+        The project that is evaluated on the vehicle should not have any external libraries that aren't included in the
+        <a href="https://github.com/udacity/CarND-Capstone" rel="noopener noreferrer" target="_blank">
+         starter repo
+        </a>
+        . Your team should be aware of the hardware specifications of the Udacity vehicle when designing your solution.
+       </p>
+       <p>
+        Udacity Self-Driving Car Harware Specs
+       </p>
+       <ul>
+        <li>
+         31.4 GiB Memory
+        </li>
+        <li>
+         Intel Core i7-6700K CPU @ 4 GHz x 8
+        </li>
+        <li>
+         TITAN X Graphics
+        </li>
+        <li>
+         64-bit OS
+        </li>
+       </ul>
+       <p>
+        After your team has confirmed that traffic light detection is working in the simulator, you should test it out using
+        <a href="http://wiki.ros.org/Bags" rel="noopener noreferrer" target="_blank">
+         ROS
+         <code>
+          bags
+         </code>
+        </a>
+        that were recorded at the test site:
+        <a href="https://drive.google.com/file/d/0B2_h37bMVw3iYkdJTlRSUlJIamM/view?usp=sharing" rel="noopener noreferrer" target="_blank">
+         Traffic Light Detection Test Video
+        </a>
+        .
+       </p>
+       <h1 id="project-submission-instructions">
+        Project submission instructions
+       </h1>
+       <p>
+        Once your project satisfies the conditions above, please follow these instructions to submit the project. Note that we require a separate submission from each student, even though the project is done in teams.
+       </p>
+       <p>
+        To prevent identical code from being run on Carla multiple times, there are
+        <strong>
+         different submission instructions for Team Leads and Team Members
+        </strong>
+        - please be sure to follow the correct set of instructions. Only Team Lead submissions will be tested, and Team Leads will receive the feedback for the entire team. Team Member submissions are automatically passed through our review system without being tested.
+       </p>
+       <p>
+        <strong>
+         <em>
+          Note that it typically takes up to a week to receive feedback for this project, so plan accordingly.
+         </em>
+        </strong>
+       </p>
+       <h2 id="team-lead-submission-instructions">
+        Team Lead submission instructions
+       </h2>
+       <p>
+        <strong>
+         Submissions or resubmissions intended for review should include:
+        </strong>
+       </p>
+       <ul>
+        <li>
+         All code for your project, submitted via a zipped file or through GitHub.
+         <strong>
+          Please use the same directory structure as the project repo, ensuring that all files are included.
+         </strong>
+        </li>
+        <li>
+         A README file in .txt, .md, or .pdf format. This file should contain the full names and Udacity account emails of your team members. For additional resources on creating READMEs or using Markdown, see
+         <a href="https://guides.github.com/features/wikis/" rel="noopener noreferrer" target="_blank">
+          here
+         </a>
+         or
+         <a href="https://guides.github.com/features/mastering-markdown/" rel="noopener noreferrer" target="_blank">
+          here.
+         </a>
+        </li>
+        <li>
+         <strong>
+          Important: Please include the names and Udacity account emails of you and your team members in the “Notes to Reviewer” section when uploading your submission. Without these, we will not be able to test your code properly. If you are an individual submitting not as part of a team, please include your name and email address and note that you are submitting as an individual.
+         </strong>
+        </li>
+        <li>
+         The “Notes to Reviewer” section is only to indicate who you and your team members are. Please note that we cannot accommodate special launch instructions or other requests.
+        </li>
+       </ul>
+       <p>
+        When your project is reviewed, you will be notified and provided with a link to download your team’s feedback. Your team members will be instructed to check with you to see the team’s feedback. This link expires after 20 days, so be sure to download the feedback promptly and share it with your team members.
+       </p>
+       <p>
+        When your team is satisfied with the results of your project - whatever this means to you -
+        <strong>
+         please resubmit with the Notes to Reviewer field blank
+        </strong>
+        to close your submission. You do not need to wait for this submission to be reviewed before applying to graduate.
+       </p>
+       <h2 id="team-member-submission-instructions">
+        Team Member submission instructions
+       </h2>
+       <p>
+        <strong>
+         Submissions should include:
+        </strong>
+       </p>
+       <ul>
+        <li>
+         All code for your project, submitted via a zipped file or through GitHub.
+         <strong>
+          Please use the same directory structure as the project repo, ensuring that all files are included.
+         </strong>
+        </li>
+        <li>
+         A README file in .txt, .md, or .pdf format. This file should contain the full names and Udacity account emails of your team members. For additional resources on creating READMEs or using Markdown, see
+         <a href="https://guides.github.com/features/wikis/" rel="noopener noreferrer" target="_blank">
+          here
+         </a>
+         or
+         <a href="https://guides.github.com/features/mastering-markdown/" rel="noopener noreferrer" target="_blank">
+          here.
+         </a>
+        </li>
+        <li>
+         ###
+         <strong>
+          <em>
+           Important:
+          </em>
+         </strong>
+         Make sure to leave the
+         <strong>
+          “Notes to Reviewer”
+         </strong>
+         field EMPTY when uploading your submission. Do not include ANY text.
+        </li>
+       </ul>
+       <p>
+        You will be notified when your project is reviewed, and can then check with your Team Lead to see your team’s feedback.
+       </p>
+       <h1 id="graduation">
+        Graduation
+       </h1>
+       <p>
+        As soon as your team is satisfied with the results of your project, you can close your submission and apply for graduation! The only formal requirement for graduation is to have submitted the capstone project, so it’s up to you to decide when you are ready to graduate. The next lesson, “Completing the Program,” includes instructions for how to apply for graduation.
+       </p>
+       <h1 id="questions">
+        Questions?
+       </h1>
+       <p>
+        The submission and review process for this project is different than the other projects in this Nanodegree program. We’ve put together a document of frequently asked questions about this project
+        <a href="https://docs.google.com/document/d/1L8MB3PwXD1UmQ6e3J7WRPgt8KliF4FFpGw0flKdYGHU/edit?usp=sharing" rel="noopener noreferrer" target="_blank">
+         here.
+        </a>
+        If you have a question about team formation, project submission, or the review process that is not answered in this document, you can email
+        <a href="mailto:selfdrivingcar-support@udacity.com">
+         selfdrivingcar-support@udacity.com
+        </a>
+        for assistance.
+       </p>
+       <h1 id="share-your-project-success">
+        Share your project success
+       </h1>
+       <p>
+        Passed your project? Share the good news!
+       </p>
+       <p>
+        What you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your success with your network.
+       </p>
+       <iframe height="28" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?size=l&amp;url=www.udacity.com&amp;text=I%20completed%20Programming%20a%20Real%20Self-Driving%20Car!%20In%20this%20Capstone%20project%20in%20the%20Self-Driving%20Car%20Engineer%20Nanodegree%20@udacity%20my%20team%20ran%20code%20to%20drive%20a%20real%20autonomous%20vehicle!%20
+[Insert%20your%20Github%20repository%20url%20here]&amp;hashtags=selfdrivingudacity" width="140">
+       </iframe>
+       <h4 id="facebook-and-linkedin">
+        Facebook and LinkedIn
+       </h4>
+       <p>
+        Make sure to use
+        <strong>
+         @Udacity
+        </strong>
+        and
+        <strong>
+         #selfdrivingudacity
+        </strong>
+        in your posts!
+       </p>
+       <p>
+        <html>
+        </html>
+       </p>
+       <p>
+        <head>
+        </head>
+       </p>
+       <style>
+        .fb {color: white;
+  background-color: #4661b0;
+  border-radius: 4px;
+  font-weight: bold;
+  height: 28px;
+  font-size: 14px;}
+.fb:hover {color: #4661b0;
+  background-color: white;
+  border-color: #4661b0;
+  transition: background-color 0.4s}
+.linkedin {color: white;
+  background-color: #0077B5;
+  border-radius: 4px;
+  font-weight: bold;
+  height: 28px;
+  font-size: 14px;}
+.linkedin:hover {color: #0077B5;
+  background-color: white;
+  border-color: #0077B5;
+  transition: background-color 0.4s}
+       </style>
+       <p>
+       </p>
+       <p>
+        <body>
+        </body>
+       </p>
+       <form action="https://www.facebook.com/sharer.php?">
+        Enter the full URL of your Github repository or Youtube video:
+        <br/>
+        <input name="u" placeholder="Paste URL here" type="url"/>
+        <input name="hashtag" type="hidden" value="#selfdrivingudacity"/>
+        <button class="fb">
+         Share on Facebook
+        </button>
+       </form>
+       <form action="https://www.linkedin.com/shareArticle?mini=true">
+        <input name="url" placeholder="Paste URL here" type="url"/>
+        <input name="title" type="hidden" value="Programming a Real Self-Driving Car"/>
+        <input name="summary" type="hidden" value="I ran code on a real Self-Driving Car in the Self-Driving Car Nanodegree @udacity #selfdrivingudacity"/>
+        <button class="linkedin">
+         Share on LinkedIn
+        </button>
+       </form>
+       <p>
+       </p>
+      </div>
+     </div>
+    </main>
+   </div>
+  </div>
+ </body>
+ <p>
+ </p>
+</html>
+<div class="col-12">
+ <p class="text-right">
+ </p>
+</div>
+<footer class="footer">
+ <div class="container">
+  <div class="row">
+   <div class="col-12">
+    <p class="text-center">
+     udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+    </p>
+   </div>
+  </div>
+ </div>
+</footer>
+<script src="../assets/js/jquery-3.3.1.min.js">
+</script>
+<script src="../assets/js/plyr.polyfilled.min.js">
+</script>
+<script src="../assets/js/bootstrap.min.js">
+</script>
+<script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+</script>
+<script src="../assets/js/katex.min.js">
+</script>
+<script>
+ // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('Programming a Real Self-Driving Car')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+</script>

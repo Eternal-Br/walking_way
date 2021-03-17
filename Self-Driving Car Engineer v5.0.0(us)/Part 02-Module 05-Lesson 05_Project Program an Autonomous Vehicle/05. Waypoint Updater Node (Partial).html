@@ -1,0 +1,606 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Waypoint Updater Node (Partial)
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Program an Autonomous Vehicle
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Have Fun!.html">
+       01. Have Fun!
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction.html">
+       02. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Getting Started.html">
+       03. Getting Started
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Project Overview.html">
+       04. Project Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Waypoint Updater Node (Partial).html">
+       05. Waypoint Updater Node (Partial)
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Waypoint Updater Partial Walkthrough.html">
+       06. Waypoint Updater Partial Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="07. DBW Node.html">
+       07. DBW Node
+      </a>
+     </li>
+     <li class="">
+      <a href="08. DBW Walkthrough.html">
+       08. DBW Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Traffic Light Detection Node.html">
+       09. Traffic Light Detection Node
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Object Detection Lab.html">
+       10. Object Detection Lab
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Detection Walkthrough.html">
+       11. Detection Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Waypoint Updater Node (Full).html">
+       12. Waypoint Updater Node (Full)
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Full Waypoint Walkthrough.html">
+       13. Full Waypoint Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Project Submission and Getting Feedback.html">
+       14. Project Submission and Getting Feedback
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Project Workspace Instructions.html">
+       15. Project Workspace Instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Capstone Project Workspace.html">
+       16. Capstone Project Workspace
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Programming a Real Self-Driving Car.html">
+       Project Description - Programming a Real Self-Driving Car
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Programming a Real Self-Driving Car.html">
+       Project Rubric - Programming a Real Self-Driving Car
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. Waypoint Updater Node (Partial)
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="waypoint-updater-node-overview">
+          Waypoint Updater Node Overview
+         </h1>
+         <p>
+          Before the car can move in the simulator, it will be necessary to write a first version of the
+          <code>
+           waypoint_updater
+          </code>
+          node. You can find class and method stubs for the node in
+         </p>
+         <pre><code>(path_to_project_repo)/ros/src/waypoint_updater/waypoint_updater.py</code></pre>
+         <p>
+          The eventual purpose of this node is to publish a fixed number of waypoints ahead of the vehicle with the correct target velocities, depending on traffic lights and obstacles. The goal for the first version of the node should be simply to subscribe to the topics
+         </p>
+         <ul>
+          <li>
+           <code>
+            /base_waypoints
+           </code>
+          </li>
+          <li>
+           <code>
+            /current_pose
+           </code>
+          </li>
+         </ul>
+         <p>
+          and publish a list of waypoints to
+         </p>
+         <ul>
+          <li>
+           <code>
+            /final_waypoints
+           </code>
+          </li>
+         </ul>
+         <p>
+          The
+          <code>
+           /base_waypoints
+          </code>
+          topic publishes a list of all waypoints for the track, so this list includes waypoints both before and after the vehicle (note that the publisher for
+          <code>
+           /base_waypoints
+          </code>
+          publishes only once). For this step in the project, the list published to
+          <code>
+           /final_waypoints
+          </code>
+          should include just a fixed number of waypoints currently ahead of the vehicle:
+         </p>
+         <ul>
+          <li>
+           The first waypoint in the list published to
+           <code>
+            /final_waypoints
+           </code>
+           should be the first waypoint that is currently ahead of the car.
+          </li>
+          <li>
+           The total number of waypoints ahead of the vehicle that should be included in the
+           <code>
+            /final_waypoints
+           </code>
+           list is provided by the
+           <code>
+            LOOKAHEAD_WPS
+           </code>
+           variable in
+           <code>
+            waypoint_updater.py
+           </code>
+           .
+          </li>
+         </ul>
+         <p>
+          The next section includes details about the message type used to publish to
+          <code>
+           /final_waypoints
+          </code>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="waypoint-message-descriptions">
+          Waypoint Message Descriptions
+         </h1>
+         <p>
+          This section will demonstrate use of
+          <code>
+           rostopic
+          </code>
+          and
+          <code>
+           rosmsg
+          </code>
+          to learn more about the messages being transmitted on
+          <code>
+           /base_waypoints
+          </code>
+          and
+          <code>
+           /final_waypoints
+          </code>
+          . If you are already familiar with these ROS commands and feel comfortable exploring ROS messages on your own, feel free to skip this section!
+         </p>
+         <p>
+          From the code in
+          <code>
+           waypoint_updater.py
+          </code>
+          , we can see that both the
+          <code>
+           /final_waypoints
+          </code>
+          and
+          <code>
+           /base_waypoints
+          </code>
+          topics have message type
+          <code>
+           Lane
+          </code>
+          . You can look at the details about this message type in
+          <code>
+           &lt;path_to_project_repo&gt;/ros/src/styx_msgs/msg/
+          </code>
+          , but this can also be done from the command line after launching the ROS project using
+          <code>
+           rostopic
+          </code>
+          and
+          <code>
+           rosmsg
+          </code>
+          as follows:
+         </p>
+         <p>
+          After opening a new terminal window and sourcing
+          <code>
+           devel/setup.bash
+          </code>
+          , you can see see all topics by executing:
+         </p>
+         <pre><code>$ rostopic list</code></pre>
+         <p>
+          You should see
+          <code>
+           /final_waypoints
+          </code>
+          among the topics. Executing:
+         </p>
+         <pre><code>$ rostopic info /final_waypoints</code></pre>
+         <p>
+          will provide info about the message type being used in
+          <code>
+           /final_waypoints
+          </code>
+          :
+         </p>
+         <pre><code>Type: styx_msgs/Lane</code></pre>
+         <p>
+          Next executing:
+         </p>
+         <pre><code>$ rosmsg info styx_msgs/Lane</code></pre>
+         <p>
+          provides the following message information:
+         </p>
+         <pre><code>std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+styx_msgs/Waypoint[] waypoints
+  geometry_msgs/PoseStamped pose
+    std_msgs/Header header
+      uint32 seq
+      time stamp
+      string frame_id
+    geometry_msgs/Pose pose
+      geometry_msgs/Point position
+        float64 x
+        float64 y
+        float64 z
+      geometry_msgs/Quaternion orientation
+        float64 x
+        float64 y
+        float64 z
+        float64 w
+  geometry_msgs/TwistStamped twist
+    std_msgs/Header header
+      uint32 seq
+      time stamp
+      string frame_id
+    geometry_msgs/Twist twist
+      geometry_msgs/Vector3 linear
+        float64 x
+        float64 y
+        float64 z
+      geometry_msgs/Vector3 angular
+        float64 x
+        float64 y
+        float64 z</code></pre>
+         <p>
+          From here you can see that the messages contain a
+          <code>
+           header
+          </code>
+          and a
+          <code>
+           Waypoint
+          </code>
+          list named
+          <code>
+           waypoints
+          </code>
+          . Each waypoint has
+          <code>
+           pose
+          </code>
+          and
+          <code>
+           twist
+          </code>
+          data. Going further, you can see that
+          <code>
+           twist.twist
+          </code>
+          data contains 3D
+          <code>
+           linear
+          </code>
+          and
+          <code>
+           angular
+          </code>
+          velocities. For more information about twist messages,
+          <a href="http://docs.ros.org/jade/api/geometry_msgs/html/msg/Twist.html" rel="noopener noreferrer" target="_blank">
+           see documentation here
+          </a>
+          .
+         </p>
+         <p>
+          Check to be sure you can explore the messages sent in
+          <code>
+           /base_waypoints
+          </code>
+          and
+          <code>
+           /current_pose
+          </code>
+          as well using the steps above!
+         </p>
+         <h2 id="lane-message-example">
+          Lane message example
+         </h2>
+         <p>
+          As a use-case example, given a single
+          <code>
+           styx_msgs/Lane
+          </code>
+          message
+          <code>
+           my_lane_msg
+          </code>
+          , you can access the x direction linear velocity of the first waypoint in Python with:
+         </p>
+         <pre><code>my_lane_msg[0].twist.twist.linear.x</code></pre>
+         <p>
+          Note that the coordinates for linear velocity are vehicle-centered, so only the x-direction linear velocity should be nonzero.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="topics-and-message-types">
+          Topics and message types
+         </h2>
+         <p>
+          For convenience, we have provided the following table with topic and message info for this step of the project:
+         </p>
+         <table>
+          <thead>
+           <tr>
+            <th id="**topic**">
+             <strong>
+              Topic
+             </strong>
+            </th>
+            <th id="**msg_type**">
+             <strong>
+              Msg Type
+             </strong>
+            </th>
+            <th id="**notes**">
+             <strong>
+              Notes
+             </strong>
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             /base_waypoints
+            </td>
+            <td>
+             styx_msgs/Lane
+            </td>
+            <td>
+             Waypoints as provided by a static .csv file.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             /current_pose
+            </td>
+            <td>
+             geometry_msgs/PoseStamped
+            </td>
+            <td>
+             Current position of the vehicle, provided by the simulator or localization.
+            </td>
+           </tr>
+           <tr>
+            <td>
+             /final_waypoints
+            </td>
+            <td>
+             styx_msgs/Lane
+            </td>
+            <td>
+             This is a subset of /base_waypoints. The first waypoint is the one in /base_waypoints which is closest to the car.
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. Waypoint Updater Partial Walkthrough.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Waypoint Updater Node (Partial)')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

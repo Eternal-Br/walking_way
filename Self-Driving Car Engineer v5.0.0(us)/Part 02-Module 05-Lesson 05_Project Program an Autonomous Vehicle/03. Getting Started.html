@@ -1,0 +1,419 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Getting Started
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Program an Autonomous Vehicle
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Have Fun!.html">
+       01. Have Fun!
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction.html">
+       02. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Getting Started.html">
+       03. Getting Started
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Project Overview.html">
+       04. Project Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Waypoint Updater Node (Partial).html">
+       05. Waypoint Updater Node (Partial)
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Waypoint Updater Partial Walkthrough.html">
+       06. Waypoint Updater Partial Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="07. DBW Node.html">
+       07. DBW Node
+      </a>
+     </li>
+     <li class="">
+      <a href="08. DBW Walkthrough.html">
+       08. DBW Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Traffic Light Detection Node.html">
+       09. Traffic Light Detection Node
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Object Detection Lab.html">
+       10. Object Detection Lab
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Detection Walkthrough.html">
+       11. Detection Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Waypoint Updater Node (Full).html">
+       12. Waypoint Updater Node (Full)
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Full Waypoint Walkthrough.html">
+       13. Full Waypoint Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Project Submission and Getting Feedback.html">
+       14. Project Submission and Getting Feedback
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Project Workspace Instructions.html">
+       15. Project Workspace Instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Capstone Project Workspace.html">
+       16. Capstone Project Workspace
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Programming a Real Self-Driving Car.html">
+       Project Description - Programming a Real Self-Driving Car
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Programming a Real Self-Driving Car.html">
+       Project Rubric - Programming a Real Self-Driving Car
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          03. Getting Started
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="project-setup">
+          Project Setup
+         </h1>
+         <p>
+          The project will require the use of Ubuntu Linux (the operating system of Carla) and a new simulator. To reduce installation difficulties, we have provided an in-browser Workspace for you to work with. You can find instructions for the Workspace and the Workspace itself later in this lesson.
+         </p>
+         <p>
+          If you prefer not to use the Workspace, follow the steps below to get set up:
+         </p>
+         <ul>
+          <li>
+           <p>
+            Because ROS is used, you will need to use Ubuntu to develop and test your project code. You may use
+           </p>
+           <ul>
+            <li>
+             Ubuntu 14.04 with ROS Indigo
+            </li>
+            <li>
+             Ubuntu 16.04 with ROS Kinetic
+            </li>
+           </ul>
+           <p>
+            You are welcome to use your own Ubuntu installation or virtual machine (unsupported), or you can use the VM provided in
+            <em>
+             Your Virtual Machine
+            </em>
+            in the "Introduction to ROS" lesson. The provided VM has ROS and Dataspeed DBW installed already.
+           </p>
+          </li>
+          <li>
+           <p>
+            <em>
+             Windows 10 users
+            </em>
+            - your fellow students have suggested that the best local option is to use the VM for ROS, while running the simulator natively (and making sure to open ports between the two for communication).
+           </p>
+          </li>
+          <li>
+           <p>
+            The project repo can be found
+            <a href="https://github.com/udacity/CarND-Capstone" rel="noopener noreferrer" target="_blank">
+             here
+            </a>
+            . Clone or download the project code before the next sections so you can follow along with the code descriptions! In the README, you should be able find any additional dependencies needed for the project.
+           </p>
+          </li>
+          <li>
+           <p>
+            The system integration project uses its own simulator which will interface with your ROS code and has traffic light detection. You can download the simulator
+            <a href="https://github.com/udacity/CarND-Capstone/releases" rel="noopener noreferrer" target="_blank">
+             here
+            </a>
+            . To improve performance while using a VM, we recommend downloading the simulator for your host operating system and using this outside of the VM. You will be able to run project code within the VM while running the simulator natively in the host using port forwarding on port
+            <code>
+             4567
+            </code>
+            . For more information on how to set up port forwarding, see the end of the classroom concept
+            <a href="https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Port+Forwarding.pdf" rel="noopener noreferrer" target="_blank">
+             here
+            </a>
+            .
+           </p>
+          </li>
+          <li>
+           <p>
+            The rubric for this project is fairly simple - does the vehicle successfully navigate the track? If you are in the three-term version, check the
+            <a href="https://review.udacity.com/#!/rubrics/1140/view" rel="noopener noreferrer" target="_blank">
+             rubric here
+            </a>
+            , or for the two-term version see the
+            <a href="https://review.udacity.com/#!/rubrics/1969/view" rel="noopener noreferrer" target="_blank">
+             rubric here
+            </a>
+            .
+           </p>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Traffic Lights 2
+         </p>
+        </h3>
+        <video controls="">
+         <source src="03. Traffic Lights 2-PzIRniXv0z0.mp4" type="video/mp4"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Note that the latest version of the simulator has two test tracks:
+         </p>
+         <ul>
+          <li>
+           A highway test track with traffic lights
+          </li>
+          <li>
+           A testing lot test track similar to where we will run Carla
+          </li>
+         </ul>
+         <p>
+          To use the second test lot, you will need to update your code to specify a new set of waypoints. We'll discuss how to do this in a later lesson. Additionally, the first track has a toggle button for camera data. Many students have experienced latency when running the simulator together with a virtual machine, and leaving the camera  data off as you develop the car's controllers will help with this issue.
+         </p>
+         <p>
+          Finally, the simulator displays vehicle velocity in units of mph. However,
+          <em>
+           all values used within the project code are use the metric system (m or m/s), including current velocity data coming from the simulator.
+          </em>
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="group-formation">
+          Group formation
+         </h1>
+         <p>
+          For this project, you will be working in a team of up to 5 students as either a Team Lead or a Team Member! If you would like to be a Team Lead, add your name in the Team Lead section of the sign-up sheet to create a new team. Otherwise, find a team with available space and add your name as a Team Member. We encourage a minimum team size of 4, so if you find that your team is not large enough you may merge with another team on the spreadsheet.
+         </p>
+         <p>
+          <strong>
+           Please read the
+           <em>
+            Instructions
+           </em>
+           tab in the sign-up sheet before making any changes.
+          </strong>
+          The sign-up sheet can be found
+          <a href="https://docs.google.com/spreadsheets/d/1A68l0XSnv6oPgGfaBci32wboQTuB6h6GXe59ysXuPv8/edit?usp=sharing" rel="noopener noreferrer" target="_blank">
+           here.
+          </a>
+         </p>
+         <p>
+          Udacity will be fairly hands-off in the team formation process, so you are welcome to structure your team and divide the work as you see fit. Feel free to set up meeting times, contribute to a shared repo, etc!
+         </p>
+         <p>
+          If you would like a refresher on using GitHub, Udacity has a brief
+          <a href="https://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html" rel="noopener noreferrer" target="_blank">
+           GitHub tutorial
+          </a>
+          to get you started. Udacity also has a
+          <a href="https://www.udacity.com/course/version-control-with-git--ud123" rel="noopener noreferrer" target="_blank">
+           free course
+          </a>
+          on using GitHub for collaboration.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="04. Project Overview.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Getting Started')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

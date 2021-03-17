@@ -1,0 +1,850 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.600
+All right. Now we're doing the second part of the project walkthrough. I'm Erin.
+
+00:00:03.600 --> 00:00:04.560
+I'm Steven.
+
+00:00:04.559 --> 00:00:08.038
+And so far, we've looked at how to get waypoints.
+
+00:00:08.038 --> 00:00:10.439
+Now we need this car to actually follow waypoints.
+
+00:00:10.439 --> 00:00:12.821
+Yeah. Well, let's have a look.
+
+00:00:12.821 --> 00:00:14.009
+Yeah, let's see how we get started.
+
+00:00:14.009 --> 00:00:17.190
+For this section, we're going to be looking at the DbW Node.
+
+00:00:17.190 --> 00:00:20.565
+Okay, that's the next concept here right after the Waypoint Updater.
+
+00:00:20.565 --> 00:00:22.170
+So, what are we working with here?
+
+00:00:22.170 --> 00:00:24.870
+So right away, I'm seeing some throttle commands,
+
+00:00:24.870 --> 00:00:26.490
+break commands, steering commands.
+
+00:00:26.489 --> 00:00:31.424
+Yeah. If your DbW Node is going to be subscribing to the twist command topic,
+
+00:00:31.425 --> 00:00:33.744
+so once final Waypoints are published,
+
+00:00:33.744 --> 00:00:37.459
+they go to the waypoint follower which is some Autoware software that takes
+
+00:00:37.460 --> 00:00:38.630
+the final waypoints and
+
+00:00:38.630 --> 00:00:42.575
+their velocities and then publishes appropriate twist commands for the car.
+
+00:00:42.575 --> 00:00:45.166
+So, twists commands, if you haven't seen them before,
+
+00:00:45.165 --> 00:00:49.039
+basically just linear and angular accelerations for the car.
+
+00:00:49.039 --> 00:00:51.409
+Looks like it'll have lot of different kinds of controllers here.
+
+00:00:51.409 --> 00:00:54.359
+Yeah, and you're going to need some controllers to control the car probably.
+
+00:00:54.359 --> 00:00:57.299
+Yeah, a lot of these are just kind of given to you, right?
+
+00:00:57.299 --> 00:00:57.968
+Yeah.
+
+00:00:57.969 --> 00:01:01.410
+So, like PID that's given low pass filter.
+
+00:01:01.409 --> 00:01:05.474
+This node will take in twist command topic messages,
+
+00:01:05.474 --> 00:01:08.819
+and then what you want to do is publish throttle, steering and break.
+
+00:01:08.819 --> 00:01:11.324
+Okay, let's go ahead and check out the code.
+
+00:01:11.325 --> 00:01:17.280
+So, I'm interested in this dbw_node.py which I found in twist controller.
+
+00:01:17.280 --> 00:01:19.829
+So, this is what it looks like when I first open it up.
+
+00:01:19.829 --> 00:01:23.495
+So, this one has some of the basic code already set up for you,
+
+00:01:23.495 --> 00:01:25.125
+here a bunch of car parameters,
+
+00:01:25.125 --> 00:01:27.629
+you may need to use all of these car parameters.
+
+00:01:27.629 --> 00:01:29.819
+Yeah. Do I really need the fuel capacity?
+
+00:01:29.819 --> 00:01:33.359
+If you want to be really precise,
+
+00:01:33.359 --> 00:01:34.469
+you can use the fuel capacity,
+
+00:01:34.469 --> 00:01:36.840
+because you will need the vehicle weight when you're stopping the car.
+
+00:01:36.840 --> 00:01:39.900
+Had a hard time figuring out what the fuel capacity should be in a simulator.
+
+00:01:39.900 --> 00:01:42.210
+Yeah. So, it's not going to work in the simulator although
+
+00:01:42.209 --> 00:01:42.989
+That was infinite.
+
+00:01:42.989 --> 00:01:45.299
+Infinite fuel. So, it can go forever.
+
+00:01:45.299 --> 00:01:48.119
+But that's like to control how heavy the car is,
+
+00:01:48.120 --> 00:01:49.829
+so you have fuel capacity.
+
+00:01:49.829 --> 00:01:52.379
+If you know it's like 75 percent for its gas,
+
+00:01:52.379 --> 00:01:54.598
+then you can actually factor in the mass of that.
+
+00:01:54.599 --> 00:01:55.620
+You can get really precise,
+
+00:01:55.620 --> 00:01:57.660
+but for our purposes, you won't need that.
+
+00:01:57.659 --> 00:02:02.459
+But you will need the wheel radius and the vehicle mass.
+
+00:02:02.459 --> 00:02:05.089
+Okay, so I can do some basic physics here.
+
+00:02:05.090 --> 00:02:09.020
+Yeah, because break commands should be in units of torque.
+
+00:02:09.020 --> 00:02:11.030
+Oh, that's right. Newton meters.
+
+00:02:11.030 --> 00:02:13.849
+And so, to figure out how much torque you should be applying the brake,
+
+00:02:13.849 --> 00:02:16.099
+you're going to be multiplying the vehicle mass,
+
+00:02:16.099 --> 00:02:17.419
+times the wheel radius,
+
+00:02:17.419 --> 00:02:19.099
+times the desired acceleration.
+
+00:02:19.099 --> 00:02:22.729
+Alright. So, we have this loop that's happening again at 50 hertz.
+
+00:02:22.729 --> 00:02:23.060
+Yes.
+
+00:02:23.060 --> 00:02:24.170
+Is 50 hertz important this time,
+
+00:02:24.169 --> 00:02:25.429
+or I can just do 30?
+
+00:02:25.430 --> 00:02:27.260
+Extremely important this time,
+
+00:02:27.259 --> 00:02:29.674
+previously 30 hertz was not that important,
+
+00:02:29.675 --> 00:02:31.760
+50 hertz is essential in this.
+
+00:02:31.759 --> 00:02:35.120
+The way that the car drive by wire works is that if it does
+
+00:02:35.120 --> 00:02:38.730
+not receive commands at 50 hertz, it complains a little bit.
+
+00:02:38.729 --> 00:02:40.139
+If it receives them below,
+
+00:02:40.139 --> 00:02:42.554
+I think 20 hertz or so, then it will just shut off.
+
+00:02:42.555 --> 00:02:43.980
+And it does this as a safety feature.
+
+00:02:43.979 --> 00:02:44.299
+Yeah.
+
+00:02:44.300 --> 00:02:46.469
+So, it thinks that maybe the computer died and so it's
+
+00:02:46.469 --> 00:02:48.764
+trying to revert control back to the driver.
+
+00:02:48.764 --> 00:02:50.789
+So, if you're not publishing at 50 hertz,
+
+00:02:50.789 --> 00:02:54.030
+chances are your drive by wire might just quit in the middle of testing.
+
+00:02:54.030 --> 00:02:57.030
+That's good to know, make a note of that for sure.
+
+00:02:57.030 --> 00:02:59.340
+Let's go ahead and check out the resulting code.
+
+00:02:59.340 --> 00:03:01.905
+We have some subscribers already just talking about,
+
+00:03:01.905 --> 00:03:05.189
+and inside our loop here we have this controller.
+
+00:03:05.189 --> 00:03:08.939
+So, that comes from our twist_controller.py,
+
+00:03:08.939 --> 00:03:11.189
+so there's a control class defined there.
+
+00:03:11.189 --> 00:03:13.710
+So, we've imported a controller from there.
+
+00:03:13.710 --> 00:03:15.375
+It looks like it's giving us a throttle,
+
+00:03:15.375 --> 00:03:20.400
+a brake and a steering based on its current velocity.
+
+00:03:20.400 --> 00:03:24.168
+If DbW is enabled or not, this linear velocity,
+
+00:03:24.168 --> 00:03:28.754
+angular velocity which are all starting out as a none, it looks like.
+
+00:03:28.754 --> 00:03:32.490
+And then, let me guess they are getting filled in by some callback functions.
+
+00:03:32.490 --> 00:03:33.570
+Yes, exactly.
+
+00:03:33.569 --> 00:03:34.289
+Okay.
+
+00:03:34.289 --> 00:03:37.679
+All kinds of data coming into this node and we fill those out with the callbacks.
+
+00:03:37.680 --> 00:03:43.379
+So there's a velocity and I'm publishing throttle,
+
+00:03:43.379 --> 00:03:44.984
+the steering and the break.
+
+00:03:44.985 --> 00:03:47.200
+So, as a sanity check,
+
+00:03:47.199 --> 00:03:50.694
+I just want to make sure this all is able to send commands to the car.
+
+00:03:50.694 --> 00:03:53.739
+I just want the car to drive forward, what could I do?
+
+00:03:53.740 --> 00:03:56.439
+So, if you just want to test if the car is driving forward,
+
+00:03:56.439 --> 00:04:00.340
+you could set your throttle to one and your steering and break to zero,
+
+00:04:00.340 --> 00:04:02.659
+and then just publish throttle.
+
+00:04:02.659 --> 00:04:06.099
+So, unlike like break, throttle is in proportion from zero to one.
+
+00:04:06.099 --> 00:04:08.530
+Okay, so I can kind of come in this starter function
+
+00:04:08.530 --> 00:04:11.275
+and then instead of using this actual controller,
+
+00:04:11.275 --> 00:04:14.140
+I could just hard code the values of throttle,
+
+00:04:14.139 --> 00:04:16.743
+brake and steering and use these callbacks.
+
+00:04:16.744 --> 00:04:18.510
+Next we should check out this controller.
+
+00:04:18.509 --> 00:04:21.810
+Sure, that's actually where most of the work is going on for this one.
+
+00:04:21.810 --> 00:04:23.175
+Seems pretty important.
+
+00:04:23.175 --> 00:04:25.905
+Okay. So when we first open up that controller,
+
+00:04:25.904 --> 00:04:27.509
+it looks pretty empty.
+
+00:04:27.509 --> 00:04:27.959
+Yeah.
+
+00:04:27.959 --> 00:04:30.389
+It's just returning one zero zero by default.
+
+00:04:30.389 --> 00:04:34.620
+Okay. So, I might guess you could call just the controller and that should drive forward.
+
+00:04:34.620 --> 00:04:38.550
+Okay. Awesome. Let's see what it looks like once you fill it in.
+
+00:04:38.550 --> 00:04:41.280
+Sure, there are lots and lots of different ways you can do this,
+
+00:04:41.279 --> 00:04:45.412
+lots of ways you can use controllers to control the velocity of the car.
+
+00:04:45.413 --> 00:04:47.310
+You are provided with the yaw controller.
+
+00:04:47.310 --> 00:04:48.689
+So, it's helping with this steering?
+
+00:04:48.689 --> 00:04:51.625
+Yeah, so we can get steering commands from the yaw controller,
+
+00:04:51.625 --> 00:04:55.250
+and you need to put in the wheelbase steering ratio,
+
+00:04:55.250 --> 00:04:59.420
+I believe 0.1 Is the lowest speed of the car in meters per second.
+
+00:04:59.420 --> 00:04:59.948
+Okay.
+
+00:04:59.947 --> 00:05:03.544
+And then the max lateral acceleration and the max steering angle.
+
+00:05:03.545 --> 00:05:06.920
+And all of those are parameters that we passed in dbw.py,
+
+00:05:06.920 --> 00:05:09.259
+so you just need to forward them to yaw controller.
+
+00:05:09.259 --> 00:05:12.439
+And then I have the PID controller as well for the throttle.
+
+00:05:12.439 --> 00:05:14.719
+And these parameters for the throttle controller
+
+00:05:14.720 --> 00:05:17.000
+we're determined completely experimentally,
+
+00:05:17.000 --> 00:05:19.970
+there was no- just testing out what worked.
+
+00:05:19.970 --> 00:05:21.380
+It's getting a little bit interesting,
+
+00:05:21.379 --> 00:05:22.939
+we have a low pass filter as well.
+
+00:05:22.939 --> 00:05:25.759
+So, the low pass filter we've created because
+
+00:05:25.759 --> 00:05:29.159
+the velocity that's coming in over the messages is kind of noisy,
+
+00:05:29.160 --> 00:05:31.500
+so basically, this LowPassFilter is
+
+00:05:31.500 --> 00:05:34.199
+filtering out all of the high-frequency noise in the velocity.
+
+00:05:34.199 --> 00:05:37.288
+And we also have some vehicle mass, fuel capacity,
+
+00:05:37.288 --> 00:05:40.169
+things that we might need or might not need,
+
+00:05:40.170 --> 00:05:41.400
+such as wheel radius,
+
+00:05:41.399 --> 00:05:42.539
+they'll probably come in handy.
+
+00:05:42.540 --> 00:05:45.000
+Acceleration and deceleration limit, you probably want.
+
+00:05:45.000 --> 00:05:46.425
+That's given to us,
+
+00:05:46.425 --> 00:05:49.319
+the deceleration limit set in a configuration file.
+
+00:05:49.319 --> 00:05:50.640
+That comes in, I believe,
+
+00:05:50.639 --> 00:05:54.269
+also as one of the Ros params and the other part in dbw_node.py.
+
+00:05:54.269 --> 00:05:58.467
+And is that preset because that is determined by the car itself?
+
+00:05:58.468 --> 00:06:03.569
+No. I think the acceleration limit and deceleration limit are just comfort parameters.
+
+00:06:03.569 --> 00:06:03.829
+Okay.
+
+00:06:03.829 --> 00:06:07.379
+So, how fast you want, the maximum amount that you want the car to slow down or speed up.
+
+00:06:07.379 --> 00:06:10.214
+So we have this control function right here,
+
+00:06:10.214 --> 00:06:12.539
+and let's check that out.
+
+00:06:12.540 --> 00:06:14.640
+First of all, what is calling control.
+
+00:06:14.639 --> 00:06:17.759
+Control gets called in dbw.py.
+
+00:06:17.759 --> 00:06:22.469
+So, we create instance of this controller class up above and then we call control,
+
+00:06:22.470 --> 00:06:23.640
+that's 50 hertz basically.
+
+00:06:23.639 --> 00:06:26.714
+First thing I guess we're checking is dbw_enabled or not,
+
+00:06:26.714 --> 00:06:28.379
+why do we care about dbw_enabled?
+
+00:06:28.379 --> 00:06:31.620
+So we can turn the drive by wire on and off in the car.
+
+00:06:31.620 --> 00:06:34.110
+So as we're sitting, waiting for a traffic light,
+
+00:06:34.110 --> 00:06:35.879
+I might turn the DbW off,
+
+00:06:35.879 --> 00:06:37.334
+or if I'm fixing something else,
+
+00:06:37.334 --> 00:06:39.609
+DbW might be off while the code is running.
+
+00:06:39.610 --> 00:06:42.862
+If you're using a PID controller and you have an integral term,
+
+00:06:42.862 --> 00:06:46.995
+then if you don't turn the PID controller off,
+
+00:06:46.995 --> 00:06:48.959
+then you'll be accumulating error.
+
+00:06:48.959 --> 00:06:52.274
+And that'll be bad because then when we turn the DbW Node back on,
+
+00:06:52.274 --> 00:06:55.289
+you'll have accumulated all this error and the car might do something really erratic.
+
+00:06:55.290 --> 00:07:00.090
+Oh man, you wouldn't enjoy that.
+
+00:07:00.089 --> 00:07:00.269
+No.
+
+00:07:00.269 --> 00:07:03.359
+So, if it's not enabled, go ahead and return zero zero zero, otherwise.
+
+00:07:03.360 --> 00:07:05.639
+I'm sure it resets the controller.
+
+00:07:05.639 --> 00:07:06.659
+Got you.
+
+00:07:06.660 --> 00:07:10.439
+Okay. Otherwise, we're going to be taking a look at our current velocity,
+
+00:07:10.439 --> 00:07:11.670
+the steering that we're getting from
+
+00:07:11.670 --> 00:07:16.350
+this yaw controller and we're checking out this velocity error.
+
+00:07:16.350 --> 00:07:19.305
+So, where do we want to be versus where we're currently at,
+
+00:07:19.305 --> 00:07:22.035
+we have this last velocity value as well,
+
+00:07:22.035 --> 00:07:24.090
+is this where we start doing some physics?
+
+00:07:24.089 --> 00:07:27.959
+Yeah, down there we start doing physics for the break part.
+
+00:07:27.959 --> 00:07:32.129
+For throttle, it looks like we're stepping through our throttle controller.
+
+00:07:32.129 --> 00:07:34.699
+So that's in reference to the PID controller?
+
+00:07:34.699 --> 00:07:36.959
+Yeah. So we have our error, the velocity error,
+
+00:07:36.959 --> 00:07:40.634
+and the sample time, you know up at the top when we're initializing this class,
+
+00:07:40.634 --> 00:07:44.099
+we have our current time as the rest by the time and we're able to
+
+00:07:44.100 --> 00:07:47.640
+use that to get the sample time for each step of our PID controller.
+
+00:07:47.639 --> 00:07:49.675
+So we're just calling this step right here,
+
+00:07:49.675 --> 00:07:53.194
+and that's actually what's doing the stepping for our PID controller.
+
+00:07:53.194 --> 00:07:55.250
+Was there any errors in this that you defined?
+
+00:07:55.250 --> 00:07:57.170
+Yeah, actually when I was writing this code,
+
+00:07:57.170 --> 00:08:00.020
+I noticed that the PID controller had an error that
+
+00:08:00.019 --> 00:08:03.185
+was preventing the integral from getting reset in full term.
+
+00:08:03.185 --> 00:08:07.115
+So I opted at the repo and it should be good now,
+
+00:08:07.115 --> 00:08:08.660
+but you'll want to make sure that you have
+
+00:08:08.660 --> 00:08:11.360
+the latest version of this from the Capstone Repo.
+
+00:08:11.360 --> 00:08:13.610
+Yeah, it looks like some of these were modified.
+
+00:08:13.610 --> 00:08:17.360
+You can see I had some debugging terms down there,
+
+00:08:17.360 --> 00:08:20.600
+the rospy.logwarn just to check out what was going on.
+
+00:08:20.600 --> 00:08:24.530
+So, we got that throttle value and initially we're setting break to zero,
+
+00:08:24.529 --> 00:08:25.819
+and now we're doing a check here.
+
+00:08:25.819 --> 00:08:28.659
+This is just a very simple control of the car.
+
+00:08:28.660 --> 00:08:32.379
+So first check we're doing is if our linear velocity, that's our target,
+
+00:08:32.379 --> 00:08:34.554
+linear velocity is zero,
+
+00:08:34.554 --> 00:08:36.474
+and we are going very slow,
+
+00:08:36.475 --> 00:08:39.115
+so our current velocity is less than 0.1.
+
+00:08:39.115 --> 00:08:40.779
+We should probably be trying to stop,
+
+00:08:40.779 --> 00:08:44.709
+so what we're gonna do is set the throttle equal to zero and apply a lot of break.
+
+00:08:44.710 --> 00:08:49.810
+Or else, throttle's also really small and the velocity error is less than zero.
+
+00:08:49.809 --> 00:08:51.669
+Yeah. So in this case,
+
+00:08:51.669 --> 00:08:53.049
+our velocity is negative,
+
+00:08:53.049 --> 00:08:56.339
+which means that we're going faster than we want to be, and so,
+
+00:08:56.340 --> 00:08:58.725
+faster than our target velocity,
+
+00:08:58.725 --> 00:09:02.685
+and our PID is letting up on the throttle but we want to slow down,
+
+00:09:02.684 --> 00:09:06.299
+throttle is less than 0.1 and velocity here is negative.
+
+00:09:06.299 --> 00:09:10.109
+And this time we're not just hard coding the break to 400,
+
+00:09:10.110 --> 00:09:11.639
+but we're using this absolute value,
+
+00:09:11.639 --> 00:09:15.600
+the deceleration times the vehicle mass and the wheel radius.
+
+00:09:15.600 --> 00:09:17.805
+That gives us the torque that we want,
+
+00:09:17.804 --> 00:09:20.294
+so it's the amount that we want to decelerate,
+
+00:09:20.294 --> 00:09:21.824
+times our vehicle mass,
+
+00:09:21.825 --> 00:09:23.504
+times the wheel radius.
+
+00:09:23.504 --> 00:09:24.960
+Vehicle mass is in kilograms,
+
+00:09:24.960 --> 00:09:26.400
+wheel radius is in meters.
+
+00:09:26.399 --> 00:09:29.279
+I'm actually figuring out this deceleration value,
+
+00:09:29.279 --> 00:09:35.824
+it's a max between the velocity error and R-parameter that we defined earlier.
+
+00:09:35.825 --> 00:09:39.620
+So this is actually dependent on this velocity error,
+
+00:09:39.620 --> 00:09:40.789
+so if it is very large,
+
+00:09:40.789 --> 00:09:42.829
+this break value could be very large.
+
+00:09:42.830 --> 00:09:45.200
+One thing that really tripped me up when I was coding this is
+
+00:09:45.200 --> 00:09:47.840
+that I was making the break value negative.
+
+00:09:47.840 --> 00:09:48.769
+I see what's happening there.
+
+00:09:48.769 --> 00:09:50.809
+So I was like, I want to slow down,
+
+00:09:50.809 --> 00:09:53.449
+acceleration is positive and then break value is negative.
+
+00:09:53.450 --> 00:09:56.509
+Of course it wasn't slowing the car down in the simulator at all.
+
+00:09:56.509 --> 00:09:58.039
+That's why you have this absolute value.
+
+00:09:58.039 --> 00:10:00.424
+Yeah, exactly, because decel here is going to be
+
+00:10:00.424 --> 00:10:03.079
+a negative number and we want to make it positive.
+
+00:10:03.080 --> 00:10:06.875
+So, I think that concludes everything for controls.
+
+00:10:06.875 --> 00:10:09.559
+Yeah. At this point you should be publishing on
+
+00:10:09.559 --> 00:10:13.159
+your waypoints and they should be coming into your dbw_node.py,
+
+00:10:13.159 --> 00:10:15.634
+and you should have a controller that will control the car.
+
+00:10:15.634 --> 00:10:18.304
+There's one more thing actually we should talk about a little bit.
+
+00:10:18.304 --> 00:10:21.319
+Something that I noticed when I have the car
+
+00:10:21.320 --> 00:10:24.620
+working at this point was that as it was driving along down the road,
+
+00:10:24.620 --> 00:10:26.690
+it's still wandered a little bit within lane,
+
+00:10:26.690 --> 00:10:30.650
+and that's something that's actually an artifact of the Autoware code that we use.
+
+00:10:30.649 --> 00:10:35.509
+So, the Autoware code doesn't recompute your trajectory until
+
+00:10:35.509 --> 00:10:38.210
+you've passed a certain distance away from
+
+00:10:38.210 --> 00:10:41.870
+the waypoints or certain angle away from the trajectory of waypoints.
+
+00:10:41.870 --> 00:10:45.529
+And I noticed with this very simple controller,
+
+00:10:45.529 --> 00:10:49.309
+by the time it recomputed the trajectory and gave new twists commands to the car,
+
+00:10:49.309 --> 00:10:52.129
+the car had already sort of wandered away from the waypoints, and so the car,
+
+00:10:52.129 --> 00:10:55.355
+then steers sort of suddenly back to the waypoints.
+
+00:10:55.355 --> 00:10:58.370
+And then by the time the waypoint follow in nodes,
+
+00:10:58.370 --> 00:11:00.919
+some new twists commands we've already wandered over to the other side.
+
+00:11:00.919 --> 00:11:01.909
+So you start refreshing cursor.
+
+00:11:01.909 --> 00:11:04.309
+Yeah, so there are a couple of ways you can fix this,
+
+00:11:04.309 --> 00:11:08.269
+the code should still pass the greater with this setup.
+
+00:11:08.269 --> 00:11:08.569
+Yeah.
+
+00:11:08.570 --> 00:11:10.459
+It'll just be a little bit wandering.
+
+00:11:10.458 --> 00:11:11.849
+But how can we fix it?
+
+00:11:11.850 --> 00:11:13.710
+So you can go into
+
+00:11:13.710 --> 00:11:16.860
+the waypoint follower CPP code and
+
+00:11:16.860 --> 00:11:20.115
+you can look and make sure that it's updating all the time.
+
+00:11:20.115 --> 00:11:23.235
+So there's a function in there that checks if you're following the waypoints,
+
+00:11:23.235 --> 00:11:26.452
+and if you are not following waypoints then it updates.
+
+00:11:26.452 --> 00:11:30.209
+You can modify that code to check basically to follow the waypoints all the time.
+
+00:11:30.210 --> 00:11:32.490
+Other things that you might do would be to
+
+00:11:32.490 --> 00:11:35.029
+change your yaw controller to dampen the steering a little bit,
+
+00:11:35.029 --> 00:11:36.569
+or you have this yaw cntroller,
+
+00:11:36.570 --> 00:11:40.020
+and if you scroll down a little bit, we're calling get_steering.
+
+00:11:40.019 --> 00:11:42.840
+You could add some dampening terms that take
+
+00:11:42.840 --> 00:11:46.388
+your current angular velocity and your target angular velocity,
+
+00:11:46.388 --> 00:11:48.090
+and look at the difference between the two.
+
+00:11:48.090 --> 00:11:48.604
+Okay.
+
+00:11:48.604 --> 00:11:49.950
+And if they're the same,
+
+00:11:49.950 --> 00:11:50.960
+you won't change the steering,
+
+00:11:50.960 --> 00:11:52.043
+and if they're very different,
+
+00:11:52.043 --> 00:11:54.149
+you might add some dampening to look in.
+
+00:11:54.149 --> 00:11:56.024
+Now we had that low pass filter,
+
+00:11:56.024 --> 00:11:58.620
+that wasn't doing anything too complicated,
+
+00:11:58.620 --> 00:12:01.350
+it was just averaging a history of values,
+
+00:12:01.350 --> 00:12:05.519
+never got too large because it was dependent on the previous entries as well.
+
+00:12:05.519 --> 00:12:07.319
+Right, it just takes the signal and takes
+
+00:12:07.320 --> 00:12:10.590
+whatever part of the signal is coming in and averages that with the previous part.
+
+00:12:10.590 --> 00:12:14.220
+And it is waiting at according to that tau frequency parameter.
+
+00:12:14.220 --> 00:12:14.790
+Cool.
+
+00:12:14.789 --> 00:12:16.019
+Anything else.
+
+00:12:16.019 --> 00:12:17.039
+No, I think that's it.
+
+00:12:17.039 --> 00:12:17.789
+Awesome.
+
+00:12:17.789 --> 00:12:20.759
+Alright. Well, see you next time.
+

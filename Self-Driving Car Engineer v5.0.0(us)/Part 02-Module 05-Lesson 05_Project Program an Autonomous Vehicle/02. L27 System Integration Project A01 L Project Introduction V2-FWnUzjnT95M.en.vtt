@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.035
+Welcome to the final project of the Udacity Self-Driving Car Engineer Nanodegree program.
+
+00:00:06.035 --> 00:00:08.939
+The goal of this project is to enable Karla to
+
+00:00:08.939 --> 00:00:11.914
+drive around our test track using waypoint navigation.
+
+00:00:11.914 --> 00:00:16.044
+Karla will do this while avoiding obstacles and stopping at traffic lights.
+
+00:00:16.045 --> 00:00:18.030
+Waypoints are simply an ordered set of
+
+00:00:18.030 --> 00:00:20.980
+coordinates that Karla uses to plan a path around the track.
+
+00:00:20.980 --> 00:00:24.699
+Each of these waypoints also has an associated target velocity.
+
+00:00:24.699 --> 00:00:27.960
+Karla's planning subsystem updates the target velocity for
+
+00:00:27.960 --> 00:00:31.675
+the waypoints ahead of the vehicle depending on the desired vehicle behavior.
+
+00:00:31.675 --> 00:00:35.340
+Karla's control subsystem actuates the throttle, steering,
+
+00:00:35.340 --> 00:00:40.185
+and break to successfully navigate the waypoints with the correct target velocity.
+
+00:00:40.185 --> 00:00:41.755
+Over the course of the project,
+
+00:00:41.755 --> 00:00:44.450
+you'll be implementing components of the perception,
+
+00:00:44.450 --> 00:00:46.910
+planning, and control subsystems.
+
+00:00:46.909 --> 00:00:48.784
+In the perception subsystem,
+
+00:00:48.784 --> 00:00:52.625
+you'll implement traffic light detection and obstacle detection.
+
+00:00:52.625 --> 00:00:54.645
+In the planning subsystem,
+
+00:00:54.645 --> 00:00:57.465
+you'll implement a node called the waypoint updater.
+
+00:00:57.465 --> 00:00:59.970
+This node sets the target velocity for
+
+00:00:59.969 --> 00:01:03.640
+each waypoint based on the upcoming traffic lights and obstacles.
+
+00:01:03.640 --> 00:01:07.260
+For example, if you see a red traffic light on the horizon,
+
+00:01:07.260 --> 00:01:11.814
+you'll want to set decelerating velocities at the nodes leading up to that traffic light.
+
+00:01:11.814 --> 00:01:13.685
+In the control subsystem,
+
+00:01:13.685 --> 00:01:16.370
+you'll implement a drive by wire ROS node
+
+00:01:16.370 --> 00:01:19.310
+that takes target trajectory information is input,
+
+00:01:19.310 --> 00:01:22.055
+in sense, control commands to navigate the vehicle.
+
+00:01:22.055 --> 00:01:24.775
+We've provided a ROS framework for these nodes,
+
+00:01:24.775 --> 00:01:28.840
+as well as a version of the simulator that includes traffic lights and obstacles.
+
+00:01:28.840 --> 00:01:34.359
+The Ross framework we've provided works with both the Udacity simulator and with Karla,
+
+00:01:34.359 --> 00:01:36.950
+so you can develop your project on the simulator
+
+00:01:36.950 --> 00:01:40.255
+before submitting the same code to be tested on the vehicle.
+
+00:01:40.254 --> 00:01:45.479
+Coming up, we'll go over each part of the project in more detail. Let's get started.
+

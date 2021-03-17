@@ -1,0 +1,928 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.419
+Hi. I'm Stephen, I'm a content developer here at Udacity.
+
+00:00:03.419 --> 00:00:07.009
+I've worked on the system integration content and I run code on Carla.
+
+00:00:07.009 --> 00:00:08.404
+Hi. I'm Aaron Brown,
+
+00:00:08.404 --> 00:00:11.699
+I'm a Content Developer here for self-driving car and I
+
+00:00:11.699 --> 00:00:13.500
+worked on the simulation portion for
+
+00:00:13.500 --> 00:00:16.535
+this capstone project that we're walking you through today.
+
+00:00:16.535 --> 00:00:18.765
+Let's go ahead and get started.
+
+00:00:18.765 --> 00:00:20.804
+We're going to be doing the project walk-through,
+
+00:00:20.804 --> 00:00:23.454
+this is a project walk-through that we'll be doing in four steps.
+
+00:00:23.454 --> 00:00:29.500
+So, the first step today is the first part of the waypoint updating.
+
+00:00:29.500 --> 00:00:32.270
+Yeah, that's right. So, we want to be able to see these waypoints on
+
+00:00:32.270 --> 00:00:35.445
+the road and eventually try to get this car to follow.
+
+00:00:35.445 --> 00:00:36.494
+Yeah, hopefully.
+
+00:00:36.494 --> 00:00:41.250
+Yeah. So, let's go ahead and check out the classroom and see what we need to get started.
+
+00:00:41.250 --> 00:00:44.204
+Right away, I'm seeing that I need Ubuntu and ROS.
+
+00:00:44.204 --> 00:00:49.849
+There's actually a way to run this project natively if you have Linux or Windows even,
+
+00:00:49.850 --> 00:00:51.234
+I used Ubuntu Bash.
+
+00:00:51.234 --> 00:00:52.460
+If you don't have either of those,
+
+00:00:52.460 --> 00:00:57.109
+there's a VM that you can use and that's for if you're running on a Mac for instance.
+
+00:00:57.109 --> 00:00:59.950
+But, ROS and Ubuntu are the big things
+
+00:00:59.950 --> 00:01:03.600
+and there's DBW Node as well that I can see on here.
+
+00:01:03.600 --> 00:01:05.394
+So, what is DBW Node?
+
+00:01:05.394 --> 00:01:07.589
+So, DBW is drive-by wire,
+
+00:01:07.590 --> 00:01:10.234
+that's the node that runs in the car and allows
+
+00:01:10.234 --> 00:01:13.144
+the ROS to interface with the car's hardware.
+
+00:01:13.144 --> 00:01:16.670
+So, it allows ROS to actually actuate the car's steering and throttle.
+
+00:01:16.670 --> 00:01:19.329
+Okay. So, that's our bridge then between the hardware and software.
+
+00:01:19.329 --> 00:01:22.250
+And the reason you need to install it for this project is that it
+
+00:01:22.250 --> 00:01:26.200
+contains ROS message definitions that you'll be needing for the code.
+
+00:01:26.200 --> 00:01:28.075
+So, once I have all that installed,
+
+00:01:28.075 --> 00:01:31.155
+I can go ahead and get started by checking out the repository,
+
+00:01:31.155 --> 00:01:33.814
+and that'll have all the files I need to get running
+
+00:01:33.814 --> 00:01:36.965
+to take me right to the VM and then here,
+
+00:01:36.965 --> 00:01:40.990
+I can actually go to the capstone project.
+
+00:01:40.989 --> 00:01:43.799
+This should have instructions for how to run the ROS code and
+
+00:01:43.799 --> 00:01:46.554
+how to install the DBW software.
+
+00:01:46.555 --> 00:01:50.570
+Okay. So, it's just like any other project where I'm just cloning down the repo,
+
+00:01:50.569 --> 00:01:55.049
+here's some special instructions for getting it set up, going into ROS,
+
+00:01:55.049 --> 00:01:58.825
+running catkin_make, source devil setup.sh,
+
+00:01:58.825 --> 00:02:00.380
+and then ROS will launch.
+
+00:02:00.379 --> 00:02:05.649
+So, what's one of the first files I need to start modifying and get this project working.
+
+00:02:05.650 --> 00:02:09.675
+So, the first thing that you're going to need to do is to modify the Waypoint Updater.
+
+00:02:09.675 --> 00:02:12.950
+So, we want to go to Waypoint Updater Node partial.
+
+00:02:12.949 --> 00:02:16.310
+So, in this, basically we have some base waypoints,
+
+00:02:16.310 --> 00:02:19.594
+so we're publishing a lane object that has
+
+00:02:19.594 --> 00:02:24.469
+some information including list of waypoints that the car will be following.
+
+00:02:24.469 --> 00:02:28.020
+And what you want to do is use the current position of the car,
+
+00:02:28.020 --> 00:02:30.550
+which comes in over the current_pose topic,
+
+00:02:30.550 --> 00:02:33.939
+and then publish the waypoints that are ahead of the car.
+
+00:02:33.939 --> 00:02:35.370
+Those will be your final waypoints.
+
+00:02:35.370 --> 00:02:37.545
+All right, should we go ahead and check out the file?
+
+00:02:37.544 --> 00:02:38.000
+Sure.
+
+00:02:38.000 --> 00:02:41.439
+All right, so this is what the file looks like when you first load it up.
+
+00:02:41.439 --> 00:02:43.669
+I see that there's some waypoints ahead,
+
+00:02:43.669 --> 00:02:45.219
+there's 200 by default.
+
+00:02:45.219 --> 00:02:48.514
+So, those are the first 200 waypoints in front of the car.
+
+00:02:48.514 --> 00:02:53.463
+So, I'm using this subscriber to get these base waypoints,
+
+00:02:53.463 --> 00:02:56.409
+so how do I get a chunk of those base waypoints?
+
+00:02:56.409 --> 00:02:58.539
+So, you said you're using a subscriber there,
+
+00:02:58.539 --> 00:03:01.664
+and the base waypoints if you look at the rospy subscriber,
+
+00:03:01.664 --> 00:03:03.884
+it has base waypoints, that's the topic.
+
+00:03:03.884 --> 00:03:07.620
+Lane is the message type that's coming over the topic.
+
+00:03:07.620 --> 00:03:11.735
+Then, waypoints_cb is the waypoints callback,
+
+00:03:11.735 --> 00:03:14.330
+that's the function that basically gets called every time.
+
+00:03:14.330 --> 00:03:15.110
+Right here.
+
+00:03:15.110 --> 00:03:15.565
+Yeah.
+
+00:03:15.564 --> 00:03:17.104
+Okay. So, we need to implement that.
+
+00:03:17.104 --> 00:03:20.840
+We need to make sure that this is able to receive these waypoints.
+
+00:03:20.840 --> 00:03:22.625
+Yeah, basically you just want to store them.
+
+00:03:22.625 --> 00:03:24.939
+Shall we take a look at the result.
+
+00:03:24.939 --> 00:03:25.569
+Sure.
+
+00:03:25.569 --> 00:03:26.139
+Okay.
+
+00:03:26.139 --> 00:03:29.269
+So, if we scroll down to waypoints callback.
+
+00:03:29.270 --> 00:03:30.730
+There's the callback function.
+
+00:03:30.729 --> 00:03:33.619
+Yeah. So, in the callback, we have the waypoints,
+
+00:03:33.620 --> 00:03:35.284
+which were coming in and
+
+00:03:35.284 --> 00:03:40.090
+self.basewaypoints equals waypoints basically just stores these in the object.
+
+00:03:40.090 --> 00:03:41.629
+Okay. So, this is a subscriber,
+
+00:03:41.629 --> 00:03:44.014
+does that mean this is happening every single time.
+
+00:03:44.014 --> 00:03:46.909
+Normally yes, but this is a latched subscriber.
+
+00:03:46.909 --> 00:03:48.949
+I believe that's the way the code is currently set up in the repo,
+
+00:03:48.949 --> 00:03:53.254
+so once callback is called it doesn't send the base waypoints anymore.
+
+00:03:53.254 --> 00:03:56.039
+That's good, because the base waypoints are never changing,
+
+00:03:56.039 --> 00:03:57.219
+so that'd be really inefficient,
+
+00:03:57.219 --> 00:03:59.500
+just calling that certain number of times every second.
+
+00:03:59.500 --> 00:04:00.699
+So, it only calls them once.
+
+00:04:00.699 --> 00:04:04.399
+Then, we have some other code in here that's doing some interesting things.
+
+00:04:04.400 --> 00:04:06.770
+So, the basic idea is that we want to take a chunk of
+
+00:04:06.770 --> 00:04:11.685
+these base waypoints and use the first 200 that are in front of the car as reference.
+
+00:04:11.685 --> 00:04:17.490
+So, what's a great way of actually figuring out which waypoint is closest to the car.
+
+00:04:17.490 --> 00:04:18.764
+So, that's a good question.
+
+00:04:18.764 --> 00:04:21.654
+In this code, we're using something called the KDTree.
+
+00:04:21.654 --> 00:04:23.239
+Where does KDTree come from?
+
+00:04:23.240 --> 00:04:24.514
+Oh, it's up here in scipy.
+
+00:04:24.514 --> 00:04:28.625
+Correct, so we've imported scipy.spatial import KDTree.
+
+00:04:28.625 --> 00:04:31.430
+KDTree is a data structure that'll allow you to
+
+00:04:31.430 --> 00:04:34.535
+look up the closest point in space really efficiently.
+
+00:04:34.535 --> 00:04:37.080
+So, that's like log n instead of n.
+
+00:04:37.079 --> 00:04:40.339
+Yeah. So, if you were to search directly through the list of waypoints.
+
+00:04:40.339 --> 00:04:44.209
+You get a thousand waypoints maybe the waypoint it wants at the very end of that list.
+
+00:04:44.209 --> 00:04:45.664
+Yeah, it'll take a long time.
+
+00:04:45.665 --> 00:04:50.340
+If I'm using a KDTree and if it's like log n and maybe it's only 10 cycles to find it,
+
+00:04:50.339 --> 00:04:51.739
+that's way more efficient.
+
+00:04:51.740 --> 00:04:53.095
+So, this is a much better way to do that.
+
+00:04:53.095 --> 00:04:54.640
+Cool. So, we're using this KDTree,
+
+00:04:54.639 --> 00:04:56.569
+how do we set up this KDTree?
+
+00:04:56.569 --> 00:04:59.524
+Down here, you can see that in the code we've converted
+
+00:04:59.524 --> 00:05:02.810
+the waypoints to just the 2D coordinates for each waypoint.
+
+00:05:02.810 --> 00:05:04.089
+So, it's a list of comprehension here.
+
+00:05:04.089 --> 00:05:06.659
+We have for each waypoint and waypoints.waypoints.
+
+00:05:06.660 --> 00:05:13.305
+We have waypoint.pose.pose.position.x and waypoint.pose.pose.position.y.
+
+00:05:13.305 --> 00:05:17.199
+So, this will give us a list of a bunch of 2D coordinates for each waypoint.
+
+00:05:17.199 --> 00:05:19.550
+We use that to construct a KDTree.
+
+00:05:19.550 --> 00:05:21.829
+Awesome. So, we've done that with
+
+00:05:21.829 --> 00:05:26.180
+a single callback and now what other information are we getting from subscribers.
+
+00:05:26.180 --> 00:05:28.785
+I think an important one is probably the pose of the car.
+
+00:05:28.785 --> 00:05:32.185
+Yeah. Actually one thing I wanted to mention about this callback down there,
+
+00:05:32.185 --> 00:05:33.860
+we have the code if not
+
+00:05:33.860 --> 00:05:38.780
+self.waypoints2D because that attribute is being used in the callback here,
+
+00:05:38.779 --> 00:05:45.089
+we want to make sure that that self.waypoints2D is initialized before the subscriber is.
+
+00:05:45.089 --> 00:05:47.659
+Otherwise, you could run into some risk conditions where
+
+00:05:47.660 --> 00:05:52.010
+the subscriber callback is called before waypoints2D is initialized.
+
+00:05:52.009 --> 00:05:57.024
+And then, it doesn't know what to reference and then you're going to have some problems.
+
+00:05:57.024 --> 00:05:58.144
+Yeah, that makes sense.
+
+00:05:58.144 --> 00:06:00.555
+So, we have this other callback for pose_cb,
+
+00:06:00.555 --> 00:06:02.819
+and that's just grabbing what the pose is.
+
+00:06:02.819 --> 00:06:04.409
+So, just stores the car's pose.
+
+00:06:04.410 --> 00:06:05.290
+It's that's simple enough.
+
+00:06:05.290 --> 00:06:06.980
+That one gets called frequently.
+
+00:06:06.980 --> 00:06:07.935
+How often?
+
+00:06:07.935 --> 00:06:11.254
+I don't know exactly, but it's probably around 50 hertz.
+
+00:06:11.254 --> 00:06:13.730
+Cool. So, we have those two things to work from,
+
+00:06:13.730 --> 00:06:18.314
+now in the beginning file we have something else that looks like this with rospy.spin,
+
+00:06:18.314 --> 00:06:20.899
+for this results in code that we're talking about,
+
+00:06:20.899 --> 00:06:23.004
+it looks quite different. Here, there's a loop.
+
+00:06:23.004 --> 00:06:25.879
+So, we've defined a loop function that gives us,
+
+00:06:25.879 --> 00:06:27.680
+basically the reason we're doing this is because this
+
+00:06:27.680 --> 00:06:29.780
+gives us control over the publishing frequency.
+
+00:06:29.779 --> 00:06:32.394
+Okay. So, we want to target 50 hertz.
+
+00:06:32.394 --> 00:06:34.669
+Sure. You could probably get away with something
+
+00:06:34.670 --> 00:06:36.949
+a little bit less than 50 hertz in this case.
+
+00:06:36.949 --> 00:06:40.779
+The final waypoints which we'll be publishing go to the waypoint follower,
+
+00:06:40.779 --> 00:06:42.619
+which is a piece of code from Autoware,
+
+00:06:42.620 --> 00:06:45.550
+and I believe that's running at 30 hertz.
+
+00:06:45.550 --> 00:06:48.430
+So, you could probably go as low as 30 hertz and less
+
+00:06:48.430 --> 00:06:51.860
+because these messages are going to go straight over to waypoint follower,
+
+00:06:51.860 --> 00:06:55.290
+which is cycling at 30 hertz in them onto your drive by wire.
+
+00:06:55.290 --> 00:06:58.189
+So, we got that loop that's constantly happening at
+
+00:06:58.189 --> 00:07:01.550
+50 hertz and let's see what's going on here.
+
+00:07:01.550 --> 00:07:04.240
+So, if we have pose and base waypoints,
+
+00:07:04.240 --> 00:07:06.155
+those are the two things we're just talking about.
+
+00:07:06.154 --> 00:07:08.349
+A lot of rospy is not shut down,
+
+00:07:08.350 --> 00:07:10.365
+this is what we're going to be executing.
+
+00:07:10.365 --> 00:07:12.960
+So, we need to get that closest waypoint.
+
+00:07:12.959 --> 00:07:14.810
+So, we're using this function right here to
+
+00:07:14.810 --> 00:07:17.634
+get_closest_waypoint and then we're going to be using that KDTree,
+
+00:07:17.634 --> 00:07:19.310
+let's just go ahead and pick at that.
+
+00:07:19.310 --> 00:07:20.774
+So, get_closest_waypoint.
+
+00:07:20.774 --> 00:07:22.339
+Yeah. So, in get_closest_waypoint,
+
+00:07:22.339 --> 00:07:24.500
+we get the coordinates of our car.
+
+00:07:24.500 --> 00:07:29.314
+So, that's self.pose.pose.position.x and sel.pose.pose.position.y,
+
+00:07:29.314 --> 00:07:31.850
+and if you're confused about how many poses you need
+
+00:07:31.850 --> 00:07:34.640
+to put in before you get to position.x.y,
+
+00:07:34.639 --> 00:07:38.399
+the best thing is to go look at the message definitions for that type of message.
+
+00:07:38.399 --> 00:07:41.584
+I know it's.pose.pose and not just.pose.
+
+00:07:41.584 --> 00:07:43.799
+So, if you look at the message definition it should be pretty clear.
+
+00:07:43.800 --> 00:07:47.400
+There's definitely some instruction in the classroom on how to check out those messages?
+
+00:07:47.399 --> 00:07:51.424
+Yes, in the concept for this Waypoint Updater Node, it talks about-
+
+00:07:51.425 --> 00:07:53.560
+ROStopics and ROSmessages.
+
+00:07:53.560 --> 00:07:59.040
+So, you can use ROS message info to get more info about that particular message type?
+
+00:07:59.040 --> 00:08:01.110
+Yeah, and I can kind of come down here and I can see
+
+00:08:01.110 --> 00:08:03.925
+how this is all formatted for waypoints.
+
+00:08:03.925 --> 00:08:05.889
+All of the messages, I believe,
+
+00:08:05.889 --> 00:08:08.750
+are in the six folder in the project report.
+
+00:08:08.750 --> 00:08:10.050
+So all the message deficit.
+
+00:08:10.050 --> 00:08:14.160
+This is how it knows pose dot pose,cool.
+
+00:08:14.160 --> 00:08:19.420
+So, then we're just doing a query on this tree based on an x and y gives us back one.
+
+00:08:19.420 --> 00:08:23.435
+So, we have this array that's returning us and we have this,
+
+00:08:23.435 --> 00:08:27.764
+I'm guessing some sort of distance away and then also the index itself.
+
+00:08:27.764 --> 00:08:31.969
+So exactly what you said. The first one there does we only want to return one item.
+
+00:08:31.970 --> 00:08:35.340
+So, the closest point in our TB tree to our query item.
+
+00:08:35.340 --> 00:08:37.100
+The second one there, as you said,
+
+00:08:37.100 --> 00:08:40.779
+that the query will return the position and also the index,
+
+00:08:40.779 --> 00:08:44.894
+and the index is in the same order as you put into the K-D tree.
+
+00:08:44.894 --> 00:08:47.699
+So, we put in all those 2D coordinates for waypoints and
+
+00:08:47.700 --> 00:08:50.634
+so what we're trying to get is basically the index of that coordinate.
+
+00:08:50.634 --> 00:08:53.000
+Right, closest index is what we care about.
+
+00:08:53.000 --> 00:08:54.205
+Let's see what happens next.
+
+00:08:54.205 --> 00:08:55.320
+Closest coordinate.
+
+00:08:55.320 --> 00:08:57.025
+So, that's from waypoints 2D,
+
+00:08:57.024 --> 00:09:00.014
+and then we're just grabbing that waypoint 2D,
+
+00:09:00.014 --> 00:09:01.960
+and then we have the previous coordinate as well.
+
+00:09:01.960 --> 00:09:03.280
+So, we're doing a little bit of math here,
+
+00:09:03.279 --> 00:09:05.309
+because we're talking about that we wanted to make sure
+
+00:09:05.309 --> 00:09:07.544
+these waypoints were in front of the car, right?
+
+00:09:07.544 --> 00:09:09.149
+Yeah. So, we're trying to figure out,
+
+00:09:09.149 --> 00:09:11.814
+we've got the closest waypoint from the waypoint tree query,
+
+00:09:11.815 --> 00:09:14.715
+but we want to make sure that that point is in front of the car.
+
+00:09:14.715 --> 00:09:18.080
+So, we can use this kind of hyperplane
+
+00:09:18.080 --> 00:09:21.335
+and then do a dot product to see that's positive or negative,
+
+00:09:21.335 --> 00:09:24.820
+and based on that dot product between those two vectors,
+
+00:09:24.820 --> 00:09:29.420
+we can see if that first waypoint is indeed is in front of the car or not.
+
+00:09:29.419 --> 00:09:31.349
+If it's behind the car,
+
+00:09:31.350 --> 00:09:33.990
+then we just ignore it and cut it off?
+
+00:09:33.990 --> 00:09:35.740
+Take the next one. So, if it is behind the car,
+
+00:09:35.740 --> 00:09:39.009
+if we've determined that the closest waypoint is behind us, we just take the next one.
+
+00:09:39.009 --> 00:09:42.939
+We take the next one, but we modulo the length of the total waypoint list.
+
+00:09:42.940 --> 00:09:44.550
+So, that's if down there in the code,
+
+00:09:44.549 --> 00:09:46.139
+if val is greater than zero,
+
+00:09:46.139 --> 00:09:48.350
+meaning the way point is actually behind us,
+
+00:09:48.350 --> 00:09:50.465
+then we take the closest index plus one,
+
+00:09:50.465 --> 00:09:52.995
+but modulo the length of waypoints 2D.
+
+00:09:52.995 --> 00:09:54.330
+So, for this hyperplane,
+
+00:09:54.330 --> 00:09:56.820
+maybe we should talk a little bit about how this math works.
+
+00:09:56.820 --> 00:10:00.955
+Sure, yeah. So, we have a little diagram here.
+
+00:10:00.955 --> 00:10:03.620
+So, this is basically what's going on.
+
+00:10:03.620 --> 00:10:07.820
+So, here is our closest waypoint.
+
+00:10:07.820 --> 00:10:11.215
+So, this one is Cl-vect right here.
+
+00:10:11.215 --> 00:10:14.170
+Then, there is the previous waypoint.
+
+00:10:14.169 --> 00:10:17.049
+This arrow, this vector right here is
+
+00:10:17.049 --> 00:10:19.639
+the difference between its closest vector and previous vector.
+
+00:10:19.639 --> 00:10:21.889
+That's our reference vector right there and it's
+
+00:10:21.889 --> 00:10:25.149
+defining this hyperplane that's perpendicular to it.
+
+00:10:25.149 --> 00:10:27.529
+So, we have the hyperplane given by
+
+00:10:27.529 --> 00:10:31.449
+the dashed line and that should be perpendicular to this vector.
+
+00:10:31.450 --> 00:10:34.250
+Then the car can be either two possible states.
+
+00:10:34.250 --> 00:10:38.240
+It can be in front of this hyperplane or behind it?
+
+00:10:38.240 --> 00:10:41.730
+So, here are the two possible states for our car.
+
+00:10:41.730 --> 00:10:45.425
+So, pos_vect is there and pos_vect is there.
+
+00:10:45.424 --> 00:10:49.699
+If our car is in front of the closest waypoint,
+
+00:10:49.700 --> 00:10:52.629
+so it's in front of this hyperplane determined by this vector.
+
+00:10:52.629 --> 00:10:55.014
+Both vectors are pointing in the same direction.
+
+00:10:55.014 --> 00:10:58.024
+Our closest index is actually behind the car.
+
+00:10:58.024 --> 00:10:59.595
+This top product is positive.
+
+00:10:59.595 --> 00:11:01.639
+Yeah. On the other hand,
+
+00:11:01.639 --> 00:11:05.889
+if our car's position is behind this hyperplane,
+
+00:11:05.889 --> 00:11:07.995
+so it's behind the closest waypoint.
+
+00:11:07.995 --> 00:11:10.019
+Then, the opposite. They're pointing in
+
+00:11:10.019 --> 00:11:12.324
+opposite directions and the dot product is negative.
+
+00:11:12.325 --> 00:11:12.625
+Yep.
+
+00:11:12.625 --> 00:11:14.529
+Okay, so this is how we can tell if that
+
+00:11:14.529 --> 00:11:17.269
+closest waypoint is in front of the car or behind it.
+
+00:11:17.269 --> 00:11:20.029
+Yep and that's exactly what's going on in the code there.
+
+00:11:20.029 --> 00:11:22.649
+Cool. Let's go over this math a little bit
+
+00:11:22.649 --> 00:11:25.259
+for how we're dealing with this hyperplane and figuring
+
+00:11:25.259 --> 00:11:27.194
+out if the dot product is
+
+00:11:27.195 --> 00:11:30.220
+positive or negative and if this coordinate's in front of us or not.
+
+00:11:30.220 --> 00:11:34.480
+Yeah, so we get the closest vect there is our closest coordinate.
+
+00:11:34.480 --> 00:11:39.254
+That's kind of this base coordinate we're using and it's all relative to that.
+
+00:11:39.254 --> 00:11:41.924
+So that's 2D coordinate of the waypoint.
+
+00:11:41.924 --> 00:11:44.629
+Then, we're just looking at where the car's at,
+
+00:11:44.629 --> 00:11:49.129
+and we can draw a vector from that reference point to that car's position.
+
+00:11:49.129 --> 00:11:54.174
+So, previous vect, that's the previous coordinate here, and position vect.
+
+00:11:54.174 --> 00:11:58.964
+That's at x y, and then we're just kind of looking at how this is aligning.
+
+00:11:58.965 --> 00:12:02.389
+You can use the car's orientation, waypoints orientation,
+
+00:12:02.389 --> 00:12:04.519
+you can create a vector from the previous waypoint to
+
+00:12:04.519 --> 00:12:05.699
+the current waypoint and use
+
+00:12:05.700 --> 00:12:08.225
+the car's orientation to see if they're facing in the same direction.
+
+00:12:08.225 --> 00:12:10.144
+So, this is just one possible way.
+
+00:12:10.144 --> 00:12:12.889
+Then we return that closest index after that,
+
+00:12:12.889 --> 00:12:15.960
+and we can kind of come back up and see what's going on.
+
+00:12:15.960 --> 00:12:18.590
+So, then we're just publishing these waypoints.
+
+00:12:18.590 --> 00:12:20.155
+Closest waypoint index.
+
+00:12:20.154 --> 00:12:22.564
+So, now we go down to the published waypoints function.
+
+00:12:22.565 --> 00:12:26.295
+We have our closest index and the index of the closest waypoint ahead of the car,
+
+00:12:26.294 --> 00:12:29.245
+and so what we do, the message type needs to be a lane.
+
+00:12:29.245 --> 00:12:30.914
+So, we create a new lane object,
+
+00:12:30.914 --> 00:12:32.034
+or a new lane message,
+
+00:12:32.034 --> 00:12:36.149
+and the lane header is the same as the base waypoints header.
+
+00:12:36.149 --> 00:12:37.870
+Doesn't really matter, we're not going to use the header.
+
+00:12:37.870 --> 00:12:40.759
+So, you could probably skip doing this altogether.
+
+00:12:40.759 --> 00:12:47.679
+The waypoints for that lane should be the waypoints from your base waypoints but
+
+00:12:47.679 --> 00:12:51.089
+sliced so that it goes from your closest index to
+
+00:12:51.090 --> 00:12:54.570
+the closest index plus however many would look ahead points you want.
+
+00:12:54.570 --> 00:12:59.895
+That makes sense. Do we have to worry about doing a modular on this in case it goes over?
+
+00:12:59.894 --> 00:13:02.199
+We don't. Because python slicing is really nice.
+
+00:13:02.200 --> 00:13:04.285
+So, if closest index plus look ahead at
+
+00:13:04.284 --> 00:13:07.850
+waypoints is bigger than the total length of waypoints,
+
+00:13:07.850 --> 00:13:10.759
+it'll just give us the slides from closest index to the end.
+
+00:13:10.759 --> 00:13:13.049
+Yeah, I actually noticed that when I was writing project myself,
+
+00:13:13.049 --> 00:13:15.084
+that when you're near the end of the list,
+
+00:13:15.085 --> 00:13:16.210
+all of a sudden,
+
+00:13:16.210 --> 00:13:18.019
+your waypoints are getting smaller and smaller
+
+00:13:18.019 --> 00:13:19.829
+and smaller as you're driving the car forward,
+
+00:13:19.830 --> 00:13:21.930
+it all of a sudden stops at the very end of the list.
+
+00:13:21.929 --> 00:13:25.334
+Guess that reflects closely to what's actually going on in test slot two.
+
+00:13:25.335 --> 00:13:28.050
+Yep, and actually, this is why in the previous part
+
+00:13:28.049 --> 00:13:31.049
+when we were trying to figure out whether the waypoint was the head of the car,
+
+00:13:31.049 --> 00:13:34.389
+we used the closest waypoint and the waypoint behind it.
+
+00:13:34.389 --> 00:13:36.730
+Because if you use the closest waypoint and the waypoint ahead of it
+
+00:13:36.730 --> 00:13:39.180
+as you get close to the end of the waypoints lists,
+
+00:13:39.179 --> 00:13:40.559
+you tend to run in trouble.
+
+00:13:40.559 --> 00:13:43.349
+Cool. I think that's it for the waypoint updater.
+
+00:13:43.350 --> 00:13:44.480
+Yeah. Once you finish this code,
+
+00:13:44.480 --> 00:13:45.789
+you should be able to start ROS,
+
+00:13:45.789 --> 00:13:51.504
+and then open up a new tab in your terminal or open up a new terminal window,
+
+00:13:51.504 --> 00:13:53.544
+source your devel environment.
+
+00:13:53.544 --> 00:13:57.959
+So, develsetup.sh and then try echoing final waypoints.
+
+00:13:57.960 --> 00:14:01.170
+So, ROS topic echo slash find
+
+00:14:01.169 --> 00:14:04.769
+a waypoints and make sure that this note is publishing the final waypoints that you need.
+
+00:14:04.769 --> 00:14:06.470
+Also, I'm a very visual person.
+
+00:14:06.470 --> 00:14:09.475
+So, when I was doing this project I wanted to be able to see those waypoints,
+
+00:14:09.475 --> 00:14:13.490
+so I actually modified the simulator to make sure that I can see them.
+
+00:14:13.490 --> 00:14:16.955
+So, that could be like a first verification check is once you do all this,
+
+00:14:16.955 --> 00:14:20.160
+go ahead and boot up the simulator and see if you can
+
+00:14:20.159 --> 00:14:24.375
+see those green orbs floating around your car.
+
+00:14:24.375 --> 00:14:27.649
+So, that's it for the first part.
+
+00:14:27.649 --> 00:14:30.929
+All right, thanks. We'll see you next time.
+

@@ -1,0 +1,531 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   DBW Node
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Program an Autonomous Vehicle
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Have Fun!.html">
+       01. Have Fun!
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction.html">
+       02. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Getting Started.html">
+       03. Getting Started
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Project Overview.html">
+       04. Project Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Waypoint Updater Node (Partial).html">
+       05. Waypoint Updater Node (Partial)
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Waypoint Updater Partial Walkthrough.html">
+       06. Waypoint Updater Partial Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="07. DBW Node.html">
+       07. DBW Node
+      </a>
+     </li>
+     <li class="">
+      <a href="08. DBW Walkthrough.html">
+       08. DBW Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Traffic Light Detection Node.html">
+       09. Traffic Light Detection Node
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Object Detection Lab.html">
+       10. Object Detection Lab
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Detection Walkthrough.html">
+       11. Detection Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Waypoint Updater Node (Full).html">
+       12. Waypoint Updater Node (Full)
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Full Waypoint Walkthrough.html">
+       13. Full Waypoint Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Project Submission and Getting Feedback.html">
+       14. Project Submission and Getting Feedback
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Project Workspace Instructions.html">
+       15. Project Workspace Instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Capstone Project Workspace.html">
+       16. Capstone Project Workspace
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Programming a Real Self-Driving Car.html">
+       Project Description - Programming a Real Self-Driving Car
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Programming a Real Self-Driving Car.html">
+       Project Rubric - Programming a Real Self-Driving Car
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          07. DBW Node
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="dbw-node-overview">
+          DBW Node Overview
+         </h1>
+         <p>
+          Once messages are being published to
+          <code>
+           /final_waypoints
+          </code>
+          , the vehicle's waypoint follower will publish twist commands to the
+          <code>
+           /twist_cmd
+          </code>
+          topic. The goal for this part of the project is to implement the drive-by-wire node (
+          <code>
+           dbw_node.py
+          </code>
+          ) which will subscribe to
+          <code>
+           /twist_cmd
+          </code>
+          and use various controllers to provide appropriate throttle, brake, and steering commands. These commands can then be published to the following topics:
+         </p>
+         <ul>
+          <li>
+           <code>
+            /vehicle/throttle_cmd
+           </code>
+          </li>
+          <li>
+           <code>
+            /vehicle/brake_cmd
+           </code>
+          </li>
+          <li>
+           <code>
+            /vehicle/steering_cmd
+           </code>
+          </li>
+         </ul>
+         <p>
+          Since a safety driver may take control of the car during testing, you should not assume that the car is always following your commands. If a safety driver does take over, your PID controller will mistakenly accumulate error, so you will need to be mindful of DBW status. The DBW status can be found by subscribing to
+          <code>
+           /vehicle/dbw_enabled
+          </code>
+          .
+         </p>
+         <p>
+          When operating the simulator please check DBW status and ensure that it is in the desired state.  DBW can be toggled by clicking "Manual" in the simulator GUI.
+         </p>
+         <p>
+          All code necessary to implement the drive-by-wire node can be found in the package:
+         </p>
+         <pre><code>(path_to_project_repo)/ros/src/twist_controller</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="twist-controller-package-files">
+          Twist controller package files
+         </h2>
+         <p>
+          Within the twist controller package, you will find the following:
+         </p>
+         <ul>
+          <li>
+           <h3 id="dbw_nodepy">
+            dbw_node.py
+           </h3>
+           <p>
+            This python file implements the
+            <code>
+             dbw_node
+            </code>
+            publishers and subscribers. You will need to write ROS subscribers for the
+            <code>
+             /current_velocity
+            </code>
+            ,
+            <code>
+             /twist_cmd
+            </code>
+            , and
+            <code>
+             /vehicle/dbw_enabled
+            </code>
+            topics. This file also imports the
+            <code>
+             Controller
+            </code>
+            class from
+            <code>
+             twist_controller.py
+            </code>
+            which will be used for implementing the necessary controllers. The function used to publish throttle, brake, and steering is
+            <code>
+             publish
+            </code>
+            .
+           </p>
+           <p>
+            Note that throttle values passed to
+            <code>
+             publish
+            </code>
+            should be in the range 0 to 1, although a throttle of 1 means the vehicle throttle will be fully engaged. Brake values passed to
+            <code>
+             publish
+            </code>
+            should be in units of torque (N*m). The correct values for brake can be computed using the desired acceleration, weight of the vehicle, and wheel radius.
+           </p>
+          </li>
+          <li>
+           <h3 id="twist_controllerpy">
+            twist_controller.py
+           </h3>
+           <p>
+            This file contains a stub of the
+            <code>
+             Controller
+            </code>
+            class. You can use this class to implement vehicle control. For example, the
+            <code>
+             control
+            </code>
+            method can take twist data as input and return throttle, brake, and steering values. Within this class, you can import and use the provided
+            <code>
+             pid.py
+            </code>
+            and
+            <code>
+             lowpass.py
+            </code>
+            if needed for acceleration, and
+            <code>
+             yaw_controller.py
+            </code>
+            for steering. Note that it is not required for you to use these, and you are free to write and import other controllers.
+           </p>
+          </li>
+          <li>
+           <h3 id="yaw_controllerpy">
+            yaw_controller.py
+           </h3>
+           <p>
+            A controller that can be used to convert target linear and angular velocity to steering commands.
+           </p>
+          </li>
+          <li>
+           <h3 id="pidpy">
+            pid.py
+           </h3>
+           <p>
+            A generic PID controller that can be used in
+            <code>
+             twist_controller.py
+            </code>
+            .
+           </p>
+          </li>
+          <li>
+           <h3 id="lowpasspy">
+            lowpass.py
+           </h3>
+           <p>
+            A generic low pass filter that can be used in
+            <code>
+             twist_controller.py
+            </code>
+            .
+           </p>
+          </li>
+          <li>
+           <h3 id="dbw_testpy">
+            dbw_test.py
+           </h3>
+           <p>
+            You can use this file to test your DBW code against a bag recorded with a reference implementation.
+            <br/>
+            The bag can be found at
+            <a href="https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/reference.bag.zip" rel="noopener noreferrer" target="_blank">
+             https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/reference.bag.zip
+            </a>
+           </p>
+           <p>
+            Detailed use instructions can be found in the
+            <code>
+             dbw_test.py
+            </code>
+            file.
+           </p>
+          </li>
+         </ul>
+         <h2 id="testing-with-the-simulator">
+          Testing with the simulator
+         </h2>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/screen-shot-2017-12-14-at-4.42.24-pm.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="highway">
+          Highway
+         </h3>
+         <p>
+          At this point in the project, it is unnecessary to use camera data. If you are experiencing system latency or dropped ROS messages, be sure to keep the camera toggle unchecked in the first test track in the simulator.
+         </p>
+         <h3 id="test-lot">
+          Test Lot
+         </h3>
+         <p>
+          The
+          <code>
+           CarND-Capstone/ros/src/waypoint_loader/launch/waypoint_loader.launch
+          </code>
+          file is set up to load the waypoints for the first track. To test using the second track, you will need to change
+         </p>
+         <pre><code>&lt;param name="path" value="$(find styx)../../../data/wp_yaw_const.csv" /&gt;</code></pre>
+         <p>
+          to use the
+          <code>
+           churchlot_with_cars.csv
+          </code>
+          as follows:
+         </p>
+         <pre><code>&lt;param name="path" value="$(find styx)../../../data/churchlot_with_cars.csv"/&gt;</code></pre>
+         <p>
+          Note that the second track does not send any camera data.
+         </p>
+         <h1 id="important">
+          Important:
+         </h1>
+         <p>
+          <code>
+           dbw_node.py
+          </code>
+          is currently set up to publish steering, throttle, and brake commands at 50hz. The DBW system on Carla expects messages at this frequency, and will disengage (reverting control back to the driver) if control messages are published at less than 10hz. This is a safety feature on the car intended to return control to the driver if the software system crashes. You are welcome to modify how the
+          <code>
+           dbw_node.py
+          </code>
+          code is structured, but please ensure that control commands are published at 50hz.
+         </p>
+         <p>
+          Additionally, although the simulator displays speed in mph, all units in the project code use the metric system, including the units of messages in the
+          <code>
+           /current_velocity
+          </code>
+          topic (which have linear velocity in m/s).
+         </p>
+         <p>
+          Finally, Carla has an automatic transmission, which means the car will roll forward if no brake and no throttle is applied. To prevent Carla from moving requires about 700 Nm of torque.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="08. DBW Walkthrough.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. DBW Node')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

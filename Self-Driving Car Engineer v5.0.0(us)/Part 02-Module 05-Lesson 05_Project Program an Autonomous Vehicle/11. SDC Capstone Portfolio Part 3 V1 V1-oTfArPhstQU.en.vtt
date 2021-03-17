@@ -1,0 +1,706 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.710
+All right, welcome back.
+
+00:00:01.710 --> 00:00:05.099
+Now we're doing a third part of the capstone project walk-through. I'm Erin.
+
+00:00:05.099 --> 00:00:06.059
+I'm Steven.
+
+00:00:06.059 --> 00:00:09.269
+And so far, we looked at how to generate waypoints,
+
+00:00:09.269 --> 00:00:11.429
+how to make the car follow these waypoints
+
+00:00:11.429 --> 00:00:14.160
+and now we're looking at traffic light classification.
+
+00:00:14.160 --> 00:00:18.660
+Yes and so in this node we're going to do, basically the publishing,
+
+00:00:18.660 --> 00:00:21.495
+the waypoints of the closest traffic light to us,
+
+00:00:21.495 --> 00:00:25.890
+and the state and figuring out how to stop the car based on traffic lights.
+
+00:00:25.890 --> 00:00:29.100
+Cool. So this part you could actually
+
+00:00:29.100 --> 00:00:32.670
+use a classifier that you build yourself using TensorFlow.
+
+00:00:32.670 --> 00:00:35.030
+Yes, you could. So in this walk-through,
+
+00:00:35.030 --> 00:00:38.370
+we're not going to go over building the model to classify the traffic lights,
+
+00:00:38.369 --> 00:00:43.500
+but we will go over the structure of the code for publishing the closest waypoint.
+
+00:00:43.500 --> 00:00:46.814
+Okay. Cool, let's go ahead and dive in.
+
+00:00:46.814 --> 00:00:50.219
+So I'm opening the tl detector to that py.
+
+00:00:50.219 --> 00:00:53.365
+And let's look at what it looks like when you first load it up.
+
+00:00:53.365 --> 00:00:56.030
+So, let's look at my subscribers.
+
+00:00:56.030 --> 00:00:58.085
+I got the current pose at base_waypoints.
+
+00:00:58.085 --> 00:00:59.329
+Those are good things to have.
+
+00:00:59.329 --> 00:01:00.859
+I got traffic_lights.
+
+00:01:00.859 --> 00:01:04.819
+So, I can just use that data that the simulator is sending me to
+
+00:01:04.819 --> 00:01:08.929
+figure out what the light state is instead of using a classifier, right?
+
+00:01:08.930 --> 00:01:10.790
+Sure. When you're working with the simulator and
+
+00:01:10.790 --> 00:01:15.500
+the traffic lights messages will have the state of the light, red, green or yellow.
+
+00:01:15.500 --> 00:01:16.969
+That one you won't have that of course on
+
+00:01:16.969 --> 00:01:18.859
+the car and so you'll need to rely on classifier,
+
+00:01:18.859 --> 00:01:20.254
+but for testing purposes,
+
+00:01:20.254 --> 00:01:21.890
+before you start working on the classifier,
+
+00:01:21.890 --> 00:01:24.469
+you can just depend on information from the simulator.
+
+00:01:24.469 --> 00:01:26.030
+Sounds like a good way to get started.
+
+00:01:26.030 --> 00:01:29.879
+I have traffic_waypoint and that's what I'm publishing,
+
+00:01:29.879 --> 00:01:33.130
+and I also have an image color.
+
+00:01:33.129 --> 00:01:34.869
+So what is that all about?
+
+00:01:34.870 --> 00:01:38.785
+So image color is camera data that's coming in from the car's camera.
+
+00:01:38.784 --> 00:01:42.340
+And for this walk-through I don't think we'll be using image color,
+
+00:01:42.340 --> 00:01:43.630
+but we'll see, because we're not going to be using.
+
+00:01:43.629 --> 00:01:44.709
+There's different types, right?
+
+00:01:44.709 --> 00:01:45.469
+Yes.
+
+00:01:45.469 --> 00:01:46.795
+Something like a raw data,
+
+00:01:46.795 --> 00:01:48.040
+the raw image as well.
+
+00:01:48.040 --> 00:01:52.890
+Yes. I believe the repo is setup to have you use image color in your classifier,
+
+00:01:52.890 --> 00:01:56.099
+but you might want to use image raw instead.
+
+00:01:56.099 --> 00:01:57.539
+Any particular reason why?
+
+00:01:57.540 --> 00:01:59.580
+When you have an image raw and then you
+
+00:01:59.579 --> 00:02:02.774
+translate it to a new color scheme, you might lose data.
+
+00:02:02.775 --> 00:02:03.960
+If you're building a classifier,
+
+00:02:03.959 --> 00:02:05.879
+the classifier doesn't have to visually see
+
+00:02:05.879 --> 00:02:08.189
+any particular color scheme like a person would.
+
+00:02:08.189 --> 00:02:10.949
+It's helpful to have as much data going into your classifier as possible.
+
+00:02:10.949 --> 00:02:13.724
+So we have some code right here to set up the classifier
+
+00:02:13.724 --> 00:02:17.025
+and then also some callbacks like we usually have.
+
+00:02:17.025 --> 00:02:21.555
+And that's where this light information is coming from this traffic callback,
+
+00:02:21.555 --> 00:02:23.640
+and we have this image callback.
+
+00:02:23.639 --> 00:02:26.629
+Looks like that's an important one
+
+00:02:26.629 --> 00:02:30.370
+as well as this process of traffic lights, get-light-state.
+
+00:02:30.370 --> 00:02:33.715
+Yes. So what's going on in this code up top here,
+
+00:02:33.715 --> 00:02:36.219
+so every time we get an image coming in, what do we do with that?
+
+00:02:36.219 --> 00:02:40.194
+And it looks like we're getting this process_traffic_lights,
+
+00:02:40.194 --> 00:02:43.284
+which gives us the state and that light_waypoint.
+
+00:02:43.284 --> 00:02:47.139
+And we have this camera image that we're
+
+00:02:47.139 --> 00:02:51.245
+saving off from our message if we have this image to begin with.
+
+00:02:51.246 --> 00:02:53.860
+And then we also have this state.
+
+00:02:53.860 --> 00:02:57.928
+And that's the state of the light based on the processing of the traffic lights.
+
+00:02:57.927 --> 00:03:00.819
+Yes. We should probably dive into this first and see
+
+00:03:00.819 --> 00:03:04.034
+what kind of values the state primary can have.
+
+00:03:04.034 --> 00:03:08.579
+Let's check out the resulting code then and look at process_traffic_lights.
+
+00:03:08.580 --> 00:03:13.170
+So here we have closest_light and this line_waypoint_ndex,
+
+00:03:13.169 --> 00:03:14.849
+which is, they're both none.
+
+00:03:14.849 --> 00:03:17.069
+Okay, so we need to figure out what these values are.
+
+00:03:17.069 --> 00:03:20.775
+So closest_light I think is going to give us the closest traffic light,
+
+00:03:20.775 --> 00:03:23.730
+but each traffic light comes with a traffic line,
+
+00:03:23.729 --> 00:03:26.234
+which is the stop_line for that traffic light.
+
+00:03:26.235 --> 00:03:29.700
+I think what we wanna do is get the index of the closest traffic line to us.
+
+00:03:29.699 --> 00:03:34.049
+And I bet we could use something like a KD tree again and to figure that out.
+
+00:03:34.050 --> 00:03:35.849
+Yes. That seems like a good plan.
+
+00:03:35.848 --> 00:03:39.074
+Let's look at the details of this.
+
+00:03:39.074 --> 00:03:44.310
+If self.pose, if we have the pose of the car and also we have the stop_line_positions,
+
+00:03:44.310 --> 00:03:45.870
+nice, we're just getting that from config.
+
+00:03:45.870 --> 00:03:48.990
+So those are set up ahead of time, passed into this node.
+
+00:03:48.990 --> 00:03:52.020
+And we have this car's waypoint index
+
+00:03:52.020 --> 00:03:55.260
+and that's from our friend the KD tree again. Is that it?
+
+00:03:55.259 --> 00:03:55.430
+Yes.
+
+00:03:55.431 --> 00:03:56.280
+Closest waypoint?
+
+00:03:56.280 --> 00:04:01.050
+Yes. So this, if you've watched the previous videos,
+
+00:04:01.050 --> 00:04:03.870
+we set up KD trees to search for the closest waypoints in.
+
+00:04:03.870 --> 00:04:04.680
+In section one, right?
+
+00:04:04.680 --> 00:04:06.689
+Yes. Basically the same idea.
+
+00:04:06.689 --> 00:04:13.125
+So we can re-use that code and then we got this diff value.
+
+00:04:13.125 --> 00:04:16.800
+So, it's the length of the self.waypoints, waypoints.
+
+00:04:16.800 --> 00:04:17.220
+Yes.
+
+00:04:17.220 --> 00:04:19.950
+To find the closest visible traffic light, if one exists.
+
+00:04:19.949 --> 00:04:22.500
+So I think the idea with this code is that we're just going to
+
+00:04:22.500 --> 00:04:25.709
+iterate through the list of traffic lights to find the closest one.
+
+00:04:25.709 --> 00:04:29.819
+So we start off with the difference as big as it possibly could be.
+
+00:04:29.819 --> 00:04:32.474
+Which is like eight. I think we have eight intersections.
+
+00:04:32.475 --> 00:04:36.584
+So it's not huge like base waypoints where maybe it's 1000 or more.
+
+00:04:36.584 --> 00:04:38.610
+So, it really wouldn't make too much sense
+
+00:04:38.610 --> 00:04:40.800
+to use a KD tree with such a small list, I mean.
+
+00:04:40.800 --> 00:04:41.610
+That's fine they just.
+
+00:04:41.610 --> 00:04:42.330
+It won't be that much of a game.
+
+00:04:42.329 --> 00:04:44.189
+Yes. Let's find and just iterate over it.
+
+00:04:44.189 --> 00:04:46.629
+So in our enumerator,
+
+00:04:46.629 --> 00:04:50.810
+we have this light and we have this i value enumerators state.
+
+00:04:50.810 --> 00:04:55.480
+And we have this line that we're grabbing from the stop_line_positions.
+
+00:04:55.480 --> 00:04:58.240
+So that gives us the line of, the traffic line. Yes.
+
+00:04:58.240 --> 00:05:00.970
+So, I'm thinking that this is an x and
+
+00:05:00.970 --> 00:05:03.925
+y value from that line from the get_closest_waypoint.
+
+00:05:03.925 --> 00:05:07.060
+So we have that closest waypoint now and looks like we're looking at
+
+00:05:07.060 --> 00:05:10.810
+a difference between that closest waypoint and the car's waypoint.
+
+00:05:10.810 --> 00:05:14.004
+Yes, so we have basically the number of indices
+
+00:05:14.004 --> 00:05:17.920
+between our cars waypoint and the waypoint of the traffic line.
+
+00:05:17.920 --> 00:05:19.855
+And if it's greater than 0,
+
+00:05:19.855 --> 00:05:24.968
+if that waypoint is in front of the car and d is less than diff,
+
+00:05:24.968 --> 00:05:27.904
+which means it's not going over,
+
+00:05:27.904 --> 00:05:30.619
+or we don't want to go past our eight different states.
+
+00:05:30.620 --> 00:05:33.889
+Okay, so we're just trying to figure out what is the smallest diff,
+
+00:05:33.889 --> 00:05:36.214
+of course, that's why we're doing that check right there.
+
+00:05:36.214 --> 00:05:38.854
+And then we can just set our closest_light to the light
+
+00:05:38.855 --> 00:05:41.720
+in the line_waypoint_index to that temp_waypoint_index.
+
+00:05:41.720 --> 00:05:45.380
+So a simple linear check to see which is the closest.
+
+00:05:45.379 --> 00:05:48.259
+Yes. So we can just loop through all of those and we'll hopefully come
+
+00:05:48.259 --> 00:05:51.259
+out with the closest traffic line in front of the car.
+
+00:05:51.259 --> 00:05:55.754
+And then we can pass this to, if closest_light.
+
+00:05:55.754 --> 00:05:58.389
+Okay. So we actually set this now.
+
+00:05:58.389 --> 00:06:03.474
+And the state is equal to get_light_state closest_light.
+
+00:06:03.475 --> 00:06:08.050
+So we can just see what that state of the light is after we've grabbed the closest_light.
+
+00:06:08.050 --> 00:06:10.270
+Let's go ahead and check that out and then this
+
+00:06:10.269 --> 00:06:12.669
+is the closest_index from looking at the KD tree.
+
+00:06:12.670 --> 00:06:14.530
+So that's the get_closest_waypoint.
+
+00:06:14.529 --> 00:06:15.678
+We have get_light.
+
+00:06:15.678 --> 00:06:17.168
+Yes, get_closest_light.
+
+00:06:17.168 --> 00:06:18.335
+There we go.
+
+00:06:18.336 --> 00:06:20.680
+So if we scroll up it's right here. So this.
+
+00:06:20.680 --> 00:06:21.069
+Get light state.
+
+00:06:21.069 --> 00:06:24.219
+Get_light_state. Yes. So get_light_state is initially set up
+
+00:06:24.220 --> 00:06:27.505
+to have you use your classifier.
+
+00:06:27.504 --> 00:06:29.714
+So you'll see in the comment in our code,
+
+00:06:29.714 --> 00:06:33.664
+we return self-taught light classifier.get classification,
+
+00:06:33.665 --> 00:06:36.605
+but for testing purposes as Erin mentioned earlier,
+
+00:06:36.605 --> 00:06:40.100
+the traffic lights come in from the simulator with the state already.
+
+00:06:40.100 --> 00:06:42.860
+So you can just use light.state for testing.
+
+00:06:42.860 --> 00:06:45.305
+So that's pretty easy just to grab it from there.
+
+00:06:45.305 --> 00:06:47.060
+Interesting to have a function just for that.
+
+00:06:47.060 --> 00:06:50.906
+Yes. But I think once you use a classifier that function won't get more.
+
+00:06:50.906 --> 00:06:53.149
+Then it'll make a lot more sense to have that function.
+
+00:06:53.149 --> 00:06:58.909
+And then we're just returning that line_waypoint and the index of that.
+
+00:06:58.910 --> 00:07:01.640
+So the waypoint index in the state of that light.
+
+00:07:01.639 --> 00:07:03.529
+Yes and we return a negative one and a
+
+00:07:03.529 --> 00:07:06.799
+trafficlight.UNKNOWN now if we get past that point.
+
+00:07:06.800 --> 00:07:09.079
+That's right. That part is pretty important right there.
+
+00:07:09.079 --> 00:07:14.734
+Yes, so if you don't have a traffic light and you want to be returning negative one,
+
+00:07:14.735 --> 00:07:16.670
+and if the state of the traffic light,
+
+00:07:16.670 --> 00:07:19.504
+if you detect a traffic light and you can't tell what its state is,
+
+00:07:19.504 --> 00:07:22.550
+then you want to be returning a trafficlight.UNKNOWN.
+
+00:07:22.550 --> 00:07:24.319
+So what happens if it's unknown?
+
+00:07:24.319 --> 00:07:25.430
+What's the car going to do?
+
+00:07:25.430 --> 00:07:26.629
+This depends.
+
+00:07:26.629 --> 00:07:27.757
+So for this project,
+
+00:07:27.757 --> 00:07:29.734
+it's probably best if it's unknown,
+
+00:07:29.735 --> 00:07:32.090
+or if you can't find the traffic light just to keep the car moving.
+
+00:07:32.089 --> 00:07:33.679
+We're going to test your car in
+
+00:07:33.680 --> 00:07:38.509
+a very controlled environment and so if it rolls through the traffic light,
+
+00:07:38.509 --> 00:07:40.459
+we can still test the Drive-By-Wire system,
+
+00:07:40.459 --> 00:07:42.134
+make sure that it's following waypoints.
+
+00:07:42.134 --> 00:07:45.819
+In real life, you'd probably want to bring the car to a stop if it sees.
+
+00:07:45.819 --> 00:07:46.240
+Sounds safer.
+
+00:07:46.240 --> 00:07:50.019
+Yes, if it sees a traffic light and can't determine the state of the traffic light.
+
+00:07:50.019 --> 00:07:52.644
+So we're doing that processing.
+
+00:07:52.644 --> 00:07:54.924
+Let's work our way back up.
+
+00:07:54.925 --> 00:07:58.329
+So now we have the state and we also have the waypoint of that light.
+
+00:07:58.329 --> 00:07:59.919
+And now we can actually do a check.
+
+00:07:59.920 --> 00:08:02.770
+Is it negative one? If it's not, what are we going to do?
+
+00:08:02.769 --> 00:08:05.214
+And so we have this state does not equal state.
+
+00:08:05.214 --> 00:08:07.659
+So, can you explain to me what's going on there?
+
+00:08:07.660 --> 00:08:09.580
+Yes. If we've stored
+
+00:08:09.579 --> 00:08:12.729
+the previous state of the light and every time an image comes into this callback,
+
+00:08:12.730 --> 00:08:14.215
+or we go through this code,
+
+00:08:14.214 --> 00:08:16.419
+and if an image comes in and we've classed it,
+
+00:08:16.420 --> 00:08:18.189
+we've processed that image with
+
+00:08:18.189 --> 00:08:20.769
+the traffic light and determined that the state has changed.
+
+00:08:20.769 --> 00:08:22.720
+Yes, so it's dynamically changing.
+
+00:08:22.720 --> 00:08:26.410
+Maybe the state of the light is changed from green to yellow, or yellow to red.
+
+00:08:26.410 --> 00:08:28.210
+So it's gone through some transition?
+
+00:08:28.209 --> 00:08:29.864
+Yes. And so if that's happened,
+
+00:08:29.865 --> 00:08:33.060
+then we start into this counting system.
+
+00:08:33.059 --> 00:08:36.629
+Counter, yes. We set that up and state is equal to state.
+
+00:08:36.629 --> 00:08:39.689
+So, it looks like we're trying to make sure that this light
+
+00:08:39.690 --> 00:08:43.320
+is staying pretty consistent before we're taking any action.
+
+00:08:43.320 --> 00:08:45.390
+Yes. Your classifier maybe a little
+
+00:08:45.389 --> 00:08:47.610
+bit noisy and maybe the lights changing and then changing again.
+
+00:08:47.610 --> 00:08:49.950
+Like it's gone from green, to yellow, to red.
+
+00:08:49.950 --> 00:08:52.440
+And so we want to make sure that the light is going to stay and.
+
+00:08:52.440 --> 00:08:54.090
+You want to be pretty certain.
+
+00:08:54.090 --> 00:08:56.009
+Yes. Before we take any action.
+
+00:08:56.009 --> 00:08:59.639
+So that looks like it's happening when the state count is greater than
+
+00:08:59.639 --> 00:09:04.465
+some threshold here and then we're saving the last state from what the state was.
+
+00:09:04.465 --> 00:09:07.594
+And, we're doing this check here.
+
+00:09:07.594 --> 00:09:11.330
+So light_waypoint equals light_waypoint
+
+00:09:11.330 --> 00:09:15.139
+if state is equal to trafficlight.RED else negative one.
+
+00:09:15.139 --> 00:09:18.335
+Right. So when we publish the location of this traffic light,
+
+00:09:18.335 --> 00:09:21.379
+we're really only interested in red traffic lights.
+
+00:09:21.379 --> 00:09:23.105
+Everything else we can continue driving through.
+
+00:09:23.105 --> 00:09:26.210
+So, light_waypoint equals itself if
+
+00:09:26.210 --> 00:09:28.070
+the state of the traffic light is red
+
+00:09:28.070 --> 00:09:30.890
+otherwise we want to keep the light_waypoint to be equal to negative one.
+
+00:09:30.889 --> 00:09:32.750
+Then that's our waypoint updater.
+
+00:09:32.750 --> 00:09:35.000
+One down the road doesn't try to update
+
+00:09:35.000 --> 00:09:38.210
+the waypoint velocities based on something other than a red light.
+
+00:09:38.210 --> 00:09:41.030
+Really, we only need to try to stop the car if the light is red.
+
+00:09:41.029 --> 00:09:42.799
+It's not necessary at all,
+
+00:09:42.799 --> 00:09:45.109
+but you may be interested in modifying this logic
+
+00:09:45.110 --> 00:09:47.539
+to also update the code if the light is yellow.
+
+00:09:47.539 --> 00:09:49.219
+Oh yes. Be more cautious,
+
+00:09:49.220 --> 00:09:52.670
+prepare to stop and even look at its pose and then environment.
+
+00:09:52.669 --> 00:09:55.279
+Or maybe adding extra acceleration to get through that yellow light.
+
+00:09:55.279 --> 00:09:57.350
+Yes. That would be fun.
+
+00:09:57.350 --> 00:09:59.750
+Could they try it out on the test lot with you?
+
+00:09:59.750 --> 00:10:02.570
+Better to bring the car to a stop.
+
+00:10:02.570 --> 00:10:03.845
+Okay.
+
+00:10:03.845 --> 00:10:06.259
+Then we're just publishing that light_waypoint,
+
+00:10:06.259 --> 00:10:08.524
+else we're doing what?
+
+00:10:08.524 --> 00:10:14.090
+We're also publishing the last waypoint and then state count plus one for our counter.
+
+00:10:14.090 --> 00:10:17.780
+Cool. So that's all getting set to the waypoints themselves.
+
+00:10:17.779 --> 00:10:20.990
+So we're just publishing the index that we found and the light waypoint?
+
+00:10:20.990 --> 00:10:22.445
+That's right and then later,
+
+00:10:22.445 --> 00:10:25.014
+we'll actually get to put use to it.
+
+00:10:25.014 --> 00:10:26.029
+Yes, so in the waypoint updater,
+
+00:10:26.029 --> 00:10:27.704
+the final part of this walkthrough,
+
+00:10:27.705 --> 00:10:31.190
+we'll discuss what to do with that light_waypoint once we've found one.
+
+00:10:31.190 --> 00:10:34.339
+Okay. Is there anything else you want to bring up with this part?
+
+00:10:34.339 --> 00:10:35.690
+No. I think that's it.
+
+00:10:35.690 --> 00:10:37.220
+Awesome. Alright.
+
+00:10:37.220 --> 00:10:39.080
+Alright. Thanks for joining us.
+
