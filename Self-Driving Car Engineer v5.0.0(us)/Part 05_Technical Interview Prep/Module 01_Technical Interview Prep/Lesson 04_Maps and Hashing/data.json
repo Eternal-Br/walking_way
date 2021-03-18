@@ -1,0 +1,460 @@
+{
+  "data": {
+    "lesson": {
+      "id": 138717,
+      "key": "7118294395",
+      "title": "Maps and Hashing",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Understand the concepts of sets, maps (dictionaries), and hashing. Examine common problems and approaches to hashing, and practice with examples.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "http://d2uz2655q5g6b2.cloudfront.net/7118294395/138717/1517077601062/Maps%20and%20Hashing%20Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "http://d2uz2655q5g6b2.cloudfront.net/7118294395/138717/1517077586590/Maps%20and%20Hashing%20Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 132416,
+          "key": "71212349810923",
+          "title": "Introduction to Maps",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71212349810923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 131900,
+              "key": "7121234981",
+              "title": "Introduction to Maps",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "JEw3iQAnGKQ",
+                "china_cdn_id": "JEw3iQAnGKQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 17569,
+          "key": "71201553220923",
+          "title": "Sets and Maps",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71201553220923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137762,
+              "key": "7120155322",
+              "title": "Sets and Maps",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "gmIb-qZhTDQ",
+                "china_cdn_id": "gmIb-qZhTDQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 53,
+          "key": "78812863000923",
+          "title": "Python Dictionaries",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78812863000923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 99434,
+              "key": "7881286300",
+              "title": "Python Dictionaries",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "7881286300",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": null,
+                "text": "In Python, the map concept appears as a built-in data type called a dictionary. A dictionary contains key-value pairs. Dictionaries might soon become your favorite data structure in Python—they're extremely easy to use and useful. Here's a sample of setting up a dictionary\n\n    udacity = {}\n    udacity['u'] = 1\n    udacity['d'] = 2\n    udacity['a'] = 3\n    udacity['c'] = 4\n    udacity['i'] = 5\n    udacity['t'] = 6\n    udacity['y'] = 7\n\n    print udacity\n    # {'u': 1, 'd': 2, 'a': 3, 'c': 4, 'i': 5, 't': 6, 'y': 7}\n\nIn this case, the letters in \"udacity\" were each keys in our dictionary, and the position of that letter in the string was the value. Thus, I can do the following:\n\n    print udacity['t']\n    # 6\n\nThis statement is saying \"go to the key labeled 't' and find it's value, 6\".\n\nDictionaries are wonderfully flexible—you can store a wide variety of structures as values. You store another dictionary or a list:\n\n    dictionary = {}\n    dictionary['d'] = [1]\n    dictionary['i'] = [2]\n    dictionary['c'] = [3]\n    dictionary['t'] = [4]\n    dictionary['i'].append(5)\n    dictionary['o'] = [6]\n    dictionary['n'] = [7]\n    dictionary['a'] = [8]\n    dictionary['r'] = [9]\n    dictionary['y'] = [10]\n    print udacity\n    # {'d': [1], 'i': [2, 5], 'c': [3], 't': [4], 'o': [6], 'n': [7], 'a': [8], 'r': [9], 'y':[10]}\n\nYou can learn even more about dictionaries in the [Python documentation](https://docs.python.org/2/tutorial/datastructures.html#dictionaries)."
+              },
+              "question": {
+                "title": "Python Dictionaries Quiz",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "7891076903",
+                "initial_code_files": [
+                  {
+                    "text": "\"\"\"Time to play with Python dictionaries!\nYou're going to work on a dictionary that\nstores cities by country and continent.\nOne is done for you - the city of Mountain \nView is in the USA, which is in North America.\n\nYou need to add the cities listed below by\nmodifying the structure.\nThen, you should print out the values specified\nby looking them up in the structure.\n\nCities to add:\nBangalore (India, Asia)\nAtlanta (USA, North America)\nCairo (Egypt, Africa)\nShanghai (China, Asia)\"\"\"\n\nlocations = {'North America': {'USA': ['Mountain View']}}\n\n\"\"\"Print the following (using \"print\").\n1. A list of all cities in the USA in\nalphabetic order.\n2. All cities in Asia, in alphabetic\norder, next to the name of the country.\nIn your output, label each answer with a number\nso it looks like this:\n1\nAmerican City\nAmerican City\n2\nAsian City - Country\nAsian City - Country\"\"\"",
+                    "name": "alg_dictionaries.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": "Here's the solution:\n\n    locations = {'North America': {'USA': ['Mountain View']}}\n    locations['North America']['USA'].append('Atlanta')\n    locations['Asia'] = {'India': ['Bangalore']}\n    locations['Asia']['China'] = ['Shanghai']\n    locations['Africa'] = {'Egypt': ['Cairo']}\n\n    print 1\n    usa_sorted = sorted(locations['North America']['USA'])\n    for city in usa_sorted:\n        print city\n\n    print 2\n    asia_cities = []\n    for countries, cities in locations['Asia'].iteritems():\n        city_country = cities[0] + \" - \" + countries \n        asia_cities.append(city_country)\n    asia_sorted = sorted(asia_cities)\n    for city in asia_sorted:\n        print city",
+                "video": null
+              }
+            }
+          ]
+        },
+        {
+          "id": 134108,
+          "key": "71220548690923",
+          "title": "Introduction to Hashing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71220548690923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137851,
+              "key": "7122054869",
+              "title": "Introduction to Hashing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "8yik3RlDFgM",
+                "china_cdn_id": "8yik3RlDFgM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 60300,
+          "key": "71227252870923",
+          "title": "Hashing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71227252870923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137746,
+              "key": "7122725287",
+              "title": "Hashing",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "kCPFfHx_LgQ",
+                "china_cdn_id": "kCPFfHx_LgQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 17562,
+          "key": "71202443450923",
+          "title": "Collisions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71202443450923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 123094,
+              "key": "7120244345",
+              "title": "Collisions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "BUaWIjZ_ToY",
+                "china_cdn_id": "BUaWIjZ_ToY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 72963,
+          "key": "79336691870923",
+          "title": "Load Factor",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "79336691870923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 135455,
+              "key": "7933669187",
+              "title": "Load Factor",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "7933669187",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": null,
+                "text": "When we're talking about hash tables, we can define a \"load factor\":\n\n    Load Factor = Number of Entries / Number of Buckets\n\nThe purpose of a load factor is to give us a sense of how \"full\" a hash table is. For example, if we're trying to store 10 values in a hash table with 1000 buckets, the load factor would be 0.01, and the majority of buckets in the table will be empty. We end up wasting memory by having so many empty buckets, so we may want to rehash, or come up with a new hash function with less buckets. We can use our load factor as an indicator for when to rehash—as the load factor approaches 0, the more empty, or sparse, our hash table is. <br>\n\nOn the flip side, the closer our load factor is to 1 (meaning the number of values equals the number of buckets), the better it would be for us to rehash and add more buckets. Any table with a load value greater than 1 is guaranteed to have collisions. <br>"
+              },
+              "question": {
+                "title": "Load Factor Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/c8IiZicGwF_Y3dENoe-N47aGA062WiFxesx2deRYkwhXX8megHTXLIX2x3uKRli2xBSBsQIS_Q3pl_ekDg=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7933669187",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "7905614952",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text1",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.11529933481152993,
+                      "width": 0.13341645885286782,
+                      "x": 0.5490375623441397,
+                      "y": 0.4575942350332594
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio1",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.25060395885286785,
+                      "y": 0.7252286585365854
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio2",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.2508182668329177,
+                      "y": 0.8315548780487805
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio3",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6862920822942643,
+                      "y": 0.7253325942350333
+                    }
+                  },
+                  {
+                    "group": "group1",
+                    "initial_value": "false",
+                    "label": null,
+                    "marker": "radio4",
+                    "model": "RadioButtonWidget",
+                    "is_text_area": null,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.05,
+                      "width": 0.05,
+                      "x": 0.6860388092269327,
+                      "y": 0.8313816518847007
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": "For the load factor, you should divide the number of values by the number of buckets. There are 100 values, as stated in the question, and 100 buckets (0 to 99). Thus, 100/100 = 1!\n\nThe answer to the second part is 107. The other values all had something wrong with them:\n\n* 125 is also a multiple of 5. Dividing a bunch of multiples of 5 by another multiple of 5 will cause a lot of collisions. Here's an example, where 10 is used as the divisor:\n    * 5 % 10 = 5\n    * 10 % 10 = 0 \n    * 15 % 10 = 5 \n    * 20 % 10 = 0\n* 87 is better than 125, but because it's less than 100 it'll still have collisions.\n* 1001 is good, but it'll create a ton of leftover buckets and waste a lot of memory.",
+                "video": null
+              }
+            }
+          ]
+        },
+        {
+          "id": 17529,
+          "key": "71212349820923",
+          "title": "Hash Maps",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71212349820923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 131875,
+              "key": "7121234982",
+              "title": "Hash Maps",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "A Python dictionary is a hash map!",
+              "video": {
+                "youtube_id": "A-ahUVi8pYQ",
+                "china_cdn_id": "A-ahUVi8pYQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 25245,
+          "key": "71234748250923",
+          "title": "String Keys",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71234748250923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 131986,
+              "key": "7123474825",
+              "title": "String Keys",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "Here's a [Stack Overflow post](http://stackoverflow.com/questions/299304/why-does-javas-hashcode-in-string-use-31-as-a-multiplier) with a discussion of Java's choice of 31 in the hashing formula.",
+              "video": {
+                "youtube_id": "WyFwieF1NN4",
+                "china_cdn_id": "WyFwieF1NN4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 53741,
+          "key": "79034242780923",
+          "title": "String Keys Practice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "79034242780923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 69762,
+              "key": "7903424278",
+              "title": "String Keys Practice",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "7903424278",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": null,
+                "text": "In this quiz, you'll write your own hash table and hash function that uses string keys. Your table will store strings in buckets by their first two letters, according to the formula below:\n\n    Hash Value = (ASCII Value of First Letter * 100) + ASCII Value of Second Letter \n\nYou can assume that the string will have at least two letters, and the first two characters are uppercase letters (ASCII values from 65 to 90). You can use the Python function `ord()` to get the ASCII value of a letter, and `chr()` to get the letter associated with an ASCII value.  <br>\n\nYou'll create a HashTable class, methods to store and lookup values, and a helper function to calculate a hash value given a string. You cannot use a Python dictionary—only lists! And remember to store lists at each bucket, and not just the string itself. For example, you can store \"UDACITY\" at index 8568 as `[\"UDACITY\"]`."
+              },
+              "question": {
+                "title": "String Keys Practice",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "7927950280",
+                "initial_code_files": [
+                  {
+                    "text": "\"\"\"Write a HashTable class that stores strings\nin a hash table, where keys are calculated\nusing the first two letters of the string.\"\"\"\n\nclass HashTable(object):\n    def __init__(self):\n        self.table = [None]*10000\n\n    def store(self, string):\n        \"\"\"Input a string that's stored in \n        the table.\"\"\"\n        pass\n\n    def lookup(self, string):\n        \"\"\"Return the hash value if the\n        string is already in the table.\n        Return -1 otherwise.\"\"\"\n        return -1\n\n    def calculate_hash_value(self, string):\n        \"\"\"Helper function to calulate a\n        hash value from a string.\"\"\"\n        return -1\n    \n# Setup\nhash_table = HashTable()\n\n# Test calculate_hash_value\n# Should be 8568\nprint hash_table.calculate_hash_value('UDACITY')\n\n# Test lookup edge case\n# Should be -1\nprint hash_table.lookup('UDACITY')\n\n# Test store\nhash_table.store('UDACITY')\n# Should be 8568\nprint hash_table.lookup('UDACITY')\n\n# Test store edge case\nhash_table.store('UDACIOUS')\n# Should be 8568\nprint hash_table.lookup('UDACIOUS')\n",
+                    "name": "alg_string_keys.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": "Here's the solution:\n\n    class HashTable(object):\n        def __init__(self):\n            self.table = [None]*10000\n\n        def store(self, string):\n            hv = self.calculate_hash_value(string)\n            if hv != -1:\n                if self.table[hv] != None:\n                    self.table[hv].append(string)\n                else:\n                    self.table[hv] = [string]\n\n        def lookup(self, string):\n            hv = self.calculate_hash_value(string)\n            if hv != -1:\n                if self.table[hv] != None:\n                    if string in self.table[hv]:\n                        return hv\n            return -1\n\n        def calculate_hash_value(self, string):\n            value = ord(string[0])*100 + ord(string[1])\n            return value",
+                "video": null
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    }
+  ]
+}

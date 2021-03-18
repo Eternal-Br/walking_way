@@ -1,0 +1,504 @@
+{
+  "data": {
+    "lesson": {
+      "id": 96311,
+      "key": "7117335401",
+      "title": "List-Based Collections",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn the definition of a list in computer science, and see definitions and examples of list-based data structures, arrays, linked lists, stacks, and queues.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "http://d2uz2655q5g6b2.cloudfront.net/7117335401/96311/1517077570675/List-Based%20Collections%20Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "http://d2uz2655q5g6b2.cloudfront.net/7117335401/96311/1517077553437/List-Based%20Collections%20Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 6151,
+          "key": "71142647970923",
+          "title": "Welcome to Collections",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71142647970923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 131949,
+              "key": "7114264797",
+              "title": "Welcome to Collections",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "cZORvZq-tI0",
+                "china_cdn_id": "cZORvZq-tI0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 72968,
+          "key": "71220341280923",
+          "title": "Lists",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71220341280923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 131920,
+              "key": "7122034128",
+              "title": "Lists",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "KUQSgUMtyv0",
+                "china_cdn_id": "KUQSgUMtyv0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 74889,
+          "key": "71227350350923",
+          "title": "Arrays",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71227350350923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 97370,
+              "key": "7122735035",
+              "title": "Arrays",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "OnPP5xDmFv0",
+                "china_cdn_id": "OnPP5xDmFv0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 104755,
+          "key": "78894523130923",
+          "title": "Python Lists",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78894523130923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 48943,
+              "key": "7889452313",
+              "title": "Python Lists",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Note: Specifically this is the runtime of finding the length of a list using the `len()` function",
+              "user_state": {
+                "node_key": "7889452313",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "",
+                  "china_cdn_id": ".mp4"
+                },
+                "text": "Python has an interesting data stucture called a \"list\" that is much more than a mere list. In fact, a Python list actually encompasses the functionality of almost every list-based data structure in this lesson. <br>\n\nBehind the scenes a Python list is built as an array. Even though you can do many operations on a Python list with just one line of code, there's a lot of code built in to the Python language running to make that operation possible. <br>\n\nFor example, inserting into a list is easy (happens in constant time). However, inserting into an array is O(n), since you may need to shift elements to make space for the one you're inserting, or even copy everything to a new array if you run out of space. Thus, inserting into a Python list is actually O(n), while operations that search for an element at a particular spot are O(1). You can see the runtime of other list operations [here](https://wiki.python.org/moin/TimeComplexity). <br>\n\nPython is a \"higher level\" programming language, so you can accomplish a task with little code. However, there's a lot of code built into the infrastructure in this way that causes your code to actually run much more slowly than you'd think. Keep this in the back of your mind when using Python. You likely won't need to know the details of how Python works behind the scenes in a programming interview, but you'll seem very impressive if you do! <br>\n\nIf you aren't already comfortable with Python lists, you can look through this [lesson](https://developers.google.com/edu/python/lists) about basic Python list manipulation."
+              },
+              "question": {
+                "title": "Python Lists Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/3OT9TmSpHoGc3haBYccuqd-nkUiM2iyaZ86PbYffQoRN89J0s0AG4g3Bq4PoHv6cEQ25eimKrASct3Ue7Oc=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7889452313",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "7890272657",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text1",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.1197339246119734,
+                      "width": 0.25561097256857856,
+                      "x": 0.373675187032419,
+                      "y": 0.41019955654101997
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text2",
+                    "model": "TextInputWidget",
+                    "is_text_area": true,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.23725055432372505,
+                      "width": 0.8029925187032418,
+                      "x": 0.09939993765586035,
+                      "y": 0.6800166297117517
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": "Good job! The answer was in the documentation from the quiz introduction. Keep in mind that Python has a lot of built-in optimizations—with a normal list, you might need to traverse through every element to find the length, but Python does some work behind the scenes to get you the list length in constant time!",
+                "video": {
+                  "youtube_id": "",
+                  "china_cdn_id": ".mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 31477,
+          "key": "71183339850923",
+          "title": "Linked Lists",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71183339850923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137800,
+              "key": "7118333985",
+              "title": "Linked Lists",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "zxkpZrozDUk",
+                "china_cdn_id": "zxkpZrozDUk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 31024,
+          "key": "71182844640923",
+          "title": "Linked Lists in Depth",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71182844640923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137774,
+              "key": "7118284464",
+              "title": "Linked Lists in Depth",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "ZONGA5wmREI",
+                "china_cdn_id": "ZONGA5wmREI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 81992,
+          "key": "78875247320923",
+          "title": "Linked List Practice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78875247320923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 38918,
+              "key": "7887524732",
+              "title": "Linked List Practice",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "7887524732",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": null,
+                "text": "There isn't a built-in data structure in Python that looks like a linked list. Thankfully, it's easy to make classes that represent data structures in Python! <br>\n\nHere's the code for an `Element`, which will be a single unit in a linked list:\n\n    class Element(object):\n        def __init__(self, value):\n            self.value = value\n            self.next = None\n        \nMake sure you understand this code before moving on! We use `__init__` to initialize a new `Element`. An Element has some `value` associated with it (which could be anything—a number, a string, a character, et cetera), and it has a variable that points to the `next` element in the linked list. <br>\n\nNow, let's set up a `LinkedList` class:\n\n    class LinkedList(object):\n        def __init__(self, head=None):\n            self.head = head\n\nThis code is very similar—we're just establishing that a `LinkedList` is something that has a `head` `Element`, which is the first element in the list. If we establish a new `LinkedList` without a `head`, it will default to `None`. <br>\n\nGreat! Let's add a method to our `LinkedList` to make it a little more useful. This method will add a new `Element` to the end of our `LinkedList`.\n\n        def append(self, new_element):\n            current = self.head\n            if self.head:\n                while current.next:\n                    current = current.next\n                current.next = new_element\n            else:\n                self.head = new_element\n        \nAgain, this part is really important, so don't rush through it. Take the code line-by-line and make sure everything makes sense. If the `LinkedList` already has a `head`, iterate through the `next` reference in every `Element` until you reach the end of the list. Set `next` for the end of the list to be the `new_element`. Alternatively, if there is no `head` already, you should just assign `new_element` to it and do nothing else."
+              },
+              "question": {
+                "title": "Linked List Quiz",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "7898342082",
+                "initial_code_files": [
+                  {
+                    "text": "\"\"\"The LinkedList code from before is provided below.\nAdd three functions to the LinkedList.\n\"get_position\" returns the element at a certain position.\nThe \"insert\" function will add an element to a particular\nspot in the list.\n\"delete\" will delete the first element with that\nparticular value.\nThen, use \"Test Run\" and \"Submit\" to run the test cases\nat the bottom.\"\"\"\n\nclass Element(object):\n    def __init__(self, value):\n        self.value = value\n        self.next = None\n        \nclass LinkedList(object):\n    def __init__(self, head=None):\n        self.head = head\n        \n    def append(self, new_element):\n        current = self.head\n        if self.head:\n            while current.next:\n                current = current.next\n            current.next = new_element\n        else:\n            self.head = new_element\n            \n    def get_position(self, position):\n        \"\"\"Get an element from a particular position.\n        Assume the first position is \"1\".\n        Return \"None\" if position is not in the list.\"\"\"\n        return None\n    \n    def insert(self, new_element, position):\n        \"\"\"Insert a new node at the given position.\n        Assume the first position is \"1\".\n        Inserting at position 3 means between\n        the 2nd and 3rd elements.\"\"\"\n        pass\n    \n    \n    def delete(self, value):\n        \"\"\"Delete the first node with a given value.\"\"\"\n        pass\n\n# Test cases\n# Set up some Elements\ne1 = Element(1)\ne2 = Element(2)\ne3 = Element(3)\ne4 = Element(4)\n\n# Start setting up a LinkedList\nll = LinkedList(e1)\nll.append(e2)\nll.append(e3)\n\n# Test get_position\n# Should print 3\nprint ll.head.next.next.value\n# Should also print 3\nprint ll.get_position(3).value\n\n# Test insert\nll.insert(e4,3)\n# Should print 4 now\nprint ll.get_position(3).value\n\n# Test delete\nll.delete(1)\n# Should print 2 now\nprint ll.get_position(1).value\n# Should print 4 now\nprint ll.get_position(2).value\n# Should print 3 now\nprint ll.get_position(3).value",
+                    "name": "algorithmsP2.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": "Here's one answer—how does it compare to yours?\n\n    class Element(object):\n        def __init__(self, value):\n            self.value = value\n            self.next = None\n        \n    class LinkedList(object):\n        def __init__(self, head=None):\n            self.head = head\n        \n        def append(self, new_element):\n            current = self.head\n            if self.head:\n                while current.next:\n                    current = current.next\n                current.next = new_element\n            else:\n                self.head = new_element\n\n        def get_position(self, position):\n            counter = 1\n            current = self.head\n            if position < 1:\n                return None\n            while current and counter <= position:\n                if counter == position:\n                    return current\n                current = current.next\n                counter += 1\n            return None\n    \n        def insert(self, new_element, position):\n            counter = 1\n            current = self.head\n            if position > 1:\n                while current and counter < position:\n                    if counter == position - 1:\n                        new_element.next = current.next\n                        current.next = new_element\n                    current = current.next\n                    counter += 1\n            elif position == 1:\n                new_element.next = self.head\n                self.head = new_element\n    \n        def delete(self, value):\n            current = self.head\n            previous = None\n            while current.value != value and current.next:\n                previous = current\n                current = current.next\n            if current.value == value:\n                if previous:\n                    previous.next = current.next\n                else:\n                    self.head = current.next",
+                "video": null
+              }
+            }
+          ]
+        },
+        {
+          "id": 104814,
+          "key": "71144048880923",
+          "title": "Stacks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71144048880923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 131886,
+              "key": "7114404888",
+              "title": "Stacks",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "DQoCO8aGcNc",
+                "china_cdn_id": "DQoCO8aGcNc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 41459,
+          "key": "71225347790923",
+          "title": "Stacks Details",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71225347790923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 38458,
+              "key": "7122534779",
+              "title": "Stacks Details",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "HpaVHzDeZC4",
+                "china_cdn_id": "HpaVHzDeZC4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 33382,
+          "key": "78792965540923",
+          "title": "Stack Practice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78792965540923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 30880,
+              "key": "7879296554",
+              "title": "Stack Practice",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "Here's an alternative solution to delete_first() - https://gist.github.com/adarsh0806/02d8e1d54d510294e75dfbc0d9bd7059\n\nBenefits of this method:\n\n1) this version has fewer lines of code with no loss of functionality\n2) this version clears out the next field of the deleted element (good practice, even though it's not in the specification)",
+              "user_state": {
+                "node_key": "7879296554",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": {
+                  "youtube_id": "",
+                  "china_cdn_id": ".mp4"
+                },
+                "text": "Remember that wonderful Python list we talked about eariler? It turns out that stack functionality is already built into it! <br>\n\nThe [Python documentation](https://docs.python.org/2/tutorial/datastructures.html#using-lists-as-stacks) shows how you can use built-in funtions to turn your Python list into a stack. `pop()` is a given function, and `append()` is equivalent to a push function.  <br>\n\nOf course, this functionality makes stack manipulation in Python all too easy. Let's make our own `Stack` class to see how a stack really works under the hood."
+              },
+              "question": {
+                "title": "Stack Quiz",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "7900843348",
+                "initial_code_files": [
+                  {
+                    "text": "\"\"\"Add a couple methods to our LinkedList class,\nand use that to implement a Stack.\nYou have 4 functions below to fill in:\ninsert_first, delete_first, push, and pop.\nThink about this while you're implementing:\nwhy is it easier to add an \"insert_first\"\nfunction than just use \"append\"?\"\"\"\n\nclass Element(object):\n    def __init__(self, value):\n        self.value = value\n        self.next = None\n        \nclass LinkedList(object):\n    def __init__(self, head=None):\n        self.head = head\n        \n    def append(self, new_element):\n        current = self.head\n        if self.head:\n            while current.next:\n                current = current.next\n            current.next = new_element\n        else:\n            self.head = new_element\n\n    def insert_first(self, new_element):\n        \"Insert new element as the head of the LinkedList\"\n        pass\n\n    def delete_first(self):\n        \"Delete the first (head) element in the LinkedList as return it\"\n        pass\n\nclass Stack(object):\n    def __init__(self,top=None):\n        self.ll = LinkedList(top)\n\n    def push(self, new_element):\n        \"Push (add) a new element onto the top of the stack\"\n        pass\n\n    def pop(self):\n        \"Pop (remove) the first element off the top of the stack and return it\"\n        pass\n    \n# Test cases\n# Set up some Elements\ne1 = Element(1)\ne2 = Element(2)\ne3 = Element(3)\ne4 = Element(4)\n\n# Start setting up a Stack\nstack = Stack(e1)\n\n# Test stack functionality\nstack.push(e2)\nstack.push(e3)\nprint stack.pop().value\nprint stack.pop().value\nprint stack.pop().value\nprint stack.pop()\nstack.push(e4)\nprint stack.pop().value",
+                    "name": "algorithmsP3.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": "There's a solution below. We had two options here—either pop and push from the first element in our linked list, or pop and push from the last element. We already had a function, `append()`, that adds an element to the end.\n\nWhy didn't we just come up with a function for removing the last element and call it a day? Every operation on a linked list must start with the head. `append()` thus traverses the whole list, taking O(n). Any operation on the last element requires us to traverse everything, so even though we had to write a new method our code will run much faster if we push/pop from the first element in a linked list.\n\n    class Element(object):\n        def __init__(self, value):\n            self.value = value\n            self.next = None\n            \n    class LinkedList(object):\n        def __init__(self, head=None):\n            self.head = head\n            \n        def append(self, new_element):\n            current = self.head\n            if self.head:\n                while current.next:\n                    current = current.next\n                current.next = new_element\n            else:\n                self.head = new_element\n\n        def insert_first(self, new_element):\n            new_element.next = self.head\n            self.head = new_element\n\n        def delete_first(self):\n            if self.head:\n                deleted_element = self.head\n                temp = deleted_element.next\n                self.head = temp\n                return deleted_element\n            else:\n                return None\n\n    class Stack(object):\n        def __init__(self,top=None):\n            self.ll = LinkedList(top)\n\n        def push(self, new_element):\n            self.ll.insert_first(new_element)\n\n        def pop(self):\n            return self.ll.delete_first()",
+                "video": {
+                  "youtube_id": "",
+                  "china_cdn_id": ".mp4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": 41953,
+          "key": "71222050580923",
+          "title": "Queues",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71222050580923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137764,
+              "key": "7122205058",
+              "title": "Queues",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "XAbzlilAHZw",
+                "china_cdn_id": "XAbzlilAHZw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 19864,
+          "key": "78875255560923",
+          "title": "Queue Practice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78875255560923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 104718,
+              "key": "7887525556",
+              "title": "Queue Practice",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "7887525556",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": null,
+                "text": "Let's look at implementing queues in Python. Queue's are mentioned in [Python's documentation](https://docs.python.org/2/tutorial/datastructures.html#using-lists-as-queues). Examine the code below:\n\n    from collections import deque\n\nFrom a library called `collections`, you can import a package called `deque`. As was mentioned in the video, a deque is a double-ended queue. You can enqueue on either end, but in the example you only enqueue one way and treat it as a normal queue."
+              },
+              "question": {
+                "title": "Queue Quiz",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "7881354936",
+                "initial_code_files": [
+                  {
+                    "text": "\"\"\"Make a Queue class using a list!\nHint: You can use any Python list method\nyou'd like! Try to write each one in as \nfew lines as possible.\nMake sure you pass the test cases too!\"\"\"\n\nclass Queue:\n    def __init__(self, head=None):\n        self.storage = [head]\n\n    def enqueue(self, new_element):\n        pass\n\n    def peek(self):\n        pass \n\n    def dequeue(self):\n        pass\n    \n# Setup\nq = Queue(1)\nq.enqueue(2)\nq.enqueue(3)\n\n# Test peek\n# Should be 1\nprint q.peek()\n\n# Test dequeue\n# Should be 1\nprint q.dequeue()\n\n# Test enqueue\nq.enqueue(4)\n# Should be 2\nprint q.dequeue()\n# Should be 3\nprint q.dequeue()\n# Should be 4\nprint q.dequeue()\nq.enqueue(5)\n# Should be 5\nprint q.peek()",
+                    "name": "algorithmsP4.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": "I managed to write all of the methods in one line!\n\n    class Queue(object):\n        def __init__(self, head=None):\n            self.storage = [head]\n\n        def enqueue(self, new_element):\n            self.storage.append(new_element)\n\n        def peek(self):\n            return self.storage[0]\n\n        def dequeue(self):\n            return self.storage.pop(0)",
+                "video": null
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    }
+  ]
+}

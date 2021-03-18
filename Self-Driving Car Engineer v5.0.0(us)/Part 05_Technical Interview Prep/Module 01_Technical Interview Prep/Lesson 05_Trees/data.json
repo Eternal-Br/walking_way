@@ -1,0 +1,759 @@
+{
+  "data": {
+    "lesson": {
+      "id": 112971,
+      "key": "7122604912",
+      "title": "Trees",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn the concepts and terminology associated with tree data structures. Investigate tree types, such as binary search trees, heaps, and self-balancing trees.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "http://d2uz2655q5g6b2.cloudfront.net/7122604912/112971/1517077532947/Trees%20Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "http://d2uz2655q5g6b2.cloudfront.net/7122604912/112971/1517077500721/Trees%20Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 105491,
+          "key": "71181250250923",
+          "title": "Trees",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71181250250923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 46690,
+              "key": "7118125025",
+              "title": "Trees",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "PXie7f22v2Q",
+                "china_cdn_id": "PXie7f22v2Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 132622,
+          "key": "71414033730923",
+          "title": "Tree Basics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71414033730923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 123385,
+              "key": "7141403373",
+              "title": "Tree Basics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "oaxLPzaXRDc",
+                "china_cdn_id": "oaxLPzaXRDc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 25244,
+          "key": "71181949160923",
+          "title": "Tree Terminology",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71181949160923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137707,
+              "key": "7118194916",
+              "title": "Tree Terminology",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "mPUsDUR_sj8",
+                "china_cdn_id": "mPUsDUR_sj8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "key": "78983459520923",
+          "title": "Tree Practice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78983459520923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 97574,
+              "key": "7898345952",
+              "title": "Tree Practice",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "7898345952",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "Tree Quiz",
+                "alt_text": null,
+                "background_image": "//lh3.googleusercontent.com/LP0CcWvEKUVw7Ekxp4EkoeLwrh_MsQtlffXJrFAR5NnsHZbCV7UtgG8j2RdaWVTK52CrpDu3lwkYlcq6k2J7=s0#w=1920&h=1080",
+                "non_google_background_image": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7898345952",
+                "semantic_type": "ImageFormQuestion",
+                "evaluation_id": "7900766165",
+                "widgets": [
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text1",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.10972568578553615,
+                      "x": 0.7464931421446384,
+                      "y": 0.36374029933481156
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text2",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.11097256857855362,
+                      "x": 0.746571072319202,
+                      "y": 0.4779309866962306
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text3",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.11097256857855362,
+                      "x": 0.7471555486284289,
+                      "y": 0.5868209534368071
+                    }
+                  },
+                  {
+                    "group": null,
+                    "initial_value": "",
+                    "label": null,
+                    "marker": "text4",
+                    "model": "TextInputWidget",
+                    "is_text_area": false,
+                    "tabindex": null,
+                    "placement": {
+                      "height": 0.07095343680709534,
+                      "width": 0.11097256857855362,
+                      "x": 0.7465321072319202,
+                      "y": 0.707005266075388
+                    }
+                  }
+                ]
+              },
+              "answer": {
+                "text": "Here are the answers: <br>\n\nLevel of D: 3 <br>\n\nParent of C: A <br>\n\nHeight of B: 2 <br>\n\nDepth of F: 3 <br>",
+                "video": null
+              }
+            }
+          ]
+        },
+        {
+          "id": 132582,
+          "key": "71162844790923",
+          "title": "Tree Traversal",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71162844790923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 71101,
+              "key": "7116284479",
+              "title": "Tree Traversal",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "KZOdmzypynw",
+                "china_cdn_id": "KZOdmzypynw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 74800,
+          "key": "71581606970923",
+          "title": "Depth-First Traversals",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71581606970923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 21877,
+              "key": "7158160697",
+              "title": "Depth-First Traversals",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "wp5ohHFTieM",
+                "china_cdn_id": "wp5ohHFTieM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 86713,
+          "key": "79320589080923",
+          "title": "Tree Traversal Practice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "79320589080923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 289006,
+              "key": "fc48b959-917c-4577-bc69-54f41a692908",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/March/58dd62a1_tree-traversal-practice/tree-traversal-practice.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fc48b959-917c-4577-bc69-54f41a692908",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 289007,
+              "key": "18befc53-486c-45f7-85eb-6a23cbbfc052",
+              "title": "Tree Traversal Practice",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "18befc53-486c-45f7-85eb-6a23cbbfc052",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Write out the order nodes would be visited in a post-order traversal. Use the format\n\n> X, Y, Z\n\nwhen inputting your response.",
+                "matchers": [
+                  {
+                    "expression": "D,\\s*F,\\s*E,\\s*B,\\s*C,\\s*A"
+                  },
+                  {
+                    "expression": "A,\\s*B,\\s*C,\\s*D,\\s*E,\\s*F"
+                  },
+                  {
+                    "expression": "A,\\s*B,\\s*D,\\s*E,\\s*F,\\s*C"
+                  },
+                  {
+                    "expression": "D,\\s*B,\\s*E,\\s*F,\\s*A,\\s*C"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 54118,
+          "key": "71183251480923",
+          "title": "Search and Delete",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71183251480923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137700,
+              "key": "7118325148",
+              "title": "Search and Delete",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "KbL-HK3ztX8",
+                "china_cdn_id": "KbL-HK3ztX8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 31515,
+          "key": "71227443760923",
+          "title": "Insert",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71227443760923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 21891,
+              "key": "7122744376",
+              "title": "Insert",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "j6PkPa2ZHWg",
+                "china_cdn_id": "j6PkPa2ZHWg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 41695,
+          "key": "71430529940923",
+          "title": "Binary Search Trees",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71430529940923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 131828,
+              "key": "7143052994",
+              "title": "Binary Search Trees",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "7-ZQrugO-Yc",
+                "china_cdn_id": "7-ZQrugO-Yc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 72082,
+          "key": "79211181170923",
+          "title": "Binary Tree Practice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "79211181170923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 71269,
+              "key": "7921118117",
+              "title": "Binary Tree Practice",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "7921118117",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": null,
+                "text": "Now, it's your turn! Your goal is to create your own binary tree. You should start with the most basic building block:\n\n    class Node(object):\n        def __init__(self, value):\n            self.value = value\n            self.left = None\n            self.right = None\n        \nEvery node has some value, and pointers to left and right children.  <br>\n\nYou'll need to implement two methods: `search()`, which searches for the presence of a node in the tree, and `print_tree()`, which prints out the values of tree nodes in a pre-order traversal. You should attempt to use the helper methods provided to create recursive solutions to these functions. <br>\n\nLet's get started!"
+              },
+              "question": {
+                "title": "Binary Tree Quiz",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "7931399997",
+                "initial_code_files": [
+                  {
+                    "text": "class Node(object):\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\n\nclass BinaryTree(object):\n    def __init__(self, root):\n        self.root = Node(root)\n\n    def search(self, find_val):\n        \"\"\"Return True if the value\n        is in the tree, return\n        False otherwise.\"\"\"\n        return False\n\n    def print_tree(self):\n        \"\"\"Print out all tree nodes\n        as they are visited in\n        a pre-order traversal.\"\"\"\n        return \"\"\n\n    def preorder_search(self, start, find_val):\n        \"\"\"Helper method - use this to create a \n        recursive search solution.\"\"\"\n        return False\n\n    def preorder_print(self, start, traversal):\n        \"\"\"Helper method - use this to create a \n        recursive print solution.\"\"\"\n        return traversal\n\n\n# Set up tree\ntree = BinaryTree(1)\ntree.root.left = Node(2)\ntree.root.right = Node(3)\ntree.root.left.left = Node(4)\ntree.root.left.right = Node(5)\n\n# Test search\n# Should be True\nprint tree.search(4)\n# Should be False\nprint tree.search(6)\n\n# Test print_tree\n# Should be 1-2-4-5-3\nprint tree.print_tree()",
+                    "name": "binary_tree.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": "This is one solution for BinaryTree:\n\n    class BinaryTree(object):\n        def __init__(self, root):\n            self.root = Node(root)\n\n        def search(self, find_val):\n            return self.preorder_search(tree.root, find_val)\n\n        def print_tree(self):\n            return self.preorder_print(tree.root, \"\")[:-1]\n\n        def preorder_search(self, start, find_val):\n            if start:\n                if start.value == find_val:\n                    return True\n                else:\n                    return self.preorder_search(start.left, find_val) or self.preorder_search(start.right, find_val)\n            return False\n\n        def preorder_print(self, start, traversal):\n            if start:\n                traversal += (str(start.value) + \"-\")\n                traversal = self.preorder_print(start.left, traversal)\n                traversal = self.preorder_print(start.right, traversal)\n            return traversal",
+                "video": null
+              }
+            }
+          ]
+        },
+        {
+          "id": 90445,
+          "key": "71192455310923",
+          "title": "BSTs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71192455310923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137718,
+              "key": "7119245531",
+              "title": "BSTs",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "abRNGLhGUmE",
+                "china_cdn_id": "abRNGLhGUmE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 13187,
+          "key": "71572606160923",
+          "title": "BST Complications",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71572606160923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137698,
+              "key": "7157260616",
+              "title": "BST Complications",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "pcB0wV7myy4",
+                "china_cdn_id": "pcB0wV7myy4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 115121,
+          "key": "79198839630923",
+          "title": "BST Practice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "79198839630923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 112489,
+              "key": "7919883963",
+              "title": "BST Practice",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "7919883963",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": {
+                "video": null,
+                "text": "Now try implementing a BST on your own. You'll use the same `Node` class as before:\n\n    class Node(object):\n        def __init__(self, value):\n            self.value = value\n            self.left = None\n            self.right = None\n        \nThis time, you'll implement `search()` and `insert()`. You should rewrite `search()` and not use your code from the last exercise so it takes advantage of BST properties. Feel free to make any helper functions you feel like you need, including the `print_tree()` function from earlier for debugging. You can assume that two nodes with the same value won't be inserted into the tree.  <br>\n\nBeware of all the complications discussed in the videos!"
+              },
+              "question": {
+                "title": "BST Quiz",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "7920954308",
+                "initial_code_files": [
+                  {
+                    "text": "class Node(object):\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\n\nclass BST(object):\n    def __init__(self, root):\n        self.root = Node(root)\n\n    def insert(self, new_val):\n        pass\n\n    def search(self, find_val):\n        return False\n    \n# Set up tree\ntree = BST(4)\n\n# Insert elements\ntree.insert(2)\ntree.insert(1)\ntree.insert(3)\ntree.insert(5)\n\n# Check search\n# Should be True\nprint tree.search(4)\n# Should be False\nprint tree.search(6)",
+                    "name": "bst.py"
+                  }
+                ]
+              },
+              "answer": {
+                "text": "Below is a sample solution. There are a number of different solutions, so don't fret if yours isn't exactly the same!\n\n    class BST(object):\n        def __init__(self, root):\n            self.root = Node(root)\n\n        def insert(self, new_val):\n            self.insert_helper(self.root, new_val)\n\n        def insert_helper(self, current, new_val):\n            if current.value < new_val:\n                if current.right:\n                    self.insert_helper(current.right, new_val)\n                else:\n                    current.right = Node(new_val)\n            else:\n                if current.left:\n                    self.insert_helper(current.left, new_val)\n                else:\n                    current.left = Node(new_val)\n\n        def search(self, find_val):\n            return self.search_helper(self.root, find_val)\n\n        def search_helper(self, current, find_val):\n            if current:\n                if current.value == find_val:\n                    return True\n                elif current.value < find_val:\n                    return self.search_helper(current.right, find_val)\n                else:\n                    return self.search_helper(current.left, find_val)\n            return False",
+                "video": null
+              }
+            }
+          ]
+        },
+        {
+          "id": 132581,
+          "key": "71221554260923",
+          "title": "Heaps",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71221554260923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 131816,
+              "key": "7122155426",
+              "title": "Heaps",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "M3B0UJWS_ag",
+                "china_cdn_id": "M3B0UJWS_ag.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 72500,
+          "key": "71581606960923",
+          "title": "Heapify",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71581606960923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 97293,
+              "key": "7158160696",
+              "title": "Heapify",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "CAbDbiCfERY",
+                "china_cdn_id": "CAbDbiCfERY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 19900,
+          "key": "71264649500923",
+          "title": "Heap Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71264649500923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 122402,
+              "key": "7126464950",
+              "title": "Heap Implementation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "2LAdml6_pDY",
+                "china_cdn_id": "2LAdml6_pDY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 67933,
+          "key": "71181444750923",
+          "title": "Self-Balancing Trees",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "71181444750923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 97211,
+              "key": "7118144475",
+              "title": "Self-Balancing Trees",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "EHI548K3jiw",
+                "china_cdn_id": "EHI548K3jiw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 94094,
+          "key": "78867246220923",
+          "title": "Red-Black Trees - Insertion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78867246220923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 97203,
+              "key": "7886724622",
+              "title": "Red-Black Trees - Insertion",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "dIuWLtWnkgs",
+                "china_cdn_id": "dIuWLtWnkgs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 22387,
+          "key": "78761857970923",
+          "title": "Tree Rotations",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78761857970923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 131809,
+              "key": "7876185797",
+              "title": "Tree Rotations",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "O5Yl-m0YbVA",
+                "china_cdn_id": "O5Yl-m0YbVA.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_background_image",
+      "reason": "(2016/8/18) Not sure, ask i18n team for alternative"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

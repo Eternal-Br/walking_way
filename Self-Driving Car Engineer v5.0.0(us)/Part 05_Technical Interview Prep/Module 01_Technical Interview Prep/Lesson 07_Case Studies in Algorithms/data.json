@@ -1,0 +1,261 @@
+{
+  "data": {
+    "lesson": {
+      "id": 96307,
+      "key": "7121164795",
+      "title": "Case Studies in Algorithms",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Explore famous computer science problems, specifically the Shortest Path Problem, the Knapsack Problem, and the Traveling Salesman Problem.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "http://d2uz2655q5g6b2.cloudfront.net/7121164795/96307/1517077871132/Case%20Studies%20in%20Algorithms%20Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "http://d2uz2655q5g6b2.cloudfront.net/7121164795/96307/1517077855408/Case%20Studies%20in%20Algorithms%20Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 83588,
+          "key": "77089806960923",
+          "title": "Case Study Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "77089806960923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 97283,
+              "key": "7708980696",
+              "title": "Case Study Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "r8uEDyBylHY",
+                "china_cdn_id": "r8uEDyBylHY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 53703,
+          "key": "77114607130923",
+          "title": "Shortest Path Problem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "77114607130923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 97270,
+              "key": "7711460713",
+              "title": "Shortest Path Problem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "huKUM97Vve8",
+                "china_cdn_id": "huKUM97Vve8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 91502,
+          "key": "77071005550923",
+          "title": "Dijkstra's Algorithm",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "77071005550923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 131867,
+              "key": "7707100555",
+              "title": "Dijkstra's Algorithm",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "SoPMK03cOgk",
+                "china_cdn_id": "SoPMK03cOgk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 41950,
+          "key": "77134904150923",
+          "title": "Knapsack Problem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "77134904150923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137740,
+              "key": "7713490415",
+              "title": "Knapsack Problem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "-xRKazHGtjU",
+                "china_cdn_id": "-xRKazHGtjU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 53699,
+          "key": "77134904160923",
+          "title": "A Faster Algorithm",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "77134904160923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 21880,
+              "key": "7713490416",
+              "title": "A Faster Algorithm",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "J7S3CHFBZJA",
+                "china_cdn_id": "J7S3CHFBZJA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 21241,
+          "key": "77299501380923",
+          "title": "Dynamic Programming",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "77299501380923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137726,
+              "key": "7729950138",
+              "title": "Dynamic Programming",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "VQeFcG9pjJU",
+                "china_cdn_id": "VQeFcG9pjJU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 36910,
+          "key": "77078605330923",
+          "title": "Traveling Salesman Problem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "77078605330923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 132019,
+              "key": "7707860533",
+              "title": "Traveling Salesman Problem",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "9ruR5Ux63QU",
+                "china_cdn_id": "9ruR5Ux63QU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 81980,
+          "key": "77034003270923",
+          "title": "Exact and Approximate Algorithms",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "77034003270923",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 137719,
+              "key": "7703400327",
+              "title": "Exact and Approximate Algorithms",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "video": {
+                "youtube_id": "3A8YqOYlAwQ",
+                "china_cdn_id": "3A8YqOYlAwQ.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
