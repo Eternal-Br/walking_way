@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.100
+Welcome to ROS Essentials.
+
+00:00:02.100 --> 00:00:04.165
+I'm here with Thomas and Brandon,
+
+00:00:04.165 --> 00:00:07.014
+who will be your guides through the next few lessons.
+
+00:00:07.014 --> 00:00:09.570
+So Brandon, what are these lessons all about?
+
+00:00:09.570 --> 00:00:13.484
+These lessons are all about the Robot Operating System or ROS for short.
+
+00:00:13.484 --> 00:00:17.893
+ROS is widely used across the industry and academia for building robotics applications.
+
+00:00:17.893 --> 00:00:21.148
+After this quick introduction to the basic components of ROS,
+
+00:00:21.149 --> 00:00:24.719
+you'll have the tools you need to start building awesome robots yourself.
+
+00:00:24.719 --> 00:00:27.510
+Fantastic. So Thomas, how does the content in
+
+00:00:27.510 --> 00:00:31.184
+these lessons relate to what students will be doing through the rest of the program?
+
+00:00:31.184 --> 00:00:33.539
+We'll be using ROS throughout this program as
+
+00:00:33.539 --> 00:00:36.448
+our software framework to control super cool robots.
+
+00:00:36.448 --> 00:00:37.769
+In the lessons that come,
+
+00:00:37.770 --> 00:00:41.969
+you'll take what you've learned here and build on it to create some exciting projects.
+
+00:00:41.969 --> 00:00:44.109
+Awesome. Well, let's get started then.
+

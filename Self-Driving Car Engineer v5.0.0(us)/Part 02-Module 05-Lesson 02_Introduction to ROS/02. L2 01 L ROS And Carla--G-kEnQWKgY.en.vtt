@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.839
+In the previous lesson you gained a conceptual understanding of
+
+00:00:03.839 --> 00:00:07.769
+the system architecture for Carla, our autonomous vehicle.
+
+00:00:07.769 --> 00:00:09.959
+Next you're going to see how this software is
+
+00:00:09.960 --> 00:00:13.955
+implemented and even practice implementing some of the software yourself.
+
+00:00:13.955 --> 00:00:18.870
+Carla's software uses the Robot Operating System or ROS for short.
+
+00:00:18.870 --> 00:00:22.530
+ROS is an Open Source Robotics framework that provides libraries and
+
+00:00:22.530 --> 00:00:27.320
+tools for working with hardware and for passing messages between components.
+
+00:00:27.320 --> 00:00:30.734
+ROS provides scaffolding to integrate the components of the car.
+
+00:00:30.734 --> 00:00:33.810
+In the next lessons our Udacity colleagues from
+
+00:00:33.810 --> 00:00:36.900
+the robotics Nano-degree program will teach you the basics
+
+00:00:36.899 --> 00:00:41.000
+of ROS so you'll be ready to write code that can drive Carla.
+

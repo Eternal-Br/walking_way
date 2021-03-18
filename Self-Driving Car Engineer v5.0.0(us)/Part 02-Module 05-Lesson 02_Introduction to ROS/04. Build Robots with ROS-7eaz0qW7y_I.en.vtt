@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:02.459 --> 00:00:05.500
+Hey Brandon, want to build a robot?
+
+00:00:05.500 --> 00:00:08.913
+Sure, sounds good. Looks like you've got some hardware here. What's left to do?
+
+00:00:08.913 --> 00:00:13.778
+Yeah. All we need to do now is write device drivers for all our sensors and actuators,
+
+00:00:13.778 --> 00:00:17.289
+develop a communications framework that can support four different protocols,
+
+00:00:17.289 --> 00:00:19.570
+write algorithms to do perception,
+
+00:00:19.570 --> 00:00:21.399
+navigation and motion planning.
+
+00:00:21.399 --> 00:00:22.945
+Yeah. And then after that,
+
+00:00:22.945 --> 00:00:25.160
+we can implement a mechanism to log our data,
+
+00:00:25.160 --> 00:00:26.980
+write our control algorithms,
+
+00:00:26.980 --> 00:00:29.170
+oh, and don't forget error handling.
+
+00:00:29.170 --> 00:00:31.489
+Awesome. Let's get started.
+
+00:00:31.489 --> 00:00:43.118
+So, how's it going guys?
+
+00:00:43.118 --> 00:00:43.658
+Great.
+
+00:00:43.658 --> 00:00:48.495
+Yeah, we got the lights to turn on.
+
+00:00:48.496 --> 00:01:01.140
+Building a robot used to be a long and cumbersome process.
+
+00:01:01.140 --> 00:01:03.859
+All the components had to essentially be built from scratch.
+
+00:01:03.859 --> 00:01:08.430
+In this lesson, we'll be giving you an introduction to robot operating system or ROS,
+
+00:01:08.430 --> 00:01:12.450
+which is a software framework that greatly simplifies robot development.
+
+00:01:12.450 --> 00:01:14.930
+There are many advantages to developing robots with ROS.
+
+00:01:14.930 --> 00:01:16.125
+But before we dive deep,
+
+00:01:16.125 --> 00:01:19.075
+I think we should explain what ROS actually is.
+
+00:01:19.075 --> 00:01:23.954
+Indeed, ROS is an open source software framework for robotics development.
+
+00:01:23.953 --> 00:01:27.144
+To help you get a better understanding of what ROS is,
+
+00:01:27.144 --> 00:01:30.015
+let's illustrate some of its components and features.
+
+00:01:30.015 --> 00:01:32.924
+ROS is not an operating system in the typical sense,
+
+00:01:32.924 --> 00:01:35.280
+but like an OS, it provides a means of talking
+
+00:01:35.280 --> 00:01:38.250
+to hardware without writing your own device drivers.
+
+00:01:38.250 --> 00:01:40.590
+It also provides a way for different processes
+
+00:01:40.590 --> 00:01:43.680
+to communicate with one another via message passing.
+
+00:01:43.680 --> 00:01:46.049
+Lastly, ROS features a sleek build and
+
+00:01:46.049 --> 00:01:50.739
+package management system allowing you to develop and deploy software with ease.
+
+00:01:50.739 --> 00:01:54.870
+ROS also has tools for visualization, simulation and analysis,
+
+00:01:54.870 --> 00:01:57.185
+as well as extensive community support and
+
+00:01:57.185 --> 00:02:00.129
+an interface to numerous powerful software libraries.
+
+00:02:00.129 --> 00:02:01.950
+Before diving deeper into all this,
+
+00:02:01.950 --> 00:02:05.000
+let's take a brief tour of the history of ROS.
+

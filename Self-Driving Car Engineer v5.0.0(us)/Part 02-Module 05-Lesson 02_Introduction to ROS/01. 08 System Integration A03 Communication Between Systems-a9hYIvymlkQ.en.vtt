@@ -1,0 +1,28 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.165
+One of the beautiful things that exist in this space is
+
+00:00:03.165 --> 00:00:05.759
+a operating system for robots that we're going to
+
+00:00:05.759 --> 00:00:08.539
+use extensively in the upcoming Capstone Project.
+
+00:00:08.539 --> 00:00:11.344
+It's called ROS, R-O-S.
+
+00:00:11.345 --> 00:00:14.640
+So, we want to show you ROS because it solves
+
+00:00:14.640 --> 00:00:17.789
+some of the hard problems about modularity and
+
+00:00:17.789 --> 00:00:20.730
+interprocess communication that you otherwise have to do by
+
+00:00:20.730 --> 00:00:25.039
+hand and we want you to use ROS later on in your Capstone Project.
+
