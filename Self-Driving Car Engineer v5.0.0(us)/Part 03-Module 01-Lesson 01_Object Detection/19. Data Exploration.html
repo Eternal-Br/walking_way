@@ -1,0 +1,555 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Data Exploration
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Object Detection
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro to Vehicle Tracking.html">
+       01. Intro to Vehicle Tracking
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Arpan and Drew.html">
+       02. Arpan and Drew
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Finding Cars.html">
+       03. Finding Cars
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Object Detection Overview.html">
+       04. Object Detection Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Manual Vehicle Detection.html">
+       05. Manual Vehicle Detection
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Features.html">
+       06. Features
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Feature Intuition.html">
+       07. Feature Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Color Features.html">
+       08. Color Features
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Template Matching.html">
+       09. Template Matching
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Template Matching Quiz.html">
+       10. Template Matching Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Color Histogram Features.html">
+       11. Color Histogram Features
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Histograms of Color.html">
+       12. Histograms of Color
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Histogram Comparison.html">
+       13. Histogram Comparison
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Color Spaces.html">
+       14. Color Spaces
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Explore Color Spaces.html">
+       15. Explore Color Spaces
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Spatial Binning of Color.html">
+       16. Spatial Binning of Color
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Gradient Features.html">
+       17. Gradient Features
+      </a>
+     </li>
+     <li class="">
+      <a href="18. HOG Features.html">
+       18. HOG Features
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Data Exploration.html">
+       19. Data Exploration
+      </a>
+     </li>
+     <li class="">
+      <a href="20. scikit-image HOG.html">
+       20. scikit-image HOG
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Combining Features.html">
+       21. Combining Features
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Combine and Normalize Features.html">
+       22. Combine and Normalize Features
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Build a Classifier.html">
+       23. Build a Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Labeled Data.html">
+       24. Labeled Data
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Data Preparation.html">
+       25. Data Preparation
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Train a Classifier.html">
+       26. Train a Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Parameter Tuning.html">
+       27. Parameter Tuning
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Color Classify.html">
+       28. Color Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="29. HOG Classify.html">
+       29. HOG Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Sliding Windows.html">
+       30. Sliding Windows
+      </a>
+     </li>
+     <li class="">
+      <a href="31. How many windows.html">
+       31. How many windows?
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Sliding Window Implementation.html">
+       32. Sliding Window Implementation
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Multi-scale Windows.html">
+       33. Multi-scale Windows
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Search and Classify.html">
+       34. Search and Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Hog Sub-sampling Window Search.html">
+       35. Hog Sub-sampling Window Search
+      </a>
+     </li>
+     <li class="">
+      <a href="36. False Positives.html">
+       36. False Positives
+      </a>
+     </li>
+     <li class="">
+      <a href="37. Multiple Detections &amp; False Positives.html">
+       37. Multiple Detections &amp; False Positives
+      </a>
+     </li>
+     <li class="">
+      <a href="38. Tracking Pipeline.html">
+       38. Tracking Pipeline
+      </a>
+     </li>
+     <li class="">
+      <a href="39. Summary.html">
+       39. Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="40. Traditional vs. Deep Learning Approach.html">
+       40. Traditional vs. Deep Learning Approach
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          19. Data Exploration
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="data-exploration">
+          Data Exploration
+         </h1>
+         <p>
+          For the exercises throughout the rest of this lesson, we'll use a relatively small labeled dataset to try out feature extraction and training a classifier.  Before we get on to extracting HOG features and training a classifier, let's explore the dataset a bit. This dataset is a subset of the data you'll be starting with for the project.
+         </p>
+         <p>
+          There's no need to download anything at this point, but if you want to, you can download this subset of images for
+          <a href="https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/vehicles_smallset.zip" rel="noopener noreferrer" target="_blank">
+           vehicles
+          </a>
+          and
+          <a href="https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/non-vehicles_smallset.zip" rel="noopener noreferrer" target="_blank">
+           non-vehicles
+          </a>
+          , or if you prefer you can directly grab the larger project dataset for
+          <a href="https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/vehicles.zip" rel="noopener noreferrer" target="_blank">
+           vehicles
+          </a>
+          and
+          <a href="https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/non-vehicles.zip" rel="noopener noreferrer" target="_blank">
+           non-vehicles
+          </a>
+          .
+         </p>
+         <p>
+          These datasets are comprised of images taken from the
+          <a href="http://www.gti.ssr.upm.es/data/Vehicle_database.html" rel="noopener noreferrer" target="_blank">
+           GTI vehicle image database
+          </a>
+          , the
+          <a href="http://www.cvlibs.net/datasets/kitti/" rel="noopener noreferrer" target="_blank">
+           KITTI vision benchmark suite
+          </a>
+          , and examples extracted from the project video itself.  In this exercise, you can explore the data to see what you're working with.
+         </p>
+         <p>
+          You are also welcome and encouraged to explore the recently released
+          <a href="https://github.com/udacity/self-driving-car/tree/master/annotations" rel="noopener noreferrer" target="_blank">
+           Udacity labeled dataset
+          </a>
+          .  Each of the Udacity datasets comes with a
+          <code>
+           labels.csv
+          </code>
+          file that gives bounding box corners for each object labeled.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/car-not-car-examples.jpg"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Here, I've provided you with the code to extract the car/not-car image filenames into two lists.  Write a function that takes in these two lists and returns a dictionary with the keys "n_cars", "n_notcars", "image_shape", and "data_type", like this:
+         </p>
+         <pre><code class="python language-python"># Define a function to return some characteristics of the dataset 
+def data_look(car_list, notcar_list):
+    data_dict = {}
+    # Define a key in data_dict "n_cars" and store the number of car images
+    # Define a key "n_notcars" and store the number of notcar images
+    # Read in a test image, either car or notcar
+    # Define a key "image_shape" and store the test image shape 3-tuple
+    # Define a key "data_type" and store the data type of the test image.
+    # Return data_dict
+    return data_dict</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          car_notcar
+         </p>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="229245-car_notcar-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#229245-car_notcar-py" id="tab-229245-car_notcar-py" role="tab">
+            car_notcar.py
+           </a>
+           <a aria-controls="229245-solution-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#229245-solution-py" id="tab-229245-solution-py" role="tab">
+            solution.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-229245-car_notcar-py" class="tab-pane active show" id="229245-car_notcar-py" role="tabpanel">
+            <pre><code></code>import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
+import numpy as np
+import cv2
+import glob
+#from skimage.feature import hog
+#from skimage import color, exposure
+# images are divided up into vehicles and non-vehicles
+
+images = glob.glob('*.jpeg')
+cars = []
+notcars = []
+
+for image in images:
+    if 'image' in image or 'extra' in image:
+        notcars.append(image)
+    else:
+        cars.append(image)
+        
+# Define a function to return some characteristics of the dataset 
+def data_look(car_list, notcar_list):
+    data_dict = {}
+    # Define a key in data_dict "n_cars" and store the number of car images
+    data_dict["n_cars"] = 0
+    # Define a key "n_notcars" and store the number of notcar images
+    data_dict["n_notcars"] = 0
+    # Read in a test image, either car or notcar
+    # Define a key "image_shape" and store the test image shape 3-tuple
+    data_dict["image_shape"] = (0, 0, 0)
+    # Define a key "data_type" and store the data type of the test image.
+    data_dict["data_type"] = None
+    # Return data_dict
+    return data_dict
+    
+data_info = data_look(cars, notcars)
+
+print('Your function returned a count of', 
+      data_info["n_cars"], ' cars and', 
+      data_info["n_notcars"], ' non-cars')
+print('of size: ',data_info["image_shape"], ' and data type:', 
+      data_info["data_type"])
+# Just for fun choose random car / not-car indices and plot example images   
+car_ind = np.random.randint(0, len(cars))
+notcar_ind = np.random.randint(0, len(notcars))
+    
+# Read in car / not-car images
+car_image = mpimg.imread(cars[car_ind])
+notcar_image = mpimg.imread(notcars[notcar_ind])
+
+
+# Plot the examples
+fig = plt.figure()
+plt.subplot(121)
+plt.imshow(car_image)
+plt.title('Example Car Image')
+plt.subplot(122)
+plt.imshow(notcar_image)
+plt.title('Example Not-car Image')
+</pre>
+           </div>
+           <div aria-labelledby="tab-229245-solution-py" class="tab-pane" id="229245-solution-py" role="tabpanel">
+            <pre><code></code># Define a function to return some characteristics of the dataset 
+def data_look(car_list, notcar_list):
+    data_dict = {}
+    # Define a key in data_dict "n_cars" and store the number of car images
+    data_dict["n_cars"] = len(car_list)
+    # Define a key "n_notcars" and store the number of notcar images
+    data_dict["n_notcars"] = len(notcar_list)
+    # Read in a test image, either car or notcar
+    example_img = mpimg.imread(car_list[0])
+    # Define a key "image_shape" and store the test image shape 3-tuple
+    data_dict["image_shape"] = example_img.shape
+    # Define a key "data_type" and store the data type of the test image.
+    data_dict["data_type"] = example_img.dtype
+    # Return data_dict
+    return data_dict</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="20. scikit-image HOG.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('19. Data Exploration')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

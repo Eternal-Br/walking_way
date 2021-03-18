@@ -1,0 +1,604 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Hog Sub-sampling Window Search
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Object Detection
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro to Vehicle Tracking.html">
+       01. Intro to Vehicle Tracking
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Arpan and Drew.html">
+       02. Arpan and Drew
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Finding Cars.html">
+       03. Finding Cars
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Object Detection Overview.html">
+       04. Object Detection Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Manual Vehicle Detection.html">
+       05. Manual Vehicle Detection
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Features.html">
+       06. Features
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Feature Intuition.html">
+       07. Feature Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Color Features.html">
+       08. Color Features
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Template Matching.html">
+       09. Template Matching
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Template Matching Quiz.html">
+       10. Template Matching Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Color Histogram Features.html">
+       11. Color Histogram Features
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Histograms of Color.html">
+       12. Histograms of Color
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Histogram Comparison.html">
+       13. Histogram Comparison
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Color Spaces.html">
+       14. Color Spaces
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Explore Color Spaces.html">
+       15. Explore Color Spaces
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Spatial Binning of Color.html">
+       16. Spatial Binning of Color
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Gradient Features.html">
+       17. Gradient Features
+      </a>
+     </li>
+     <li class="">
+      <a href="18. HOG Features.html">
+       18. HOG Features
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Data Exploration.html">
+       19. Data Exploration
+      </a>
+     </li>
+     <li class="">
+      <a href="20. scikit-image HOG.html">
+       20. scikit-image HOG
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Combining Features.html">
+       21. Combining Features
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Combine and Normalize Features.html">
+       22. Combine and Normalize Features
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Build a Classifier.html">
+       23. Build a Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Labeled Data.html">
+       24. Labeled Data
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Data Preparation.html">
+       25. Data Preparation
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Train a Classifier.html">
+       26. Train a Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Parameter Tuning.html">
+       27. Parameter Tuning
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Color Classify.html">
+       28. Color Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="29. HOG Classify.html">
+       29. HOG Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Sliding Windows.html">
+       30. Sliding Windows
+      </a>
+     </li>
+     <li class="">
+      <a href="31. How many windows.html">
+       31. How many windows?
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Sliding Window Implementation.html">
+       32. Sliding Window Implementation
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Multi-scale Windows.html">
+       33. Multi-scale Windows
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Search and Classify.html">
+       34. Search and Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Hog Sub-sampling Window Search.html">
+       35. Hog Sub-sampling Window Search
+      </a>
+     </li>
+     <li class="">
+      <a href="36. False Positives.html">
+       36. False Positives
+      </a>
+     </li>
+     <li class="">
+      <a href="37. Multiple Detections &amp; False Positives.html">
+       37. Multiple Detections &amp; False Positives
+      </a>
+     </li>
+     <li class="">
+      <a href="38. Tracking Pipeline.html">
+       38. Tracking Pipeline
+      </a>
+     </li>
+     <li class="">
+      <a href="39. Summary.html">
+       39. Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="40. Traditional vs. Deep Learning Approach.html">
+       40. Traditional vs. Deep Learning Approach
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          35. Hog Sub-sampling Window Search
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="hog-sub-sampling-window-search">
+          Hog Sub-sampling Window Search
+         </h1>
+         <p>
+          Now lets explore a more efficient method for doing the sliding window approach, one that allows us to only have to extract the Hog features once, . The code below defines a single function
+          <code>
+           find_cars
+          </code>
+          that's able to both extract features and make predictions.
+         </p>
+         <p>
+          The
+          <code>
+           find_cars
+          </code>
+          only has to extract hog features once, for each of a small set of predetermined window sizes (defined by a scale argument), and then can be sub-sampled to get all of its overlaying windows. Each window is defined by a scaling factor that impacts the window size.  The scale factor can be set on different regions of the image (e.g. small near the horizon, larger in the center).
+         </p>
+         <p>
+          For our example are using a 64 x 64 base window.  If we define pixels per cell as 8 x 8, then a scale of 1 would retain a window that's 8 x 8 cells (8 cells to cover 64 pixels in either direction).  An overlap of each window can be defined in terms of the cell distance, using
+          <code>
+           cells_per_step
+          </code>
+          . This means that a
+          <code>
+           cells_per_step = 2
+          </code>
+          would result in a search window overlap of 75% (2 is 25% of 8, so we move 25% each time, leaving 75% overlap with the previous window). Any value of scale that is larger or smaller than one will scale the base image accordingly, resulting in corresponding change in the number of cells per window.  Its possible to run this same function multiple times for different scale values to generate multiple-scaled search windows.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/hog-sub.jpg"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Note in the code below, we load a pre-trained svc model that has been serialized (stored in a pickle file), and then retrieve attributes from loaded svc model.
+         </p>
+         <p>
+          If you'd like to use this code on your own machine outside of the classroom, you can download the
+          <a href="https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Vehicle_Detection_Images/svc_pickle.p" rel="noopener noreferrer" target="_blank">
+           svc model
+          </a>
+          and
+          <a href="https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Vehicle_Detection_Images/test_image.jpg" rel="noopener noreferrer" target="_blank">
+           test image
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="265048-hog_subsample-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#265048-hog_subsample-py" id="tab-265048-hog_subsample-py" role="tab">
+            hog_subsample.py
+           </a>
+           <a aria-controls="265048-lesson_functions-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#265048-lesson_functions-py" id="tab-265048-lesson_functions-py" role="tab">
+            lesson_functions.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-265048-hog_subsample-py" class="tab-pane active show" id="265048-hog_subsample-py" role="tabpanel">
+            <pre><code></code>import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
+import numpy as np
+import pickle
+import cv2
+from lesson_functions import *
+
+# load a pe-trained svc model from a serialized (pickle) file
+dist_pickle = pickle.load( open("svc_pickle.p", "rb" ) )
+
+# get attributes of our svc object
+svc = dist_pickle["svc"]
+X_scaler = dist_pickle["scaler"]
+orient = dist_pickle["orient"]
+pix_per_cell = dist_pickle["pix_per_cell"]
+cell_per_block = dist_pickle["cell_per_block"]
+spatial_size = dist_pickle["spatial_size"]
+hist_bins = dist_pickle["hist_bins"]
+
+img = mpimg.imread('test_image.jpg')
+
+# Define a single function that can extract features using hog sub-sampling and make predictions
+def find_cars(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins):
+    
+    draw_img = np.copy(img)
+    img = img.astype(np.float32)/255
+    
+    img_tosearch = img[ystart:ystop,:,:]
+    ctrans_tosearch = convert_color(img_tosearch, conv='RGB2YCrCb')
+    if scale != 1:
+        imshape = ctrans_tosearch.shape
+        ctrans_tosearch = cv2.resize(ctrans_tosearch, (np.int(imshape[1]/scale), np.int(imshape[0]/scale)))
+        
+    ch1 = ctrans_tosearch[:,:,0]
+    ch2 = ctrans_tosearch[:,:,1]
+    ch3 = ctrans_tosearch[:,:,2]
+
+    # Define blocks and steps as above
+    nxblocks = (ch1.shape[1] // pix_per_cell) - cell_per_block + 1
+    nyblocks = (ch1.shape[0] // pix_per_cell) - cell_per_block + 1 
+    nfeat_per_block = orient*cell_per_block**2
+    
+    # 64 was the orginal sampling rate, with 8 cells and 8 pix per cell
+    window = 64
+    nblocks_per_window = (window // pix_per_cell) - cell_per_block + 1
+    cells_per_step = 2  # Instead of overlap, define how many cells to step
+    nxsteps = (nxblocks - nblocks_per_window) // cells_per_step + 1
+    nysteps = (nyblocks - nblocks_per_window) // cells_per_step + 1
+    
+    # Compute individual channel HOG features for the entire image
+    hog1 = get_hog_features(ch1, orient, pix_per_cell, cell_per_block, feature_vec=False)
+    hog2 = get_hog_features(ch2, orient, pix_per_cell, cell_per_block, feature_vec=False)
+    hog3 = get_hog_features(ch3, orient, pix_per_cell, cell_per_block, feature_vec=False)
+    
+    for xb in range(nxsteps):
+        for yb in range(nysteps):
+            ypos = yb*cells_per_step
+            xpos = xb*cells_per_step
+            # Extract HOG for this patch
+            hog_feat1 = hog1[ypos:ypos+nblocks_per_window, xpos:xpos+nblocks_per_window].ravel() 
+            hog_feat2 = hog2[ypos:ypos+nblocks_per_window, xpos:xpos+nblocks_per_window].ravel() 
+            hog_feat3 = hog3[ypos:ypos+nblocks_per_window, xpos:xpos+nblocks_per_window].ravel() 
+            hog_features = np.hstack((hog_feat1, hog_feat2, hog_feat3))
+
+            xleft = xpos*pix_per_cell
+            ytop = ypos*pix_per_cell
+
+            # Extract the image patch
+            subimg = cv2.resize(ctrans_tosearch[ytop:ytop+window, xleft:xleft+window], (64,64))
+          
+            # Get color features
+            spatial_features = bin_spatial(subimg, size=spatial_size)
+            hist_features = color_hist(subimg, nbins=hist_bins)
+
+            # Scale features and make a prediction
+            test_features = X_scaler.transform(np.hstack((spatial_features, hist_features, hog_features)).reshape(1, -1))    
+            #test_features = X_scaler.transform(np.hstack((shape_feat, hist_feat)).reshape(1, -1))    
+            test_prediction = svc.predict(test_features)
+            
+            if test_prediction == 1:
+                xbox_left = np.int(xleft*scale)
+                ytop_draw = np.int(ytop*scale)
+                win_draw = np.int(window*scale)
+                cv2.rectangle(draw_img,(xbox_left, ytop_draw+ystart),(xbox_left+win_draw,ytop_draw+win_draw+ystart),(0,0,255),6) 
+                
+    return draw_img
+    
+ystart = 400
+ystop = 656
+scale = 1.5
+    
+out_img = find_cars(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins)
+
+plt.imshow(out_img)</pre>
+           </div>
+           <div aria-labelledby="tab-265048-lesson_functions-py" class="tab-pane" id="265048-lesson_functions-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+import cv2
+from skimage.feature import hog
+
+def convert_color(img, conv='RGB2YCrCb'):
+    if conv == 'RGB2YCrCb':
+        return cv2.cvtColor(img, cv2.COLOR_RGB2YCrCb)
+    if conv == 'BGR2YCrCb':
+        return cv2.cvtColor(img, cv2.COLOR_BGR2YCrCb)
+    if conv == 'RGB2LUV':
+        return cv2.cvtColor(img, cv2.COLOR_RGB2LUV)
+
+def get_hog_features(img, orient, pix_per_cell, cell_per_block, 
+                        vis=False, feature_vec=True):
+    # Call with two outputs if vis==True
+    if vis == True:
+        features, hog_image = hog(img, orientations=orient, 
+                                  pixels_per_cell=(pix_per_cell, pix_per_cell),
+                                  cells_per_block=(cell_per_block, cell_per_block),
+                                  block_norm= 'L2-Hys',
+                                  transform_sqrt=False, 
+                                  visualise=vis, feature_vector=feature_vec)
+        return features, hog_image
+    # Otherwise call with one output
+    else:      
+        features = hog(img, orientations=orient, 
+                       pixels_per_cell=(pix_per_cell, pix_per_cell),
+                       cells_per_block=(cell_per_block, cell_per_block),
+                       block_norm= 'L2-Hys',
+                       transform_sqrt=False, 
+                       visualise=vis, feature_vector=feature_vec)
+        return features
+
+def bin_spatial(img, size=(32, 32)):
+    color1 = cv2.resize(img[:,:,0], size).ravel()
+    color2 = cv2.resize(img[:,:,1], size).ravel()
+    color3 = cv2.resize(img[:,:,2], size).ravel()
+    return np.hstack((color1, color2, color3))
+                        
+def color_hist(img, nbins=32):    #bins_range=(0, 256)
+    # Compute the histogram of the color channels separately
+    channel1_hist = np.histogram(img[:,:,0], bins=nbins)
+    channel2_hist = np.histogram(img[:,:,1], bins=nbins)
+    channel3_hist = np.histogram(img[:,:,2], bins=nbins)
+    # Concatenate the histograms into a single feature vector
+    hist_features = np.concatenate((channel1_hist[0], channel2_hist[0], channel3_hist[0]))
+    # Return the individual histograms, bin_centers and feature vector
+    return hist_features
+
+</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="36. False Positives.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('35. Hog Sub-sampling Window Search')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.450 --> 00:00:04.184
+&gt;&gt; I'm now here with Arpan Chakraborty who is one of our Udacity computer vision
+
+00:00:04.184 --> 00:00:04.706
+experts.
+
+00:00:04.706 --> 00:00:07.019
+And Drew Gray, who is the director of engineering at Otto,
+
+00:00:07.019 --> 00:00:08.769
+which is now part of Uber.
+
+00:00:08.769 --> 00:00:11.719
+So guys, in the end of this lesson, students are going to
+
+00:00:11.720 --> 00:00:15.500
+implement a pipeline to detect and track vehicles in a video stream.
+
+00:00:15.500 --> 00:00:18.123
+So Drew, maybe you could tell us a little bit more about the role of
+
+00:00:18.123 --> 00:00:21.539
+vehicle detection and tracking in the self-driving cars that you work on.
+
+00:00:21.539 --> 00:00:22.509
+&gt;&gt; Sure.
+
+00:00:22.510 --> 00:00:25.888
+Knowing where the other vehicles are on the road and being able to anticipate
+
+00:00:25.888 --> 00:00:28.868
+where they're heading next is essential in a self-driving car.
+
+00:00:28.868 --> 00:00:32.144
+At Otto, we're writing software that allows the car to recognize other
+
+00:00:32.145 --> 00:00:33.174
+vehicles on the road.
+
+00:00:33.173 --> 00:00:36.801
+And determine things like how far away they are, which way they're going, and
+
+00:00:36.801 --> 00:00:38.060
+how fast they're moving.
+
+00:00:38.060 --> 00:00:40.690
+Much the same way as we do with our own eyes as we drive.
+
+00:00:40.689 --> 00:00:41.809
+&gt;&gt; Very cool.
+
+00:00:41.810 --> 00:00:45.719
+Object detection and tracking is a central theme in computer vision.
+
+00:00:45.719 --> 00:00:48.890
+And in this lesson you'll be using what you might call traditional computer
+
+00:00:48.890 --> 00:00:51.329
+vision techniques to tackle this problem.
+
+00:00:51.329 --> 00:00:55.589
+You'll first explore what kind of visual features you can extract from images
+
+00:00:55.590 --> 00:00:58.350
+in order to reliably classify vehicles.
+
+00:00:58.350 --> 00:01:01.472
+Next, you'll look into searching an image for detections.
+
+00:01:01.472 --> 00:01:06.189
+And then you'll track those detections from frame to frame in a video stream.
+
+00:01:06.189 --> 00:01:06.719
+&gt;&gt; Awesome.
+
+00:01:06.719 --> 00:01:10.549
+So Drew, I know you've got a background in both the sort of traditional computer
+
+00:01:10.549 --> 00:01:11.304
+vision techniques.
+
+00:01:11.305 --> 00:01:11.440
+&gt;&gt; Mm-hm.
+
+00:01:11.439 --> 00:01:13.969
+&gt;&gt; As well as using deep learning for computer vision.
+
+00:01:13.969 --> 00:01:17.179
+So maybe you could tell us why it's useful to study both approaches.
+
+00:01:17.180 --> 00:01:17.370
+&gt;&gt; Sure.
+
+00:01:17.370 --> 00:01:20.140
+With traditional computer vision approaches
+
+00:01:20.140 --> 00:01:22.489
+you basically tune all the parameters by hand.
+
+00:01:22.489 --> 00:01:25.309
+Which gives you a lot of intuition about what works and why.
+
+00:01:25.310 --> 00:01:27.840
+When it comes to things like image classification.
+
+00:01:27.840 --> 00:01:31.560
+In many cases a deep learning approach works even better for the same tasks.
+
+00:01:31.560 --> 00:01:33.495
+But can seem like kind of a black box.
+
+00:01:33.495 --> 00:01:35.359
+We're not quite sure why it works.
+
+00:01:35.359 --> 00:01:36.569
+By learning both approaches,
+
+00:01:36.569 --> 00:01:40.119
+you can gain maximum insight and get the best performance in your algorithms.
+
+00:01:40.120 --> 00:01:40.420
+&gt;&gt; Cool.
+
+00:01:40.420 --> 00:01:41.439
+Well let's get started.
+

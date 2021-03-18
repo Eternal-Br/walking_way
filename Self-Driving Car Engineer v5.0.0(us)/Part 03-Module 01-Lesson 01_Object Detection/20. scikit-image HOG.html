@@ -1,0 +1,759 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   scikit-image HOG
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Object Detection
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro to Vehicle Tracking.html">
+       01. Intro to Vehicle Tracking
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Arpan and Drew.html">
+       02. Arpan and Drew
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Finding Cars.html">
+       03. Finding Cars
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Object Detection Overview.html">
+       04. Object Detection Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Manual Vehicle Detection.html">
+       05. Manual Vehicle Detection
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Features.html">
+       06. Features
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Feature Intuition.html">
+       07. Feature Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Color Features.html">
+       08. Color Features
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Template Matching.html">
+       09. Template Matching
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Template Matching Quiz.html">
+       10. Template Matching Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Color Histogram Features.html">
+       11. Color Histogram Features
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Histograms of Color.html">
+       12. Histograms of Color
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Histogram Comparison.html">
+       13. Histogram Comparison
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Color Spaces.html">
+       14. Color Spaces
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Explore Color Spaces.html">
+       15. Explore Color Spaces
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Spatial Binning of Color.html">
+       16. Spatial Binning of Color
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Gradient Features.html">
+       17. Gradient Features
+      </a>
+     </li>
+     <li class="">
+      <a href="18. HOG Features.html">
+       18. HOG Features
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Data Exploration.html">
+       19. Data Exploration
+      </a>
+     </li>
+     <li class="">
+      <a href="20. scikit-image HOG.html">
+       20. scikit-image HOG
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Combining Features.html">
+       21. Combining Features
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Combine and Normalize Features.html">
+       22. Combine and Normalize Features
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Build a Classifier.html">
+       23. Build a Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Labeled Data.html">
+       24. Labeled Data
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Data Preparation.html">
+       25. Data Preparation
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Train a Classifier.html">
+       26. Train a Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Parameter Tuning.html">
+       27. Parameter Tuning
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Color Classify.html">
+       28. Color Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="29. HOG Classify.html">
+       29. HOG Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Sliding Windows.html">
+       30. Sliding Windows
+      </a>
+     </li>
+     <li class="">
+      <a href="31. How many windows.html">
+       31. How many windows?
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Sliding Window Implementation.html">
+       32. Sliding Window Implementation
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Multi-scale Windows.html">
+       33. Multi-scale Windows
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Search and Classify.html">
+       34. Search and Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Hog Sub-sampling Window Search.html">
+       35. Hog Sub-sampling Window Search
+      </a>
+     </li>
+     <li class="">
+      <a href="36. False Positives.html">
+       36. False Positives
+      </a>
+     </li>
+     <li class="">
+      <a href="37. Multiple Detections &amp; False Positives.html">
+       37. Multiple Detections &amp; False Positives
+      </a>
+     </li>
+     <li class="">
+      <a href="38. Tracking Pipeline.html">
+       38. Tracking Pipeline
+      </a>
+     </li>
+     <li class="">
+      <a href="39. Summary.html">
+       39. Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="40. Traditional vs. Deep Learning Approach.html">
+       40. Traditional vs. Deep Learning Approach
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          20. scikit-image HOG
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="scikit-image-hog">
+          scikit-image HOG
+         </h1>
+         <p>
+          Now that we've got a dataset let's extract some HOG features!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/scikit-image-logo.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The
+          <a href="http://scikit-image.org/" rel="noopener noreferrer" target="_blank">
+           scikit-image
+          </a>
+          package has a built in function to extract Histogram of Oriented Gradient features.  The documentation for this function can be found
+          <a href="http://scikit-image.org/docs/dev/api/skimage.feature.html?highlight=feature%20hog#skimage.feature.hog" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          and a brief explanation of the algorithm and tutorial can be found
+          <a href="http://scikit-image.org/docs/dev/auto_examples/features_detection/plot_hog.html" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          .
+         </p>
+         <p>
+          The scikit-image
+          <code>
+           hog()
+          </code>
+          function takes in a single color channel or grayscaled image as input, as well as various parameters.  These parameters include
+          <code>
+           orientations
+          </code>
+          ,
+          <code>
+           pixels_per_cell
+          </code>
+          and
+          <code>
+           cells_per_block
+          </code>
+          .
+         </p>
+         <p>
+          The number of
+          <code>
+           orientations
+          </code>
+          is specified as an integer, and represents the number of orientation bins that the gradient information will be split up into in the histogram.  Typical values are between 6 and 12 bins.
+         </p>
+         <p>
+          The
+          <code>
+           pixels_per_cell
+          </code>
+          parameter specifies the cell size over which each gradient histogram is computed.  This paramater is passed as a 2-tuple so you could have different cell sizes in x and y, but cells are commonly chosen to be square.
+         </p>
+         <p>
+          The
+          <code>
+           cells_per_block
+          </code>
+          parameter is also passed as a 2-tuple, and specifies the local area over which the histogram counts in a given cell will be normalized.  Block normalization is not necessarily required, but generally leads to a more robust feature set.
+         </p>
+         <p>
+          There is another optional power law or "gamma" normalization scheme set by the flag
+          <code>
+           transform_sqrt
+          </code>
+          .  This type of normalization may help reduce the effects of shadows or other illumination variation, but will cause an error if your image contains negative values (because it's taking the square root of image values).
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/hog-visualization.jpg"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          This is where things get a little confusing though.  Let's say you are computing HOG features for an image like the one shown above that is
+          <span class="mathquill ud-math">
+           64\times64
+          </span>
+          pixels.  If you set
+          <code>
+           pixels_per_cell=(8, 8)
+          </code>
+          and
+          <code>
+           cells_per_block=(2, 2)
+          </code>
+          and
+          <code>
+           orientations=9
+          </code>
+          .   How many elements will you have in your HOG feature vector for the entire image?
+         </p>
+         <p>
+          You might guess the number of orientations times the number of cells, or
+          <span class="mathquill ud-math">
+           9\times8\times8 = 576
+          </span>
+          , but that's not the case if you're using block normalization!  In fact, the HOG features for all cells in each block are computed at each block position and the block steps across and down through the image cell by cell.
+         </p>
+         <p>
+          So, the actual number of features in your final feature vector will be the total number of block positions multiplied by the number of cells per block, times the number of orientations, or in the case shown above:
+          <span class="mathquill ud-math">
+           7\times7\times2\times2\times9 = 1764
+          </span>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          For the example above, you would call the
+          <code>
+           hog()
+          </code>
+          function on a single color channel
+          <code>
+           img
+          </code>
+          like this:
+         </p>
+         <pre><code class="python language-python">from skimage.feature import hog
+pix_per_cell = 8
+cell_per_block = 2
+orient = 9
+
+hog_features, hog_image = hog(img, orientations=orient,
+                          pixels_per_cell=(pix_per_cell, pix_per_cell), 
+                          cells_per_block=(cell_per_block, cell_per_block), 
+                          visualise=True, feature_vector=False,
+                          block_norm="L2-Hys")</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The
+          <code>
+           visualise=True
+          </code>
+          flag tells the function to output a visualization of the HOG feature computation as well, which we're calling
+          <code>
+           hog_image
+          </code>
+          in this case.  If we take a look at a single color channel for a random car image, and its corresponding HOG visulization, they look like this:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/car-and-hog.jpg"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The HOG visualization is not actually the feature vector, but rather, a representation that shows the dominant gradient direction within each cell with brightness corresponding to the strength of gradients in that cell, much like the "star" representation in the last video.
+         </p>
+         <p>
+          If you look at the
+          <code>
+           hog_features
+          </code>
+          output, you'll find it's an array of shape
+          <span class="mathquill ud-math">
+           7\times7\times2\times2\times9
+          </span>
+          .  This corresponds to the fact that a grid of
+          <span class="mathquill ud-math">
+           7\times7
+          </span>
+          blocks were sampled, with
+          <span class="mathquill ud-math">
+           2\times2
+          </span>
+          cells in each block and
+          <span class="mathquill ud-math">
+           9
+          </span>
+          orientations per cell.  You can unroll this array into a feature vector using
+          <code>
+           features.ravel()
+          </code>
+          , which yields, in this case, a one dimensional array of length
+          <span class="mathquill ud-math">
+           1764
+          </span>
+          .
+         </p>
+         <p>
+          Alternatively, you can set the
+          <code>
+           feature_vector=True
+          </code>
+          flag when calling the
+          <code>
+           hog()
+          </code>
+          function to automatically unroll the features.  In the project, it could be useful to have a function defined that you could pass an image to with specifications for
+          <code>
+           orientations
+          </code>
+          ,
+          <code>
+           pixels_per_cell
+          </code>
+          , and
+          <code>
+           cells_per_block
+          </code>
+          , as well as flags set for whether or not you want the feature vector unrolled and/or a visualization image, so let's write it!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <pre><code class="python language-python"># Define a function to return HOG features and visualization
+# Features will always be the first element of the return
+# Image data will be returned as the second element if visualize= True
+# Otherwise there is no second return element
+
+def get_hog_features(img, orient, pix_per_cell, cell_per_block, vis=True, feature_vec=True):
+
+    # TODO: Complete the function body and returns
+    pass</code></pre>
+         <p>
+          <strong>
+           Note:
+          </strong>
+          you could also include a keyword to set the
+          <code>
+           tranform_sqrt
+          </code>
+          flag but for this exercise you can just leave this at the default value of
+          <code>
+           transform_sqrt=False
+          </code>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="232788-get_hog-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#232788-get_hog-py" id="tab-232788-get_hog-py" role="tab">
+            get_hog.py
+           </a>
+           <a aria-controls="232788-solution-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#232788-solution-py" id="tab-232788-solution-py" role="tab">
+            solution.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-232788-get_hog-py" class="tab-pane active show" id="232788-get_hog-py" role="tabpanel">
+            <pre><code></code>import matplotlib.image as mpimg
+import matplotlib.pyplot as plt
+import numpy as np
+import cv2
+import glob
+from skimage.feature import hog
+
+# Read in our vehicles
+car_images = glob.glob('*.jpeg')
+        
+# Define a function to return HOG features and visualization
+# Features will always be the first element of the return
+# Image data will be returned as the second element if visualize= True
+# Otherwise there is no second return element
+
+def get_hog_features(img, orient, pix_per_cell, cell_per_block, vis=True, 
+                     feature_vec=True):
+                         
+    # TODO: Complete the function body and returns
+    pass
+
+# Generate a random index to look at a car image
+ind = np.random.randint(0, len(car_images))
+# Read in the image
+image = mpimg.imread(car_images[ind])
+gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+
+# Call our function with vis=True to see an image output
+features, hog_image = get_hog_features(gray, orient= 9, 
+                        pix_per_cell= 8, cell_per_block= 2, 
+                        vis=True, feature_vec=False)
+
+
+# Plot the examples
+fig = plt.figure()
+plt.subplot(121)
+plt.imshow(image, cmap='gray')
+plt.title('Example Car Image')
+plt.subplot(122)
+plt.imshow(hog_image, cmap='gray')
+plt.title('HOG Visualization')</pre>
+           </div>
+           <div aria-labelledby="tab-232788-solution-py" class="tab-pane" id="232788-solution-py" role="tabpanel">
+            <pre><code></code>def get_hog_features(img, orient, pix_per_cell, cell_per_block, vis=True,
+                     feature_vec=True):
+                         
+    """
+    Function accepts params and returns HOG features (optionally flattened) and an optional matrix for 
+    visualization. Features will always be the first return (flattened if feature_vector= True).
+    A visualization matrix will be the second return if visualize = True.
+    """
+    
+    return_list = hog(img, orientations=orient, pixels_per_cell=(pix_per_cell, pix_per_cell),
+                                  cells_per_block=(cell_per_block, cell_per_block),
+                                  block_norm= 'L2-Hys', transform_sqrt=False, 
+                                  visualise= vis, feature_vector= feature_vec)
+    
+    # name returns explicitly
+    hog_features = return_list[0]
+    if vis:
+        hog_image = return_list[1]
+        return hog_features, hog_image
+    else:
+        return hog_features</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="21. Combining Features.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('20. scikit-image HOG')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

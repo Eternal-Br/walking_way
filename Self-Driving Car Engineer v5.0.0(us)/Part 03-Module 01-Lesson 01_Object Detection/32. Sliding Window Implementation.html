@@ -1,0 +1,527 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Sliding Window Implementation
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Object Detection
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro to Vehicle Tracking.html">
+       01. Intro to Vehicle Tracking
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Arpan and Drew.html">
+       02. Arpan and Drew
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Finding Cars.html">
+       03. Finding Cars
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Object Detection Overview.html">
+       04. Object Detection Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Manual Vehicle Detection.html">
+       05. Manual Vehicle Detection
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Features.html">
+       06. Features
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Feature Intuition.html">
+       07. Feature Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Color Features.html">
+       08. Color Features
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Template Matching.html">
+       09. Template Matching
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Template Matching Quiz.html">
+       10. Template Matching Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Color Histogram Features.html">
+       11. Color Histogram Features
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Histograms of Color.html">
+       12. Histograms of Color
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Histogram Comparison.html">
+       13. Histogram Comparison
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Color Spaces.html">
+       14. Color Spaces
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Explore Color Spaces.html">
+       15. Explore Color Spaces
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Spatial Binning of Color.html">
+       16. Spatial Binning of Color
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Gradient Features.html">
+       17. Gradient Features
+      </a>
+     </li>
+     <li class="">
+      <a href="18. HOG Features.html">
+       18. HOG Features
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Data Exploration.html">
+       19. Data Exploration
+      </a>
+     </li>
+     <li class="">
+      <a href="20. scikit-image HOG.html">
+       20. scikit-image HOG
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Combining Features.html">
+       21. Combining Features
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Combine and Normalize Features.html">
+       22. Combine and Normalize Features
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Build a Classifier.html">
+       23. Build a Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Labeled Data.html">
+       24. Labeled Data
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Data Preparation.html">
+       25. Data Preparation
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Train a Classifier.html">
+       26. Train a Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Parameter Tuning.html">
+       27. Parameter Tuning
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Color Classify.html">
+       28. Color Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="29. HOG Classify.html">
+       29. HOG Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Sliding Windows.html">
+       30. Sliding Windows
+      </a>
+     </li>
+     <li class="">
+      <a href="31. How many windows.html">
+       31. How many windows?
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Sliding Window Implementation.html">
+       32. Sliding Window Implementation
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Multi-scale Windows.html">
+       33. Multi-scale Windows
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Search and Classify.html">
+       34. Search and Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Hog Sub-sampling Window Search.html">
+       35. Hog Sub-sampling Window Search
+      </a>
+     </li>
+     <li class="">
+      <a href="36. False Positives.html">
+       36. False Positives
+      </a>
+     </li>
+     <li class="">
+      <a href="37. Multiple Detections &amp; False Positives.html">
+       37. Multiple Detections &amp; False Positives
+      </a>
+     </li>
+     <li class="">
+      <a href="38. Tracking Pipeline.html">
+       38. Tracking Pipeline
+      </a>
+     </li>
+     <li class="">
+      <a href="39. Summary.html">
+       39. Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="40. Traditional vs. Deep Learning Approach.html">
+       40. Traditional vs. Deep Learning Approach
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          32. Sliding Window Implementation
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="sliding-window-implementation">
+          Sliding Window Implementation
+         </h1>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/sliding-window.jpg"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In the last exercise, you saw how the number of windows scales with image size, window size, and overlap.  In the project it will be useful to have a function to perform a sliding window search on an image, so let's write one!  This will just be the first iteration, where you don't actually need to do anything besides plot a rectangle at each window position.
+         </p>
+         <p>
+          So, your goal here is to write a function that takes in an image, start and stop positions in both x and y (imagine a bounding box for the entire search region), window size (x and y dimensions),  and overlap fraction (also for both x and y).  Your function should return a list of bounding boxes for the search windows, which will then be passed to draw
+          <code>
+           draw_boxes()
+          </code>
+          function.
+         </p>
+         <p>
+          You can download the image in the below quiz
+          <a href="https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/bbox-example-image.jpg" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          for use outside the classroom.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="233021-sliding_window-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#233021-sliding_window-py" id="tab-233021-sliding_window-py" role="tab">
+            sliding_window.py
+           </a>
+           <a aria-controls="233021-solution-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#233021-solution-py" id="tab-233021-solution-py" role="tab">
+            solution.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-233021-sliding_window-py" class="tab-pane active show" id="233021-sliding_window-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+
+image = mpimg.imread('bbox-example-image.jpg')
+
+# Here is your draw_boxes function from the previous exercise
+def draw_boxes(img, bboxes, color=(0, 0, 255), thick=6):
+    # Make a copy of the image
+    imcopy = np.copy(img)
+    # Iterate through the bounding boxes
+    for bbox in bboxes:
+        # Draw a rectangle given bbox coordinates
+        cv2.rectangle(imcopy, bbox[0], bbox[1], color, thick)
+    # Return the image copy with boxes drawn
+    return imcopy
+    
+    
+# Define a function that takes an image,
+# start and stop positions in both x and y, 
+# window size (x and y dimensions),  
+# and overlap fraction (for both x and y)
+def slide_window(img, x_start_stop=[None, None], y_start_stop=[None, None], 
+                    xy_window=(64, 64), xy_overlap=(0.5, 0.5)):
+    # If x and/or y start/stop positions not defined, set to image size
+    # Compute the span of the region to be searched    
+    # Compute the number of pixels per step in x/y
+    # Compute the number of windows in x/y
+    # Initialize a list to append window positions to
+    window_list = []
+    # Loop through finding x and y window positions
+    #     Note: you could vectorize this step, but in practice
+    #     you'll be considering windows one by one with your
+    #     classifier, so looping makes sense
+        # Calculate each window position
+        # Append window position to list
+    # Return the list of windows
+    return window_list
+
+windows = slide_window(image, x_start_stop=[None, None], y_start_stop=[None, None], 
+                    xy_window=(128, 128), xy_overlap=(0.5, 0.5))
+                       
+window_img = draw_boxes(image, windows, color=(0, 0, 255), thick=6)                    
+plt.imshow(window_img)</pre>
+           </div>
+           <div aria-labelledby="tab-233021-solution-py" class="tab-pane" id="233021-solution-py" role="tabpanel">
+            <pre><code></code># Define a function that takes an image,
+# start and stop positions in both x and y, 
+# window size (x and y dimensions),  
+# and overlap fraction (for both x and y)
+def slide_window(img, x_start_stop=[None, None], y_start_stop=[None, None], 
+                    xy_window=(64, 64), xy_overlap=(0.5, 0.5)):
+    # If x and/or y start/stop positions not defined, set to image size
+    if x_start_stop[0] == None:
+        x_start_stop[0] = 0
+    if x_start_stop[1] == None:
+        x_start_stop[1] = img.shape[1]
+    if y_start_stop[0] == None:
+        y_start_stop[0] = 0
+    if y_start_stop[1] == None:
+        y_start_stop[1] = img.shape[0]
+    # Compute the span of the region to be searched    
+    xspan = x_start_stop[1] - x_start_stop[0]
+    yspan = y_start_stop[1] - y_start_stop[0]
+    # Compute the number of pixels per step in x/y
+    nx_pix_per_step = np.int(xy_window[0]*(1 - xy_overlap[0]))
+    ny_pix_per_step = np.int(xy_window[1]*(1 - xy_overlap[1]))
+    # Compute the number of windows in x/y
+    nx_buffer = np.int(xy_window[0]*(xy_overlap[0]))
+    ny_buffer = np.int(xy_window[1]*(xy_overlap[1]))
+    nx_windows = np.int((xspan-nx_buffer)/nx_pix_per_step) 
+    ny_windows = np.int((yspan-ny_buffer)/ny_pix_per_step) 
+    # Initialize a list to append window positions to
+    window_list = []
+    # Loop through finding x and y window positions
+    # Note: you could vectorize this step, but in practice
+    # you'll be considering windows one by one with your
+    # classifier, so looping makes sense
+    for ys in range(ny_windows):
+        for xs in range(nx_windows):
+            # Calculate window position
+            startx = xs*nx_pix_per_step + x_start_stop[0]
+            endx = startx + xy_window[0]
+            starty = ys*ny_pix_per_step + y_start_stop[0]
+            endy = starty + xy_window[1]
+            # Append window position to list
+            window_list.append(((startx, starty), (endx, endy)))
+    # Return the list of windows
+    return window_list
+</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="33. Multi-scale Windows.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('32. Sliding Window Implementation')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

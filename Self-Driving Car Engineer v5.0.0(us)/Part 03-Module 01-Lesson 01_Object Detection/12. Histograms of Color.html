@@ -1,0 +1,601 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Histograms of Color
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Object Detection
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro to Vehicle Tracking.html">
+       01. Intro to Vehicle Tracking
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Arpan and Drew.html">
+       02. Arpan and Drew
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Finding Cars.html">
+       03. Finding Cars
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Object Detection Overview.html">
+       04. Object Detection Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Manual Vehicle Detection.html">
+       05. Manual Vehicle Detection
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Features.html">
+       06. Features
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Feature Intuition.html">
+       07. Feature Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Color Features.html">
+       08. Color Features
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Template Matching.html">
+       09. Template Matching
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Template Matching Quiz.html">
+       10. Template Matching Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Color Histogram Features.html">
+       11. Color Histogram Features
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Histograms of Color.html">
+       12. Histograms of Color
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Histogram Comparison.html">
+       13. Histogram Comparison
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Color Spaces.html">
+       14. Color Spaces
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Explore Color Spaces.html">
+       15. Explore Color Spaces
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Spatial Binning of Color.html">
+       16. Spatial Binning of Color
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Gradient Features.html">
+       17. Gradient Features
+      </a>
+     </li>
+     <li class="">
+      <a href="18. HOG Features.html">
+       18. HOG Features
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Data Exploration.html">
+       19. Data Exploration
+      </a>
+     </li>
+     <li class="">
+      <a href="20. scikit-image HOG.html">
+       20. scikit-image HOG
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Combining Features.html">
+       21. Combining Features
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Combine and Normalize Features.html">
+       22. Combine and Normalize Features
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Build a Classifier.html">
+       23. Build a Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Labeled Data.html">
+       24. Labeled Data
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Data Preparation.html">
+       25. Data Preparation
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Train a Classifier.html">
+       26. Train a Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Parameter Tuning.html">
+       27. Parameter Tuning
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Color Classify.html">
+       28. Color Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="29. HOG Classify.html">
+       29. HOG Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Sliding Windows.html">
+       30. Sliding Windows
+      </a>
+     </li>
+     <li class="">
+      <a href="31. How many windows.html">
+       31. How many windows?
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Sliding Window Implementation.html">
+       32. Sliding Window Implementation
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Multi-scale Windows.html">
+       33. Multi-scale Windows
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Search and Classify.html">
+       34. Search and Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Hog Sub-sampling Window Search.html">
+       35. Hog Sub-sampling Window Search
+      </a>
+     </li>
+     <li class="">
+      <a href="36. False Positives.html">
+       36. False Positives
+      </a>
+     </li>
+     <li class="">
+      <a href="37. Multiple Detections &amp; False Positives.html">
+       37. Multiple Detections &amp; False Positives
+      </a>
+     </li>
+     <li class="">
+      <a href="38. Tracking Pipeline.html">
+       38. Tracking Pipeline
+      </a>
+     </li>
+     <li class="">
+      <a href="39. Summary.html">
+       39. Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="40. Traditional vs. Deep Learning Approach.html">
+       40. Traditional vs. Deep Learning Approach
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          12. Histograms of Color
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="histograms-of-color">
+          Histograms of Color
+         </h1>
+         <p>
+          You've looked at using raw pixel intensities as features and now we'll look at histograms of pixel intensity (color histograms) as features.
+         </p>
+         <p>
+          I'll use the template shown below from the last exercise as an example.  This is a blown up version of the image, but If you want to try this yourself with the actual cutout image it's
+          <a href="https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/cutout1.jpg" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          :
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/cutout1.jpg"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          You can construct histograms of the R, G, and B channels like this:
+         </p>
+         <pre><code class="python language-python">import matplotlib.image as mpimg
+import numpy as np
+
+# Read in the image
+image = mpimg.imread('cutout1.jpg')
+
+# Take histograms in R, G, and B
+rhist = np.histogram(image[:,:,0], bins=32, range=(0, 256))
+ghist = np.histogram(image[:,:,1], bins=32, range=(0, 256))
+bhist = np.histogram(image[:,:,2], bins=32, range=(0, 256))</code></pre>
+         <p>
+          With
+          <code>
+           np.histogram()
+          </code>
+          , you don't actually have to specify the number of bins or the range, but here I've arbitrarily chosen 32 bins and specified
+          <code>
+           range=(0, 256)
+          </code>
+          in order to get orderly bin sizes.
+          <code>
+           np.histogram()
+          </code>
+          returns a tuple of two arrays.  In this case, for example,
+          <code>
+           rhist[0]
+          </code>
+          contains the counts in each of the bins and
+          <code>
+           rhist[1]
+          </code>
+          contains the bin edges (so it is one element longer than
+          <code>
+           rhist[0]
+          </code>
+          ).
+         </p>
+         <p>
+          To look at a plot of these results, we can compute the bin centers from the bin edges.  Each of the histograms in this case have the same bins, so I'll just use the
+          <code>
+           rhist
+          </code>
+          bin edges:
+         </p>
+         <pre><code class="python language-python"># Generating bin centers
+bin_edges = rhist[1]
+bin_centers = (bin_edges[1:]  + bin_edges[0:len(bin_edges)-1])/2</code></pre>
+         <p>
+          And then plotting up the results in a bar chart:
+         </p>
+         <pre><code class="python language-python"># Plot a figure with all three bar charts
+fig = plt.figure(figsize=(12,3))
+plt.subplot(131)
+plt.bar(bin_centers, rhist[0])
+plt.xlim(0, 256)
+plt.title('R Histogram')
+plt.subplot(132)
+plt.bar(bin_centers, ghist[0])
+plt.xlim(0, 256)
+plt.title('G Histogram')
+plt.subplot(133)
+plt.bar(bin_centers, bhist[0])
+plt.xlim(0, 256)
+plt.title('B Histogram')</code></pre>
+         <p>
+          Which gives us this result:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/rgb-histogram-plot.jpg"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          These, collectively, are now our feature vector for this particular cutout image.  We can concatenate them in the following way:
+         </p>
+         <pre><code class="python language-python">hist_features = np.concatenate((rhist[0], ghist[0], bhist[0]))</code></pre>
+         <p>
+          Having a function that does all these steps might be useful for the project so for this next exercise, your goal is to write a function that takes an image and computes the RGB color histogram of features given a particular number of bins and pixels intensity range, and returns the concatenated RGB feature vector, like this:
+         </p>
+         <p>
+          ```python
+         </p>
+         <h1 id="define-a-function-to-compute-color-histogram-features">
+          Define a function to compute color histogram features
+         </h1>
+         <p>
+          def color_hist(img, nbins=32, bins_range=(0, 256)):
+          <br/>
+          # Compute the histogram of the RGB channels separately
+          <br/>
+          # Concatenate the histograms into a single feature vector
+          <br/>
+          # Return the feature vector
+          <br/>
+          ```
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="233026-color_histogram-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#233026-color_histogram-py" id="tab-233026-color_histogram-py" role="tab">
+            color_histogram.py
+           </a>
+           <a aria-controls="233026-solution-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#233026-solution-py" id="tab-233026-solution-py" role="tab">
+            solution.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-233026-color_histogram-py" class="tab-pane active show" id="233026-color_histogram-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+
+image = mpimg.imread('cutout1.jpg')
+
+# Define a function to compute color histogram features  
+def color_hist(img, nbins=32, bins_range=(0, 256)):
+    # Compute the histogram of the RGB channels separately
+    rhist = None
+    ghist = None
+    bhist = None
+    # Generating bin centers
+    bin_centers = None
+    # Concatenate the histograms into a single feature vector
+    hist_features = None
+    # Return the individual histograms, bin_centers and feature vector
+    return rhist, ghist, bhist, bin_centers, hist_features
+    
+rh, gh, bh, bincen, feature_vec = color_hist(image, nbins=32, bins_range=(0, 256))
+
+# Plot a figure with all three bar charts
+if rh is not None:
+    fig = plt.figure(figsize=(12,3))
+    plt.subplot(131)
+    plt.bar(bincen, rh[0])
+    plt.xlim(0, 256)
+    plt.title('R Histogram')
+    plt.subplot(132)
+    plt.bar(bincen, gh[0])
+    plt.xlim(0, 256)
+    plt.title('G Histogram')
+    plt.subplot(133)
+    plt.bar(bincen, bh[0])
+    plt.xlim(0, 256)
+    plt.title('B Histogram')
+    fig.tight_layout()
+else:
+    print('Your function is returning None for at least one variable...')</pre>
+           </div>
+           <div aria-labelledby="tab-233026-solution-py" class="tab-pane" id="233026-solution-py" role="tabpanel">
+            <pre><code></code># Define a function to compute color histogram features  
+def color_hist(img, nbins=32, bins_range=(0, 256)):
+    # Compute the histogram of the RGB channels separately
+    rhist = np.histogram(img[:,:,0], bins=nbins, range=bins_range)
+    ghist = np.histogram(img[:,:,1], bins=nbins, range=bins_range)
+    bhist = np.histogram(img[:,:,2], bins=nbins, range=bins_range)
+    # Generating bin centers
+    bin_edges = rhist[1]
+    bin_centers = (bin_edges[1:]  + bin_edges[0:len(bin_edges)-1])/2
+    # Concatenate the histograms into a single feature vector
+    hist_features = np.concatenate((rhist[0], ghist[0], bhist[0]))
+    # Return the individual histograms, bin_centers and feature vector
+    return rhist, ghist, bhist, bin_centers, hist_features
+    
+</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="13. Histogram Comparison.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('12. Histograms of Color')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

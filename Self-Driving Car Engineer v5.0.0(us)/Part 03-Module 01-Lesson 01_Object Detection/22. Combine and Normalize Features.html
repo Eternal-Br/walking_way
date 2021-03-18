@@ -1,0 +1,616 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Combine and Normalize Features
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Object Detection
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro to Vehicle Tracking.html">
+       01. Intro to Vehicle Tracking
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Arpan and Drew.html">
+       02. Arpan and Drew
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Finding Cars.html">
+       03. Finding Cars
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Object Detection Overview.html">
+       04. Object Detection Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Manual Vehicle Detection.html">
+       05. Manual Vehicle Detection
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Features.html">
+       06. Features
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Feature Intuition.html">
+       07. Feature Intuition
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Color Features.html">
+       08. Color Features
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Template Matching.html">
+       09. Template Matching
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Template Matching Quiz.html">
+       10. Template Matching Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Color Histogram Features.html">
+       11. Color Histogram Features
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Histograms of Color.html">
+       12. Histograms of Color
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Histogram Comparison.html">
+       13. Histogram Comparison
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Color Spaces.html">
+       14. Color Spaces
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Explore Color Spaces.html">
+       15. Explore Color Spaces
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Spatial Binning of Color.html">
+       16. Spatial Binning of Color
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Gradient Features.html">
+       17. Gradient Features
+      </a>
+     </li>
+     <li class="">
+      <a href="18. HOG Features.html">
+       18. HOG Features
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Data Exploration.html">
+       19. Data Exploration
+      </a>
+     </li>
+     <li class="">
+      <a href="20. scikit-image HOG.html">
+       20. scikit-image HOG
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Combining Features.html">
+       21. Combining Features
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Combine and Normalize Features.html">
+       22. Combine and Normalize Features
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Build a Classifier.html">
+       23. Build a Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Labeled Data.html">
+       24. Labeled Data
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Data Preparation.html">
+       25. Data Preparation
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Train a Classifier.html">
+       26. Train a Classifier
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Parameter Tuning.html">
+       27. Parameter Tuning
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Color Classify.html">
+       28. Color Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="29. HOG Classify.html">
+       29. HOG Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="30. Sliding Windows.html">
+       30. Sliding Windows
+      </a>
+     </li>
+     <li class="">
+      <a href="31. How many windows.html">
+       31. How many windows?
+      </a>
+     </li>
+     <li class="">
+      <a href="32. Sliding Window Implementation.html">
+       32. Sliding Window Implementation
+      </a>
+     </li>
+     <li class="">
+      <a href="33. Multi-scale Windows.html">
+       33. Multi-scale Windows
+      </a>
+     </li>
+     <li class="">
+      <a href="34. Search and Classify.html">
+       34. Search and Classify
+      </a>
+     </li>
+     <li class="">
+      <a href="35. Hog Sub-sampling Window Search.html">
+       35. Hog Sub-sampling Window Search
+      </a>
+     </li>
+     <li class="">
+      <a href="36. False Positives.html">
+       36. False Positives
+      </a>
+     </li>
+     <li class="">
+      <a href="37. Multiple Detections &amp; False Positives.html">
+       37. Multiple Detections &amp; False Positives
+      </a>
+     </li>
+     <li class="">
+      <a href="38. Tracking Pipeline.html">
+       38. Tracking Pipeline
+      </a>
+     </li>
+     <li class="">
+      <a href="39. Summary.html">
+       39. Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="40. Traditional vs. Deep Learning Approach.html">
+       40. Traditional vs. Deep Learning Approach
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          22. Combine and Normalize Features
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="combine-and-normalize-features">
+          Combine and Normalize Features
+         </h1>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/scaled-features-vis.jpg"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Now that you've got several feature extraction methods in your toolkit, you're almost ready to train a classifier, but first, as in any machine learning application, you need to normalize your data.  Python's
+          <code>
+           sklearn
+          </code>
+          package provides you with the
+          <code>
+           StandardScaler()
+          </code>
+          method to accomplish this task.  To read more about how you can choose different normalizations with the
+          <code>
+           StandardScaler()
+          </code>
+          method, check out the
+          <a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html" rel="noopener noreferrer" target="_blank">
+           documentation
+          </a>
+          .
+         </p>
+         <p>
+          To apply
+          <code>
+           StandardScaler()
+          </code>
+          you need to first have your data in the right format, as a numpy array where each row is a single feature vector. I will often create a list of feature vectors, and then convert them like this:
+         </p>
+         <pre><code class="python language-python">import numpy as np
+feature_list = [feature_vec1, feature_vec2, ...]
+# Create an array stack, NOTE: StandardScaler() expects np.float64
+X = np.vstack(feature_list).astype(np.float64)</code></pre>
+         <p>
+          You can then fit a scaler to X, and scale it like this:
+         </p>
+         <pre><code class="python language-python">from sklearn.preprocessing import StandardScaler
+# Fit a per-column scaler
+X_scaler = StandardScaler().fit(X)
+# Apply the scaler to X
+scaled_X = X_scaler.transform(X)</code></pre>
+         <p>
+          It's important to note here that when you are using a scaler to train a classifier, you want to
+          <em>
+           only fit the scaler on the training data
+          </em>
+          , and then transform both the training and test sets using the scaler. Why? If you provide both the training and test set to the scaler, you are allowing your model a peek into the values contained in the test set, and it's no longer as useful at generalizing to unseen data.
+         </p>
+         <p>
+          Now,
+          <code>
+           scaled_X
+          </code>
+          contains the normalized feature vectors.   In this next exercise, I've provided the feature scaling step for you, but I need you to provide the feature vectors.  I've also provided versions of the
+          <code>
+           bin_spatial()
+          </code>
+          and
+          <code>
+           color_hist()
+          </code>
+          functions you wrote in previous exercises.
+         </p>
+         <p>
+          Your goal in this exercise is to write a function that takes in a list of image filenames, reads them one by one, then applies a color conversion (if necessary) and uses
+          <code>
+           bin_spatial()
+          </code>
+          and
+          <code>
+           color_hist()
+          </code>
+          to generate feature vectors.  Your function should then concatenate those two feature vectors and append the result to a list.  After cycling through all the images, your function should return the list of feature vectors.  Something like this:
+         </p>
+         <pre><code class="python language-python"># Define a function to extract features from a list of images
+# Have this function call bin_spatial() and color_hist()
+def extract_features(imgs, cspace='RGB', spatial_size=(32, 32),
+                        hist_bins=32, hist_range=(0, 256)):
+    # Create a list to append feature vectors to
+    features = []
+    # Iterate through the list of images
+        # Read in each one by one
+        # apply color conversion if other than 'RGB'
+        # Apply bin_spatial() to get spatial color features
+        # Apply color_hist() to get color histogram features
+        # Append the new feature vector to the features list
+    # Return list of feature vectors
+    return features</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          normalize_and_shuffle
+         </p>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="233033-norm_shuffle-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#233033-norm_shuffle-py" id="tab-233033-norm_shuffle-py" role="tab">
+            norm_shuffle.py
+           </a>
+           <a aria-controls="233033-solution-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#233033-solution-py" id="tab-233033-solution-py" role="tab">
+            solution.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-233033-norm_shuffle-py" class="tab-pane active show" id="233033-norm_shuffle-py" role="tabpanel">
+            <pre><code></code>import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+from sklearn.preprocessing import StandardScaler
+import glob
+
+# Define a function to compute binned color features  
+def bin_spatial(img, size=(32, 32)):
+    # Use cv2.resize().ravel() to create the feature vector
+    features = cv2.resize(img, size).ravel() 
+    # Return the feature vector
+    return features
+
+# Define a function to compute color histogram features  
+def color_hist(img, nbins=32, bins_range=(0, 256)):
+    # Compute the histogram of the color channels separately
+    channel1_hist = np.histogram(img[:,:,0], bins=nbins, range=bins_range)
+    channel2_hist = np.histogram(img[:,:,1], bins=nbins, range=bins_range)
+    channel3_hist = np.histogram(img[:,:,2], bins=nbins, range=bins_range)
+    # Concatenate the histograms into a single feature vector
+    hist_features = np.concatenate((channel1_hist[0], channel2_hist[0], channel3_hist[0]))
+    # Return the individual histograms, bin_centers and feature vector
+    return hist_features
+
+###### TODO ###########
+# Define a function to extract features from a list of images
+# Have this function call bin_spatial() and color_hist()
+def extract_features(imgs, cspace='RGB', spatial_size=(32, 32),
+                        hist_bins=32, hist_range=(0, 256)):
+    # Create a list to append feature vectors to
+    features = []
+    # Iterate through the list of images
+        # Read in each one by one
+        # apply color conversion if other than 'RGB'
+        # Apply bin_spatial() to get spatial color features
+        # Apply color_hist() to get color histogram features
+        # Append the new feature vector to the features list
+    # Return list of feature vectors
+    return features
+
+images = glob.glob('*.jpeg')
+cars = []
+notcars = []
+for image in images:
+    if 'image' in image or 'extra' in image:
+        notcars.append(image)
+    else:
+        cars.append(image)
+        
+car_features = extract_features(cars, cspace='RGB', spatial_size=(32, 32),
+                        hist_bins=32, hist_range=(0, 256))
+notcar_features = extract_features(notcars, cspace='RGB', spatial_size=(32, 32),
+                        hist_bins=32, hist_range=(0, 256))
+
+if len(car_features) &gt; 0:
+    # Create an array stack of feature vectors
+    X = np.vstack((car_features, notcar_features)).astype(np.float64)                        
+    # Fit a per-column scaler
+    X_scaler = StandardScaler().fit(X)
+    # Apply the scaler to X
+    scaled_X = X_scaler.transform(X)
+    car_ind = np.random.randint(0, len(cars))
+    # Plot an example of raw and scaled features
+    fig = plt.figure(figsize=(12,4))
+    plt.subplot(131)
+    plt.imshow(mpimg.imread(cars[car_ind]))
+    plt.title('Original Image')
+    plt.subplot(132)
+    plt.plot(X[car_ind])
+    plt.title('Raw Features')
+    plt.subplot(133)
+    plt.plot(scaled_X[car_ind])
+    plt.title('Normalized Features')
+    fig.tight_layout()
+else: 
+    print('Your function only returns empty feature vectors...')</pre>
+           </div>
+           <div aria-labelledby="tab-233033-solution-py" class="tab-pane" id="233033-solution-py" role="tabpanel">
+            <pre><code></code># Define a function to extract features from a list of images
+# Have this function call bin_spatial() and color_hist()
+def extract_features(imgs, cspace='RGB', spatial_size=(32, 32),
+                        hist_bins=32, hist_range=(0, 256)):
+    # Create a list to append feature vectors to
+    features = []
+    # Iterate through the list of images
+    for file in imgs:
+        # Read in each one by one
+        image = mpimg.imread(file)
+        # apply color conversion if other than 'RGB'
+        if cspace != 'RGB':
+            if cspace == 'HSV':
+                feature_image = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
+            elif cspace == 'LUV':
+                feature_image = cv2.cvtColor(image, cv2.COLOR_RGB2LUV)
+            elif cspace == 'HLS':
+                feature_image = cv2.cvtColor(image, cv2.COLOR_RGB2HLS)
+            elif cspace == 'YUV':
+                feature_image = cv2.cvtColor(image, cv2.COLOR_RGB2YUV)
+        else: feature_image = np.copy(image)      
+        # Apply bin_spatial() to get spatial color features
+        spatial_features = bin_spatial(feature_image, size=spatial_size)
+        # Apply color_hist() also with a color space option now
+        hist_features = color_hist(feature_image, nbins=hist_bins, bins_range=hist_range)
+        # Append the new feature vector to the features list
+        features.append(np.concatenate((spatial_features, hist_features)))
+    # Return list of feature vectors
+    return features
+</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="23. Build a Classifier.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('22. Combine and Normalize Features')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

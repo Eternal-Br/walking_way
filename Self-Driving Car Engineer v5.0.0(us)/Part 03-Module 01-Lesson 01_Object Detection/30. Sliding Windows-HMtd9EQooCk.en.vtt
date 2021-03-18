@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.420 --> 00:00:04.799
+&gt;&gt; Okay, so now you've decided which features to extract from each image, and
+
+00:00:04.799 --> 00:00:07.209
+you've trained a classifier using label data.
+
+00:00:07.209 --> 00:00:08.240
+Great work.
+
+00:00:08.240 --> 00:00:12.390
+The next step is to implement a method of searching for objects, in this case,
+
+00:00:12.390 --> 00:00:14.080
+for vehicles in an image.
+
+00:00:14.080 --> 00:00:16.239
+So how are we going to do that, Drew?
+
+00:00:16.239 --> 00:00:18.725
+&gt;&gt; Well, you've seen that you can consider cutouts or
+
+00:00:18.725 --> 00:00:22.150
+subregions of an image, and run your classifier on each subregion
+
+00:00:22.149 --> 00:00:24.399
+to see if it contains the object you're trying to detect.
+
+00:00:24.399 --> 00:00:26.739
+So what you'll do next is implement a sliding window technique,
+
+00:00:26.739 --> 00:00:29.739
+where you'll step across an image in a grid pattern and
+
+00:00:29.739 --> 00:00:33.129
+extract the same features you trained your classifier on in each window.
+
+00:00:33.130 --> 00:00:35.940
+You'll run your classifier to give a prediction at each step.
+
+00:00:35.939 --> 00:00:36.619
+And with any luck,
+
+00:00:36.619 --> 00:00:39.070
+it will tell you which windows in your image contains cars.
+
