@@ -1,0 +1,22 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.350
+Congratulations. You've learned about SDNs.
+
+00:00:03.350 --> 00:00:07.125
+You learn how these network built upon one by one convolutions,
+
+00:00:07.125 --> 00:00:11.820
+skip connections and up sampling through the use of transposed convolutions.
+
+00:00:11.820 --> 00:00:13.849
+In the next lesson,
+
+00:00:13.849 --> 00:00:16.259
+we'll use fully convolutional networks to
+
+00:00:16.260 --> 00:00:19.380
+tackle scene understanding and semantic segmentation.
+
