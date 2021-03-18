@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.885
+Welcome to Control.
+
+00:00:01.885 --> 00:00:03.990
+Control is how we use the steering,
+
+00:00:03.990 --> 00:00:07.515
+throttle, and breaks to move a car where we want it to go.
+
+00:00:07.514 --> 00:00:11.164
+Our friend, Andrew Gray from Uber Advanced Technology Group,
+
+00:00:11.164 --> 00:00:14.289
+wrote his PhD dissertation on control theory.
+
+00:00:14.289 --> 00:00:16.605
+Control's a trickier problem than it might seem.
+
+00:00:16.605 --> 00:00:18.390
+When human turns through an intersection,
+
+00:00:18.390 --> 00:00:21.795
+we use our intuition and experience to determine how hard to steer,
+
+00:00:21.795 --> 00:00:22.990
+and when to accelerate,
+
+00:00:22.989 --> 00:00:24.945
+and whether we ever need to step on the brakes.
+
+00:00:24.945 --> 00:00:27.070
+Teaching a computer how to do this is hard.
+
+00:00:27.070 --> 00:00:29.730
+Control algorithms are often called controllers,
+
+00:00:29.730 --> 00:00:34.130
+and one of the most common and fundamental controllers is the PID controller.
+
+00:00:34.130 --> 00:00:39.359
+In this lesson, you'll learn from Sebastian how to implement a PID controller in Python.
+
+00:00:39.359 --> 00:00:44.600
+Then, you'll dive into the Udacity simulator to implement a PID controller in C++.
+
