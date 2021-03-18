@@ -1,0 +1,175 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.840 --> 00:00:06.785
+The rosmsg info command prints out message type information to the console.
+
+00:00:06.785 --> 00:00:09.250
+Let's get more information about the cmd_vel topic.
+
+00:00:09.250 --> 00:00:10.750
+First, I am going to clear the terminal,
+
+00:00:10.750 --> 00:00:14.224
+and then I am going to use the command rosmsg show
+
+00:00:14.224 --> 00:00:17.179
+and then the name of the package containing the message type.
+
+00:00:17.178 --> 00:00:20.369
+In this case, it's geometry_msgs/Twist as we saw a moment ago,
+
+00:00:20.370 --> 00:00:22.695
+forward slash and finally twist,
+
+00:00:22.695 --> 00:00:25.035
+the name of the message type and there we have it.
+
+00:00:25.035 --> 00:00:27.600
+The full message definition for the twist type.
+
+00:00:27.600 --> 00:00:29.759
+You can see from the command output that the twist message
+
+00:00:29.759 --> 00:00:32.259
+is composed of two messages of type vector three.
+
+00:00:32.259 --> 00:00:35.670
+A type that is also defined in the geometry messages package.
+
+00:00:35.670 --> 00:00:39.715
+There's one three dimensional vector for linear velocity and one for angular velocity.
+
+00:00:39.715 --> 00:00:45.179
+Each vector consists of three different 64 bit floating point components, component x,
+
+00:00:45.179 --> 00:00:48.320
+y and z. Float64 is one of the built
+
+00:00:48.320 --> 00:00:51.779
+in primitive data types available to you in creating custom messages.
+
+00:00:51.779 --> 00:00:55.740
+To get more information about the built in types and message definitions in general,
+
+00:00:55.740 --> 00:00:58.783
+check out the links in the text module accompanying the screencast.
+
+00:00:58.783 --> 00:01:02.969
+While ros message info is a very useful tool for getting information about messages,
+
+00:01:02.969 --> 00:01:05.420
+it does not tell us everything we may wish to know.
+
+00:01:05.420 --> 00:01:08.459
+Another tool at your disposal is rosed.
+
+00:01:08.459 --> 00:01:10.379
+Rosed is a simple bash command that allows you to
+
+00:01:10.379 --> 00:01:13.299
+easily view and edit files in your ros environment.
+
+00:01:13.299 --> 00:01:16.109
+Let's use it to view the twist message definition.
+
+00:01:16.108 --> 00:01:18.568
+Once again I'm going to clear this terminal and then I'm going to
+
+00:01:18.569 --> 00:01:21.754
+execute the command rosed followed by geometry
+
+00:01:21.754 --> 00:01:24.420
+underscore messages the name of the package containing the message in
+
+00:01:24.420 --> 00:01:27.969
+question followed by twist.msg,
+
+00:01:27.968 --> 00:01:30.589
+the name of the message definition you wish to open.
+
+00:01:30.590 --> 00:01:33.840
+Note, that if you've forgotten either the package name or the name of the message type,
+
+00:01:33.840 --> 00:01:36.489
+tab completion will come to the rescue.
+
+00:01:36.489 --> 00:01:39.290
+All right here we go. It's the actual message definition.
+
+00:01:39.290 --> 00:01:42.965
+It looks very similar to the output we saw from the rosmessage info command.
+
+00:01:42.965 --> 00:01:45.739
+Except there are a couple of important differences.
+
+00:01:45.739 --> 00:01:47.540
+The first thing you might notice is that there are
+
+00:01:47.540 --> 00:01:51.150
+no details about how each vector 3 message is defined.
+
+00:01:51.150 --> 00:01:52.549
+This detail is elsewhere,
+
+00:01:52.549 --> 00:01:57.325
+particularly within the vector 3.msg file also living within this package.
+
+00:01:57.325 --> 00:01:59.569
+The rosmessage info command was simply doing us
+
+00:01:59.569 --> 00:02:03.140
+the favor of expanding the definitions in the console output.
+
+00:02:03.140 --> 00:02:05.379
+The second thing you might notice are the comments.
+
+00:02:05.379 --> 00:02:07.234
+This is the true reason that we came here.
+
+00:02:07.233 --> 00:02:09.228
+When in doubt go to the source code.
+
+00:02:09.229 --> 00:02:11.599
+Rosmessage info didn't tell us anything about
+
+00:02:11.598 --> 00:02:14.234
+how the twist message is actually intended to be used.
+
+00:02:14.235 --> 00:02:17.794
+But the friendly ros developer who created this message has our back.
+
+00:02:17.794 --> 00:02:20.120
+Most of the message type definitions that are part of
+
+00:02:20.120 --> 00:02:22.250
+the standard ros distribution have a wealth of
+
+00:02:22.250 --> 00:02:25.205
+comments explaining how they are meant to be used.
+
+00:02:25.205 --> 00:02:27.710
+Here you can see that the twist messages are actually intended
+
+00:02:27.710 --> 00:02:30.800
+to contain linear and angular velocity vectors.
+
+00:02:30.800 --> 00:02:32.960
+This is something that might have been clear from the usage,
+
+00:02:32.960 --> 00:02:36.875
+after all we saw that these messages were being passed around on the cmd_vel topic,
+
+00:02:36.875 --> 00:02:38.870
+but it was not something that was clear from looking at
+
+00:02:38.870 --> 00:02:41.125
+the output of the rosmsg show command.
+
+00:02:41.125 --> 00:02:43.788
+Once again, when in doubt check the source code.
+
+00:02:43.788 --> 00:02:46.008
+This will be a common theme in ros development.
+

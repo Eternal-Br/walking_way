@@ -1,0 +1,160 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.155
+While viewing message definitions and topic information can be informative,
+
+00:00:04.155 --> 00:00:06.769
+sometimes the best way to understand what is going on is to look
+
+00:00:06.769 --> 00:00:09.539
+at the messages themselves as they are published to a topic.
+
+00:00:09.539 --> 00:00:11.720
+For example, when the turtle rotates left and
+
+00:00:11.720 --> 00:00:14.584
+right which axis is it actually rotating about?
+
+00:00:14.584 --> 00:00:16.414
+And what are the units of rotation?
+
+00:00:16.414 --> 00:00:19.710
+And are rotations expressed in terms of radians or degrees?
+
+00:00:19.710 --> 00:00:21.525
+To get the answer to these questions,
+
+00:00:21.525 --> 00:00:23.385
+You can use the command rostopic echo.
+
+00:00:23.385 --> 00:00:24.890
+Let's dive right into its usage.
+
+00:00:24.890 --> 00:00:28.749
+Rostopic, echo,
+
+00:00:28.749 --> 00:00:31.079
+and then the name of the topic forward
+
+00:00:31.079 --> 00:00:34.759
+slash turtle one forward slash command underscore vel.
+
+00:00:34.759 --> 00:00:36.314
+If you've forgotten the name of the topic,
+
+00:00:36.314 --> 00:00:37.710
+you can easily find it by using
+
+00:00:37.710 --> 00:00:41.340
+the command rostopic list which you were introduced to earlier in the screentask.
+
+00:00:41.340 --> 00:00:44.445
+When you hit enter, the terminal cursor will move to a new line
+
+00:00:44.445 --> 00:00:47.659
+and it will appear as though nothing has happened. Fear not though.
+
+00:00:47.659 --> 00:00:51.795
+Rostopic echo is simply waiting for a message to be published on the command vel topic.
+
+00:00:51.795 --> 00:00:53.760
+In order to publish a message to the topic,
+
+00:00:53.760 --> 00:00:55.979
+we must jump all the way back to the console window for
+
+00:00:55.979 --> 00:00:59.125
+the turtle underscore teleop underscore key node.
+
+00:00:59.125 --> 00:01:03.530
+And I'm now going to hit the left arrow key.As expected,
+
+00:01:03.530 --> 00:01:07.340
+the turtle turned counter-clockwise by some angle for about one second.
+
+00:01:07.340 --> 00:01:12.125
+I'd estimate that the actual number is somewhat maybe like greater than 90 degrees,
+
+00:01:12.125 --> 00:01:14.689
+but perhaps less than 135 degrees.
+
+00:01:14.689 --> 00:01:17.819
+Let's go back to the rostopic echo terminal and see what happened.
+
+00:01:17.819 --> 00:01:20.030
+And as you can see we've caught a message.
+
+00:01:20.030 --> 00:01:22.340
+All of the velocity components are zero with
+
+00:01:22.340 --> 00:01:24.980
+the exception of the z component of the angular velocity.
+
+00:01:24.980 --> 00:01:26.689
+Here we see a value of two.
+
+00:01:26.689 --> 00:01:29.405
+This tells us, that when the turtle rotates counterclockwise,
+
+00:01:29.405 --> 00:01:31.459
+it is doing so around the z axis.
+
+00:01:31.459 --> 00:01:32.719
+The magnitude of the velocity,
+
+00:01:32.719 --> 00:01:35.030
+tells us that the units associated with the movement are
+
+00:01:35.030 --> 00:01:38.049
+probably in radians per second. How did I get there?
+
+00:01:38.049 --> 00:01:41.750
+Well, a quick math check will tell us that two radians corresponds to
+
+00:01:41.750 --> 00:01:46.150
+approximately 114.6 degrees. And there we have it.
+
+00:01:46.150 --> 00:01:49.040
+You should now have some understanding about rostopic echo and
+
+00:01:49.040 --> 00:01:52.310
+how it can be used for investigating messages passing over a topic.
+
+00:01:52.310 --> 00:01:56.074
+As a side note, If this unit's investigation seems a little bit contrived,
+
+00:01:56.074 --> 00:01:57.814
+that's because it certainly was.
+
+00:01:57.814 --> 00:01:59.359
+Like any sensible engineers,
+
+00:01:59.359 --> 00:02:04.129
+the developers of Ros have elected to standardize around S-I units wherever applicable.
+
+00:02:04.129 --> 00:02:06.980
+Which is to say, length is measured in meters.
+
+00:02:06.980 --> 00:02:08.400
+Mass is measured in kilograms,
+
+00:02:08.400 --> 00:02:12.735
+time is measured in seconds and angles are measured in radians and so on.
+
+00:02:12.735 --> 00:02:15.889
+You've now completed a brief tour of the Ros command line tools.
+
+00:02:15.889 --> 00:02:16.969
+Armed with this knowledge and
+
+00:02:16.969 --> 00:02:19.685
+the general understanding of the Ros communications architecture,
+
+00:02:19.685 --> 00:02:21.469
+you should be prepared to move on to the next
+
+00:02:21.469 --> 00:02:24.139
+step - setting up your first catkin workspace.
+

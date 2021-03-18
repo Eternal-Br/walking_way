@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.205
+Great work. In this lesson,
+
+00:00:02.205 --> 00:00:05.425
+you've seen a high level overview of the concepts behind ROS.
+
+00:00:05.424 --> 00:00:08.820
+You know now how the ROS master process functions as a parameter server,
+
+00:00:08.820 --> 00:00:11.820
+and how it enables nodes to be connected over topics.
+
+00:00:11.820 --> 00:00:14.099
+Also, you've seen how ROS nodes communicate over
+
+00:00:14.099 --> 00:00:17.064
+these topics using message passing and services.
+
+00:00:17.065 --> 00:00:18.690
+This Pub/Sub architecture is
+
+00:00:18.690 --> 00:00:21.000
+a powerful and flexible design paradigm that will
+
+00:00:21.000 --> 00:00:23.940
+allow you to build a variety of robotics applications.
+
+00:00:23.940 --> 00:00:26.325
+Additionally, you've explored the turtlesim package
+
+00:00:26.324 --> 00:00:29.070
+using ROS' powerful command line tools.
+
+00:00:29.070 --> 00:00:31.050
+These tools will be helpful to you as you build
+
+00:00:31.050 --> 00:00:33.454
+and debug ROS-based systems going forward.
+
+00:00:33.454 --> 00:00:36.719
+So be sure you are ready to use them in the upcoming lessons.
+
+00:00:36.719 --> 00:00:40.304
+Next, you'll learn how to build a basic ROS package called simple arm.
+
+00:00:40.304 --> 00:00:42.362
+For real world robotics applications,
+
+00:00:42.362 --> 00:00:43.710
+you'll always start by creating
+
+00:00:43.710 --> 00:00:47.270
+a new development workspace and then adding software packages to it,
+
+00:00:47.270 --> 00:00:50.000
+which is exactly what we're going to do in the next lesson.
+
