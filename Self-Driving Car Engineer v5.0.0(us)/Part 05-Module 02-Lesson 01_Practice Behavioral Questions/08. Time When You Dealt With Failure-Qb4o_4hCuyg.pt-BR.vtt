@@ -1,0 +1,122 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:02.948 --> 00:00:06.749
+Vou falar sobre uma vez que falhei 
+e como lidei com a situação.
+
+00:00:06.858 --> 00:00:10.862
+O momento de que imediatamente
+me lembro
+
+00:00:10.990 --> 00:00:14.194
+foi quando criei 
+um aplicativo chamado Wow Census.
+
+00:00:14.219 --> 00:00:18.881
+Era um aplicativo que coletava
+dados demográficos
+
+00:00:18.912 --> 00:00:20.573
+do jogo World of Warcraft.
+
+00:00:20.634 --> 00:00:24.269
+Muito popular. 
+E subestimei muito
+
+00:00:24.305 --> 00:00:28.556
+o volume de dados 
+que os usuários me enviariam.
+
+00:00:29.166 --> 00:00:32.083
+Não só errei completamente
+na programação dos analisadores,
+
+00:00:32.156 --> 00:00:37.328
+como usei a linguagem errada,
+os arquivos eram mal analisados.
+
+00:00:40.144 --> 00:00:44.140
+Não pensei em 
+como isso afetaria o servidor
+
+00:00:44.207 --> 00:00:47.785
+e, rapidamente,
+acabei com meu provedor de hospedagem compartilhado.
+
+00:00:47.864 --> 00:00:49.971
+Precisei comprar um servidor dedicado.
+
+00:00:51.159 --> 00:00:53.563
+E a maneira como 
+passei por isso foi
+
+00:00:53.612 --> 00:00:57.130
+encontrando um amigo 
+que soubesse mais disso do que eu.
+
+00:00:57.105 --> 00:00:59.110
+Eu podia ir até ele 
+e dizer
+
+00:00:59.141 --> 00:01:00.849
+"Olha, fiz coisa errada.
+
+00:01:01.070 --> 00:01:05.230
+Tenho estes problemas,
+acho que a solução é esta".
+
+00:01:05.279 --> 00:01:06.770
+E conseguir 
+a solução com ele.
+
+00:01:06.770 --> 00:01:09.497
+E ele dizia
+"é isto que você precisa fazer aqui, eu te ajudo",
+
+00:01:09.546 --> 00:01:11.049
+e eu pude aprender com ele.
+
+00:01:11.580 --> 00:01:13.120
+Ele era um administrador de sistemas,
+
+00:01:13.120 --> 00:01:17.229
+então ele basicamente me ajudou a fazer
+o servidor dedicado funcionar.
+
+00:01:17.370 --> 00:01:20.640
+Além disso, eu chegava
+para meus amigos programadores
+
+00:01:20.640 --> 00:01:23.803
+e dizia "olha, 
+estou tentando analisar estes arquivos,
+
+00:01:24.580 --> 00:01:29.210
+eles têm 300 MB e 
+milhares de linhas.
+
+00:01:29.283 --> 00:01:32.357
+Mas só me interesso 
+em 100 linhas de cada,
+
+00:01:32.406 --> 00:01:35.411
+então qual você acha que é
+a melhor situação para lidar com isso?".
+
+00:01:35.521 --> 00:01:38.499
+Então, eu confiava 
+nessa rede de suporte ao meu redor.
+
+00:01:38.560 --> 00:01:40.708
+E aprendia 
+ao máximo com eles.
+
+00:01:40.775 --> 00:01:44.120
+Isso me ajudou a superar a situação
+e transformar meu produto em um sucesso.
+
+00:01:45.320 --> 00:01:45.937
+Obrigado.
+
