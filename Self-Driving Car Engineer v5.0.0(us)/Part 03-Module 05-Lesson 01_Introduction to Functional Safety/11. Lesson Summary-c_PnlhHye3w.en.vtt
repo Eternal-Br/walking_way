@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.055
+Before we head to the next lesson,
+
+00:00:02.055 --> 00:00:04.480
+let's summarize what we have gone over so far.
+
+00:00:04.480 --> 00:00:07.980
+Safety involves reducing risks to reasonable levels.
+
+00:00:07.980 --> 00:00:13.551
+We achieve safe systems by identifying hazards that could lead to accidents.
+
+00:00:13.551 --> 00:00:16.539
+Then we evaluate the risk of each hazard.
+
+00:00:16.539 --> 00:00:20.780
+Finally, we use systems engineering to lower risks to acceptable levels.
+
+00:00:20.780 --> 00:00:24.145
+Today's society defines what's an acceptable risk.
+
+00:00:24.144 --> 00:00:26.445
+Functional safety in the automotive industry
+
+00:00:26.445 --> 00:00:30.115
+specifically refers to reducing risk in electronic systems.
+
+00:00:30.114 --> 00:00:35.284
+ISO 26262 is a guideline for achieving automotive functional safety.
+
+00:00:35.284 --> 00:00:36.869
+It's a standard philosophy model.
+
+00:00:36.869 --> 00:00:38.409
+In the next lesson,
+
+00:00:38.409 --> 00:00:43.469
+we would discuss the safety plan which describes what we plan to do to achieve functional
+

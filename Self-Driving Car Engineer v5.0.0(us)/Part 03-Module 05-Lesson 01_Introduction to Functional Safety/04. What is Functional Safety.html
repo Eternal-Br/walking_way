@@ -1,0 +1,453 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   What is Functional Safety?
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Introduction to Functional Safety
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction to the Functional Safety Module.html">
+       01. Introduction to the Functional Safety Module
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction to the Lesson.html">
+       02. Introduction to the Lesson
+      </a>
+     </li>
+     <li class="">
+      <a href="03. What is Safety.html">
+       03. What is Safety?
+      </a>
+     </li>
+     <li class="">
+      <a href="04. What is Functional Safety.html">
+       04. What is Functional Safety?
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Introduction to Identifying Hazards.html">
+       05. Introduction to Identifying Hazards
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Sebastian and Technology Errors.html">
+       06. Sebastian and Technology Errors
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Introduction to Evaluating Risks.html">
+       07. Introduction to Evaluating Risks
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Reducing Risk with Systems Engineering.html">
+       08. Reducing Risk with Systems Engineering
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Introduction to ISO 26262.html">
+       09. Introduction to ISO 26262
+      </a>
+     </li>
+     <li class="">
+      <a href="10. The Full V Model.html">
+       10. The Full V Model
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Summary.html">
+       11. Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Sebastian Talks About Self-Driving Car Risks.html">
+       12. Sebastian Talks About Self-Driving Car Risks
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          04. What is Functional Safety?
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          What Is Functional Safety
+         </p>
+        </h3>
+        <video controls="">
+         <source src="04. What Is Functional Safety-NeUXHSv5qz8.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="04. What Is Functional Safety-NeUXHSv5qz8.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="CN" src="04. What Is Functional Safety-NeUXHSv5qz8.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="the-basics-of-functional-safety-review">
+          The Basics of Functional Safety: Review
+         </h3>
+         <ol>
+          <li>
+           <strong>
+            Identify hazards
+           </strong>
+           in a passenger vehicle's electronic or electric system that could cause physical injury or damage to a person's health
+          </li>
+          <li>
+           <strong>
+            Evaluate the risk
+           </strong>
+           of the hazardous situation so that we know how much we need to lower the risk
+          </li>
+          <li>
+           Via
+           <strong>
+            systems engineering
+           </strong>
+           , prevent accidents from occurring by lowering risk to reasonable levels. Systems engineering helps you figure out what your vehicle needs to do and what your vehicle design needs to look like in order to remain safe.
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="what-level-of-risk-is-reasonable">
+          What Level of Risk is Reasonable?
+         </h3>
+         <p>
+          Who gets to decide what level of risk is reasonable?
+         </p>
+         <p>
+          While you can never eliminate risk entirely, you will reduce risk to levels acceptable by society as a whole.
+         </p>
+         <p>
+          The history of seat belts provides a great example of how society measures risks.  As an aside, remember that functional safety only looks at malfunctions related to electrical and electronic systems. Although seat belts are important safety features, they would not be considered part of automotive functional safety since seat belts are mechanical devices.  For our purposes we will consider seat belts to be mechanical.  Some modern seat belts, which are not purely mechanical, and contain electrical components, would be considered part of functional safety.
+         </p>
+         <p>
+          Many people consider Karl Benz to have invented the automobile around 1885. Seat-belts didn't start appearing until the 1920s when doctors began installing them in their own vehicles. It wasn't until the 1950s that car companies offered seat belts as optional equipment. And then it took until the end of the 1950s for seat belts to become standard equipment.
+         </p>
+         <p>
+          In 1968, the United States passed legislation requiring all vehicles to come with safety belts. Then in 1970, Australia became the first country to require seat belt use. In 1984, New York was the first state in the United States to pass similar legislation. So it took almost a century for countries to require seat belt use.
+         </p>
+         <p>
+          Today, can you imagine purchasing a car with no seat belts? By the measure of contemporary society, driving without a seatbelt is an unreasonable risk. But in the past, driving without a seatbelt was considered reasonable by society's standards.
+         </p>
+         <p>
+          Functional safety focuses on keeping risks below society's current threshold.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="eliminating-risk-completely">
+          Eliminating Risk Completely
+         </h3>
+         <p>
+          Why are you only trying to lower risk to reasonable levels rather than eliminating all risk? Eliminating all risks would paralyze engineering, product development and testing. Ensuring that people were never injured in a car accident would, unfortunately, probably be impossible.
+         </p>
+         <p>
+          On the other hand, not eliminating enough risks could lead to failed products, recalls, lawsuits or even loss of life. In the end, every company has to decide for itself how much risk to eliminate from its products.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="what-does-functional-mean">
+          What does "Functional" Mean?
+         </h3>
+         <p>
+          The term "functional" comes from a branch of systems engineering called requirements engineering. Systems engineering separates requirements into:
+         </p>
+         <p>
+          <em>
+           Functional requirements
+          </em>
+          - what your system is supposed to do; in other words, the system's
+          <em>
+           functions
+          </em>
+          .
+         </p>
+         <p>
+          <em>
+           Non-functional requirements
+          </em>
+          - how the system should behave: for example, how reliable is the system?
+         </p>
+         <p>
+          Functional requirements generally have the form
+          <strong>
+           X system shall do Y
+          </strong>
+          . For example, "The turn signal system shall turn on an indicator light telling the driver that the system is active".
+         </p>
+         <p>
+          Non-functional requirements have the form
+          <strong>
+           X system shall be Y
+          </strong>
+          . As an example: "The turn signal system shall be available when the vehicle ignition switch is in the on position".
+         </p>
+         <p>
+          Functional safety looks at what happens when the system does something that it was not supposed to do, which is called a malfunction. You will be adding new engineering requirements to the vehicle design in order to ensure safe systems.
+         </p>
+         <p>
+          You might notice that the word
+          <em>
+           shall
+          </em>
+          comes up quite often in the functional safety module. This is because engineering requirements almost always contain the word "shall". If you see the word
+          <em>
+           shall
+          </em>
+          , then you are probably looking at an engineering requirement.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="quiz">
+          Quiz
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Acceptable Risks
+         </p>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Which of the following would contemporary society consider to be unreasonable risks for automobiles?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1499704139181" name="345400" type="checkbox" value="a1499704139181"/>
+           <label for="a1499704139181">
+            <p>
+             In a rear-end collision, the fuel tank could catch on fire.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499704178974" name="345400" type="checkbox" value="a1499704178974"/>
+           <label for="a1499704178974">
+            <p>
+             A vehicle comes equipped with front airbags but does not contain side airbags.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499704191029" name="345400" type="checkbox" value="a1499704191029"/>
+           <label for="a1499704191029">
+            <p>
+             The software for the brake system contains a bug that could lead to braking problems.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499704202300" name="345400" type="checkbox" value="a1499704202300"/>
+           <label for="a1499704202300">
+            <p>
+             Although the passenger vehicle has electronic stability control, it does not contain a traction control system.
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <ul>
+           <li>
+            In a rear-end collision, the fuel tank could catch on fire.
+           </li>
+           <li>
+            The software for the brake system contains a bug that could lead to braking problems.
+           </li>
+          </ul>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="05. Introduction to Identifying Hazards.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. What is Functional Safety?')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

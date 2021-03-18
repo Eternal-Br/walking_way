@@ -1,0 +1,118 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.125
+Now that we have an idea about how to identify hazards,
+
+00:00:04.125 --> 00:00:08.388
+we need to evaluate the risk associated with each hazard.
+
+00:00:08.388 --> 00:00:14.140
+Evaluating risk will be an important part of our more formal functional safety analysis.
+
+00:00:14.140 --> 00:00:17.830
+Every hazard has a certain risk associated with it.
+
+00:00:17.829 --> 00:00:20.759
+And since we are thinking like functional safety engineers,
+
+00:00:20.760 --> 00:00:23.798
+we are going to define risk numerically.
+
+00:00:23.797 --> 00:00:28.469
+Risk equals severity of harm times probability of occurrence.
+
+00:00:28.469 --> 00:00:34.469
+Severity of harm measures how badly a person could be injured when an accident occurs.
+
+00:00:34.469 --> 00:00:40.725
+Probability of occurrence has a specific definition for passenger car functional safety.
+
+00:00:40.725 --> 00:00:42.929
+It is the frequency with which
+
+00:00:42.929 --> 00:00:47.070
+typical drivers find themselves driving in a certain situation.
+
+00:00:47.070 --> 00:00:50.094
+For example, driving on a city street has
+
+00:00:50.094 --> 00:00:54.299
+a high probability of occurrence because people do it everyday.
+
+00:00:54.299 --> 00:00:56.759
+Driving on a snowy mountainside has
+
+00:00:56.759 --> 00:01:02.474
+a low probability because people hardly find themselves driving in those conditions.
+
+00:01:02.475 --> 00:01:04.680
+Probability of occurrence only takes into
+
+00:01:04.680 --> 00:01:08.650
+account how often you find yourself driving in a certain situation.
+
+00:01:08.650 --> 00:01:12.048
+It does not take into account how likely a malfunction will occur,
+
+00:01:12.048 --> 00:01:14.519
+like the probability of your brakes failing.
+
+00:01:14.519 --> 00:01:16.109
+Failing brakes would lead to
+
+00:01:16.109 --> 00:01:19.670
+high severity but would not affect probability of occurrence.
+
+00:01:19.670 --> 00:01:23.359
+Let's go through an example of calculating risk.
+
+00:01:23.359 --> 00:01:26.609
+We'll say that severity has a scale of one to four,
+
+00:01:26.609 --> 00:01:31.215
+with one representing no injury and four representing fatal injury.
+
+00:01:31.215 --> 00:01:35.990
+Probability of occurrence will also be on a scale from one to four,
+
+00:01:35.989 --> 00:01:39.804
+one being an unlikely scenario like needing a jump start,
+
+00:01:39.805 --> 00:01:43.380
+while four will be a likely scenario like driving on a highway.
+
+00:01:43.379 --> 00:01:45.739
+Here's our scenario, you're driving on
+
+00:01:45.739 --> 00:01:49.655
+a snowy mountain side pass and the power steering malfunctions.
+
+00:01:49.655 --> 00:01:55.125
+I would say severity is a four because we could easily lose control of the vehicle,
+
+00:01:55.125 --> 00:01:59.216
+driving off the mountainside and suffer a fatal injury.
+
+00:01:59.216 --> 00:02:02.219
+Probability of occurrence could be a two
+
+00:02:02.219 --> 00:02:07.724
+because you would not find yourself driving on a snowy mountainside very often.
+
+00:02:07.724 --> 00:02:11.914
+Risk then is four times two equals eight.
+
+00:02:11.914 --> 00:02:13.734
+In functional safety analysis,
+
+00:02:13.735 --> 00:02:18.670
+we quantify risk to determine how much we need to lower the risk.
+
+00:02:18.669 --> 00:02:21.419
+Vehicle systems with high risks require
+
+00:02:21.419 --> 00:02:26.489
+more analysis and testing to bring the risk down to acceptable levels.
+

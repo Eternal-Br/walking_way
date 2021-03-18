@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.889
+Now you'll start to think like
+
+00:00:01.889 --> 00:00:03.809
+a functional safety engineer and
+
+00:00:03.810 --> 00:00:07.500
+consider how you can be more methodical about your analysis.
+
+00:00:07.500 --> 00:00:12.960
+In functional safety, your goal is to identify high risk situations that could cause
+
+00:00:12.960 --> 00:00:18.382
+harm and then you find ways to lower the risk to reasonable, acceptable levels.
+
+00:00:18.382 --> 00:00:21.730
+Safety then is the absence of unreasonable risks.
+
+00:00:21.730 --> 00:00:26.475
+Functional safety at its most basic level involves three main things.
+
+00:00:26.475 --> 00:00:30.045
+Number one, identifying potential problems
+
+00:00:30.045 --> 00:00:33.340
+that could injure people or damage people's health.
+
+00:00:33.340 --> 00:00:36.705
+We will call these potential problems hazards.
+
+00:00:36.704 --> 00:00:41.280
+Number two, evaluating the risks of these hazards.
+
+00:00:41.280 --> 00:00:46.814
+Number three, using systems engineering to lower risks to acceptable levels.
+
+00:00:46.814 --> 00:00:50.299
+You ensure that hazards do not lead to accidents.
+
+00:00:50.299 --> 00:00:54.869
+Systems engineering helps you figure out what your vehicle needs to do and what
+
+00:00:54.869 --> 00:01:00.780
+your vehicle design needs to look like in order to remain as safe as reasonably possible.
+
+00:01:00.780 --> 00:01:03.390
+In practice the third part takes the most work
+
+00:01:03.390 --> 00:01:07.170
+and will be the main focus of the functional safety module.
+
+00:01:07.170 --> 00:01:10.034
+Lowering risks involves designing safe systems,
+
+00:01:10.034 --> 00:01:14.000
+testing your systems and documenting all designs and tests.
+
+00:01:14.000 --> 00:01:19.000
+In the first lesson we will give you an overview of these three basic building blocks.
+

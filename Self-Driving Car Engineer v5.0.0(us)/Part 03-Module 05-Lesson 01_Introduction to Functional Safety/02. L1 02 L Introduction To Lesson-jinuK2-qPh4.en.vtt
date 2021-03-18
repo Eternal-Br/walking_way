@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.515
+So what exactly is functional safety?
+
+00:00:03.515 --> 00:00:05.970
+Any product will have certain requirements or
+
+00:00:05.969 --> 00:00:09.300
+functions describing what the product is supposed to do.
+
+00:00:09.300 --> 00:00:12.270
+Our job as safety managers and engineers is
+
+00:00:12.269 --> 00:00:15.789
+to make sure that these functions do not lead to injury or harm.
+
+00:00:15.789 --> 00:00:17.678
+In the automotive industry,
+
+00:00:17.678 --> 00:00:21.949
+functional safety specifically refers to reducing risk in electronic systems.
+
+00:00:21.949 --> 00:00:24.599
+Automotive functional safety was developed out of
+
+00:00:24.600 --> 00:00:29.200
+the increasing use of complex hardware and software systems in passenger vehicles.
+
+00:00:29.199 --> 00:00:32.189
+In this module, we introduce you to
+
+00:00:32.189 --> 00:00:36.155
+the main functional safety standards for the automotive industry,
+
+00:00:36.155 --> 00:00:39.750
+ISO 26262, the standard used in
+
+00:00:39.750 --> 00:00:45.015
+systems engineering to methodically reduce risk in passenger vehicle's E/E-Systems.
+
+00:00:45.015 --> 00:00:49.721
+Because functional safety is just one part of the overall automotive safety,
+
+00:00:49.720 --> 00:00:54.116
+we will start off with a general introduction to automotive safety.
+
+00:00:54.116 --> 00:00:57.419
+In this lesson, we also present the basic building blocks for
+
+00:00:57.420 --> 00:01:01.500
+carrying out a functional safety analysis according to the ISO standard.
+
+00:01:01.500 --> 00:01:04.890
+The following lessons will go into the details of how we
+
+00:01:04.890 --> 00:01:08.000
+use the standard to reduce risks in passenger vehicles.
+

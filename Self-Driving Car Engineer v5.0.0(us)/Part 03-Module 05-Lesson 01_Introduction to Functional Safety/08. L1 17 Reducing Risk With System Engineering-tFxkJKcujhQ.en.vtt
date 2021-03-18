@@ -1,0 +1,184 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.509
+We've discussed how to recognize hazards and motor risks.
+
+00:00:03.509 --> 00:00:07.369
+But how exactly do we reduce risk to acceptable levels?
+
+00:00:07.370 --> 00:00:10.890
+Engineers use systems engineering to reduce risk in order to
+
+00:00:10.890 --> 00:00:14.519
+prevent and control accidents. Vehicles are complex.
+
+00:00:14.519 --> 00:00:19.410
+Think about all of the different mechanical elements, electric elements,
+
+00:00:19.410 --> 00:00:25.875
+hydraulic components, hardware components and software components that go into a vehicle.
+
+00:00:25.875 --> 00:00:30.134
+All of these functions have to work together in a variety of driving conditions,
+
+00:00:30.135 --> 00:00:36.000
+like freeway driving, driving in the desert heat and driving below freezing temperatures.
+
+00:00:36.000 --> 00:00:40.420
+Now, think about the different players involved in designing and producing a vehicle.
+
+00:00:40.420 --> 00:00:43.725
+Product engineers, finance managers,
+
+00:00:43.725 --> 00:00:46.905
+project managers, safety engineers,
+
+00:00:46.905 --> 00:00:50.230
+testing engineers and car body designers.
+
+00:00:50.229 --> 00:00:53.219
+Players will impose different constraints on
+
+00:00:53.219 --> 00:00:56.854
+the design as they figure out what the vehicle needs to do.
+
+00:00:56.854 --> 00:00:59.109
+For example, a product engineer will want
+
+00:00:59.109 --> 00:01:03.534
+the lane keeping system to always be on and available for use.
+
+00:01:03.534 --> 00:01:06.024
+A safety engineer, will find cases where
+
+00:01:06.025 --> 00:01:09.750
+the lane keeping system needs to shut off or be limited.
+
+00:01:09.750 --> 00:01:12.390
+Besides safety and availability constraints,
+
+00:01:12.390 --> 00:01:14.790
+other constraints include costs,
+
+00:01:14.790 --> 00:01:20.190
+productivity, market demands and limits of current technology.
+
+00:01:20.189 --> 00:01:23.625
+This is where systems engineering comes into play.
+
+00:01:23.625 --> 00:01:27.659
+Systems engineering gives you a methodical framework to figure out
+
+00:01:27.659 --> 00:01:32.414
+what your vehicle needs to do which is also called requirements engineering.
+
+00:01:32.415 --> 00:01:35.040
+Come up with a design that matches your requirements
+
+00:01:35.040 --> 00:01:38.310
+and allocate requirements to different parts of your design.
+
+00:01:38.310 --> 00:01:43.305
+This is called designing a system architecture and allocating requirements to the system.
+
+00:01:43.305 --> 00:01:47.875
+Test and verify your system to make sure that it really does what it is supposed to do.
+
+00:01:47.875 --> 00:01:51.620
+Which we will refer to as testing and verification.
+
+00:01:51.620 --> 00:01:57.060
+And finally, integrate all of the different parts so that everything plays well together.
+
+00:01:57.060 --> 00:01:59.460
+This is known as system integration.
+
+00:01:59.459 --> 00:02:01.724
+How will we use system engineering?
+
+00:02:01.724 --> 00:02:06.209
+Let's say a product engineering team is working on the lane departure warning function.
+
+00:02:06.209 --> 00:02:07.500
+The warning function vibrates
+
+00:02:07.500 --> 00:02:10.775
+the steering wheel if the driver crosses the lane by mistake.
+
+00:02:10.775 --> 00:02:12.914
+You, the safety engineer,
+
+00:02:12.914 --> 00:02:15.459
+look all the lane wanting functions design,
+
+00:02:15.460 --> 00:02:19.200
+you quickly realize that if the steering wheel vibrates too hard,
+
+00:02:19.199 --> 00:02:22.399
+the driver could loose control of the vehicle and crash.
+
+00:02:22.400 --> 00:02:24.405
+What are you going to do about it?
+
+00:02:24.405 --> 00:02:26.034
+You will use systems engineering.
+
+00:02:26.034 --> 00:02:29.579
+First, figure out what the vehicle needs to do.
+
+00:02:29.580 --> 00:02:33.005
+The vehicle needs to limit the maximum vibration of the steering wheel.
+
+00:02:33.004 --> 00:02:35.324
+If the vibration exceeds the maximum,
+
+00:02:35.324 --> 00:02:38.819
+the lane departure warning system should shut off.
+
+00:02:38.819 --> 00:02:40.639
+This is requirements engineering.
+
+00:02:40.639 --> 00:02:43.319
+Now, you adjust the design of the lane departure wanting
+
+00:02:43.319 --> 00:02:46.930
+function so that it includes your new functionality.
+
+00:02:46.930 --> 00:02:51.060
+We call this, allocating requirements to the system architecture.
+
+00:02:51.060 --> 00:02:55.115
+The next step, is to test your design to make sure it works properly.
+
+00:02:55.115 --> 00:03:00.360
+You verify that the system turns off when vibration levels get too intense.
+
+00:03:00.360 --> 00:03:02.755
+This is the testing and verification phase.
+
+00:03:02.754 --> 00:03:06.745
+Finally, you integrate your design into the rest of the vehicle.
+
+00:03:06.745 --> 00:03:08.490
+For instance, you'll make sure that
+
+00:03:08.490 --> 00:03:13.350
+the lane keeping system plays well with the automatic cruise control system.
+
+00:03:13.349 --> 00:03:16.019
+This is the system's integration step.
+
+00:03:16.020 --> 00:03:18.165
+Your job as a functional safety engineer,
+
+00:03:18.164 --> 00:03:20.400
+is to insert yourself into the design and
+
+00:03:20.400 --> 00:03:23.534
+testing process as your company develops a vehicle.
+
+00:03:23.534 --> 00:03:26.810
+You will use systems engineering principles to guide
+

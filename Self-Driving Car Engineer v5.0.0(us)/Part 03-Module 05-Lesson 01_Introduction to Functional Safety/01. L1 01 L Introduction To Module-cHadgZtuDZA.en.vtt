@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.340
+Welcome to functional safety.
+
+00:00:02.340 --> 00:00:08.540
+In this module, you'll learn how to analyze and design automotive systems to reduce risk.
+
+00:00:08.540 --> 00:00:11.416
+Three functional safety experts from Elektrobit,
+
+00:00:11.416 --> 00:00:14.940
+Dheeraj, Stephanie, and Benjamin will be leading the module.
+
+00:00:14.940 --> 00:00:20.460
+Within the module, you'll use the framework provided by ISO 26262,
+
+00:00:20.460 --> 00:00:23.595
+the international standard on functional safety.
+
+00:00:23.595 --> 00:00:28.680
+Functional safety is an important part of designing autonomous vehicles and it's often
+
+00:00:28.680 --> 00:00:34.004
+a difficult skill set to acquire because it is so specific to the automotive industry.
+
+00:00:34.004 --> 00:00:37.785
+We're excited for you to learn these skills and we hope that, eventually,
+
+00:00:37.785 --> 00:00:40.500
+you'll have the opportunity to apply them in designing
+
+00:00:40.500 --> 00:00:43.865
+safe, functional, self-driving cars.
+
+00:00:43.865 --> 00:00:46.020
+Hi, my name is Stephanie Hollyer.
+
+00:00:46.020 --> 00:00:50.340
+I'm a validation and verification manager for Elekrobit's U. S. operations.
+
+00:00:50.340 --> 00:00:51.720
+My job is to ensure all of
+
+00:00:51.720 --> 00:00:55.050
+our internal products get properly tested before going into production.
+
+00:00:55.050 --> 00:00:56.880
+And I'm Benjamin Brentrop.
+
+00:00:56.880 --> 00:01:00.145
+I'm a functional safety manager at Elektrobit in Germany.
+
+00:01:00.145 --> 00:01:03.315
+My background is in automotive system software development.
+
+00:01:03.315 --> 00:01:04.780
+For the past six years,
+
+00:01:04.780 --> 00:01:08.130
+I've worked in the area of functional safety for instrument clusters,
+
+00:01:08.130 --> 00:01:11.765
+transmission control, avick controls and body control units.
+
+00:01:11.765 --> 00:01:14.040
+Hi my name is Deeraj Sharma.
+
+00:01:14.040 --> 00:01:16.467
+I'm a senior software engineer at Elektrobit.
+
+00:01:16.467 --> 00:01:18.900
+Part of my responsibilities is to identify
+
+00:01:18.900 --> 00:01:22.480
+mechanisms needed to satisfy software safety requirements.
+
+00:01:22.480 --> 00:01:27.055
+Elektrobit supplies software to automotive manufacturers and suppliers around the world.
+
+00:01:27.055 --> 00:01:29.800
+Our customers expect our products to be safe.
+
+00:01:29.800 --> 00:01:33.120
+So, as a company, we have a methodical approach to designing,
+
+00:01:33.120 --> 00:01:36.000
+building, and testing our systems and products.
+
+00:01:36.000 --> 00:01:37.555
+We are looking forward to teaching you
+
+00:01:37.555 --> 00:01:40.000
+functional safety techniques that help ensure automotive
+

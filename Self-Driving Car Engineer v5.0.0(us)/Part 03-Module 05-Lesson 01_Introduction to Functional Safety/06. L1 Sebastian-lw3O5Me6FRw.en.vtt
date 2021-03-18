@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.370
+So talk about the complexity of bugs.
+
+00:00:02.370 --> 00:00:05.250
+My students built the computing infrastructure
+
+00:00:05.250 --> 00:00:08.814
+for standee and computers and power systems.
+
+00:00:08.814 --> 00:00:10.724
+And we had a backup battery in case
+
+00:00:10.724 --> 00:00:13.169
+our main battery failed and all these wonderful things,
+
+00:00:13.169 --> 00:00:14.669
+and everything worked fine.
+
+00:00:14.669 --> 00:00:19.611
+For months, we would go out every day and drive the car until summer hit.
+
+00:00:19.611 --> 00:00:25.115
+Summer hit, and we broke an alternator. It just was fried.
+
+00:00:25.114 --> 00:00:26.474
+So we took the engine out,
+
+00:00:26.475 --> 00:00:27.750
+put an alternator in,
+
+00:00:27.750 --> 00:00:30.295
+kept driving. We broke another alternator.
+
+00:00:30.295 --> 00:00:32.975
+We took the engine out, engine back in,
+
+00:00:32.975 --> 00:00:37.215
+and it invokes on tour it gets an expensive procedure to replace alternator,
+
+00:00:37.215 --> 00:00:39.315
+and to cap off another half week, alternator problem.
+
+00:00:39.314 --> 00:00:42.335
+No clue what's happening.
+
+00:00:42.335 --> 00:00:43.800
+Now, we measured everything.
+
+00:00:43.799 --> 00:00:45.119
+We went into the system,
+
+00:00:45.119 --> 00:00:48.744
+try to understand anything more about the- but the load of the alternator was just fine.
+
+00:00:48.744 --> 00:00:51.544
+We couldn't find anything. And then,
+
+00:00:51.545 --> 00:00:55.770
+it turned out to be one of this really bizarre bugs.
+
+00:00:55.770 --> 00:00:58.295
+The students had tried to make a distinction,
+
+00:00:58.295 --> 00:00:59.940
+is the car running or not,
+
+00:00:59.939 --> 00:01:01.589
+and normally the car is running,
+
+00:01:01.590 --> 00:01:07.635
+it supplies enough voltage that the voltage of our system exceeds 12.5 volts.
+
+00:01:07.635 --> 00:01:09.810
+So they would say, if the car is running,
+
+00:01:09.810 --> 00:01:13.305
+we take the power from our main car source,
+
+00:01:13.305 --> 00:01:16.067
+turn it off but it is not running,
+
+00:01:16.066 --> 00:01:19.104
+we take it from the spare battery, okay?
+
+00:01:19.105 --> 00:01:20.585
+So the car was running.
+
+00:01:20.584 --> 00:01:23.609
+It was warm, the air conditioned was full blast,
+
+00:01:23.609 --> 00:01:26.730
+and even though it's running the voltage drops just
+
+00:01:26.730 --> 00:01:29.820
+below 12.5 volt which told our system,
+
+00:01:29.819 --> 00:01:31.750
+oh cars off, sure it's off,
+
+00:01:31.750 --> 00:01:33.859
+cars off, reserve battery.
+
+00:01:33.859 --> 00:01:38.359
+So our power system would go from full draw of power from the cause alternator,
+
+00:01:38.359 --> 00:01:40.954
+to zero at all within a tenth of a second.
+
+00:01:40.954 --> 00:01:44.849
+Now of course the moment it took the power away from the main car,
+
+00:01:44.849 --> 00:01:48.530
+it recovers, and the voltage goes above 12.5 volt.
+
+00:01:48.530 --> 00:01:50.689
+In which case our passes went back with the car.
+
+00:01:50.689 --> 00:01:53.745
+So we effectively were switching between full load
+
+00:01:53.745 --> 00:01:57.775
+and zero load 10 times a second for the alternator.
+
+00:01:57.775 --> 00:02:00.000
+Now when we use digital volt meters,
+
+00:02:00.000 --> 00:02:02.040
+we couldn't see it, because it will smooth it out.
+
+00:02:02.040 --> 00:02:05.250
+We had to take an analog altimeter to see all these bumps and realize,
+
+00:02:05.250 --> 00:02:07.484
+oh my God on average we're doing fine but in reality,
+
+00:02:07.484 --> 00:02:10.395
+we're drawing 100 and 0 amp, a 100 and 0 amp,
+
+00:02:10.395 --> 00:02:12.445
+a 100 and 0 amp within like,
+
+00:02:12.444 --> 00:02:14.019
+10th of seconds to each other,
+
+00:02:14.020 --> 00:02:15.784
+and that cause the alternators to break.
+
+00:02:15.784 --> 00:02:17.810
+Again it took us forever to find this bug,
+
+00:02:17.810 --> 00:02:20.390
+and I'm so glad we found it.
+

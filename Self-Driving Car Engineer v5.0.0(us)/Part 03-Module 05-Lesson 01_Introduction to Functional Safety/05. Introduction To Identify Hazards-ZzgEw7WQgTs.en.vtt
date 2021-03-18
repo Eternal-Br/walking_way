@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.790
+We have now discussed the main goal of functional safety,
+
+00:00:02.790 --> 00:00:06.865
+identifying hazards and lowering risks to acceptable level.
+
+00:00:06.865 --> 00:00:10.169
+So one of the first steps in functional safety analysis is to
+
+00:00:10.169 --> 00:00:14.969
+identify hazards that could cause injury or harm a person's health.
+
+00:00:14.970 --> 00:00:18.519
+Vehicles have a lot of safety features that we take for granted today.
+
+00:00:18.519 --> 00:00:22.689
+But many safety features such as padded dashboards, headrests,
+
+00:00:22.690 --> 00:00:27.545
+and windshield glass came about because vehicles were actually causing injuries.
+
+00:00:27.545 --> 00:00:32.655
+In functional safety, we want to identify hazards before they ever cause injury.
+
+00:00:32.655 --> 00:00:37.920
+We do not want to wait for an injury to happen and then identify the hazards after.
+
+00:00:37.920 --> 00:00:42.405
+But how do you identify these potential hazards? It takes brainstorming.
+
+00:00:42.405 --> 00:00:44.429
+As a functional safety engineer,
+
+00:00:44.429 --> 00:00:46.590
+you will take a cross-section of personnel from
+
+00:00:46.590 --> 00:00:50.310
+your company to help out with the brainstorming process.
+
+00:00:50.310 --> 00:00:51.780
+You have to imagine a lot of
+
+00:00:51.780 --> 00:00:56.085
+different scenarios and situations that could lead to accidents.
+
+00:00:56.085 --> 00:00:58.064
+To help you identify hazards,
+
+00:00:58.064 --> 00:01:02.589
+we are going to discuss three general causes of accidents: Errors caused by humans.
+
+00:01:02.590 --> 00:01:09.260
+errors from technology and errors caused by human technology interaction.
+
+00:01:09.260 --> 00:01:11.730
+This is just an introduction to hazard analysis.
+
+00:01:11.730 --> 00:01:13.230
+In the following lesson,
+
+00:01:13.230 --> 00:01:17.000
+we will give you a more formal framework for identifying hazards.
+

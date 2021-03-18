@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.855
+Before analyzing a system under ISO 26262,
+
+00:00:03.855 --> 00:00:05.280
+you need to create a plan.
+
+00:00:05.280 --> 00:00:07.620
+Designing a safe vehicle requires more than
+
+00:00:07.620 --> 00:00:11.070
+a methodical analysis of hardware and software components.
+
+00:00:11.070 --> 00:00:15.650
+Vehicles are complex systems with both sociological and technical requirements.
+
+00:00:15.650 --> 00:00:18.815
+If your company or team does not take safety seriously,
+
+00:00:18.815 --> 00:00:20.940
+how can you expect to design a safe vehicle?
+
+00:00:20.940 --> 00:00:23.425
+If roles and responsibilities haven't been defined,
+
+00:00:23.425 --> 00:00:25.830
+important design steps might be missed.
+
+00:00:25.829 --> 00:00:28.939
+So our first step in functional safety is to write a safety plan.
+
+00:00:28.940 --> 00:00:31.785
+The safety plan forces us to define roles
+
+00:00:31.785 --> 00:00:34.979
+then outline the steps we will take to achieve functional safety.
+
+00:00:34.979 --> 00:00:36.839
+In this lesson we will teach you
+
+00:00:36.840 --> 00:00:40.020
+the basic parts of a safety plan so that you can document your own.
+

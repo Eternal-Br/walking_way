@@ -1,0 +1,103 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.765
+Let's look again at the steps contained in the V-model.
+
+00:00:03.765 --> 00:00:06.875
+The V-model shows the entire safety life cycle,
+
+00:00:06.875 --> 00:00:09.089
+starting from the concept phase through
+
+00:00:09.089 --> 00:00:12.054
+their product development and ending in production.
+
+00:00:12.054 --> 00:00:14.849
+In general, a functional safety manager will
+
+00:00:14.849 --> 00:00:18.179
+need to coordinate and document the entire cycle.
+
+00:00:18.179 --> 00:00:23.250
+Ask yourself, is my product new or am I modifying an existing product?
+
+00:00:23.250 --> 00:00:25.245
+If you are designing a new product,
+
+00:00:25.245 --> 00:00:29.150
+you'll have to follow and document the entire safety lifecycle.
+
+00:00:29.149 --> 00:00:31.994
+If you are modifying a product that already exist,
+
+00:00:31.995 --> 00:00:35.950
+you might not have to implement all of the steps in the safety lifecycle.
+
+00:00:35.950 --> 00:00:38.429
+New functionality perhaps only impacts
+
+00:00:38.429 --> 00:00:42.104
+certain parts of the concept phase or product development phase,
+
+00:00:42.104 --> 00:00:44.789
+so you can tailor the safety lifecycle to include
+
+00:00:44.789 --> 00:00:48.210
+only the parts impacted by the new functionality.
+
+00:00:48.210 --> 00:00:52.579
+That way, you can reuse some of the work that has already been done.
+
+00:00:52.579 --> 00:00:53.924
+Let's say, for example,
+
+00:00:53.924 --> 00:00:59.140
+that you are working on updating an automatic braking system that already exists.
+
+00:00:59.140 --> 00:01:01.005
+Your company has decided to use
+
+00:01:01.005 --> 00:01:05.609
+a new electronic control unit with a faster, more powerful processor.
+
+00:01:05.609 --> 00:01:09.209
+However, the break system's functionality has not changed.
+
+00:01:09.209 --> 00:01:14.484
+Your first step is to make sure the new ECU really would not affect the braking system.
+
+00:01:14.484 --> 00:01:16.859
+If the new ECU has no effect,
+
+00:01:16.859 --> 00:01:19.709
+you might not have to change anything in the design.
+
+00:01:19.709 --> 00:01:23.819
+You could also reuse part of the original functional safety analysis.
+
+00:01:23.819 --> 00:01:27.239
+However, you would still need to run tests to make sure
+
+00:01:27.239 --> 00:01:31.114
+the new electronic control unit integrates with the rest of the system.
+
+00:01:31.114 --> 00:01:32.643
+In the safety plan,
+
+00:01:32.644 --> 00:01:38.460
+you would need to discuss if the product being developed is new or just a modification.
+
+00:01:38.459 --> 00:01:40.529
+Then you tailor the safety lifecycle and
+
+00:01:40.530 --> 00:01:43.680
+discuss what sections of the V-model need to be included.
+
+00:01:43.680 --> 00:01:45.960
+Tailoring the safety lifecycle allows you
+
+00:01:45.959 --> 00:01:48.329
+to focus on the parts of the product that are new.
+

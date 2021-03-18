@@ -1,0 +1,103 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.774
+You have now learned the basics of functional safety,
+
+00:00:02.774 --> 00:00:05.910
+hazard identification, evaluating risk,
+
+00:00:05.910 --> 00:00:08.675
+and using systems engineering to lower risk.
+
+00:00:08.675 --> 00:00:12.600
+It's time to introduce the international functional safety standard, ISO 26262.
+
+00:00:12.599 --> 00:00:16.980
+ISO 26262 provides a framework
+
+00:00:16.980 --> 00:00:20.785
+for dealing with electronic system malfunctions in passenger vehicles.
+
+00:00:20.785 --> 00:00:25.410
+In other words, the standard helps you ensure that if your vehicle systems do
+
+00:00:25.410 --> 00:00:30.750
+not behave as intended the vehicle will not cause injury or harm to a person's health.
+
+00:00:30.750 --> 00:00:33.939
+Remember the V model we have discussed previously.
+
+00:00:33.939 --> 00:00:40.064
+ISO 26262 uses the V model to cover the entire vehicle safety lifecycle from planning,
+
+00:00:40.064 --> 00:00:44.769
+designing, testing, production, and post-production.
+
+00:00:44.770 --> 00:00:46.980
+Let's take a look at the V model.
+
+00:00:46.979 --> 00:00:51.119
+It's a little bit more complex than the V model we looked at before,
+
+00:00:51.119 --> 00:00:53.669
+but the principles are the same.
+
+00:00:53.670 --> 00:00:56.820
+The left side represents system planning and design.
+
+00:00:56.820 --> 00:01:00.475
+The right side shows system testing and integration.
+
+00:01:00.475 --> 00:01:06.299
+The bottom of the V represents subsystems while the top integrated systems.
+
+00:01:06.299 --> 00:01:08.640
+Note that the V model makes a clear distinction
+
+00:01:08.640 --> 00:01:12.420
+between hardware development and software development.
+
+00:01:12.420 --> 00:01:16.409
+Each one has its own miniature V model within the larger model.
+
+00:01:16.409 --> 00:01:19.200
+Note also that you can connect to the left side of
+
+00:01:19.200 --> 00:01:23.040
+the V and right side of the V with horizontal lines.
+
+00:01:23.040 --> 00:01:25.655
+For every test and integration step.
+
+00:01:25.655 --> 00:01:28.200
+You can go back and verify that the product being
+
+00:01:28.200 --> 00:01:31.880
+developed actually matches the design specifications.
+
+00:01:31.879 --> 00:01:33.581
+In the rest of the lessons,
+
+00:01:33.581 --> 00:01:37.489
+we will go into the details about the planning and design phase.
+
+00:01:37.489 --> 00:01:40.959
+We will be focusing on these specific parts of the V model.
+
+00:01:40.959 --> 00:01:46.349
+We will use the Lane Assistance System example to study the concept phase,
+
+00:01:46.349 --> 00:01:48.989
+product development at system level,
+
+00:01:48.989 --> 00:01:52.854
+and product development at software and hardware level.
+
+00:01:52.855 --> 00:01:56.549
+You will gain a basic understanding of what it takes to achieve
+
+00:01:56.549 --> 00:02:01.000
+ISO 26262 compliance when designing an automotive system.
+

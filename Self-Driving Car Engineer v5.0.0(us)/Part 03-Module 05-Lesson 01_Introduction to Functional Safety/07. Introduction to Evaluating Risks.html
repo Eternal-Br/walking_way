@@ -1,0 +1,386 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Introduction to Evaluating Risks
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Introduction to Functional Safety
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction to the Functional Safety Module.html">
+       01. Introduction to the Functional Safety Module
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction to the Lesson.html">
+       02. Introduction to the Lesson
+      </a>
+     </li>
+     <li class="">
+      <a href="03. What is Safety.html">
+       03. What is Safety?
+      </a>
+     </li>
+     <li class="">
+      <a href="04. What is Functional Safety.html">
+       04. What is Functional Safety?
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Introduction to Identifying Hazards.html">
+       05. Introduction to Identifying Hazards
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Sebastian and Technology Errors.html">
+       06. Sebastian and Technology Errors
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Introduction to Evaluating Risks.html">
+       07. Introduction to Evaluating Risks
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Reducing Risk with Systems Engineering.html">
+       08. Reducing Risk with Systems Engineering
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Introduction to ISO 26262.html">
+       09. Introduction to ISO 26262
+      </a>
+     </li>
+     <li class="">
+      <a href="10. The Full V Model.html">
+       10. The Full V Model
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Summary.html">
+       11. Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Sebastian Talks About Self-Driving Car Risks.html">
+       12. Sebastian Talks About Self-Driving Car Risks
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          07. Introduction to Evaluating Risks
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Introduction To Evaluating Risks
+         </p>
+        </h3>
+        <video controls="">
+         <source src="07. Introduction To Evaluating Risks-3N-6YK_pPzA.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="07. Introduction To Evaluating Risks-3N-6YK_pPzA.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="CN" src="07. Introduction To Evaluating Risks-3N-6YK_pPzA.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="asil-automotive-safety-integrity-level">
+          ASIL (Automotive Safety Integrity Level)
+         </h3>
+         <p>
+          The ISO 26262 standard defines a risk factor called ASIL - Automotive Safety Integrity Level. ASIL is a four point scale of ASIL A, ASIL B, ASIL C and ASIL D.
+         </p>
+         <p>
+          ASIL D represents a hazardous situation with the highest risk whereas ASIL A represents lower risk. ASIL is a key term in automotive functional safety. The video introduced the basic ideas behind how to calculate ASIL, but we will leave the details for the Hazard Analysis and Risk Assessment Lesson.
+         </p>
+         <p>
+          There is one more level of risk below ASIL A called QM. QM stands for quality managed. QM means that  development according to accepted quality principles is sufficient to reduce risk.   You will learn more about ASIL and QM in the lesson on hazard analysis and risk assessment.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="quiz">
+          Quiz
+         </h3>
+         <p>
+          Let's measure probability of occurrence and severity on a scale from 1 to 4 with 4 representing highly probable and severe situations. Here are some guidelines for measuring probability of occurrence and severity:
+         </p>
+         <p>
+          <strong>
+           Probability of occurrence:
+          </strong>
+         </p>
+         <p>
+          1 - Vehicle jumpstart needed
+         </p>
+         <p>
+          2 - Driving in snow
+         </p>
+         <p>
+          3 - Driving at night with no street lamps
+         </p>
+         <p>
+          4 - Driving on the highway
+         </p>
+         <p>
+          <strong>
+           Severity:
+          </strong>
+         </p>
+         <p>
+          1 - No injury
+         </p>
+         <p>
+          2 - Light and moderate injury
+         </p>
+         <p>
+          3 - Severe and life threatening injuries with probable survival
+         </p>
+         <p>
+          4 - Life threatening injuries, survival uncertain, or fatal injury
+         </p>
+         <p>
+          Remember that:
+          <br/>
+          ** risk = probability of occurrence x severity**
+         </p>
+         <p>
+          RANK THE FOLLOWING HAZARDOUS SITUATIONS FROM LEAST RISKY TO MOST RISKY
+         </p>
+         <p>
+          A While driving on the highway, brakes fail at high-speed.
+         </p>
+         <p>
+          B Your vehicle requires a jumpstart. The power steering is not working but the vehicle is parked on the side of the
+          <br/>
+          road and not moving.
+         </p>
+         <p>
+          C While driving in the snow in the city, anti-lock brakes fail while driving at low speed.
+         </p>
+         <p>
+          D While driving at night on a street with no street lamps, the car headlamps fail.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Evaluating Risk
+         </p>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Rank the above hazardous situations from least risky to most risky
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1499705408723" name="345409" type="radio" value="a1499705408723"/>
+           <label for="a1499705408723">
+            <p>
+             B, D, C, A
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499705441039" name="345409" type="radio" value="a1499705441039"/>
+           <label for="a1499705441039">
+            <p>
+             D, B, C, A
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499705445262" name="345409" type="radio" value="a1499705445262"/>
+           <label for="a1499705445262">
+            <p>
+             A, D, B, C
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499705449934" name="345409" type="radio" value="a1499705449934"/>
+           <label for="a1499705449934">
+            <p>
+             B, C, D, A
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          B, C, D, A
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="08. Reducing Risk with Systems Engineering.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Introduction to Evaluating Risks')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

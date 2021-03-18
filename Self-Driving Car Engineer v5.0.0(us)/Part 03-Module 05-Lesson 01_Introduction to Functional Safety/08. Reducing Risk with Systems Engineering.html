@@ -1,0 +1,722 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Reducing Risk with Systems Engineering
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Introduction to Functional Safety
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction to the Functional Safety Module.html">
+       01. Introduction to the Functional Safety Module
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction to the Lesson.html">
+       02. Introduction to the Lesson
+      </a>
+     </li>
+     <li class="">
+      <a href="03. What is Safety.html">
+       03. What is Safety?
+      </a>
+     </li>
+     <li class="">
+      <a href="04. What is Functional Safety.html">
+       04. What is Functional Safety?
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Introduction to Identifying Hazards.html">
+       05. Introduction to Identifying Hazards
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Sebastian and Technology Errors.html">
+       06. Sebastian and Technology Errors
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Introduction to Evaluating Risks.html">
+       07. Introduction to Evaluating Risks
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Reducing Risk with Systems Engineering.html">
+       08. Reducing Risk with Systems Engineering
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Introduction to ISO 26262.html">
+       09. Introduction to ISO 26262
+      </a>
+     </li>
+     <li class="">
+      <a href="10. The Full V Model.html">
+       10. The Full V Model
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Summary.html">
+       11. Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Sebastian Talks About Self-Driving Car Risks.html">
+       12. Sebastian Talks About Self-Driving Car Risks
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          08. Reducing Risk with Systems Engineering
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="introduction-to-the-lane-assistance-system">
+          Introduction to the Lane Assistance System
+         </h3>
+         <p>
+          Throughout the functional safety module, you will use a lane assistance system as a practical example. The lane assistance system will be the basis of the final project as well.
+         </p>
+         <p>
+          Lane assistance technology is relatively new in the automotive world. A lane assistance system generally has two functions:
+         </p>
+         <ul>
+          <li>
+           lane departure warning
+          </li>
+          <li>
+           lane keeping assistance
+          </li>
+         </ul>
+         <p>
+          If a driver departs a lane without using a turn signal, the system assumes that the driver has become distracted and did not mean to leave the lane. The system will vibrate the steering (lane departure warning) and also move the steering wheel back towards the lane center (lane keeping assistance).
+         </p>
+         <p>
+          Lane assistance technology represents an intermediate step on the way to fully autonomous driving. In this video, you will hear references to the lane assistance system, lane departure warning and lane keeping assistance. The Hazard Analysis and Risk Assessment lesson will go into more detail about how this system works.  While multiple fields use the approach described in this concept, we offer systems engineering as an example.
+          <a href="https://en.wikipedia.org/wiki/Systems_engineering" rel="noopener noreferrer" target="_blank">
+           Systems engineering
+          </a>
+          is an interdisciplinary field of engineering and engineering management that focuses on the design and management of complex systems.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="the-basics-of-systems-engineering">
+          The Basics of Systems Engineering
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L1 17 Reducing Risk With System Engineering
+         </p>
+        </h3>
+        <video controls="">
+         <source src="08. L1 17 Reducing Risk With System Engineering-tFxkJKcujhQ.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="08. L1 17 Reducing Risk With System Engineering-tFxkJKcujhQ.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="CN" src="08. L1 17 Reducing Risk With System Engineering-tFxkJKcujhQ.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="what-is-a-system">
+          What is a System?
+         </h3>
+         <p>
+          What exactly is a system? ISO 26262 defines a system as a:
+         </p>
+         <blockquote>
+          <p>
+           <em>
+            [1.129] set of elements that relates at least a sensor, a controller and an actuator with one another.
+The related sensor or actuator can be included in the system, or can be external to the system.
+An element of a system can also be another system.
+           </em>
+          </p>
+         </blockquote>
+         <p>
+          (Note that an
+          <em>
+           element
+          </em>
+          is defined by ISO 26262 [1.32] as a
+          <em>
+           system or part of a system including components, hardware, software, hardware parts, and software units
+          </em>
+          ).
+         </p>
+         <p>
+          Admittedly, the definition of a system is a little bit hard to pin down.
+         </p>
+         <p>
+          For the purposes of the rest of this module, a system will be a part of the vehicle that provides some functionality.
+         </p>
+         <p>
+          We will specifically look at a simplified version of an advanced driver assistance lane keeping system that helps the driver stay centered in a lane.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="the-v-model">
+          The V Model
+         </h3>
+         <p>
+          To organize a system analysis, system engineers use what are called process models. These process models provide a framework for conducting a methodical systems analysis.
+         </p>
+         <p>
+          ISO 26262 uses a process model called the V model. Before we introduce ISO 26262 and its specific version of the V model, let's discuss the characteristics of a generic V model.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Generic V Model" class="img img-fluid" src="img/18-reducing-risk-with-systems-engineering-01.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Generic V Model
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The V model starts in the upper left corner, moves down to the bottom center, and then moves back up to the upper right corner.
+         </p>
+         <p>
+          The left side of the V represents the design phase; this is where you
+         </p>
+         <ul>
+          <li>
+           plan what your system needs to do (requirements engineering)
+          </li>
+          <li>
+           plan what the system needs to look like (system architecture design).
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h5 id="left-side-of-the-v-model">
+          Left Side of the V Model
+         </h5>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/18-reducing-risk-with-systems-engineering-02.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The right side of the V represents the testing, verification and integration; on the right side, you Build prototypes Test and verify prototypes to see if they do what you said they would do in the design phase Integrate your prototype with other parts of the vehicle.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h5 id="right-side-of-the-v-model">
+          Right Side of the V Model
+         </h5>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/18-reducing-risk-with-systems-engineering-03.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The top part of the V represents the entire vehicle as a single system. As you traverse down the left side of the V, you focus on smaller and smaller subsystems. As you go up the right side of the V, you integrate your subsystems into larger and larger systems.
+         </p>
+         <p>
+          At the top left, you start with a bird's eye view of your entire vehicle. As you move down the left side, you start to split your vehicle into subsystems like climate control, entertainment system, steering system, braking system, etc. You then define requirements and system architectures for each sub-system.
+         </p>
+         <p>
+          Then you focus on a sub-system, like the climate control system, and break down the climate control system into its own sub-systems like the electronic control unit, the temperature sensor, the fan, the air filter, etc. Each sub-system will have its own design requirements and design architecture.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Notice as well that you can connect the right side of the V and the left side of the V. For every prototype you make or test you run, you can check back to see if the results match the design specifications.
+         </p>
+         <h5 id="connecting-the-right-and-left-side-of-the-v">
+          Connecting the right and left side of the V
+         </h5>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/18-reducing-risk-with-systems-engineering-04.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="other-process-models">
+          Other Process Models
+         </h3>
+         <p>
+          Two other popular process models include the
+          <a href="https://en.wikipedia.org/wiki/Spiral_model" rel="noopener noreferrer" target="_blank">
+           Spiral model
+          </a>
+          and the
+          <a href="https://en.wikipedia.org/wiki/Waterfall_model" rel="noopener noreferrer" target="_blank">
+           Waterfall model
+          </a>
+          . They are not, however, part of the ISO 26262 standard.
+         </p>
+         <p>
+          Although we will not be covering them in the functional safety module, these two other models are also commonly used in systems engineering.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="v-model-quiz">
+          V Model Quiz
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          The V Model
+         </p>
+        </h3>
+        <div>
+         <p>
+          <strong>
+           QUIZ QUESTION:
+          </strong>
+          :
+          <p>
+           Match the part of the V model with its purpose
+          </p>
+         </p>
+         <p>
+          <strong>
+           ANSWER CHOICES:
+          </strong>
+         </p>
+         <button class="btn btn-primary">
+          <p>
+           Top of the V model
+          </p>
+         </button>
+         <button class="btn btn-primary">
+          <p>
+           Right side of the V model
+          </p>
+         </button>
+         <button class="btn btn-primary">
+          <p>
+           Bottom of the V model
+          </p>
+         </button>
+         <button class="btn btn-primary">
+          <p>
+           Left side of the V model
+          </p>
+         </button>
+         <br/>
+         <br/>
+         <table class="table">
+          <tr class="thead-dark table-hover">
+           <th>
+            <p>
+             Part of the V model
+            </p>
+           </th>
+           <th>
+            <p>
+             Purpose
+            </p>
+           </th>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             Sub Systems
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             Testing and Integration
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             System Design
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             Integrated Systems
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+         </table>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <table class="table">
+           <tr class="thead-dark table-hover">
+            <th>
+             <p>
+              Part of the V model
+             </p>
+            </th>
+            <th>
+             <p>
+              Purpose
+             </p>
+            </th>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              Sub Systems
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               Bottom of the V model
+              </p>
+             </button>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              Testing and Integration
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               Right side of the V model
+              </p>
+             </button>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              System Design
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               Left side of the V model
+              </p>
+             </button>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              Integrated Systems
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               Top of the V model
+              </p>
+             </button>
+            </td>
+           </tr>
+          </table>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="engineering-requirements-and-the-iso-26262-standard">
+          Engineering Requirements and the ISO 26262 Standard
+         </h3>
+         <p>
+          Requirements engineering is a sub-discipline of systems engineering. Because ISO 26262 is based on systems engineering principles, defining requirements comes up repeatedly in the standard.
+         </p>
+         <p>
+          Throughout the V model, one of the most important steps is defining requirements. In layman's terms, a requirement says what a system is supposed to do. What is the system's function? Requirements almost always start off with the phrase, "X shall …..".
+         </p>
+         <p>
+          As you travel down the left side of the V model, you will generally take requirements from the previous step and then refine them in the current step. It makes sense that requirements would be refined at each level; as you travel down the V, you dive into sub systems with increasing detail.
+         </p>
+         <p>
+          Then you start to move up the right side of the V. First, you'll test your temperature sensor to make sure it functions correctly according to its design requirements. You will do the same for all of the air conditioning subsystems. Then you will integrate the temperature sensor with the electronic control unit and run more tests to make sure they play well together.
+         </p>
+         <p>
+          You move up the V until you have a complete air conditioning system that functions according to its design specifications. You move up the V and integrate the air conditioning system with the other electronic systems in the vehicle, and then you test again. Eventually, when you get to the top right side of the V, you will have a complete car ready for production!
+         </p>
+         <p>
+          For every design step on the left side of the V, there is a corresponding test and integration step on the right side of the V. You test your system and then go back and see if the test results match the design requirements and specifications. The correspondence between the left and rights sides of the V is one of the advantages of the V model.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="09. Introduction to ISO 26262.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Reducing Risk with Systems Engineering')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
