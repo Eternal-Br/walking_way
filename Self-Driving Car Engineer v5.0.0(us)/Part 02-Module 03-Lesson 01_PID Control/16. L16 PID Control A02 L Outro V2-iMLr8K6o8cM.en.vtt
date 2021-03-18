@@ -1,0 +1,16 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.649
+Nice work. You've learned about the PID controller,
+
+00:00:02.649 --> 00:00:05.349
+a simple and effective technique to actuate a vehicle.
+
+00:00:05.349 --> 00:00:06.884
+In the following project,
+
+00:00:06.884 --> 00:00:12.480
+you'll implement a PID controller in C++ to drive a car around the Udacity simulator.
+
