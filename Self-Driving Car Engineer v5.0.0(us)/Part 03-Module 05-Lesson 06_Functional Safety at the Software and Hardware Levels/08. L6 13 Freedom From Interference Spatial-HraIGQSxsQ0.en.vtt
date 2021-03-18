@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.690
+Freedom from spatial interference means one software partition
+
+00:00:03.690 --> 00:00:08.189
+should not change the code or data of another software partition.
+
+00:00:08.189 --> 00:00:14.699
+In other words memory and storage between software elements should be separated.
+
+00:00:14.699 --> 00:00:18.044
+Otherwise, code and data can become corrupted.
+
+00:00:18.045 --> 00:00:21.450
+In practical terms you'll need to be mindful of read,
+
+00:00:21.449 --> 00:00:24.539
+write and execution permissions.
+
+00:00:24.539 --> 00:00:29.099
+Think about the relationship between software partitions as being one of trust.
+
+00:00:29.100 --> 00:00:33.355
+A high element mistrust any low level element.
+
+00:00:33.354 --> 00:00:36.969
+So an ASIL D could read from a QM element.
+
+00:00:36.969 --> 00:00:41.625
+The ASIL D element however should minimize reading from a QM element.
+
+00:00:41.625 --> 00:00:45.469
+An ASIL D could also write to a QM element.
+
+00:00:45.469 --> 00:00:48.899
+But the QM element should only be able to read from ASIL
+
+00:00:48.899 --> 00:00:53.664
+D. A key element should not write to the higher ASIL element.
+
+00:00:53.664 --> 00:00:56.549
+Likewise, if QM elements should be able to
+
+00:00:56.549 --> 00:00:59.399
+execute functions provided by an ASIL D element,
+
+00:00:59.399 --> 00:01:02.339
+but as an ASIL D element would
+
+00:01:02.340 --> 00:01:06.075
+not trust QM functions and would not execute a QM function.
+
+00:01:06.075 --> 00:01:08.064
+As a concrete example,
+
+00:01:08.064 --> 00:01:11.265
+what happens if a software bug in a QM element
+
+00:01:11.265 --> 00:01:15.930
+mistakenly creates a pointer address to an ASIL C partition?
+
+00:01:15.930 --> 00:01:19.455
+The QM element might then write to an ASIL C element.
+
+00:01:19.454 --> 00:01:21.905
+This could lead to a safety goal violation,
+
+00:01:21.905 --> 00:01:24.829
+so we should either prevent or detect it.
+
+00:01:24.829 --> 00:01:29.000
+Next, let's discuss temporal freedom from interference.
+

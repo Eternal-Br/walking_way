@@ -1,0 +1,380 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   V model
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Functional Safety at the Software and Hardware Levels
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction.html">
+       01. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. V model.html">
+       02. V model
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Hardware Failure Metrics.html">
+       03. Hardware Failure Metrics
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Programming Languages.html">
+       04. Programming Languages
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Software Safety Life-cycle.html">
+       05. Software Safety Life-cycle
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Software Safety Requirements Lane Departure Warning.html">
+       06. Software Safety Requirements Lane Departure Warning
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Other Sources of Software Safety Requirements.html">
+       07. Other Sources of Software Safety Requirements
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Freedom from Interference - Spatial.html">
+       08. Freedom from Interference - Spatial
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Freedom from Interference - Temporal.html">
+       09. Freedom from Interference - Temporal
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Freedom from Interference - Temporal Part 2.html">
+       10. Freedom from Interference - Temporal Part 2
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Sebastian and Temporal Interference.html">
+       11. Sebastian and Temporal Interference
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Freedom from Interference - Communication.html">
+       12. Freedom from Interference - Communication
+      </a>
+     </li>
+     <li class="">
+      <a href="13. System Architecture Safety Design Patterns.html">
+       13. System Architecture Safety Design Patterns
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Lesson Summary.html">
+       14. Lesson Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Module Summary.html">
+       15. Module Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          02. V model
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="hardware-and-software-product-development-life-cycle">
+          Hardware and Software Product Development Life-Cycle
+         </h3>
+         <p>
+          Let's get an overview of the hardware and software product development cycle. The V model divides hardware and software into their own mini-Vs:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Summary of ISO 26262 V Model" class="img img-fluid" src="img/02-v-model-text-01.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Summary of ISO 26262 V Model
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The general idea represented in each V stays the same; first, you specify safety requirements. Then you allocate these requirements to a system architecture. Finally you test, integrate, and verify. Each V model process is the same one we discussed back in the first lesson.
+         </p>
+         <p>
+          But there is an extra step on the hardware and software sides. For hardware, the V model includes sections about hardware architectural metrics and evaluation of random hardware failures. Here is a more detailed view of the hardware V model:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/02-v-model-text-02-v2.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          On the software side, there is an architectural design section as well as a unit design section:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/02-v-model-text-03.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In this lesson, we will discuss random hardware failures as well as how to develop software safety requirements.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="architectural-design-vs-unit-design">
+          Architectural Design vs Unit Design
+         </h3>
+         <p>
+          The software architectural design is a higher level view of software components. For example, this could be a camera ECU from our lane assistance example.
+         </p>
+         <p>
+          A unit is a smaller part of a software architecture. A unit could be a software driver to read raw data from a camera sensor. There is no hard and fast rule as to what belongs in the architectural design section versus the unit design section. Functional safety in general can be an iterative process where developing a new section of the V model can lead to changes in a previous section and vice versa.
+         </p>
+         <p>
+          In the following diagram, you can see a general outline of what would be involved in a functional safety project. You can see that the steps of the V model have been stretched out vertically. Oftentimes an item will have multiple systems and sub systems. Sub systems will have their own software and hardware requirements. And these subsystems need to be integrated into larger systems:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Functional Safety Bird's Eye View" class="img img-fluid" src="img/software-requirement-hierarchy-01.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Functional Safety Bird's Eye View
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Please note that the "in-context" development described here can become impractical due to a need to development custom software and hardware. To mitigate this, a commonly used approach is "Safety Element out of Context" (SEooC), which considers using standard safety hardware and software components to address functional safety implementation. You may enjoy
+          <a href="http://papers.sae.org/2012-01-0033/" rel="noopener noreferrer" target="_blank">
+           this interesting paper
+          </a>
+          describing a practical approach to SEooC.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="03. Hardware Failure Metrics.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. V model')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

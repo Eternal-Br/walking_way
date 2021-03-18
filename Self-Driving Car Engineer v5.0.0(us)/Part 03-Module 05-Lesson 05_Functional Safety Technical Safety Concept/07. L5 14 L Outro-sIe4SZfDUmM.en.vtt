@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.423
+We have now the right technical safety requirements
+
+00:00:03.423 --> 00:00:06.519
+and allocated these requirements to the system architecture.
+
+00:00:06.519 --> 00:00:10.192
+Traveling down the V-model from technical safety concept,
+
+00:00:10.192 --> 00:00:13.035
+we arrive at hardware and software development.
+
+00:00:13.035 --> 00:00:18.285
+Developing hardware and software follows a similar arc to what we have already done.
+
+00:00:18.285 --> 00:00:21.210
+We first specify safety requirements.
+
+00:00:21.210 --> 00:00:24.450
+Next, we design the hardware and software architectures.
+
+00:00:24.449 --> 00:00:27.660
+In the next lesson, we'll give an introduction to the software
+
+00:00:27.660 --> 00:00:31.000
+and hardware development according to the functional safety standard.
+

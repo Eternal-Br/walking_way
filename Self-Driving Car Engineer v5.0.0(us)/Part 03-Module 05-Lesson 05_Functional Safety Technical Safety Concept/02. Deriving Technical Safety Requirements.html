@@ -1,0 +1,297 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Deriving Technical Safety Requirements
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Functional Safety: Technical Safety Concept
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction.html">
+       01. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Deriving Technical Safety Requirements.html">
+       02. Deriving Technical Safety Requirements
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Other Types of Technical Safety Requirements.html">
+       03. Other Types of Technical Safety Requirements
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Technical Safety Requirement Attributes.html">
+       04. Technical Safety Requirement Attributes
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Allocation of Requirements to System Architecture Elements.html">
+       05. Allocation of Requirements to System Architecture Elements
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Sebastian on Testing.html">
+       06. Sebastian on Testing
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Summary.html">
+       07. Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          02. Deriving Technical Safety Requirements
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L5 03 Deriving Techincal Safety Requirements From Functional Safety Requirements
+         </p>
+        </h3>
+        <video controls="">
+         <source src="02. L5 03 Deriving Techincal Safety Requirements From Functional Safety Requirements-fVLsG83a-So.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="02. L5 03 Deriving Techincal Safety Requirements From Functional Safety Requirements-fVLsG83a-So.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="CN" src="02. L5 03 Deriving Techincal Safety Requirements From Functional Safety Requirements-fVLsG83a-So.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          While the video states that latent faults only need to be addressed for ASIL C and ASIL D, the hardware latent fault metric also has ASIL B targets.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="quiz---vocabulary-check">
+          Quiz - Vocabulary Check
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Vocabulary Check-in
+         </p>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Check the boxes that are always true
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1499909637579" name="346305" type="checkbox" value="a1499909637579"/>
+           <label for="a1499909637579">
+            <p>
+             A system failure is always hazardous
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499909655076" name="346305" type="checkbox" value="a1499909655076"/>
+           <label for="a1499909655076">
+            <p>
+             Functional safety seeks to eliminate all malfunctions and system risks.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499909655948" name="346305" type="checkbox" value="a1499909655948"/>
+           <label for="a1499909655948">
+            <p>
+             Faults can lead to failures. Failures can lead to hazardous situations.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499909656444" name="346305" type="checkbox" value="a1499909656444"/>
+           <label for="a1499909656444">
+            <p>
+             A fault will always lead to a system failure
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <ul>
+           <li>
+            Faults can lead to failures. Failures can lead to hazardous situations.
+           </li>
+          </ul>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="03. Other Types of Technical Safety Requirements.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Deriving Technical Safety Requirements')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.835
+Random hardware failures will happen. There's no way around it.
+
+00:00:03.835 --> 00:00:09.115
+For example, silicon can wear out or connections can break due to thermal expansion.
+
+00:00:09.115 --> 00:00:14.220
+Cosmic radiation and magnetic fields also cause hardware to fail as well.
+
+00:00:14.220 --> 00:00:17.490
+The number of failures permitted within a given period of time,
+
+00:00:17.489 --> 00:00:18.959
+will depend on the ASIL.
+
+00:00:18.960 --> 00:00:21.780
+For example, an ASIL D element should have
+
+00:00:21.780 --> 00:00:25.335
+fewer than one failure every 100 million hours.
+
+00:00:25.335 --> 00:00:27.570
+Besides these hardware failure target values,
+
+00:00:27.570 --> 00:00:29.429
+the function safety standard defines
+
+00:00:29.429 --> 00:00:33.255
+a few random hardware metrics called architectural Safety Metrics.
+
+00:00:33.255 --> 00:00:36.390
+These metrics are: the single point fault metric,
+
+00:00:36.390 --> 00:00:42.759
+the latent fault metric and the probabilistic metric for random hardware failures.
+
+00:00:42.759 --> 00:00:47.670
+Each ASIL has different allowable thresholds for these three metrics.
+
+00:00:47.670 --> 00:00:51.250
+We won't go into the details of how to calculate them.
+
+00:00:51.250 --> 00:00:55.530
+You can find more information in section five of the Functional Safety Standard.
+

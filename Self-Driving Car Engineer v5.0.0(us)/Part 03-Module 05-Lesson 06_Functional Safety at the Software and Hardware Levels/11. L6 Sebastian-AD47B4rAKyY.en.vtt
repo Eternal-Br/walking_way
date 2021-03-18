@@ -1,0 +1,118 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.990
+Early days self-driving car we build a machine to drive through the desert,
+
+00:00:03.990 --> 00:00:08.789
+Stanley, for the Dawawine Challenge and the machine drove really nicely.
+
+00:00:08.789 --> 00:00:11.924
+Except every 40 miles or so,
+
+00:00:11.925 --> 00:00:15.660
+it would see a magic big obstacle in front of
+
+00:00:15.660 --> 00:00:20.039
+it and freak out and attempt to jump down a cliff.
+
+00:00:20.039 --> 00:00:21.434
+It was very rare.
+
+00:00:21.434 --> 00:00:24.379
+It was every 40 miles. It was like every two or three hours.
+
+00:00:24.379 --> 00:00:29.625
+It was very hard to catch and we were flabbergasted like why all of a sudden,
+
+00:00:29.625 --> 00:00:31.992
+everything's going perfect, all of a sudden,
+
+00:00:31.992 --> 00:00:36.170
+dust of all would see this random massive obstacle.
+
+00:00:36.170 --> 00:00:42.439
+It took me months of my own time to figure that out and fast forward, here is the answer.
+
+00:00:42.439 --> 00:00:45.929
+We had a laser scanning the terrain and to make
+
+00:00:45.929 --> 00:00:49.740
+sure that when laser data overlapped over time,
+
+00:00:49.740 --> 00:00:51.175
+that you could bounce up and down,
+
+00:00:51.174 --> 00:00:54.459
+that we wouldn't fall into a trap to compare laser data,
+
+00:00:54.460 --> 00:00:56.463
+that wasn't in the same cone of frame.
+
+00:00:56.463 --> 00:00:59.880
+We just said look, the less laser reading and some time elapsed.
+
+00:00:59.880 --> 00:01:01.960
+The more time elapsed, the less confident we are.
+
+00:01:01.960 --> 00:01:05.250
+It was actually a good rule so we could actually have
+
+00:01:05.250 --> 00:01:09.430
+a situation if data was acquired very successfully in time, very confident.
+
+00:01:09.430 --> 00:01:13.140
+We're telling between, we compared all data points, less confidence.
+
+00:01:13.140 --> 00:01:18.765
+Then, we imported this architecture to multiple computers and exporting,
+
+00:01:18.765 --> 00:01:22.320
+we had to sync the clocks of those computers.
+
+00:01:22.319 --> 00:01:25.877
+In the syncing of clocks of those computers,
+
+00:01:25.878 --> 00:01:29.084
+time would occasionally go backwards.
+
+00:01:29.084 --> 00:01:32.914
+What that did to our confidences was catastrophic.
+
+00:01:32.915 --> 00:01:36.195
+It was, all of a sudden, instead of relaxing confidence over time,
+
+00:01:36.194 --> 00:01:40.009
+tighten confidences to the level that could never see no obstacle.
+
+00:01:40.010 --> 00:01:44.320
+It was really a combination of clock being backwards, as far as syncing,
+
+00:01:44.319 --> 00:01:46.434
+and the car bouncing up and down at
+
+00:01:46.435 --> 00:01:50.549
+the same time that would cause that catastrophic situation.
+
+00:01:50.549 --> 00:01:52.140
+Now I, as a software engineer,
+
+00:01:52.140 --> 00:01:55.995
+I wouldn't have asked the question of these bizarre obstacles,
+
+00:01:55.995 --> 00:01:58.079
+does the clock go backwards?
+
+00:01:58.079 --> 00:02:01.894
+It took us forever to even look at the right number to understand
+
+00:02:01.894 --> 00:02:06.644
+that this backwards-going clock could actually cause the car to crash.
+
+00:02:06.644 --> 00:02:08.490
+That is one of these examples of a really,
+
+00:02:08.490 --> 00:02:10.000
+really hard to find bug.
+

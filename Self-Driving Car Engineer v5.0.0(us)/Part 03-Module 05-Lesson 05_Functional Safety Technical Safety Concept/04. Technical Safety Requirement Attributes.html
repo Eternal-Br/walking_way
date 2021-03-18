@@ -1,0 +1,443 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Technical Safety Requirement Attributes
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Functional Safety: Technical Safety Concept
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction.html">
+       01. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Deriving Technical Safety Requirements.html">
+       02. Deriving Technical Safety Requirements
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Other Types of Technical Safety Requirements.html">
+       03. Other Types of Technical Safety Requirements
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Technical Safety Requirement Attributes.html">
+       04. Technical Safety Requirement Attributes
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Allocation of Requirements to System Architecture Elements.html">
+       05. Allocation of Requirements to System Architecture Elements
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Sebastian on Testing.html">
+       06. Sebastian on Testing
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Summary.html">
+       07. Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          04. Technical Safety Requirement Attributes
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L5 09 Technical Safety Requirement Attributes
+         </p>
+        </h3>
+        <video controls="">
+         <source src="04. L5 09 Technical Safety Requirement Attributes-EOYTl2e8wEs.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="04. L5 09 Technical Safety Requirement Attributes-EOYTl2e8wEs.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="CN" src="04. L5 09 Technical Safety Requirement Attributes-EOYTl2e8wEs.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="table-of-results">
+          Table of Results
+         </h3>
+         <table>
+          <thead>
+           <tr>
+            <th id="requirement_id">
+             Requirement ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="ftti">
+             FTTI
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             TechSafReq01
+            </td>
+            <td>
+             The LDW safety component shall ensure that the amplitude of the 'LDW_Torque_Request' sent to the 'Final electronic power steering Torque' component is below 'Max_Torque_Amplitude.
+            </td>
+            <td>
+             50 ms
+            </td>
+            <td>
+             C
+            </td>
+           </tr>
+           <tr>
+            <td>
+             TechSafReq02
+            </td>
+            <td>
+             As soon as the LDW function deactivates the LDW feature, the 'LDW Safety' software block shall send a signal to the car display ECU to turn on a warning light.
+            </td>
+            <td>
+             50 ms
+            </td>
+            <td>
+             C
+            </td>
+           </tr>
+           <tr>
+            <td>
+             TechSafReq03
+            </td>
+            <td>
+             As soon as a failure is detected by the LDW function, it shall deactivate the LDW feature and the 'LDW_Torque_Request' shall be set to zero.
+            </td>
+            <td>
+             50 ms
+            </td>
+            <td>
+             C
+            </td>
+           </tr>
+           <tr>
+            <td>
+             TechSafReq04
+            </td>
+            <td>
+             The validity and integrity of the data transmission for 'LDW_Torque_Request' signal shall be ensured.
+            </td>
+            <td>
+             50 ms
+            </td>
+            <td>
+             C
+            </td>
+           </tr>
+           <tr>
+            <td>
+             TechSafReq05
+            </td>
+            <td>
+             Memory test shall be conducted at start up of the EPS ECU to check for any faults in memory.
+            </td>
+            <td>
+             ignition cycle
+            </td>
+            <td>
+             A
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="quiz">
+          Quiz
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          ASIL
+         </p>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             What would be the ASIL for the technical safety requirements derived for the lane keeping assistance function? Remember that the technical safety requirements inherit the ASIL of the functional safety requirements.
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1499911126275" name="346313" type="radio" value="a1499911126275"/>
+           <label for="a1499911126275">
+            <p>
+             A
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499911142174" name="346313" type="radio" value="a1499911142174"/>
+           <label for="a1499911142174">
+            <p>
+             B
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499911142742" name="346313" type="radio" value="a1499911142742"/>
+           <label for="a1499911142742">
+            <p>
+             C
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499911143214" name="346313" type="radio" value="a1499911143214"/>
+           <label for="a1499911143214">
+            <p>
+             D
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          B
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          FTTI
+         </p>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             What would be a reasonable fault tolerant time interval for the lane keeping assistance function's technical safety requirements?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1499911246453" name="346314" type="radio" value="a1499911246453"/>
+           <label for="a1499911246453">
+            <p>
+             5 mS
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499911259754" name="346314" type="radio" value="a1499911259754"/>
+           <label for="a1499911259754">
+            <p>
+             50 mS
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499911260273" name="346314" type="radio" value="a1499911260273"/>
+           <label for="a1499911260273">
+            <p>
+             500 mS
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1499911260786" name="346314" type="radio" value="a1499911260786"/>
+           <label for="a1499911260786">
+            <p>
+             5000 mS
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          500 mS
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="05. Allocation of Requirements to System Architecture Elements.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Technical Safety Requirement Attributes')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

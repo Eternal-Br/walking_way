@@ -1,0 +1,554 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Freedom from Interference - Communication
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Functional Safety at the Software and Hardware Levels
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction.html">
+       01. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. V model.html">
+       02. V model
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Hardware Failure Metrics.html">
+       03. Hardware Failure Metrics
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Programming Languages.html">
+       04. Programming Languages
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Software Safety Life-cycle.html">
+       05. Software Safety Life-cycle
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Software Safety Requirements Lane Departure Warning.html">
+       06. Software Safety Requirements Lane Departure Warning
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Other Sources of Software Safety Requirements.html">
+       07. Other Sources of Software Safety Requirements
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Freedom from Interference - Spatial.html">
+       08. Freedom from Interference - Spatial
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Freedom from Interference - Temporal.html">
+       09. Freedom from Interference - Temporal
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Freedom from Interference - Temporal Part 2.html">
+       10. Freedom from Interference - Temporal Part 2
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Sebastian and Temporal Interference.html">
+       11. Sebastian and Temporal Interference
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Freedom from Interference - Communication.html">
+       12. Freedom from Interference - Communication
+      </a>
+     </li>
+     <li class="">
+      <a href="13. System Architecture Safety Design Patterns.html">
+       13. System Architecture Safety Design Patterns
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Lesson Summary.html">
+       14. Lesson Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Module Summary.html">
+       15. Module Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          12. Freedom from Interference - Communication
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L6 18 Freedom From Interference Communication
+         </p>
+        </h3>
+        <video controls="">
+         <source src="12. L6 18 Freedom From Interference Communication-J2T842SLPgs.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="12. L6 18 Freedom From Interference Communication-J2T842SLPgs.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="CN" src="12. L6 18 Freedom From Interference Communication-J2T842SLPgs.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="common-causes-of-communication-interference">
+          Common Causes of Communication Interference
+         </h3>
+         <p>
+          There are many causes for communication faults. These causes would be analyzed in a software safety analysis or sometimes in a technical safety analysis:
+         </p>
+         <ul>
+          <li>
+           Repetition of information
+          </li>
+          <li>
+           Loss of information
+          </li>
+          <li>
+           Delay of information
+          </li>
+          <li>
+           Insertion of information
+          </li>
+          <li>
+           Masquerade or incorrect addressing of information
+          </li>
+          <li>
+           Incorrect sequence of information
+          </li>
+          <li>
+           Corruption of information
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="other-mechanisms-for-ensuring-freedom-from-communication-interference">
+          Other Mechanisms for Ensuring Freedom from Communication Interference
+         </h3>
+         <p>
+          There are a handful of measures for avoiding communication interference. These mechanisms could be used to define software safety requirements that help avoid communication faults. Mechanisms for ensuring freedom from interference include:
+         </p>
+         <ul>
+          <li>
+           Loopback of information
+          </li>
+          <li>
+           Acknowledgement of information
+          </li>
+          <li>
+           Appropriate configuration of I/O pins
+          </li>
+          <li>
+           Bus arbitration by priority
+          </li>
+          <li>
+           E2E protocol
+          </li>
+         </ul>
+         <p>
+          For example, one technical safety requirement was "the validity and integrity of the data transmission for 'LDW_Torque_Request' signal shall be ensured". This technical safety requirement could be refined into a software safety requirement that the data shall be protected by an End2End mechanism.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="example-specification-for-e2e-protection-protocol">
+          Example specification for E2E protection protocol
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The image below shows an example of an E2E protocol.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Example of an E2E Protocol" class="img img-fluid" src="img/e2e-protocol-01.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Example of an E2E Protocol
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The mechanism involves adding two extra data-bytes called a CRC (Cyclical Redundancy Check) and an SQC (Sequence Counter) when transmitting data. To calculate the CRC, you run a mathematical formula on the data to be transmitted. You then attach the CRC result to the data prior to transmission.  When the data is received, the mathematical formula is run on the data set again. The CRC attached to the data and the CRC calculated on the receiving end should be the same; otherwise, data data has probably been corrupted in transmission.
+         </p>
+         <p>
+          The SQC is just a counter that gets sent along with the data. That way the receiver can make sure that messages haven't been lost.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="e2e-software-safety-requirements-for-the-lane-departure-warning-ldw">
+          E2E Software Safety Requirements for the Lane Departure Warning (LDW)
+         </h3>
+         <p>
+          In the concept about "Software Safety Requirements Lane Departure Warning", we already discussed that technical safety requirement 02 could be taken care of with an E2E protocol. Let's go into more depth about this technical requirement and the related software safety requirements. Here was the technical safety requirement:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <table>
+          <thead>
+           <tr>
+            <th id="id">
+             ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+            <th id="fault__tolerant__time__interval">
+             Fault  Tolerant  Time  Interval
+            </th>
+            <th id="allocation_to_architecture">
+             Allocation to Architecture
+            </th>
+            <th id="safe_state">
+             Safe State
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             TechnicalSafetyRequirement02
+            </td>
+            <td>
+             The validity and integrity of the data transmission forLDW_Torque_Request signal shall be ensured
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             50 ms
+            </td>
+            <td>
+             Data  Transmission Integrity Check
+            </td>
+            <td>
+             N/A
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          And here as well is the software safety architecture:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="System Software Architecture" class="img img-fluid" src="img/refined-system-architecture-l6-01.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            System Software Architecture
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          You can see we've added an E2E calculation for the two signals that leave the LDW Safety component. We need to make sure there is no corruption when the 'Processed_LDW_Torque_Request' signal travels to the "Final EPS Torque Generator". The E2E Calculation component would run a calculation on the signal to be transferred and attach the calculation to the signal.
+         </p>
+         <p>
+          Then the "Final EPS Torque Generator" component would run the same calculation and compare the results from before and after transmission. If the results are the same, then you can assume the data remains intact.
+         </p>
+         <p>
+          We would use the same mechanism when the "LDW_Safety_Activation" component sends its signal to the "Final EPS Torque Generator".
+         </p>
+         <p>
+          So here again are the software safety requirements:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <table>
+          <thead>
+           <tr>
+            <th id="id">
+             ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+            <th id="allocation_software_elements">
+             Allocation Software Elements
+            </th>
+            <th id="safe_state">
+             Safe State
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement02-01
+            </td>
+            <td>
+             Any data to be transmittedoutside of the LDW Safetycomponent (“LDW Safety”)including "LDW_Torque_Req"and “activation_status” (seeSofSafReq03-02) shall beprotected by an End2End(E2E)protection mechanism
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             E2ECalc
+            </td>
+            <td>
+             LDW_Torq_Req= 0 (Nm)
+            </td>
+           </tr>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement02-02
+            </td>
+            <td>
+             The E2E protection protocolshall contain attach the controldata: alive counter (SQC) andCRC to the data to betransmitted.
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             E2ECalc
+            </td>
+            <td>
+             LDW_Torq_Req= 0 (Nm)
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="13. System Architecture Safety Design Patterns.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('12. Freedom from Interference - Communication')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

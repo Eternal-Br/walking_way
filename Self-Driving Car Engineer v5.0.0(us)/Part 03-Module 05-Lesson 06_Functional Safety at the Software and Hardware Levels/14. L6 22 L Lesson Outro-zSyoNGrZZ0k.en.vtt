@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.790
+You have now seen some of the main concerns
+
+00:00:02.790 --> 00:00:05.905
+on developing safety driven hardware and software.
+
+00:00:05.905 --> 00:00:08.955
+For hardware, we discussed how random faults
+
+00:00:08.955 --> 00:00:12.910
+are unavoidable but must be minimized and detected.
+
+00:00:12.910 --> 00:00:15.089
+In terms of software, we went over
+
+00:00:15.089 --> 00:00:19.704
+the basic criteria for choosing a programming language and software tools.
+
+00:00:19.704 --> 00:00:23.934
+We also showed how the V-model applies to software development.
+
+00:00:23.934 --> 00:00:25.195
+We then discussed deriving
+
+00:00:25.195 --> 00:00:28.350
+software safety requirements from technical safety requirements.
+
+00:00:28.350 --> 00:00:31.950
+And then, we saw other sources of software safety requirements,
+
+00:00:31.949 --> 00:00:34.424
+such as robustness, quality,
+
+00:00:34.424 --> 00:00:36.419
+and freedom from interference.
+
+00:00:36.420 --> 00:00:40.960
+The main point is to use this knowledge for reducing risks and avoiding harm.
+
+00:00:40.960 --> 00:00:44.100
+Being aware of different sources of faults allows you to make
+
+00:00:44.100 --> 00:00:47.510
+more robust safety requirements and design safer systems.
+

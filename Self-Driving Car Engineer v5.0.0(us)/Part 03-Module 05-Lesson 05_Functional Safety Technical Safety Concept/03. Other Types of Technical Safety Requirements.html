@@ -1,0 +1,303 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Other Types of Technical Safety Requirements
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Functional Safety: Technical Safety Concept
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction.html">
+       01. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Deriving Technical Safety Requirements.html">
+       02. Deriving Technical Safety Requirements
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Other Types of Technical Safety Requirements.html">
+       03. Other Types of Technical Safety Requirements
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Technical Safety Requirement Attributes.html">
+       04. Technical Safety Requirement Attributes
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Allocation of Requirements to System Architecture Elements.html">
+       05. Allocation of Requirements to System Architecture Elements
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Sebastian on Testing.html">
+       06. Sebastian on Testing
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Summary.html">
+       07. Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          03. Other Types of Technical Safety Requirements
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L5 07 Other Types Of Techincal Safety Requirements
+         </p>
+        </h3>
+        <video controls="">
+         <source src="03. L5 07 Other Types Of Techincal Safety Requirements-9xIlkXobXS0.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="03. L5 07 Other Types Of Techincal Safety Requirements-9xIlkXobXS0.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="CN" src="03. L5 07 Other Types Of Techincal Safety Requirements-9xIlkXobXS0.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="iso-26262-definition-of-latent-faults">
+          ISO 26262 Definition of Latent Faults
+         </h2>
+         <p>
+          A more rigorous definition of latent faults from ISO 26262 reads:
+         </p>
+         <blockquote>
+          <p>
+           multiple-point fault (3.96) whose presence is not detected by a safety mechanism (3.141) nor perceived by the driver within the multiple-point fault detection time interval (3.97)
+          </p>
+         </blockquote>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="faults-external-to-the-lane-keeping-item">
+          Faults External to the Lane Keeping Item
+         </h3>
+         <p>
+          We mentioned that a possible technical safety requirement for an external fault could be for code that checks communication errors between the anti-lock brake ECU and the power steering ECU. The anti-lock brake ECU might share vehicle speed data with the power steering ECU. We are not going to expand on this example in the rest of the lesson. But if you want to challenge yourself, consider expanding on this idea in the final project.
+         </p>
+         <p>
+          Imagine that the lane keeping assistance function does not take driver speed into account when deciding how much torque to apply. This could lead to a potentially hazardous situation where the system turns the wheel too abruptly at a high vehicle speed. Or the lane keeping assistance provides too much extra torque on a sharp curve. The driver could lose control of the vehicle. So this idea could be part of a hazard and risk analysis, which would lead to a safety goal. Then you'd derive functional safety requirements from the safety goal. And finally you'd derive technical safety requirements from the functional safety requirements.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="more-technical-safety-requirements">
+          More Technical Safety Requirements
+         </h3>
+         <p>
+          Soon it will be your turn to identify technical safety requirements! In the project, you will be responsible for deriving technical safety requirements for the other two functional safety requirements.
+         </p>
+         <p>
+          The other two functional safety requirements were:
+         </p>
+         <p>
+          "the electronic power steering ECU shall ensure that the lane departure warning oscillating torque frequency is below Max_Torque_Frequency".
+         </p>
+         <p>
+          "the lane keeping assistance function shall be time limited and the additional steering torque shall end after a given timer interval so that the driver can not misuse the system for autonomous driving".
+         </p>
+         <p>
+          You will use the examples we've already given as a guide for deriving technical safety requirements. The truth is, most of the technical safety requirements already derived would also be relevant to the two other functional safety requirements. You might have to change variable names or architectural element names.
+         </p>
+         <p>
+          Remember that some technical safety requirements can be derived directly from a functional safety requirement; other technical safety requirements will fall under the five categories described in the above video.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="methods-for-checking-data-validity-and-integrity">
+          Methods for Checking Data Validity and Integrity
+         </h3>
+         <p>
+          One of the technical safety requirements mentioned checking the data validity and integrity of the data transmission: "The validity and integrity of the data transmission for LDW_Torque_Request signal shall be ensured."
+         </p>
+         <p>
+          To check data validity and integrity, you can add a CRC (cyclic redundancy check); a
+          <a href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check" rel="noopener noreferrer" target="_blank">
+           CRC
+          </a>
+          is a well established methods that looks for changes to raw data. A qualifier can then be added as well, which is a signal indicating whether or not a signal is valid. The CRC ensures the data that is sent out by one element is the same data received by another element.
+         </p>
+         <p>
+          Another common mechanism is an alive counter. An alive counter checks that the signal is new and not an old signal; an alive counter increases the count every time a signal goes out.
+         </p>
+         <p>
+          CRCs and alive counters can be used together to guarantee correct transmission. The final lesson on software requirements will also discuss a specific CRC protocol in more depth.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="04. Technical Safety Requirement Attributes.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Other Types of Technical Safety Requirements')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

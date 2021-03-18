@@ -1,0 +1,325 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Freedom from Interference - Spatial
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Functional Safety at the Software and Hardware Levels
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction.html">
+       01. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. V model.html">
+       02. V model
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Hardware Failure Metrics.html">
+       03. Hardware Failure Metrics
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Programming Languages.html">
+       04. Programming Languages
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Software Safety Life-cycle.html">
+       05. Software Safety Life-cycle
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Software Safety Requirements Lane Departure Warning.html">
+       06. Software Safety Requirements Lane Departure Warning
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Other Sources of Software Safety Requirements.html">
+       07. Other Sources of Software Safety Requirements
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Freedom from Interference - Spatial.html">
+       08. Freedom from Interference - Spatial
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Freedom from Interference - Temporal.html">
+       09. Freedom from Interference - Temporal
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Freedom from Interference - Temporal Part 2.html">
+       10. Freedom from Interference - Temporal Part 2
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Sebastian and Temporal Interference.html">
+       11. Sebastian and Temporal Interference
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Freedom from Interference - Communication.html">
+       12. Freedom from Interference - Communication
+      </a>
+     </li>
+     <li class="">
+      <a href="13. System Architecture Safety Design Patterns.html">
+       13. System Architecture Safety Design Patterns
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Lesson Summary.html">
+       14. Lesson Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Module Summary.html">
+       15. Module Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          08. Freedom from Interference - Spatial
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="freedom-from-spatial-interference">
+          Freedom from Spatial Interference
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L6 13 Freedom From Interference Spatial
+         </p>
+        </h3>
+        <video controls="">
+         <source src="08. L6 13 Freedom From Interference Spatial-HraIGQSxsQ0.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="08. L6 13 Freedom From Interference Spatial-HraIGQSxsQ0.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="CN" src="08. L6 13 Freedom From Interference Spatial-HraIGQSxsQ0.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="mechanisms-for-ensuring-freedom-from-spatial-interference">
+          Mechanisms for Ensuring Freedom From Spatial Interference
+         </h3>
+         <p>
+          There are a few common mechanisms for ensuring freedom from spatial interference like memory protection units and dual storage of relevant data.
+         </p>
+         <p>
+          MPU is a prevention method because it stops elements from accessing memory to which they should not have access. An MPU can be programmed to set up the proper read, write and execute permissions between software elements.
+         </p>
+         <p>
+          Dual storage of relevant data like with a 2's complement is a detection method. With a 2's complement, you can detect that the data has changed and is no longer valid. But you can no longer use the data.
+         </p>
+         <p>
+          Other mechanisms to protect against memory interference include:
+         </p>
+         <ul>
+          <li>
+           Redundancy checks such as CRC to make sure data does not inadvertently change.
+          </li>
+          <li>
+           Micro-controllers with memory error detection and correction capabilities
+          </li>
+          <li>
+           Operating systems that allow software units to have their own virtual memory space
+          </li>
+         </ul>
+         <p>
+          One mechanism mentioned was to store a
+          <a href="https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html" rel="noopener noreferrer" target="_blank">
+           2's complement
+          </a>
+          of safety relevant data. A 2's complement is a way of represent negative integers in binary.
+         </p>
+         <p>
+          A
+          <a href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check" rel="noopener noreferrer" target="_blank">
+           CRC
+          </a>
+          (cyclic redundancy check) is a way to check if data has changed during transmission. They work by adding appending a value to the data and then ensuring that the value hasn't changed over the transmission.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Please note that for addressing deadlocks, disabling OS interrupts that would stop process preemption, is inefficient and could compromise the overall response time and system latency.  An alternative is a feature that is provided by a Real Time Operating System (RTOS) is a
+          <a href="https://en.wikipedia.org/wiki/Priority_ceiling_protocol" rel="noopener noreferrer" target="_blank">
+           priority ceiling
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="09. Freedom from Interference - Temporal.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Freedom from Interference - Spatial')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

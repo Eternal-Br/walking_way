@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.089
+You might wonder why we have put so much emphasis on
+
+00:00:03.089 --> 00:00:06.980
+systems engineering and haven't talked about hardware and software development.
+
+00:00:06.980 --> 00:00:12.699
+ISO 26262 sees functional safety as a systems engineer problem.
+
+00:00:12.699 --> 00:00:16.109
+Hardware and software are just two parts of a vehicle system.
+
+00:00:16.109 --> 00:00:18.269
+The function safety standard puts
+
+00:00:18.269 --> 00:00:23.519
+hardware and software development at the bottom of the V diagram for a reason.
+
+00:00:23.519 --> 00:00:25.739
+This helps ensure that you have developed
+
+00:00:25.739 --> 00:00:29.896
+your safety requirements while taking into account the vehicle as a whole,
+
+00:00:29.896 --> 00:00:32.609
+otherwise we could miss potential hazards.
+
+00:00:32.609 --> 00:00:34.859
+In this lesson, we are going to give
+
+00:00:34.859 --> 00:00:38.000
+a broad overview of hardware and software development.
+

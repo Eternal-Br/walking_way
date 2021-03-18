@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.910
+Technical safety requirements have some of the same
+
+00:00:02.910 --> 00:00:06.630
+attributes that we discussed for functional safety requirements.
+
+00:00:06.629 --> 00:00:08.925
+These attributes are ASIL,
+
+00:00:08.925 --> 00:00:14.990
+fault tolerant time interval and description of safe state transition.
+
+00:00:14.990 --> 00:00:16.824
+The technical safety requirements,
+
+00:00:16.824 --> 00:00:20.579
+inherit ASILs from the functional safety requirements because
+
+00:00:20.579 --> 00:00:24.695
+the safety requirements for the lane departure warning were ASIL C,
+
+00:00:24.695 --> 00:00:28.140
+the technical safety requirements are ASIL C as well.
+
+00:00:28.140 --> 00:00:32.465
+The only exception is the last requirement for testing memory.
+
+00:00:32.465 --> 00:00:36.930
+This requirement is ASIL A because the standard says,
+
+00:00:36.929 --> 00:00:43.189
+that the latent fault to deduction for ASIL C requirements can be labeled ASIL A.
+
+00:00:43.189 --> 00:00:49.364
+It would be possible to decompose ASILs as we did for the functional safety concept.
+
+00:00:49.365 --> 00:00:51.359
+Fault tolerant time intervals,
+
+00:00:51.359 --> 00:00:55.609
+might need to be adjusted for each technical safety requirement.
+
+00:00:55.609 --> 00:00:58.259
+But for the purposes of this discussion,
+
+00:00:58.259 --> 00:01:03.379
+we will use the fault tolerant time intervals from the functional safety requirement.
+
+00:01:03.380 --> 00:01:08.655
+So for all of the technical safety requirements of the lane departure warning function,
+
+00:01:08.655 --> 00:01:11.820
+the time interval shall be 50 milliseconds.
+
+00:01:11.819 --> 00:01:16.259
+Once again, the technical safety requirements for memory test is an exception.
+
+00:01:16.260 --> 00:01:21.510
+Here, the fault tolerant time interval would take into account the time to
+
+00:01:21.510 --> 00:01:23.730
+check for memory corruption and
+
+00:01:23.730 --> 00:01:27.380
+the failure of the system to detect the memory corruption.
+
+00:01:27.379 --> 00:01:29.375
+The system will do this on start up.
+
+00:01:29.375 --> 00:01:32.114
+We can consider the fault tolerant time interval
+
+00:01:32.114 --> 00:01:34.839
+to be the length of the vehicle ignition cycle.
+
+00:01:34.840 --> 00:01:39.359
+The safe state for all of these faults is that,
+
+00:01:39.359 --> 00:01:44.094
+the lane departure warning talk request amplitude shall be set to zero.
+
+00:01:44.094 --> 00:01:47.905
+We're providing a table with the results we have so far.
+
+00:01:47.905 --> 00:01:50.177
+With the technical safety requirements defined,
+
+00:01:50.177 --> 00:01:54.530
+the next step is to allocate these requirements to the system architecture.
+

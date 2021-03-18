@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.919
+One of the first considerations in
+
+00:00:01.919 --> 00:00:06.629
+software development is choosing a programming language or modeling framework.
+
+00:00:06.629 --> 00:00:10.490
+Some are more suitable for functional safety than others.
+
+00:00:10.490 --> 00:00:15.765
+C, C++, and MATLAB/SIMULINK are all good choices.
+
+00:00:15.765 --> 00:00:18.300
+All of these share certain characteristics that
+
+00:00:18.300 --> 00:00:21.630
+makes them appropriate for function and safety applications.
+
+00:00:21.629 --> 00:00:26.994
+First, they all have an unambiguous definition of syntax and semantics.
+
+00:00:26.995 --> 00:00:30.900
+Second, they all run on real time operating systems.
+
+00:00:30.899 --> 00:00:34.574
+Third they all support runtime error handling.
+
+00:00:34.575 --> 00:00:37.065
+Finally they support modularity,
+
+00:00:37.064 --> 00:00:40.294
+abstraction, and object oriented design.
+
+00:00:40.295 --> 00:00:45.570
+Function safety also requires the use of a software development guideline.
+
+00:00:45.570 --> 00:00:50.715
+Two of the most common guidelines are MISRA C and MISRA C++.
+
+00:00:50.715 --> 00:00:56.540
+MISRA stands for Motor Industry Software Reliability Association.
+
+00:00:56.539 --> 00:00:58.799
+These guidelines define a subset of
+
+00:00:58.799 --> 00:01:01.379
+the C and C++ programming languages
+
+00:01:01.380 --> 00:01:04.829
+that are appropriate for safety critical applications.
+
+00:01:04.829 --> 00:01:07.515
+They discuss defensive implementation techniques,
+
+00:01:07.515 --> 00:01:12.000
+language subsets, style guides and naming conventions.
+

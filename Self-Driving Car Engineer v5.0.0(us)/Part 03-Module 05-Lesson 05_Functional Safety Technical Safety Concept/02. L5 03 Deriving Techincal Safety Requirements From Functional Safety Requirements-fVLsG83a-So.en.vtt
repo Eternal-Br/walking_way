@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.240
+Technical safety requirements describe what a system
+
+00:00:03.240 --> 00:00:06.929
+will do when a malfunction violates a safety goal.
+
+00:00:06.929 --> 00:00:11.199
+Let's derive an example from the lane departure warning safety goal.
+
+00:00:11.199 --> 00:00:13.820
+Recall from the safety goal,
+
+00:00:13.820 --> 00:00:17.010
+we derived a functional safety requirement that
+
+00:00:17.010 --> 00:00:19.920
+the electronic power steering ECU needed to
+
+00:00:19.920 --> 00:00:23.850
+keep the torque amplitude below a maximum threshold.
+
+00:00:23.850 --> 00:00:29.179
+Now, we will go one step further and derive a technical safety requirement.
+
+00:00:29.179 --> 00:00:34.549
+When the lane departure warning safety software component sends a torque request,
+
+00:00:34.549 --> 00:00:39.384
+the request amplitude should be below the maximum allowed threshold.
+
+00:00:39.384 --> 00:00:41.759
+Using the system architecture diagram,
+
+00:00:41.759 --> 00:00:44.129
+the requirement is formally that
+
+00:00:44.130 --> 00:00:49.050
+the LDW safety component shall ensure that the amplitude of
+
+00:00:49.049 --> 00:00:51.869
+the LDW torque request sent to
+
+00:00:51.869 --> 00:00:58.070
+the final electronic power steering torque component is below max torque amplitude.
+
+00:00:58.070 --> 00:01:03.570
+We'll start using acronyms to make the requirements easier to read.
+
+00:01:03.570 --> 00:01:06.280
+LDW is lane departure warning.
+
+00:01:06.280 --> 00:01:10.015
+While EPS is electronic power steering.
+
+00:01:10.015 --> 00:01:11.775
+Notice the difference between
+
+00:01:11.775 --> 00:01:15.865
+a functional safety requirement and the technical safety requirement.
+
+00:01:15.864 --> 00:01:17.849
+The functional safety requirement gives
+
+00:01:17.849 --> 00:01:22.044
+a general idea of what a system is supposed to do.
+
+00:01:22.045 --> 00:01:25.859
+The technical safety requirement indicates the signal flow
+
+00:01:25.859 --> 00:01:30.000
+and describes which components are in charge of the functionality.
+

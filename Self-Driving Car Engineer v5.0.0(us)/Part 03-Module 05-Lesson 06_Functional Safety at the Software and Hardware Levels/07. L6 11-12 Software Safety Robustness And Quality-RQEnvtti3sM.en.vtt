@@ -1,0 +1,103 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.804
+Flaws of the requirements are one of the major causes of accidents.
+
+00:00:04.804 --> 00:00:10.320
+The standard provides many recommendations about how to develop safety critical software.
+
+00:00:10.320 --> 00:00:12.900
+For example, the standard discusses driving
+
+00:00:12.900 --> 00:00:14.955
+software safety requirements from
+
+00:00:14.955 --> 00:00:18.629
+two core principles beside technical safety requirements.
+
+00:00:18.629 --> 00:00:22.349
+The first principle is ensuring robustness and quality.
+
+00:00:22.350 --> 00:00:25.455
+The second principle is freedom from interference.
+
+00:00:25.454 --> 00:00:28.574
+We will talk first about ensuring robustness and quality.
+
+00:00:28.574 --> 00:00:32.289
+Robustness specifically refers to whether we have
+
+00:00:32.289 --> 00:00:37.365
+software in the face of embedded inputs or stressful environmental conditions.
+
+00:00:37.365 --> 00:00:43.679
+An invalid input for example could be a parameter that is outside its allowed range.
+
+00:00:43.679 --> 00:00:45.689
+Quality means that the software meets
+
+00:00:45.689 --> 00:00:49.814
+its functional requirements as well as its nonfunctional requirements,
+
+00:00:49.814 --> 00:00:55.435
+like maintainability, adaptability, usability, and performance.
+
+00:00:55.435 --> 00:00:58.935
+So far, we have seen how technical safety requirements,
+
+00:00:58.935 --> 00:01:01.304
+as well as quality and robustness,
+
+00:01:01.304 --> 00:01:03.990
+lead to software safety requirements.
+
+00:01:03.990 --> 00:01:09.140
+Next, we will talk about software safety requirements for freedom from interference.
+
+00:01:09.140 --> 00:01:13.530
+Interference between elements can happen at any level in the V model.
+
+00:01:13.530 --> 00:01:17.887
+Because software elements cannot always be physically separated,
+
+00:01:17.887 --> 00:01:21.775
+software interference is an especially important topic.
+
+00:01:21.775 --> 00:01:24.150
+Freedom from interference means that
+
+00:01:24.150 --> 00:01:27.960
+one software element should not cause a failure in another software element.
+
+00:01:27.959 --> 00:01:33.344
+Hence, software is partitioned into separate pieces so that the failures do not spread.
+
+00:01:33.344 --> 00:01:37.289
+ISO 26262 does stop mandates freedom from interference,
+
+00:01:37.290 --> 00:01:40.040
+in cases where the software elements have the same ASIL.
+
+00:01:40.040 --> 00:01:44.200
+However, you need to prove freedom from interference
+
+00:01:44.200 --> 00:01:49.254
+when software components with different ASIL ratings communicate with each other,
+
+00:01:49.254 --> 00:01:51.299
+or are running on the same ECU.
+
+00:01:51.299 --> 00:01:55.340
+To ensure software elements do not interfere with each other,
+
+00:01:55.340 --> 00:01:58.239
+we need to understand three types of interference.
+
+00:01:58.239 --> 00:02:02.869
+These are spatial, temporal, and communication interference.
+
+00:02:02.870 --> 00:02:05.000
+We will go in-depth about each of these.
+

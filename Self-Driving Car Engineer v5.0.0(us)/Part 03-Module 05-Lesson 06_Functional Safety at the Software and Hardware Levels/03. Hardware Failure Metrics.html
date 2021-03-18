@@ -1,0 +1,378 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Hardware Failure Metrics
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Functional Safety at the Software and Hardware Levels
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction.html">
+       01. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. V model.html">
+       02. V model
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Hardware Failure Metrics.html">
+       03. Hardware Failure Metrics
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Programming Languages.html">
+       04. Programming Languages
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Software Safety Life-cycle.html">
+       05. Software Safety Life-cycle
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Software Safety Requirements Lane Departure Warning.html">
+       06. Software Safety Requirements Lane Departure Warning
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Other Sources of Software Safety Requirements.html">
+       07. Other Sources of Software Safety Requirements
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Freedom from Interference - Spatial.html">
+       08. Freedom from Interference - Spatial
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Freedom from Interference - Temporal.html">
+       09. Freedom from Interference - Temporal
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Freedom from Interference - Temporal Part 2.html">
+       10. Freedom from Interference - Temporal Part 2
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Sebastian and Temporal Interference.html">
+       11. Sebastian and Temporal Interference
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Freedom from Interference - Communication.html">
+       12. Freedom from Interference - Communication
+      </a>
+     </li>
+     <li class="">
+      <a href="13. System Architecture Safety Design Patterns.html">
+       13. System Architecture Safety Design Patterns
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Lesson Summary.html">
+       14. Lesson Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Module Summary.html">
+       15. Module Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          03. Hardware Failure Metrics
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L6 04 Hardware Failure Metrics
+         </p>
+        </h3>
+        <video controls="">
+         <source src="03. L6 04 Hardware Failure Metrics-wlCVuAJj1xk.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="03. L6 04 Hardware Failure Metrics-wlCVuAJj1xk.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="CN" src="03. L6 04 Hardware Failure Metrics-wlCVuAJj1xk.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Note that architectural metrics have values independent of implementation and are expressed as rates. Probabilistic Metric for Hardware Failures (PMHF) has absolute units expressed in failures per 10^9 hours.  As such PMHF is not itself an architectural metric, but is relevant to a discussion of hardware failure metrics.
+         </p>
+         <p>
+          It's also arguable that silicon wear-out is a systematic failure rather than random hardware failure, so it may not be considered as part of random hardware failure metrics.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="more-details-about-hardware-failure-metrics">
+          More Details about Hardware Failure Metrics
+         </h3>
+         <p>
+          Essentially, these metrics look at the percentage of hardware failures that are covered by a safety mechanism. A safety mechanism is some functionality that either keeps the vehicle safe if a failure occurs or detects that a failure has occurred. The implication is that in a safe system, most hardware failures would be detected.
+         </p>
+         <p>
+          Here is an example. If the RAM fails because UV radiation causes a bit flip, a safety mechanism would either need to fix the bit flip, take the system to a safe state, and/or warn the driver of the malfunction.
+         </p>
+         <p>
+          The standard considers hardware failures to be inevitable. But if they are going to happen, then ideally they should not lead to safety issues. The single point fault metric for ASIL D is greater than 99% whereas ASIL B is only greater than 90%. In other words, for ASIL D, 99% of single point faults should either be detected or be safe for a specific safety goal.
+         </p>
+         <p>
+          To calculate these metrics, you have to figure out which hardware failures lead to hazardous situations and which failures do not. The standard actually divides hardware failures into six different categories.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="categories-of-faults">
+          Categories of Faults
+         </h3>
+         <p>
+          To calculate hardware failure metrics, you need to categorize the failures into one of six categories. We will list them here for reference although we won't actually be calculating hardware failure metrics in this lesson.
+         </p>
+         <p>
+          Single point fault - a fault in an element that has no safety mechanism to detect faults. The fault also leads to a violation of a safety goal. For example, a RAM fault with no safety mechanisms to correct the fault would violate a safety goal.
+         </p>
+         <p>
+          Residual fault -  the element has a safety mechanism to detect certain kinds of faults; however, a fault occurs that the mechanism was not designed to detect, and the fault also leads to a violation of a safety goal. For example, RAM might have an ECC (error correction code) mechanism to fix a bit flip; however, a different fault occurs because of a short circuit and the RAM has no safety mechanism for short circuits.
+         </p>
+         <p>
+          Latent multiple point fault- multiple point fault that goes undetected by a safety mechanism and by the driver.
+         </p>
+         <p>
+          Perceived multiple point fault - multiple point fault that the driver detects because the fault causes limited vehicle functionality. Examples include a driver noticing reduced break response, or activating the headlights with no response (they don't turn on).
+         </p>
+         <p>
+          Detected multiple point fault - multiple point fault that a safety mechanism detects and takes the vehicle to a safe state
+         </p>
+         <p>
+          Safe faults - faults that do not lead to safety goal violations
+         </p>
+         <p>
+          An example of a multiple point fault could involve RAM and an ECC (error correction code) mechanism. ECC corrects bit flips. If the RAM contains a fault because of a bit flip, the ECC would correct the flip. If the ECC fails because of a software bug, RAM would still work correctly. If there's a bit flip and the ECC fails, then there is a multiple point fault because the bit flip will not be corrected. Both the RAM and the ECC will fail.
+         </p>
+         <p>
+          A cyclic redundancy check (CRC) would detect a fault in the ECC mechanism. Without a CRC, the fault would go undetected and hence be latent. With the CRC, the fault would become a detected multiple point fault. If the driver is informed about the fault like with a warning light, then this is a perceived multiple-point fault.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="measuring-faults">
+          Measuring Faults
+         </h3>
+         <p>
+          How would you actually measure faults and failure rates? You can either:
+         </p>
+         <ul>
+          <li>
+           do field tests to measure the number of failures in a given amount of time
+          </li>
+          <li>
+           use pre-existing data from an equivalent or similar system
+          </li>
+          <li>
+           vendors should supply data for calculating these metrics as well.
+          </li>
+         </ul>
+         <p>
+          Please note that ISO 26262 does not specify a target for random hardware failures. There is a Probabilistic Metric for Hardware Failures (PMHF) which focuses on dangerous, undetected hardware failures per safety goal. ISO 26262 suggests that PMHF values be used only in the absence of data to support targets.
+          <a href="http://publications.lib.chalmers.se/records/fulltext/218280/218280.pdf" rel="noopener noreferrer" target="_blank">
+           This
+          </a>
+          is an interesting paper regarding PMHF and random hardware failures.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="sources-and-types-of-failures">
+          Sources and Types of Failures
+         </h3>
+         <p>
+          Resistors aren't the only hardware components that can fail. Entire processing units need to be considered as well.
+         </p>
+         <p>
+          <a href="https://en.wikipedia.org/wiki/Hardware_register" rel="noopener noreferrer" target="_blank">
+           Hardware registers
+          </a>
+          , internal RAM, controller logic as well as other components can fail. All of these failures need to be covered by safety requirements, and then allocated to an architecture and documented in a safety concept. The safety concept would discuss how these failures would be detected or avoided.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="04. Programming Languages.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Hardware Failure Metrics')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

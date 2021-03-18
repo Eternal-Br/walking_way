@@ -1,0 +1,1134 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Software Safety Requirements Lane Departure Warning
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Functional Safety at the Software and Hardware Levels
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction.html">
+       01. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. V model.html">
+       02. V model
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Hardware Failure Metrics.html">
+       03. Hardware Failure Metrics
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Programming Languages.html">
+       04. Programming Languages
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Software Safety Life-cycle.html">
+       05. Software Safety Life-cycle
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Software Safety Requirements Lane Departure Warning.html">
+       06. Software Safety Requirements Lane Departure Warning
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Other Sources of Software Safety Requirements.html">
+       07. Other Sources of Software Safety Requirements
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Freedom from Interference - Spatial.html">
+       08. Freedom from Interference - Spatial
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Freedom from Interference - Temporal.html">
+       09. Freedom from Interference - Temporal
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Freedom from Interference - Temporal Part 2.html">
+       10. Freedom from Interference - Temporal Part 2
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Sebastian and Temporal Interference.html">
+       11. Sebastian and Temporal Interference
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Freedom from Interference - Communication.html">
+       12. Freedom from Interference - Communication
+      </a>
+     </li>
+     <li class="">
+      <a href="13. System Architecture Safety Design Patterns.html">
+       13. System Architecture Safety Design Patterns
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Lesson Summary.html">
+       14. Lesson Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Module Summary.html">
+       15. Module Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          06. Software Safety Requirements Lane Departure Warning
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="software-safety-requirements---lane-departure-warning-amplitude-malfunction">
+          Software Safety Requirements - Lane Departure Warning Amplitude Malfunction
+         </h3>
+         <p>
+          For the purposes of this module, we do not expect you to derive software safety requirements. But the examples below should give you a sense for how to derive software safety requirements from technical safety requirements. The examples also show the major differences between technical requirements and software requirements; software requirements are much more specific than technical requirements. Software requirements specify variable names, signal paths, and software protocols and mechanisms. A software engineer should be able to write a program from the software requirements and software architecture.
+         </p>
+         <p>
+          We are going to show you examples of software safety requirements that we have derived from the technical safety requirements. First, we will show you the refined architecture and then explain all of the new elements that we have added:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Software Architecture Diagram" class="img img-fluid" src="img/refined-system-architecture-l6-01.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Software Architecture Diagram
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="software-safety-requirements-derived-from-technical-safety-requirement-01">
+          Software Safety Requirements Derived from Technical Safety Requirement 01
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Let's take a look at our technical safety requirements one at a time and derive software safety requirements. You might want to refer back to this diagram as we explain the new functionality.
+         </p>
+         <p>
+          Here is our first technical safety requirement:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <table>
+          <thead>
+           <tr>
+            <th id="id">
+             ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+            <th id="fault_tolerant_time_interval">
+             Fault Tolerant Time Interval
+            </th>
+            <th id="allocation_to_architecture">
+             Allocation to Architecture
+            </th>
+            <th id="safe_state">
+             Safe State
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             TechnicalSafetyRequirement_01
+            </td>
+            <td>
+             The LDW safety component shall ensure that the amplitude of the LDW_Torque_Request sent to the Final Electronic Power Steering Torque component is below Max_Torque_Amplitude
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             50 mS
+            </td>
+            <td>
+             LDW Safety
+            </td>
+            <td>
+             LDW torque output is set to zero
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          We are going to split the LDW safety component into three blocks.
+         </p>
+         <p>
+          The first block will get the torque request from Basic/Main Lane Assistance functionality component. That first block will do any pre-processing needed. Then the block sends the results out to a torque limiter block that will check if the torque is beyond the allowed maximum amplitude. If the limit is reached, the torque request is set to zero. Finally, we'll add a third block that gets the signal ready for transmitting to the final torque generator.
+         </p>
+         <p>
+          Here are the new software safety requirements:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <table>
+          <thead>
+           <tr>
+            <th id="id">
+             ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+            <th id="allocation_software_elements">
+             Allocation Software Elements
+            </th>
+            <th id="safe_state">
+             Safe State
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement01-01
+            </td>
+            <td>
+             The input signal “Primary_LDW_Torq_Req” shall be read and pre-processed to determine the torque request coming from the “Basic/Main LAFunctionality” SW Component.  Signal “processed_LDW_Torq_Req” shall be generated at the end of the processing.
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             LDW_SAFETY_INPUT_PROCESSING
+            </td>
+            <td>
+             N/A
+            </td>
+           </tr>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement01-02
+            </td>
+            <td>
+             In case the “processed_LDW_Torq_Req” signal has a value greater than “Max_Torque_Amplitude_LDW” (maximum allowed safe torque), the torque signal “limited_LDW_Torq_Req” shall be set to 0,  else “limited_LDW_Torq_Req” shall take the value of “processed_LDW_Torq_Req”.
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             TORQUE_LIMITER
+            </td>
+            <td>
+             “limited_LDW_Torq_Req” = 0 (Nm=Newton-meter)
+            </td>
+           </tr>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement01-03
+            </td>
+            <td>
+             The “limited_LDW_Torq_Req” shall be transformed into a signal “LDW_Torq_Req” which is suitable to be transmitted outside of the LDW Safety component (“LDW Safety”) to the “Final EPS Torque”component. Also see SofSafReq02-01 and SofSafReq02-02
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             LDW_SAFETY_OUTPUT_GENERATOR
+            </td>
+            <td>
+             LDW_Torq_Req= 0 (Nm)
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Compare these new software safety requirements against the new system architecture diagram.
+         </p>
+         <p>
+          Let's look at our second technical safety requirement.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="software-safety-requirements-derived-from-technical-safety-requirement-02">
+          Software Safety Requirements Derived from Technical Safety Requirement 02
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Here is technical safety requirement 02:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <table>
+          <thead>
+           <tr>
+            <th id="id">
+             ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+            <th id="fault__tolerant__time__interval">
+             Fault  Tolerant  Time  Interval
+            </th>
+            <th id="allocation_to_architecture">
+             Allocation to Architecture
+            </th>
+            <th id="safe_state">
+             Safe State
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             TechnicalSafetyRequirement02
+            </td>
+            <td>
+             The validity and integrity of the data transmission for LDW_Torque_Request signal shall be ensured
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             50 ms
+            </td>
+            <td>
+             Data  Transmission Integrity Check
+            </td>
+            <td>
+             N/A
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          This requirement is going to be solved with something called an End2End (E2E) protocol. We're going to discuss this protocol towards the end of the lesson in the part labeled "Freedom from Interference - Communication"
+         </p>
+         <p>
+          Here are software safety requirements derived from the technical safety requirements 02:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <table>
+          <thead>
+           <tr>
+            <th id="id">
+             ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+            <th id="allocation_software_elements">
+             Allocation Software Elements
+            </th>
+            <th id="safe_state">
+             Safe State
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement02-01
+            </td>
+            <td>
+             Any data to be transmitted outside of the LDW Safety component (“LDW Safety”) including "LDW_Torque_Req" and “activation_status” (see SofSafReq03-02) shall be protected by an End2End(E2E) protection mechanism
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             E2ECalc
+            </td>
+            <td>
+             LDW_Torq_Req= 0 (Nm)
+            </td>
+           </tr>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement02-02
+            </td>
+            <td>
+             The E2E protection protocol shall contain and attach the control data: alive counter (SQC) and CRC to the data to be transmitted.
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             E2ECalc
+            </td>
+            <td>
+             LDW_Torq_Req= 0 (Nm)
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="software-safety-requirements-derived-from-technical-safety-requirement-03">
+          Software Safety Requirements Derived from Technical Safety Requirement 03
+         </h3>
+         <p>
+          Technical Safety Requirement 03:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <table>
+          <thead>
+           <tr>
+            <th id="id">
+             ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+            <th id="fault__tolerant__time__interval">
+             Fault  Tolerant  Time  Interval
+            </th>
+            <th id="allocation_to_architecture">
+             Allocation to Architecture
+            </th>
+            <th id="safe_state">
+             Safe State
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             TechnicalSafetyRequirement03
+            </td>
+            <td>
+             As soon as a failure is detected by the LDW function, it shall deactivate the LDW feature and the LDW_Torque_Request shall be set to zero
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             50 ms
+            </td>
+            <td>
+             LDW Safety
+            </td>
+            <td>
+             LDW torque output is set to zero
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          To solve the deactivation requirement, we are going to add an error detection block as an extra check on shutting down the lane keeping system. Each software block will output a signal as to whether or not an error has occurred. The signal will go to the "Final EPS Torque Generator" block alongside the actual torque request.
+         </p>
+         <p>
+          Here are the new software safety requirements:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <table>
+          <thead>
+           <tr>
+            <th id="id">
+             ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+            <th id="allocation_software_elements">
+             Allocation Software Elements
+            </th>
+            <th id="safe_state">
+             Safe State
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement03-01
+            </td>
+            <td>
+             Each of the SW elements shall output a signal to indicate any error which is detected by the element.  Error signal = error_status_input(LDW_SAFETY_INPUT_PROCESSING), error_status_torque_limiter(TORQUE_LIMITER), error_status_output_gen(LDW_SAFETY_OUTPUT_GENERATOR)
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             All
+            </td>
+            <td>
+             N/A
+            </td>
+           </tr>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement03-02
+            </td>
+            <td>
+             A software element shall evaluate the error status of all the other software elements and in case any 1 of them indicates an error, it shall deactivate the LDW feature (“activation_status”=0)
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             LDW_SAFETY_ACTIVATION
+            </td>
+            <td>
+             Activation_status = 0 (LDW function deactivated)
+            </td>
+           </tr>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement03-03
+            </td>
+            <td>
+             In case of no errors from the software elements, the status of the LDW feature shall be set to activated (“activation_status”=1)
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             LDW_SAFETY_ACTIVATION
+            </td>
+            <td>
+             N/A
+            </td>
+           </tr>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement03-04
+            </td>
+            <td>
+             In case an error is detected by any of the software elements, it shall set the value of its corresponding torque to 0 so that “LDW_Torq_Req” is set to 0
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             All
+            </td>
+            <td>
+             LDW_Torq_Req = 0
+            </td>
+           </tr>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement03-05
+            </td>
+            <td>
+             Once the LDW functionality has been deactivated, it shall stay deactivated till the time the ignition is switched from off to on again.
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             LDW_SAFETY_ACTIVATION
+            </td>
+            <td>
+             Activation_status = 0 (LDW function deactivated)
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="software-safety-requirements-derived-from-technical-safety-requirement-04">
+          Software Safety Requirements Derived from Technical Safety Requirement 04
+         </h3>
+         <p>
+          Our fourth technical safety requirement discusses sending an error signal to the car display ECU:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <table>
+          <thead>
+           <tr>
+            <th id="id">
+             ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+            <th id="fault__tolerant__time__interval">
+             Fault  Tolerant  Time  Interval
+            </th>
+            <th id="allocation_to_architecture">
+             Allocation to Architecture
+            </th>
+            <th id="safe_state">
+             Safe State
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             TechnicalSafetyRequirement04
+            </td>
+            <td>
+             As soon as the LDW function deactivates the LDW feature, the LDW Safety software block shall send a signal to the car display ECU to turn on a warning light
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             50 ms
+            </td>
+            <td>
+             LDW Safety
+            </td>
+            <td>
+             LDW torque output is set to zero
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          And here is a software safety requirement for technical safety requirement number 04:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <table>
+          <thead>
+           <tr>
+            <th id="id">
+             ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+            <th id="allocation_software_elements">
+             Allocation Software Elements
+            </th>
+            <th id="safe_state">
+             Safe State
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement04-01
+            </td>
+            <td>
+             When the LDW function is deactivated (activation_status set to 0), the activation_status shall be sent to the car displayECU.
+            </td>
+            <td>
+             C
+            </td>
+            <td>
+             LDW_SAFETY_ACTIVATION, CarDisplay ECU
+            </td>
+            <td>
+             N/A
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="software-safety-requirements-derived-from-technical-safety-requirement-05">
+          Software Safety Requirements Derived from Technical Safety Requirement 05
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          And finally, technical safety requirement 05:
+         </p>
+         <table>
+          <thead>
+           <tr>
+            <th id="id">
+             ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+            <th id="fault__tolerant__time__interval">
+             Fault  Tolerant  Time  Interval
+            </th>
+            <th id="allocation_to_architecture">
+             Allocation to Architecture
+            </th>
+            <th id="safe_state">
+             Safe State
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             TechnicalSafetyRequirement05
+            </td>
+            <td>
+             Memory test shall be conducted at start up of the EPS ECU to check for any faults in memory
+            </td>
+            <td>
+             A
+            </td>
+            <td>
+             Ignition Cycle
+            </td>
+            <td>
+             Memory Test
+            </td>
+            <td>
+             LDW torque output is set to zero
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Here are typical software safety requests for memory tests:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <table>
+          <thead>
+           <tr>
+            <th id="id">
+             ID
+            </th>
+            <th id="technical_safety_requirement">
+             Technical Safety Requirement
+            </th>
+            <th id="asil">
+             ASIL
+            </th>
+            <th id="allocation_software_elements">
+             Allocation Software Elements
+            </th>
+            <th id="safe_state">
+             Safe State
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement05-01
+            </td>
+            <td>
+             A CRC verification check over the software code in the Flash memory shall be done every time the ignition is switched from off to on to check for any corruption of content.
+            </td>
+            <td>
+             A
+            </td>
+            <td>
+             MEMORYTEST
+            </td>
+            <td>
+             Activation_status = 0
+            </td>
+           </tr>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement05-02
+            </td>
+            <td>
+             Standard RAM tests to check the data bus, address bus and device integrity shall be done every time the ignition is switched from off to on (E.g.walking 1s test, RAM pattern test. Refer RAM and processor vendor recommendations )
+            </td>
+            <td>
+             A
+            </td>
+            <td>
+             MEMORYTEST
+            </td>
+            <td>
+             Activation_status = 0
+            </td>
+           </tr>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement05-03
+            </td>
+            <td>
+             The test result of the RAM or Flash memory shall be indicated to the LDW_Safety component via the “test_status” signal
+            </td>
+            <td>
+             A
+            </td>
+            <td>
+             MEMORYTEST
+            </td>
+            <td>
+             Activation_status = 0
+            </td>
+           </tr>
+           <tr>
+            <td>
+             SoftwareSafetyRequirement05-04
+            </td>
+            <td>
+             In case any fault is indicated via the “test_status” signal the INPUT_LDW_PROCESSING shall set an error on error_status_input (=1) so that the LDW functionality is deactivated and the LDWTorque is set to 0
+            </td>
+            <td>
+             A
+            </td>
+            <td>
+             LDW_SAFETY_INPUT_PROCESSING
+            </td>
+            <td>
+             Activation_status = 0
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="final-project">
+          Final Project
+         </h3>
+         <p>
+          In the final project, you will need to document the information presented on this page. The information will go into the "Software Safety Requirements and Architecture Lane Assistance" document.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="07. Other Sources of Software Safety Requirements.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Software Safety Requirements Lane Departure Warning')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

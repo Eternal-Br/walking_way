@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.520
+Now let's discuss incorrect allocation of
+
+00:00:02.520 --> 00:00:05.915
+execution time and incorrect execution sequence.
+
+00:00:05.915 --> 00:00:10.919
+These types of temporal interference occur when software elements execute early,
+
+00:00:10.919 --> 00:00:13.219
+late, out of order,
+
+00:00:13.220 --> 00:00:15.405
+or that take too long to execute.
+
+00:00:15.404 --> 00:00:19.050
+The function safety standard recommends three different mechanisms
+
+00:00:19.050 --> 00:00:23.170
+for dealing with execution time and execution sequence faults.
+
+00:00:23.170 --> 00:00:24.915
+They are alive supervision,
+
+00:00:24.914 --> 00:00:28.559
+deadline monitoring and control flow monitoring.
+
+00:00:28.559 --> 00:00:31.489
+All three of these mechanisms work with checkpoints.
+
+00:00:31.489 --> 00:00:36.780
+There are software element reports its status at the beginning and end of execution.
+
+00:00:36.780 --> 00:00:39.870
+A live supervision limits the number of times
+
+00:00:39.869 --> 00:00:44.379
+a software element can execute within a given time span.
+
+00:00:44.380 --> 00:00:46.020
+When a checkpoint is reached,
+
+00:00:46.020 --> 00:00:50.800
+the system would analyze the number of times the element was executed.
+
+00:00:50.799 --> 00:00:56.714
+Deadline monitoring looks at how long it takes to execute a software element.
+
+00:00:56.715 --> 00:01:00.080
+If an element takes too long, an error has occurred.
+
+00:01:00.079 --> 00:01:02.716
+And lastly, control flow monitoring ensures
+
+00:01:02.716 --> 00:01:06.304
+that software progress is in the correct order.
+
+00:01:06.305 --> 00:01:10.950
+For example, the execution sequence might be out of order or
+
+00:01:10.950 --> 00:01:13.260
+a software element gets executed in
+
+00:01:13.260 --> 00:01:16.800
+the middle of the sequence instead of at the beginning.
+
+00:01:16.799 --> 00:01:19.359
+Separate software blocks would be included in
+
+00:01:19.359 --> 00:01:22.915
+the system architecture to analyze the checkpoint.
+
+00:01:22.915 --> 00:01:25.590
+If a fault occurred that violated the safety goal,
+
+00:01:25.590 --> 00:01:28.219
+then the system should transition to a safe state.
+
