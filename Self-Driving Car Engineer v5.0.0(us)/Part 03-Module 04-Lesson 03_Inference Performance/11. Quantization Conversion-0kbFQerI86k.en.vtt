@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.620
+There are a variety of ways to convert our floating point values to integers.
+
+00:00:04.620 --> 00:00:06.615
+The simplest is a linear conversion.
+
+00:00:06.615 --> 00:00:08.460
+A convenient characteristics of
+
+00:00:08.460 --> 00:00:12.725
+neural network weights is they inhibit a relatively small range.
+
+00:00:12.724 --> 00:00:14.955
+For example, in that layer,
+
+00:00:14.955 --> 00:00:17.535
+weights might range from -8 to 10.
+
+00:00:17.535 --> 00:00:20.699
+To perform a linear conversion we would assign -8 to 0,
+
+00:00:20.699 --> 00:00:25.259
+1 to 128 and 10 to 255,
+
+00:00:25.260 --> 00:00:27.855
+and all the values in between accordingly.
+
+00:00:27.855 --> 00:00:32.759
+Notice it's easy to convert back to a floating point number if need be as well.
+
+00:00:32.759 --> 00:00:34.923
+With just this small change,
+
+00:00:34.923 --> 00:00:37.259
+we save 75% in this pace.
+

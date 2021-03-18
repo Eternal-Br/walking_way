@@ -1,0 +1,454 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   IoU Quiz
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Scene Understanding
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro.html">
+       01. Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Bounding Boxes.html">
+       02. Bounding Boxes
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Semantic Segmentation.html">
+       03. Semantic Segmentation
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Scene Understanding.html">
+       04. Scene Understanding
+      </a>
+     </li>
+     <li class="">
+      <a href="05. IoU.html">
+       05. IoU
+      </a>
+     </li>
+     <li class="">
+      <a href="06. IOU Example.html">
+       06. IOU Example
+      </a>
+     </li>
+     <li class="">
+      <a href="07. IoU Quiz.html">
+       07. IoU Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="08. IOU Solution.html">
+       08. IOU Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="09. FCN-8 - Encoder.html">
+       09. FCN-8 - Encoder
+      </a>
+     </li>
+     <li class="">
+      <a href="10. FCN-8 - Decoder.html">
+       10. FCN-8 - Decoder
+      </a>
+     </li>
+     <li class="">
+      <a href="11. FCN-8 - Classification &amp; Loss.html">
+       11. FCN-8 - Classification &amp; Loss
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Object Detection Lab.html">
+       12. Object Detection Lab
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Outro.html">
+       13. Outro
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          07. IoU Quiz
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          For the next quiz we will calculate the IOU metric given ground truth and prediction matrices.  Remember IOU is Intersection over Union, where the Intersection set is an AND operation (pixels that are truly part of a class AND are classified as part of the class by the network) and the Union is an OR operation (pixels that are truly part of that class + pixels that are classified as part of that class by the network).
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          IoU Value Quiz
+         </p>
+        </h3>
+        <div>
+         <div>
+          <p>
+           <strong>
+            QUESTION:
+           </strong>
+           <p>
+            What is the mean IoU of the following ground truth and prediction?  Since the Intersection will always be &lt;= Union, the final answer is a value between 0 and 1.
+           </p>
+           <pre><code># ground truth
+[[0, 0, 0, 0] 
+ [1, 1, 1, 1] 
+ [2, 2, 2, 2] 
+ [3, 3, 3, 3]]
+
+# prediction
+[[0, 0, 0, 0] 
+ [1, 0, 0, 1]
+ [1, 2, 2, 1] 
+ [3, 3, 0, 3]]</code></pre>
+          </p>
+          <div class="" form-group"="">
+           <label for="answer">
+            <strong>
+             ANSWER:
+            </strong>
+           </label>
+           <textarea class="form-control" id="answer"></textarea>
+          </div>
+         </div>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <p>
+           <i>
+            NOTE: The solutions are expressed in RegEx pattern. Udacity uses these patterns to check the given answer
+           </i>
+          </p>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="tensorflow-iou">
+          TensorFlow IoU
+         </h1>
+         <p>
+          Let's look at the
+          <a href="https://www.tensorflow.org/api_docs/python/tf/metrics/mean_iou" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.metrics.mean_iou
+           </code>
+          </a>
+          function.  Like all the other
+          <a href="https://www.tensorflow.org/api_docs/python/tf/metrics" rel="noopener noreferrer" target="_blank">
+           TensorFlow metric functions
+          </a>
+          , it returns a Tensor for the metric result and a Tensor Operation to generate the result.  In this case it returns
+          <code>
+           mean_iou
+          </code>
+          for the result and
+          <code>
+           update_op
+          </code>
+          for the update operation.  Make sure to run
+          <code>
+           update_op
+          </code>
+          before getting the result from
+          <code>
+           mean_iou
+          </code>
+          .
+         </p>
+         <pre><code class="python language-python">sess.run(update_op)
+sess.run(mean_iou)</code></pre>
+         <p>
+          The other characteristic of
+          <a href="https://www.tensorflow.org/api_docs/python/tf/metrics" rel="noopener noreferrer" target="_blank">
+           TensorFlow metric functions
+          </a>
+          is the usage of
+          <a href="https://www.tensorflow.org/api_docs/python/tf/local_variables" rel="noopener noreferrer" target="_blank">
+           local TensorFlow variables
+          </a>
+          .  These are temporary TensorFlow Variables that must be initialized by running
+          <a href="https://www.tensorflow.org/api_docs/python/tf/local_variables_initializer" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.local_variables_initializer()
+           </code>
+          </a>
+          .  This is similar to
+          <a href="https://www.tensorflow.org/api_docs/python/tf/global_variables_initializer" rel="noopener noreferrer" target="_blank">
+           <code>
+            tf.global_variables_initializer()
+           </code>
+          </a>
+          , but for different TensorFlow Variables.
+         </p>
+         <h1 id="iou-quiz">
+          IoU Quiz
+         </h1>
+         <p>
+          In this quiz, you'll use this
+          <a href="https://www.tensorflow.org/api_docs/python/tf/metrics/mean_iou" rel="noopener noreferrer" target="_blank">
+           documentation
+          </a>
+          to apply mean IoU to an example prediction.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="342500-quiz-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#342500-quiz-py" id="tab-342500-quiz-py" role="tab">
+            quiz.py
+           </a>
+           <a aria-controls="342500-solution-py" aria-selected="false" class="nav-item nav-link" data-toggle="tab" href="#342500-solution-py" id="tab-342500-solution-py" role="tab">
+            solution.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-342500-quiz-py" class="tab-pane active show" id="342500-quiz-py" role="tabpanel">
+            <pre><code></code>import oldtensorflow as tf
+
+
+def mean_iou(ground_truth, prediction, num_classes):
+    # TODO: Use `tf.metrics.mean_iou` to compute the mean IoU.
+    iou, iou_op = None
+    return iou, iou_op
+
+
+ground_truth = tf.constant([
+    [0, 0, 0, 0], 
+    [1, 1, 1, 1], 
+    [2, 2, 2, 2], 
+    [3, 3, 3, 3]], dtype=tf.float32)
+prediction = tf.constant([
+    [0, 0, 0, 0], 
+    [1, 0, 0, 1], 
+    [1, 2, 2, 1], 
+    [3, 3, 0, 3]], dtype=tf.float32)
+    
+# TODO: use `mean_iou` to compute the mean IoU
+iou, iou_op = mean_iou()
+
+with tf.Session() as sess:
+        sess.run(tf.global_variables_initializer())
+        # need to initialize local variables for this to run `tf.metrics.mean_iou`
+        sess.run(tf.local_variables_initializer())
+        
+        sess.run(iou_op)
+        # should be 0.53869
+        print("Mean IoU =", sess.run(iou))</pre>
+           </div>
+           <div aria-labelledby="tab-342500-solution-py" class="tab-pane" id="342500-solution-py" role="tabpanel">
+            <pre><code></code>import oldtensorflow as tf
+
+
+def mean_iou(ground_truth, prediction, num_classes):
+    # TODO: Use `tf.metrics.mean_iou` to compute the mean IoU.
+    iou, iou_op = tf.metrics.mean_iou(ground_truth, prediction, num_classes)
+    return iou, iou_op
+
+
+ground_truth = tf.constant([
+    [0, 0, 0, 0], 
+    [1, 1, 1, 1], 
+    [2, 2, 2, 2], 
+    [3, 3, 3, 3]], dtype=tf.float32)
+prediction = tf.constant([
+    [0, 0, 0, 0], 
+    [1, 0, 0, 1], 
+    [1, 2, 2, 1], 
+    [3, 3, 0, 3]], dtype=tf.float32)
+    
+# TODO: use `mean_iou` to compute the mean IoU
+iou, iou_op = mean_iou(ground_truth, prediction, 4)
+
+with tf.Session() as sess:
+        sess.run(tf.global_variables_initializer())
+        # need to initialize local variables for this to run `tf.metrics.mean_iou`
+        sess.run(tf.local_variables_initializer())
+        
+        sess.run(iou_op)
+        # should be 0.53869
+        print("Mean IoU =", sess.run(iou))</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="08. IOU Solution.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. IoU Quiz')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

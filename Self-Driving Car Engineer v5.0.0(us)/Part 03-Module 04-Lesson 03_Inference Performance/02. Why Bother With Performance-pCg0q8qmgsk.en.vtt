@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.024
+The first question you might have is, "Why even bother?
+
+00:00:03.024 --> 00:00:05.314
+Are neural networks fast enough already?"
+
+00:00:05.315 --> 00:00:09.140
+And that's a good question. The answer depends on the application.
+
+00:00:09.140 --> 00:00:13.060
+If we were classifying whether something is a hotdog or not a hotdog,
+
+00:00:13.060 --> 00:00:15.320
+we'd be fine with out of the box inference speeds.
+
+00:00:15.320 --> 00:00:20.734
+Autonomous vehicles however, are more demanding than just identifying hotdogs.
+
+00:00:20.734 --> 00:00:24.975
+The perception system in our vehicle has to make predictions in real time.
+
+00:00:24.975 --> 00:00:28.580
+We can't use cloud computing resources due to the latency.
+
+00:00:28.579 --> 00:00:34.079
+So all of these predictions must take place on the vehicle computational hardware.
+
+00:00:34.079 --> 00:00:38.070
+Squeezing every last bit of performance out of this hardware is crucial.
+

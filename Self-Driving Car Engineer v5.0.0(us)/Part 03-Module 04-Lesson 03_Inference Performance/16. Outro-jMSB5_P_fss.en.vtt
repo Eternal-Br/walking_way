@@ -1,0 +1,22 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.750
+Congratulations. We have cover a lot in this lesson.
+
+00:00:03.750 --> 00:00:06.439
+You learned how to accelerate inference with fusion,
+
+00:00:06.440 --> 00:00:10.259
+reduced precision, quantization and freezing the network.
+
+00:00:10.259 --> 00:00:15.570
+Additionally, you apply this optimization to a fully convolutional network graph.
+
+00:00:15.570 --> 00:00:18.480
+Next up, is the semantic segmentation project
+
+00:00:18.480 --> 00:00:21.289
+where you take what you learned and put it into practice.
+

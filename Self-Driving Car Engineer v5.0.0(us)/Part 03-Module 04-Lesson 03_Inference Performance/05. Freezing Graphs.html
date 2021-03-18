@@ -1,0 +1,422 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Freezing Graphs
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Inference Performance
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro.html">
+       01. Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Why Bother With Performance.html">
+       02. Why Bother With Performance
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Semantic Segmentation Revisited.html">
+       03. Semantic Segmentation Revisited
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Interlude Using The AMI.html">
+       04. Interlude: Using The AMI
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Freezing Graphs.html">
+       05. Freezing Graphs
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Graph Transforms.html">
+       06. Graph Transforms
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Fusion.html">
+       07. Fusion
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Optimizing For Inference.html">
+       08. Optimizing For Inference
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Reducing Precision.html">
+       09. Reducing Precision
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Quantization Quiz.html">
+       10. Quantization Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Quantization Conversion.html">
+       11. Quantization Conversion
+      </a>
+     </li>
+     <li class="">
+      <a href="12. 8-bit Calculations.html">
+       12. 8-bit Calculations
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Compilation.html">
+       13. Compilation
+      </a>
+     </li>
+     <li class="">
+      <a href="14. AOT &amp; JIT.html">
+       14. AOT &amp; JIT
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Reusing The Graph.html">
+       15. Reusing The Graph
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Outro.html">
+       16. Outro
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. Freezing Graphs
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="freezing-graphs">
+          Freezing Graphs
+         </h1>
+         <p>
+          Prior to applying any optimizations we'll want to freeze the TensorFlow Graph such that it's self-contained in a single
+          <a href="https://developers.google.com/protocol-buffers/" rel="noopener noreferrer" target="_blank">
+           protobuf
+          </a>
+          file. Freezing the graph is the process of converting TensorFlow variables into constants. During inference, variables become unnecessary since the values they store don’t change. We might as well convert them to constants, which the computer can work with faster.
+         </p>
+         <p>
+          Additional benefits of freezing the graph are:
+         </p>
+         <ul>
+          <li>
+           Unnecessary nodes related to training are removed
+          </li>
+          <li>
+           The model can be contained entirely in one protobuf file (weights and graph definition)
+          </li>
+          <li>
+           Simpler graph structure
+          </li>
+          <li>
+           Easier to deploy (due to everything being in one file)
+          </li>
+         </ul>
+         <p>
+          For these reasons, freezing the graph is commonly the first transform engineers execute when optimizing their network for inference.
+         </p>
+         <p>
+          We’ll use a trained fully convolutional model as the practical example.
+         </p>
+         <h3 id="setup">
+          Setup
+         </h3>
+         <p>
+          In the AMI navigate to the directory containing the saved graph checkpoint:
+         </p>
+         <pre><code class="sh language-sh">cd /home/ubuntu/inference-walkthrough/src</code></pre>
+         <p>
+          The current directory should contain the following files:
+         </p>
+         <pre><code>base_graph.pb 
+checkpoint
+ckpt.data-00000-of-0000
+ckpt.index
+ckpt.meta
+graph_utils.py</code></pre>
+         <ul>
+          <li>
+           <code>
+            base_graph.pb
+           </code>
+           is a protobuf representation of the graph. Note this does not include weight values, just the structure.
+          </li>
+          <li>
+           <code>
+            checkpoint
+           </code>
+           and
+           <code>
+            ckpt.*
+           </code>
+           files pertain to the saved weights and associated metadata.
+          </li>
+          <li>
+           <code>
+            graph_utils.py
+           </code>
+           is a Python file containing utility functions for working with the above files and TF graphs.
+          </li>
+         </ul>
+         <h3 id="freezing-the-graph">
+          Freezing The Graph
+         </h3>
+         <p>
+          Here’s an example of the freeze graph tool:
+         </p>
+         <pre><code class="sh language-sh">~/tensorflow/bazel-bin/tensorflow/python/tools/freeze_graph \
+--input_graph=base_graph.pb \
+--input_checkpoint=ckpt \
+--input_binary=true \
+--output_graph=frozen_graph.pb \
+--output_node_names=Softmax</code></pre>
+         <p>
+          The
+          <code>
+           freeze_graph
+          </code>
+          command requires five inputs:
+         </p>
+         <ul>
+          <li>
+           The input graph
+           <code>
+            input_graph
+           </code>
+           saved in protobuf format.
+          </li>
+          <li>
+           The input graph checkpoint,
+           <code>
+            input_checkpoint
+           </code>
+           .
+          </li>
+          <li>
+           <code>
+            input_binary
+           </code>
+           denotes whether the input graph is a binary file. Set this to true if the input is a
+           <code>
+            .pb
+           </code>
+           file instead of
+           <code>
+            .pbtxt
+           </code>
+           .
+          </li>
+          <li>
+           The name of the output graph,
+           <code>
+            output_graph
+           </code>
+           , i.e. the frozen graph.
+          </li>
+          <li>
+           The names of the output nodes. It’s a good idea in general to name key nodes in the graph and these names will come in handy when using these tools as well.
+          </li>
+         </ul>
+         <p>
+          The result is saved in the
+          <code>
+           frozen_graph.pb
+          </code>
+          file. This ends up removing many extraneous operations from the graph. We can get all a graph’s operations with
+          <code>
+           .get_operations()
+          </code>
+          method. The
+          <code>
+           load_graph
+          </code>
+          method below takes a binary protobuf file as input and returns the graph and list of operations.
+         </p>
+         <pre><code class="python language-python">def load_graph(graph_file, use_xla=False):
+    jit_level = 0
+    config = tf.ConfigProto()
+    if use_xla:
+        jit_level = tf.OptimizerOptions.ON_1
+        config.graph_options.optimizer_options.global_jit_level = jit_level
+
+    with tf.Session(graph=tf.Graph(), config=config) as sess:
+        gd = tf.GraphDef()
+        with tf.gfile.Open(graph_file, 'rb') as f:
+            data = f.read()
+            gd.ParseFromString(data)
+        tf.import_graph_def(gd, name='')
+        ops = sess.graph.get_operations()
+        n_ops = len(ops)
+        return sess.graph, ops</code></pre>
+         <pre><code class="python language-python">from graph_utils import load_graph
+
+sess, base_ops = load_graph('base_graph.pb')
+print(len(base_ops)) # 2165
+sess, frozen_ops = load_graph('frozen_graph.pb')
+print(len(frozen_ops)) # 245</code></pre>
+         <p>
+          As you can see, just freezing the graph substantially reduces the number of operations.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. Graph Transforms.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Freezing Graphs')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

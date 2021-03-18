@@ -1,0 +1,31 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.825
+You may have noticed semantic segmentation is computationally intensive.
+
+00:00:04.825 --> 00:00:09.600
+It's not uncommon for this pipeline to put out four to seven frame per second,
+
+00:00:09.599 --> 00:00:13.289
+while bounding boxes such as YOLO run at 4,290 FPS.
+
+00:00:13.289 --> 00:00:18.489
+Semantic segmentation has advantages over bounding boxes obviously.
+
+00:00:18.489 --> 00:00:19.934
+But in its current state,
+
+00:00:19.934 --> 00:00:23.299
+the segmentation system is simply not fast enough.
+
+00:00:23.300 --> 00:00:25.455
+However, with various optimizations,
+
+00:00:25.454 --> 00:00:29.894
+we can increase the performance of this system by three to five times.
+
+00:00:29.894 --> 00:00:35.000
+We will cover fusion quantization and graph to binary optimizations next.
+

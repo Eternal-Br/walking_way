@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.194
+So, what are we fusing?
+
+00:00:02.194 --> 00:00:04.859
+We're fusing graph operations.
+
+00:00:04.860 --> 00:00:07.485
+This fusion reduces the number of operations
+
+00:00:07.485 --> 00:00:11.070
+and accelerates the data passing through the graph.
+
+00:00:11.070 --> 00:00:13.410
+Consider a three layer pipeline: batch normalization,
+
+00:00:13.410 --> 00:00:15.554
+feeding into a value,
+
+00:00:15.554 --> 00:00:17.795
+feeding into a convolution.
+
+00:00:17.795 --> 00:00:21.835
+This implementations require each layer to store temporary tensors.
+
+00:00:21.835 --> 00:00:27.130
+We can fuse all three operations together and avoid storing all these extra tensors.
+
+00:00:27.129 --> 00:00:32.865
+Even better, the fuse operation only execute one kernel on the GPU instead of three.
+
+00:00:32.865 --> 00:00:35.655
+Each time a kernel is called, there is an overhead.
+
+00:00:35.655 --> 00:00:41.265
+Fusing kernels therefore, limits the overhead so the overall applications runs faster.
+
+00:00:41.265 --> 00:00:44.204
+Fusing saves both memory and time.
+
+00:00:44.204 --> 00:00:48.269
+Of course, fusing could be beneficial in training as well as inference.
+
+00:00:48.270 --> 00:00:51.900
+The trade off is that fusing reduces the flexibility of the network.
+
+00:00:51.899 --> 00:00:56.219
+During training, we might want to preserve the flexibility of the model in case
+
+00:00:56.219 --> 00:01:00.629
+we want to add or remove layers or transfer part of the network.
+
+00:01:00.630 --> 00:01:02.330
+By the time we get to inference,
+
+00:01:02.329 --> 00:01:04.670
+we're no longer changing the network architecture,
+
+00:01:04.670 --> 00:01:08.189
+so we can fuse operations more aggressively.
+
+00:01:08.189 --> 00:01:11.189
+It's important to know we could do this manually by coding up
+
+00:01:11.189 --> 00:01:15.450
+a single kernel that performs the three fuse operations together.
+
+00:01:15.450 --> 00:01:18.700
+However, the compiler is capable of doing this on its own,
+
+00:01:18.700 --> 00:01:23.430
+allowing us to write understandable code and still reap performance benefits.
+
+00:01:23.430 --> 00:01:28.740
+We can automate this process using an optimizer that will fuse common layers together.
+
+00:01:28.739 --> 00:01:32.129
+This allow us to write easier to understand code and manipulate it,
+
+00:01:32.129 --> 00:01:34.914
+while the final version after the optimization,
+
+00:01:34.915 --> 00:01:40.000
+we'll have all the performance advantages by applying tricks like fusion automatically.
+

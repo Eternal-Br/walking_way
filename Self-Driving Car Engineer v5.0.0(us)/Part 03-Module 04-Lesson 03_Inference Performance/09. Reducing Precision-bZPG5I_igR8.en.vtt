@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.120
+Neural networks are typically trained with single precision,
+
+00:00:03.120 --> 00:00:05.304
+32-bit floating point number.
+
+00:00:05.304 --> 00:00:07.859
+It has 23-bit significand,
+
+00:00:07.860 --> 00:00:11.384
+that can do significant digits used in science disciplines.
+
+00:00:11.384 --> 00:00:14.429
+Double precision or 64-bit floats have
+
+00:00:14.429 --> 00:00:21.144
+52 significant digits but turns out that level of precision is not needed in neural nets.
+
+00:00:21.144 --> 00:00:24.254
+So, most training is done in single precision.
+
+00:00:24.254 --> 00:00:27.954
+But it turns out we don't even need single precision for all the task,
+
+00:00:27.954 --> 00:00:30.239
+especially something like inferencing.
+
+00:00:30.239 --> 00:00:36.795
+Using half precision or 16-bits with 11 significant at even lower positions,
+
+00:00:36.795 --> 00:00:39.645
+results in minimal changes in accuracy.
+
+00:00:39.645 --> 00:00:42.965
+But does produce savings in time and memory.
+
+00:00:42.965 --> 00:00:48.000
+Essentially, you can increase the bandwidth to double with 16-bits compared to 32-bits.
+
+00:00:48.000 --> 00:00:49.799
+Pushing precision to the limit,
+
+00:00:49.799 --> 00:00:51.744
+is an active area of research.
+
+00:00:51.744 --> 00:00:56.419
+In fact, some results have been published only using one bit weights.
+
+00:00:56.420 --> 00:00:58.770
+The main issue when training neural network using
+
+00:00:58.770 --> 00:01:01.960
+lower precision is the effect on back propagation.
+
+00:01:01.960 --> 00:01:04.754
+The error caused by lower precision is amplified at
+
+00:01:04.754 --> 00:01:08.504
+each stage of the backward pass through the whole network.
+
+00:01:08.504 --> 00:01:11.699
+Backward passes only happen during training though.
+
+00:01:11.700 --> 00:01:16.400
+So, for inferencing this is a non issue and we can happily reduce precision.
+
+00:01:16.400 --> 00:01:18.715
+Typically, we convert floating point values to
+
+00:01:18.715 --> 00:01:23.150
+an a bit integer representation for 256 unique values.
+
+00:01:23.150 --> 00:01:25.890
+For example, zero two two 55.
+
+00:01:25.890 --> 00:01:29.760
+This specific reduction in precision from floating points to
+
+00:01:29.760 --> 00:01:33.700
+integers introduces another type of optimization.
+
+00:01:33.700 --> 00:01:38.895
+The process of constraining values like this from a continuous range to a discrete range,
+
+00:01:38.894 --> 00:01:41.099
+is known as quantization.
+

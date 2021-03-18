@@ -1,0 +1,393 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Interlude: Using The AMI
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Inference Performance
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro.html">
+       01. Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Why Bother With Performance.html">
+       02. Why Bother With Performance
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Semantic Segmentation Revisited.html">
+       03. Semantic Segmentation Revisited
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Interlude Using The AMI.html">
+       04. Interlude: Using The AMI
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Freezing Graphs.html">
+       05. Freezing Graphs
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Graph Transforms.html">
+       06. Graph Transforms
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Fusion.html">
+       07. Fusion
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Optimizing For Inference.html">
+       08. Optimizing For Inference
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Reducing Precision.html">
+       09. Reducing Precision
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Quantization Quiz.html">
+       10. Quantization Quiz
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Quantization Conversion.html">
+       11. Quantization Conversion
+      </a>
+     </li>
+     <li class="">
+      <a href="12. 8-bit Calculations.html">
+       12. 8-bit Calculations
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Compilation.html">
+       13. Compilation
+      </a>
+     </li>
+     <li class="">
+      <a href="14. AOT &amp; JIT.html">
+       14. AOT &amp; JIT
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Reusing The Graph.html">
+       15. Reusing The Graph
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Outro.html">
+       16. Outro
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          04. Interlude: Using The AMI
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="interlude-using-the-ami">
+          Interlude: Using The AMI
+         </h1>
+         <p>
+          Running many of the optimizations in TensorFlow requires compiling the TensorFlow and its associated tools from source. This process can be tedious so we've created an AMI,
+          <code>
+           udacity-carnd-advanced-deep-learning
+          </code>
+          available in the N. California, Oregon, N. Virginia, and Ohio regions.
+         </p>
+         <p>
+          For this guide we'll be creating a spot instance since they are easier to setup and generally much cheaper than regular instances. The downside of a spot instance is it may be terminated at any point. Creating a persistent volume and saving the model frequently is a good strategy.
+         </p>
+         <h2 id="gpu-instance-and-ami">
+          GPU Instance and AMI
+         </h2>
+         <p>
+          The first thing we'll do is select the AMI and an instance with a GPU:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          P1
+         </p>
+        </h3>
+        <video controls="">
+         <source src="04. P1-Y2ggt6l7PTo.mp4" type="video/mp4"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="volume-key-pair-and-security-group">
+          Volume, Key Pair, and Security Group
+         </h2>
+         <p>
+          <strong>
+           NOTE
+          </strong>
+          : during the project you should uncheck the volume delete marker, this will ensure the volume is
+          <strong>
+           NOT
+          </strong>
+          deleted when the instance is terminated and your progress will be saved. The volume can then be attached to a future instance.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          P2
+         </p>
+        </h3>
+        <video controls="">
+         <source src="04. P2-Yr_rRyEOTnM.mp4" type="video/mp4"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="connecting-to-the-instance">
+          Connecting To The Instance
+         </h2>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          P3
+         </p>
+        </h3>
+        <video controls="">
+         <source src="04. P3-yncq5HhDTV4.mp4" type="video/mp4"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Please note that in some cases, the default security group blocks SSH connections from external IPs, resulting in the request timing out. In these cases, the security group has to be updated to allow SSH connections.  Please see
+          <a href="https://knowledge.udacity.com/questions/6725" rel="noopener noreferrer" target="_blank">
+           this post
+          </a>
+          for details as well as these helpful setup instructions:
+         </p>
+         <p>
+          <em>
+           Adapted from mentor driveWell's advice
+          </em>
+          :
+         </p>
+         <ol>
+          <li>
+           Log in to EC2 management console, region [N. California, Oregon, N. Virginia, or Ohio]
+          </li>
+          <li>
+           Instances -&gt; spot requests -&gt; Request Spot Instances
+          </li>
+          <li>
+           Search for AMI -&gt; Communiti AMI -&gt; udacity-carnd-advanced-deep-learning
+          </li>
+          <li>
+           Instances type(s) select -&gt; g2.2xlarge or g3.4xlarge is suggested (GPU instances)
+          </li>
+          <li>
+           Network default -&gt; Next
+          </li>
+          <li>
+           EBS volumes -&gt; Delete: uncheck mark (important: storing the data when instance is terminated will be charged additionally)
+          </li>
+          <li>
+           Key pair name -&gt; create new key pair -&gt; update -&gt; choose
+          </li>
+          <li>
+           Security group -&gt; create new -&gt; add SSH and custom TCP for port 8888
+          </li>
+          <li>
+           Review -&gt; Launch
+          </li>
+          <li>
+           Instances -&gt; when Instance State = Running -&gt; right click -&gt; Connect
+          </li>
+          <li>
+           If using Putty (Windows), follow instructions for Putty from here
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="05. Freezing Graphs.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Interlude: Using The AMI')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,22 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.444
+Welcome to scene understanding.
+
+00:00:02.444 --> 00:00:06.914
+In this lesson you'll learn how to extract meaning from an image.
+
+00:00:06.915 --> 00:00:08.835
+We'll discuss object detection,
+
+00:00:08.835 --> 00:00:14.810
+semantic segmentation and the intersection over union metric, sometimes called IOU.
+
+00:00:14.810 --> 00:00:17.280
+We will cap off this lesson with the walk through of
+
+00:00:17.280 --> 00:00:22.000
+a fully convolutional network for semantic segmentation. Let's get started.
+

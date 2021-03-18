@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.960
+Welcome to Inference Optimizations.
+
+00:00:02.960 --> 00:00:06.200
+In this lesson, you'll learn how to take your model the
+
+00:00:06.200 --> 00:00:09.890
+last mile and accelerate how quickly it performs inference,
+
+00:00:09.890 --> 00:00:12.165
+or how fast it can make predictions.
+
+00:00:12.164 --> 00:00:15.604
+You will learn various optimizations such as fusion,
+
+00:00:15.605 --> 00:00:18.769
+quantization and machine code compilation.
+
+00:00:18.769 --> 00:00:23.910
+Then we will walk through how to take advantage of these techniques intensive flow.
+
