@@ -1,0 +1,429 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   PD Controller
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      PID Control
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro.html">
+       01. Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. PID Control.html">
+       02. PID Control
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Proportional Control.html">
+       03. Proportional Control
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Implement P Controller.html">
+       04. Implement P Controller
+      </a>
+     </li>
+     <li class="">
+      <a href="05. P Controller Solution.html">
+       05. P Controller Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Oscillations.html">
+       06. Oscillations
+      </a>
+     </li>
+     <li class="">
+      <a href="07. PD Controller.html">
+       07. PD Controller
+      </a>
+     </li>
+     <li class="">
+      <a href="08. PD Controller Solution.html">
+       08. PD Controller Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Systematic Bias.html">
+       09. Systematic Bias
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Is PD Enough.html">
+       10. Is PD Enough
+      </a>
+     </li>
+     <li class="">
+      <a href="11. PID implementation.html">
+       11. PID implementation
+      </a>
+     </li>
+     <li class="">
+      <a href="12. PID Implementation Solution.html">
+       12. PID Implementation Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Twiddle.html">
+       13. Twiddle
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Parameter Optimization.html">
+       14. Parameter Optimization
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Parameter Optimization Solution.html">
+       15. Parameter Optimization Solution
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Outro.html">
+       16. Outro
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Bonus Round Control [Optional].html">
+       17. Bonus Round: Control [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          07. PD Controller
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          PD Controller - Artificial Intelligence for Robotics
+         </p>
+        </h3>
+        <video controls="">
+         <source src="07. PD Controller - Artificial Intelligence for Robotics-kVYy2kjZjhA.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="07. PD Controller - Artificial Intelligence for Robotics-kVYy2kjZjhA.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="JP" src="07. PD Controller - Artificial Intelligence for Robotics-kVYy2kjZjhA.ja-JP.vtt" srclang="JP"/>
+         <track default="false" kind="subtitles" label="ja" src="07. PD Controller - Artificial Intelligence for Robotics-kVYy2kjZjhA.ja.vtt" srclang="ja"/>
+         <track default="false" kind="subtitles" label="ru" src="07. PD Controller - Artificial Intelligence for Robotics-kVYy2kjZjhA.ru.vtt" srclang="ru"/>
+         <track default="false" kind="subtitles" label="CN" src="07. PD Controller - Artificial Intelligence for Robotics-kVYy2kjZjhA.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In the following quiz you'll implement the PD controller.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="280332-pd-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#280332-pd-py" id="tab-280332-pd-py" role="tab">
+            pd.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-280332-pd-py" class="tab-pane active show" id="280332-pd-py" role="tabpanel">
+            <pre><code></code># -----------
+# User Instructions
+#
+# Implement a PD controller by running 100 iterations
+# of robot motion. The steering angle should be set
+# by the parameter tau_p and tau_d so that:
+#
+# steering = -tau_p * CTE - tau_d * diff_CTE
+# where differential crosstrack error (diff_CTE)
+# is given by CTE(t) - CTE(t-1)
+#
+#
+# Only modify code at the bottom! Look for the TODO
+# ------------
+ 
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+
+# ------------------------------------------------
+# 
+# this is the Robot class
+#
+
+class Robot(object):
+    def __init__(self, length=20.0):
+        """
+        Creates robot and initializes location/orientation to 0, 0, 0.
+        """
+        self.x = 0.0
+        self.y = 0.0
+        self.orientation = 0.0
+        self.length = length
+        self.steering_noise = 0.0
+        self.distance_noise = 0.0
+        self.steering_drift = 0.0
+
+    def set(self, x, y, orientation):
+        """
+        Sets a robot coordinate.
+        """
+        self.x = x
+        self.y = y
+        self.orientation = orientation % (2.0 * np.pi)
+
+    def set_noise(self, steering_noise, distance_noise):
+        """
+        Sets the noise parameters.
+        """
+        # makes it possible to change the noise parameters
+        # this is often useful in particle filters
+        self.steering_noise = steering_noise
+        self.distance_noise = distance_noise
+
+    def set_steering_drift(self, drift):
+        """
+        Sets the systematical steering drift parameter
+        """
+        self.steering_drift = drift
+
+    def move(self, steering, distance, tolerance=0.001, max_steering_angle=np.pi / 4.0):
+        """
+        steering = front wheel steering angle, limited by max_steering_angle
+        distance = total distance driven, most be non-negative
+        """
+        if steering &gt; max_steering_angle:
+            steering = max_steering_angle
+        if steering &lt; -max_steering_angle:
+            steering = -max_steering_angle
+        if distance &lt; 0.0:
+            distance = 0.0
+
+        # apply noise
+        steering2 = random.gauss(steering, self.steering_noise)
+        distance2 = random.gauss(distance, self.distance_noise)
+
+        # apply steering drift
+        steering2 += self.steering_drift
+
+        # Execute motion
+        turn = np.tan(steering2) * distance2 / self.length
+
+        if abs(turn) &lt; tolerance:
+            # approximate by straight line motion
+            self.x += distance2 * np.cos(self.orientation)
+            self.y += distance2 * np.sin(self.orientation)
+            self.orientation = (self.orientation + turn) % (2.0 * np.pi)
+        else:
+            # approximate bicycle model for motion
+            radius = distance2 / turn
+            cx = self.x - (np.sin(self.orientation) * radius)
+            cy = self.y + (np.cos(self.orientation) * radius)
+            self.orientation = (self.orientation + turn) % (2.0 * np.pi)
+            self.x = cx + (np.sin(self.orientation) * radius)
+            self.y = cy - (np.cos(self.orientation) * radius)
+
+    def __repr__(self):
+        return '[x=%.5f y=%.5f orient=%.5f]' % (self.x, self.y, self.orientation)
+
+############## ADD / MODIFY CODE BELOW ####################
+# ------------------------------------------------------------------------
+#
+# run - does a single control run
+
+# previous P controller
+def run_p(robot, tau, n=100, speed=1.0):
+    x_trajectory = []
+    y_trajectory = []
+    for i in range(n):
+        cte = robot.y
+        steer = -tau * cte
+        robot.move(steer, speed)
+        x_trajectory.append(robot.x)
+        y_trajectory.append(robot.y)
+    return x_trajectory, y_trajectory
+    
+robot = Robot()
+robot.set(0, 1, 0)
+
+def run(robot, tau_p, tau_d, n=100, speed=1.0):
+    x_trajectory = []
+    y_trajectory = []
+    # TODO: your code here
+    return x_trajectory, y_trajectory
+    
+x_trajectory, y_trajectory = run(robot, 0.2, 3.0)
+n = len(x_trajectory)
+
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 8))
+ax1.plot(x_trajectory, y_trajectory, 'g', label='PD controller')
+ax1.plot(x_trajectory, np.zeros(n), 'r', label='reference')
+</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="08. PD Controller Solution.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. PD Controller')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

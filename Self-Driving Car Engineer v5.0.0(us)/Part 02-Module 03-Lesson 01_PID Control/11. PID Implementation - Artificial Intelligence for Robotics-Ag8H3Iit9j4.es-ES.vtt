@@ -1,0 +1,74 @@
+WEBVTT
+Kind: captions
+Language: es-ES
+
+00:00:00.000 --> 00:00:02.000
+Cual es la idea?
+
+00:00:02.000 --> 00:00:08.000
+Si manejar normalmente nos lleva a una trayectoria que se aleja de nuestro objetivo
+
+00:00:08.000 --> 00:00:14.000
+eventualmente, después de algun tiempo, notamos que no nos estamos acercando a él.
+
+00:00:14.000 --> 00:00:20.000
+Comenzamos a manejar más y más hacia la derecha para compensar por esta tendencia
+
+00:00:20.000 --> 00:00:26.000
+y como resultado, el carro se movera así.
+
+00:00:26.000 --> 00:00:30.000
+Para hacer esto, necesitamos un error apreciable que esté presente por un tiempo largo.
+
+00:00:30.000 --> 00:00:35.000
+Este efecto es medido por la integral (i.e., la suma) de los errores a lo largo del tiempo
+
+00:00:35.000 --> 00:00:41.000
+Construyamos un nuevo controlador donde la direción sea proporcional a los errores en el pasado.
+
+00:00:41.000 --> 00:00:45.000
+también es proporcional a la derivada del error
+
+00:00:45.000 --> 00:00:50.000
+pero ahora es también proporcional a la integral (e.g., la suma)
+
+00:00:50.000 --> 00:00:53.000
+de todos los errors que hayamos observado.
+
+00:00:53.000 --> 00:00:57.000
+El término integral es interesanto. Si tenemos un error constante de, digamos, 0.8
+
+00:00:57.000 --> 00:01:02.000
+y en cada unidad de tiempo la suma se incrementa por 0.8, el error se volvera más y más grande
+
+00:01:02.000 --> 00:01:05.000
+y eventualmente correjirá el movimiento del robot
+
+00:01:05.000 --> 00:01:07.000
+Este controlador se conoce como un PID
+
+00:01:07.000 --> 00:01:14.000
+Este es P ó término proporcional, el D ó término 
+derivativo, y el I ó término Integral
+
+00:01:14.000 --> 00:01:17.000
+P-I-D
+
+00:01:17.000 --> 00:01:21.000
+Programemos esto. La integral del error
+
+00:01:21.000 --> 00:01:24.000
+es la suma de todos los errores que hayan sido observados.
+
+00:01:24.000 --> 00:01:27.000
+Programemos esto.
+
+00:01:27.000 --> 00:01:31.000
+Vamos a usar el término integral I = 0.004.
+
+00:01:31.000 --> 00:01:36.000
+No nos preocupemos del como se eligio este valor.. lo veremos es unos minutos.
+
+00:01:36.000 --> 00:01:44.000
+Modifiquemos y corramos nuestro código para que tenga en cuenta este parametro.
+
