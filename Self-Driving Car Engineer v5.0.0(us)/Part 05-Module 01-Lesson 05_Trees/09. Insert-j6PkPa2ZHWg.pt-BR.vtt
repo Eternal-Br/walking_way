@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.033 --> 00:00:04.671
+Inserir um elemento na árvore
+já que ela não tem ordem, é fácil.
+
+00:00:05.172 --> 00:00:07.868
+É só adicionar um nó
+a outro nó.
+
+00:00:07.901 --> 00:00:12.167
+Talvez seja uma folha
+ou um pai com um filho só.
+
+00:00:12.200 --> 00:00:16.135
+Só temos que ter certeza
+de que seguimos a regra dos 2 filhos.
+
+00:00:16.168 --> 00:00:18.001
+Temos a raiz no começo
+
+00:00:18.034 --> 00:00:21.833
+e temos que ir descendo
+até acharmos um local livre.
+
+00:00:22.368 --> 00:00:24.869
+Quanto tempo vai demorar
+para achá-lo?
+
+00:00:24.901 --> 00:00:27.901
+O pior caso é percorrermos
+o caminho mais longo
+
+00:00:27.934 --> 00:00:30.535
+até acharmos
+a folha mais distante.
+
+00:00:30.568 --> 00:00:33.402
+Neste caso, o número de nós
+que percorremos
+
+00:00:33.435 --> 00:00:35.335
+é igual à altura da árvore.
+
+00:00:35.368 --> 00:00:37.968
+Mas qual a altura
+de uma árvore binária?
+
+00:00:38.001 --> 00:00:42.735
+Como fizemos antes, vamos ver
+uns exemplos e raciocinar.
+
+00:00:42.769 --> 00:00:44.901
+Temos aqui
+duas árvores diferentes.
+
+00:00:44.934 --> 00:00:48.301
+Podemos chamá-las de perfeitas,
+já que cada nó,
+
+00:00:48.335 --> 00:00:52.034
+exceto as folhas no último nível,
+tem dois filhos.
+
+00:00:52.068 --> 00:00:56.835
+Parece que esta árvore com 3 nós
+tem 2 níveis.
+
+00:00:56.869 --> 00:01:02.135
+E esta tem 7 nós
+e 1, 2, 3 níveis.
+
+00:01:02.168 --> 00:01:05.468
+À medida que a árvore cresce,
+cada nível pode ter
+
+00:01:05.502 --> 00:01:08.802
+o número de nós equivalente
+a uma potência de 2.
+
+00:01:08.835 --> 00:01:10.901
+Pense nisso um pouco.
+
+00:01:12.135 --> 00:01:14.502
+Cada nó
+pode ter dois filhos.
+
+00:01:14.535 --> 00:01:19.268
+Então cada nível novo pode ter
+o dobro de nós que o anterior.
+
+00:01:19.301 --> 00:01:22.301
+Como voltamos a falar
+de potências de 2,
+
+00:01:22.335 --> 00:01:24.568
+pense logo em log(n).
+
+00:01:24.602 --> 00:01:27.468
+Ele se aplica aqui?
+Vamos dar uma olhada.
+
+00:01:27.502 --> 00:01:31.135
+Estamos vendo o mesmo padrão
+que vimos na busca binária.
+
+00:01:31.168 --> 00:01:35.101
+O número de níveis aumenta
+em potências de 2 aproximadamente,
+
+00:01:35.135 --> 00:01:38.301
+e agora podemos ver bem
+por quê.
+
+00:01:38.335 --> 00:01:41.802
+A cada nível, adicionamos
+quase o dobro de elementos.
+
+00:01:41.835 --> 00:01:45.769
+Sempre que adicionamos
+um novo nível ou, numa busca binária,
+
+00:01:45.802 --> 00:01:49.835
+dividimos nosso arranjo novamente,
+é porque temos um espaço
+
+00:01:49.869 --> 00:01:53.001
+que permite
+quase o dobro de elementos.
+
+00:01:53.869 --> 00:01:57.135
+Estamos adicionamos
+uma potência de 2 a cada nível,
+
+00:01:57.168 --> 00:02:01.602
+então o total de nós
+não será uma potência de 2 exata.
+
+00:02:02.201 --> 00:02:06.268
+Ter 3 níveis
+não significa ter 8 nós no total,
+
+00:02:06.301 --> 00:02:10.402
+mas significa que o 4º nível,
+sozinho, terá 8 elementos.
+
