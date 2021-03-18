@@ -1,0 +1,433 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Stack Practice
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      List-Based Collections
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Welcome to Collections.html">
+       01. Welcome to Collections
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Lists.html">
+       02. Lists
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Arrays.html">
+       03. Arrays
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Python Lists.html">
+       04. Python Lists
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Linked Lists.html">
+       05. Linked Lists
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Linked Lists in Depth.html">
+       06. Linked Lists in Depth
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Linked List Practice.html">
+       07. Linked List Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Stacks.html">
+       08. Stacks
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Stacks Details.html">
+       09. Stacks Details
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Stack Practice.html">
+       10. Stack Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Queues.html">
+       11. Queues
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Queue Practice.html">
+       12. Queue Practice
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          10. Stack Practice
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Stack Practice
+         </p>
+        </h3>
+        <div>
+         <div>
+          <h4>
+           Question:
+          </h4>
+          <p>
+           <p>
+            Remember that wonderful Python list we talked about eariler? It turns out that stack functionality is already built into it!
+            <br/>
+           </p>
+           <p>
+            The
+            <a href="https://docs.python.org/2/tutorial/datastructures.html#using-lists-as-stacks" rel="noopener noreferrer" target="_blank">
+             Python documentation
+            </a>
+            shows how you can use built-in funtions to turn your Python list into a stack.
+            <code>
+             pop()
+            </code>
+            is a given function, and
+            <code>
+             append()
+            </code>
+            is equivalent to a push function.
+            <br/>
+           </p>
+           <p>
+            Of course, this functionality makes stack manipulation in Python all too easy. Let's make our own
+            <code>
+             Stack
+            </code>
+            class to see how a stack really works under the hood.
+           </p>
+          </p>
+         </div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="30880-algorithmsP3-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#30880-algorithmsP3-py" id="tab-30880-algorithmsP3-py" role="tab">
+            algorithmsP3.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-30880-algorithmsP3-py" class="tab-pane active show" id="30880-algorithmsP3-py" role="tabpanel">
+            <pre><code></code>"""Add a couple methods to our LinkedList class,
+and use that to implement a Stack.
+You have 4 functions below to fill in:
+insert_first, delete_first, push, and pop.
+Think about this while you're implementing:
+why is it easier to add an "insert_first"
+function than just use "append"?"""
+
+class Element(object):
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        
+class LinkedList(object):
+    def __init__(self, head=None):
+        self.head = head
+        
+    def append(self, new_element):
+        current = self.head
+        if self.head:
+            while current.next:
+                current = current.next
+            current.next = new_element
+        else:
+            self.head = new_element
+
+    def insert_first(self, new_element):
+        "Insert new element as the head of the LinkedList"
+        pass
+
+    def delete_first(self):
+        "Delete the first (head) element in the LinkedList as return it"
+        pass
+
+class Stack(object):
+    def __init__(self,top=None):
+        self.ll = LinkedList(top)
+
+    def push(self, new_element):
+        "Push (add) a new element onto the top of the stack"
+        pass
+
+    def pop(self):
+        "Pop (remove) the first element off the top of the stack and return it"
+        pass
+    
+# Test cases
+# Set up some Elements
+e1 = Element(1)
+e2 = Element(2)
+e3 = Element(3)
+e4 = Element(4)
+
+# Start setting up a Stack
+stack = Stack(e1)
+
+# Test stack functionality
+stack.push(e2)
+stack.push(e3)
+print stack.pop().value
+print stack.pop().value
+print stack.pop().value
+print stack.pop()
+stack.push(e4)
+print stack.pop().value</pre>
+           </div>
+          </div>
+         </div>
+         <div>
+          <details>
+           <summary>
+            <strong>
+             Solution:
+            </strong>
+           </summary>
+           <div>
+            <p>
+             <p>
+              There's a solution below. We had two options here—either pop and push from the first element in our linked list, or pop and push from the last element. We already had a function,
+              <code>
+               append()
+              </code>
+              , that adds an element to the end.
+             </p>
+             <p>
+              Why didn't we just come up with a function for removing the last element and call it a day? Every operation on a linked list must start with the head.
+              <code>
+               append()
+              </code>
+              thus traverses the whole list, taking O(n). Any operation on the last element requires us to traverse everything, so even though we had to write a new method our code will run much faster if we push/pop from the first element in a linked list.
+             </p>
+             <pre><code>class Element(object):
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class LinkedList(object):
+    def __init__(self, head=None):
+        self.head = head
+
+    def append(self, new_element):
+        current = self.head
+        if self.head:
+            while current.next:
+                current = current.next
+            current.next = new_element
+        else:
+            self.head = new_element
+
+    def insert_first(self, new_element):
+        new_element.next = self.head
+        self.head = new_element
+
+    def delete_first(self):
+        if self.head:
+            deleted_element = self.head
+            temp = deleted_element.next
+            self.head = temp
+            return deleted_element
+        else:
+            return None
+
+class Stack(object):
+    def __init__(self,top=None):
+        self.ll = LinkedList(top)
+
+    def push(self, new_element):
+        self.ll.insert_first(new_element)
+
+    def pop(self):
+        return self.ll.delete_first()</code></pre>
+            </p>
+           </div>
+          </details>
+         </div>
+        </div>
+        <div class="jumbotron" style="margin-top: 50px; margin-bottom: 50px;">
+         <h3>
+          INSTRUCTOR NOTE:
+         </h3>
+         <p>
+          Here's an alternative solution to delete_first() -
+          <a href="https://gist.github.com/adarsh0806/02d8e1d54d510294e75dfbc0d9bd7059" rel="noopener noreferrer" target="_blank">
+           https://gist.github.com/adarsh0806/02d8e1d54d510294e75dfbc0d9bd7059
+          </a>
+         </p>
+         <p>
+          Benefits of this method:
+         </p>
+         <p>
+          1) this version has fewer lines of code with no loss of functionality
+          <br>
+           2) this version clears out the next field of the deleted element (good practice, even though it's not in the specification)
+          </br>
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="11. Queues.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('10. Stack Practice')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

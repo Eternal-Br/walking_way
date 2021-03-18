@@ -1,0 +1,532 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Linked List Practice
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      List-Based Collections
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Welcome to Collections.html">
+       01. Welcome to Collections
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Lists.html">
+       02. Lists
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Arrays.html">
+       03. Arrays
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Python Lists.html">
+       04. Python Lists
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Linked Lists.html">
+       05. Linked Lists
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Linked Lists in Depth.html">
+       06. Linked Lists in Depth
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Linked List Practice.html">
+       07. Linked List Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Stacks.html">
+       08. Stacks
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Stacks Details.html">
+       09. Stacks Details
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Stack Practice.html">
+       10. Stack Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Queues.html">
+       11. Queues
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Queue Practice.html">
+       12. Queue Practice
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          07. Linked List Practice
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Linked List Practice
+         </p>
+        </h3>
+        <div>
+         <div>
+          <h4>
+           Question:
+          </h4>
+          <p>
+           <p>
+            There isn't a built-in data structure in Python that looks like a linked list. Thankfully, it's easy to make classes that represent data structures in Python!
+            <br/>
+           </p>
+           <p>
+            Here's the code for an
+            <code>
+             Element
+            </code>
+            , which will be a single unit in a linked list:
+           </p>
+           <pre><code>class Element(object):
+    def __init__(self, value):
+        self.value = value
+        self.next = None</code></pre>
+           <p>
+            Make sure you understand this code before moving on! We use
+            <code>
+             __init__
+            </code>
+            to initialize a new
+            <code>
+             Element
+            </code>
+            . An Element has some
+            <code>
+             value
+            </code>
+            associated with it (which could be anything—a number, a string, a character, et cetera), and it has a variable that points to the
+            <code>
+             next
+            </code>
+            element in the linked list.
+            <br/>
+           </p>
+           <p>
+            Now, let's set up a
+            <code>
+             LinkedList
+            </code>
+            class:
+           </p>
+           <pre><code>class LinkedList(object):
+    def __init__(self, head=None):
+        self.head = head</code></pre>
+           <p>
+            This code is very similar—we're just establishing that a
+            <code>
+             LinkedList
+            </code>
+            is something that has a
+            <code>
+             head
+            </code>
+            <code>
+             Element
+            </code>
+            , which is the first element in the list. If we establish a new
+            <code>
+             LinkedList
+            </code>
+            without a
+            <code>
+             head
+            </code>
+            , it will default to
+            <code>
+             None
+            </code>
+            .
+            <br/>
+           </p>
+           <p>
+            Great! Let's add a method to our
+            <code>
+             LinkedList
+            </code>
+            to make it a little more useful. This method will add a new
+            <code>
+             Element
+            </code>
+            to the end of our
+            <code>
+             LinkedList
+            </code>
+            .
+           </p>
+           <pre><code>    def append(self, new_element):
+        current = self.head
+        if self.head:
+            while current.next:
+                current = current.next
+            current.next = new_element
+        else:
+            self.head = new_element</code></pre>
+           <p>
+            Again, this part is really important, so don't rush through it. Take the code line-by-line and make sure everything makes sense. If the
+            <code>
+             LinkedList
+            </code>
+            already has a
+            <code>
+             head
+            </code>
+            , iterate through the
+            <code>
+             next
+            </code>
+            reference in every
+            <code>
+             Element
+            </code>
+            until you reach the end of the list. Set
+            <code>
+             next
+            </code>
+            for the end of the list to be the
+            <code>
+             new_element
+            </code>
+            . Alternatively, if there is no
+            <code>
+             head
+            </code>
+            already, you should just assign
+            <code>
+             new_element
+            </code>
+            to it and do nothing else.
+           </p>
+          </p>
+         </div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="38918-algorithmsP2-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#38918-algorithmsP2-py" id="tab-38918-algorithmsP2-py" role="tab">
+            algorithmsP2.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-38918-algorithmsP2-py" class="tab-pane active show" id="38918-algorithmsP2-py" role="tabpanel">
+            <pre><code></code>"""The LinkedList code from before is provided below.
+Add three functions to the LinkedList.
+"get_position" returns the element at a certain position.
+The "insert" function will add an element to a particular
+spot in the list.
+"delete" will delete the first element with that
+particular value.
+Then, use "Test Run" and "Submit" to run the test cases
+at the bottom."""
+
+class Element(object):
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+        
+class LinkedList(object):
+    def __init__(self, head=None):
+        self.head = head
+        
+    def append(self, new_element):
+        current = self.head
+        if self.head:
+            while current.next:
+                current = current.next
+            current.next = new_element
+        else:
+            self.head = new_element
+            
+    def get_position(self, position):
+        """Get an element from a particular position.
+        Assume the first position is "1".
+        Return "None" if position is not in the list."""
+        return None
+    
+    def insert(self, new_element, position):
+        """Insert a new node at the given position.
+        Assume the first position is "1".
+        Inserting at position 3 means between
+        the 2nd and 3rd elements."""
+        pass
+    
+    
+    def delete(self, value):
+        """Delete the first node with a given value."""
+        pass
+
+# Test cases
+# Set up some Elements
+e1 = Element(1)
+e2 = Element(2)
+e3 = Element(3)
+e4 = Element(4)
+
+# Start setting up a LinkedList
+ll = LinkedList(e1)
+ll.append(e2)
+ll.append(e3)
+
+# Test get_position
+# Should print 3
+print ll.head.next.next.value
+# Should also print 3
+print ll.get_position(3).value
+
+# Test insert
+ll.insert(e4,3)
+# Should print 4 now
+print ll.get_position(3).value
+
+# Test delete
+ll.delete(1)
+# Should print 2 now
+print ll.get_position(1).value
+# Should print 4 now
+print ll.get_position(2).value
+# Should print 3 now
+print ll.get_position(3).value</pre>
+           </div>
+          </div>
+         </div>
+         <div>
+          <details>
+           <summary>
+            <strong>
+             Solution:
+            </strong>
+           </summary>
+           <div>
+            <p>
+             <p>
+              Here's one answer—how does it compare to yours?
+             </p>
+             <pre><code>class Element(object):
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class LinkedList(object):
+    def __init__(self, head=None):
+        self.head = head
+
+    def append(self, new_element):
+        current = self.head
+        if self.head:
+            while current.next:
+                current = current.next
+            current.next = new_element
+        else:
+            self.head = new_element
+
+    def get_position(self, position):
+        counter = 1
+        current = self.head
+        if position &lt; 1:
+            return None
+        while current and counter &lt;= position:
+            if counter == position:
+                return current
+            current = current.next
+            counter += 1
+        return None
+
+    def insert(self, new_element, position):
+        counter = 1
+        current = self.head
+        if position &gt; 1:
+            while current and counter &lt; position:
+                if counter == position - 1:
+                    new_element.next = current.next
+                    current.next = new_element
+                current = current.next
+                counter += 1
+        elif position == 1:
+            new_element.next = self.head
+            self.head = new_element
+
+    def delete(self, value):
+        current = self.head
+        previous = None
+        while current.value != value and current.next:
+            previous = current
+            current = current.next
+        if current.value == value:
+            if previous:
+                previous.next = current.next
+            else:
+                self.head = current.next</code></pre>
+            </p>
+           </div>
+          </details>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="08. Stacks.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Linked List Practice')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
