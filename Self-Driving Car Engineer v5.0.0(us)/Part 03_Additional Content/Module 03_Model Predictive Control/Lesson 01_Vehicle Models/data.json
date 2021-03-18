@@ -1,0 +1,979 @@
+{
+  "data": {
+    "lesson": {
+      "id": 301425,
+      "key": "af4fcd4f-eb1f-43d8-82b3-17bb1e71695f",
+      "title": "Vehicle Models",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson, you'll learn about kinematic and dynamic vehicle models. We'll use these later with Model Predictive Control.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/af4fcd4f-eb1f-43d8-82b3-17bb1e71695f/301425/1581973630953/Vehicle+Models+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/af4fcd4f-eb1f-43d8-82b3-17bb1e71695f/301425/1581973626923/Vehicle+Models+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 301427,
+          "key": "3b595506-b5e2-4bb5-815d-289b3c224f0d",
+          "title": "Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3b595506-b5e2-4bb5-815d-289b3c224f0d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301431,
+              "key": "e41b440a-3762-4d0e-8d1e-fcc7062f82c0",
+              "title": "Vehicle Models Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qkT7Sr8HHBw",
+                "china_cdn_id": "qkT7Sr8HHBw.mp4"
+              }
+            },
+            {
+              "id": 559817,
+              "key": "899528ec-d871-4c1d-83e8-819cd1717def",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Robot Motion and Trigonometry\nMotion model development relies on some essential concepts of trigonometry.  As a trigonometry refresher in the context of robot motion,  we have created [this optional content](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/87f3782a-0a5b-4568-bcf2-edad2f5fdd76/lessons/60367cb6-526f-4255-a92a-c850038c4675/concepts/750370b5-3176-4f43-820b-773503c370c7).\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 301809,
+          "key": "0222f1d6-bc82-4408-941f-3eae85616f76",
+          "title": "Vehicle Models",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0222f1d6-bc82-4408-941f-3eae85616f76",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308562,
+              "key": "3c49b133-c5a4-4c44-9437-c3d639254395",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Kinematic Models\n\nKinematic models are simplifications of dynamic models that ignore tire forces, gravity, and mass.\n\nThis simplification reduces the accuracy of the models, but it also makes them more tractable.\n\nAt low and moderate speeds, kinematic models often approximate the actual vehicle dynamics.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308601,
+              "key": "675e8400-96d7-4b05-b82c-1589b36602c8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5910f76b_02-l-vehicle-models-static-animation-later-02/02-l-vehicle-models-static-animation-later-02.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/675e8400-96d7-4b05-b82c-1589b36602c8",
+              "caption": "The vehicle is forced off the road due to forces not accounted for.",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 301810,
+              "key": "846abf7b-a92e-44a9-8290-43dcaca2ae3e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Dynamic Models\n\nDynamic models aim to embody the actual vehicle dynamics as closely as possible.\n\nThey might encompass tire forces, longitudinal and lateral forces, inertia, gravity, air resistance, drag, mass, and the geometry of the vehicle.\n\nNot all dynamic models are created equal! Some may consider more of these factors than others.\n\nAdvanced dynamic models even take internal vehicle forces into account - for example, how responsive the chassis suspension is.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308602,
+              "key": "5620791e-a20e-4542-9034-4c2eeed0a2ab",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5910f7c3_02-l-vehicle-models-static-animation-later-01/02-l-vehicle-models-static-animation-later-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5620791e-a20e-4542-9034-4c2eeed0a2ab",
+              "caption": "The dynamic model is able to stay on the road, knowledge of forces is embedded in the model.",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 301811,
+              "key": "f8cbac69-72cd-437d-a0b4-0c9158025559",
+              "title": "Forces",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f8cbac69-72cd-437d-a0b4-0c9158025559",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What forces does a dynamic model consider?",
+                "answers": [
+                  {
+                    "id": "a1493329946076",
+                    "text": "Tire forces, longitudinal and lateral forces, gravity, air resistance, drag.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1493329956782",
+                    "text": "Mass, vehicle width, vehicle length and other vehicle characteristics.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1493329957694",
+                    "text": "All of the above.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 301812,
+          "key": "31d73731-4c70-4774-a696-0a854cd01b26",
+          "title": "State",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "31d73731-4c70-4774-a696-0a854cd01b26",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 335842,
+              "key": "1fe70d40-8ed7-4919-9906-210873eb148d",
+              "title": "State",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6vFczwAYjsU",
+                "china_cdn_id": "6vFczwAYjsU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 301817,
+          "key": "a62153eb-458b-4c68-96fc-eeaa3b4aeaa6",
+          "title": "Building a Kinematic Model",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a62153eb-458b-4c68-96fc-eeaa3b4aeaa6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 335844,
+              "key": "d075ada3-1297-44bd-818b-aa38c9bd7027",
+              "title": "04 L Building A Kinematic Model",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-Nnk8n81zr4",
+                "china_cdn_id": "-Nnk8n81zr4.mp4"
+              }
+            },
+            {
+              "id": 306268,
+              "key": "759d5f73-e530-4781-ae01-1a3b56358d3f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/590be2c2_building-a-model/building-a-model.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/759d5f73-e530-4781-ae01-1a3b56358d3f",
+              "caption": "",
+              "alt": null,
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 306209,
+              "key": "a3681b31-bcf3-4a7c-a347-123d1436cc75",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Based on the above visual answer the following quizzes:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 306206,
+              "key": "56195c0b-ee65-4e44-9872-745c25e121f8",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "56195c0b-ee65-4e44-9872-745c25e121f8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which equation correctly models x?",
+                "answers": [
+                  {
+                    "id": "a1493944951754",
+                    "text": "<span class='mathquill'>x = x_t + v * cos(psi) * dt</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1493945042464",
+                    "text": "<span class='mathquill'>x = x + v * sin(psi) * dt</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1493945047716",
+                    "text": "<span class='mathquill'>x = x + v * psi * dt</span>",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 306207,
+              "key": "e7296abf-5d80-4227-8238-284ded4ad564",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e7296abf-5d80-4227-8238-284ded4ad564",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which equation correctly models y?",
+                "answers": [
+                  {
+                    "id": "a1493945477030",
+                    "text": "<span class='mathquill'>y = y + v * cos(psi) * dt</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1493945509940",
+                    "text": "<span class='mathquill'>y = y + v * sin(psi) * dt</span>",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 306211,
+              "key": "35a992eb-e6b7-4104-8730-6e7905c1a302",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Next, let's turn our attention to <span class=\"mathquill\">\\psi</span>:\n\n<div class=\"mathquill\">\\psi_{t+1} = \\psi_{t} +  \\frac{v} { L_f} * \\delta * dt</div>\n\nIn a nutshell, we add a multiplicative factor of the steering angle, <span class=\"mathquill\">\\delta</span> to <span class=\"mathquill\">\\psi</span>.\n\n<span class=\"mathquill\">L_f</span> measures the distance between the center of mass of the vehicle and it's front axle. The larger the vehicle, the slower the turn rate.\n\nIf you've driven a vehicle you're well aware at higher speeds you turn quicker than at lower speeds. This is why <span class=\"mathquill\">v</span> is the included in the update.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 306210,
+              "key": "920db6e5-a8e8-4479-9f25-847be923048c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Finally, let's take a look at how the velocity, *v* is modeled:\n\n<span class=\"mathquill\">v = v + a*dt</span>\n\nwhere *a* can take value between and including -1 and 1.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 302430,
+              "key": "4ce159dd-3f9e-4dcb-a4bb-d36cd710fc86",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Awesome! We've now defined the state, actuators and how the state changes over time based on the previous state and current actuator inputs.\n\nHere it is:\n\n<span class=\"mathquill\">x_{t+1} = x_t + v_t  cos(\\psi_t) * dt</span>\n\n<span class=\"mathquill\">y_{t+1} = y_t + v_t  sin(\\psi_t) * dt</span>\n\n<span class=\"mathquill\">\\psi_{t+1} = \\psi_t + \\frac {v_t} { L_f} \\delta_t * dt</span>\n\n<span class=\"mathquill\">v_{t+1} = v_t + a_t * dt</span>\n\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 306219,
+              "key": "0a297a40-8320-4228-a7e4-85096f79f2a4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## How <span class=\"mathquill\">L_f</span> was chosen for this project:\n\nOn the topic of running a vehicle around in a circle, this is actually a good way to test the validity of a model! If the radius of the circle generated from driving the test vehicle around in a circle with a constant velocity and steering angle is similar to that of your model in the simulation, then you're on the right track.  This type of approach was used to tune <span class=\"mathquill\">L_f</span>.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 306263,
+              "key": "e35ea50e-d030-4d36-a87d-1f9d11f18d4e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "From the image below, we can see that the vehicle started at the origin, oriented at 0 degrees.  We then simulated driving with a <span class=\"mathquill\">\\delta</span> value of 1 degree and adjusted  <span class=\"mathquill\">L_f</span> to arrive at a final value of 2.67 .  This is the value that produced a circle, with all other variables held constant.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 310885,
+              "key": "6acd7dcf-e20b-435d-aff7-1b7f9f53656b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/591a6f5f_figure-1/figure-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6acd7dcf-e20b-435d-aff7-1b7f9f53656b",
+              "caption": "",
+              "alt": null,
+              "width": 480,
+              "height": 480,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 301824,
+          "key": "eaad060f-cd6d-4e60-9386-995f586126be",
+          "title": "Global Kinematic Model",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "eaad060f-cd6d-4e60-9386-995f586126be",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301825,
+              "key": "80d975d2-c6c3-4cd5-944e-e8a4d8bf7591",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now we’ve developed equations to determine the next state (state at t+1) from our state vector at t and our actuator values. Note that we’ve added a variable to our state called <span class=\"mathquill\">L_f</span> which measures the distance between the front of the vehicle and its center of gravity. The larger the vehicle , the slower the turn rate.  \n\n<span class=\"mathquill\">\\large x_{t+1} = x_t + v_t  cos(\\psi_t) * dt</span>\n\n<span class=\"mathquill\">\\large y_{t+1} = y_t + v_t  sin(\\psi_t) * dt</span>\n\n<span class=\"mathquill\">\\large \\psi_{t+1} = \\psi_t + \\frac {v_t} { L_f}  \\delta * dt</span>\n\n<span class=\"mathquill\">\\large v_{t+1} = v_t + a_t * dt</span>\n\n**In the quiz below  we will implement the global kinematic model to return the next state vector, given a current state input vector and an actuator vector.**",
+              "instructor_notes": ""
+            },
+            {
+              "id": 309006,
+              "key": "aeb705ad-bf48-445d-a190-982a886475f0",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "## Code and files for running this quiz locally can be found [here](https://github.com/udacity/CarND-MPC-Quizzes/tree/master/global_kinematic_model).",
+              "user_state": {
+                "node_key": "aeb705ad-bf48-445d-a190-982a886475f0",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6707754594074624",
+                "initial_code_files": [
+                  {
+                    "text": "// In this quiz you'll implement the global kinematic model.\n#include <math.h>\n#include <iostream>\n#include \"Dense\"\n\nusing Eigen::VectorXd;\n\n//\n// Helper functions\n//\nconstexpr double pi() { return M_PI; }\ndouble deg2rad(double x) { return x * pi() / 180; }\ndouble rad2deg(double x) { return x * 180 / pi(); }\n\nconst double Lf = 2;\n\n// Return the next state.\nVectorXd globalKinematic(const VectorXd &state, \n                         const VectorXd &actuators, double dt);\n\nint main() {\n  // [x, y, psi, v]\n  VectorXd state(4);\n  // [delta, v]\n  VectorXd actuators(2);\n\n  state << 0, 0, deg2rad(45), 1;\n  actuators << deg2rad(5), 1;\n\n  // should be [0.212132, 0.212132, 0.798488, 1.3]\n  auto next_state = globalKinematic(state, actuators, 0.3);\n\n  std::cout << next_state << std::endl;\n}\n\nVectorXd globalKinematic(const VectorXd &state, \n                         const VectorXd &actuators, double dt) {\n  // Create a new vector for the next state.\n  VectorXd next_state(state.size());\n\n  /**\n   * TODO: Implement the global kinematic model,\n   *   to return the next state from the inputs.\n   */\n\n  // NOTE: state is [x, y, psi, v] and actuators is [delta, a]\n\n  return next_state;\n}",
+                    "name": "main.cpp"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 301827,
+              "key": "99a42d4b-9a77-421f-a1de-641089d011de",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n<span class=\"mathquill\">[x, y, \\psi, v]</span> is the state of the vehicle, <span class=\"mathquill\">L_f</span> is a physical characteristic of the vehicle, and <span class=\"mathquill\">[\\delta, a]</span> are the actuators, or control inputs, to our system.\n\nThis is a good kinematic model!\n\nNow that we have this, we can use the model to write a simulation where we can develop a controller to follow a trajectory. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 418514,
+          "key": "1d60a6c9-4b79-4612-a317-512da97aecaa",
+          "title": "Solution: Global Kinematic Model",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1d60a6c9-4b79-4612-a317-512da97aecaa",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 419803,
+              "key": "727cd745-c338-4155-bb7d-f19f5ed050de",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The solution below uses the Eigen library, state and actuator vector inputs, and the equations for the next state (below), to implement the Global Kinematic Model.\n\n<div class=\"mathquill\">x_{t+1} = x_t + v_t * cos(\\psi_t) * dt</div>\n\n<div class=\"mathquill\">y_{t+1} = y_t + v_t * sin(\\psi_t) * dt</div>\n\n<div class=\"mathquill\">\\psi_{t+1} = \\psi_t + \\frac {v_t} { L_f} * \\delta * dt</div>\n\n<div class=\"mathquill\">v_{t+1} = v_t + a_t * dt</div>\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418521,
+              "key": "0575f3a3-a595-47a0-ad6e-4a444eb79773",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "## Code and files for running this quiz locally can be found [here](https://github.com/udacity/CarND-MPC-Quizzes/tree/master/global_kinematic_model).",
+              "user_state": {
+                "node_key": "0575f3a3-a595-47a0-ad6e-4a444eb79773",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6042345781985280",
+                "initial_code_files": [
+                  {
+                    "text": "// In this quiz you'll implement the global kinematic model.\n#include <math.h>\n#include <iostream>\n#include \"Dense\"\n\nusing Eigen::VectorXd;\n\n//\n// Helper functions\n//\nconstexpr double pi() { return M_PI; }\ndouble deg2rad(double x) { return x * pi() / 180; }\ndouble rad2deg(double x) { return x * 180 / pi(); }\n\nconst double Lf = 2;\n\n// Return the next state.\nVectorXd globalKinematic(const VectorXd &state, \n                         const VectorXd &actuators, double dt);\n\nint main() {\n  // [x, y, psi, v]\n  VectorXd state(4);\n  // [delta, v]\n  VectorXd actuators(2);\n\n  state << 0, 0, deg2rad(45), 1;\n  actuators << deg2rad(5), 1;\n\n  // should be [0.212132, 0.212132, 0.798488, 1.3]\n  auto next_state = globalKinematic(state, actuators, 0.3);\n\n  std::cout << next_state << std::endl;\n}\n\nVectorXd globalKinematic(const VectorXd &state, \n                         const VectorXd &actuators, double dt) {\n  // Create a new vector for the next state.\n  VectorXd next_state(state.size());\n\n  // NOTE: state is [x, y, psi, v]\n  auto x = state(0);\n  auto y = state(1);\n  auto psi = state(2);\n  auto v = state(3);\n\n  // NOTE: actuators is [delta, a]\n  auto delta = actuators(0);\n  auto a = actuators(1);\n\n  // Recall the equations for the model:\n  // x_[t+1] = x[t] + v[t] * cos(psi[t]) * dt\n  // y_[t+1] = y[t] + v[t] * sin(psi[t]) * dt\n  // psi_[t+1] = psi[t] + v[t] / Lf * delta[t] * dt\n  // v_[t+1] = v[t] + a[t] * dt\n  next_state(0) = x + v * cos(psi) * dt;\n  next_state(1) = y + v * sin(psi) * dt;\n  next_state(2) = psi + v / Lf * delta * dt;\n  next_state(3) = v + a * dt;\n\n  return next_state;\n}",
+                    "name": "main.cpp"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 335845,
+          "key": "7e93146c-7097-46c7-8a9f-3e3110dd854b",
+          "title": "Following Trajectories",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7e93146c-7097-46c7-8a9f-3e3110dd854b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 335846,
+              "key": "86ac2d44-083f-4648-8b4a-305df545b61e",
+              "title": "Following Trajectories",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "sOSHaAf_7b8",
+                "china_cdn_id": "sOSHaAf_7b8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 302458,
+          "key": "57826fc6-c3a9-4e7b-b598-f5a24bbda440",
+          "title": "Fitting Polynomials",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "57826fc6-c3a9-4e7b-b598-f5a24bbda440",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 302459,
+              "key": "c88260e3-559b-49f6-941d-5f8979836a54",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As we learned in the previous video, the reference trajectory is typically passed to the control block as a polynomial.  This polynomial is usually 3rd order, since third order polynomials will fit trajectories for most roads.  To practice this most common situation, we will learn how to fit 3rd order polynomials to waypoints (x, y) in C++ using Eigen, and evaluate the output. Your tasks are:\n\n1. Use `polyfit` to fit a 3rd order polynomial to the given x and y coordinates representing waypoints.\n2. Use `polyeval` to evaluate y values of given x coordinates.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 309031,
+              "key": "7c2f422f-77f9-4664-aa0d-145ff6929e89",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "## Code and files for running this quiz locally can be found [here](https://github.com/udacity/CarND-MPC-Quizzes/tree/master/polyfit).",
+              "user_state": {
+                "node_key": "7c2f422f-77f9-4664-aa0d-145ff6929e89",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5622837483274240",
+                "initial_code_files": [
+                  {
+                    "text": "// In this quiz you'll fit a polynomial to waypoints.\n\n#include <iostream>\n#include \"Dense\"\n\nusing Eigen::VectorXd;\n\n// Evaluate a polynomial.\ndouble polyeval(const VectorXd &coeffs, double x);\n// Fit a polynomial.\nVectorXd polyfit(const VectorXd &xvals, const VectorXd &yvals, int order);\n\nint main() {\n  VectorXd xvals(6);\n  VectorXd yvals(6);\n  // x waypoint coordinates\n  xvals << 9.261977, -2.06803, -19.6663, -36.868, -51.6263, -66.3482;\n  // y waypoint coordinates\n  yvals << 5.17, -2.25, -15.306, -29.46, -42.85, -57.6116;\n\n  /**\n   * TODO: use `polyfit` to fit a third order polynomial to the (x, y)\n   *   coordinates.\n   * Hint: call Eigen::VectorXd polyfit() and pass xvals, yvals, and the \n   *   polynomial degree/order\n   */\n  // YOUR CODE HERE\n\n  for (double x = 0; x <= 20; ++x) {\n    /**\n     * TODO: use `polyeval` to evaluate the x values.\n     */\n    std::cout << \"YOUR CODE HERE\" << std::endl; \n  }\n\n  // Expected output\n  // -0.905562\n  // -0.226606\n  // 0.447594\n  // 1.11706\n  // 1.7818\n  // 2.44185\n  // 3.09723\n  // 3.74794\n  // 4.39402\n  // 5.03548\n  // 5.67235\n  // 6.30463\n  // 6.93236\n  // 7.55555\n  // 8.17423\n  // 8.7884\n  // 9.3981\n  // 10.0033\n  // 10.6041\n  // 11.2005\n  // 11.7925\n}\n\ndouble polyeval(const VectorXd &coeffs, double x) {\n  double result = 0.0;\n  for (int i = 0; i < coeffs.size(); ++i) {\n    result += coeffs[i] * pow(x, i);\n  }\n  return result;\n}\n\n// Adapted from:\n// https://github.com/JuliaMath/Polynomials.jl/blob/master/src/Polynomials.jl#L676-L716\nVectorXd polyfit(const VectorXd &xvals, const VectorXd &yvals, int order) {\n  assert(xvals.size() == yvals.size());\n  assert(order >= 1 && order <= xvals.size() - 1);\n\n  Eigen::MatrixXd A(xvals.size(), order + 1);\n\n  for (int i = 0; i < xvals.size(); ++i) {\n    A(i, 0) = 1.0;\n  }\n\n  for (int j = 0; j < xvals.size(); ++j) {\n    for (int i = 0; i < order; ++i) {\n      A(j, i + 1) = A(j, i) * xvals(j);\n    }\n  }\n\n  auto Q = A.householderQr();\n  auto result = Q.solve(yvals);\n\n  return result;\n}",
+                    "name": "main.cpp"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 418516,
+          "key": "7ba72b36-c65f-49c2-9f87-a54a5b23f1a0",
+          "title": "Solution: Fitting Polynomials",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7ba72b36-c65f-49c2-9f87-a54a5b23f1a0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 810194,
+              "key": "162247fa-d41c-440c-b43b-01c330d658ef",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Solution: Fitting Polynomials",
+              "instructor_notes": ""
+            },
+            {
+              "id": 418566,
+              "key": "18787b91-3333-47da-b091-61f0c6633c02",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "## Code and files for running this quiz locally can be found [here](https://github.com/udacity/CarND-MPC-Quizzes/tree/master/polyfit).",
+              "user_state": {
+                "node_key": "18787b91-3333-47da-b091-61f0c6633c02",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5797546470539264",
+                "initial_code_files": [
+                  {
+                    "text": "// In this quiz you'll fit a polynomial to waypoints.\n\n#include <iostream>\n#include \"Dense\"\n\nusing Eigen::VectorXd;\n\n// Evaluate a polynomial.\ndouble polyeval(const VectorXd &coeffs, double x);\n// Fit a polynomial.\nVectorXd polyfit(const VectorXd &xvals, const VectorXd &yvals, int order);\n\nint main() {\n  VectorXd xvals(6);\n  VectorXd yvals(6);\n  // x waypoint coordinates\n  xvals << 9.261977, -2.06803, -19.6663, -36.868, -51.6263, -66.3482;\n  // y waypoint coordinates\n  yvals << 5.17, -2.25, -15.306, -29.46, -42.85, -57.6116;\n\n  // Pass the x and y waypoint coordinates along the order of the polynomial.\n  //   In this case, 3.\n  auto coeffs = polyfit(xvals, yvals, 3);\n\n  for (double x = 0; x <= 20; ++x) {\n    // We can evaluate the polynomial at a x coordinate by calling `polyeval`.\n    //   The first argument being the coefficients, `coeffs`.\n    //   The second being the x coordinate, `x`.\n    std::cout << polyeval(coeffs, x) << std::endl;\n  }\n\n  // Expected output\n  // -0.905562\n  // -0.226606\n  // 0.447594\n  // 1.11706\n  // 1.7818\n  // 2.44185\n  // 3.09723\n  // 3.74794\n  // 4.39402\n  // 5.03548\n  // 5.67235\n  // 6.30463\n  // 6.93236\n  // 7.55555\n  // 8.17423\n  // 8.7884\n  // 9.3981\n  // 10.0033\n  // 10.6041\n  // 11.2005\n  // 11.7925\n}\n\ndouble polyeval(const VectorXd &coeffs, double x) {\n  double result = 0.0;\n  for (int i = 0; i < coeffs.size(); ++i) {\n    result += coeffs[i] * pow(x, i);\n  }\n  return result;\n}\n\n// Adapted from:\n// https://github.com/JuliaMath/Polynomials.jl/blob/master/src/Polynomials.jl#L676-L716\nVectorXd polyfit(const VectorXd &xvals, const VectorXd &yvals, int order) {\n  assert(xvals.size() == yvals.size());\n  assert(order >= 1 && order <= xvals.size() - 1);\n\n  Eigen::MatrixXd A(xvals.size(), order + 1);\n\n  for (int i = 0; i < xvals.size(); ++i) {\n    A(i, 0) = 1.0;\n  }\n\n  for (int j = 0; j < xvals.size(); ++j) {\n    for (int i = 0; i < order; ++i) {\n      A(j, i + 1) = A(j, i) * xvals(j);\n    }\n  }\n\n  auto Q = A.householderQr();\n  auto result = Q.solve(yvals);\n\n  return result;\n}",
+                    "name": "main.cpp"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 301837,
+          "key": "e88c2080-1abc-4800-a83c-83f52b2ca0c8",
+          "title": "Errors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e88c2080-1abc-4800-a83c-83f52b2ca0c8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 335863,
+              "key": "145f134f-4cce-4781-b495-6ba88fac1795",
+              "title": "Errors",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qtg_HiqoGHY",
+                "china_cdn_id": "qtg_HiqoGHY.mp4"
+              }
+            },
+            {
+              "id": 301840,
+              "key": "64a80de3-4a74-4c00-8e9f-d736bc5049db",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "64a80de3-4a74-4c00-8e9f-d736bc5049db",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which errors do we want to minimize?\n",
+                "answers": [
+                  {
+                    "id": "a1493332230558",
+                    "text": "Distance of vehicle from trajectory.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1493332250360",
+                    "text": "Difference of vehicle orientation and trajectory orientation.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1493332251108",
+                    "text": "The speed of the vehicle.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 301841,
+              "key": "59c1a075-f000-46ce-a957-0c273e40cd30",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We can capture how the errors we are interested in change over time by deriving our kinematic model around these errors as our new state vector.\n\nThe new state is <span class=\"mathquill\">[x, y, \\psi, v, cte, e\\psi]</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 301843,
+              "key": "f3b8729c-1a29-42b2-aca6-85615e1f7e55",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let’s assume the vehicle is traveling down a straight road and the longitudinal direction is the same as the x-axis.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308554,
+              "key": "d700b821-159a-4c4e-91be-806ce111972a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5910d4a1_07-l-errors-03/07-l-errors-03.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d700b821-159a-4c4e-91be-806ce111972a",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 303809,
+              "key": "0905567a-3acd-437f-a0d8-7b76c4b915b6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Cross Track Error\n\nWe can express the error between the center of the road and the vehicle's position as the cross track error (CTE). The CTE of the successor state after time t is the state at t + 1, and is defined as:\n\n<span class=\"mathquill\">cte_{t+1} = cte_t + v_t* sin(e\\psi_t) * dt</span>\n\nIn this case <span class=\"mathquill\">cte_t</span> can be expressed as the difference between the line and the current vehicle position *y*. Assuming the reference line is a 1st order polynomial *f*, <span class=\"mathquill\">f(x_t) </span> is our reference line and our CTE at the current state is defined as:\n\n<span class=\"mathquill\">cte_t =  f(x_t) - y_t </span>\n\nIf we substitute <span class=\"mathquill\">cte_t</span> back into the original equation the result is:\n\n<span class=\"mathquill\">cte_{t+1} = f(x_t)  -  y_t + (v_t * sin(e\\psi_t) * dt)</span>\n\nThis can be broken up into two parts:\n\n1. <span class=\"mathquill\">f(x_t) - y_t</span> being current cross track error.\n2. <span class=\"mathquill\">v_t * sin(e\\psi_t) * dt</span> being the change in error caused by the vehicle's movement.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 301844,
+              "key": "cf08d615-c4e4-46e5-a2ce-56d070230c0b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Orientation Error\n\nOk, now let’s take a look at the orientation error:\n\n<div class=\"mathquill\">e\\psi_{t+1} = e\\psi_t + \\frac{v_t} { L_f} * \\delta_t * dt</div>\n\nThe update rule is essentially the same as <span class=\"mathquill\">\\psi</span>.\n\n<span class=\"mathquill\">e\\psi_t</span> is the desired orientation subtracted from the current orientation:\n \n<div class=\"mathquill\">e\\psi_t = \\psi_t  - \\psi{des}_t </div>\n\nWe already know <span class=\"mathquill\">\\psi_t</span>, because it’s part of our state. We don’t yet know <span class=\"mathquill\">\\psi{des}_t</span> (desired psi) - all we have so far is a polynomial to follow. <span class=\"mathquill\">\\psi{des}_t</span> can be calculated as the [tangential angle](https://en.wikipedia.org/wiki/Tangential_angle) of the polynomial *f* evaluated at <span class=\"mathquill\">x_t</span>, <span class=\"mathquill\">arctan(f'(x_t))</span>.  <span class=\"mathquill\">f'</span> is the derivative of the polynomial.\n\n<div class=\"mathquill\">e\\psi_{t+1} = \\psi_t  - \\psi{des}_t  + (\\frac{v_t} { L_f} * \\delta_t * dt)</div>\n\nSimilarly to the cross track error this can be interpreted as two parts:\n\n1. <span class=\"mathquill\"> \\psi_t  - \\psi{des}_t </span> being current orientation error.\n2. <span class=\"mathquill\">\\frac{v_t} { L_f} * \\delta_t * dt</span> being the change in error caused by the vehicle's movement.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308556,
+              "key": "2012a5c1-d1ef-4148-9c62-406d25707ff3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5910d4e3_07-l-errors-02/07-l-errors-02.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2012a5c1-d1ef-4148-9c62-406d25707ff3",
+              "caption": "The dashed white line is the cross track error.",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 498883,
+          "key": "653e74cb-4cf0-4ef1-8442-0403b6bcaff6",
+          "title": "Dynamic Models",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "653e74cb-4cf0-4ef1-8442-0403b6bcaff6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 498884,
+              "key": "f1733cb2-62c6-493c-8972-d4887114be2b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## What we have learned so far\nFrom the previous lessons we have learned to apply the bicycle model, polynomial fitting, low complexity heuristics (e.g. CTE), and short time steps, to enable vehicles to follow a complex (polynomial) trajectories.  This is an effective, practical, and commonly used approach, which can be applied to many autonomous vehicle scenarios, in real time. \n\n## Coming Next\nFor the next few lessons we will round out our discussion of vehicle models with an overview of the more comprehensive, but less practical, dynamic models.  Dynamic models and the elements which comprise them are rigorous and could be modules or courses unto themselves.  The content that follows is targeted developing awareness and intuition that can be applied to further study and consists of:\n\n- Dynamic Model Forces\n- Tire Slip Angle\n- Tire Slip Ratio\n- Tire Models\n\nAdditional resources are linked to each lesson to encourage and enable more in depth study.  [One of these resources](http://www.me.berkeley.edu/~frborrel/pdfpub/IV_KinematicMPC_jason.pdf)  makes a good case for the use of lower complexity kinematic models, as:\n\n> Compared to higher fidelity vehicle models, the system identification on the kinematic bicycle model is easier because there are only two parameters to identify, lf and lr. This makes it simpler to port the same controller or path planner to other vehicles with differently sized wheelbases.\n\nTo further expand on this, lower complexity models have two strong advantages over higher complexity (dynamic included) models.  They can run in real time (essential requirement of any model operating in a vehicle) and they are transferable to vehicles with differing attributes, such as mass.  To use a dynamic model engineers would have to be able to control the vehicle attributes of the vehicles they are deploying models into (they probably won't have control over this).  High complexity models would need major re-adjustment to account for even small differences.  Lower complexity models do not suffer from this constraint and so can be placed in a wider range of vehicles, with far less additional effort, and unpredictability.\n\nAnother frequently asked question is where our model comes from and why it differs from other models seen in the program and from other sources.  \n\nThe kinematic model we derive and use here is not quite the same as in the Berkeley paper (linked above), although they are similar.  It is possible to use different models in different parts of your pipeline, depending on what levels of accuracy you need in different places.  It is common to see this in industry.  The principles of model we present can be applied to add parameters into the model to make models fit to purpose.  \n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 335851,
+          "key": "3a3daa28-e70b-4515-abae-27c84367ac1b",
+          "title": "Dynamic Models - Forces",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3a3daa28-e70b-4515-abae-27c84367ac1b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 335856,
+              "key": "cd7e00d5-1c60-495a-a8f7-b3107b5d2a5a",
+              "title": "Dynamic Models - Part 1 Forces",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "KRN7GVJkFnU",
+                "china_cdn_id": "KRN7GVJkFnU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 335852,
+          "key": "e6511d73-cda0-4ee9-b94b-c0ccd02439ef",
+          "title": "Dynamic Models - Slip Angle",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e6511d73-cda0-4ee9-b94b-c0ccd02439ef",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 335857,
+              "key": "a36f8c8b-cf49-44c2-8fc4-d6b1133a468a",
+              "title": "Dynamic Models - Part 2 Slip Angle",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "oDusBbn820k",
+                "china_cdn_id": "oDusBbn820k.mp4"
+              }
+            },
+            {
+              "id": 394109,
+              "key": "3ef3b28e-efdf-484b-bd73-5c508ae2f092",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Slip Angle Formula\nNote that the formula depicted in the video, alpha = arctan(wheel lateral velocity / wheel longitudinal velocity), is correct. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 335853,
+          "key": "a0a2df4e-3c57-4297-a104-f7b069868062",
+          "title": "Dynamic Models - Slip Ratio",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a0a2df4e-3c57-4297-a104-f7b069868062",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 335861,
+              "key": "7a25a5ad-25b5-45b7-8fbe-5694532cdb7c",
+              "title": "Dynamic Models - Part 3 Slip Ratio",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kSqOJDwRFVc",
+                "china_cdn_id": "kSqOJDwRFVc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 335855,
+          "key": "462c08ed-de0e-4f49-acca-cdf5e44a997a",
+          "title": "Dynamic Models - Tire Models",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "462c08ed-de0e-4f49-acca-cdf5e44a997a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 335862,
+              "key": "ec4eac44-fd3b-4c5b-a30e-d9cf4faa1b3a",
+              "title": "Dynamic Models - Part 4 Tire Models",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OFIL0yqsV7o",
+                "china_cdn_id": "OFIL0yqsV7o.mp4"
+              }
+            },
+            {
+              "id": 335878,
+              "key": "1e653750-93dd-4e89-87d9-98530412265d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Reading\n\n* [Pacejka Tire Model](http://www.theoryinpracticeengineering.com/resources/tires/pacejka87.pdf)\n* [This paper](http://www.me.berkeley.edu/~frborrel/pdfpub/IV_KinematicMPC_jason.pdf) presents a comparison between a kinematic and dynamic model.\n* [A brief overview of essential topics in vehicle dynamics](http://www.springer.com/cda/content/document/cda_downloaddocument/9783658039776-c1.pdf?SGWID=0-0-45-1468312-p176308738)\n* [Drew Gray's dissertation thesis](https://escholarship.org/uc/item/1s2777sr) This contains an excellent review, additional resources, and novel approaches/findings.\n* [An excellent book](http://www.springer.com/us/book/9781461414322) This is not a free resource but is highly recommended by domain experts.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 335848,
+          "key": "e0c4c6fd-18e6-45b4-bdb8-867909908119",
+          "title": "Actuator Constraints",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e0c4c6fd-18e6-45b4-bdb8-867909908119",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 335849,
+              "key": "e134a947-f5ad-4930-a57b-a9939fe14390",
+              "title": "15 L Actuator Constraints",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "EwcDwdM1msg",
+                "china_cdn_id": "EwcDwdM1msg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 301428,
+          "key": "f99b0d48-a28b-47fc-b184-34af79783d2a",
+          "title": "Outro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f99b0d48-a28b-47fc-b184-34af79783d2a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301432,
+              "key": "918317c4-7dc8-46c9-bdd9-cf436b7af733",
+              "title": "Vehicle Models Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DqKw_m3Uxr0",
+                "china_cdn_id": "DqKw_m3Uxr0.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

@@ -1,0 +1,552 @@
+{
+  "data": {
+    "lesson": {
+      "id": 341934,
+      "key": "69fe4a9c-656e-46c8-bc32-aee9e60b8984",
+      "title": "Scene Understanding",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson you'll be introduced to the problem of Scene Understanding and the role FCNs play.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/69fe4a9c-656e-46c8-bc32-aee9e60b8984/341934/1538849460009/Scene+Understanding+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/69fe4a9c-656e-46c8-bc32-aee9e60b8984/341934/1538849457767/Scene+Understanding+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 341949,
+          "key": "2f6c201a-796c-418a-993c-e6159eb3c4fa",
+          "title": "Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2f6c201a-796c-418a-993c-e6159eb3c4fa",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350231,
+              "key": "98b166f8-6379-4790-93ad-4f0ed6769f8d",
+              "title": "Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "z036GNuoiBk",
+                "china_cdn_id": "z036GNuoiBk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341951,
+          "key": "234bd959-8dc5-45c2-9485-53a51455293e",
+          "title": "Bounding Boxes",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "234bd959-8dc5-45c2-9485-53a51455293e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350232,
+              "key": "d93742f4-6674-40d9-b054-71cdfcac748e",
+              "title": "Bounding Boxes",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uPv4d0Xl8hc",
+                "china_cdn_id": "uPv4d0Xl8hc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341952,
+          "key": "7d3f7795-204a-4706-ba6a-d3344dd3e2a2",
+          "title": "Semantic Segmentation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7d3f7795-204a-4706-ba6a-d3344dd3e2a2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350233,
+              "key": "96f1134d-5b58-4d7c-934c-46a01f5f9514",
+              "title": "Semantic Segmentation",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_L5gJnZrw48",
+                "china_cdn_id": "_L5gJnZrw48.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341953,
+          "key": "551f2ae1-724f-42b0-8df4-30244c70cf4e",
+          "title": "Scene Understanding",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "551f2ae1-724f-42b0-8df4-30244c70cf4e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350234,
+              "key": "7fdb1c6e-1c65-421e-8a15-957ac52f02ea",
+              "title": "Scene Understanding",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "aMQREc-mP50",
+                "china_cdn_id": "aMQREc-mP50.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341954,
+          "key": "1f5dceb7-f1b1-4f06-8cae-e63c54af0ea7",
+          "title": "IoU",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1f5dceb7-f1b1-4f06-8cae-e63c54af0ea7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350235,
+              "key": "0602363a-15d1-4f72-98d3-ab51492b68ce",
+              "title": "IoU",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "--9BTjOsO6U",
+                "china_cdn_id": "--9BTjOsO6U.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 594019,
+          "key": "a3ecbb2e-afb9-4e90-a1ea-5bea5f96b595",
+          "title": "IOU Example",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a3ecbb2e-afb9-4e90-a1ea-5bea5f96b595",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 594020,
+              "key": "55883ab6-24cc-49da-94c9-488d0d68e030",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's walk through an example IOU calculation.\n\n## Steps\n\n+ count true positives (TP)\n+ count false positives (FP)\n+ count false negatives (FN)\n\n- Intersection = TP\n- Union = TP + FP + FN\n- IOU = Intersection/Union\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 594021,
+              "key": "fa1e90e7-4106-4855-93ee-1e5ce6e192ef",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5acac2d9_legend/legend.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fa1e90e7-4106-4855-93ee-1e5ce6e192ef",
+              "caption": "",
+              "alt": "",
+              "width": 116,
+              "height": 74,
+              "instructor_notes": null
+            },
+            {
+              "id": 594024,
+              "key": "8e7682d5-16de-4c5d-9605-3dc4e4551e78",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5acac3ea_example/example.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8e7682d5-16de-4c5d-9605-3dc4e4551e78",
+              "caption": "",
+              "alt": "",
+              "width": 429,
+              "height": 466,
+              "instructor_notes": null
+            },
+            {
+              "id": 594023,
+              "key": "d82d6d63-4bfc-447d-9753-5830da3a6178",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the above, the left side is our ground truth, while the right side contains our predictions. The highlighted cells on the left side note which class we are looking at for statistics on the right side. The highlights on the right side note true positives in a cream color, false positives in orange, and false negatives in yellow (note that all others are true negatives - they are predicted as this individual class, and should not be based on the ground truth).\n\nWe'll look at the first class, Class 0, and you can do the same calculations from there for each.\n\nFor Class 0, only the top row of the 4x4 matrix should be predicted as zeros. This is a rather simplified version of a real ground truth - in reality, the zeros could be anywhere in the matrix. On the right side, we see 1,0,0,0, meaning the first is a false negative, but the other three are true positives (aka 3 for Intersection as well). From there, we need to find anywhere else where zero was falsely predicted, and we note that happens once on the second row, and twice on the fourth row, for a total of three false positives.\n\nTo get the Union, we add up TP (3), FP (3) and FN (1) to get seven. The IOU for this class, therefore, is 3/7.\n\nIf we do this for all the classes and average the IOUs, we get:\n\n**Mean IOU = [(3/7) + (2/6) + (3/4) + (1/6)] / 4 = 0.420**",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341940,
+          "key": "9b882c3d-34bb-49e3-bd2f-5cb6af66d570",
+          "title": "IoU Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9b882c3d-34bb-49e3-bd2f-5cb6af66d570",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 560436,
+              "key": "80160619-f4b2-4772-b868-cf0b04e000e4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "For the next quiz we will calculate the IOU metric given ground truth and prediction matrices.  Remember IOU is Intersection over Union, where the Intersection set is an AND operation (pixels that are truly part of a class AND are classified as part of the class by the network) and the Union is an OR operation (pixels that are truly part of that class + pixels that are classified as part of that class by the network).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345312,
+              "key": "f263d56b-bbc0-44fd-8d76-44a3d062080a",
+              "title": "IoU Value Quiz",
+              "semantic_type": "ValidatedQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f263d56b-bbc0-44fd-8d76-44a3d062080a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the mean IoU of the following ground truth and prediction?  Since the Intersection will always be <= Union, the final answer is a value between 0 and 1.\n\n```\n# ground truth\n[[0, 0, 0, 0] \n [1, 1, 1, 1] \n [2, 2, 2, 2] \n [3, 3, 3, 3]]\n\n# prediction\n[[0, 0, 0, 0] \n [1, 0, 0, 1]\n [1, 2, 2, 1] \n [3, 3, 0, 3]]\n```",
+                "matchers": [
+                  {
+                    "expression": "(0|\\.)+[5][3-4][8-9]*[6-7]*[9]*"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 341941,
+              "key": "6e386b7e-9119-4f43-9101-186a53cd1a25",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# TensorFlow IoU\nLet's look at the [`tf.metrics.mean_iou`](https://www.tensorflow.org/api_docs/python/tf/metrics/mean_iou) function.  Like all the other [TensorFlow metric functions](https://www.tensorflow.org/api_docs/python/tf/metrics), it returns a Tensor for the metric result and a Tensor Operation to generate the result.  In this case it returns `mean_iou` for the result and `update_op` for the update operation.  Make sure to run `update_op` before getting the result from `mean_iou`.\n\n```python\nsess.run(update_op)\nsess.run(mean_iou)\n```\n\nThe other characteristic of  [TensorFlow metric functions](https://www.tensorflow.org/api_docs/python/tf/metrics) is the usage of [local TensorFlow variables](https://www.tensorflow.org/api_docs/python/tf/local_variables).  These are temporary TensorFlow Variables that must be initialized by running  [`tf.local_variables_initializer()`](https://www.tensorflow.org/api_docs/python/tf/local_variables_initializer).  This is similar to [`tf.global_variables_initializer()`](https://www.tensorflow.org/api_docs/python/tf/global_variables_initializer), but for different TensorFlow Variables.\n\n# IoU Quiz\nIn this quiz, you'll use this [documentation](https://www.tensorflow.org/api_docs/python/tf/metrics/mean_iou) to apply mean IoU to an example prediction.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 342500,
+              "key": "6f2c4b73-fb70-4917-af8d-92cdd9e969c7",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "6f2c4b73-fb70-4917-af8d-92cdd9e969c7",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5365875166281728",
+                "initial_code_files": [
+                  {
+                    "text": "import oldtensorflow as tf\n\n\ndef mean_iou(ground_truth, prediction, num_classes):\n    # TODO: Use `tf.metrics.mean_iou` to compute the mean IoU.\n    iou, iou_op = None\n    return iou, iou_op\n\n\nground_truth = tf.constant([\n    [0, 0, 0, 0], \n    [1, 1, 1, 1], \n    [2, 2, 2, 2], \n    [3, 3, 3, 3]], dtype=tf.float32)\nprediction = tf.constant([\n    [0, 0, 0, 0], \n    [1, 0, 0, 1], \n    [1, 2, 2, 1], \n    [3, 3, 0, 3]], dtype=tf.float32)\n    \n# TODO: use `mean_iou` to compute the mean IoU\niou, iou_op = mean_iou()\n\nwith tf.Session() as sess:\n        sess.run(tf.global_variables_initializer())\n        # need to initialize local variables for this to run `tf.metrics.mean_iou`\n        sess.run(tf.local_variables_initializer())\n        \n        sess.run(iou_op)\n        # should be 0.53869\n        print(\"Mean IoU =\", sess.run(iou))",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "import oldtensorflow as tf\n\n\ndef mean_iou(ground_truth, prediction, num_classes):\n    # TODO: Use `tf.metrics.mean_iou` to compute the mean IoU.\n    iou, iou_op = tf.metrics.mean_iou(ground_truth, prediction, num_classes)\n    return iou, iou_op\n\n\nground_truth = tf.constant([\n    [0, 0, 0, 0], \n    [1, 1, 1, 1], \n    [2, 2, 2, 2], \n    [3, 3, 3, 3]], dtype=tf.float32)\nprediction = tf.constant([\n    [0, 0, 0, 0], \n    [1, 0, 0, 1], \n    [1, 2, 2, 1], \n    [3, 3, 0, 3]], dtype=tf.float32)\n    \n# TODO: use `mean_iou` to compute the mean IoU\niou, iou_op = mean_iou(ground_truth, prediction, 4)\n\nwith tf.Session() as sess:\n        sess.run(tf.global_variables_initializer())\n        # need to initialize local variables for this to run `tf.metrics.mean_iou`\n        sess.run(tf.local_variables_initializer())\n        \n        sess.run(iou_op)\n        # should be 0.53869\n        print(\"Mean IoU =\", sess.run(iou))",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 593084,
+          "key": "1ac3960f-409e-4330-9a10-47e2b291c7cb",
+          "title": "IOU Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1ac3960f-409e-4330-9a10-47e2b291c7cb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 594018,
+              "key": "f126fba5-119c-4d23-9fd8-5b246471b18c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Steps\n\n+ count true positives (TP)\n+ count false positives (FP)\n+ count false negatives (TN)\n\n- Intersection = TP\n- Union = TP + FP + FN\n- IOU = Intersection/Union\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 594016,
+              "key": "2f39fb49-b9cb-4faf-b39f-0b736f1e2347",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5acabcd0_legend/legend.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2f39fb49-b9cb-4faf-b39f-0b736f1e2347",
+              "caption": "",
+              "alt": "",
+              "width": 116,
+              "height": 74,
+              "instructor_notes": null
+            },
+            {
+              "id": 594015,
+              "key": "91e03238-34bb-4e28-924a-762b12f68278",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/April/5cc22ad0_capture/capture.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/91e03238-34bb-4e28-924a-762b12f68278",
+              "caption": "",
+              "alt": "",
+              "width": 517,
+              "height": 432,
+              "instructor_notes": null
+            },
+            {
+              "id": 594017,
+              "key": "2abc60d1-1321-4973-86c2-94480bc5bc99",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Mean IOU = [ (4/7) + (2/6) + (2/4) + (3/4)]/4 = 0.539**",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341946,
+          "key": "42d0539b-3b23-46fc-8a12-adc3022da150",
+          "title": "FCN-8 - Encoder",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "42d0539b-3b23-46fc-8a12-adc3022da150",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342148,
+              "key": "acf58542-5399-436d-961d-f073945386bd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " # FCN-8 - Encoder\nLet’s focus on a concrete implementation of a fully convolutional network. We’ll discuss the [FCN-8 architecture](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf) developed at Berkeley. In fact, many FCN models are derived from this FCN-8 implementation. The encoder for FCN-8 is the VGG16 model pretrained on ImageNet for classification. The fully-connected layers are replaced by 1-by-1 convolutions. Here’s an example of going from a fully-connected layer to a  1-by-1 convolution in TensorFlow:\n\n```\nnum_classes = 2\noutput = tf.layers.dense(input, num_classes)\n```\n \nTo:\n \n```\nnum_classes = 2\noutput = tf.layers.conv2d(input, num_classes, 1, strides=(1,1))\n```\n \nThe third argument, `1`, is the kernel size, meaning this is a 1 by 1 convolution.\nThus far, we’ve downsampled the input image and extracted features using the VGG16 encoder. We’ve also replaced the linear layers with 1 by 1 convolutional layers, preserving spatial information.\n \nBut this is just the encoder portion of the network. Next comes the decoder.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341947,
+          "key": "3dcaf318-9e4b-4bb6-b057-886c254abd44",
+          "title": "FCN-8 - Decoder",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3dcaf318-9e4b-4bb6-b057-886c254abd44",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342149,
+              "key": "047eb6d5-b120-4e9f-bea5-51969d6eb7d5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# FCN-8 - Decoder \nTo build the decoder portion of FCN-8, we’ll upsample the input to the original image size. The shape of the tensor after the final convolutional transpose layer will be 4-dimensional: (batch_size, original_height, original_width, num_classes).\nLet’s implement those transposed convolutions we discussed earlier as follows:\n \n```\noutput = tf.layers.conv2d_transpose(input, num_classes, 4, strides=(2, 2))\n```\n \nThe transpose convolutional layers increase the height and width dimensions of the 4D input Tensor.\n## Skip Connections\n \nThe final step is adding skip connections to the model. In order to do this we’ll combine the output of two layers. The first output is the output of the current layer. The second output is the output of a layer further back in the network, typically a pooling layer.\nIn the following example we combine the result of the previous layer with the result of the 4th pooling layer through elementwise addition (`tf.add`).\n \n```python\n# make sure the shapes are the same!\ninput = tf.add(input, pool_4)\n```\n \nWe can then follow this with another transposed convolution layer.\n \n```python\ninput = tf.layers.conv2d_transpose(input, num_classes, 4, strides=(2, 2))\n```\n \nWe’ll repeat this once more with the third pooling layer output.\n \n```python\ninput = tf.add(input, pool_3)\nInput = tf.layers.conv2d_transpose(input, num_classes, 16, strides=(8, 8))\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341948,
+          "key": "c9cbe9d0-22c1-4362-bdaa-282a124ca852",
+          "title": "FCN-8 - Classification & Loss",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c9cbe9d0-22c1-4362-bdaa-282a124ca852",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342167,
+              "key": "85ed7ec8-c10b-4bce-b528-48538571c745",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " # FCN-8 - Classification & Loss\nThe final step is to define a loss. That way, we can approach training a FCN just like we would approach training a normal classification CNN. \n \nIn the case of a FCN, the goal is to assign each pixel to the appropriate class. We already happen to know a great loss function for this setup, cross entropy loss!\nRemember the output tensor is 4D so we have to reshape it to 2D:\n \n```python\n...\nlogits = tf.reshape(input, (-1, num_classes))\n```\n`logits` is now a 2D tensor where each row represents a pixel and each column a class. From here we can just use standard cross entropy loss:\n \n```\ncross_entropy_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits, labels))\n```\n \nThat’s it, we now have an end-to-end model for semantic segmentation. Time to get training!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 412976,
+          "key": "4ab7a82d-2280-4e44-8b75-9a88b82fa8bb",
+          "title": "Object Detection Lab",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4ab7a82d-2280-4e44-8b75-9a88b82fa8bb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 412989,
+              "key": "d8d7dd35-1728-4e9d-aa97-fb147a14c221",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/September/59ce92b2_car-bound-box-clip/car-bound-box-clip.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d8d7dd35-1728-4e9d-aa97-fb147a14c221",
+              "caption": "",
+              "alt": "",
+              "width": 600,
+              "height": 338,
+              "instructor_notes": null
+            },
+            {
+              "id": 412988,
+              "key": "bee3e1e4-5d5f-4d33-b82a-8dfa5a33c1b2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This optional lab exercise is an opportunity to practice rapid object detection suitable for implementation in autonomous vehicles.  The current lab is focused on a general understanding of used SSD for object detection, as applied to detecting other vehicles from a driving video.  The proficiency and understanding developed in this lab can ultimately be used to detect other relevant objects, such as Traffic lights.\n\nIn lab this you will:\n\n* Learn about *MobileNets* and separable depthwise convolutions.\n* The SSD (Single Shot Detection) architecture used for object detection\n* Use pretrained TensorFlow object detection inference models to detect objects\n* Use different architectures and weigh the tradeoffs.\n* Apply an object detection pipeline to a video.\n\nClone the GitHub repository at https://github.com/udacity/CarND-Object-Detection-Lab, open the notebook and work through it!  \n\n### Requirements\n\nInstall environment with [Anaconda](https://www.continuum.io/downloads):\n\n```sh\nconda env create -f environment.yml\n```\n\nChange TensorFlow pip installation from `tensorflow-gpu` to `tensorflow` if you don't have a GPU available.\n\nThe environment should be listed via `conda info --envs`:\n\n```sh\n# conda environments:\n#\ncarnd-advdl-odlab        /usr/local/anaconda3/envs/carnd-advdl-odlab\nroot                  *  /usr/local/anaconda3\n```\n\nFurther documentation on [working with Anaconda environments](https://conda.io/docs/using/envs.html#managing-environments). \n\nParticularly useful sections:\n\nhttps://conda.io/docs/using/envs.html#change-environments-activate-deactivate\nhttps://conda.io/docs/using/envs.html#remove-an-environment\n\n### Resources\n\n* TensorFlow object detection [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)\n* [Driving video](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/advanced_deep_learning/driving.mp4)\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341950,
+          "key": "074b5110-b3dd-4b87-8504-c03c1c80d544",
+          "title": "Outro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "074b5110-b3dd-4b87-8504-c03c1c80d544",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350236,
+              "key": "28f953ac-94da-4e57-9116-dadddec96772",
+              "title": "Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "vyNI5hdMigs",
+                "china_cdn_id": "vyNI5hdMigs.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

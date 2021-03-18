@@ -1,0 +1,479 @@
+{
+  "data": {
+    "lesson": {
+      "id": 341933,
+      "key": "e0c6572b-27e6-48f9-a8c2-fbf05f362320",
+      "title": "Fully Convolutional Networks",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson you'll learn the motivation for Fully Convolutional Networks and how they are structured.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/e0c6572b-27e6-48f9-a8c2-fbf05f362320/341933/1538849438321/Fully+Convolutional+Networks+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/e0c6572b-27e6-48f9-a8c2-fbf05f362320/341933/1538849434273/Fully+Convolutional+Networks+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 341955,
+          "key": "f18abbec-361e-41bb-8f19-9f087e554686",
+          "title": "Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f18abbec-361e-41bb-8f19-9f087e554686",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350220,
+              "key": "79735936-4e66-4f2a-9dcd-e1dd68edd166",
+              "title": "Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1sm1EbfilXI",
+                "china_cdn_id": "1sm1EbfilXI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341957,
+          "key": "f3e2bc90-1d30-4367-84d2-35d069ab5152",
+          "title": "Why Fully Convolutional Networks (FCNs) ?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f3e2bc90-1d30-4367-84d2-35d069ab5152",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350221,
+              "key": "93cdc7df-03ad-4dbe-8981-a4181f774df2",
+              "title": "Why Fully Convolutional Networks (FCNs) ?",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WQ_YOz1o9GM",
+                "china_cdn_id": "WQ_YOz1o9GM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341958,
+          "key": "e5e4584d-c31a-4a1c-aa36-1ff06c608956",
+          "title": "Fully Convolutional Networks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e5e4584d-c31a-4a1c-aa36-1ff06c608956",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350223,
+              "key": "35ed3eec-c1d9-412d-b3a1-0a8c31f05da6",
+              "title": "Fully Convolutional Networks",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_Lh2ozg5yTs",
+                "china_cdn_id": "_Lh2ozg5yTs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341959,
+          "key": "33121278-d918-4a01-8fb8-3ad11622a83a",
+          "title": "Fully Connected to 1x1 Convolution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "33121278-d918-4a01-8fb8-3ad11622a83a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350226,
+              "key": "0d24b0a6-6f2d-4f5a-b1e3-5be7278989a7",
+              "title": "Fully Connected to 1x1 Convolution",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "xbPtOhkJW1A",
+                "china_cdn_id": "xbPtOhkJW1A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341936,
+          "key": "b7eca993-13e0-433e-b7c3-ad7b8805e018",
+          "title": "1x1 Convolution Quiz ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b7eca993-13e0-433e-b7c3-ad7b8805e018",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342233,
+              "key": "91e9f565-b7ff-469e-b057-657d6916b378",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this quiz you'll learn how to rewrite a dense layer, [`tf.layers.dense`](https://www.tensorflow.org/api_docs/python/tf/layers/dense) as a convolutional layer, [`tf.layers.conv2d`](https://www.tensorflow.org/api_docs/python/tf/layers/conv2d). The underlying math will be the same, but the spatial information will be preserved allowing seamless use of future convolutional layers.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 342266,
+              "key": "d4d32f06-2b09-4dee-8145-607a13d72ca2",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "d4d32f06-2b09-4dee-8145-607a13d72ca2",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6061405257203712",
+                "initial_code_files": [
+                  {
+                    "text": "import numpy as np\nimport oldtensorflow as tf\n\n\n# custom init with the seed set to 0 by default\ndef custom_init(shape, dtype=tf.float32, partition_info=None, seed=0):\n    return tf.random_normal(shape, dtype=dtype, seed=seed)\n\n\n# TODO: Use `tf.layers.conv2d` to reproduce the result of `tf.layers.dense`.\n# Set the `kernel_size` and `stride`.\ndef conv_1x1(x, num_outputs):\n    kernel_size = 0\n    stride = 0\n    return tf.layers.conv2d(x, num_outputs, kernel_size, stride, weights_initializer=custom_init)\n\n\nnum_outputs = 2\nx = tf.constant(np.random.randn(1, 2, 2, 1), dtype=tf.float32)\n# `tf.layers.dense` flattens the input tensor if the rank > 2 and reshapes it back to the original rank\n# as the output.\ndense_out = tf.layers.dense(x, num_outputs, weights_initializer=custom_init)\nconv_out = conv_1x1(x, num_outputs)\n\n    \nwith tf.Session() as sess:\n    sess.run(tf.global_variables_initializer())\n    \n    a = sess.run(dense_out)\n    b = sess.run(conv_out)\n    print(\"Dense Output =\", a)\n    print(\"Conv 1x1 Output =\", b)\n\n    print(\"Same output? =\", np.allclose(a, b, atol=1.e-5))",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "import numpy as np\nimport oldtensorflow as tf\n\n\n# custom init with the seed set to 0 by default\ndef custom_init(shape, dtype=tf.float32, partition_info=None, seed=0):\n    return tf.random_normal(shape, dtype=dtype, seed=seed)\n\n\ndef conv_1x1(x, num_outputs):\n    kernel_size = 1\n    stride = 1\n    return tf.layers.conv2d(x, num_outputs, kernel_size, stride, weights_initializer=custom_init)\n\n\nnum_outputs = 2\nx = tf.constant(np.random.randn(1, 2, 2, 1), dtype=tf.float32)\n# `tf.layers.dense` flattens the input tensor if the rank > 2 and reshapes it back to the original rank\n# as the output.\ndense_out = tf.layers.dense(x, num_outputs, weights_initializer=custom_init)\nconv_out = conv_1x1(x, num_outputs)\n\n    \nwith tf.Session() as sess:\n    sess.run(tf.global_variables_initializer())\n    \n    a = sess.run(dense_out)\n    b = sess.run(conv_out)\n    print(\"Dense Output =\", a)\n    print(\"Conv 1x1 Output =\", b)\n\n    print(\"Same output? =\", np.allclose(a, b, atol=1.e-5))",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 341944,
+          "key": "0ccd1f61-1039-4127-b174-aeaf9292af9f",
+          "title": "1x1 Convolution Quiz Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0ccd1f61-1039-4127-b174-aeaf9292af9f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342025,
+              "key": "ddf505c9-e542-4fb7-9be6-4e5e4da8f704",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The correct use is `tf.layers.conv2d(x, num_outputs, 1, 1, weights_initializer=custom_init)`. \n\n* `num_outputs` defines the number of output channels or kernels\n* The third argument is the kernel size, which is 1.\n* The fourth argument is the stride, we set this to 1.\n* We use the custom initializer so the weights in the dense and convolutional layers are identical.\n\nThis results in the a matrix multiplication operation that preserves spatial information.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341960,
+          "key": "0f1e23c0-b932-4abb-b78b-70a9e5fdf89d",
+          "title": "Transposed Convolutions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0f1e23c0-b932-4abb-b78b-70a9e5fdf89d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350227,
+              "key": "0ef19ede-013d-48af-a130-6e8d28ecf3a3",
+              "title": "Transposed Convolutions",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "K6mlLX8ZZDs",
+                "china_cdn_id": "K6mlLX8ZZDs.mp4"
+              }
+            },
+            {
+              "id": 419921,
+              "key": "dd0c77f9-b7fe-4fcc-a0bc-91db12f289e1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Transposed Convolutions help in [upsampling](https://en.wikipedia.org/wiki/Upsampling) the previous layer to a higher resolution or dimension.  Upsampling is a classic signal processing technique which is often [accompanied by interpolation](https://dspguru.com/dsp/faqs/multirate/interpolation/).  The term transposed can be confusing since we typicallly think of transposing as changing places, such as switching rows and columns of a matrix.  In this case when we use the term [transpose](http://www.dictionary.com/browse/transpose), we mean transfer to a different place or context.  \n\nWe can use a transposed convolution to transfer patches of data onto a sparse matrix, then we can fill the sparse area of the matrix based on the transferred information.  Helpful animations of convolutional operations, including transposed convolutions, can be found [here](https://github.com/vdumoulin/conv_arithmetic).  \n\nAs an example, suppose you have a 3x3 input and you wish to upsample that to the desired dimension of 6x6. The process involves multiplying each pixel of your input with a kernel or filter. If this filter was of size 5x5, the output of this operation will be a weighted kernel of size 5x5. This weighted kernel then defines your output layer. \n\nHowever, the upsampling part of the process is defined by the strides and the padding. In TensorFlow, using the tf.layers.conv2d_transpose, a stride of 2, and \"SAME\" padding would result in an output of dimensions 6x6. \n\nLet's look at a simple representation of this. If we have a 2x2 input and a 3x3 kernel; with \"SAME\" padding, and a stride of 2 we can expect an output of dimension 4x4. The following image gives an idea of the process.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 419922,
+              "key": "5edceceb-a7f6-4bb1-9ba0-772df8740d40",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/October/59d8670c_transposed-conv/transposed-conv.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5edceceb-a7f6-4bb1-9ba0-772df8740d40",
+              "caption": "",
+              "alt": "",
+              "width": 900,
+              "height": 566,
+              "instructor_notes": null
+            },
+            {
+              "id": 419923,
+              "key": "bb62abbe-5a42-4030-84cf-d8c4e23e6296",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The 3x3 weighted kernel (product of input pixel with the 3x3 kernel) is depicted by the red and blue squares, which are separated by a stride of 2. The dotted square indicates the padding around the output. As the weighted kernel moves across, the stride determines the final dimension of the output. Different values for these will result in different dimensions for the upsampled output.\nIn the next quiz, you will test this out yourself!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 419924,
+              "key": "2e06b5c4-0699-4082-81bf-27f8b9e13d2f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Property of Differentiability\nA [differential function](https://en.wikipedia.org/wiki/Differentiable_function)  is a function whose derivative exists at each point in its domain, with continuity as one of its most critical properties. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341938,
+          "key": "0543599e-ff4d-4f57-9a33-fcb101653cdd",
+          "title": "Transposed Convolution Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0543599e-ff4d-4f57-9a33-fcb101653cdd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 341939,
+              "key": "bd154f55-6c90-47fd-a051-ba30d7570efc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Transposed Convolution Quiz\n\nTransposed convolutions are used to upsample the input and are a core part of the FCN architecture.\n\nIn TensorFlow, the API [`tf.layers.conv2d_transpose`](https://www.tensorflow.org/api_docs/python/tf/contrib/layers/conv2d_transpose) is used to create a transposed convolutional layer.  Using this [documentation](https://www.tensorflow.org/api_docs/python/tf/contrib/layers/conv2d_transpose), use [`tf.layers.conv2d_transpose`](https://www.tensorflow.org/api_docs/python/tf/contrib/layers/conv2d_transpose) to apply 2x upsampling in the following quiz.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 342499,
+              "key": "5e8ba72f-c66e-4fdb-b00a-c4d2df23379e",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "5e8ba72f-c66e-4fdb-b00a-c4d2df23379e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "6303952663609344",
+                "initial_code_files": [
+                  {
+                    "text": "import oldtensorflow as tf\nimport numpy as np\n\n\ndef upsample(x):\n    \"\"\"\n    Apply a two times upsample on x and return the result.\n    :x: 4-Rank Tensor\n    :return: TF Operation\n    \"\"\"\n    # TODO: Use `tf.layers.conv2d_transpose`\n    return None\n\n\nx = tf.constant(np.random.randn(1, 4, 4, 3), dtype=tf.float32)\nconv = upsample(x)\n\nwith tf.Session() as sess:\n    sess.run(tf.global_variables_initializer())\n    result = sess.run(conv)\n\n    print('Input Shape: {}'.format(x.get_shape()))\n    print('Output Shape: {}'.format(result.shape))\n",
+                    "name": "quiz.py"
+                  },
+                  {
+                    "text": "import oldtensorflow as tf\nimport numpy as np\n\n\ndef upsample(x):\n    \"\"\"\n    Apply a two times upsample on x and return the result.\n    :x: 4-Rank Tensor\n    :return: TF Operation\n    \"\"\"\n    # TODO: Use `tf.layers.conv2d_transpose`\n    return tf.layers.conv2d_transpose(x, 3, (2, 2), (2, 2))\n\n\nx = tf.constant(np.random.randn(1, 4, 4, 3), dtype=tf.float32)\nconv = upsample(x)\n\nwith tf.Session() as sess:\n    sess.run(tf.global_variables_initializer())\n    result = sess.run(conv)\n\n    print('Input Shape: {}'.format(x.get_shape()))\n    print('Output Shape: {}'.format(result.shape))\n",
+                    "name": "solution.py"
+                  }
+                ]
+              },
+              "answer": null
+            }
+          ]
+        },
+        {
+          "id": 341945,
+          "key": "dd17e17b-b7c6-4579-8edd-3fc1dc4872ab",
+          "title": "Transposed Convolution Quiz Solution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "dd17e17b-b7c6-4579-8edd-3fc1dc4872ab",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342062,
+              "key": "088e7ff6-c732-49b2-a5c8-798ea292e7aa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Transposed Convolution Quiz Solution\nOne possible answer is using `tf.layers.conv2d_transpose(x, 3, (2, 2), (2, 2))` to upsample.\n\n* The second argument `3` is the number of kernels/output channels. \n* The third argument is the kernel size, `(2, 2)`. Note that the kernel size could also be `(1, 1)` and the output shape would be the same. However, if it were changed to `(3, 3)` note the shape would be `(9, 9)`, at least with `'VALID'` padding. \n* The fourth argument, the number of strides, is how we get from a height and width from `(4, 4)` to `(8, 8)`. If this were a regular convolution the output height and width would be `(2, 2)`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345270,
+              "key": "dabcbb3f-c040-46fd-8dba-80b4f78f921d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now that you've learned how to use transposed convolution, let's learn about the third technique in FCNs.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341961,
+          "key": "30527098-b8b0-419a-821b-da4473f39a72",
+          "title": "Skip Connections",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "30527098-b8b0-419a-821b-da4473f39a72",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 433573,
+              "key": "a6b09b91-0902-42dd-bd32-f62b03ebe2e8",
+              "title": "Skip Connections",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JUYLA5PWzo0",
+                "china_cdn_id": "JUYLA5PWzo0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341962,
+          "key": "84b6961f-535d-4bba-97d8-b8054eb56bbc",
+          "title": "FCNs In The Wild",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "84b6961f-535d-4bba-97d8-b8054eb56bbc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350229,
+              "key": "166211fb-545a-40f5-8e98-78aaa99ae089",
+              "title": "FCNs In The Wild",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "q9wTd53-hsw",
+                "china_cdn_id": "q9wTd53-hsw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341956,
+          "key": "3d635f2b-5da4-4e25-ba42-9179066af08f",
+          "title": "Outro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3d635f2b-5da4-4e25-ba42-9179066af08f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350230,
+              "key": "0faa5814-1f7c-463b-a2a9-64b08f7e9f55",
+              "title": "Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ESIl11NfQ7Q",
+                "china_cdn_id": "ESIl11NfQ7Q.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

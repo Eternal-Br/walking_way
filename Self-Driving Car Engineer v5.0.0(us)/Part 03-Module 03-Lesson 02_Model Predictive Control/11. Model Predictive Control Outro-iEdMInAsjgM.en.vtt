@@ -1,0 +1,25 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.794
+Congratulations!
+
+00:00:01.794 --> 00:00:05.000
+You've learned how to build a Model Predictive Controller.
+
+00:00:05.000 --> 00:00:08.879
+You're now well-equipped to take a vehicle from A to B.
+
+00:00:08.880 --> 00:00:12.030
+PAD Control and Model Predictive Control are two
+
+00:00:12.029 --> 00:00:15.269
+of the fundamental techniques that control engineers use to activate vehicles.
+
+00:00:15.269 --> 00:00:16.769
+In the next project,
+
+00:00:16.769 --> 00:00:21.369
+you'll apply the techniques you've learned to do the Udacity simulator in real time.
+

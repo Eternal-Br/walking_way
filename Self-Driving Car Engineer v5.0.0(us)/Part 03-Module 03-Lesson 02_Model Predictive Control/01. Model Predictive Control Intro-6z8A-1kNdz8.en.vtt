@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.970
+Model Predictive Control reframes the task of
+
+00:00:02.970 --> 00:00:06.147
+following a trajectory as an optimization problem.
+
+00:00:06.147 --> 00:00:09.810
+The solution to the optimization problem is the optimal trajectory.
+
+00:00:09.810 --> 00:00:13.620
+Model Predictive Control involves simulating different actuator inputs,
+
+00:00:13.619 --> 00:00:17.789
+predicting the resulting trajectory and selecting that trajectory with a minimum cost.
+
+00:00:17.789 --> 00:00:20.143
+Let's look at one step in the process.
+
+00:00:20.143 --> 00:00:25.204
+Imagine that we know our current state and the reference trajectory we want to follow.
+
+00:00:25.204 --> 00:00:28.320
+We optimize our actuator inputs at each step in time
+
+00:00:28.320 --> 00:00:31.690
+in order to minimize the cost of our predicted trajectory.
+
+00:00:31.690 --> 00:00:33.734
+Once we found the lowest cost trajectory,
+
+00:00:33.734 --> 00:00:36.585
+we implement the very first set of actuation commands.
+
+00:00:36.585 --> 00:00:39.630
+Then, we throw away the rest of the trajectory we calculated.
+
+00:00:39.630 --> 00:00:42.155
+Instead of using the old trajectory we predicted,
+
+00:00:42.155 --> 00:00:45.990
+we take our new state and use that to calculate a new optimal trajectory.
+
+00:00:45.990 --> 00:00:49.454
+In that sense, we are constantly calculating inputs over a future horizon.
+
+00:00:49.454 --> 00:00:52.994
+That's why this approach is sometimes called Receding Horizon Control.
+
+00:00:52.994 --> 00:00:55.409
+You might be wondering why we don't just carry out
+
+00:00:55.409 --> 00:00:58.979
+the entire trajectory we calculated during the first pass.
+
+00:00:58.979 --> 00:01:01.704
+The reason is that, our model is only approximate.
+
+00:01:01.704 --> 00:01:03.289
+Despite our best efforts,
+
+00:01:03.289 --> 00:01:05.474
+it won't match the real world exactly.
+
+00:01:05.474 --> 00:01:07.919
+Once we perform our actuation commands,
+
+00:01:07.920 --> 00:01:12.109
+our trajectory might not be exactly the same as the trajectory we predicted.
+
+00:01:12.109 --> 00:01:17.000
+So, it's crucial that we constantly re-evaluate to find the optimal actuations.
+

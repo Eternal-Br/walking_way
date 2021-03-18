@@ -1,0 +1,1212 @@
+{
+  "data": {
+    "lesson": {
+      "id": 345272,
+      "key": "d7a725c8-8376-4991-ae09-7b221043b6e8",
+      "title": "Introduction to Functional Safety",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "You will learn to make safer vehicles using risk evaluation and systems engineering.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/d7a725c8-8376-4991-ae09-7b221043b6e8/345272/1538850041779/Introduction+to+Functional+Safety+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/d7a725c8-8376-4991-ae09-7b221043b6e8/345272/1538850038505/Introduction+to+Functional+Safety+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 345274,
+          "key": "e7587167-6c42-4cc1-8877-11b837b93c38",
+          "title": "Introduction to the Functional Safety Module",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e7587167-6c42-4cc1-8877-11b837b93c38",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345275,
+              "key": "64932d73-eac5-45ff-83d2-5be984681651",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Elektrobit and the Functional Safety Module",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350115,
+              "key": "ab79517e-120d-4818-a835-2cf209ac0cd0",
+              "title": "L1 01 L Introduction To Module",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cHadgZtuDZA",
+                "china_cdn_id": "cHadgZtuDZA.mp4"
+              }
+            },
+            {
+              "id": 522212,
+              "key": "09944b3b-bf68-4f8b-98a5-d123b0578888",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Notes:**\n\n- The video uses the term \"safe and functional\" . The preferred terminology is \"functionally safe.\"\n- Functional safety is not specific to the automotive industry and is applied to multiple industries including industrial process, industrial machinery, rail, aviation and others. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 345273,
+          "key": "324ff50c-78ed-45e3-9e08-b3d1c82ad0e0",
+          "title": "Introduction to the Lesson",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "324ff50c-78ed-45e3-9e08-b3d1c82ad0e0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345277,
+              "key": "291002bb-cf2c-4a6c-ad59-84ef2c630b3d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lesson Introduction",
+              "instructor_notes": ""
+            },
+            {
+              "id": 349795,
+              "key": "1c332ee0-a59d-4c64-9f4d-f8a2ea0a5859",
+              "title": "L1 02 L Introduction To Lesson",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jinuK2-qPh4",
+                "china_cdn_id": "jinuK2-qPh4.mp4"
+              }
+            },
+            {
+              "id": 522211,
+              "key": "1daa05b1-573e-4e05-905b-9520507cbf55",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note that functional safety and ISO 26262 do not consider all risk in E/E systems. They only consider reducing risk as a result of malfunctioning behavior of E/E systems.**",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345279,
+              "key": "f815dfe1-46fe-4740-8218-8d70d63390ba",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Functional Safety Standards\n\nFunctional safety grew out of the increasing use of E/E (Electronic and Electrical) systems for control systems. Currently, functional safety is used across many industries including avionics, automotive, railroad and the medical device industries.\n\nThe most generic standard is [IEC 61508](http://www.iec.ch/functionalsafety/), which originated from industrial markets.  It currently exists as a standard in the IEC/ISO basic safety publication, which covers \"general functional safety,\" for a number of industries.  ISO 26262 specifically applies to automotive passenger vehicle electrical and electronic systems. The [ISO 26262 standard](http://webstore.ansi.org/RecordDetail.aspx?sku=ISO+26262+-+Road+Vehicles+Functional+Safety+Package) is an offshoot of the IEC 61508 standard.\n\nNote that what is described in this video and the lessons that follow encompasses not only FUSA but also Safety of the Intended Functionality [(SOTIF)](https://www.iso.org/standard/70939.html).\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 345280,
+          "key": "cd3d8308-ac3c-4b9b-bc7e-03af454b2e19",
+          "title": "What is Safety?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cd3d8308-ac3c-4b9b-bc7e-03af454b2e19",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345304,
+              "key": "38f5b6a2-b551-4a54-b679-289d403f281d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# What is Safety?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 349788,
+              "key": "557ef3e0-db9f-4e93-839b-6eba5ee1f5cf",
+              "title": "What Is Safety",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "o1mdbufGaq8",
+                "china_cdn_id": "o1mdbufGaq8.mp4"
+              }
+            },
+            {
+              "id": 345303,
+              "key": "aa190f61-eb1a-4e45-b69a-253036660737",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Automotive Safety versus Automotive Functional Safety\n\nVehicles have a number of different systems including hydraulic, mechanical, electrical, electronic, and chemical. There are a variety of automotive standards covering topics about safety and also design best practices. You can find some examples on the [Society of Automotive Engineers website](http://standards.sae.org/ground-vehicle-standards/). \n\nGovernments even have their own safety standards such as the United States government's [Federal Motor Vehicle Safety Standards](https://icsw.nhtsa.gov/cars/rules/import/FMVSS/) and the United Nation's [World Forum for Harmonization of Vehicle Regulation](https://www.unece.org/trans/main/wp29/meeting_docs_wp29.html).\n\nFunctional safety, which only looks at electrical and electronic system malfunctions, is just one part of overall vehicle safety.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345306,
+              "key": "4a23be6e-5bc9-4b1f-9cb1-dd488ba5351e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Functional Safety and Nominal Performance\nFunctional safety also does not look at nominal performance. For example, nominal performance of an automatic braking system could be that a vehicle traveling 60 miles per hour should come to a complete stop in 5 seconds. Functional safety does not determine whether or not the vehicle brakes within 5 seconds. \n\nInstead, functional safety would look at malfunctions like if the braking function engaged when it wasn't supposed to or if the system brakes too hard causing injury to the driver. Nominal performance issues can still lead to safety problems, but nominal performance is not part of the functional safety standard.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345307,
+              "key": "abeb00f0-ce14-48ac-b1e3-3b1fa259d9b3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345305,
+              "key": "06ea0da9-af51-4837-ba86-2320036dc213",
+              "title": "Functional Safety and General Automative Safety",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "06ea0da9-af51-4837-ba86-2320036dc213",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following could be part of a functional safety analysis?",
+                "answers": [
+                  {
+                    "id": "a1499463611088",
+                    "text": "Potentially a mechanical seat belt restraint system could fail, and a passenger would be injured in an accident.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499463670897",
+                    "text": "Testing to see if a backup camera actually meets its technical specifications of a depth perception of 20 feet",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499463671689",
+                    "text": "There is a potential that a software error could cause the parking brake to engage at high speeds",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499463672417",
+                    "text": "A car battery might catch on fire because of a chemical reaction.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499463673441",
+                    "text": "All of the above",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 345289,
+          "key": "62733356-5b03-4b9f-aa47-d42d31850ac8",
+          "title": "What is Functional Safety?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62733356-5b03-4b9f-aa47-d42d31850ac8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 349789,
+              "key": "12f1b625-5069-4223-b9a9-1d361f64bb87",
+              "title": "What Is Functional Safety",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NeUXHSv5qz8",
+                "china_cdn_id": "NeUXHSv5qz8.mp4"
+              }
+            },
+            {
+              "id": 345308,
+              "key": "39ca9bea-616d-4372-8631-6567bc0b86cc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### The Basics of Functional Safety: Review\n\n1. **Identify hazards** in a passenger vehicle's electronic or electric system that could cause physical injury or damage to a person's health\n2. **Evaluate the risk** of the hazardous situation so that we know how much we need to lower the risk\n3. Via **systems engineering**, prevent accidents from occurring by lowering risk to reasonable levels. Systems engineering helps you figure out what your vehicle needs to do and what your vehicle design needs to look like in order to remain safe.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345309,
+              "key": "5842a586-16a4-431f-b00e-a5304076d18e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### What Level of Risk is Reasonable?\n\nWho gets to decide what level of risk is reasonable?\n\nWhile you can never eliminate risk entirely, you will reduce risk to levels acceptable by society as a whole.\n\nThe history of seat belts provides a great example of how society measures risks.  As an aside, remember that functional safety only looks at malfunctions related to electrical and electronic systems. Although seat belts are important safety features, they would not be considered part of automotive functional safety since seat belts are mechanical devices.  For our purposes we will consider seat belts to be mechanical.  Some modern seat belts, which are not purely mechanical, and contain electrical components, would be considered part of functional safety.  \n\nMany people consider Karl Benz to have invented the automobile around 1885. Seat-belts didn't start appearing until the 1920s when doctors began installing them in their own vehicles. It wasn't until the 1950s that car companies offered seat belts as optional equipment. And then it took until the end of the 1950s for seat belts to become standard equipment. \n\nIn 1968, the United States passed legislation requiring all vehicles to come with safety belts. Then in 1970, Australia became the first country to require seat belt use. In 1984, New York was the first state in the United States to pass similar legislation. So it took almost a century for countries to require seat belt use.\n\nToday, can you imagine purchasing a car with no seat belts? By the measure of contemporary society, driving without a seatbelt is an unreasonable risk. But in the past, driving without a seatbelt was considered reasonable by society's standards.\n\nFunctional safety focuses on keeping risks below society's current threshold. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345310,
+              "key": "444cff04-9413-4be9-ae86-36d1b9bba641",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Eliminating Risk Completely\n\nWhy are you only trying to lower risk to reasonable levels rather than eliminating all risk? Eliminating all risks would paralyze engineering, product development and testing. Ensuring that people were never injured in a car accident would, unfortunately, probably be impossible. \n\nOn the other hand, not eliminating enough risks could lead to failed products, recalls, lawsuits or even loss of life. In the end, every company has to decide for itself how much risk to eliminate from its products.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345311,
+              "key": "6d69bc9a-ab41-4ae5-9150-8170b3d7d5fa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### What does \"Functional\" Mean? \n\nThe term \"functional\" comes from a branch of systems engineering called requirements engineering. Systems engineering separates requirements into:\n\n*Functional requirements* - what your system is supposed to do; in other words, the system's *functions*.\n\n*Non-functional requirements* - how the system should behave: for example, how reliable is the system? \n\nFunctional requirements generally have the form **X system shall do Y**. For example, \"The turn signal system shall turn on an indicator light telling the driver that the system is active\".\n\nNon-functional requirements have the form **X system shall be Y**. As an example: \"The turn signal system shall be available when the vehicle ignition switch is in the on position\". \n\nFunctional safety looks at what happens when the system does something that it was not supposed to do, which is called a malfunction. You will be adding new engineering requirements to the vehicle design in order to ensure safe systems. \n\nYou might notice that the word *shall* comes up quite often in the functional safety module. This is because engineering requirements almost always contain the word \"shall\". If you see the word *shall*, then you are probably looking at an engineering requirement.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345313,
+              "key": "2ef6a841-a065-4930-b545-ae874532a0a6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345400,
+              "key": "b1c185f9-2baa-4422-841e-1bb3eec3e1b6",
+              "title": "Acceptable Risks",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b1c185f9-2baa-4422-841e-1bb3eec3e1b6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following would contemporary society consider to be unreasonable risks for automobiles?",
+                "answers": [
+                  {
+                    "id": "a1499704139181",
+                    "text": "In a rear-end collision, the fuel tank could catch on fire.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499704178974",
+                    "text": "A vehicle comes equipped with front airbags but does not contain side airbags.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499704191029",
+                    "text": "The software for the brake system contains a bug that could lead to braking problems.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499704202300",
+                    "text": "Although the passenger vehicle has electronic stability control, it does not contain a traction control system.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 345291,
+          "key": "791ea2d8-17b1-4c5c-9e53-79d95839d7c5",
+          "title": "Introduction to Identifying Hazards",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "791ea2d8-17b1-4c5c-9e53-79d95839d7c5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 349790,
+              "key": "b98fb1bd-9927-4704-a89f-e68faac1555c",
+              "title": "Introduction To Identify Hazards",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ZzgEw7WQgTs",
+                "china_cdn_id": "ZzgEw7WQgTs.mp4"
+              }
+            },
+            {
+              "id": 345401,
+              "key": "a279cd89-418a-493b-9454-1650c93fc972",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Examples of human, technology, and human-technology interaction errors\n\nLet's go through a real-world example of each type of error and see how they lead to accidents. \n\n\n#### Human Error\n\nIn February 2016, [two trains collided head-on](https://en.wikipedia.org/wiki/Bad_Aibling_rail_accident) near Munich, Germany. Although that stretch of track had an automatic signaling system that should have stopped the trains, a human controller switched off the system because one of the trains was running late. This is an accident due to human error. As an engineer, you would try to figure out why the train controller turned off the system and what could have been done to avoid the situation.\n\nHuman error is especially important in the auto industry. In the United States, the National Highway and Transportation Safety Administration estimates that [94% of car accidents](https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812115) involve human error. \n\n\nThe European Union also estimates about <a href=\"http://www.europarl.europa.eu/RegData/etudes/BRIE/2016/573902/EPRS_BRI(2016)573902_EN.pdf\">90% of vehicular accidents</a>\n involve human error.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345406,
+              "key": "4ac101f4-b813-41ff-ad49-ac3406e243fa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Technology Error\n\nFor an example of technology causing accidents, consider the [European Space Agency's Ariane 5 rocket](https://en.wikipedia.org/wiki/Ariane_5). The rocket exploded during its first test flight on June 4th, 1996. Engineers had reused portions of the Ariane 4 software. The rocket exploded because the Ariane 5 required a 64-bit floating point value whereas the original software expected a 16-bit signed integer.\n\n[Software bugs](https://en.wikipedia.org/wiki/List_of_software_bugs#Transportation) are a major source of technology error throughout many industries including the car industry. An internet search of *software bugs cars* will give you a sense of how serious the issue is.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345405,
+              "key": "18427738-1573-479f-9109-d22a128e5551",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Human-Technology Interaction Error\n\nAnd finally, let's discuss how human-technology interaction causes accidents. Back in 2013, [Asiana Flight 214](https://en.wikipedia.org/wiki/Asiana_Airlines_Flight_214) crashed when landing in San Francisco. A pilot selected an incorrect autopilot mode and inadvertently switched off the auto throttle function. The plane came in for landing at a very low speed and low altitude. \n\nThe pilots' over-reliance and misunderstanding of the automatic system contributed to the crash. The autopilot system should have included a warning telling the pilot that the automatic throttle was not maintaining enough speed. \n\nWhenever a human and a machine share control of a system, extra care needs to be taken when evaluating safety; the boundary between what the human is supposed to do and what the machine is supposed to do needs to be clear.\n\nAs [advanced driver-assistance systems (ADAS)](https://en.wikipedia.org/wiki/Advanced_driver-assistance_systems) become ubiquitous, human-technology interaction errors might become more prevalent. We as drivers need to understand the warning signals coming from our lane keeping assistance and automatic cruise control systems. Interfaces need to make it clear when the vehicle expects us to take over. And these needs to be analyzed as safety issues. The Asiana Flight 214 example we mentioned shows the consequences of a flawed human-technology system design.\n\nPart of your job as a safety engineer will be to anticipate what will go wrong with a vehicle when the vehicle is still in the design phase. You will think about situations and conditions where humans, technology, and human-technology interaction can lead to dangerous situations and cause accidents. In other words, you will identify hazards.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350811,
+              "key": "3fd7bda6-aa18-4bd3-a49a-f36bbb180525",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Errors and Self-Driving Cars\n\nOne of the aims of self-driving cars is to take humans completely out of the equation. The trade-off is that autonomous vehicle could introduce more technology errors. \n\nTake a machine learning algorithm as an example. What happens if a pedestrian training set does not include pedestrians in wheelchairs? The system would not count a pedestrian in a wheelchair. How accurate do our results need to be on a validation set? Who determines what the training set needs to contain? \n\nAutonomous vehicle technology is so new that standards like ISO 26262 do not yet even consider certain issues related to self-driving cars such as machine learning algorithms. But the principles of functional safety, which uses systems engineering to identify and lower risks, apply to autonomous vehicles as well!\n\nPlease note that the example above addresses nominal performance, which is more related to Safety of the Intended Function (SOTIF) then FuSa. The ISO 26262 committee is authoring a sister specification, ISO 21448,  to address nominal performance.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345404,
+              "key": "d1b351bb-b414-4e32-b6b2-301d0af856c4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345402,
+              "key": "f36912a0-42dd-4890-b575-13037da7afef",
+              "title": "Sources of Errors",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f36912a0-42dd-4890-b575-13037da7afef",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the term on the left with the situation on the right\n"
+                },
+                "concepts_label": "Error type",
+                "answers_label": "Situation",
+                "concepts": [
+                  {
+                    "text": "Human Error",
+                    "correct_answer": {
+                      "id": "a1499704782618",
+                      "text": "A driver goes too fast around a curve and falls off the road."
+                    }
+                  },
+                  {
+                    "text": "Technology Error",
+                    "correct_answer": {
+                      "id": "a1499704822654",
+                      "text": " A software bug causes the vehicle to accelerate inadvertently."
+                    }
+                  },
+                  {
+                    "text": "Human-Technology Interaction Error",
+                    "correct_answer": {
+                      "id": "a1499704827445",
+                      "text": "A radar based vehicle detection system is too sensitive and buzzes even when a crash is not imminent. The driver ignores warnings, which could lead to an accident if a crash were imminent."
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1499704782618",
+                    "text": "A driver goes too fast around a curve and falls off the road."
+                  },
+                  {
+                    "id": "a1499704827445",
+                    "text": "A radar based vehicle detection system is too sensitive and buzzes even when a crash is not imminent. The driver ignores warnings, which could lead to an accident if a crash were imminent."
+                  },
+                  {
+                    "id": "a1499704822654",
+                    "text": " A software bug causes the vehicle to accelerate inadvertently."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 350710,
+          "key": "a5818a7e-81e6-44b0-8b9a-0ab6127da575",
+          "title": "Sebastian and Technology Errors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a5818a7e-81e6-44b0-8b9a-0ab6127da575",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350719,
+              "key": "588cc161-b768-4611-b290-11d4e6428f21",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Sebastian Thrun and Technology Errors\n\nIn the video below, Sebastian Thrun discusses a technology error he encountered when building [Stanley for the DARPA challenge](https://cs.stanford.edu/group/roadrunner/stanley.html).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350736,
+              "key": "e65d323f-2bd6-4a52-bcd9-16ae1dbcfbd3",
+              "title": "L1 Sebastian",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lw3O5Me6FRw",
+                "china_cdn_id": "lw3O5Me6FRw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 345296,
+          "key": "18f30f1f-e1e7-4a6d-b8e0-af95668b9daf",
+          "title": "Introduction to Evaluating Risks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "18f30f1f-e1e7-4a6d-b8e0-af95668b9daf",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 349791,
+              "key": "d2bae93d-b9ce-42a3-a92d-a7b90c4d3e53",
+              "title": "Introduction To Evaluating Risks",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3N-6YK_pPzA",
+                "china_cdn_id": "3N-6YK_pPzA.mp4"
+              }
+            },
+            {
+              "id": 345407,
+              "key": "c9b366c2-1050-4d78-b799-4a8c1dcd01a0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### ASIL (Automotive Safety Integrity Level)\n\nThe ISO 26262 standard defines a risk factor called ASIL - Automotive Safety Integrity Level. ASIL is a four point scale of ASIL A, ASIL B, ASIL C and ASIL D. \n\nASIL D represents a hazardous situation with the highest risk whereas ASIL A represents lower risk. ASIL is a key term in automotive functional safety. The video introduced the basic ideas behind how to calculate ASIL, but we will leave the details for the Hazard Analysis and Risk Assessment Lesson.\n\nThere is one more level of risk below ASIL A called QM. QM stands for quality managed. QM means that  development according to accepted quality principles is sufficient to reduce risk.   You will learn more about ASIL and QM in the lesson on hazard analysis and risk assessment.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345408,
+              "key": "ba3290d2-e544-4a64-bf98-a6ec6c672211",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz\n\nLet's measure probability of occurrence and severity on a scale from 1 to 4 with 4 representing highly probable and severe situations. Here are some guidelines for measuring probability of occurrence and severity:\n\n**Probability of occurrence:**\n\n1 - Vehicle jumpstart needed\n\n2 - Driving in snow\n\n3 - Driving at night with no street lamps\n\n4 - Driving on the highway\n\n**Severity:**\n\n1 - No injury\n\n2 - Light and moderate injury\n\n3 - Severe and life threatening injuries with probable survival \n\n4 - Life threatening injuries, survival uncertain, or fatal injury\n\nRemember that:\n** risk = probability of occurrence x severity**\n\n\n\nRANK THE FOLLOWING HAZARDOUS SITUATIONS FROM LEAST RISKY TO MOST RISKY\n\nA While driving on the highway, brakes fail at high-speed.\n\nB Your vehicle requires a jumpstart. The power steering is not working but the vehicle is parked on the side of the \nroad and not moving. \n\nC While driving in the snow in the city, anti-lock brakes fail while driving at low speed.\n\nD While driving at night on a street with no street lamps, the car headlamps fail.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345409,
+              "key": "3a47661c-8298-4e5c-aebf-1fb97fd2d1d1",
+              "title": "Evaluating Risk",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "3a47661c-8298-4e5c-aebf-1fb97fd2d1d1",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Rank the above hazardous situations from least risky to most risky",
+                "answers": [
+                  {
+                    "id": "a1499705408723",
+                    "text": "B, D, C, A",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499705441039",
+                    "text": "D, B, C, A",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499705445262",
+                    "text": "A, D, B, C",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499705449934",
+                    "text": "B, C, D, A",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 345297,
+          "key": "f395719d-9f54-4ede-85fa-613597fd3163",
+          "title": "Reducing Risk with Systems Engineering",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f395719d-9f54-4ede-85fa-613597fd3163",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 348203,
+              "key": "0829a50d-5e46-4cd0-ae16-3e2f6fc4ac57",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Introduction to the Lane Assistance System\n\nThroughout the functional safety module, you will use a lane assistance system as a practical example. The lane assistance system will be the basis of the final project as well. \n\nLane assistance technology is relatively new in the automotive world. A lane assistance system generally has two functions:\n* lane departure warning\n* lane keeping assistance\n\nIf a driver departs a lane without using a turn signal, the system assumes that the driver has become distracted and did not mean to leave the lane. The system will vibrate the steering (lane departure warning) and also move the steering wheel back towards the lane center (lane keeping assistance). \n\nLane assistance technology represents an intermediate step on the way to fully autonomous driving. In this video, you will hear references to the lane assistance system, lane departure warning and lane keeping assistance. The Hazard Analysis and Risk Assessment lesson will go into more detail about how this system works.  While multiple fields use the approach described in this concept, we offer systems engineering as an example.  [Systems engineering](https://en.wikipedia.org/wiki/Systems_engineering) is an interdisciplinary field of engineering and engineering management that focuses on the design and management of complex systems.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 349797,
+              "key": "120318e4-f7d6-4284-a064-50a22724f654",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### The Basics of Systems Engineering",
+              "instructor_notes": ""
+            },
+            {
+              "id": 349793,
+              "key": "bd63c0c0-265f-441e-8033-fadd31761da8",
+              "title": "L1 17 Reducing Risk With System Engineering",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "tFxkJKcujhQ",
+                "china_cdn_id": "tFxkJKcujhQ.mp4"
+              }
+            },
+            {
+              "id": 345410,
+              "key": "764013dd-04b3-4dfd-aa3e-e21178892f0f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### What is a System?\n\nWhat exactly is a system? ISO 26262 defines a system as a:\n\n> *[1.129] set of elements that relates at least a sensor, a controller and an actuator with one another.\nThe related sensor or actuator can be included in the system, or can be external to the system.\nAn element of a system can also be another system.*\n\n(Note that an *element* is defined by ISO 26262 [1.32] as a *system or part of a system including components, hardware, software, hardware parts, and software units*).\n\nAdmittedly, the definition of a system is a little bit hard to pin down. \n\nFor the purposes of the rest of this module, a system will be a part of the vehicle that provides some functionality. \n\nWe will specifically look at a simplified version of an advanced driver assistance lane keeping system that helps the driver stay centered in a lane. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345411,
+              "key": "7c81f69f-2016-4dcc-b2d0-599435fd5dba",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### The V Model\n\nTo organize a system analysis, system engineers use what are called process models. These process models provide a framework for conducting a methodical systems analysis. \n\nISO 26262 uses a process model called the V model. Before we introduce ISO 26262 and its specific version of the V model, let's discuss the characteristics of a generic V model.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350146,
+              "key": "d26072c3-2686-40d2-bf96-f83f143fec86",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/59767c10_18-reducing-risk-with-systems-engineering-01/18-reducing-risk-with-systems-engineering-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d26072c3-2686-40d2-bf96-f83f143fec86",
+              "caption": "Generic V Model",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345413,
+              "key": "9e8d1116-96c8-4d66-ac34-f62ea5f4d5a9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The V model starts in the upper left corner, moves down to the bottom center, and then moves back up to the upper right corner. \n\nThe left side of the V represents the design phase; this is where you \n* plan what your system needs to do (requirements engineering)\n* plan what the system needs to look like (system architecture design). ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350153,
+              "key": "5ea0a9ab-7132-43ce-b8ea-cc4e5b2f8404",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##### Left Side of the V Model",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350152,
+              "key": "e919c10f-ab72-44a0-8a5c-136287b4f6fe",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/59767e7e_18-reducing-risk-with-systems-engineering-02/18-reducing-risk-with-systems-engineering-02.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e919c10f-ab72-44a0-8a5c-136287b4f6fe",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 350149,
+              "key": "ad81cb6b-7156-46a4-b144-4402b24e7244",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The right side of the V represents the testing, verification and integration; on the right side, you Build prototypes Test and verify prototypes to see if they do what you said they would do in the design phase Integrate your prototype with other parts of the vehicle.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350162,
+              "key": "efc3eb3f-7a58-4dd9-b6bf-a42dc9dbe383",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##### Right Side of the V Model",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350164,
+              "key": "020bf55a-33f7-4b5e-8bff-9eeac29cd6b2",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/59768350_18-reducing-risk-with-systems-engineering-03/18-reducing-risk-with-systems-engineering-03.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/020bf55a-33f7-4b5e-8bff-9eeac29cd6b2",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 350154,
+              "key": "78457141-59d9-4444-bd30-f11e0269f529",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The top part of the V represents the entire vehicle as a single system. As you traverse down the left side of the V, you focus on smaller and smaller subsystems. As you go up the right side of the V, you integrate your subsystems into larger and larger systems.\n\nAt the top left, you start with a bird's eye view of your entire vehicle. As you move down the left side, you start to split your vehicle into subsystems like climate control, entertainment system, steering system, braking system, etc. You then define requirements and system architectures for each sub-system.\n\nThen you focus on a sub-system, like the climate control system, and break down the climate control system into its own sub-systems like the electronic control unit, the temperature sensor, the fan, the air filter, etc. Each sub-system will have its own design requirements and design architecture.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350171,
+              "key": "b5802bcf-8feb-491b-8293-1a45613eb826",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Notice as well that you can connect the right side of the V and the left side of the V. For every prototype you make or test you run, you can check back to see if the results match the design specifications.\n\n##### Connecting the right and left side of the V",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350172,
+              "key": "0772caa0-870c-434f-a790-78c281267244",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/597687fa_18-reducing-risk-with-systems-engineering-04/18-reducing-risk-with-systems-engineering-04.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0772caa0-870c-434f-a790-78c281267244",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345414,
+              "key": "7f67dca7-eaeb-4bb2-9093-bb85dc3575b3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Other Process Models\n\nTwo other popular process models include the [Spiral model](https://en.wikipedia.org/wiki/Spiral_model) and the [Waterfall model](https://en.wikipedia.org/wiki/Waterfall_model). They are not, however, part of the ISO 26262 standard.\n\nAlthough we will not be covering them in the functional safety module, these two other models are also commonly used in systems engineering.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350686,
+              "key": "9cf1b9bf-9754-4d62-aad7-9ae091dc59fa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### V Model Quiz",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350685,
+              "key": "2beed046-2d45-4ec3-87ce-171a50861506",
+              "title": "The V Model",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "2beed046-2d45-4ec3-87ce-171a50861506",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the part of the V model with its purpose"
+                },
+                "concepts_label": "Part of the V model",
+                "answers_label": "Purpose",
+                "concepts": [
+                  {
+                    "text": "Top of the V model",
+                    "correct_answer": {
+                      "id": "a1501025315803",
+                      "text": "Integrated Systems"
+                    }
+                  },
+                  {
+                    "text": "Right side of the V model",
+                    "correct_answer": {
+                      "id": "a1501025473180",
+                      "text": "Testing and Integration"
+                    }
+                  },
+                  {
+                    "text": "Bottom of the V model",
+                    "correct_answer": {
+                      "id": "a1501025479083",
+                      "text": "Sub Systems"
+                    }
+                  },
+                  {
+                    "text": "Left side of the V model",
+                    "correct_answer": {
+                      "id": "a1501025484988",
+                      "text": "System Design"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1501025479083",
+                    "text": "Sub Systems"
+                  },
+                  {
+                    "id": "a1501025473180",
+                    "text": "Testing and Integration"
+                  },
+                  {
+                    "id": "a1501025484988",
+                    "text": "System Design"
+                  },
+                  {
+                    "id": "a1501025315803",
+                    "text": "Integrated Systems"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 345415,
+              "key": "119193e3-9587-4c5f-94f6-e6a96e792075",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Engineering Requirements and the ISO 26262 Standard\n\nRequirements engineering is a sub-discipline of systems engineering. Because ISO 26262 is based on systems engineering principles, defining requirements comes up repeatedly in the standard.\n\nThroughout the V model, one of the most important steps is defining requirements. In layman's terms, a requirement says what a system is supposed to do. What is the system's function? Requirements almost always start off with the phrase, \"X shall …..\". \n\nAs you travel down the left side of the V model, you will generally take requirements from the previous step and then refine them in the current step. It makes sense that requirements would be refined at each level; as you travel down the V, you dive into sub systems with increasing detail.\n\nThen you start to move up the right side of the V. First, you'll test your temperature sensor to make sure it functions correctly according to its design requirements. You will do the same for all of the air conditioning subsystems. Then you will integrate the temperature sensor with the electronic control unit and run more tests to make sure they play well together. \n\nYou move up the V until you have a complete air conditioning system that functions according to its design specifications. You move up the V and integrate the air conditioning system with the other electronic systems in the vehicle, and then you test again. Eventually, when you get to the top right side of the V, you will have a complete car ready for production!\n\nFor every design step on the left side of the V, there is a corresponding test and integration step on the right side of the V. You test your system and then go back and see if the test results match the design requirements and specifications. The correspondence between the left and rights sides of the V is one of the advantages of the V model. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 345298,
+          "key": "588658d5-5c63-4b7f-a55a-bf13299b8579",
+          "title": "Introduction to ISO 26262",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "588658d5-5c63-4b7f-a55a-bf13299b8579",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 349787,
+              "key": "af3b1060-2dad-41cb-b6b1-72befe69483a",
+              "title": "L1 19 Introduction To Iso26262",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bjvpmBOG60Q",
+                "china_cdn_id": "bjvpmBOG60Q.mp4"
+              }
+            },
+            {
+              "id": 345416,
+              "key": "5e3c2f88-455e-49da-a923-368c70098805",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### What ISO 26262 Does and Does not Cover\n\nISO 26262 only covers electronic and electrical malfunctions in passenger vehicle systems. The standard provides a framework for reducing risks that could harm people's health.\n\nThe standard does not cover safety of mechanical, chemical  or hydraulic systems. \n\nNor does the standard consider nominal performance as part of functional safety. Consider an automatic braking system as an example. The nominal performance could be that the brakes apply automatically when the vehicle detects an imminent collision. \n\nThe standard does not require you to test nominal performance and prove that the brakes engage when a crash is imminent. Instead, the standard would require preventing malfunctions like if the automatic brakes engaged when there was no emergency.\n\nHowever, there may be other standards or laws that cover nominal performance of automotive safety systems.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345417,
+              "key": "9cdb327f-a039-49f0-80df-a6c46a465280",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Overview of the Concepts to be Covered\n\nA big part of functional safety is documenting your work. Let's get an overview of what some of these documents are and how they relate to functional safety. The next few lessons will then go through each document in more detail.\n\n##### Safety plan \n\nThe safety plan gives an overview of how you are going to achieve a safe system. A few of the major elements include:\n- what system is under consideration\n- the goal of the project\n- what steps will be taken to ensure safety\n- the roles and personnel involved in the project\n- the project timeline\n\n##### Defining a system at the Item level\n\nSpecifies which vehicle system is being considered, the system boundaries and background information about the system.\n\n\n##### Hazard Analysis and Risk Assessment \n\nThis is where we brainstorm to imagine hazards where the system malfunctions and causes injury or harm. Then the risk is calculated for each hazardous scenario.\n\n\n##### Functional Safety Concept\n\nThe functional safety concept provides a high level overview of the system. Based on the hazard analysis and risk assessment, you figure out what your system is required to do to stay safe. Then you identify what part of your system will need to be adjusted to take into account the new functionality.\n\n##### Technical Safety Concept at the System Level\n\nThe functional safety concept and technical safety concept are similar. While the functional safety concept gives a high level overview of the system and what it needs to do, the technical safety concept gets into more detail. So whereas the functional safety concept might give a high level requirement like \"the lane warning departure steering wheel vibration should be limited\", the technical safety concept will discuss how electronic signals and control units need to behave in order to limit the steering wheel vibration.\n\nTechnical Safety Concepts are often divided into a System Level Technical Safety Concept and a SubSystem Level Technical Safety Concept. An electronic control unit, for example, might have its own technical safety concept.\n\nTo clarify the above concepts the functional safety concept is implementation independent considering only the functional level architecture. The technical safety concepts considers the implementation level of a system.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345418,
+              "key": "d74a51d4-0247-4e5f-92c5-52c371aeb15a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Why Comply with ISO 26262?\n\nISO 26262 compliance is not legally required. But most if not all automotive companies and automotive parts suppliers strive to make their products compliant with the standard. The standard provides a methodical, state-of-the-art framework for ensuring a safe electrical/electronic system.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345419,
+              "key": "a7069ce9-3758-44e7-b904-45594949a85b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### What is ISO?\n\nISO stands for the [international Organization for Standardization](https://www.iso.org/home.html). ISO is a non-governmental organization that develops and provides product and system specifications for a variety of industries. Standards ensure that different manufacturers around the world use best practices.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345420,
+              "key": "971a65b8-f0ee-46c3-8b91-d90ee6de4a71",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Vocabulary\n\nThe functional safety standard contains a lot of vocabulary.\n\nOne important set of words that come up often in functional safety is **fault, failure, hazard and risk**. If you can remember these four terms right from the start, the functional safety module will be easier to understand.\n\nA <a href=\"https://en.wikipedia.org/wiki/Fault_(technology)\">fault</a> is when something inappropriate happens to the system, such as a defect or unexpected behavior. \n\nA fault can lead to a **failure**, which is synonymous with a malfunction. Failure means that the system has stopped working properly. The system is no longer doing what it is supposed to do.\n\n A failure could lead to a **hazard**. A hazard is a situation that could cause injury to a person or harm a person's health. If a system fails, the situation is potentially hazardous. Not all failures are necessarily hazardous, which means hazards have different levels of **risk**. \n\n**Risk** measures the level of danger in a situation.  An example of a high risk situation is one that it is likely to happen and also cause serious injury. \n\nFor example, if a resistor in your car radio hardware breaks, that could lead to a fault. The radio won't turn on, so the radio has failed. Does the failure lead to a hazardous situation? Probably not. You won't get to listen to music, but that won't cause you bodily injury or harm.\n\nIf a resistor in the power steering hardware breaks, the power steering could fail. If you were driving at high speed, then you might get injured quite badly. So this is a hazardous situation with high risk. \n\nFaults leads to failures. A failure leads to a hazard. A hazard has a certain a level of risk. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 345426,
+          "key": "4f256657-0009-4a56-a79c-e1be1043074b",
+          "title": "The Full V Model",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4f256657-0009-4a56-a79c-e1be1043074b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345428,
+              "key": "858fbc2a-2671-4c02-8092-120aff42f13e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Full V Model\n\nIf you search the internet for the ISO 26262 V model, you'll see that it is a bit more complex than how we've presented it. This [link](https://www.iso.org/obp/ui/#iso:std:iso:26262:-9:ed-1:v1:en) has a preview of one part of the ISO 26262 standard, and it contains the full V model. You'll notice that the model we have presented so far is somewhat simplified. Here is the model that we showed in the previous video:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350183,
+              "key": "eb22579c-c579-4712-a66f-83113ead84af",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/59768e0d_02-v-model-text-01/02-v-model-text-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/eb22579c-c579-4712-a66f-83113ead84af",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 350184,
+              "key": "bed28be3-fb6e-4c7c-8596-7998516e092b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As you go through the functional safety course, you will become familiar with the different parts of the ISO 26262 V model. Keep in mind that although the ISO 26262 model looks relatively complex, underlying principles of the V model remain the same:\n* the left side represents product development like specifying requirements and designing a system architecture\n* the right side represents prototyping, testing and integration\n* higher up in the V model represents integrated systems\n* lower down in the V model represents sub systems",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350182,
+              "key": "fd3a5e20-4a14-41f2-ba84-2f5b43bcf401",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Vocabulary\n\nThis section contains definitions of each section of the complete ISO 26262 V model for your reference. The functional safety module goes into depth about some of these sections: item definition, hazard analysis and risk assessment, functional safety concept, technical safety concept, hardware and software development:\n\n##### Management of Functional Safety\n\nHere, the standard discusses overall planning. Planning involves designing a safety plan, which you will learn about in the Safety Plan lesson. \n\n##### Concept Phase\n\nThe concept phase contains four parts:\n* **Item definition** The item definition specifies which vehicle system is being considered. The Hazard Analysis and Risk Assessment lesson goes into more depth about item definition.\n* **Initiation of the safety lifecycle** If your project only involves modifying an existing system, you figure out which parts of the functional safety will be affected. That way, you do not have to repeat work that was already done.\n* **Hazard analysis and risk assessment** In the hazard analysis and risk assessment (HARA), you figure out situations in which your system could malfunction and then evaluate risk. The output of the HARA are high level engineering requirements called safety goals.\n* **Functional safety concept**  In this section, the safety goals are refined into safety requirements. These safety requirements are then allocated to the appropriate parts of the item's architecture.\n\n##### Product development at the system level\n\nThis is the main design phase. You develop a technical solution that leads to a safe system. In this section, you specify technical safety requirements, system architecture and the system design according to the left side of the V model. \n\nThen you test, integrate, verify and validate your system according to the right side of the V model.\n\n##### Product development at the hardware level\n\nBased on the system level technical requirements from the previous step, you develop the hardware. The hardware development process has its own V model;  hardware design happens on the left side of the branch. The right side of the V model includes integration and testing.\n\n##### Product development at the software level\n\nAgain, based on the system level technical requirements, you develop the software. The software also has its own V model with design on the left side and then integration as well as testing on the right side\n\n##### Production and Operation\n\nThis section has two parts:\n* **Production** Discusses functional safety as it relates to manufacturing the vehicle (production). This part also discusses what to keep in mind once the vehicle is in consumers' hands (operation). \n* **Operation, service (maintenance and repair), and decommissioning**  Operation is functional safety after customers have purchased the vehicle. Service refers to functional safety when the vehicle is being maintained and repaired. Decommissioning discusses what happens to a vehicle when no longer in service.\n\n##### Supporting processes\n\nThe supporting processes contains a mix of different techniques. For example, the supporting processes section discusses how to approach changing a system that already exists. It also gives strategies for managing safety requirements.\n\n##### ASIL-oriented and safety-oriented analysis\n\nThis section goes into depth about ASIL decomposition and other analysis tools. You will learn about ASIL decomposition in the module.\n\n##### Guideline on ISO 26262\n\nThis section gives an overview of the functional safety standard.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350218,
+              "key": "16ac7db2-713c-4b07-b88c-551f9a01a5c6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Flattened V Model\n\nYou can also flatten out the V model to see it from a more linear perspective. The image below gives the major steps involved in a functional safety project:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350980,
+              "key": "bdd35ab3-d2c7-4a5f-bb29-33c1b2501fb0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/597924c7_05-tailoring-the-safety-lifcycle-image-01-1024/05-tailoring-the-safety-lifcycle-image-01-1024.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/bdd35ab3-d2c7-4a5f-bb29-33c1b2501fb0",
+              "caption": "Flattened V model",
+              "alt": null,
+              "width": 685,
+              "height": 1024,
+              "instructor_notes": null
+            },
+            {
+              "id": 350812,
+              "key": "dab27114-5800-445a-9b6f-851f235cba88",
+              "title": "Vocabulary Quiz",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "dab27114-5800-445a-9b6f-851f235cba88",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the term with its definition"
+                },
+                "concepts_label": "Term",
+                "answers_label": "Definition",
+                "concepts": [
+                  {
+                    "text": "Fault",
+                    "correct_answer": {
+                      "id": "a1501039352010",
+                      "text": "A defect or unexpected behavior of a system"
+                    }
+                  },
+                  {
+                    "text": "Risk",
+                    "correct_answer": {
+                      "id": "a1501039421594",
+                      "text": "the probability that a harmful situation could occur"
+                    }
+                  },
+                  {
+                    "text": "Hazard",
+                    "correct_answer": {
+                      "id": "a1501039435226",
+                      "text": "A situation that could cause injury or harm a person's health"
+                    }
+                  },
+                  {
+                    "text": "Failure",
+                    "correct_answer": {
+                      "id": "a1501039448297",
+                      "text": "When something goes wrong with the system"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1501039352010",
+                    "text": "A defect or unexpected behavior of a system"
+                  },
+                  {
+                    "id": "a1501039421594",
+                    "text": "the probability that a harmful situation could occur"
+                  },
+                  {
+                    "id": "a1501039435226",
+                    "text": "A situation that could cause injury or harm a person's health"
+                  },
+                  {
+                    "id": "a1501039448297",
+                    "text": "When something goes wrong with the system"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 345422,
+          "key": "0f303d37-135e-4386-9a21-e906913fdca7",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0f303d37-135e-4386-9a21-e906913fdca7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 349796,
+              "key": "abb903d5-4c8a-44f9-802a-d8394b2da2a6",
+              "title": "Lesson Summary",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "c_PnlhHye3w",
+                "china_cdn_id": "c_PnlhHye3w.mp4"
+              }
+            },
+            {
+              "id": 345425,
+              "key": "0769966e-8862-4d28-a9f7-6f6911672b50",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Summary of Functional Safety\n\nThe ISO 26262 functional safety standard follows the V model. In functional safety these are the four main steps involved in functional safety according to the standard:\n- **Requirements engineering** Define what the system is going to do\n-  **Designing or modifying a system architecture** Design what the system will look like\n- **Test the system** to make sure it behaves as expected\n- **Integrate the system** into larger systems\n\nPlease note that requirements engineering activities are performed at all levels on left side of the V and are described in ISO 26262-8\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345424,
+              "key": "f2f932ec-6069-4039-a212-2bf9f2da3b22",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### What the Functional Safety Module is About\n\n\nThis module will mostly focus on the left side of the V model, which includes planning and designing functionally safe systems. You will take on the role of a functional safety manager.\n\nRemember that this is only half of the V model. The right side of the V model involves implementing the plans and designs through software and hardware engineering. Implementations also need to be tested to make sure that they follow the design specifications from the left side of the V.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 350750,
+          "key": "711c5103-576b-4d7a-ad75-cfd703de681a",
+          "title": "Sebastian Talks About Self-Driving Car Risks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "711c5103-576b-4d7a-ad75-cfd703de681a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350757,
+              "key": "1d960cdf-43dd-45e0-b7ea-f97769bb5527",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Self-Driving Cars and Risk\n\nHere Sebastian talks about the [Trolley Problem](https://en.wikipedia.org/wiki/Trolley_problem), which is a classic philosophical problem. In the original version of the trolley problem, a train trolley is about to run over five people tied to the tracks. \n\nYou are standing next to a lever that could switch the trolley to a different track. But there is also one person standing on the other track. Do you:\n* pull the lever so that the trolley switches tracks and runs over one person?\n* do nothing and the trolley runs over five people?\n\nYou might hear people talk about self-driving cars in terms of the trolley problem. How should a self-driving car should be programmed if the car found itself in a trolley-like situation? \n\nIn this hypothetical scenario, the car would have to choose to either run over five pedestrians or change course to run over one pedestrian. Or you might hear a hypothetical situation where the vehicle needs to decide between protecting vehicle passengers or hitting a pedestrian. \n\nHere is Sebastian's take on the trolley problem and how the problem relates to self-driving car risks:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350752,
+              "key": "71867b69-e25b-4656-ae19-581036c768fd",
+              "title": "Sebastian Discusses Risk",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nuDIfITdhSc",
+                "china_cdn_id": "nuDIfITdhSc.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

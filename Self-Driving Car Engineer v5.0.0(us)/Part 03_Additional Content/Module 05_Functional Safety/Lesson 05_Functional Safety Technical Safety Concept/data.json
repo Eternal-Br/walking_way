@@ -1,0 +1,673 @@
+{
+  "data": {
+    "lesson": {
+      "id": 345284,
+      "key": "9734ccc4-75e5-4f7f-9f1f-483355714308",
+      "title": "Functional Safety: Technical Safety Concept",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Once you have derived functional safety requirements, you drill down into more detail. In the technical safety concept, you refine your requirements into technical safety requirements.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/9734ccc4-75e5-4f7f-9f1f-483355714308/345284/1538850275482/Functional+Safety%3A+Technical+Safety+Concept+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/9734ccc4-75e5-4f7f-9f1f-483355714308/345284/1538850273071/Functional+Safety%3A+Technical+Safety+Concept+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 346217,
+          "key": "d6176324-5a82-4be9-9695-05ee1800c278",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d6176324-5a82-4be9-9695-05ee1800c278",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350058,
+              "key": "1044f6e1-c533-48ed-801c-63b4b2cd1b9b",
+              "title": "L5 01 L Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wBKlo2Lk_A0",
+                "china_cdn_id": "wBKlo2Lk_A0.mp4"
+              }
+            },
+            {
+              "id": 346258,
+              "key": "064543aa-af71-4b11-9641-851a01554086",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Concept Phase Versus Product Development Phase\n\nISO 26262 places the functional safety concept in the concept phase while the technical safety concept is part of the product development phase.\n\nThis is because the technical safety concept is more concrete and gets into the details of the item's technology. The product development phase also includes designing hardware and software. This lesson will only focus on the technical safety concept, and the next lesson will discuss hardware and software development.\n\nAs a reminder, here is a version of the V model that has been stretched out vertically. You can see the functional safety concept is the last step in the concept phase. The technical safety concept would belong to the product development at the systems level:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350986,
+              "key": "0a81a5e2-c3cb-45a4-8b3e-eb0cf1b69e13",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/59792939_05-tailoring-the-safety-lifcycle-image-01-1024/05-tailoring-the-safety-lifcycle-image-01-1024.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0a81a5e2-c3cb-45a4-8b3e-eb0cf1b69e13",
+              "caption": "Functional Safety Lifecycle",
+              "alt": null,
+              "width": 685,
+              "height": 1024,
+              "instructor_notes": null
+            },
+            {
+              "id": 346259,
+              "key": "ef2db3f1-c6fc-4312-a7cf-51ebff323672",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Product Development Phase\n\nThe product development phase is divided into two parts:\n* Product development at the system level\n* Product development at the hardware and software level\n\nISO 26262 treats an item as if it were a system of systems. Take the lane assistance item as an example. The item has three systems:\n* Vision system (camera)\n* Display system (car dashboard)\n* Motion system (electronic power steering)\n\nBefore developing hardware or software, the technical safety requirements need to be determined for each of these systems. And before the technical safety requirements can be determined for each system, the functional safety requirements need to be determined for the lane keeping item.\n\nSo the technical safety concept involves:\n* Turning functional safety requirements into technical safety requirements\n* Allocating technical safety requirements to the system architecture\n\nThis will set us up for drilling down into software and hardware implementation in the next lesson.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346260,
+              "key": "f19a830c-a32c-4b58-8b51-3fdbafc3df4c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Technical Safety Concept at the System Level versus Technical Safety Concept at the ECU Level\n\nIn the ADAS lane assistance example, we have said that the only safety-relevant subsystem is the electronic power steering. And our example has put most of the safety-relevant functionality in the power steering ECU.\n\nThis is a simplified example. Most of the time, multiple subsystems will be involved in a technical safety analysis. When there are multiple subsystems, the technical safety concept might have to be divided into more than one document.\n\nOne technical safety concept will be called the \"Technical Safety Concept at the System Level\". This document would look at how the subsystems interact with each other.\n\nThere might be a separate technical safety concept that drills down to the ECU level. \nEach safety relevant ECU would have its own technical safety concept document. \n\nIn our simplified lane assistance example, the only safety relevant element was the electronic power steering ECU; thus, our technical safety concept will go directly to the ECU level. But in general, you will need to develop multiple technical safety concepts; one at the system level and then one for each safety relevant ECU.\n\nHere is an diagram showing how a technical safety concept might be divided into several documents:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350295,
+              "key": "7720b4fa-6634-4fc3-85d7-c79dbf640a18",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976c50c_technical-safety-concept-hierarchy-01/technical-safety-concept-hierarchy-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7720b4fa-6634-4fc3-85d7-c79dbf640a18",
+              "caption": "Technical Safety Concept at the System and Sub System Level",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 346227,
+          "key": "789309bf-c4f0-4a17-ae81-cc26d0fc6709",
+          "title": "Deriving Technical Safety Requirements",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "789309bf-c4f0-4a17-ae81-cc26d0fc6709",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350060,
+              "key": "3e2fc740-9cd6-41f7-8a8c-a347f43a1ef4",
+              "title": "L5 03 Deriving Techincal Safety Requirements From Functional Safety Requirements",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fVLsG83a-So",
+                "china_cdn_id": "fVLsG83a-So.mp4"
+              }
+            },
+            {
+              "id": 495424,
+              "key": "1d49afa5-39b5-4b15-a19d-0ab2bea884f2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "While the video states that latent faults only need to be addressed for ASIL C and ASIL D, the hardware latent fault metric also has ASIL B targets.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346304,
+              "key": "9e717b84-2eeb-44f9-b3d8-9711fad785d9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz - Vocabulary Check",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346305,
+              "key": "9354d6e5-e7f3-4fea-8af0-1c0a488ecab8",
+              "title": "Vocabulary Check-in",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9354d6e5-e7f3-4fea-8af0-1c0a488ecab8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Check the boxes that are always true",
+                "answers": [
+                  {
+                    "id": "a1499909637579",
+                    "text": "A system failure is always hazardous",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499909655076",
+                    "text": "Functional safety seeks to eliminate all malfunctions and system risks.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499909655948",
+                    "text": "Faults can lead to failures. Failures can lead to hazardous situations.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499909656444",
+                    "text": "A fault will always lead to a system failure",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 346229,
+          "key": "588fbb8e-d690-44a3-8320-b6d0bddbe984",
+          "title": "Other Types of Technical Safety Requirements",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "588fbb8e-d690-44a3-8320-b6d0bddbe984",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350061,
+              "key": "fb3ee2f5-74cc-4ccf-9fde-61e3c9da4df5",
+              "title": "L5 07 Other Types Of Techincal Safety Requirements",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9xIlkXobXS0",
+                "china_cdn_id": "9xIlkXobXS0.mp4"
+              }
+            },
+            {
+              "id": 439331,
+              "key": "308ebf35-708b-47b3-b137-57338243c23d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## ISO 26262 Definition of Latent Faults\n\nA more rigorous definition of latent faults from ISO 26262 reads:\n> multiple-point fault (3.96) whose presence is not detected by a safety mechanism (3.141) nor perceived by the driver within the multiple-point fault detection time interval (3.97)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346308,
+              "key": "631f730c-1405-4743-adfe-bdf83aad0300",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Faults External to the Lane Keeping Item\n\nWe mentioned that a possible technical safety requirement for an external fault could be for code that checks communication errors between the anti-lock brake ECU and the power steering ECU. The anti-lock brake ECU might share vehicle speed data with the power steering ECU. We are not going to expand on this example in the rest of the lesson. But if you want to challenge yourself, consider expanding on this idea in the final project. \n\nImagine that the lane keeping assistance function does not take driver speed into account when deciding how much torque to apply. This could lead to a potentially hazardous situation where the system turns the wheel too abruptly at a high vehicle speed. Or the lane keeping assistance provides too much extra torque on a sharp curve. The driver could lose control of the vehicle. So this idea could be part of a hazard and risk analysis, which would lead to a safety goal. Then you'd derive functional safety requirements from the safety goal. And finally you'd derive technical safety requirements from the functional safety requirements.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346309,
+              "key": "602a604b-f69f-46c4-9c80-42e9533bcbd8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### More Technical Safety Requirements\n\nSoon it will be your turn to identify technical safety requirements! In the project, you will be responsible for deriving technical safety requirements for the other two functional safety requirements.\n\nThe other two functional safety requirements were: \n\n\"the electronic power steering ECU shall ensure that the lane departure warning oscillating torque frequency is below Max_Torque_Frequency\". \n\n\"the lane keeping assistance function shall be time limited and the additional steering torque shall end after a given timer interval so that the driver can not misuse the system for autonomous driving\".\n\nYou will use the examples we've already given as a guide for deriving technical safety requirements. The truth is, most of the technical safety requirements already derived would also be relevant to the two other functional safety requirements. You might have to change variable names or architectural element names.\n\nRemember that some technical safety requirements can be derived directly from a functional safety requirement; other technical safety requirements will fall under the five categories described in the above video.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346310,
+              "key": "ae595f5c-6dde-4ff7-9efe-81f311f8c14b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Methods for Checking Data Validity and Integrity\n\nOne of the technical safety requirements mentioned checking the data validity and integrity of the data transmission: \"The validity and integrity of the data transmission for LDW_Torque_Request signal shall be ensured.\"\n\nTo check data validity and integrity, you can add a CRC (cyclic redundancy check); a [CRC](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) is a well established methods that looks for changes to raw data. A qualifier can then be added as well, which is a signal indicating whether or not a signal is valid. The CRC ensures the data that is sent out by one element is the same data received by another element.\n\nAnother common mechanism is an alive counter. An alive counter checks that the signal is new and not an old signal; an alive counter increases the count every time a signal goes out.\n\nCRCs and alive counters can be used together to guarantee correct transmission. The final lesson on software requirements will also discuss a specific CRC protocol in more depth.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346231,
+          "key": "a0bad613-4bfa-4ecf-b712-337b56ef4e8e",
+          "title": "Technical Safety Requirement Attributes",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a0bad613-4bfa-4ecf-b712-337b56ef4e8e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350062,
+              "key": "eaee79d0-7d68-49df-95bc-b13b7a65e524",
+              "title": "L5 09 Technical Safety Requirement Attributes",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "EOYTl2e8wEs",
+                "china_cdn_id": "EOYTl2e8wEs.mp4"
+              }
+            },
+            {
+              "id": 346311,
+              "key": "90a18fea-bc88-427d-9e58-bcee97303458",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Table of Results\n\n| Requirement ID | Technical Safety Requirement                                                                                                                                                        | FTTI  | ASIL |\n|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|------|\n| TechSafReq01   | The LDW safety component shall ensure that the amplitude of the 'LDW_Torque_Request' sent to the 'Final electronic power steering Torque' component is below 'Max_Torque_Amplitude. | 50 ms | C    |\n| TechSafReq02   | As soon as the LDW function deactivates the LDW feature, the 'LDW Safety' software block shall send a signal to the car display ECU to turn on a warning light.                     | 50 ms | C    |\n| TechSafReq03   | As soon as a failure is detected by the LDW function, it shall deactivate the LDW feature and the 'LDW_Torque_Request' shall be set to zero.                                        | 50 ms | C    |\n| TechSafReq04   | The validity and integrity of the data transmission for 'LDW_Torque_Request' signal shall be ensured.                                                                               | 50 ms | C    |\n| TechSafReq05   | Memory test shall be conducted at start up of the EPS ECU to check for any faults in memory.                                                                                        | ignition cycle | A    |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346312,
+              "key": "e2315cc5-3443-437d-acc0-e8c9077875b6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346313,
+              "key": "e06e5098-6996-40f3-b063-051de5636f7a",
+              "title": "ASIL",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e06e5098-6996-40f3-b063-051de5636f7a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "\nWhat would be the ASIL for the technical safety requirements derived for the lane keeping assistance function? Remember that the technical safety requirements inherit the ASIL of the functional safety requirements.",
+                "answers": [
+                  {
+                    "id": "a1499911126275",
+                    "text": "A",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499911142174",
+                    "text": "B",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499911142742",
+                    "text": "C",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499911143214",
+                    "text": "D",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 346314,
+              "key": "10a36e1e-cc6d-4b37-a164-da213a60d0bb",
+              "title": "FTTI",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "10a36e1e-cc6d-4b37-a164-da213a60d0bb",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What would be a reasonable fault tolerant time interval for the lane keeping assistance function's technical safety requirements?",
+                "answers": [
+                  {
+                    "id": "a1499911246453",
+                    "text": "5 mS",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499911259754",
+                    "text": "50 mS",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499911260273",
+                    "text": "500 mS",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499911260786",
+                    "text": "5000 mS",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 346233,
+          "key": "2331bf17-a6e9-4cdb-943e-fd19dcf46580",
+          "title": "Allocation of Requirements to System Architecture Elements",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2331bf17-a6e9-4cdb-943e-fd19dcf46580",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346315,
+              "key": "40bad01a-9ce8-4862-bed8-afb9634a90a3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Technical Safety Requirements Review\n\nHere is a list of the technical safety requirements we have identified so far. This list might be helpful as you watch the video below.\n\n* The LDW safety component shall ensure that the amplitude of the 'LDW_Torque_Request' sent to the 'Final electronic power steering Torque' component is below 'Max_Torque_Amplitude.\n\n* As soon as a failure is detected by the LDW function, it shall deactivate the LDW feature and the 'LDW_Torque_Request' shall be set to zero.\n\n* As soon as the LDW function deactivates the LDW feature, the 'LDW Safety' software block shall send a signal to the car display ECU to turn on a warning light. \n\n* The validity and integrity of the data transmission for 'LDW_Torque_Request' signal shall be ensured.\n\n*  Memory test shall be conducted at start up of the EPS ECU to check for any faults in memory.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350063,
+              "key": "0ba95147-b4e2-433e-990e-6c94b4105495",
+              "title": "L5 12 Allocation Of Requirements To System Acrchitecture Elements",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dA2up9vZCcM",
+                "china_cdn_id": "dA2up9vZCcM.mp4"
+              }
+            },
+            {
+              "id": 346316,
+              "key": "ea5a7508-3de7-4581-834b-03788fe80f18",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Other Things to Consider\n\nHere are a few constraints to consider when refining a system architecture in a technical safety concept:\n* Elements inherit the highest ASIL from the technical safety requirements. So if the same software element provides functionality to the lane departure warning and lane keeping assistance functions, the higher ASIL wins. In this case, the lane departure warning had ASIL C whereas the lane keeping assistant had ASIL B. So ASIL C wins.\n* If an element contains subelements with different ASILs, both sub-elements receive the highest ASIL. If a subelement has an ASIL but another subelement is QM, then the same rule applies and both will take the highest ASIL. The exception is if the criteria for coexistence is met. Criteria for coexistence was already discussed in the previous lesson. If a failure in one sub-element will not affect the other sub-element, then the sub-elements can have different ASILs.\n* Internal and external interfaces for safety-related elements need to be clearly defined. This way non-safety related elements are clearly identified as well. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350282,
+              "key": "5a049765-969e-41b2-8aa5-9476aa73ca6b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### System Diagram\n\nHere is a system diagram with the added functionality from the technical safety requirements:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350852,
+              "key": "f4ccd88c-9f0f-4222-9933-8c3425ddd6cd",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/59783620_refined-system-architecture-01/refined-system-architecture-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f4ccd88c-9f0f-4222-9933-8c3425ddd6cd",
+              "caption": "System Architecture Taking into Account Lane Departure Warning Technical Safety Requirements",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 350995,
+              "key": "9598417b-ca4d-42f5-ad72-602ac751a602",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Allocation: Functional Safety Concept versus Technical Safety Concept\n\nIn the functional safety concept, you allocated all of the requirements to the EPS ECU. Now, your system diagram has a lot more detail. So it isn't enough to say that the technical safety requirements are allocated to the EPS ECU; the technical safety requirements will be allocated to different software elements such as the \"LDW Safety Functionality\" block, the \"Data Transmission Integrity Check\", or other relevant blocks inside the EPS ECU.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346317,
+              "key": "516e6d9a-7614-40a3-816d-a19f867041b7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Allocation for the Other Technical Safety Requirements\n\nWith the information we've given about the lane departure warning technical safety requirements, you can derive a few technical safety requirements for the lane keeping assistance function and then allocate the requirements to the architecture. This will be part of the project.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350847,
+              "key": "d4e1f648-66fc-47bb-8ac1-7845593547b7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz: Functional Safety Requirements versus Technical Safety Requirements",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350849,
+              "key": "b1dec987-bea2-4a13-8bdf-157463cd1444",
+              "title": "Functional versus Technical Safety Requirements",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b1dec987-bea2-4a13-8bdf-157463cd1444",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Decide which belong to functional safety requirements and which belong to technical safety requirements"
+                },
+                "concepts_label": "Description",
+                "answers_label": "Requirement Type",
+                "concepts": [
+                  {
+                    "text": "These are derived directly from safety goals",
+                    "correct_answer": {
+                      "id": "a1501048489727",
+                      "text": "Functional Safety Requirements"
+                    }
+                  },
+                  {
+                    "text": "These generally look at a system at a more detailed level",
+                    "correct_answer": {
+                      "id": "a1501048581987",
+                      "text": "Technical Safety Requirements"
+                    }
+                  },
+                  {
+                    "text": "These requirements oftentimes define signal flow and look at the system elements and components",
+                    "correct_answer": {
+                      "id": "a1501048610103",
+                      "text": "Technical Safety Requirements"
+                    }
+                  },
+                  {
+                    "text": "These give a general overview of what the system needs to do from a safety standpoint",
+                    "correct_answer": {
+                      "id": "a1501048680340",
+                      "text": "Functional Safety Requirements"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1501048489727",
+                    "text": "Functional Safety Requirements"
+                  },
+                  {
+                    "id": "a1501048581987",
+                    "text": "Technical Safety Requirements"
+                  },
+                  {
+                    "id": "a1501048680340",
+                    "text": "Functional Safety Requirements"
+                  },
+                  {
+                    "id": "a1501048610103",
+                    "text": "Technical Safety Requirements"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 350731,
+          "key": "617890a6-fca0-4e11-8f77-67822f7620cf",
+          "title": "Sebastian on Testing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "617890a6-fca0-4e11-8f77-67822f7620cf",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350733,
+              "key": "88518e5e-8543-4ac4-bbe2-298eac081190",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Sebastian Talks about Using Data for Testing\n\nHere, Sebastian discusses how the DARPA team used data to iterate and improve software.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350734,
+              "key": "0b672c1a-a581-4d4d-a8b3-7aa6e99900f9",
+              "title": "L5 Sebastian",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "30Ei-TLjYsk",
+                "china_cdn_id": "30Ei-TLjYsk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 346219,
+          "key": "4d712657-9684-407a-ae1a-7599fd30ed93",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4d712657-9684-407a-ae1a-7599fd30ed93",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346318,
+              "key": "c48a5cb2-ea6b-472f-b8c0-1a9b5094deb0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Summary",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350065,
+              "key": "c13d69da-8b10-45ba-bbab-604cd98a9b7f",
+              "title": "L5 14 L Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "sIe4SZfDUmM",
+                "china_cdn_id": "sIe4SZfDUmM.mp4"
+              }
+            },
+            {
+              "id": 346321,
+              "key": "30c0fc19-11ba-4712-a973-ce8434e2bafb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is an overview of what we have covered so far:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350281,
+              "key": "90c928fa-727a-49e1-9bba-69c3ddf51985",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976be03_l5-outline-of-material-presented-so-far-01/l5-outline-of-material-presented-so-far-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/90c928fa-727a-49e1-9bba-69c3ddf51985",
+              "caption": "Steps Covered Through Technical Safety Concept",
+              "alt": null,
+              "width": 2660,
+              "height": 1856,
+              "instructor_notes": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

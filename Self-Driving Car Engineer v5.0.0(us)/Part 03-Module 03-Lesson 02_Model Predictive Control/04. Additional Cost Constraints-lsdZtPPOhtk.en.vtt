@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.629
+The cost function is not limited to the state.
+
+00:00:02.629 --> 00:00:04.894
+We could also include the control input.
+
+00:00:04.894 --> 00:00:06.750
+The reason we would do this is to allow us to
+
+00:00:06.750 --> 00:00:09.778
+penalize the magnitude of the input as well as the change rate.
+
+00:00:09.778 --> 00:00:11.964
+If we want to change lanes, for example,
+
+00:00:11.964 --> 00:00:14.009
+we would have a large cross-tracker that would
+
+00:00:14.009 --> 00:00:16.390
+want to penalize turning the wheel really sharply.
+
+00:00:16.390 --> 00:00:18.934
+This would yield a smoother lane change.
+
+00:00:18.934 --> 00:00:22.570
+We could add the control input magnitude like this.
+
+00:00:22.570 --> 00:00:24.350
+We still need to capture the change rate of
+
+00:00:24.350 --> 00:00:27.149
+the control input to add some temporal smoothness.
+
+00:00:27.149 --> 00:00:30.449
+This additional term in the cost function captures the difference between
+
+00:00:30.449 --> 00:00:32.100
+the next control input state and
+
+00:00:32.100 --> 00:00:35.000
+the current one so we have further control over the inputs.
+

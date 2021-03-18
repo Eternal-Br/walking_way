@@ -1,0 +1,1227 @@
+{
+  "data": {
+    "lesson": {
+      "id": 345285,
+      "key": "6c774579-9d59-43fe-8e0e-0700dd440861",
+      "title": "Functional Safety at the Software and Hardware Levels",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "The last step in the vehicle safety design phase is to derive hardware and software safety requirements. In this lesson, you will derive these requirements and refine a software system architecture.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/6c774579-9d59-43fe-8e0e-0700dd440861/345285/1538849448614/Functional+Safety+at+the+Software+and+Hardware+Levels+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/6c774579-9d59-43fe-8e0e-0700dd440861/345285/1538849443323/Functional+Safety+at+the+Software+and+Hardware+Levels+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 346221,
+          "key": "65aaa6c9-6b93-443b-9689-2f9d56bceabd",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "65aaa6c9-6b93-443b-9689-2f9d56bceabd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346432,
+              "key": "1f130a42-4ff9-4f89-a412-c4ec014b2519",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Introduction",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350066,
+              "key": "2d2b914e-4c0f-441a-af8e-cec597c9526f",
+              "title": "L6 01 L Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "urgjYwIY3hs",
+                "china_cdn_id": "urgjYwIY3hs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 346433,
+          "key": "70bf150a-67f5-4e77-9d31-a22da3434e21",
+          "title": "V model",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "70bf150a-67f5-4e77-9d31-a22da3434e21",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346434,
+              "key": "ba06f97a-ba26-449a-bf1a-4b3e04617c2b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Hardware and Software Product Development Life-Cycle\n\nLet's get an overview of the hardware and software product development cycle. The V model divides hardware and software into their own mini-Vs:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350284,
+              "key": "4e49152d-72da-4834-befe-2a2c1611cbc7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976c18c_02-v-model-text-01/02-v-model-text-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4e49152d-72da-4834-befe-2a2c1611cbc7",
+              "caption": "Summary of ISO 26262 V Model",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 346436,
+              "key": "7035f000-bef7-4aa2-8033-d01a4fbb4ac6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The general idea represented in each V stays the same; first, you specify safety requirements. Then you allocate these requirements to a system architecture. Finally you test, integrate, and verify. Each V model process is the same one we discussed back in the first lesson.\n\nBut there is an extra step on the hardware and software sides. For hardware, the V model includes sections about hardware architectural metrics and evaluation of random hardware failures. Here is a more detailed view of the hardware V model:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350285,
+              "key": "af2b9ec6-034e-4309-960f-7a06805dfcfb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5c01a620_02-v-model-text-02-v2/02-v-model-text-02-v2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/af2b9ec6-034e-4309-960f-7a06805dfcfb",
+              "caption": "",
+              "alt": "",
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 346438,
+              "key": "a60a3ffd-f403-4e1d-8ec0-7d048f012950",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "On the software side, there is an architectural design section as well as a unit design section:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350286,
+              "key": "1dc45ef6-e8eb-46dc-97ed-7f1d231d659d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976c1ea_02-v-model-text-03/02-v-model-text-03.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1dc45ef6-e8eb-46dc-97ed-7f1d231d659d",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 346440,
+              "key": "e08e8a16-8633-492b-aabb-f41630e760d7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this lesson, we will discuss random hardware failures as well as how to develop software safety requirements.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346441,
+              "key": "555bb19b-dc53-4727-9d37-285f78e1e78a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n### Architectural Design vs Unit Design\n\nThe software architectural design is a higher level view of software components. For example, this could be a camera ECU from our lane assistance example. \n\nA unit is a smaller part of a software architecture. A unit could be a software driver to read raw data from a camera sensor. There is no hard and fast rule as to what belongs in the architectural design section versus the unit design section. Functional safety in general can be an iterative process where developing a new section of the V model can lead to changes in a previous section and vice versa.\n\nIn the following diagram, you can see a general outline of what would be involved in a functional safety project. You can see that the steps of the V model have been stretched out vertically. Oftentimes an item will have multiple systems and sub systems. Sub systems will have their own software and hardware requirements. And these subsystems need to be integrated into larger systems:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350297,
+              "key": "f56ef1d1-7f23-43e0-9547-3d3c6050189b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976c837_software-requirement-hierarchy-01/software-requirement-hierarchy-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f56ef1d1-7f23-43e0-9547-3d3c6050189b",
+              "caption": "Functional Safety Bird's Eye View",
+              "alt": null,
+              "width": 2150,
+              "height": 2718,
+              "instructor_notes": null
+            },
+            {
+              "id": 495303,
+              "key": "a340b729-51e3-4caf-bf5b-64a8eafa7fe9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please note that the \"in-context\" development described here can become impractical due to a need to development custom software and hardware. To mitigate this, a commonly used approach is \"Safety Element out of Context\" (SEooC), which considers using standard safety hardware and software components to address functional safety implementation. You may enjoy [this interesting paper](http://papers.sae.org/2012-01-0033/) describing a practical approach to SEooC.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346235,
+          "key": "7a28a5e6-f43f-4c94-96a8-27efc73a81e1",
+          "title": "Hardware Failure Metrics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7a28a5e6-f43f-4c94-96a8-27efc73a81e1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350067,
+              "key": "be060fb0-8be9-47f4-b5f9-6ec19b3ed4bb",
+              "title": "L6 04 Hardware Failure Metrics",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wlCVuAJj1xk",
+                "china_cdn_id": "wlCVuAJj1xk.mp4"
+              }
+            },
+            {
+              "id": 495422,
+              "key": "134bc541-6198-4884-96da-82503005afbc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Note that architectural metrics have values independent of implementation and are expressed as rates. Probabilistic Metric for Hardware Failures (PMHF) has absolute units expressed in failures per 10^9 hours.  As such PMHF is not itself an architectural metric, but is relevant to a discussion of hardware failure metrics.\n\nIt's also arguable that silicon wear-out is a systematic failure rather than random hardware failure, so it may not be considered as part of random hardware failure metrics.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346442,
+              "key": "de4be74c-b48b-4814-9e39-9c1abf9adb20",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### More Details about Hardware Failure Metrics\n\nEssentially, these metrics look at the percentage of hardware failures that are covered by a safety mechanism. A safety mechanism is some functionality that either keeps the vehicle safe if a failure occurs or detects that a failure has occurred. The implication is that in a safe system, most hardware failures would be detected.\n\nHere is an example. If the RAM fails because UV radiation causes a bit flip, a safety mechanism would either need to fix the bit flip, take the system to a safe state, and/or warn the driver of the malfunction. \n\nThe standard considers hardware failures to be inevitable. But if they are going to happen, then ideally they should not lead to safety issues. The single point fault metric for ASIL D is greater than 99% whereas ASIL B is only greater than 90%. In other words, for ASIL D, 99% of single point faults should either be detected or be safe for a specific safety goal.\n\nTo calculate these metrics, you have to figure out which hardware failures lead to hazardous situations and which failures do not. The standard actually divides hardware failures into six different categories.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346443,
+              "key": "e2a565b1-8a92-4725-a2d7-cc6af9069330",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Categories of Faults\n\nTo calculate hardware failure metrics, you need to categorize the failures into one of six categories. We will list them here for reference although we won't actually be calculating hardware failure metrics in this lesson. \n\nSingle point fault - a fault in an element that has no safety mechanism to detect faults. The fault also leads to a violation of a safety goal. For example, a RAM fault with no safety mechanisms to correct the fault would violate a safety goal.\n\nResidual fault -  the element has a safety mechanism to detect certain kinds of faults; however, a fault occurs that the mechanism was not designed to detect, and the fault also leads to a violation of a safety goal. For example, RAM might have an ECC (error correction code) mechanism to fix a bit flip; however, a different fault occurs because of a short circuit and the RAM has no safety mechanism for short circuits.\n\nLatent multiple point fault- multiple point fault that goes undetected by a safety mechanism and by the driver. \n\nPerceived multiple point fault - multiple point fault that the driver detects because the fault causes limited vehicle functionality. Examples include a driver noticing reduced break response, or activating the headlights with no response (they don't turn on).\n\nDetected multiple point fault - multiple point fault that a safety mechanism detects and takes the vehicle to a safe state\n\nSafe faults - faults that do not lead to safety goal violations\n\nAn example of a multiple point fault could involve RAM and an ECC (error correction code) mechanism. ECC corrects bit flips. If the RAM contains a fault because of a bit flip, the ECC would correct the flip. If the ECC fails because of a software bug, RAM would still work correctly. If there's a bit flip and the ECC fails, then there is a multiple point fault because the bit flip will not be corrected. Both the RAM and the ECC will fail.\n\nA cyclic redundancy check (CRC) would detect a fault in the ECC mechanism. Without a CRC, the fault would go undetected and hence be latent. With the CRC, the fault would become a detected multiple point fault. If the driver is informed about the fault like with a warning light, then this is a perceived multiple-point fault.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346444,
+              "key": "bb060192-d09c-4553-8d9f-3ddfc7b875d1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Measuring Faults\n\nHow would you actually measure faults and failure rates? You can either: \n* do field tests to measure the number of failures in a given amount of time\n* use pre-existing data from an equivalent or similar system\n* vendors should supply data for calculating these metrics as well. \n\nPlease note that ISO 26262 does not specify a target for random hardware failures. There is a Probabilistic Metric for Hardware Failures (PMHF) which focuses on dangerous, undetected hardware failures per safety goal. ISO 26262 suggests that PMHF values be used only in the absence of data to support targets.  [This](http://publications.lib.chalmers.se/records/fulltext/218280/218280.pdf) is an interesting paper regarding PMHF and random hardware failures.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346445,
+              "key": "950e6465-aaac-4e2f-ab07-8818e7bf96cb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Sources and Types of Failures\n\nResistors aren't the only hardware components that can fail. Entire processing units need to be considered as well.\n\n[Hardware registers](https://en.wikipedia.org/wiki/Hardware_register), internal RAM, controller logic as well as other components can fail. All of these failures need to be covered by safety requirements, and then allocated to an architecture and documented in a safety concept. The safety concept would discuss how these failures would be detected or avoided.  \n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346237,
+          "key": "0c7c2241-b5b3-4e7e-b9da-975dbebb469e",
+          "title": "Programming Languages",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0c7c2241-b5b3-4e7e-b9da-975dbebb469e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350068,
+              "key": "a2c30194-e29f-45cc-a103-7ae818e3dc65",
+              "title": "L6 06 Programming Languages",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "KpAhkXNan7Y",
+                "china_cdn_id": "KpAhkXNan7Y.mp4"
+              }
+            },
+            {
+              "id": 346446,
+              "key": "fb0624f1-e058-49ae-bf61-65c58e713824",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Notes about Programming Languages\n\nAny programming language will have both strong points and weaknesses. A strongpoint for C++ is the ability to write high-speed software with many input-output operations. On the other hand, C++ will allow you to store a floating-point number in a boolean variable. And C++ does not provide much in terms of run-time error checking.\n\nThe MISRA C++ standard discusses a subset of C++ that is appropriate to safety critical applications. The standard contains a set of rules for how to use the C++ language in automotive applications. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346447,
+              "key": "a5cad565-06e7-45b0-bc4b-3f72ddf3a8e4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Software Tools & Software Tool Confidence Level\n\n\nAutomotive software engineers use a variety of tools to help develop software.\n\nCompilers are one example of software tools. Other examples include version control software, testing tools, graphical modeling tools that automatically generate code, and tools to help ensure MISRA compliance.\n\nThe functional safety standard requires that you qualify software tools to make sure they are appropriate for safety critical applications; it is becoming more common to use software tools that automate code generation and code testing. If a testing tool has a problem, for example, then code errors could go undetected.\n\nISO 26262 describes a metric for measuring your confidence in your tools. The metric is called tool confidence level or TCL. \n\nEvaluating confidence levels takes into account two things:\n* Tool Impact (TI) - Whether the tool itself could malfunction and violate a safety goal\n* Tool Error Detection Capability (TD) - If the tool malfunctions, is the malfunction detected or stopped\n\nYou can then use the TI and TD metrics to calculate a tool's confidence level.Software blocks with higher ASIL require TCL1, which is the highest confidence. TCL3 is the lowest confidence rating.\n\nLower confidence tools with TCL2 and 3 ratings need to be qualified. Qualifying involves running the tool through rigorous testing to prove that it does not cause any errors. Software tool vendors provide qualification kits that help you test their tools in your own environment. \n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346239,
+          "key": "663c87cb-5815-422b-99b7-4b56c71a2e97",
+          "title": "Software Safety Life-cycle",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "663c87cb-5815-422b-99b7-4b56c71a2e97",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346448,
+              "key": "6a3df806-9271-4d80-b66a-dce0398f7b33",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Software Safety Requirements, Architecture, Testing and Integration",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350070,
+              "key": "a4412605-e902-4421-90d6-a8c775b58ec1",
+              "title": "L6 09 Software Safety Requirments Architecture Testing And Intergration",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OJMGRtJciNI",
+                "china_cdn_id": "OJMGRtJciNI.mp4"
+              }
+            },
+            {
+              "id": 346449,
+              "key": "bb21a562-8f79-42f5-a0ae-44306e5889c4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Software V diagram\n\nIn the video, we simplified the software safety V model to show that the software safety life-cycle involves the same four steps as other levels of the functional safety analysis:\n1. specifying safety requirements\n2. designing an architecture and allocating the requirements to the architecture\n3. software testing\n4. software integration\n\nHere is a slightly more detailed version of the software safety life-cycle:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350287,
+              "key": "32c6cd45-7e54-4ca2-9f94-bf930192854a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976c215_02-v-model-text-03/02-v-model-text-03.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/32c6cd45-7e54-4ca2-9f94-bf930192854a",
+              "caption": "ISO 26262 Software V Model",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 346451,
+              "key": "41744c81-f2b5-40d5-9238-8d59fdc06a25",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Developing a software architecture should consider both safety and non-safety requirements. Software safety requirements and software product requirements cannot be separated into two different architectures; a software architecture will be a mixture of product requirements and safety requirements. \n\nAn architectural design might involve multiple micro-controllers or ECUs. So software interfaces, data paths, process sequences and timing behaviors need to be specified. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346452,
+              "key": "15523847-3288-46aa-86fa-b9303b5a6385",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Software Units\n\nSoftware architectures are often further refined into smaller pieces called units. So technical safety requirements lead to software safety requirements, which are further refined into software safety unit requirements. Unit requirements then lead to further refinements of the architecture.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346453,
+              "key": "62c67082-e649-41f5-babc-61c4f619972a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Test Specifications\n\nOn the right side of the V model, test specifications and test cases are derived from the safety requirements. Remember that the V model has hierarchical levels. As you go up the V model integrating software with higher system levels, each stage will require its own testing.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346454,
+          "key": "8c465c10-b05a-4b62-aec7-18e2b2f16141",
+          "title": "Software Safety Requirements Lane Departure Warning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8c465c10-b05a-4b62-aec7-18e2b2f16141",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346455,
+              "key": "1927e511-5ad5-4c09-bead-b80fbefd9bc7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Software Safety Requirements - Lane Departure Warning Amplitude Malfunction\n\nFor the purposes of this module, we do not expect you to derive software safety requirements. But the examples below should give you a sense for how to derive software safety requirements from technical safety requirements. The examples also show the major differences between technical requirements and software requirements; software requirements are much more specific than technical requirements. Software requirements specify variable names, signal paths, and software protocols and mechanisms. A software engineer should be able to write a program from the software requirements and software architecture.\n\nWe are going to show you examples of software safety requirements that we have derived from the technical safety requirements. First, we will show you the refined architecture and then explain all of the new elements that we have added:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350288,
+              "key": "949e14ac-1aed-4ea1-96b9-3a1c2fc88f98",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976c276_refined-system-architecture-l6-01/refined-system-architecture-l6-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/949e14ac-1aed-4ea1-96b9-3a1c2fc88f98",
+              "caption": "Software Architecture Diagram",
+              "alt": "",
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 346462,
+              "key": "3a20f2be-bef8-4ce5-b148-a7ad32490daf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Software Safety Requirements Derived from Technical Safety Requirement 01",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346457,
+              "key": "8060ac1b-43db-4c67-8a56-5fd4ee524dfc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's take a look at our technical safety requirements one at a time and derive software safety requirements. You might want to refer back to this diagram as we explain the new functionality.\n\nHere is our first technical safety requirement:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346459,
+              "key": "f81e00f5-ec0e-4895-b41f-31dfa231b067",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| ID | Technical Safety Requirement | ASIL | Fault Tolerant Time Interval | Allocation to Architecture | Safe State |\n|-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------|------------------------------|----------------------------|--------------------------------|\n| TechnicalSafetyRequirement_01 | The LDW safety component shall ensure that the amplitude of the LDW_Torque_Request sent to the Final Electronic Power Steering Torque component is below Max_Torque_Amplitude | C | 50 mS | LDW Safety | LDW torque output is set to zero |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346460,
+              "key": "d2730809-29d4-4d38-9821-12a5d2751fb2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We are going to split the LDW safety component into three blocks. \n\nThe first block will get the torque request from Basic/Main Lane Assistance functionality component. That first block will do any pre-processing needed. Then the block sends the results out to a torque limiter block that will check if the torque is beyond the allowed maximum amplitude. If the limit is reached, the torque request is set to zero. Finally, we'll add a third block that gets the signal ready for transmitting to the final torque generator.\n\nHere are the new software safety requirements:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346461,
+              "key": "e9869404-2986-4790-a762-134fbc1a5f8d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| ID | Technical Safety Requirement | ASIL | Allocation Software Elements | Safe State |\n|--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------|------------------------------|---------------------------------------------|\n| SoftwareSafetyRequirement01-01 | The input signal “Primary_LDW_Torq_Req” shall be read and pre-processed to determine the torque request coming from the “Basic/Main LAFunctionality” SW Component.  Signal “processed_LDW_Torq_Req” shall be generated at the end of the processing. | C | LDW_SAFETY_INPUT_PROCESSING | N/A |\n| SoftwareSafetyRequirement01-02 | In case the “processed_LDW_Torq_Req” signal has a value greater than “Max_Torque_Amplitude_LDW” (maximum allowed safe torque), the torque signal “limited_LDW_Torq_Req” shall be set to 0,  else “limited_LDW_Torq_Req” shall take the value of “processed_LDW_Torq_Req”. | C | TORQUE_LIMITER | “limited_LDW_Torq_Req” = 0 (Nm=Newton-meter) |\n| SoftwareSafetyRequirement01-03 | The “limited_LDW_Torq_Req” shall be transformed into a signal “LDW_Torq_Req” which is suitable to be transmitted outside of the LDW Safety component (“LDW Safety”) to the “Final EPS Torque”component. Also see SofSafReq02-01 and SofSafReq02-02 | C | LDW_SAFETY_OUTPUT_GENERATOR | LDW_Torq_Req= 0 (Nm) |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346463,
+              "key": "2aeb3d2e-c97c-475c-b5bb-ef0e792d11a4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Compare these new software safety requirements against the new system architecture diagram.\n\nLet's look at our second technical safety requirement.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346464,
+              "key": "3382b21d-c065-4c7a-ad4f-d98ea617ef4e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Software Safety Requirements Derived from Technical Safety Requirement 02\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346472,
+              "key": "6caa70f8-3a26-4345-b20a-6c16aee9ac9e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is technical safety requirement 02:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346473,
+              "key": "67b1db2f-9222-4c0d-b1d4-e153c211d0d7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| ID | Technical Safety Requirement | ASIL | Fault  Tolerant  Time  Interval | Allocation to Architecture | Safe State |\n|------------------------------|-------------------------------------------------------------------------------------------------|------|---------------------------------|------------------------------------|------------|\n| TechnicalSafetyRequirement02 | The validity and integrity of the data transmission for LDW_Torque_Request signal shall be ensured | C | 50 ms | Data  Transmission Integrity Check | N/A |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346474,
+              "key": "d8f6d0bc-e45c-4a5f-ab94-b0ecd0730844",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This requirement is going to be solved with something called an End2End (E2E) protocol. We're going to discuss this protocol towards the end of the lesson in the part labeled \"Freedom from Interference - Communication\"\n\nHere are software safety requirements derived from the technical safety requirements 02:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346468,
+              "key": "1d4a7e89-6ef6-4844-8bfa-541caff53a22",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| ID | Technical Safety Requirement | ASIL | Allocation Software Elements | Safe State |\n|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------|------------------------------|----------------------|\n| SoftwareSafetyRequirement02-01 | Any data to be transmitted outside of the LDW Safety component (“LDW Safety”) including \"LDW_Torque_Req\" and “activation_status” (see SofSafReq03-02) shall be protected by an End2End(E2E) protection mechanism | C | E2ECalc | LDW_Torq_Req= 0 (Nm) |\n| SoftwareSafetyRequirement02-02 | The E2E protection protocol shall contain and attach the control data: alive counter (SQC) and CRC to the data to be transmitted. | C | E2ECalc | LDW_Torq_Req= 0 (Nm) |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346465,
+              "key": "c7e20319-01d7-4a77-8461-c7a2ba34d163",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Software Safety Requirements Derived from Technical Safety Requirement 03\n\nTechnical Safety Requirement 03:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346476,
+              "key": "4352da83-9f39-4d91-8575-fb0d7e6d3c22",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| ID | Technical Safety Requirement | ASIL | Fault  Tolerant  Time  Interval | Allocation to Architecture | Safe State |\n|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|------|---------------------------------|----------------------------|----------------------------------|\n| TechnicalSafetyRequirement03 | As soon as a failure is detected by the LDW function, it shall deactivate the LDW feature and the LDW_Torque_Request shall be set to zero | C | 50 ms | LDW Safety | LDW torque output is set to zero |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346477,
+              "key": "f91ba3a6-c42d-46cf-8102-18093a6dd62b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "To solve the deactivation requirement, we are going to add an error detection block as an extra check on shutting down the lane keeping system. Each software block will output a signal as to whether or not an error has occurred. The signal will go to the \"Final EPS Torque Generator\" block alongside the actual torque request. \n\nHere are the new software safety requirements:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346469,
+              "key": "a7612f27-3e3a-4f22-86a3-b02e150c664a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| ID | Technical Safety Requirement | ASIL | Allocation Software Elements | Safe State |\n|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------|------------------------------|--------------------------------------------------|\n| SoftwareSafetyRequirement03-01 | Each of the SW elements shall output a signal to indicate any error which is detected by the element.  Error signal = error_status_input(LDW_SAFETY_INPUT_PROCESSING), error_status_torque_limiter(TORQUE_LIMITER), error_status_output_gen(LDW_SAFETY_OUTPUT_GENERATOR) | C | All | N/A |\n| SoftwareSafetyRequirement03-02 | A software element shall evaluate the error status of all the other software elements and in case any 1 of them indicates an error, it shall deactivate the LDW feature (“activation_status”=0) | C | LDW_SAFETY_ACTIVATION | Activation_status = 0 (LDW function deactivated) |\n| SoftwareSafetyRequirement03-03 | In case of no errors from the software elements, the status of the LDW feature shall be set to activated (“activation_status”=1) | C | LDW_SAFETY_ACTIVATION | N/A |\n| SoftwareSafetyRequirement03-04 | In case an error is detected by any of the software elements, it shall set the value of its corresponding torque to 0 so that “LDW_Torq_Req” is set to 0 | C | All | LDW_Torq_Req = 0 |\n| SoftwareSafetyRequirement03-05 | Once the LDW functionality has been deactivated, it shall stay deactivated till the time the ignition is switched from off to on again.  | C | LDW_SAFETY_ACTIVATION | Activation_status = 0 (LDW function deactivated) |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346466,
+              "key": "ae67c920-b29c-4c12-9b9c-79d15d449c01",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Software Safety Requirements Derived from Technical Safety Requirement 04\n\nOur fourth technical safety requirement discusses sending an error signal to the car display ECU:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346478,
+              "key": "6b0d33fa-d41e-46da-8ae6-bfd385dfb6b6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| ID | Technical Safety Requirement | ASIL | Fault  Tolerant  Time  Interval | Allocation to Architecture | Safe State |\n|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|------|---------------------------------|----------------------------|----------------------------------|\n| TechnicalSafetyRequirement04 | As soon as the LDW function deactivates the LDW feature, the LDW Safety software block shall send a signal to the car display ECU to turn on a warning light | C | 50 ms | LDW Safety | LDW torque output is set to zero |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346479,
+              "key": "c3e3b753-4db9-4733-9650-ed0792540103",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "And here is a software safety requirement for technical safety requirement number 04:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346471,
+              "key": "a2614fd1-0d5b-4a18-abe9-1541051cc047",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| ID | Technical Safety Requirement | ASIL | Allocation Software Elements | Safe State |\n|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------|------|---------------------------------------|------------|\n| SoftwareSafetyRequirement04-01 | When the LDW function is deactivated (activation_status set to 0), the activation_status shall be sent to the car displayECU. | C | LDW_SAFETY_ACTIVATION, CarDisplay ECU | N/A |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346467,
+              "key": "019a4d5d-1a80-49ba-a17f-5a7758ea59d5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Software Safety Requirements Derived from Technical Safety Requirement 05\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346480,
+              "key": "a44e269e-3343-45cd-8ae9-5bcdb04e73fe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "And finally, technical safety requirement 05:\n\n| ID | Technical Safety Requirement | ASIL | Fault  Tolerant  Time  Interval | Allocation to Architecture | Safe State |\n|------------------------------|-------------------------------------------------------------------------------------------|------|---------------------------------|----------------------------|----------------------------------|\n| TechnicalSafetyRequirement05 | Memory test shall be conducted at start up of the EPS ECU to check for any faults in memory | A | Ignition Cycle | Memory Test | LDW torque output is set to zero |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346481,
+              "key": "324f787c-2350-4e57-a4e4-27df3eaccae9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here are typical software safety requests for memory tests:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346475,
+              "key": "af1e4067-df3e-4725-accf-53f34542fd1a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| ID | Technical Safety Requirement | ASIL | Allocation Software Elements | Safe State |\n|--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------|------------------------------|-----------------------|\n| SoftwareSafetyRequirement05-01 | A CRC verification check over the software code in the Flash memory shall be done every time the ignition is switched from off to on to check for any corruption of content. | A | MEMORYTEST | Activation_status = 0 |\n| SoftwareSafetyRequirement05-02 | Standard RAM tests to check the data bus, address bus and device integrity shall be done every time the ignition is switched from off to on (E.g.walking 1s test, RAM pattern test. Refer RAM and processor vendor recommendations ) | A | MEMORYTEST | Activation_status = 0 |\n| SoftwareSafetyRequirement05-03 | The test result of the RAM or Flash memory shall be indicated to the LDW_Safety component via the “test_status” signal | A | MEMORYTEST | Activation_status = 0 |\n| SoftwareSafetyRequirement05-04 | In case any fault is indicated via the “test_status” signal the INPUT_LDW_PROCESSING shall set an error on error_status_input (=1) so that the LDW functionality is deactivated and the LDWTorque is set to 0 | A | LDW_SAFETY_INPUT_PROCESSING | Activation_status = 0 |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346484,
+              "key": "b2b9ab67-3d62-49ba-9247-3e4f2cc7380f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Final Project\n\nIn the final project, you will need to document the information presented on this page. The information will go into the \"Software Safety Requirements and Architecture Lane Assistance\" document.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346241,
+          "key": "2b93030b-6ce7-46de-9c8f-46f2e3770b66",
+          "title": "Other Sources of Software Safety Requirements",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2b93030b-6ce7-46de-9c8f-46f2e3770b66",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346485,
+              "key": "e94bb5fa-574d-47e7-ae3f-25bf91a9d46f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "At this point, you have all of the information you need to do the final project. The rest of the lesson focuses on some of the most important sources of software safety requirements.\n\nMany software safety requirements are derived directly from technical safety requirements; however, there are other sources of software safety requirements besides technical safety requirements:\n* requirements to ensure robustness and quality of software\n* requirements to ensure freedom from interference\n\nHere is a diagram showing the three sources of software safety requirements:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350290,
+              "key": "3b688b15-1f0e-4f14-8991-7d1b8c250836",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976c34b_technical-requirements-to-software-requirements-map-01/technical-requirements-to-software-requirements-map-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3b688b15-1f0e-4f14-8991-7d1b8c250836",
+              "caption": "Sources of Software Safety Requirements",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 350289,
+              "key": "8efbb125-ee32-449d-9ee9-3288aca393d0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Software bugs are a very important source of error if not the number one source of error in terms of automotive functional safety. The more you understand about safety critical software, the better your software safety requirements will be.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346483,
+              "key": "6af58f62-fa41-4957-be85-b28da26f0367",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Software Robustness and Quality",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350072,
+              "key": "cdd3205e-e551-40da-b3ee-e783572396d4",
+              "title": "L6 11-12 Software Safety Robustness And Quality",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "RQEnvtti3sM",
+                "china_cdn_id": "RQEnvtti3sM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 346243,
+          "key": "67e18a0b-b415-45fe-bf5c-51030af29470",
+          "title": "Freedom from Interference - Spatial",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "67e18a0b-b415-45fe-bf5c-51030af29470",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346505,
+              "key": "18952f05-470f-4064-b09f-55754a7a55fa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Freedom from Spatial Interference",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350074,
+              "key": "3fcf5750-a007-41a1-8072-d9c35c9e921f",
+              "title": "L6 13 Freedom From Interference Spatial",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HraIGQSxsQ0",
+                "china_cdn_id": "HraIGQSxsQ0.mp4"
+              }
+            },
+            {
+              "id": 346486,
+              "key": "28526b4b-b9f6-4304-8f56-4723684b9231",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Mechanisms for Ensuring Freedom From Spatial Interference\n\nThere are a few common mechanisms for ensuring freedom from spatial interference like memory protection units and dual storage of relevant data. \n\nMPU is a prevention method because it stops elements from accessing memory to which they should not have access. An MPU can be programmed to set up the proper read, write and execute permissions between software elements.\n\nDual storage of relevant data like with a 2's complement is a detection method. With a 2's complement, you can detect that the data has changed and is no longer valid. But you can no longer use the data.\n\nOther mechanisms to protect against memory interference include:\n* Redundancy checks such as CRC to make sure data does not inadvertently change.\n* Micro-controllers with memory error detection and correction capabilities\n* Operating systems that allow software units to have their own virtual memory space\n\nOne mechanism mentioned was to store a [2's complement](https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html) of safety relevant data. A 2's complement is a way of represent negative integers in binary.\n\nA [CRC](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) (cyclic redundancy check) is a way to check if data has changed during transmission. They work by adding appending a value to the data and then ensuring that the value hasn't changed over the transmission.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 495304,
+              "key": "40ee581b-41b5-49bc-8a4c-5191e0f52cb8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please note that for addressing deadlocks, disabling OS interrupts that would stop process preemption, is inefficient and could compromise the overall response time and system latency.  An alternative is a feature that is provided by a Real Time Operating System (RTOS) is a [priority ceiling](https://en.wikipedia.org/wiki/Priority_ceiling_protocol).\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346245,
+          "key": "b9e8e219-ba7b-4254-abcc-9cd5e9831162",
+          "title": "Freedom from Interference - Temporal",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b9e8e219-ba7b-4254-abcc-9cd5e9831162",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350080,
+              "key": "46614479-6906-4eb8-aae9-f2fe78c82ca2",
+              "title": "L6 15 Freedom From Interference Temporal",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ChGZCPXko7M",
+                "china_cdn_id": "ChGZCPXko7M.mp4"
+              }
+            },
+            {
+              "id": 346487,
+              "key": "b40d3b0a-9dbf-43ac-9535-1063d56116d3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Solving Deadlocks\n\nThere are various algorithms for avoiding deadlocks including a measure called disabling interrupts. When interrupts are enabled, one process can interrupt another process. So in our example, thread one needs resource B and is trying to grab A. But thread two keeps interrupting thread one to grab A back. Disabling interrupts would allow thread one to grab A.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346488,
+              "key": "18cb77e7-3584-496b-8182-033329be8b88",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Mechanisms for Freedom from Temporal Interference\n\nMechanisms to avoid temporal interference include cyclic execution scheduling, fixed priority based scheduling, time triggered scheduling, monitoring of processor execution time, program sequence monitoring, and arrival rate monitoring.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346247,
+          "key": "e4c6d974-866a-444b-9194-0638971fac42",
+          "title": "Freedom from Interference - Temporal Part 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e4c6d974-866a-444b-9194-0638971fac42",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346489,
+              "key": "d49c4139-8c94-457f-8f81-f9c53a0116d8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### More Examples of Temporal Interference",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350081,
+              "key": "934b581d-723c-40c1-aeb3-21d3fb13373b",
+              "title": "L6 17 Freedom From Interference Temporal Part 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wRbGk0SwWNQ",
+                "china_cdn_id": "wRbGk0SwWNQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 350741,
+          "key": "70825a67-3c41-4343-830d-1e393079e4db",
+          "title": "Sebastian and Temporal Interference",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "70825a67-3c41-4343-830d-1e393079e4db",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350743,
+              "key": "b8e56afd-b252-4c09-88b8-41dbad2c5250",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Temporal Interference Example\n\nIn this video, Sebastian discusses an example of temporal interference when developing Stanley for the DARPA challenge.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350742,
+              "key": "e71f166c-fb5b-4d9d-9950-2765b1e84ad9",
+              "title": "L6 Sebastian",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AD47B4rAKyY",
+                "china_cdn_id": "AD47B4rAKyY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 346250,
+          "key": "e8dd3958-a886-487d-924e-d4ec287a4d65",
+          "title": "Freedom from Interference - Communication",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e8dd3958-a886-487d-924e-d4ec287a4d65",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350082,
+              "key": "d01e60e4-606b-4368-8eb0-d331ab561b88",
+              "title": "L6 18 Freedom From Interference Communication",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "J2T842SLPgs",
+                "china_cdn_id": "J2T842SLPgs.mp4"
+              }
+            },
+            {
+              "id": 346490,
+              "key": "6dfae05f-e605-4b90-b7fe-8f2df1e63ccf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Common Causes of Communication Interference\n\nThere are many causes for communication faults. These causes would be analyzed in a software safety analysis or sometimes in a technical safety analysis:\n* Repetition of information\n* Loss of information\n* Delay of information\n* Insertion of information\n* Masquerade or incorrect addressing of information\n* Incorrect sequence of information\n* Corruption of information\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346491,
+              "key": "5141d888-519e-4fe9-a993-fef5ab09200b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Other Mechanisms for Ensuring Freedom from Communication Interference\n\nThere are a handful of measures for avoiding communication interference. These mechanisms could be used to define software safety requirements that help avoid communication faults. Mechanisms for ensuring freedom from interference include:\n* Loopback of information\n* Acknowledgement of information\n* Appropriate configuration of I/O pins\n* Bus arbitration by priority\n* E2E protocol\n\nFor example, one technical safety requirement was \"the validity and integrity of the data transmission for 'LDW_Torque_Request' signal shall be ensured\". This technical safety requirement could be refined into a software safety requirement that the data shall be protected by an End2End mechanism.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346494,
+              "key": "656019a4-cdae-41e2-8f38-ef039e6a609c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Example specification for E2E protection protocol",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350292,
+              "key": "ea01cc55-02e8-4e4e-8d89-1be6f4bbf983",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The image below shows an example of an E2E protocol.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350291,
+              "key": "0058ba47-059d-4b3d-9fe7-214ac819bc76",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976c40c_e2e-protocol-01/e2e-protocol-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0058ba47-059d-4b3d-9fe7-214ac819bc76",
+              "caption": "Example of an E2E Protocol",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 346492,
+              "key": "1427c8fe-a6c3-4e5f-9a1f-d1a3659bc142",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The mechanism involves adding two extra data-bytes called a CRC (Cyclical Redundancy Check) and an SQC (Sequence Counter) when transmitting data. To calculate the CRC, you run a mathematical formula on the data to be transmitted. You then attach the CRC result to the data prior to transmission.  When the data is received, the mathematical formula is run on the data set again. The CRC attached to the data and the CRC calculated on the receiving end should be the same; otherwise, data data has probably been corrupted in transmission.\n\nThe SQC is just a counter that gets sent along with the data. That way the receiver can make sure that messages haven't been lost.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346495,
+              "key": "d3bf479b-1c21-440d-8cad-9c64734929d8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### E2E Software Safety Requirements for the Lane Departure Warning (LDW)\n\nIn the concept about \"Software Safety Requirements Lane Departure Warning\", we already discussed that technical safety requirement 02 could be taken care of with an E2E protocol. Let's go into more depth about this technical requirement and the related software safety requirements. Here was the technical safety requirement:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346496,
+              "key": "ccccda86-1119-4a5c-b8f8-392d0f75c08f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| ID | Technical Safety Requirement | ASIL | Fault  Tolerant  Time  Interval | Allocation to Architecture | Safe State |\n|------------------------------|-------------------------------------------------------------------------------------------------|------|---------------------------------|------------------------------------|------------|\n| TechnicalSafetyRequirement02 | The validity and integrity of the data transmission forLDW_Torque_Request signal shall be ensured | C | 50 ms | Data  Transmission Integrity Check | N/A |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346497,
+              "key": "1893391a-b3fd-4d13-b0da-fb08d65e6a67",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "And here as well is the software safety architecture:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350293,
+              "key": "897290c9-6f20-4754-ba8b-718e01e16e65",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976c46c_refined-system-architecture-l6-01/refined-system-architecture-l6-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/897290c9-6f20-4754-ba8b-718e01e16e65",
+              "caption": "System Software Architecture",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 346499,
+              "key": "88f76380-06f1-424b-b0d2-b1ccef6a39fb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You can see we've added an E2E calculation for the two signals that leave the LDW Safety component. We need to make sure there is no corruption when the 'Processed_LDW_Torque_Request' signal travels to the \"Final EPS Torque Generator\". The E2E Calculation component would run a calculation on the signal to be transferred and attach the calculation to the signal. \n\nThen the \"Final EPS Torque Generator\" component would run the same calculation and compare the results from before and after transmission. If the results are the same, then you can assume the data remains intact.\n\nWe would use the same mechanism when the \"LDW_Safety_Activation\" component sends its signal to the \"Final EPS Torque Generator\".  \n\nSo here again are the software safety requirements:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346500,
+              "key": "9379b3a2-f5f4-4478-b449-f7b196827bee",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| ID | Technical Safety Requirement | ASIL | Allocation Software Elements | Safe State |\n|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------|------------------------------|----------------------|\n| SoftwareSafetyRequirement02-01 | Any data to be transmittedoutside of the LDW Safetycomponent (“LDW Safety”)including \"LDW_Torque_Req\"and “activation_status” (seeSofSafReq03-02) shall beprotected by an End2End(E2E)protection mechanism | C | E2ECalc | LDW_Torq_Req= 0 (Nm) |\n| SoftwareSafetyRequirement02-02 | The E2E protection protocolshall contain attach the controldata: alive counter (SQC) andCRC to the data to betransmitted. | C | E2ECalc | LDW_Torq_Req= 0 (Nm) |",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346252,
+          "key": "0ecf61f6-50dc-4716-8709-bfce2d322699",
+          "title": "System Architecture Safety Design Patterns",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0ecf61f6-50dc-4716-8709-bfce2d322699",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350107,
+              "key": "61f98699-b0ef-427f-88eb-7437a8972345",
+              "title": "L6 20 System Architecture Safety Design Patterns",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9q8WAW-g8jE",
+                "china_cdn_id": "9q8WAW-g8jE.mp4"
+              }
+            },
+            {
+              "id": 346501,
+              "key": "d4d7b9a0-de1c-4770-9e05-31de2c511483",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Where does the Name E-gas Come from?\n\nThe E-gas design pattern originally comes from an acceleration drive-by-wire system. Originally the gas pedal on a car had a direct mechanical connection to the throttle valve on an engine. The throttle valve regulates how much air enters into the engine. \n\nIn modern cars, the accelerator pedal is an electronic sensor. When you push down on the accelerator pedal, software interprets how much you want to accelerate. And then the software opens or closes the throttle valve. The E-gas software pattern was developed to monitor faults in drive-by-wire acceleration systems. In the case of a gasoline engine system failure, the level 2 or level 3 monitoring functions could lower the throttle.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346502,
+              "key": "af35943a-c58e-441c-9910-9bc3aea3e7fb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Software Partitioning and Safety Monitoring\n\nSafety monitoring and software partitions are  software mechanisms commonly solved with design patterns. \n\nFor safety monitoring, there are specific patterns like the E-GAS concept which was explained. In the case of software partitions, one pattern is to use a hardware feature called MPU along with dual data storage.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346223,
+          "key": "c1411a7b-84c7-4936-95d2-ef693192eca5",
+          "title": "Lesson Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c1411a7b-84c7-4936-95d2-ef693192eca5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346503,
+              "key": "2e63ee62-b265-4e0b-845e-e05468cd1860",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lesson Summary",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350111,
+              "key": "6cee11c4-8455-4bc7-9254-affcdec1c653",
+              "title": "L6 22 L Lesson Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zSyoNGrZZ0k",
+                "china_cdn_id": "zSyoNGrZZ0k.mp4"
+              }
+            },
+            {
+              "id": 350294,
+              "key": "12121b47-a233-48ed-bfd1-639156323326",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976c4a0_l6-outline-of-material-presented-so-far-software-hardware-01/l6-outline-of-material-presented-so-far-software-hardware-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/12121b47-a233-48ed-bfd1-639156323326",
+              "caption": "Outline from Item Definition to Software and Hardware Requirements",
+              "alt": null,
+              "width": 3116,
+              "height": 2150,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 346225,
+          "key": "be6a962d-36d5-446d-9638-7b73b8e1c46c",
+          "title": "Module Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "be6a962d-36d5-446d-9638-7b73b8e1c46c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346504,
+              "key": "a9b0e4e1-bcdc-49fd-a4fe-fd40124c90cd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Module Outro",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350113,
+              "key": "cd1c581b-887d-468f-8bb4-ccf8b6c5e7da",
+              "title": "L6 24 L Module Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QT-4yIV9dEM",
+                "china_cdn_id": "QT-4yIV9dEM.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

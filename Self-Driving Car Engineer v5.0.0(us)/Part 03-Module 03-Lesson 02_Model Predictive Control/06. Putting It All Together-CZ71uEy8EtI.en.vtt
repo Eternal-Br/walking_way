@@ -1,0 +1,61 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.100
+Model predictive control uses
+
+00:00:02.100 --> 00:00:05.990
+an optimizer to find the control inputs and minimize the cost function.
+
+00:00:05.990 --> 00:00:09.419
+We actually only execute the very first set of control inputs.
+
+00:00:09.419 --> 00:00:13.580
+This brings the vehicle to a new state and then you repeat the process.
+
+00:00:13.580 --> 00:00:15.339
+Here is the MPC algorithm.
+
+00:00:15.339 --> 00:00:18.634
+First, we set up everything required for the model predictive control loop.
+
+00:00:18.635 --> 00:00:21.630
+This consists of defining the duration of the trajectory,
+
+00:00:21.629 --> 00:00:23.554
+T, by choosing N and dt.
+
+00:00:23.554 --> 00:00:29.410
+Next, we define the vehicle model and constraints such as actual limitations.
+
+00:00:29.410 --> 00:00:31.225
+Finally, we define the cost function.
+
+00:00:31.225 --> 00:00:32.745
+With the setup complete,
+
+00:00:32.744 --> 00:00:34.714
+we begin to state feedback loop.
+
+00:00:34.715 --> 00:00:37.885
+First, we pass the current state to the model predictive controller.
+
+00:00:37.884 --> 00:00:40.085
+Next, the optimization solver is called.
+
+00:00:40.085 --> 00:00:41.999
+The solver uses the initial state,
+
+00:00:41.999 --> 00:00:44.260
+the model constraints and cost function to
+
+00:00:44.259 --> 00:00:47.739
+return a vector of control inputs that minimize the cost function.
+
+00:00:47.740 --> 00:00:50.319
+The solver we'll use is called IPOPT.
+
+00:00:50.319 --> 00:00:53.400
+We apply the first control input to the vehicle and repeat the loop.
+

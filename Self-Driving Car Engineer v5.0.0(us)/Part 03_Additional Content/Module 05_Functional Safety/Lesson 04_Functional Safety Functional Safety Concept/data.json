@@ -1,0 +1,884 @@
+{
+  "data": {
+    "lesson": {
+      "id": 345283,
+      "key": "77ba6d2d-fd67-4ed3-96ba-128120ca25c7",
+      "title": "Functional Safety: Functional Safety Concept",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "You will derive functional safety requirements from the safety goals and then add extra functionality to the system diagram. Finally you document your work, a part of functional safety.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/77ba6d2d-fd67-4ed3-96ba-128120ca25c7/345283/1538849957960/Functional+Safety%3A+Functional+Safety+Concept+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/77ba6d2d-fd67-4ed3-96ba-128120ca25c7/345283/1538849954645/Functional+Safety%3A+Functional+Safety+Concept+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 346094,
+          "key": "2ca42638-848c-4423-bddd-8dc5e27cf19e",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2ca42638-848c-4423-bddd-8dc5e27cf19e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 349798,
+              "key": "ec306d01-2696-4c2b-bb92-5b27de4cdf8c",
+              "title": "L4 01 L Introduction",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "srUVh4mBvws",
+                "china_cdn_id": "srUVh4mBvws.mp4"
+              }
+            },
+            {
+              "id": 346098,
+              "key": "da8f76de-4ffc-4300-ace7-74c1f2192095",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You might start recognizing a pattern as we continue to travel down the levels of the V model; you will keep identifying new requirements and then allocate those requirements to different parts of the item architecture.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346099,
+              "key": "743280cb-5e92-480b-a72b-646abc0cd929",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Attributes of a Functional Safety Requirement\n\nFirst you refine the safety goals in what are called functional safety requirements. Remember that requirements define what the vehicle needs to do; in other words, requirements define the vehicle's functions..\n\nYou need to allocate these safety requirements to the relevant parts of the system diagram. Allocation means defining which part of the system architecture will implement each requirement. This could involve expanding the system architecture with new element blocks.\n\nYou will then refine the system architecture to handle the new requirements.\n\nFunctional safety requirements also have a few attributes that need to be specified in the functional safety concept:\n- the ASIL level\n- the fault tolerant time interval, which measures how quickly a system needs to react to a hazardous situation\n- And the safe state, which discusses what a system looks like after it has avoided an accident\n\nWe are also going to discuss verification and validation, which is how you prove that a system actually meets your requirements.\n\nAll of this information will go into the functional safety concept.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346100,
+              "key": "11daf446-556e-4a84-92c2-403c812aa68b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Scope of the Functional Safety Concept\n\nWhile this lesson teaches how to create a functional safety concept, the next lesson will focus on a document called the technical safety concept. The functional safety concept and technical safety concept are similar in that you will need to identify new requirements and allocate these requirements to system diagrams. \n\nThe difference is that the functional safety concept is looking at the item from a higher level. In the technical safety concept, you will start thinking about sensors, control units and actuators. Technical safety requirements are general hardware and software requirements but still without getting into specific details. For example, in the technical safety concept you might realize that you need to add more ECUs, sensors, and extra software blocks to your system. \n\nYou will see in this lesson that the functional safety concept does not go into technical details. The functional safety concept looks at the general functionality of the item; the technical safety concept looks at the technical implementation of the item. In practice, developing these two documents is an iterative process where new functional requirements could lead to new technical requirements which could lead back to new functional requirements. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346102,
+          "key": "aa763eca-7ca6-4eed-bc95-6b27c4995ff6",
+          "title": "Functional Safety Analysis",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "aa763eca-7ca6-4eed-bc95-6b27c4995ff6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346103,
+              "key": "f7ec3e8c-eb13-401a-9934-6d83ae6c64c2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Functional Safety Analysis\n\nBefore we derive safety requirements, let's talk about malfunctions. We've said that the main purpose or function of the lane departure warning and lane keeping assistance is to provide vibrational steering feedback and torque to the driver as haptic feedback. And we had a safety goal to limit the oscillating torque.\n\nWhat would be a malfunction for this? One approach is to use guide words.  ISO 26262 does not provide guidewords, however companies often use these as part of their guidelines. Some example guidewords for this case are:\n\n* NO\n* WRONG\n* EARLY\n* MORE\n* LESS\n\nSo in the case of the lane departure warning, \"MORE\" seems like an appropriate guide word; the lane departure warning is giving MORE torque than what is safe. There would be two malfunctions. The oscillating amplitude is too high and the oscillating frequency is too high. Formally, the malfunctions would be:\n\n\"The lane departure warning function applies an oscillating torque with very high torque amplitude (above limit)\"\n\n\"The lane departure warning function applies an oscillating torque with very high torque frequency (above limit)\"\n\nFor the lane keeping assistance function, \"NO\" would be an appropriate guide word. The lane keeping assistance keeps the vehicle centered in the lane. The malfunction would be that the assistance has no time limit. The malfunction would be:\n\n\"The lane keeping assistance function is not limited in time duration which leads to misuse as an autonomous driving function.\"\n\nNotice that the information in the functional safety analysis comes from the hazard analysis and risk assessment. While this exercise might seem trivial, imagine having hundreds of functions each with various malfunctions. The guide words help to analyze functions and malfunctions methodically. These malfunctions are then converted into functional safety requirements",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346104,
+          "key": "c5ad8ba4-2d9d-44b6-bede-d7dd3aef381a",
+          "title": "Functional Safety Requirements",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c5ad8ba4-2d9d-44b6-bede-d7dd3aef381a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 349799,
+              "key": "6bfcabd5-3b92-4a4a-9135-56258c26fc3c",
+              "title": "L4 03 Functional Safety Requirements",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9z5YqMYH7mY",
+                "china_cdn_id": "9z5YqMYH7mY.mp4"
+              }
+            },
+            {
+              "id": 346166,
+              "key": "f344a0e1-75ad-48ce-83df-52f22f072ecc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lane Keeping Assistance Functional Safety Requirement\n\n\nFor the lane keeping assistance function, the malfunction was that there was no time limit, and the driver could treat the system as if it were designed for autonomous driving. We determined a safety goal saying the \"lane keeping assistance function shall be time limited and the additional steering torque shall end after a given timer interval so that the driver can not misuse the system for autonomous driving\". In other words, the lane assistance system should stop applying extra torque after a certain amount of time.\n\nIn this example as well, we can still meet the safety requirement by merely adding functionality to the power steering ECU. For the lane keeping assistance function, we'll define a new requirement that \"the electronic power steering ECU shall ensure that the lane keeping assistance torque is applied for only Max_Duration\".\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346170,
+              "key": "81751062-d042-43e6-aee8-a29a3c63041c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Safety Analysis Methods\n\nWe have used some basic logic to derive functional safety requirements from the safety goals. \n\nThere are also more formal methods for deriving functional safety requirements. These methods are not only used in functional safety but also in general systems engineering. In functional safety, these methods can be used in a variety of situations:\n* Deriving safety requirements\n* Identifying conditions and causes that could lead to requirement violations\n* Identifying other hazards not identified in the Hazard Analysis and Risk Assessment\n\nDifferent companies might use different methods including: \n\n* [Failure Modes and Effects Analysis (FMEA)](https://en.wikipedia.org/wiki/Failure_mode_and_effects_analysis)\n\n* [Hazard and Operability Study (HAZOPS)](https://en.wikipedia.org/wiki/Hazard_and_operability_study)  Note that HAZOP differs from the other items here in that it is a technique that used to derive hazards similar to the methods used in ISO 26262 HARA .\n\n* [Failure Modes Effects and Diagnostic Analysis FMEDA](https://en.wikipedia.org/wiki/Failure_modes,_effects,_and_diagnostic_analysis)\n\n* [Fault Tree Analysis (FTA)](https://en.wikipedia.org/wiki/Fault_tree_analysis)\n\n* [Reliability Block Diagram](https://en.wikipedia.org/wiki/Reliability_block_diagram)\n\n* [ETA](https://en.wikipedia.org/wiki/Event_tree_analysis)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346109,
+          "key": "ad04d788-8fd0-4b3e-ae24-8f9d01721dbb",
+          "title": "Allocation to the Architecture",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ad04d788-8fd0-4b3e-ae24-8f9d01721dbb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346171,
+              "key": "9801cb66-141c-4c37-82e9-28845255d4d0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Review\nLet's reiterate what has been done so far. The hazard analysis and risk assessment led to two safety goals:\n1. The oscillating steering torque from the lane departure warning function shall be limited\n2. The lane keeping assistance function shall be time limited, and the additional steering torque shall end after a given time interval so that the driver cannot misuse the system for autonomous driving.\n\nYou then derived two functional safety requirements from safety goal number 1:\n1. The lane keeping item shall ensure that the lane departure oscillating torque amplitude is below Max_Torque_Amplitude\n2. The lane keeping item shall ensure that the lane departure oscillating torque frequency is below Max_Torque_Frequency\n\nFor safety goal number 2, you derived a functional safety requirement that \"the electronic power steering ECU shall ensure that the lane keeping assistance torque is applied for only Max_Duration\". \n\nYour next step will be to figure out where these requirements belong in the system architecture.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 349809,
+              "key": "b186dfde-aac3-4a51-91d2-d62d4d208707",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Allocation of Requirements to the System Architecture",
+              "instructor_notes": ""
+            },
+            {
+              "id": 349800,
+              "key": "4d75bf23-6242-45fe-a3c9-7f2b0b78632a",
+              "title": "L4 06 Allocation Of Requirements To Architecture",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "cDkQLZ3PJqM",
+                "china_cdn_id": "cDkQLZ3PJqM.mp4"
+              }
+            },
+            {
+              "id": 346174,
+              "key": "5dd3b9de-32cd-4f97-8e85-90e290405fc0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346175,
+              "key": "e00d3e0a-6270-4bee-8309-0047fa4711af",
+              "title": "Allocation of Requirements to Architecture",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e00d3e0a-6270-4bee-8309-0047fa4711af",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "\nFor the lane keeping assistance functional safety requirement, we only had one safety requirement. We said that the \"electronic power steering ECU shall ensure that the lane keeping assistance torque is applied for only Max_Duration\". What would be the correct allocation to the architecture elements?",
+                "answers": [
+                  {
+                    "id": "a1499890818000",
+                    "text": "This functional safety requirement needs to be allocated to the camera ECU as well as the electronic power steering ECU.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499890894882",
+                    "text": "The functional safety requirement needs to be allocated to the camera ECU, the electronic power steering ECU, and the display ECU.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499890895658",
+                    "text": "The functional safety requirement needs to only be allocated to the electronic power steering ECU. ",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499890896362",
+                    "text": "The functional safety requirement needs to only be allocated to the camera ECU.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 346111,
+          "key": "50802613-a330-4a06-9662-8460cc53a92c",
+          "title": "Architecture Refinement",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "50802613-a330-4a06-9662-8460cc53a92c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 349802,
+              "key": "2ed338dd-dc0c-450f-959e-7dccb8a3d268",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Architecture Refinement",
+              "instructor_notes": ""
+            },
+            {
+              "id": 349801,
+              "key": "87ae0cf5-4f31-43bc-ae43-654282736317",
+              "title": "Architecture Refinement",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SK85D4cvwXo",
+                "china_cdn_id": "SK85D4cvwXo.mp4"
+              }
+            },
+            {
+              "id": 346176,
+              "key": "0e1367d4-e1de-4a9e-97f8-3c163e01d54c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lane Keeping Assistance Function\n\nWhat about the lane keeping assistance function? For now, we can also assume that the lane keeping assistance function will be part of the lane keeping software block that we already added to the system architecture.\n\nNot all requirements, however, need software blocks. For example, requirements can also be solved with mechanical systems. Oftentimes, it is easier to implement a mechanical solution rather than using software.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346113,
+          "key": "d5182acb-03fa-4f60-9882-845aa2cc1adc",
+          "title": "ASIL Inheritance",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d5182acb-03fa-4f60-9882-845aa2cc1adc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 349808,
+              "key": "6dcffccb-d9c3-4bf0-aefc-7b430cae6e23",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### ASIL Inheritance",
+              "instructor_notes": ""
+            },
+            {
+              "id": 349803,
+              "key": "4318c8eb-24d1-4a79-b019-25ac2a6f43e5",
+              "title": "L4 10 Function Safety Requirements And ASIL Inheritance",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "As noted in a note to a previous video, the \"QM\" rating does not mean functional safety is irrelevant - QM approaches need to be applied to ensure lower level risks are mitigated, but they are not directly covered under ISO 26262.",
+              "video": {
+                "youtube_id": "oeKSXaP7Lxg",
+                "china_cdn_id": "oeKSXaP7Lxg.mp4"
+              }
+            },
+            {
+              "id": 346177,
+              "key": "f5f350f2-0615-44f0-b6d8-d10d05bd414a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n### Electronic Power Steering SubSystem ASIL\n\nWe didn't directly talk about the driver steering sensor or the motor that turns the steering wheel. We simplified things marking both as ASIL C even though the functional safety requirements only pertained to the power steering ECU. \n\nThe motor to turn the steering wheel would also be marked ASIL C since it is an integral part to ensuring the lane assistance torque does not create unsafe conditions. You can consider that the entire lane keeping item has the highest ASIL identified from the hazard and risk analysis unless you can justify otherwise.\n\nRemember that our example is a simplification of a real system.  By virtue of safety requirements that comprise the safety goal design parameters,  there would be functional safety requirements directly associated with  to the steering wheel motor as well as the driver torque steering wheel sensor. In fact, most auto manufacturers would label an entire electronic power steering system ASIL D based on a hazard analysis and risk assessment.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346178,
+              "key": "b10fc83f-115c-443c-94c2-91b062742ed1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz\n\n\nFor the lane keeping assistance function, recall that the safety goal was that the \"Lane keeping assistance function shall be time limited and the additional steering torque shall end after a given timer interval so that the driver can not misuse the system for autonomous driving\".\n\nThe functional safety requirement was that \"the electronic power steering ECU shall ensure that the lane keeping assistance torque is applied for only Max_Duration\". \n\nWhat is the ASIL of the functional safety requirement?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346179,
+              "key": "4632a522-1246-4302-b0eb-84b52dd806aa",
+              "title": "ASIL of the lane keeping assistance function",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4632a522-1246-4302-b0eb-84b52dd806aa",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the ASIL of the lane keeping assistance functional safety requirement?",
+                "answers": [
+                  {
+                    "id": "a1499891726828",
+                    "text": "A",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499891818901",
+                    "text": "B",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499891819773",
+                    "text": "C",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499891820341",
+                    "text": "D",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 346117,
+          "key": "b4086098-e04c-4c9a-8f47-5ba4a69e7ad2",
+          "title": "ASIL Decomposition",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b4086098-e04c-4c9a-8f47-5ba4a69e7ad2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 349804,
+              "key": "06af4002-9d26-464b-b3eb-e3b050b297f8",
+              "title": "L4 13 ASIL Decomposition",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dphScT1QTNY",
+                "china_cdn_id": "dphScT1QTNY.mp4"
+              }
+            },
+            {
+              "id": 350277,
+              "key": "dcd1fa91-7239-40bd-8cc8-6bae07298f13",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### System Diagram after ASIL Decomposition\n\nHere is the system diagram after decomposing the safety lane block:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350278,
+              "key": "cd277507-5c5a-47be-9c2a-126f38a6f851",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5beca3bb_refined-architecture-03/refined-architecture-03.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cd277507-5c5a-47be-9c2a-126f38a6f851",
+              "caption": "ASIL Decomposition Results",
+              "alt": "",
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 346180,
+              "key": "7d4f3a05-d66f-485d-8975-b22f118d23ea",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### ASIL Decomposition\n\nSplitting off an element into a QM and ASIL C element is actually offering some amount of redundancy in a sense. Let's just say after some user testing that we decide to limit the vibrational torque to +/- 3 N-m. Anything beyond +/- 3 N-m was too difficult for drivers to control. \n\nMaybe we'll put in a buffer and say that the \"normal lane assistance functionality software block\" will ask for a torque of +/- 2.8 N-m. \n\nThe \"safety lane assistance functionality\" block's only job is to make sure the torque does not go beyond +/- 3 N-m. \n\nSo you could program the \"normal\" block to only make requests between +/- 2.8 N-m. The \"safety\" block is then adding an extra check to make sure the request never goes beyond +/- 3 N-m. If the torque request goes beyond +/- 3 N-m, the safety software block will assume something has gone wrong with the system. The safety software block might not know why the malfunction occurred or what the source was. But the safety software block knows that something has gone wrong.\n\nWhy would the \"normal\" block ever request a torque beyond +/- 2.8 N-m? Two sources could be either a software bug or an ECU hardware component failure. Maybe an electrical short circuit could cause the malfunction as well.\n\nThe benefit of the ASIL decomposition is that the \"normal\" block, which will have functionality for receiving and interpreting camera subsystem signals, only needs to go through quality management protocols; otherwise, all of that functionality would have to go through the extra rigors of ASIL C testing.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350271,
+              "key": "43dbd69b-2db3-44a3-af44-7cee29c1c8c1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976b9f0_l4-asil-decomposition-graphic-01/l4-asil-decomposition-graphic-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/43dbd69b-2db3-44a3-af44-7cee29c1c8c1",
+              "caption": "Possible ASIL Decompositions",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 346187,
+              "key": "d033bb47-7b83-4841-b159-c4e358b6868a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lane Keeping Assistance Example: ASIL Inheritance and ASIL Decomposition\n\nWhere do we put the software block for the lane keeping assistance function? And what is its ASIL?\n\nLet's go back to the safety goal and functional safety requirements for the lane keeping function:\n\nFrom the Hazard Analysis and Risk Assessment, the safety goal was the \"lane keeping assistance function shall be time limited and the additional steering torque shall end after a given timer interval so that the driver can not misuse the system for autonomous driving\". We rated this ASIL B.\n\nWe then derived the functional safety requirement: \"the lane keeping item shall ensure that the lane keeping assistance torque is applied for only Max_Duration\".\n\nThe functional safety requirement inherits the ASIL from the safety goal, so this functional safety requirement is ASIL B as well.\n\nWhat do we do now? We already decided that the lane departure warning made the lane assistance software block ASIL C. But we also have a functional safety requirement with ASIL B for the same software block. If two safety requirements are assigned to the same block, the higher ASIL prevails. So the simplest answer is that the lane assistance software block would have ASIL C.\n\nThe rule in ISO 26262 is that sub-elements should inherit the highest ASIL level unless you can prove that the lower ASIL sub-element has no impact on and does not cause a failure in the higher ASIL sub-element. This is called criteria for co-existence. If you can prove that the lane keeping assistance software would not affect the lane departure warning, then you can separate out the functionality into two blocks with ASIL C and ASIL B.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346189,
+              "key": "e630406c-4266-4d15-9346-a881ca8ed518",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Criteria for Co-existence\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346193,
+              "key": "8e5f48c1-010c-45cd-b2fa-804b791ca23b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If a failure in the lane keeping assistance software element has no impact on the lane departure warning software element, then the lane keeping assistance software block can be ASIL B; otherwise, the lane keeping assistance software block needs ASIL C.\n\nThese types of failures where one element fails and then causes another element to fail is called a cascading failure.\n\nYou can avoid cascading failures by carefully designing the data and control flow of software or the input/output signals and control lines for hardware.\n\nFor the purposes of the lesson, we will assume that a failure in the lane keeping assistance function will not impact the lane departure warning function.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350274,
+              "key": "66e5eaec-9e41-4452-8041-016f9201b286",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### System Diagram after Adding Extra Safety Elements\n\nHere is the system diagram after adding safety elements for the lane departure warning and lane keeping assistance:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350272,
+              "key": "e0e7ed5c-34b2-44dd-9a0b-dce08d769f73",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5beca3d5_refined-architecture-01/refined-architecture-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e0e7ed5c-34b2-44dd-9a0b-dce08d769f73",
+              "caption": "Criteria for Co-existence",
+              "alt": "",
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 350842,
+              "key": "8191cf22-de09-4708-b86c-8bf22220c631",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz: ASIL Decomposition",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350843,
+              "key": "223ed590-1024-4a80-8956-9099bad44269",
+              "title": "ASIL Decomposition",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "223ed590-1024-4a80-8956-9099bad44269",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the main purpose of ASIL decomposition?",
+                "answers": [
+                  {
+                    "id": "a1501047135984",
+                    "text": "To reduce the ASIL on non-safety critical software.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501047154252",
+                    "text": "Software engineers will have less work to do.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501047154860",
+                    "text": "Your system diagram becomes more organized.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 346157,
+          "key": "a530253f-4f88-4edd-a610-1ac50078297c",
+          "title": "Fault Tolerant Time Interval",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a530253f-4f88-4edd-a610-1ac50078297c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346214,
+              "key": "85ee9b84-cea6-4270-8a5b-e335953430f0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Fault Tolerant Time interval",
+              "instructor_notes": ""
+            },
+            {
+              "id": 349805,
+              "key": "19e16465-a4ec-48ef-bb2d-c74c4e076d32",
+              "title": "L4 15 Fault Tolerant Time Interval",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "o4PzRfVN_to",
+                "china_cdn_id": "o4PzRfVN_to.mp4"
+              }
+            },
+            {
+              "id": 348201,
+              "key": "1fefaf1a-b250-4bb8-95ea-51cede08c0d6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Measuring Fault Tolerant Time Intervals\n\nDepending on the hazardous situations, you might also have to consider the fault reaction time of a human driver. So you would have to run tests with actual drivers to see how long they take to react to a fault and avoid a hazardous situation. \n\nOn the other hand, software and hardware diagnostic test intervals and fault reaction times could be measured with a bench test. \n\nYou can't change a human's fault reaction time; however, you can optimize your software and hardware to minimize the diagnostic test interval and fault reaction time. \n\nWhatever the hazardous situation, the idea of the fault tolerant time interval is to investigate how long your system has to avoid accidents when faults occur. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 435317,
+              "key": "7fe46890-fb42-41bd-8ecb-14b318badcf3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### ISO 26262 Revisions\nA second addition of ISO 26262 is in production and may redefine some FTTIs presented here.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346195,
+              "key": "45e83254-7ffe-4a53-a1f2-7ae5759409af",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Fault Tolerant Time Interval: Lane Keeping Assistance Fault\n\n\nIn terms of the lane keeping assistance, the concern was that the functionality wasn't time limited. If the lane keeping assistance goes beyond the time limit we set, then a fault has occurred and you will want to shut off the system. \n\nThe fault tolerant time interval might be 500 ms since the situation would be more controllable than for the warning system case. Because the system is now time limited, the driver will be unable to misuse the system as if it were fully autonomous, and will be more likely to keep their hands on the wheel at all times. If the lane keeping assistance function goes beyond the time limit and keeps turning the vehicle towards the center of the lane, the driver could still remain in control of the car. The lane assistance system is merely adding extra steering torque to the torque that the driver is already providing.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346159,
+          "key": "758ccc64-16b2-4299-a2cf-0813bddeafad",
+          "title": "Warning and Degradation Concept",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "758ccc64-16b2-4299-a2cf-0813bddeafad",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346201,
+              "key": "cc4295a1-c34c-4785-8db9-f259bc8b360f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Warning and Degradation Concept",
+              "instructor_notes": ""
+            },
+            {
+              "id": 349806,
+              "key": "ae3d6135-6044-45c6-b12b-c9d21fd0ac57",
+              "title": "L4 18 Warning And Degradation Concept",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "khNhy3IwKa0",
+                "china_cdn_id": "khNhy3IwKa0.mp4"
+              }
+            },
+            {
+              "id": 346202,
+              "key": "b5db0dfb-ad64-4bed-b19c-f3384659eafb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Summary of Warning and Degradation Concept\n\nIn functional safety, \"concept\" is synonymous with \"document\". So the warning and degradation concept would be a document that discusses:\n*  how the driver will be warned of a malfunction\n* what the system will do to \"degrade\" the functionality i.e. take the system to a safe state and also recover from a safe state.\n\nFor the lane assistance item, we discussed that the driver will see a warning light on the dashboard when the system malfunctions. \n\nThe lane departure warning and lane keeping assistance functionality will degrade by turning the system off. In other words, the torque request from the lane keeping assistance will be set to zero.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 346210,
+              "key": "e6ffdd3e-3d0f-474e-9e2c-b90795298fbf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Gradual Degradation versus Turning a System Off\n\nTurning off a system entirely is not the only option, however. Some systems can provide limited functionality and \"degrade\" to different levels depending how bad the malfunction is. A car engine control system is one example. If one sensor fails, the engine control system might reduce the torque output of the motor so that the vehicle can still be driven but at a lower speed.\n\nA lane departure warning system is not critical for driving a vehicle. So if the system has a malfunction, we can shut the system down; on the other hand, a functioning motor is necessary for driving a vehicle. Degrading the motor system to a safer, but functioning, state would help the driver avoid getting stranded. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350994,
+              "key": "da47af66-5681-4728-bf5d-85506e357d04",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Warning and Degradation Concept in the Final Project\n\n\nIn the [final project template folder](https://github.com/udacity/CarND-Functional-Safety-Project/tree/master/Template_Files), there is a functional safety concept template file. \n\nNear the end of the file, you will see an empty data table with the following headers:\n\nID, Degradation Mode, Trigger for Degradation Mode, Safe State invoked?, Driver Warning\n\nYou will be responsible for filling out this table. Degradation mode describes how the vehicle will be taken to a safe state when there is a malfunction. For the lane departure warning function, the degradation mode is to turn off the functionality. For the lane keeping assistance function, the degradation mode is the same. \n\nWhat will trigger the degradation mode? The malfunctions that you have already learned about. Is the safe state invoked? Yes. \n\nThe driver warning column discusses how the driver will be warned about the malfunction.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 346203,
+          "key": "03a429b6-8e6a-456b-9563-f4ee7b86c194",
+          "title": "Verification and Validation Acceptance Criteria",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "03a429b6-8e6a-456b-9563-f4ee7b86c194",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346207,
+              "key": "eb9a9e42-de53-4b07-924f-31c7bf9afeeb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Verification and Validation \n\nAt some point, you need to prove that your safety requirements are actually being met. You would do this on the right side of the V model during validation, verification and testing. \n\nBut in the functional safety concept, you can specify the criteria and methods that will be used later for verification, validation and testing of your functional safety requirements.\n\nFor example, we have set a limit on the maximum amplitude allowed in the lane departure warning functionality.\n\nFor whatever value we end up choosing for the max torque amplitude, we need to **validate** that we chose a reasonable value. We would need to test how drivers react to different torque amplitudes and frequencies to prove that we chose an appropriate value.\n\nOnce we have validated our choice, we then need to **verify** that the safety requirement is met; when the torque amplitude crosses the limit, the lane assistance output is set to zero within the 50 ms fault tolerant time interval. For this specific case, we would probably do a software test inserting a fault into the system and seeing what happens.\n\nFor the lane keeping assistance function, we would have to test and validate that the max_duration chosen really did dissuade drivers from taking their hands off the wheel. Then we would verify that the system really does turn off if the lane keeping assistance every exceeded max_duration.\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 350728,
+          "key": "8b8f7dba-1ce3-4d98-8f75-b882eacfb242",
+          "title": "Sebastian On Requirements and Testing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8b8f7dba-1ce3-4d98-8f75-b882eacfb242",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350730,
+              "key": "b2d1124b-375d-4452-a08a-02854e24a808",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Requirements Engineering and Testing\n\nHere, Sebastian talks about requirements and how his team tested the vehicle for the [DARPA challenge](https://cs.stanford.edu/group/roadrunner/stanley.html). ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350729,
+              "key": "9f40281a-9856-422a-a217-a2ec02a5c171",
+              "title": "L4 Sebastian",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0L2DG60xWy8",
+                "china_cdn_id": "0L2DG60xWy8.mp4"
+              }
+            },
+            {
+              "id": 350844,
+              "key": "ce630321-7ff2-49e9-a2c1-b92bcb355ca2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz: Verification versus Validation",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350845,
+              "key": "2de15048-e773-40dc-b883-a09192af0540",
+              "title": "Verification versus validation",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "2de15048-e773-40dc-b883-a09192af0540",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the difference between verification and validation?",
+                "answers": [
+                  {
+                    "id": "a1501047543179",
+                    "text": "You verify, for example, that the lane departure warning vibrates the steering wheel at the amount you specified in your safety requirements. You validate that the vibration warning amount is neither too high for a driver to handle nor too low that the driver cannot feel the vibration.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501048164156",
+                    "text": "You validate that the lane departure warning vibrates the steering wheel at the amount you specified in your safety requirements. You verify that the vibration warning amount is neither too high for a driver to handle nor too low that the driver cannot feel the vibration.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501048212314",
+                    "text": "Verification and validation are the same thing",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 346095,
+          "key": "182c803f-f1cf-4290-a77b-1d08a86b3728",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "182c803f-f1cf-4290-a77b-1d08a86b3728",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 346215,
+              "key": "3e726086-d83b-4c66-8746-631fb4b2737b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Summary",
+              "instructor_notes": ""
+            },
+            {
+              "id": 349807,
+              "key": "59769efb-da45-4559-8703-7139301f8c1d",
+              "title": "Summary Functional Safety Concept",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NVCU1mOxnAo",
+                "china_cdn_id": "NVCU1mOxnAo.mp4"
+              }
+            },
+            {
+              "id": 346320,
+              "key": "5f0f7214-301b-4b9f-b1da-86322603d143",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is a diagram giving an overview of what we have covered so far:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350279,
+              "key": "e58fc172-2838-482b-ad06-9271e112622c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976bd2d_l4-outline-of-material-present-so-far-01/l4-outline-of-material-present-so-far-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e58fc172-2838-482b-ad06-9271e112622c",
+              "caption": "Steps Up Until Functional Safety Concept",
+              "alt": null,
+              "width": 2328,
+              "height": 1575,
+              "instructor_notes": null
+            },
+            {
+              "id": 346212,
+              "key": "c6aa3c37-46c0-4ea7-9f08-829af165bdd6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Summary\n\nIn the final project, you'll be asked to document the functional safety requirements for both the lane departure warning malfunctions as well as the lane keeping assistance malfunction.\n\nYou'll need to keep in mind the following information:\n- functional safety requirements and their attributes (ASIL, Fault Tolerant Time Interval, Safe State, Verification and Validation Acceptance Criteria)\n- system diagram with an updated architecture (we will provide this for you)\n- warning and degradation concept, which explains the warnings that the driver will receive as well as how the system will be shut down when a malfunction occurs.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

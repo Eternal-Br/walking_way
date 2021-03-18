@@ -1,0 +1,1616 @@
+{
+  "data": {
+    "lesson": {
+      "id": 345282,
+      "key": "1117330b-7b93-4621-8ef0-882d6ad15983",
+      "title": "Functional Safety: Hazard Analysis and Risk Assessment",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In a hazard analysis and risk assessment, you will identify vehicular malfunctions and evaluate their risk levels. You can then derive safety goals defining how your vehicle will remain safe.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/1117330b-7b93-4621-8ef0-882d6ad15983/345282/1538849409839/Functional+Safety%3A+Hazard+Analysis+and+Risk+Assessment+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/1117330b-7b93-4621-8ef0-882d6ad15983/345282/1538849405678/Functional+Safety%3A+Hazard+Analysis+and+Risk+Assessment+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 345478,
+          "key": "45eb83f0-1e94-46e6-8cf0-33394f12d9bb",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "45eb83f0-1e94-46e6-8cf0-33394f12d9bb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345481,
+              "key": "f4f33702-8c9d-45df-aec2-2dab612fad97",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Introduction to the Lesson",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350043,
+              "key": "4c20b9d4-8606-4ef5-9dfe-031dd9558111",
+              "title": "L3 01 Introduction- Item Definition And HARA",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6rojuFZJ4Os",
+                "china_cdn_id": "6rojuFZJ4Os.mp4"
+              }
+            },
+            {
+              "id": 350392,
+              "key": "4aca9492-3e0a-4011-9efd-1f1721fc2b4b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Outline of the Hazard Analysis and Risk Assessment",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350394,
+              "key": "372597ff-6935-4c20-a48f-790b28218e65",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/597782b6_hara-outline-01/hara-outline-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/372597ff-6935-4c20-a48f-790b28218e65",
+              "caption": "Hazard Analysis and Risk Assessment Lesson Outline",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 350432,
+              "key": "35ee325b-cb30-497c-9fb8-79c427fbbc8b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is a description of the main parts of this lesson:\n\n**Item Definition**\n\nYou will determine which vehicle system or systems are under consideration. The item definition describes which vehicle system is under consideration. Part of the definition includes the system boundaries clarifying what is inside versus outside the system. \n\n**Situational Analysis**\n\nIn a situational analysis, you choose different driving scenarios like driving on a bumpy road, being towed, and driving on the freeway. \n\n**Hazard Identification**\n\nThis is where you figure out what could go wrong with your system: in other words, how the system could malfunction. Remember that ISO 26262 only looks at electrical and electronic malfunctions. An electronic parking brake failure, for example, could be a potential malfunction.\n\n**Hazardous Event Classification According to Exposure, Severity and Controllability**\n\nYou then combine situations and hazards together. Essentially, you take a malfunction and then think about the malfunction under different driving scenarios. Like if the electronic parking brake failed while the vehicle was parked on a steep hill.\n\nYou can then calculate three metrics called exposure, severity and controllability. The values for these three metrics will depend on the hazard, the driving scenario and what might happen when the hazard occurs under the scenario.\n\n**ASIL**\n\nAfter you have calculated exposure, severity and controllability, you can now determine the ASIL. There is a table to facilitate this calculation.\n\n**Safety Goal**\n\nFinally, you derive safety goals based on the hazard analysis and risk assessment. A safety goal is a type of engineering requirement specifically for vehicle functional safety; for example, \"The electronic parking brake system shall always be engaged when the vehicle is in park on a gradient that is greater than 10 degrees\".  ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 495305,
+              "key": "50581f36-aca9-42d8-bad5-e59d6230082d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please note that HARA is subjective and different groups may define values differently based on their view of severity, occurrence, and exposure.  This may result from geographical or cultural factors. For example in countries where the vast majority of automobile use is in well lit, urban, area, with low speed limits, headlights may not be considered safety critical.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 345502,
+          "key": "6a2ef718-3cd8-466d-83e2-0b25f04a5d66",
+          "title": "Advanced Driver Assistance System",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6a2ef718-3cd8-466d-83e2-0b25f04a5d66",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345503,
+              "key": "89b54df0-ab4d-40d4-a858-23c881f9390b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### ADAS (Advanced Driver Assistance System)\n\nFor the rest of the functional safety module, we will use an Advanced Driver Assistance System as a concrete example. Advanced Driver Assistance Systems, often called ADAS systems, have two functions:\n* Alert the driver to potentially dangerous situations\n* Take control over the vehicle to prevent accidents from occurring \n\nYou are already familiar with some of the technology used in ADAS systems such as LiDAR, radar, and cameras with computer vision and deep learning algorithms.\n\nBecause ADAS systems can actually take over control from the driver, these systems represent an intermediate step in the development of fully autonomous vehicles.\n\nHere are a few examples of ADAS systems that you can already find in passenger vehicles today:\n* Adaptive Cruise Control \n* Automatic Parking\n* Blind Spot Monitoring\n* Lane Departure Warning\n* Lane Keeping Assistance\n* Tire Pressure Monitoring\n* Pedestrian Protection\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345504,
+              "key": "ee2e1278-cd36-4dd1-a8d1-06bb9ccb1221",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lane Assistance System Functionality\n\nFor the functional safety module, we are going to look at a simplified version of a Lane Assistance System. \n\nWe want to make sure that you understand how the technology works and what the system architecture looks like.\n\nThe Lane Assistance System will have two functions:\n1. Lane departure warning\n2. Lane keeping assistance\n\nWhen the driver drifts towards the edge of the lane, two things will happen:\n* the **lane departure warning function** will vibrate the steering wheel\n* the **lane keeping assistance function** will move the steering wheel so that the wheels turn towards the center of the lane \n\nTo state the **lane departure warning** engineering requirement more formally: \"the lane departure warning function shall apply an oscillating steering torque to provide the driver a haptic feedback.\" In other words, the vehicle quickly moves the steering wheel back and forth to create a vibration. You can assume that the engineering requirement came from a product engineering team, and your job will be to add extra requirements to ensure functional safety.\n\nThe **lane keeping assistance functionality** will automatically **assist** the driver; the steering wheel turns towards the center of the lane. We will formally list the requirement as \"the lane keeping assistance function shall apply the steering torque when active in order to stay in ego lane\". Ego lane refers to the lane in which the vehicle currently drives. \n\nWhen the camera senses that the vehicle is leaving the lane, the camera sends a signal to the electronic power steering system asking to turn and vibrate the steering wheel.\n\nThe camera sensor will also request that a warning light turn on in the car display dashboard. That way the driver knows that the lane assistance system is active. \n\nWhat if the driver wants to leave the lane? If the driver uses a turn signal, then the lane assistance system deactivates so that the vehicle can leave the lane. The driver can also turn off the system completely with a button on the dashboard.\n\nThe driver is still expected to have both hands on the steering wheel at all times. The electronic power steering subsystem has a sensor to detect how much the driver is already turning. The lane keeping assistance function will merely add the extra torque required to get the car back towards center. The extra torque is applied directly to the steering wheel via a motor.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345505,
+              "key": "2b5ae5e5-3de3-4f64-99a3-9cb628a53501",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lane Assistance System Architecture\n\nNow we will look at what the system looks like from a bird's eye view. \nTake a look at this diagram of the system architecture. \n\nAn architecture is a block diagram of the main parts of a system. This high level overview allows us to see how the system works without yet needing to know the details of the hardware and software implementations. \n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350247,
+              "key": "35d1126b-4f73-4cfb-af28-349a339ea58a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976a8f6_02-advanced-driver-assistance-system-architecture-01/02-advanced-driver-assistance-system-architecture-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/35d1126b-4f73-4cfb-af28-349a339ea58a",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345507,
+              "key": "09e6cca2-e5e8-4d5b-b394-2ecab3ae641b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "ECU stands for Electronic Control Unit. An ECU is a small computer that contains the hardware and software for a specific vehicle functionality. The camera ECU, for example, might have the hardware and software required for deep learning or for computer vision techniques like the Hough transform.\n\nTo summarize the functionality, the camera system detects lane departures and tells the steering wheel how hard to turn. The driver receives a warning on the vehicle display and also receives a warning via a steering wheel vibrating. Simultaneously, the wheel adds extra steering torque to help the driver move back towards the center of the lane.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345509,
+              "key": "f538f8df-585f-4484-86c5-c5814c89346a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### System Hierarchy\n\nNotice the system diagram has outlines in three different colors. ISO 26262 has a specific vocabulary for referring to different parts of the system. In the diagram, you can see how ISO 26262 defines the terms “item”, “system” and “subsystem”.\n\nAn **Item** is just a high level system in the vehicle; in this case, the item is the lane assistance system. For clarity, throughout the lesson, you will see references to the \"lane assistance item\" rather than the \"lane assistance system\".\n\nAccording to ISO 26262, a **system** is a set of **elements** that have at least a sensor, controller and an actuator. In the system outline in red, we have two sensors: a camera sensor and a driver steering torque sensor. The ECUs are the controllers, and the actuator is the motor that turns the steering wheel. The sensors, ECUs, and motor would all be considered **elements**. **Element** is a generic term for any part of a system. A system will generally have more than one element.\n\nA **sub-system** is a smaller piece of a **system**.  \n\nSo an **item** can be thought of as a system made up of systems made up of systems …. etc.\n\nThe hierarchy is:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350248,
+              "key": "85672d70-60e9-4793-bb16-74630193d24d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976a930_system-hierarchy-01/system-hierarchy-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/85672d70-60e9-4793-bb16-74630193d24d",
+              "caption": "System Hierarchy",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345511,
+              "key": "14b09285-8771-43e5-9e23-518ee0302fc1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "And as you can see, these labels are fluid depending on the context. If you were looking at the entire lane assistance item from a bird's eye view, you could call the camera sensor an element. \n\nIf you looked inside the camera sensor, you would find that the camera sensor has its own internal sensors, controllers and actuators. So you could also think of the camera sensor as a system depending on what level you place your focus.\n\nPlease note that the there is room for interpretation in the allocation of elements to the ISO hierarchy.  For example, a graphics card is not a hardware component from the perspective of a person developing the components which are on board the graphics card. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345514,
+              "key": "2f8604a8-4260-41d1-a63a-a917244cf072",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lane Assistance System: Sub System Architecture\n\nIf we dig down further into the power steering ECU sub-system, we divide the ECU into its hardware and software components. We can further subdivide the software and hardware into components, parts, and units as shown in the diagram below. As we traverse down the V model, the architecture diagrams become more focused and detailed.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350249,
+              "key": "59334d52-9f39-4e7b-934b-27d121c4492d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976a964_02-advanced-driver-assistance-system-architecture-03-1/02-advanced-driver-assistance-system-architecture-03-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/59334d52-9f39-4e7b-934b-27d121c4492d",
+              "caption": "Subsystem Architecture",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345516,
+              "key": "4cb88d72-9269-44ca-97c9-85e45aa99fe4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here is a summary how ISO 26262 labels system hierarchies with typical examples for each part:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350251,
+              "key": "a0deff22-3d1d-46bc-b6a9-ffc5ee5c1d00",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976a9ae_system-hierarchy-03-1/system-hierarchy-03-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a0deff22-3d1d-46bc-b6a9-ffc5ee5c1d00",
+              "caption": "Full System Hierarchy",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 345518,
+          "key": "bfdbaab9-9620-4e6b-9c5c-82f5dee26a52",
+          "title": "Item Definition",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bfdbaab9-9620-4e6b-9c5c-82f5dee26a52",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350830,
+              "key": "7d2ef8c1-fd76-43b0-b239-e3e0679e49af",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Item Definition",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345520,
+              "key": "0e6e7d31-b553-4bc4-b793-6e6f920dd73e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "When you analyze a vehicle system's functional safety, you first need to understand the item's functionality and define the boundaries of the item. In our example, the item is the lane assistance system.\n\nLooking at the lane assistance system architecture, ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350252,
+              "key": "94629d77-fdbe-4e89-81d2-d1538accd1c5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976aa23_02-advanced-driver-assistance-system-architecture-02-1/02-advanced-driver-assistance-system-architecture-02-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/94629d77-fdbe-4e89-81d2-d1538accd1c5",
+              "caption": "Lane Assistance System Architecture",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345523,
+              "key": "1da96504-a9b7-402e-9707-0cc7c02c8ac6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "you can see that the item boundary was drawn to include three sub-systems:\n* Camera system\n* Electronic Power Steering system\n* Car Display system\n\nYour job in functional safety is to further refine the system to take into account potential malfunctions. To ensure functional safety, you might end up adding additional subsystems or elements to the original system architecture provided to you.\n\nIn general, the **item definition** will mention which systems are part of the **item** as well as any other information known about the item such as:\n* *Functional concept* of the product, which describes what the item is supposed to do; recall that functional safety engineering involves analyzing what happens when the system malfunctions, and the item does not do what it is supposed to do. So it is important to understand the product's purpose. \n* *Operational and Environmental Constraints*\n* *Legal Requirements*\n* *National and International Standards Related to the Item*\n* *Records of previously known safety-related incidents or behavioral short-falls*\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350834,
+              "key": "410ffe66-706d-4117-ba7a-36de17801d4c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz: Lane Keeping Item",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350833,
+              "key": "1ddd8d5b-5a23-4826-99b5-037d3c741b45",
+              "title": "Lane Assistance Item",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "1ddd8d5b-5a23-4826-99b5-037d3c741b45",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Check your understanding of the lane assistance item by matching terms"
+                },
+                "concepts_label": "Term A",
+                "answers_label": "Term B",
+                "concepts": [
+                  {
+                    "text": "Camera Subsystem",
+                    "correct_answer": {
+                      "id": "a1501044365613",
+                      "text": "Responsible for detecting lane lines and determining when the vehicle leaves the lane by mistake"
+                    }
+                  },
+                  {
+                    "text": "Lane Assistance",
+                    "correct_answer": {
+                      "id": "a1501044803847",
+                      "text": "The name of the item under consideration in the functional safety module"
+                    }
+                  },
+                  {
+                    "text": "Electronic Power Steering Subsystem",
+                    "correct_answer": {
+                      "id": "a1501045086102",
+                      "text": "Responsible for measuring the torque provided by the driver and then adding an appropriate amount of torque based on a lane assistance system torque request"
+                    }
+                  },
+                  {
+                    "text": "Lane Departure Warning",
+                    "correct_answer": {
+                      "id": "a1501045151172",
+                      "text": "Functionality that vibrates the steering wheel when the driver drifts away from center by mistake"
+                    }
+                  },
+                  {
+                    "text": "Lane Keeping Assistance",
+                    "correct_answer": {
+                      "id": "a1501045204898",
+                      "text": "Functionality that turns the steering wheel back towards the center of the lane if the driver starts to drift away from center"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1501045086102",
+                    "text": "Responsible for measuring the torque provided by the driver and then adding an appropriate amount of torque based on a lane assistance system torque request"
+                  },
+                  {
+                    "id": "a1501044365613",
+                    "text": "Responsible for detecting lane lines and determining when the vehicle leaves the lane by mistake"
+                  },
+                  {
+                    "id": "a1501044803847",
+                    "text": "The name of the item under consideration in the functional safety module"
+                  },
+                  {
+                    "id": "a1501045151172",
+                    "text": "Functionality that vibrates the steering wheel when the driver drifts away from center by mistake"
+                  },
+                  {
+                    "id": "a1501045204898",
+                    "text": "Functionality that turns the steering wheel back towards the center of the lane if the driver starts to drift away from center"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 345484,
+          "key": "1cfd11e3-6d7a-4037-b86e-faa7acada50e",
+          "title": "Introduction to Hazard Analysis and Risk Assessment",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1cfd11e3-6d7a-4037-b86e-faa7acada50e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345524,
+              "key": "ea362926-0010-4e62-88f5-d90767fb663d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Introduction to HARA (Hazard Analysis and Risk Assessment)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350044,
+              "key": "4ebc4553-b69a-4719-a4b7-7ba09013cbfa",
+              "title": "L3 04 L Introduction To HARA",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Qxui0XShsbE",
+                "china_cdn_id": "Qxui0XShsbE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 350724,
+          "key": "4b4c8b18-9cec-47eb-8807-b95ea9efadf1",
+          "title": "Sebastian Discussing Hazards",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4b4c8b18-9cec-47eb-8807-b95ea9efadf1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350727,
+              "key": "7ef3946e-e028-4534-b20b-dcf6a607f336",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Hazards and Self-driving Cars\n\nIn the next video, Sebastian talks about some hazardous situations he encountered when developing self-driving cars.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350726,
+              "key": "4e31695f-dd80-4001-9fa9-eca2bb9b837d",
+              "title": "L3 Sebastian",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "sGbjIAiDEUs",
+                "china_cdn_id": "sGbjIAiDEUs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 345485,
+          "key": "6979f63e-9ceb-49a2-a3c1-e1f42f39df8a",
+          "title": "Situational Analysis",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6979f63e-9ceb-49a2-a3c1-e1f42f39df8a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350045,
+              "key": "4c916185-8623-4639-80d4-98ba948a5da1",
+              "title": "05 HARA Situational Analysis",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "o9iBiz7IQ_k",
+                "china_cdn_id": "o9iBiz7IQ_k.mp4"
+              }
+            },
+            {
+              "id": 345526,
+              "key": "411f5d88-5371-4aca-b8f5-1ffc45d2e4bb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here are possible values for operational mode, operational scenario, environmental details, situational details and item usage:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345527,
+              "key": "4bf8a4a3-2b29-4f53-b268-6136895c74aa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Operational Mode",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350253,
+              "key": "c08d33fe-bec2-430b-afbd-87b50a912acb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976abdb_situational-analysis-hazard-identification-01/situational-analysis-hazard-identification-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c08d33fe-bec2-430b-afbd-87b50a912acb",
+              "caption": "Operational Mode",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345529,
+              "key": "7a3b6f5d-5e0f-40a8-af6d-08a84c307d2d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Operational Scenario",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350254,
+              "key": "55f2b64c-04f5-4185-a851-07b1e5936884",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976abed_situational-analysis-hazard-identification-02/situational-analysis-hazard-identification-02.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/55f2b64c-04f5-4185-a851-07b1e5936884",
+              "caption": "Operational Scenario",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345531,
+              "key": "3234118c-bf29-4a9d-b07a-25f4eede9461",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Environmental Details\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350255,
+              "key": "7348b2de-ccd1-498f-82fc-59ec350fdc87",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976ac02_situational-analysis-hazard-identification-03/situational-analysis-hazard-identification-03.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7348b2de-ccd1-498f-82fc-59ec350fdc87",
+              "caption": "Environmental Details",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345534,
+              "key": "c143a9fa-4bb0-4a83-96b2-fbb4df9bc215",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Situation Details",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350256,
+              "key": "39f7d52b-f5b3-4ead-b44c-97fc8b65a0b7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976ac43_situational-analysis-hazard-identification-04/situational-analysis-hazard-identification-04.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/39f7d52b-f5b3-4ead-b44c-97fc8b65a0b7",
+              "caption": "Situation Details",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345536,
+              "key": "0f69fe8f-119d-4e79-8f4e-e97e23becf3d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Item Usage",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350257,
+              "key": "e06b4c89-dc52-4ff9-a742-48a13379c359",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976ac76_situational-analysis-hazard-identification-05/situational-analysis-hazard-identification-05.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e06b4c89-dc52-4ff9-a742-48a13379c359",
+              "caption": "Item Usage",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345538,
+              "key": "3203d231-540e-4a50-a56b-a781c2f274a1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n### Situational Analysis for Lane Keeping Assistance\n\nLet's do a situational analysis for the lane keeping assistance function. We'll focus on the driver misusing the item. Because the lane keeping assistance function takes control of the vehicle, we'll imagine that a driver takes both hands off of the steering wheel and treats the vehicle as if it were autonomous (in fact, you can find youtube videos of people misusing their lane keeping assistance like this); however, the lane keeping assistance function was not designed to drive the vehicle with full autonomy. \n\nUsing the guide words, the situation will be \"Normal driving on country roads during normal conditions with high speed (the driver is misusing the lane keeping assistance function as an autonomous function)\". \n\nWe will use this driving situation throughout the lesson for the lane keeping assistance function.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345539,
+              "key": "4e6c72ce-0395-4e1d-abba-a0d921b16358",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345540,
+              "key": "b6717d9c-6f7c-48ca-8982-135cf4034577",
+              "title": "Situational Analysis",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b6717d9c-6f7c-48ca-8982-135cf4034577",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Why do we perform a situational analysis?",
+                "answers": [
+                  {
+                    "id": "a1499723426235",
+                    "text": "We want to consider various hypothetical driving situations in hopes of preventing accidents.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499723455726",
+                    "text": "We need to consider malfunctions within the context in which they happen.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499723456541",
+                    "text": "The risk associated with a malfunction will depend on the situation.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499723457157",
+                    "text": "Without a proper situational analysis, we might end up missing important causes of accidents.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 495306,
+              "key": "da39430c-6cca-4b57-8b79-b278623a4aba",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please note that [SAE J2980](http://standards.sae.org/j2980_201505/) provides extensive examples and further recommendations on how to perform hazard and risk assessment.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 345486,
+          "key": "3da81965-ae0a-49e5-b331-0d9c902e3378",
+          "title": "Identification of Hazards",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3da81965-ae0a-49e5-b331-0d9c902e3378",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350046,
+              "key": "98e6f1db-b332-45ac-aedb-bbab4cf9b950",
+              "title": "L3 09 L HARA Identification Of Hazards",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LXp7ScZaKp4",
+                "china_cdn_id": "LXp7ScZaKp4.mp4"
+              }
+            },
+            {
+              "id": 345542,
+              "key": "6a8ff869-4488-471d-b24d-e0c49b0e46c0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Table with the Hazard Identification",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350258,
+              "key": "b7f81d3f-52d1-4001-bcc9-43b9c45605d3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| Function            | Lane Departure Warning (LDW) function shall apply  an oscillating steering torque to provide the driver haptic feedback.                                                            |\n|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Malfunction         | Actor effect is too much.                                                                                                                                                           |\n| Malfunction details | The LDW function applies an oscillating torque with very high torque (above limit).                                                                                                 |\n| Hazardous event     | Collision with other vehicle.                                                                                                                                                       |\n| Event details       | High haptic feedback can affect driver's ability to steer as intended.  The driver could lose control of the vehicle and collide  with another vehicle or with road infrastructure. |\n| Summary description | The LDW function applies too high an oscillating torque to the steering wheel (above limit).                                                                                        |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345544,
+              "key": "661323fb-5594-4cf1-8b2e-e66b8274eb3d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lane Keeping Assistance Function Hazard Identification\n\nIn terms of the lane keeping assistance function, we previously developed an example where the driver was misusing the function by taking both hands off the wheel and incorrectly treating the car as a fully autonomous vehicle. \n\nIn this example, the malfunction is that the lane keeping assistance function is always activated. \n\nHere as well, there is potential for a vehicle collision. Using the list of potential accidents, we will choose \"collision with other vehicle\". \n\nThe lane keeping assistance function should add extra steering torque for a limited amount of time and then stop providing extra torque. That way, the driver cannot treat the function as if it were meant for fully autonomous driving.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350982,
+              "key": "9fcf31d1-7482-4eba-88af-52d043e7c826",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Malfunction (Deviation) Guidewords Table",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350983,
+              "key": "18796a22-e208-4dc6-a198-3ba6768fe84f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/597927d0_situational-analysis-hazard-identification-06/situational-analysis-hazard-identification-06.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/18796a22-e208-4dc6-a198-3ba6768fe84f",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 350985,
+              "key": "9c3109c1-b183-4e24-ace5-a4aab0f3d808",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Hazardous Event Guidewords Table",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350984,
+              "key": "e6b2eb92-164c-4601-a99d-12a61f0e4ad3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/597927ec_situational-analysis-hazard-identification-07-1/situational-analysis-hazard-identification-07-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e6b2eb92-164c-4601-a99d-12a61f0e4ad3",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345545,
+              "key": "774230de-7e97-49fb-9ec1-dcaa9b0cf6a2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz: Malfunction Guidewords",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345547,
+              "key": "da6e7090-770f-4151-b41b-bbea538426a7",
+              "title": "Lane Keeping Assistance Malfunction Guide Word",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "da6e7090-770f-4151-b41b-bbea538426a7",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "We've identified a malfunction in that the lane keeping system is always on. Looking at the table of malfunction guide words, what would be an appropriate phrase to describe the malfunction?\n",
+                "answers": [
+                  {
+                    "id": "a1499723741084",
+                    "text": "sensor detection too early",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499723785566",
+                    "text": "actor effect is wrong",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499723786325",
+                    "text": "function always activated",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499723787181",
+                    "text": "function unexpectedly activated",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 345548,
+              "key": "61c985fa-c688-441e-9b0b-19918c469233",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz: Hazardous Event Guidewords",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345550,
+              "key": "9c674a24-ef07-4cb3-983b-8fa7d239a48d",
+              "title": "Hazardous Event Guide Words",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9c674a24-ef07-4cb3-983b-8fa7d239a48d",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "We have said that the potential accident for the lane keeping system example is a vehicle to vehicle collision. What would be an appropriate selection from the hazardous event guideword table?",
+                "answers": [
+                  {
+                    "id": "a1499723875222",
+                    "text": "car catches fire",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499723900096",
+                    "text": "rear collision with trailing traffic",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499723900744",
+                    "text": "collision with other vehicle",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499723901289",
+                    "text": "collision with train",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 345551,
+              "key": "b93ea6cf-9f97-4599-9fb8-586a648f7484",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz: Vocabulary Check",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345553,
+              "key": "df67832c-7ce0-42c2-b293-15642a0ce3b5",
+              "title": "Functional Safety",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "df67832c-7ce0-42c2-b293-15642a0ce3b5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following malfunctions could be part of a functional safety analysis?\n",
+                "answers": [
+                  {
+                    "id": "a1499723970962",
+                    "text": "The parking brake cable snaps.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499723981300",
+                    "text": "The front headlamps stop turning on.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499723982005",
+                    "text": "Brake lines fail and the brake fluid is leaking out of the car.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 345487,
+          "key": "a50e4d6f-9c85-4fa8-9909-a6824c994497",
+          "title": "Risk Assessment, Severity, Exposure, Controllability",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a50e4d6f-9c85-4fa8-9909-a6824c994497",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350264,
+              "key": "763671b7-0cfd-4992-b46a-2169282319fa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Risk Assessment: Severity",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350047,
+              "key": "14a016d1-c987-4929-9f14-dc89bb3af408",
+              "title": "L3 14 HARA Risk Assessment, Severity, Exposure, Controllability",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "44NYK53gOAM",
+                "china_cdn_id": "44NYK53gOAM.mp4"
+              }
+            },
+            {
+              "id": 350259,
+              "key": "c198963f-ba8b-4448-90b5-30a430c019e0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##### Table to Determine Severity",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350260,
+              "key": "5bb14d11-e01d-4c33-b6ed-1772a14a78cb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976aefa_severity-exposure-controllability-01/severity-exposure-controllability-01.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5bb14d11-e01d-4c33-b6ed-1772a14a78cb",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 350261,
+              "key": "d1494240-d9ec-4cf5-a34c-f8366845c320",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the last column, you will see that probability of injury involves using a scale called AIS. AIS stands for **accident injury scale**. \n\nThe accident injury scale is published by the [Association for the Advancement of Automotive Medicine](https://www.aaam.org/) (AAAM) and contains seven levels: AIS 0 through AIS 6. Here are examples of the injuries associated with each level.\n\n* AIS 0: no injuries\n* AIS 1: light injuries such as skin-deep wounds, muscle pains, whiplash\n* AIS 2: moderate injuries such as deep flesh wounds\n* AIS 3: severe but not life-threatening injuries such as skull fractures without brain injury\n* AIS 4: severe injuries that are life-threatening but with probable survivability such as concussion with or without skull fractures with up to 12 hours of unconsciousness\n* AIS 5: critical injuries (life-threatening, survival uncertain) such as spinal fractures below the fourth cervical vertebra with damage to the spinal cord\n* AIS 6: extremely critical or fatal injuries such as fractures of the cervical vertebrae above the third cervical vertebra with damage to the spinal cord",
+              "instructor_notes": ""
+            },
+            {
+              "id": 495307,
+              "key": "5f0ecb83-e877-4b64-b746-97831c9dcbc4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Note that AIS is provided in the standard as an example. There is no requirement to use AIS and the \"Probability of Injuries\" field is a suggested guideline, not a strict requirement.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350265,
+              "key": "98302b9c-b763-4807-b626-1f7d6dd89a30",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Risk Assessment Exposure",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350050,
+              "key": "7e861a29-9791-4fe8-ad14-f0bf78a18d16",
+              "title": "L3 14 Hara Risk Part 2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-3EXJjR6fbk",
+                "china_cdn_id": "-3EXJjR6fbk.mp4"
+              }
+            },
+            {
+              "id": 350263,
+              "key": "cf791cf5-7b60-42c7-9122-dc100663587c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##### Table to Determine Exposure",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350262,
+              "key": "8ea1632e-f105-4569-ad59-9b2da8cd1c46",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976aff8_severity-exposure-controllability-02/severity-exposure-controllability-02.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8ea1632e-f105-4569-ad59-9b2da8cd1c46",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 350266,
+              "key": "fe9fbf0e-c016-4891-8728-2fe839a3baa5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Risk Assessment Controllability",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350052,
+              "key": "ff36e6ec-702d-451c-81bf-0109b395340f",
+              "title": "L3 14 L Hara Risk Part 3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "buFLRLfwSWw",
+                "china_cdn_id": "buFLRLfwSWw.mp4"
+              }
+            },
+            {
+              "id": 350268,
+              "key": "daf64fcb-6b86-4fb1-8a85-5d1886daa494",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##### Table to Determine Controllability",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350267,
+              "key": "814c7a61-7857-44da-8007-466e6a59f9fa",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976b06f_severity-exposure-controllability-03/severity-exposure-controllability-03.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/814c7a61-7857-44da-8007-466e6a59f9fa",
+              "caption": "",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345559,
+              "key": "01cd166b-8242-4403-acc5-2756432a4311",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lane Keeping Assistance Example Severity, Exposure and Controllability\n\nHere again is the situation we are analyzing for the lane keeping assistance example: \n\n\"Normal driving on country roads during normal conditions with high speed (the driver is misusing the lane keeping assistance function as a fully autonomous function)\". \n\nBecause the driver is traveling at high speed, severity would be S3. The driver is on a country road and misusing the system. That combination probably does not happen often, so we will label the exposure E2. \n\nThe malfunction was that the lane keeping assistance was always on and had no time limit, so drivers could take both hands off the wheel. Because hands aren't on the wheel at high speeds, a vehicle accident would not be controllable. We will label this hazardous situation as C3.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 345488,
+          "key": "6c9f7e00-691b-4c82-942e-73df561db089",
+          "title": "Automotive Safety Integrity Levels (ASIL)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6c9f7e00-691b-4c82-942e-73df561db089",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350841,
+              "key": "eb90bdb3-8f65-4b4d-a718-830f9a220e76",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### ASIL",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350053,
+              "key": "d01cc961-33b7-4c7b-84f4-159b4e441118",
+              "title": "L3 18 L HARA ASIL Levels",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "Note: In the video, it's noted that QM implies risk is already below acceptable levels. What should be properly stated is that Quality Management approaches need to be applied to ensure lower level risks are mitigated.",
+              "video": {
+                "youtube_id": "l7vx-w06fZw",
+                "china_cdn_id": "l7vx-w06fZw.mp4"
+              }
+            },
+            {
+              "id": 345562,
+              "key": "0705c6b3-d2aa-4891-84d8-9c06243325ce",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now, we can evaluate the risk of our lane keeping assistance function's hazardous situation. We combine the severity, exposure and controllability to find the ASIL.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350269,
+              "key": "28f1daed-6e98-40f6-b4db-69e6e554b32c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/5976b1ba_asil/asil.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/28f1daed-6e98-40f6-b4db-69e6e554b32c",
+              "caption": "Table for Calculating ASIL",
+              "alt": null,
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 345576,
+              "key": "db3f3829-c076-4297-a165-edfe8a6dae2d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Combining S3, E2 and C3 from the lane keeping assistance example gives ASIL B. \n\nASIL shows how high the risk is above acceptable levels so that you know how much work needs to be done to lower risk. Coming up, we will examine ASIL in more detail and discuss the differences between ASIL A, B, C, and D.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350838,
+              "key": "dc85de84-160b-4ee8-a028-5779042ef14c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz: Calculating ASIL",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350837,
+              "key": "3f4815c6-c8dd-4edb-b8fa-4508a0919f41",
+              "title": "ASIL",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "3f4815c6-c8dd-4edb-b8fa-4508a0919f41",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the ASIL for C2, S2, and E4?",
+                "answers": [
+                  {
+                    "id": "a1501046031116",
+                    "text": "ASIL A",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501046086582",
+                    "text": "ASIL B",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501046086982",
+                    "text": "ASIL C",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501046093101",
+                    "text": "ASIL D",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501046267288",
+                    "text": "QM",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 350839,
+              "key": "adf4ff72-e8fd-481c-858d-02d80ae3b851",
+              "title": "ASIL Calculation",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "adf4ff72-e8fd-481c-858d-02d80ae3b851",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the ASIL for E4, C3, and S0?",
+                "answers": [
+                  {
+                    "id": "a1501046245285",
+                    "text": "A",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501046260800",
+                    "text": "B",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501046261376",
+                    "text": "C",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501046261880",
+                    "text": "D",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501046262496",
+                    "text": "QM",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 345579,
+              "key": "5714aaa2-4332-4a90-984d-276659f92f62",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Examples of How Driving Situations Affect ASIL\n\nTo reinforce how severity, exposure, and controllability relate to ASIL, let's look at the lane departure warning example one more time. In the original situational analysis, we said that the vehicle was driving on the highway in the rain at high speed, which led to ASIL C.\n\nWhat about driving on a wet road on a city street at low speed? A low speed collision implies severity of S1. Exposure remains E3 because of the wet road. Controllability would could still remain C3 because the steering wheel jerking back and forth violently would be difficult to control even at lower speeds. S1, E3 and C3 result in ASIL A. The ASIL went down to A whereas originally we had ASIL C. Intuitively, this makes sense; the driver is driving more slowly with all other conditions remaining the same, so the risk has gone down.\n\nWhat about driving on a dry road on a city street at low speed? Severity would stay at S1. Exposure now increases to E4 and controllability remains at C3. ASIL now increases to B. Perhaps counterintuitively, if we consider driving on a dry road instead of a wet road, risk increases. The increased risk comes from the exposure. A driver is more likely to be driving on a dry road than a wet road, so there is a higher probability that a random malfunction will occur on a dry road; hence risk increases for the dry road scenario.\n\nWhat if we had considered high speed highway driving on a dry road? Exposure would go up to E4, severity would be S3, and controllability C3. The ASIL would then increase to ASIL D. \n\nWhen more than one situation maps to the same hazard, you will be conservative and choose the highest ASIL level for the hazard. If we were considering the possibility that the lane departure warning system vibrates too much on wet highways and also dry highways, we would assign ASIL  D. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345581,
+              "key": "28023583-9de9-43b0-bb1f-5c4f1818d74e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Analysis and Testing for Different ASILs\n\nHigher ASIL levels require more analysis, requirements and testing to reduce risk to acceptable levels. So in the lane assistance example, the first hazardous situation with ASIL C will require more work than the second hazardous situation with ASIL B.\n\nHere are a few examples of extra measures that may need to be taken for higher ASILs:\n\n* Deductive analysis, an example of which is [Fault Tree Analysis](https://en.wikipedia.org/wiki/Fault_tree_analysis) is recommended for ASIL C and ASIL D\n* ASIL D suggests a target for the PMHF metric failure rate of no greater than 10 dangerous, undetected failures per billion hours of operation whereas ASIL B only suggests a failure rate of no more than 100 failures per billion hours\n* For Software units with ASIL D more rigorous testing such as [MC/DC coverage](https://en.wikipedia.org/wiki/Modified_condition/decision_coverage) are highly recommended whereas ASIL B only mandates DC coverage.\n\nCompensatory measures like Fault Tree Analysis, and MC/DC coverage are beyond the scope of this module, but you can learn more about them at the links.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350835,
+              "key": "1a509ad2-1df6-4663-8770-5b720f34d227",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz: Severity, Exposure and Controllability",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350840,
+              "key": "f019815d-0e4a-4287-ba13-d4f6b460ae7e",
+              "title": "Vocabulary",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f019815d-0e4a-4287-ba13-d4f6b460ae7e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the term on the left with the definition on the right"
+                },
+                "concepts_label": "Term",
+                "answers_label": "Definition",
+                "concepts": [
+                  {
+                    "text": "Exposure",
+                    "correct_answer": {
+                      "id": "a1501046390104",
+                      "text": "How often a driving situation occurs"
+                    }
+                  },
+                  {
+                    "text": "Controllability",
+                    "correct_answer": {
+                      "id": "a1501046413180",
+                      "text": "How easily a driver would be able to drive the vehicle if a hazardous situation occurred"
+                    }
+                  },
+                  {
+                    "text": "Severity",
+                    "correct_answer": {
+                      "id": "a1501046565632",
+                      "text": "How badly a person could be injured"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1501046417456",
+                    "text": "How often a malfunction occurs"
+                  },
+                  {
+                    "id": "a1501046390104",
+                    "text": "How often a driving situation occurs"
+                  },
+                  {
+                    "id": "a1501046565632",
+                    "text": "How badly a person could be injured"
+                  },
+                  {
+                    "id": "a1501046413180",
+                    "text": "How easily a driver would be able to drive the vehicle if a hazardous situation occurred"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 345489,
+          "key": "825f1ce8-b937-4505-969f-4ad3a920132c",
+          "title": "Safety Goals",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "825f1ce8-b937-4505-969f-4ad3a920132c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350054,
+              "key": "ffb61535-3705-4cdc-a256-abac209ec062",
+              "title": "L3 20 L HARA Safety Goals",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lMT1EB5cZR8",
+                "china_cdn_id": "lMT1EB5cZR8.mp4"
+              }
+            },
+            {
+              "id": 345589,
+              "key": "60d85a47-0247-4442-a0f1-94470959e697",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lane Keeping Assistance Safety Goals\n\n\nWhat about the lane keeping assistance function? In this case, the hazardous situation involved the driver taking both hands off the wheel. Because the functionality was always on, the driver could misuse the lane keeping assistant as if it were meant for autonomous driving. What would the safety goal be for this second case?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345591,
+              "key": "6eed4a87-fd13-467b-a095-cc50cbba3f61",
+              "title": "Lane Keeping Assistance Safety Goal",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "6eed4a87-fd13-467b-a095-cc50cbba3f61",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What would the safety goal be for the lane keeping assistance example?",
+                "answers": [
+                  {
+                    "id": "a1499726262683",
+                    "text": "The lane keeping assistance function shall provide a low enough torque to the steering wheel such that the driver cannot feel the system working.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499726274467",
+                    "text": "The lane keeping assistance function shall provide torque to the steering wheel such that the vehicle moves away from the center of the lane.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499726275132",
+                    "text": "The lane keeping assistance function shall only turn on when it is raining.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499726294491",
+                    "text": "The lane keeping assistance function shall be time limited and the additional steering torque shall end after a given time interval so that the driver cannot misuse the system for autonomous driving.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 345595,
+              "key": "8546b53f-9d97-413c-b61a-17dc93be03fe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Safety Goals and Requirements Engineering\n\n\nIn the first lesson, we mentioned that requirements engineering was a sub-discipline of systems engineering. Requirements generally start with the phrase \"X system shall [do something]\". \n\nSafety goals are a specific type of engineering requirement. Safety goals specifically define what the vehicle needs to do in order to remain safe. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345594,
+              "key": "bfd6c39c-677f-47f3-aef9-3927dc590cc8",
+              "title": "Safety Goal ASIL",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bfd6c39c-677f-47f3-aef9-3927dc590cc8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What would the ASIL be for the lane keeping assistance safety goal in the previous quiz?\n",
+                "answers": [
+                  {
+                    "id": "a1499726445953",
+                    "text": "A",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499726461228",
+                    "text": "B",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499726461795",
+                    "text": "C",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1499726462387",
+                    "text": "D",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 345479,
+          "key": "ea7dc10a-c3b2-4dcf-b95c-881e072cfb5f",
+          "title": "Lesson Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ea7dc10a-c3b2-4dcf-b95c-881e072cfb5f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345483,
+              "key": "ac0c00fe-34da-4797-8b19-d3c6486e0be2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lesson Summary",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350056,
+              "key": "e12933fc-736e-4685-9d41-6b68d819dac4",
+              "title": "L3 25 L HARA Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "T0Xxu-Xh4J0",
+                "china_cdn_id": "T0Xxu-Xh4J0.mp4"
+              }
+            },
+            {
+              "id": 345599,
+              "key": "255d4039-0512-4a04-ba9d-c76bb025586c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Five Steps to a Hazard Analysis and Risk Assessment\n\nTo summarize, there are five steps to the hazard analysis and risk assessment:\n* Conduct a situational analysis\n* Identify malfunctions\n* Combine situations and malfunctions and assess risk\n* Determine ASILs\n* Derive safety goals\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345600,
+              "key": "424bd733-4486-46ac-a17e-ef4a78a1402d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the lesson, we have done a hazard and risk analysis for both the lane departure warning and the lane keeping assistant. In the project, your job will be to document what we have discussed in this lesson. And then you will need to do two more analyses to show us what you have learned. \n\nIf you go to the [project GitHub repo template folder](https://github.com/udacity/CarND-Functional-Safety-Project/tree/master/Template_Files), you will find a blank Excel file for doing a Hazard Analysis and Risk Assessment. The [project instructions file](https://github.com/udacity/CarND-Functional-Safety-Project/blob/master/Project%20Instructions.pdf) also contains more information about how to do the hazard analysis and risk assessment.\n\nIn the next lesson, you will learn how to derive safety requirements from the safety goals.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

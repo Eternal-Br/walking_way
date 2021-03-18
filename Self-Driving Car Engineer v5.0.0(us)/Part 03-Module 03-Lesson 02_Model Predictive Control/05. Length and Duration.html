@@ -1,0 +1,397 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Length and Duration
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Model Predictive Control
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro.html">
+       01. Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Reference State.html">
+       02. Reference State
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Dealing With Stopping.html">
+       03. Dealing With Stopping
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Additional Cost Considerations.html">
+       04. Additional Cost Considerations
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Length and Duration.html">
+       05. Length and Duration
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Putting It All Together.html">
+       06. Putting It All Together
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Latency.html">
+       07. Latency
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Mind The Line.html">
+       08. Mind The Line
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Solution Mind The Line.html">
+       09. Solution: Mind The Line
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Tuning MPC.html">
+       10. Tuning MPC
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Outro.html">
+       11. Outro
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Bonus Round Control [Optional].html">
+       12. Bonus Round: Control [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. Length and Duration
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The prediction horizon is the duration over which future predictions are made. We’ll refer to this as
+          <em>
+           T
+          </em>
+          .
+         </p>
+         <p>
+          <em>
+           T
+          </em>
+          is the product of two other variables,
+          <em>
+           N
+          </em>
+          and
+          <em>
+           dt
+          </em>
+          .
+         </p>
+         <p>
+          <em>
+           N
+          </em>
+          is the number of timesteps in the horizon.
+          <em>
+           dt
+          </em>
+          is how much time elapses between actuations. For example, if
+          <em>
+           N
+          </em>
+          were 20 and
+          <em>
+           dt
+          </em>
+          were 0.5, then
+          <em>
+           T
+          </em>
+          would be 10 seconds.
+         </p>
+         <p>
+          <em>
+           N
+          </em>
+          ,
+          <em>
+           dt
+          </em>
+          , and
+          <em>
+           T
+          </em>
+          are hyperparameters you will need to tune for each model predictive controller you build. However, there are some general guidelines.
+          <em>
+           T
+          </em>
+          should be as large as possible, while
+          <em>
+           dt
+          </em>
+          should be as small as possible.
+         </p>
+         <p>
+          These guidelines create tradeoffs.
+         </p>
+         <h3 id="horizon">
+          Horizon
+         </h3>
+         <p>
+          In the case of driving a car,
+          <em>
+           T
+          </em>
+          should be a few seconds, at most. Beyond that horizon, the environment will change enough that it won't make sense to predict any further into the future.
+         </p>
+         <h3 id="number-of-timesteps">
+          Number of Timesteps
+         </h3>
+         <p>
+          The goal of Model Predictive Control is to optimize the control inputs:
+          <span class="mathquill ud-math">
+           [\delta, a]
+          </span>
+          . An optimizer will tune these inputs until a low cost vector of control inputs is found. The length of this vector is determined by
+          <em>
+           N
+          </em>
+          :
+         </p>
+         <div class="mathquill">
+          [\delta_1, a_1, \delta_2, a_2 , ..., \delta_{N-1}, a_{N-1}]
+         </div>
+         <p>
+          Thus
+          <em>
+           N
+          </em>
+          determines the number of variables optimized by the MPC. This is also the major driver of computational cost.
+         </p>
+         <h3 id="timestep-duration">
+          Timestep Duration
+         </h3>
+         <p>
+          MPC attempts to approximate a continuous reference trajectory by means of discrete paths between actuations. Larger values of
+          <em>
+           dt
+          </em>
+          result in less frequent actuations, which makes it harder to accurately approximate a continuous reference trajectory. This is sometimes called "discretization error".
+         </p>
+         <p>
+          A good approach to setting
+          <em>
+           N
+          </em>
+          ,
+          <em>
+           dt
+          </em>
+          , and
+          <em>
+           T
+          </em>
+          is to first determine a reasonable range for
+          <em>
+           T
+          </em>
+          and then tune
+          <em>
+           dt
+          </em>
+          and
+          <em>
+           N
+          </em>
+          appropriately, keeping the effect of each in mind.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="The blue line is the reference trajectory and the red line the trajectory computed by *Model Predictive Control*. In this example the horizon has 7 steps, *N*, and the space in between white pebbles signifies the time elapsed, *dt*." class="img img-fluid" src="img/05-i-length-of-trajectory-and-timestep-duration-02.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            The blue line is the reference trajectory and the red line the trajectory computed by
+            <em>
+             Model Predictive Control
+            </em>
+            . In this example the horizon has 7 steps,
+            <em>
+             N
+            </em>
+            , and the space in between white pebbles signifies the time elapsed,
+            <em>
+             dt
+            </em>
+            .
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. Putting It All Together.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Length and Duration')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

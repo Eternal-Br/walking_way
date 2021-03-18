@@ -1,0 +1,737 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Mind The Line
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Model Predictive Control
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro.html">
+       01. Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Reference State.html">
+       02. Reference State
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Dealing With Stopping.html">
+       03. Dealing With Stopping
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Additional Cost Considerations.html">
+       04. Additional Cost Considerations
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Length and Duration.html">
+       05. Length and Duration
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Putting It All Together.html">
+       06. Putting It All Together
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Latency.html">
+       07. Latency
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Mind The Line.html">
+       08. Mind The Line
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Solution Mind The Line.html">
+       09. Solution: Mind The Line
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Tuning MPC.html">
+       10. Tuning MPC
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Outro.html">
+       11. Outro
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Bonus Round Control [Optional].html">
+       12. Bonus Round: Control [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          08. Mind The Line
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In this quiz you'll use MPC to follow the trajectory along a line.
+         </p>
+         <p>
+          Steps:
+         </p>
+         <ol>
+          <li>
+           Set
+           <em>
+            N
+           </em>
+           and
+           <em>
+            dt
+           </em>
+           .
+          </li>
+          <li>
+           Fit the polynomial to the waypoints.
+          </li>
+          <li>
+           Calculate initial cross track error and orientation error values.
+          </li>
+          <li>
+           Define the components of the cost function (state, actuators, etc). You may use the methods previously discussed or make up something, up to you!
+          </li>
+          <li>
+           Define the model constraints. These are the state update equations defined in the
+           <em>
+            Vehicle Models
+           </em>
+           module.
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Before you begin let's go over the libraries you'll use for this quiz and the following project.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="ipopthttpsprojectscoin-ororgipopt">
+          <a href="https://projects.coin-or.org/Ipopt/" rel="noopener noreferrer" target="_blank">
+           Ipopt
+          </a>
+         </h2>
+         <p>
+          Ipopt is the tool we'll be using to optimize the control inputs
+          <span class="mathquill ud-math">
+           [\delta_1, a_1, …, \delta_{N-1}, a_{N-1}]
+          </span>
+          . It's able to find locally optimal values (non-linear problem!) while keeping the constraints set directly to the actuators and the constraints defined by the vehicle model. Ipopt requires we give it the jacobians and hessians directly - it does not compute them for us. Hence, we need to either manually compute them or have a library do this for us. Luckily, there is a library called CppAD which does exactly this.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="cppadhttpswwwcoin-ororgcppad">
+          <a href="https://www.coin-or.org/CppAD/" rel="noopener noreferrer" target="_blank">
+           CppAD
+          </a>
+         </h2>
+         <p>
+          CppAD is a library we'll use for automatic differentiation. By using CppAD we don't have to manually compute derivatives, which is tedious and prone to error.
+         </p>
+         <p>
+          In order to use CppAD effectively, we have to use its types instead of regular
+          <code>
+           double
+          </code>
+          or
+          <code>
+           std::vector
+          </code>
+          types.
+         </p>
+         <p>
+          Additionally math functions must be called from CppAD. Here's an example of calling
+          <code>
+           pow
+          </code>
+          :
+         </p>
+         <pre><code class="cpp language-cpp">CppAD::pow(x, 2);
+// instead of 
+pow(x, 2);</code></pre>
+         <p>
+          Luckily most elementary math operations are overloaded. So calling
+          <code>
+           *
+          </code>
+          ,
+          <code>
+           +
+          </code>
+          ,
+          <code>
+           -
+          </code>
+          ,
+          <code>
+           /
+          </code>
+          will work as intended as long as it's called on
+          <code>
+           CppAD&lt;double&gt;
+          </code>
+          instead of
+          <code>
+           double
+          </code>
+          . Most of this is done for you and there are examples to draw from in the code we provide.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="code-structure">
+          Code Structure
+         </h2>
+         <p>
+          We've filled in most of the quiz starter code for you. The goal of this quiz is really just about getting everything to work as intended.
+         </p>
+         <p>
+          That said, it may be tricky to decipher some elements of the starter code, so we will walk you through it.
+         </p>
+         <p>
+          There are two main components in
+          <a href="https://github.com/udacity/CarND-MPC-Quizzes/blob/master/mpc_to_line/src/MPC.cpp" rel="noopener noreferrer" target="_blank">
+           <code>
+            MPC.cpp
+           </code>
+          </a>
+          :
+         </p>
+         <ol>
+          <li>
+           <code>
+            vector&lt;double&gt; MPC::Solve(Eigen::VectorXd x0, Eigen::VectorXd coeffs)
+           </code>
+           method
+          </li>
+          <li>
+           <code>
+            FG_eval
+           </code>
+           class
+          </li>
+         </ol>
+         <p>
+          There are also a few small
+          <code>
+           TODO
+          </code>
+          s in
+          <code>
+           main.cpp
+          </code>
+          which are mostly self-explanatory, so we won't cover them here.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="mpcsolve">
+          MPC::Solve
+         </h3>
+         <p>
+          <code>
+           x0
+          </code>
+          is the initial state
+          <span class="mathquill ud-math">
+           [x ,y , \psi, v, cte, e\psi]
+          </span>
+          ,
+          <code>
+           coeffs
+          </code>
+          are the coefficients of the fitting polynomial. The bulk of this method is setting up the vehicle model constraints (
+          <code>
+           constraints
+          </code>
+          ) and variables (
+          <code>
+           vars
+          </code>
+          ) for Ipopt.
+         </p>
+         <h4 id="variables">
+          Variables
+         </h4>
+         <pre><code class="cpp language-cpp">double x = x0[0];
+double y = x0[1];
+double psi = x0[2];
+double v = x0[3];
+double cte = x0[4];
+double epsi = x0[5];
+...
+// Set the initial variable values
+vars[x_start] = x;
+vars[y_start] = y;
+vars[psi_start] = psi;
+vars[v_start] = v;
+vars[cte_start] = cte;
+vars[epsi_start] = epsi;</code></pre>
+         <p>
+          Note Ipopt expects all the constraints and variables as vectors. For example, suppose
+          <code>
+           N
+          </code>
+          is 5, then the structure of
+          <code>
+           vars
+          </code>
+          a 38-element vector:
+         </p>
+         <p>
+          vars[0],…,vars[4] -&gt;
+          <span class="mathquill ud-math">
+           [x_1, …., x_5]
+          </span>
+         </p>
+         <p>
+          vars[5],…,vars[9] -&gt;
+          <span class="mathquill ud-math">
+           [y_1, …., y_5]
+          </span>
+         </p>
+         <p>
+          vars[10],…,vars[14] -&gt;
+          <span class="mathquill ud-math">
+           [\psi_1, …., \psi_5]
+          </span>
+         </p>
+         <p>
+          vars[15],…,vars[19] -&gt;
+          <span class="mathquill ud-math">
+           [v_1, …., v_5]
+          </span>
+         </p>
+         <p>
+          vars[20],…,vars[24] -&gt;
+          <span class="mathquill ud-math">
+           [cte_1, …., cte_5]
+          </span>
+         </p>
+         <p>
+          vars[25],…,vars[29] -&gt;
+          <span class="mathquill ud-math">
+           [e\psi_1, …., e\psi_5]
+          </span>
+         </p>
+         <p>
+          vars[30],…,vars[33] -&gt;
+          <span class="mathquill ud-math">
+           [\delta_1, …., \delta_4]
+          </span>
+         </p>
+         <p>
+          vars[34],…,vars[37] -&gt;
+          <span class="mathquill ud-math">
+           [a_1, …., a_4]
+          </span>
+         </p>
+         <p>
+          We then set lower and upper bounds on the variables. Here we set the range of values
+          <span class="mathquill ud-math">
+           \delta
+          </span>
+          to [-25, 25] in radians:
+         </p>
+         <pre><code class="cpp language-cpp">for (int i = delta_start; i &lt; a_start; ++i) {
+    vars_lowerbound[i] = -0.436332;
+    vars_upperbound[i] = 0.436332;
+  }</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4 id="constraints">
+          Constraints
+         </h4>
+         <p>
+          Next the we set the lower and upper bounds on the constraints.
+         </p>
+         <p>
+          Consider, for example:
+         </p>
+         <div class="mathquill">
+          x_{t+1} = x_t + v_t * cos(\psi_t) * dt
+         </div>
+         <p>
+          This expresses that
+          <span class="mathquill ud-math">
+           x_{t+1}
+          </span>
+          <strong>
+           MUST
+          </strong>
+          be equal to
+          <span class="mathquill ud-math">
+           x_t + v_t * cos(\psi_t) * dt
+          </span>
+          . Put differently:
+         </p>
+         <div class="mathquill">
+          x_{t+1} - (x_t + v_t * cos(\psi_t) * dt) = 0
+         </div>
+         <p>
+          The equation above simplifies the upper and lower bounds of the constraint: both must be 0.
+         </p>
+         <p>
+          This can be generalized to the other equations as well:
+         </p>
+         <pre><code class="cpp language-cpp">for (int i = 0; i &lt; n_constraints; ++i) {
+  constraints_lowerbound[i] = 0;
+  constraints_upperbound[i] = 0;
+}</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="fg_eval">
+          FG_eval
+         </h3>
+         <p>
+          The
+          <code>
+           FG_eval
+          </code>
+          class has the constructor:
+         </p>
+         <pre><code class="cpp language-cpp">FG_eval(Eigen::VectorXd coeffs) { this-&gt;coeffs = coeffs; }</code></pre>
+         <p>
+          where
+          <code>
+           coeffs
+          </code>
+          are the coefficients of the fitted polynomial.
+          <code>
+           coeffs
+          </code>
+          will be used by the cross track error and heading error equations.
+         </p>
+         <p>
+          The
+          <code>
+           FG_eval
+          </code>
+          class has only one method:
+         </p>
+         <pre><code class="cpp language-cpp">void operator()(ADvector&amp; fg, const ADvector&amp; vars)</code></pre>
+         <p>
+          <code>
+           vars
+          </code>
+          is the vector of variables (from the previous section) and
+          <code>
+           fg
+          </code>
+          is the vector of constraints.
+         </p>
+         <p>
+          One complication:
+          <code>
+           fg[0]
+          </code>
+          stores the cost value, so the
+          <code>
+           fg
+          </code>
+          vector is 1 element larger than it was in
+          <code>
+           MPC::Solve
+          </code>
+          .
+         </p>
+         <p>
+          Here in
+          <code>
+           operator()
+          </code>
+          you'll define the cost function and constraints.
+          <em>
+           x
+          </em>
+          is already completed:
+         </p>
+         <pre><code class="cpp language-cpp">for (int t = 1; t &lt; N; ++t) {
+    AD&lt;double&gt; x1 = vars[x_start + t];
+
+    AD&lt;double&gt; x0 = vars[x_start + t - 1];
+    AD&lt;double&gt; psi0 = vars[psi_start + t - 1];
+    AD&lt;double&gt; v0 = vars[v_start + t - 1];
+
+    // Here's `x` to get you started.
+    // The idea here is to constraint this value to be 0.
+    //
+    // NOTE: The use of `AD&lt;double&gt;` and use of `CppAD`!
+    // CppAD can compute derivatives and pass these to the solver.
+
+    /**
+     * TODO: Setup the rest of the model constraints
+     */
+    fg[1 + x_start + t] = x1 - (x0 + v0 * CppAD::cos(psi0) * dt);
+  }</code></pre>
+         <p>
+          Note that we start the loop at
+          <code>
+           t=1
+          </code>
+          , because the values at
+          <code>
+           t=0
+          </code>
+          are set to our initial state - those values are not calculated by the solver.
+         </p>
+         <p>
+          An
+          <code>
+           FG_eval
+          </code>
+          object is created in
+          <code>
+           MPC::Solve
+          </code>
+          :
+         </p>
+         <pre><code class="cpp language-cpp">FG_eval fg_eval(coeffs);</code></pre>
+         <p>
+          This is then used by Ipopt to find the lowest cost trajectory:
+         </p>
+         <pre><code>// place to return solution
+CppAD::ipopt::solve_result&lt;Dvector&gt; solution;
+
+// solve the problem
+CppAD::ipopt::solve&lt;Dvector, FG_eval&gt;(
+    options, vars, vars_lowerbound, vars_upperbound, constraints_lowerbound,
+    constraints_upperbound, fg_eval, solution);</code></pre>
+         <p>
+          The filled in
+          <code>
+           vars
+          </code>
+          vector is stored as
+          <code>
+           solution.x
+          </code>
+          and the cost as
+          <code>
+           solution.obj_value
+          </code>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Complete the
+          <em>
+           Model Predictive Control
+          </em>
+          quiz from
+          <a href="https://github.com/udacity/CarND-MPC-Quizzes" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="09. Solution Mind The Line.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Mind The Line')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

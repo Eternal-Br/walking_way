@@ -1,0 +1,28 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.024
+If the goal is to move the vehicle from A to B then
+
+00:00:03.024 --> 00:00:06.359
+coming to a halt in the middle of the reference trajectory is a problem.
+
+00:00:06.360 --> 00:00:08.599
+A simple solution is a set of reference velocity,
+
+00:00:08.599 --> 00:00:13.140
+to cross-functional penalize the vehicle for not maintaining that reference velocity.
+
+00:00:13.140 --> 00:00:16.980
+In this case imagine the reference velocity is 35 mph.
+
+00:00:16.980 --> 00:00:20.309
+Another option is to measure the Euclidean distance between the current position of
+
+00:00:20.309 --> 00:00:24.449
+the vehicle and the destination and then add that distance to the cost.
+
+00:00:24.449 --> 00:00:27.149
+There may be other great alternatives though. Feel free to think of one.
+

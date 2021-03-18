@@ -1,0 +1,602 @@
+{
+  "data": {
+    "lesson": {
+      "id": 341935,
+      "key": "b6de6f99-281f-44e8-a9df-196577204638",
+      "title": "Inference Performance",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson you'll become familiar with various optimizations in an effort to squeeze every last bit of performance at inference.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/b6de6f99-281f-44e8-a9df-196577204638/341935/1538850315129/Inference+Performance+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/b6de6f99-281f-44e8-a9df-196577204638/341935/1538850312161/Inference+Performance+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 341963,
+          "key": "12ebd773-0607-46d3-9cc1-0684685ef30c",
+          "title": "Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "12ebd773-0607-46d3-9cc1-0684685ef30c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350237,
+              "key": "eaf5633a-1eac-4c30-b664-bc25482c0ae1",
+              "title": "Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dK5Yn3sq5RM",
+                "china_cdn_id": "dK5Yn3sq5RM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341965,
+          "key": "cb0d2afb-baba-4885-a082-dc6839a9704c",
+          "title": "Why Bother With Performance",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cb0d2afb-baba-4885-a082-dc6839a9704c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350238,
+              "key": "dab86434-0088-4db0-83c2-2ce46512c41c",
+              "title": "Why Bother With Performance",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "pCg0q8qmgsk",
+                "china_cdn_id": "pCg0q8qmgsk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341966,
+          "key": "a52644b3-7729-4662-9d2f-c845dc97176a",
+          "title": "Semantic Segmentation Revisited",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a52644b3-7729-4662-9d2f-c845dc97176a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350873,
+              "key": "d5f710f1-dc71-4a03-b92c-01c102834131",
+              "title": "L3 03 L Semantic Segmentation Revisited",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "xFcI26kLtiY",
+                "china_cdn_id": "xFcI26kLtiY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341967,
+          "key": "1f496bc5-022b-4bff-b30c-cb3bc6eeae98",
+          "title": "Interlude: Using The AMI",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1f496bc5-022b-4bff-b30c-cb3bc6eeae98",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342476,
+              "key": "f63344ee-f026-4580-8a16-431b017e8854",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Interlude: Using The AMI\n\nRunning many of the optimizations in TensorFlow requires compiling the TensorFlow and its associated tools from source. This process can be tedious so we've created an AMI, `\t\nudacity-carnd-advanced-deep-learning` available in the N. California, Oregon, N. Virginia, and Ohio regions.\n\nFor this guide we'll be creating a spot instance since they are easier to setup and generally much cheaper than regular instances. The downside of a spot instance is it may be terminated at any point. Creating a persistent volume and saving the model frequently is a good strategy.\n\n## GPU Instance and AMI\n\nThe first thing we'll do is select the AMI and an instance with a GPU:\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350242,
+              "key": "42746a44-0ac9-46a0-8c3e-0597d4e620bc",
+              "title": "P1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Y2ggt6l7PTo",
+                "china_cdn_id": "Y2ggt6l7PTo.mp4"
+              }
+            },
+            {
+              "id": 350245,
+              "key": "a21db02b-abbc-4637-8d42-fab4a5f2f2f6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Volume, Key Pair, and Security Group\n\n**NOTE**: during the project you should uncheck the volume delete marker, this will ensure the volume is **NOT** deleted when the instance is terminated and your progress will be saved. The volume can then be attached to a future instance.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350250,
+              "key": "31e7584c-4375-48a8-8f3e-9c59f660464a",
+              "title": "P2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Yr_rRyEOTnM",
+                "china_cdn_id": "Yr_rRyEOTnM.mp4"
+              }
+            },
+            {
+              "id": 350224,
+              "key": "4e44d10a-dc07-4433-843f-48b34c992a2e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Connecting To The Instance\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350270,
+              "key": "948faf57-2045-4fd4-877b-4f69afb8191d",
+              "title": "P3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yncq5HhDTV4",
+                "china_cdn_id": "yncq5HhDTV4.mp4"
+              }
+            },
+            {
+              "id": 463964,
+              "key": "ff99acfd-c8db-41eb-96f7-6a4d3a43e04f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Please note that in some cases, the default security group blocks SSH connections from external IPs, resulting in the request timing out. In these cases, the security group has to be updated to allow SSH connections.  Please see [this post](https://knowledge.udacity.com/questions/6725) for details as well as these helpful setup instructions: \n\n*Adapted from mentor driveWell's advice*:\n\n1. Log in to EC2 management console, region [N. California, Oregon, N. Virginia, or Ohio]\n2. Instances -> spot requests -> Request Spot Instances\n3. Search for AMI -> Communiti AMI -> udacity-carnd-advanced-deep-learning\n4. Instances type(s) select -> g2.2xlarge or g3.4xlarge is suggested (GPU instances)\n5. Network default -> Next\n6. EBS volumes -> Delete: uncheck mark (important: storing the data when instance is terminated will be charged additionally)\n7. Key pair name -> create new key pair -> update -> choose\n8. Security group -> create new -> add SSH and custom TCP for port 8888\n9. Review -> Launch\n10. Instances -> when Instance State = Running -> right click -> Connect\n11. If using Putty (Windows), follow instructions for Putty from here\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341972,
+          "key": "d2abd412-0ec6-436c-b961-a851b5eb35f8",
+          "title": "Freezing Graphs",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d2abd412-0ec6-436c-b961-a851b5eb35f8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342173,
+              "key": "1fe4dc98-e736-4dbc-95fc-24b811c22c96",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Freezing Graphs\n\nPrior to applying any optimizations we'll want to freeze the TensorFlow Graph such that it's self-contained in a single [protobuf](https://developers.google.com/protocol-buffers/) file. Freezing the graph is the process of converting TensorFlow variables into constants. During inference, variables become unnecessary since the values they store don’t change. We might as well convert them to constants, which the computer can work with faster.\n\nAdditional benefits of freezing the graph are:\n- Unnecessary nodes related to training are removed\n- The model can be contained entirely in one protobuf file (weights and graph definition)\n- Simpler graph structure\n- Easier to deploy (due to everything being in one file)\n\nFor these reasons, freezing the graph is commonly the first transform engineers execute when optimizing their network for inference.\n\nWe’ll use a trained fully convolutional model as the practical example.\n\n### Setup\n\nIn the AMI navigate to the directory containing the saved graph checkpoint:\n\n```sh\ncd /home/ubuntu/inference-walkthrough/src\n```\n\nThe current directory should contain the following files:\n\n```\nbase_graph.pb \ncheckpoint\nckpt.data-00000-of-0000\nckpt.index\nckpt.meta\ngraph_utils.py\n```\n\n* `base_graph.pb` is a protobuf representation of the graph. Note this does not include weight values, just the structure.\n* `checkpoint` and `ckpt.*` files pertain to the saved weights and associated metadata.\n* `graph_utils.py` is a Python file containing utility functions for working with the above files and TF graphs.\n\n### Freezing The Graph\n\nHere’s an example of the freeze graph tool:\n\n```sh\n~/tensorflow/bazel-bin/tensorflow/python/tools/freeze_graph \\\n--input_graph=base_graph.pb \\\n--input_checkpoint=ckpt \\\n--input_binary=true \\\n--output_graph=frozen_graph.pb \\\n--output_node_names=Softmax\n\n```\n\nThe `freeze_graph` command requires five inputs:\n- The input graph `input_graph` saved in protobuf format.\n- The input graph checkpoint, `input_checkpoint`.\n- `input_binary` denotes whether the input graph is a binary file. Set this to true if the input is a `.pb` file instead of `.pbtxt`.\n- The name of the output graph, `output_graph`, i.e. the frozen graph.\n- The names of the output nodes. It’s a good idea in general to name key nodes in the graph and these names will come in handy when using these tools as well.\n\nThe result is saved in the `frozen_graph.pb` file. This ends up removing many extraneous operations from the graph. We can get all a graph’s operations with `.get_operations()` method. The `load_graph` method below takes a binary protobuf file as input and returns the graph and list of operations.\n\n```python\ndef load_graph(graph_file, use_xla=False):\n    jit_level = 0\n    config = tf.ConfigProto()\n    if use_xla:\n        jit_level = tf.OptimizerOptions.ON_1\n        config.graph_options.optimizer_options.global_jit_level = jit_level\n\n    with tf.Session(graph=tf.Graph(), config=config) as sess:\n        gd = tf.GraphDef()\n        with tf.gfile.Open(graph_file, 'rb') as f:\n            data = f.read()\n            gd.ParseFromString(data)\n        tf.import_graph_def(gd, name='')\n        ops = sess.graph.get_operations()\n        n_ops = len(ops)\n        return sess.graph, ops\n\n```\n\n```python\nfrom graph_utils import load_graph\n\nsess, base_ops = load_graph('base_graph.pb')\nprint(len(base_ops)) # 2165\nsess, frozen_ops = load_graph('frozen_graph.pb')\nprint(len(frozen_ops)) # 245\n```\n\nAs you can see, just freezing the graph substantially reduces the number of operations.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341973,
+          "key": "1087d052-b6a6-4999-a883-2039d3259911",
+          "title": "Graph Transforms",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1087d052-b6a6-4999-a883-2039d3259911",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342176,
+              "key": "9180afa6-ee63-4342-97a5-60169eb55db5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\nA TensorFlow model is defined as a static graph through which data flows. Graphs are versatile data structures that can be mutated in various ways. TensorFlow takes advantage of this through graph transforms.  A transform takes a graph as input, alters it, and returns a new graph as output. Note the original graph used as input is not mutated in place, so remains unaltered.  A detailed discussion of many available transforms and how to apply them is found [here](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/graph_transforms/#introduction).  While this information is not required for this lesson, it is worth a read to become familiar with the topic.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 354298,
+              "key": "f97ed755-e4b9-4426-a2cf-4e701834e354",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/August/598124c7_viz/viz.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f97ed755-e4b9-4426-a2cf-4e701834e354",
+              "caption": "",
+              "alt": null,
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 354299,
+              "key": "4dace45d-a803-4e0d-acc7-14f2b9c7dc2c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Several transforms can be chained together, typically this is done with a theme in mind. For example, we might want to reduce the graph size, optimize it for inference, create an 8-bit version of the graph, etc. In the following sections we'll discuss two sequences of transforms:\n\n1. Optimizing for Inference\n2. Performing 8-bit Calculations",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341968,
+          "key": "30366685-1101-49f6-961e-ce72240efdbe",
+          "title": "Fusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "30366685-1101-49f6-961e-ce72240efdbe",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350240,
+              "key": "ed2bc6f7-0c8a-4fac-85d4-798fc36cd3d9",
+              "title": "Fusion",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JOksFH3vQgk",
+                "china_cdn_id": "JOksFH3vQgk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341974,
+          "key": "7eb14e8c-2418-4ee1-855e-5dc832fce738",
+          "title": "Optimizing For Inference",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7eb14e8c-2418-4ee1-855e-5dc832fce738",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342186,
+              "key": "ba4cf38f-f4a6-473f-8946-3eeb34ea2d71",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Once the graph is frozen there are a variety of transformations that can be performed; dependent on what we wish to achieve. TensorFlow has packaged up some inference optimizations in a tool aptly called `optimize_for_inference`. \n\n`optimize_for_inference` does the following:\n- Removes training-specific and debug-specific nodes\n- Fuses common operations\n- Removes entire sections of the graph that are never reached\n\n\nHere’s how it can be used:\n\n```bash\n~/tensorflow/bazel-bin/tensorflow/python/tools/optimize_for_inference \\\n--input=frozen_graph.pb \\\n--output=optimized_graph.pb \\\n--frozen_graph=True \\\n--input_names=image_input \\\n--output_names=Softmax\n```\n\nWe'll use the graph we just froze as the input graph, `input`. `output` is the name of the output graph; we’ll be creative and call it `optimized_graph.pb`. \n\nThe `optimize_for_inference` tool works for both frozen and unfrozen graphs, so we have to specify whether the graph is already frozen or not with `frozen_graph`. \n\n`input_names` and `output_names` are the names of the input and output nodes respectively. As the option names suggest, there can be more than one input or output node, separated by commas.\n\nLet’s take a look at the effect this has on the number of operations.\n\n```python\nfrom graph_utils import load_graph\n\nsess, optimized_ops = load_graph('optimized_graph.pb')\nprint(len(optimized_ops)) # 200\n```\n\nCool, Now there are only 200 operations in the graph!\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341969,
+          "key": "b75f845e-01af-4549-bb48-188bcce5a952",
+          "title": "Reducing Precision",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b75f845e-01af-4549-bb48-188bcce5a952",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350241,
+              "key": "e4d20358-a88c-4e36-a8ee-7f8955892d0a",
+              "title": "Reducing Precision",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bZPG5I_igR8",
+                "china_cdn_id": "bZPG5I_igR8.mp4"
+              }
+            },
+            {
+              "id": 406896,
+              "key": "9a89e75d-7f00-4fa3-9093-cf56c49b23c7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "[Bandwidth](https://en.wikipedia.org/wiki/Bandwidth_computing) is  the rate of data transfer, bit rate, or throughput, typically measured in bits per second.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341970,
+          "key": "2ea02fa7-a69f-490d-a22f-48c48bae3cfc",
+          "title": "Quantization Quiz",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2ea02fa7-a69f-490d-a22f-48c48bae3cfc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345300,
+              "key": "dc23f853-b8b4-4c43-b2d6-4c682981bed3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Quantization Quiz",
+              "instructor_notes": ""
+            },
+            {
+              "id": 342507,
+              "key": "b0f943b9-71fe-47ed-a013-b3e4de3eb42c",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b0f943b9-71fe-47ed-a013-b3e4de3eb42c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Why would we want to use integers instead of floating points?",
+                "answers": [
+                  {
+                    "id": "a1499390447557",
+                    "text": "Integer arithmetic can be faster than floating point arithmetic",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499390463378",
+                    "text": "Low Memory Footprint",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1499390469717",
+                    "text": "More Arithmetic Throughput",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 406898,
+              "key": "7d13e665-f322-4212-b108-7641b3f503e1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this context, arithmetic throughput refers to the number of calculations that can be processed per unit time.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 342520,
+          "key": "8608087a-9caa-4e17-94d5-d855ae7424e6",
+          "title": "Quantization Conversion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8608087a-9caa-4e17-94d5-d855ae7424e6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350243,
+              "key": "45a076cb-9414-4ede-b20f-4cb71b53408d",
+              "title": "Quantization Conversion",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0kbFQerI86k",
+                "china_cdn_id": "0kbFQerI86k.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 341975,
+          "key": "173fcc8d-5044-4cb1-980a-307e5585a3b3",
+          "title": "8-bit Calculations",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "173fcc8d-5044-4cb1-980a-307e5585a3b3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342200,
+              "key": "f9196ead-be87-441d-ab48-2ea403ec9abe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We’ve covered freezing the graph and optimizing for inference, but we haven’t yet covered quantization. So the next optimization we’ll discuss is converting the graph to perform 8-bit calculations. Here’s an example using the `transform_graph` tool:\n\n```sh\n~/tensorflow/bazel-bin/tensorflow/tools/graph_transforms/transform_graph \\\n--in_graph=frozen_graph.pb \\\n--out_graph=eightbit_graph.pb \\\n--inputs=image_input \\\n--outputs=Softmax \\\n--transforms='\nadd_default_attributes\nremove_nodes(op=Identity, op=CheckNumerics)\nfold_constants(ignore_errors=true)\nfold_batch_norms\nfold_old_batch_norms\nfuse_resize_and_conv\nquantize_weights\nquantize_nodes\nstrip_unused_nodes\nsort_by_execution_order'\n```\n\nThere’s a lot going on here, which you can find more information in the [TensorFlow Graph Transforms documentation](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/graph_transforms/README.md). \n\nThe gist is that `fold` transforms look for subgraphs that always evaluate to to the same result. Then they consolidate each such subgraph into one `Constant` node. \n\n`quantize_weights` quantizes values larger than 15 bits. It also adds nodes to convert back to floating point. The `quantize_weights` transform is mainly for reducing graph size. For the desired quantization computation behaviour we’ll need to use `quantize_nodes` as well.\n\nOk, let’s take a look:\n\n```python\nfrom graph_utils import load_graph\n\nsess, eightbit_ops = load_graph('eightbit_graph.pb')\nprint(len(eightbit_ops)) # 425\n```\n\nThere are 425 operations, that’s more than the original frozen graph! Quantization computation requires extra nodes in general so it’s not a big deal. Nodes that have no quantization equivalent are keep as floating point.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341971,
+          "key": "3971f5e3-b4a7-44b9-884f-d4fe8482f58e",
+          "title": "Compilation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3971f5e3-b4a7-44b9-884f-d4fe8482f58e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342172,
+              "key": "5e10b037-a2e2-44fe-bf86-0653644945f7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Compilation\nHere’s one way we might run the inference on a single image from the command line:\n\n```sh\npython inference.py img1.jpg\n```\n\n`inference.py` is a Python program running inference on a TensorFlow graph.\n\nSimplifying a little, the key steps are:\n\n- The operating system starts a Python interpreter\n- The interpreter runs the inference.py script\n- TensorFlow runtime is started through the Python API.\n- TensorFlow loads a saved model graph and weights.\n- Start a TensorFlow Session.\n- Perform inference on img1.jpg.\n- Inference results are returned.\n\nNotice most of the steps have nothing to do with the performing inference on `img1.jpg`. \n\nA possible improvement is to run a loop that performs inference once an image is received. This way we don’t start the interpreter, load the model, and setup the TensorFlow runtime for every image. The general idea is to reduce overhead as much as possible.\n\nImagine if, instead of loading Python and TensorFlow runtime, we just used a binary.  A binary is an executable list of machine instructions.  A binary doesn’t use the Python interpreter or TensorFlow runtime. It’s simply data in, Inference data out. The problem, of course, is that compiling the model down to a binary is very difficult. In fact, all of these optimizations are difficult to implement!  Fortunately, many of these are already implemented for us by TensorFlow.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341976,
+          "key": "5327e256-bc6f-4a69-b9a9-8bfa82b41b96",
+          "title": "AOT & JIT",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5327e256-bc6f-4a69-b9a9-8bfa82b41b96",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342204,
+              "key": "6faad183-73cb-4d63-b448-c1afbd8df7b9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "TensorFlow supports both JIT (just in time) and AOT (ahead of time) compilation. \n\nAOT compilation is the kind used in a C or C++ program; it compiles the program “ahead” of the actual use. A really cool aspect of AOT compilation is you can potentially create a static binary file, meaning it’s entirely self contained. You can deploy it by simply downloading the file and executing it, without concern for downloading extra software, besides necessary hardware drivers, i.e. for GPU use.\n\nJIT compilation doesn’t compile code until it’s actually run. You can imagine as a piece of code is being interpreted machine instructions are concurrently generated. Nothing will change during the initial interpretation, the JIT might as well not exist. However, on the second and all future uses that piece of code will no longer be interpreted. Instead the compiled machine instructions will be used.\n\nUnder the hood AOT and JIT compilation make use of XLA (Accelerated Linear Algebra). XLA is a compiler and runtime for linear algebra. XLA takes a TensorFlow graph and uses [LLVM](http://llvm.org/) to generate machine code instructions. LLVM is itself a compiler which generates machine code from its IR (intermediate representation). So, in a nutshell:\n\nTensorFlow -> XLA -> LLVM IR -> Machine Code\n\nwhich means TensorFlow can potentially be used on any architecture LLVM generates code for.\n\nBoth AOT and JIT compilation are experimental in TensorFlow. However, JIT compilation is fairly straightforward to apply. Note JIT compilation is NOT limited to inference but can be used during training as well.\n\n```python\n# Create a TensorFlow configuration object. This will be \n# passed as an argument to the session.\nconfig = tf.ConfigProto()\n# JIT level, this can be set to ON_1 or ON_2 \njit_level = tf.OptimizerOptions.ON_1\nconfig.graph_options.optimizer_options.global_jit_level = jit_level\n```\n\nThat’s it! All that’s left to be done is pass the `config` into the session:\n\n```python\nwith tf.Session(config=config) as sess:\n    …\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341977,
+          "key": "d1393292-63c5-45ae-b950-7073681981d8",
+          "title": "Reusing The Graph",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d1393292-63c5-45ae-b950-7073681981d8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 342211,
+              "key": "6cc47c29-9d9e-4a39-9a80-1585a4692c90",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Reusing The Graph\n\nSo once we’ve optimized the graph and saved it to a file how do we use it?\n\nFirst load the graph from the binary protobuf file:\n\n```python\nfrom graph_utils import load_graph\n\nsess, _ = load_graph(‘your_graph.pb’)\ngraph = sess.graph\n```\n\nOnce the graph is loaded we can access operations and tensors with the `get_operation_by_name` and `get_tensor_by_name` `tf.Graph` methods respectively. We could also retrieve all the operations with of a `tf.Graph` with the `get_operations` method, which is very useful if we are unsure which operation to use. In this case we want to pass an image as input and receive the softmax probabilities as output:\n\n```python\nimage_input = graph.get_tensor_by_name('image_input:0')\nkeep_prob = graph.get_tensor_by_name('keep_prob:0')\nsoftmax = graph.get_tensor_by_name('Softmax:0')\n```\n\nThen we can take an image and run the computation in a session as we normally would. `keep_prob` is related to the dropout probability.\n\n```python\nprobs = sess.run(softmax, {image_input: img, keep_prob: 1.0})\n```\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 341978,
+          "key": "24aecdbd-94e6-4adb-8129-8a167948858d",
+          "title": "Outro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "24aecdbd-94e6-4adb-8129-8a167948858d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350244,
+              "key": "afbf0bdd-3869-4ac3-b691-131d8cf49a01",
+              "title": "Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jMSB5_P_fss",
+                "china_cdn_id": "jMSB5_P_fss.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

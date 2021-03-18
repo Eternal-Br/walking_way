@@ -1,0 +1,730 @@
+{
+  "data": {
+    "lesson": {
+      "id": 345281,
+      "key": "46dcd53a-2a28-4a58-8df0-09b22e5ccdfe",
+      "title": "Functional Safety: Safety Plan",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "A functional safety plan is critical to any functional safety project. Here you will learn what goes into a safety plan so that you can document your own.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/46dcd53a-2a28-4a58-8df0-09b22e5ccdfe/345281/1538851589799/Functional+Safety%3A+Safety+Plan+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/46dcd53a-2a28-4a58-8df0-09b22e5ccdfe/345281/1538851587566/Functional+Safety%3A+Safety+Plan+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 345286,
+          "key": "91f4617d-8417-4e8d-ad1a-8fb1b638a8c7",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "91f4617d-8417-4e8d-ad1a-8fb1b638a8c7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 379931,
+              "key": "cae9082f-1fa4-418c-91e7-260b2160850b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Project Repo\n\nEach of the next five lessons (Safety Plan, Hazard Analysis and Risk Assessment, Functional Safety Concept, Technical Safety Concept, Functional Safety at the Software and Hardware Levels) has a matching document in the [final project repo](https://github.com/udacity/CarND-Functional-Safety-Project) template folder. The final project will involve filling out the template files.\n\nHere are two suggestions for tackling the functional safety lessons. You can either \n* watch all lessons first. After the final lesson, you can download the project repo and fill out the templates. You will most likely need to rewatch the videos and re-read the text nodes to find the right answers\n* download the project repo now. As you go through the lessons, you can follow along with the template files and fill them out as you go. Each lesson has its own template file.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345287,
+              "key": "e9ee8cab-125d-42b9-ae01-a504f7ac0dfd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Introduction to the Safety Plan Lesson",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350000,
+              "key": "91932181-2b8f-4279-a91c-4920817d1bdb",
+              "title": "L2 01 L Introduction- Safety Plan",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nQD8NgwXuj4",
+                "china_cdn_id": "nQD8NgwXuj4.mp4"
+              }
+            },
+            {
+              "id": 345450,
+              "key": "a8711ced-07ad-4770-aa09-e4396444bfed",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lesson Outline\n\nIn this lesson, you will learn to document a functional safety plan. This is a task often performed by a functional safety manager.\n\nOnce you understand the motivation behind documentation, you will learn about the different parts of a safety plan:\n* Safety Culture \n* Safety Lifecycle\n* Safety Management Roles and Responsibilities\n* Development Interface Agreements\n* Confirmation Measures\n\nWhile a lot of these terms might seem foreign, you will become familiar with them as you progress through this lesson and the rest of the module.\n\nSome parts of the safety plan are more intuitive than others. For example, the **project schedule plan** would be a calendar. Filling out much of the **confirmation measures** section, on the other hand, requires knowledge about testing and verification that goes beyond what's covered in the module.\n\nPart 2 of the ISO 26262 standard, *Management of Functional Safety*, defines the safety plan.\n\nNote that Safety Culture, Safety Lifecycle, Development Interface Agreements, and Confirmation Measures are important safety plan elements, but are not part of the work product called \"safety plan\" defined by ISO 26262.  Rather, they are considered separate work products.  ISO 26262 allows tailored safety plan processes which includes multiple work products.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345445,
+              "key": "16aae448-fa32-41f8-9cde-15a2f57a9a5f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Safety Plan Outline\n\nHere is an actual outline that Elektrobit uses for their safety plans:\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350978,
+              "key": "b91dde3e-e18f-4c12-9d6a-64ac1ec84e69",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/July/597923b5_2017-07-26-13-05-03-udacity-fusa-training-content.pptx-google-slides/2017-07-26-13-05-03-udacity-fusa-training-content.pptx-google-slides.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b91dde3e-e18f-4c12-9d6a-64ac1ec84e69",
+              "caption": "Elektrobit Safety Plan Outline",
+              "alt": null,
+              "width": 2560,
+              "height": 1440,
+              "instructor_notes": null
+            },
+            {
+              "id": 345447,
+              "key": "23c7e70d-08b6-4418-a4e8-aa96662aeb81",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The project at the end of this module requires writing a safety plan. After going through this lesson, you will be ready to write the safety plan.\n\nHere is an overview of the different sections:\n\nThe **Introduction** section gives an overview of the project and discusses the documentation that will be included in the entire report.\n\nThe **Item Definition** describes which particular vehicle system will be under analysis. \n\n**Goals and Measures** discuss the goals of the project and what activities will be included.\n\n**Safety LifeCycle Tailoring** mentions which parts of the V model will be included in the project.\n\n**Resources Required In Project** defines the different roles on the team.\n\n**Supporting Process Management** talks about the systems engineering management methods to be used.\n\n**Project Schedule Plan** gives a calendar of when tasks will be completed.\n\n**Confirmation Measures** reports what will be done to prove that functional safety has been achieved.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350748,
+              "key": "670471cd-ffba-434d-83d5-d17fb2f10f58",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the [final project GitHub repository](https://github.com/udacity/CarND-Functional-Safety-Project), you will find a template for the safety plan that you will make in the final project. You can look at the template as you go through the safety plan lesson. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345449,
+              "key": "b0f03969-ec2e-4ff5-bb66-da8df98a53b0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Why Document?\n\nISO 26262 requires independent audits. The audits check if the project followed the steps outlined in the standard. Auditors will rely on the documentation to assess your work.  An audit may be followed by a safety assessment, used to determine if the decisions made and steps taken achieve appropriate safety.  \n\nDocumentation also provides a reference when modifying a system. If, for example, you are modifying a brake system, you can use prior documentation to help guide the current project.\n\nWhat happens if the vehicle you helped design is being sold to the public and then has a safety issue? Government authorities will probably expect to see documentation for how the system was designed and tested. You'll want to prove that you followed best practices. The proof is in the documentation.\n\nThe main goal in functional safety is to reduce risk to acceptable levels. But how do you prove that your design solutions actually lower risks? Much like a lawyer would argue a case in court, you would provide your arguments in a final document called a **safety case**.\n\nA safety case would provide evidence that your project has made the vehicle safer.\n\nThe evidence would include all the ISO 26262 documentation such as the safety plan, design plans, functional safety concept, technical safety concepts, as well as evidence documenting testing and integration.\n\nThe safety case would discuss what elements you added to the system in order to make it safe. And it would provide testing evidence that shows the system functioning properly. The documentation provides evidence that what you added to the system really does make the vehicle safer. Somebody who is completely independent from the functional safety team should evaluate the validity of the safety case.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 345451,
+          "key": "8524bbfb-1539-4883-bc91-c0510c9e2fbb",
+          "title": "Safety Culture",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8524bbfb-1539-4883-bc91-c0510c9e2fbb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350019,
+              "key": "9a6d9b6f-e288-4a1d-9b71-2376c7ad1fa7",
+              "title": "L2 03 L Safety Culture",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hca5xarxPVM",
+                "china_cdn_id": "hca5xarxPVM.mp4"
+              }
+            },
+            {
+              "id": 345464,
+              "key": "cd57e18e-755a-451c-baf1-e26df862aa84",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Good Safety Culture\n\nHere are some characteristics of a good safety culture:\n* **High priority**: safety has the highest priority among competing constraints like cost and productivity\n* **Accountability**: processes ensure accountability such that design decisions are traceable back to the people and teams who made the decisions\n* **Rewards**: the organization motivates and supports the achievement of functional safety\n* **Penalties**: the organization penalizes shortcuts that jeopardize safety or quality\n* **Independence**: teams who design and develop a product should be independent from the teams who audit the work\n* **Well defined processes**: company design and management processes should be clearly defined \n* **Resources**: projects have necessary resources including people with appropriate skills\n* **Diversity**: intellectual diversity is sought after, valued and integrated into processes\n* **Communication**: communication channels encourage disclosure of problems\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345465,
+              "key": "1f88c981-d9a8-4cb3-8ba0-6fd1da72100b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quality Management\n\nISO 26262 does not cover quality management directly; however, quality management is a required part of safety culture. \n\nOrganizations need to have a quality management system in place that complies with quality management standards such as [ISO/TS 16949](https://en.wikipedia.org/wiki/ISO/TS_16949\n) (replaced in 2016 by  [IATF 16949](http://www.aiag.org/quality/iatf16949/iatf-16949-2016) or [ISO 9001](https://www.iso.org/standard/62085.html).\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 345453,
+          "key": "05ffd073-afdf-4d71-9f8e-3872def6d5a3",
+          "title": "Tailoring the Safety Lifecycle",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "05ffd073-afdf-4d71-9f8e-3872def6d5a3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345466,
+              "key": "b9ab0d63-58e3-4ecd-bfbc-5276152c306c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Tailoring the Safety Lifecycle",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350020,
+              "key": "d5b19c36-cc3d-4a64-8cba-63582933a2df",
+              "title": "L2 05 L Tailoring The Safety Lifecycle",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Ym9raP5zb2U",
+                "china_cdn_id": "Ym9raP5zb2U.mp4"
+              }
+            },
+            {
+              "id": 350758,
+              "key": "b2706aca-5bc5-4eee-9dce-94dadc1b62d9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz Safety Culture\n\nRemember safety culture from the last lesson page? Here is a (somewhat tricky) quiz to test what you learned.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350780,
+              "key": "9166a6a9-9743-4603-b7bc-dd5f45e64581",
+              "title": "Safety Culture Quiz",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9166a6a9-9743-4603-b7bc-dd5f45e64581",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following would be examples of a good safety culture?",
+                "answers": [
+                  {
+                    "id": "a1501034123218",
+                    "text": "To make vehicle development more efficient, you have your testing engineer audit the final testing report.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501034123968",
+                    "text": "You need to do a hazard analysis. So you schedule a meeting with the vehicle engineering team to help you identify potential hazards.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501034124457",
+                    "text": "A vehicle designer expresses interest in running system tests to verify vehicle performance. You show the designer how to perform a test on the braking system, and then you use the results in a report.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501034797851",
+                    "text": "Right when the vehicle starts going into production, you find a possible flaw in the fuel exhaust system. The company decides to continue production and will fix the problem if the government mandates a recall.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501035147872",
+                    "text": "Your company has always tracked requirements engineering decisions with physical paper reports. Sometimes it's not clear who is making design decisions. Your company decides to use requirements engineering software to better track who is responsible for decisions.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 345455,
+          "key": "b8b50dcc-a9c7-466b-ac30-61cd2a806acf",
+          "title": "Safety Management Roles and Responsibilities",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b8b50dcc-a9c7-466b-ac30-61cd2a806acf",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350021,
+              "key": "2d10decf-8612-44af-aabc-bc3305bcd445",
+              "title": "L2 06 L Safety Management Roles And Responsibilities",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5fViXy7XF0w",
+                "china_cdn_id": "5fViXy7XF0w.mp4"
+              }
+            },
+            {
+              "id": 345476,
+              "key": "b16d920f-3fc4-4dec-bfe1-3c8adc2d1a38",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Major Roles and Responsibilities in Functional Safety",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345467,
+              "key": "595aaf49-50d5-4264-ac28-73da9e4b5cae",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Everybody on a team would ultimately be responsible for following safety processes no matter their role in the company. Creating and sustaining a safety culture would also be everybody's responsibility; however, if you were a safety manager, then you would be especially interested in ensuring a safety oriented workplace.\n\nHere is a summary of the different roles in a functional safety project\n\nProject Manager\n* Overall project management\n* Acquires and allocates resources needed for the functional safety activities\n* Appoints safety manager or might act as safety manager\n\nSafety Manager \n* Planning, coordinating and documenting of the development phase of the safety lifecycle\n* Tailors the safety lifecycle\n* Maintains the safety plan\n* Monitors progress against the safety plan\n* Performs pre-audits before the safety auditor\n\nSafety Engineer \n* Product development\n* Integration\n* Testing at the hardware, software and system levels\n\nSafety Auditor\n* Ensures that the design and production implementation conform to the safety plan and ISO 26262. \n* Must be independent from the team developing the project\n\nSafety Assessor\n* Independent judgement as to whether functional safety is being achieved via a functional safety assessment\n* Must be independent from the team developing the project\n\nTest Manager\n* Plans testing activities\n* Coordinates testing to show that the vehicle system works correctly\n\nThese are the main management roles in the functional safety lifecycle; there would still be other people involved including requirement engineers, test engineers, hardware engineers, and software engineers.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 435316,
+              "key": "7813809f-21e2-4957-8159-2db278cac2d1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Note Regarding Defined Roles\nISO defines the program manager and safety manager only.  However, use of other roles is one possible implementation, and may vary from company to company.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350817,
+              "key": "bfb10034-c2c5-4f42-b31d-fc4ab1e5d3d2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz: Tailoring the Safety Lifecycle?\n\nDo you remember what tailoring the safety lifecycle means?",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350816,
+              "key": "68a9ec1f-7be4-4306-8760-5993f4da725d",
+              "title": "Tailoring the Safety Lifecycle",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "68a9ec1f-7be4-4306-8760-5993f4da725d",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What does it mean to \"tailor the safety lifecycle\"?",
+                "answers": [
+                  {
+                    "id": "a1501039903379",
+                    "text": "You limit your functional safety documentation to the parts of the vehicle that had safety issues during the testing phase.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501039939713",
+                    "text": "You limit a functional safety project to specific sections of the ISO standard to save time.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501039940290",
+                    "text": "You determine if your product is new or if it is a modification of an existing product. You only focus on the parts of the ISO 26262 standard impacted by the changes.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501039940897",
+                    "text": "You do the parts of the ISO standard that you are knowledgable about and then outsource the rest of the work to experts at another company.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 345457,
+          "key": "ab68ef33-0cd5-4a70-966f-85bf6179a45a",
+          "title": "Development Interface Agreement",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ab68ef33-0cd5-4a70-966f-85bf6179a45a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350023,
+              "key": "24ac0eb6-16ef-45a2-9501-dbeb745f9e8b",
+              "title": "L2 08 L Development Interface Agreement",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "xF79RP2LduY",
+                "china_cdn_id": "xF79RP2LduY.mp4"
+              }
+            },
+            {
+              "id": 345477,
+              "key": "a9353d4e-dfc0-49de-89b6-eab38ed9c9d4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### What Goes into a DIA (Development Interface Agreement)?\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345468,
+              "key": "a1f89b38-c8af-4de8-b856-71e5310ba177",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A DIA (development interface agreement) defines the roles and responsibilities between companies involved in developing a product. All involved parties need to agree on the contents of the DIA before the project begins.\n\nThe DIA also specifies what evidence and work products each party will provide to prove that work was done according to the agreement.\n\nThe ultimate goal is to ensure that all parties are developing safe vehicles in compliance with ISO 26262.\n\nHere are major sections of a DIA:\n* Appointment of customer and supplier safety managers\n* Joint tailoring of the safety lifecycle\n* Activities and processes to be performed by the customer; activities and processes to be performed by the supplier\n* Information and work products to be exchanged\n* Parties or persons responsible for each activity in design and production\n* Any supporting processes or tools to ensure compatibility between customer and supplier technologies",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350819,
+              "key": "877033d2-5366-4bfb-9b40-e29070b439eb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz Roles and Responsibilities\n\nDo you remember the different roles and responsibilities in functional safety? (Hint: go back to the previous lesson page if you have trouble remembering)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350818,
+              "key": "18ee76b5-6bc3-47a7-acf4-3541faacf532",
+              "title": "Functional Safety Roles",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "18ee76b5-6bc3-47a7-acf4-3541faacf532",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the role with the job description"
+                },
+                "concepts_label": "Role",
+                "answers_label": "Job Description",
+                "concepts": [
+                  {
+                    "text": "Safety Auditor",
+                    "correct_answer": {
+                      "id": "a1501041073306",
+                      "text": "makes sure that the project conforms to the safety plan"
+                    }
+                  },
+                  {
+                    "text": "Test Manager",
+                    "correct_answer": {
+                      "id": "a1501041380135",
+                      "text": "planning and overseeing testing activities"
+                    }
+                  },
+                  {
+                    "text": "Safety Manager",
+                    "correct_answer": {
+                      "id": "a1501041401483",
+                      "text": "pre-audits, plans the development phase"
+                    }
+                  },
+                  {
+                    "text": "Safety Assessor",
+                    "correct_answer": {
+                      "id": "a1501041444018",
+                      "text": "judges whether the project has increased safety"
+                    }
+                  },
+                  {
+                    "text": "Project Manager",
+                    "correct_answer": {
+                      "id": "a1501041487265",
+                      "text": "allocates resources as needed"
+                    }
+                  },
+                  {
+                    "text": "Safety Engineer",
+                    "correct_answer": {
+                      "id": "a1501041524640",
+                      "text": "develops prototypes, integrates sub systems into larger systems"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1501041401483",
+                    "text": "pre-audits, plans the development phase"
+                  },
+                  {
+                    "id": "a1501041073306",
+                    "text": "makes sure that the project conforms to the safety plan"
+                  },
+                  {
+                    "id": "a1501041444018",
+                    "text": "judges whether the project has increased safety"
+                  },
+                  {
+                    "id": "a1501041487265",
+                    "text": "allocates resources as needed"
+                  },
+                  {
+                    "id": "a1501041380135",
+                    "text": "planning and overseeing testing activities"
+                  },
+                  {
+                    "id": "a1501041524640",
+                    "text": "develops prototypes, integrates sub systems into larger systems"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 345459,
+          "key": "5b84bcda-50a1-45e0-99ff-f78647d4c626",
+          "title": "Confirmation Measures",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5b84bcda-50a1-45e0-99ff-f78647d4c626",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 350024,
+              "key": "64e4b33b-6d51-4761-8b9a-a351f085c0be",
+              "title": "L2 10 L Confirmation Measures",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3XiALMje_5Q",
+                "china_cdn_id": "3XiALMje_5Q.mp4"
+              }
+            },
+            {
+              "id": 345469,
+              "key": "00ab0f52-fd1b-48ed-9e52-3736dc91dba2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Confirmation Measures Purpose\n\nConfirmation measures serve two purposes:\n * that a functional safety project conforms to ISO 26262, and\n * that the project really does make the vehicle safer.\n\nThe people who carry out confirmation measures need to be independent from the people who actually developed the project.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345470,
+              "key": "7c789745-edd1-4587-8bab-9b09848370d3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Confirmation Measures Definitions\n\n##### *Confirmation review*\n\nEnsures that the project complies with ISO 26262. As the product is designed and developed, an independent person would review the work to make sure ISO 26262 is being followed.\n\n##### *Functional safety audit*\n\nChecking to make sure that the actual implementation of the project conforms to the safety plan is called a functional safety audit. \n\n##### *Functional safety assessment*\n\nConfirming that plans, designs and developed products actually achieve functional safety is called a functional safety assessment.\n\nYou will not be required to write out a full confirmation measure section in the final project's safety plan; but you will need to show that you understand the purpose of the confirmation measures.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 345471,
+              "key": "32d87977-785d-43a9-b302-3de89d201682",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Levels of Independence\n\nThe person who developed a document, plan, design or product should not be the same person who carries out a confirmation measure; confirmation measures require independence.\n\nISO 26262 requires different levels of independence depending on what part of the functional safety lifecycle is under review. \n\nFor example, the department or company who develops a Hazard Analysis and Risk Assessment (HARA)  needs to be completely separate from the department or company who makes sure the HARA was carried out according to ISO 26262. That’s because HARA is the critical first step in identifying high risk situations.\n\nOn the other hand, a person who develops a system that is rated low risk can be on the same team as the person who reviews the system for ISO 26262 compliance.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350822,
+              "key": "449db003-2b65-40bf-8e50-d2bf8f65fa67",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz: DIA (Development Interface Agreement)\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350823,
+              "key": "d97f075d-ed58-4cb4-9654-3857e318d41e",
+              "title": "DIA",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d97f075d-ed58-4cb4-9654-3857e318d41e",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is the purpose of a DIA (Development Interface Agreement)?",
+                "answers": [
+                  {
+                    "id": "a1501042591587",
+                    "text": "Clarify the responsibilities of the different parties involved in a functional safety project",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501042610740",
+                    "text": "Describe the work products that each company will provide",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501042611300",
+                    "text": "Help avoid disputes between companies",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501042611868",
+                    "text": "Clarifies who will be responsible for any safety issues in post-production",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 350824,
+              "key": "e3a800ef-3996-43b3-bc37-7effee4e4d4c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quiz: Confirmation Measures\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350828,
+              "key": "18455f5e-8481-43f9-b752-d8819d0cfb99",
+              "title": "Confirmation Measures",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "18455f5e-8481-43f9-b752-d8819d0cfb99",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Confirmation measures help ensure that a functional safety project improves safety, conforms to the safety plan, and follows the ISO 26262 standard. Why is it important that the people who develop the system and the people who analyze confirmation measures be independent?",
+                "answers": [
+                  {
+                    "id": "a1501043168023",
+                    "text": "It's not necessary. A safety engineer, for example, should be able to confirm that the product has improved safety.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501043373757",
+                    "text": "Hiring more people will make the project faster and more efficient.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1501043374493",
+                    "text": "An independent team analyzing confirmation measures will hopefully have less bias than the team who designed the system. ",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1501043375029",
+                    "text": "Safety needs to be the highest priority over other competing interests like costs and time constraints.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 345472,
+          "key": "370aed2e-5eff-4508-997e-01c0206347cb",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "370aed2e-5eff-4508-997e-01c0206347cb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 345474,
+              "key": "0bb9ade6-f915-4f53-b43a-f8caff61bc89",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lesson Summary",
+              "instructor_notes": ""
+            },
+            {
+              "id": 350025,
+              "key": "de595159-69a1-46c5-916e-b2cce53f8683",
+              "title": "L2 12 L Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NNp7X8thmX8",
+                "china_cdn_id": "NNp7X8thmX8.mp4"
+              }
+            },
+            {
+              "id": 345475,
+              "key": "d98c57b9-d021-42d2-a0f3-598510f464a7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Safety Plan - Functional Safety Project\n\nA safety plan provides an overall framework for a functional safety project.\n\nIn the project at the end of the lessons, one of your tasks will be to document part of a mock safety plan. We are going to look at an advanced driver assistance system throughout the functional safety lessons, and you will use what you've learned about that system to make your documents. Let's go over the parts that you'll be expected to complete:\n\n*Purpose of the Safety Plan*\n\nIn your own words, you will describe the purpose of the safety plan.\n\n*Item Definition*\n\nAn item definition describes which system is being considered for the functional safety analysis. We'll talk about item definition more in the lesson \"Functional Safety Concept\".\n\n*Goals and Measures*\n\nYou will be expected to describe the goal of the project. Think about what the goal is of functional safety and how that goal relates to the project.\n\n*Safety Culture*\n\nPretend that you work for a company looking into the functional safety of the advanced driver assistance system. You'll describe the characteristics of your company's safety culture. \n\n*Safety Lifecycle Tailoring*\n\nYou will discuss which parts of the functional safety standard are in scope for this project.\n\n*Development Interface Agreement*\n\nWhile you will not need to create a development interface agreement, you will be asked to describe the agreement's purpose. You will also need to differentiate between what your company is in charge of and what other companies are in charge of for the advanced driver assistance system.\n\n*Confirmation Measures*\n\nYou will be asked to describe the purpose of confirmation measures. You will also be asked to define terms like confirmation review, functional safety audit, and functional safety assessment.\n\nTake a look at this link, [safety plan template file](https://github.com/udacity/CarND-Functional-Safety-Project/tree/master/Template_Files), to see the safety plan template we are providing for the project.\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

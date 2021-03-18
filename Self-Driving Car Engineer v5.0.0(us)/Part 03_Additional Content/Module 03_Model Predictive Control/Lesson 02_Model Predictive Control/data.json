@@ -1,0 +1,743 @@
+{
+  "data": {
+    "lesson": {
+      "id": 301426,
+      "key": "338b458f-7ebf-449c-9ad1-611eb933b076",
+      "title": "Model Predictive Control",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson, you'll learn how to frame the control problem as an optimization problem over time horizons. This is Model Predictive Control!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/338b458f-7ebf-449c-9ad1-611eb933b076/301426/1538849978608/Model+Predictive+Control+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/338b458f-7ebf-449c-9ad1-611eb933b076/301426/1538849976318/Model+Predictive+Control+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 301429,
+          "key": "82f6063d-5de1-4ad2-89b6-35bf70c03255",
+          "title": "Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82f6063d-5de1-4ad2-89b6-35bf70c03255",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 306154,
+              "key": "2420eb2a-829a-4054-a10a-ddc6ed3dc85a",
+              "title": "Model Predictive Control Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "6z8A-1kNdz8",
+                "china_cdn_id": "6z8A-1kNdz8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 301863,
+          "key": "1528b1f9-3373-44bd-b431-b6f61668bed2",
+          "title": "Reference State",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1528b1f9-3373-44bd-b431-b6f61668bed2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 301865,
+              "key": "c420e86d-5ab0-4793-b9d5-68f02f78c8cf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A good start to the cost function is to think of the error that you would like to minimize. For example, measuring the offset from the center of the lane, where the center of the lane can be called the reference, or desired, state. \n\nWe previously captured two errors in our state vector: <span class=\"mathquill\">cte</span> and <span class=\"mathquill\">e\\psi</span>. \n\nIdeally, both of these errors would be 0 - there would be no difference from the actual vehicle position and heading to the desired position and heading.\n\nOur cost should be a function of how far these errors are from 0.\n\nHere’s one such example of how to increment our cost at each timestep, <span class='mathquill'>t</span>, over our desired time horizon (represented by total number of desired timesteps, <span class='mathquill'>N</span>, below) - we want to minimize the total error accumulated over this time horizon:\n\n```cpp\ndouble cost = 0;\nfor (int t = 0; t < N; ++t) {\n  cost += pow(cte[t], 2);\n  cost += pow(epsi[t], 2);\n}\n```\n\nThis is a great start, but it’s quite not enough.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 301866,
+              "key": "b01e7364-cb9d-4bd1-b340-ea59674ebd08",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b01e7364-cb9d-4bd1-b340-ea59674ebd08",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What problem might occur if this is the final version of our cost function?",
+                "answers": [
+                  {
+                    "id": "a1493336607480",
+                    "text": "The vehicle might stop on the way from A to B.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1493336610431",
+                    "text": "The vehicle might behave erratically (drastically different consecutive actuations). ",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 335838,
+          "key": "554a16a1-cdf1-408b-a431-4a84689a4fba",
+          "title": "Dealing With Stopping",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "554a16a1-cdf1-408b-a431-4a84689a4fba",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 336113,
+              "key": "c7b5ebec-45e9-4b8b-93dd-c9b2b671dce9",
+              "title": "Dealing With Stopping",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2gkRWj7KIMU",
+                "china_cdn_id": "2gkRWj7KIMU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 335881,
+          "key": "5df9cd1c-b111-48e5-857c-7547f82dac0c",
+          "title": "Additional Cost Considerations",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5df9cd1c-b111-48e5-857c-7547f82dac0c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 336114,
+              "key": "61e12093-1965-4203-9675-92c3e7e0bf40",
+              "title": "Additional Cost Constraints",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lsdZtPPOhtk",
+                "china_cdn_id": "lsdZtPPOhtk.mp4"
+              }
+            },
+            {
+              "id": 335882,
+              "key": "6d03fdda-4462-4107-a15a-695cc211bba3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Code Snippets\n\n```cpp\nfor (int t = 0; t < N-1; ++t) {\n  cost += pow(delta[t], 2);\n}\n```\n\n\n```cpp\nfor (int t = 0; t < N-1; ++t) {\n  cost += pow(delta[t+1] - delta[t], 2);\n  cost += pow(a[t+1] - a[t], 2);\n}\n```",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 321962,
+          "key": "00154b2e-bc08-4d00-b47e-c4209e3bbdc7",
+          "title": "Length and Duration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "00154b2e-bc08-4d00-b47e-c4209e3bbdc7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 321963,
+              "key": "6571d0ec-e0b3-4dbc-bbd7-22321b22962e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The prediction horizon is the duration over which future predictions are made. We’ll refer to this as *T*. \n\n*T* is the product of two other variables, *N* and *dt*. \n\n*N* is the number of timesteps in the horizon. *dt* is how much time elapses between actuations. For example, if *N* were 20 and *dt* were 0.5, then *T* would be 10 seconds.\n\n*N*, *dt*, and *T* are hyperparameters you will need to tune for each model predictive controller you build. However, there are some general guidelines. *T* should be as large as possible, while *dt* should be as small as possible.\n\nThese guidelines create tradeoffs.\n\n### Horizon\nIn the case of driving a car, *T* should be a few seconds, at most. Beyond that horizon, the environment will change enough that it won't make sense to predict any further into the future.\n\n### Number of Timesteps\nThe goal of Model Predictive Control is to optimize the control inputs: <span class=\"mathquill\">[\\delta, a]</span>. An optimizer will tune these inputs until a low cost vector of control inputs is found. The length of this vector is determined by *N*:\n\n<div class=\"mathquill\">\n[\\delta_1, a_1, \\delta_2, a_2 , ..., \\delta_{N-1}, a_{N-1}]\n</div>\n\nThus *N* determines the number of variables optimized by the MPC. This is also the major driver of computational cost.\n\n### Timestep Duration\nMPC attempts to approximate a continuous reference trajectory by means of discrete paths between actuations. Larger values of *dt* result in less frequent actuations, which makes it harder to accurately approximate a continuous reference trajectory. This is sometimes called \"discretization error\".\n\nA good approach to setting *N*, *dt*, and *T* is to first determine a reasonable range for *T* and then tune *dt* and *N* appropriately, keeping the effect of each in mind.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325077,
+              "key": "9a839e95-39fe-4aee-b234-8f46f007a343",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/592e0296_05-i-length-of-trajectory-and-timestep-duration-02/05-i-length-of-trajectory-and-timestep-duration-02.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9a839e95-39fe-4aee-b234-8f46f007a343",
+              "caption": "The blue line is the reference trajectory and the red line the trajectory computed by *Model Predictive Control*. In this example the horizon has 7 steps, *N*, and the space in between white pebbles signifies the time elapsed, *dt*.",
+              "alt": "",
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 336115,
+          "key": "d26b8460-653f-4479-bc24-68bb62c146ba",
+          "title": "Putting It All Together",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d26b8460-653f-4479-bc24-68bb62c146ba",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 341767,
+              "key": "cb1e1c6d-9fa4-41be-ba64-aaea2fa0f7d9",
+              "title": "Putting It All Together",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CZ71uEy8EtI",
+                "china_cdn_id": "CZ71uEy8EtI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 308291,
+          "key": "92ab8c01-fc5c-4554-85f9-bba8ed4ead20",
+          "title": "Latency",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "92ab8c01-fc5c-4554-85f9-bba8ed4ead20",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308339,
+              "key": "cec5d7bb-f412-4c51-9f0a-1bf053e5f293",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Latency\n\nIn a real car, an actuation command won't execute instantly - there will be a delay as the command propagates through the system. A realistic delay might be on the order of 100 milliseconds. \n\nThis is a problem called \"latency\", and it's a difficult challenge for some controllers - like a PID controller - to overcome. But a Model Predictive Controller can adapt quite well because we can model this latency in the system.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308340,
+              "key": "133e825c-3793-4c9d-b99b-fb443338b003",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## PID Controller\n\nPID controllers will calculate the error with respect to the present state, but the actuation will be performed when the vehicle is in a future (and likely different) state. This can sometimes lead to instability.\n\nThe PID controller could try to compute a control input based on a future error, but without a vehicle model it's unlikely this will be accurate.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308341,
+              "key": "56e0b8a8-90ed-45fd-8c75-c7dfc1c95fc3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Model Predictive Control\n\nA contributing factor to latency is actuator dynamics. For example the time elapsed between when you command a steering angle to when that angle is actually achieved. This could easily be modeled by a simple dynamic system and incorporated into the vehicle model. One approach would be running a simulation using the vehicle model starting from the current state for the duration of the latency. The resulting state from the simulation is the new initial state for MPC.\n\nThus, MPC can deal with latency much more effectively, by explicitly taking it into account, than a PID controller.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308958,
+              "key": "37635885-96f2-4986-b3e6-d2b2219d0e36",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Next we'll get the hang of implementing MPC!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 325291,
+          "key": "d3df10cc-797a-47ae-82c9-a39a597870d9",
+          "title": "Mind The Line",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d3df10cc-797a-47ae-82c9-a39a597870d9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325292,
+              "key": "a6cbc91c-1ddb-439d-8041-6467a6272284",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this quiz you'll use MPC to follow the trajectory along a line.\n\nSteps:\n\n1. Set *N* and *dt*.\n2. Fit the polynomial to the waypoints.\n3. Calculate initial cross track error and orientation error values.\n4. Define the components of the cost function (state, actuators, etc). You may use the methods previously discussed or make up something, up to you! \n5. Define the model constraints. These are the state update equations defined in the *Vehicle Models* module.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325295,
+              "key": "f4b3b4c8-409e-48e4-ab29-ba56c52ad2c3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Before you begin let's go over the libraries you'll use for this quiz and the following project.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325296,
+              "key": "46796c9a-25b2-4bba-b061-6534bf45cb06",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## [Ipopt](https://projects.coin-or.org/Ipopt/)\n\nIpopt is the tool we'll be using to optimize the control inputs <span class=\"mathquill\">[\\delta_1, a_1, ..., \\delta_{N-1}, a_{N-1}]</span>. It's able to find locally optimal values (non-linear problem!) while keeping the constraints set directly to the actuators and the constraints defined by the vehicle model. Ipopt requires we give it the jacobians and hessians directly - it does not compute them for us. Hence, we need to either manually compute them or have a library do this for us. Luckily, there is a library called CppAD which does exactly this.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325300,
+              "key": "96648df5-c0bf-412c-8adb-42a8dc34f483",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## [CppAD](https://www.coin-or.org/CppAD/)\n\nCppAD is a library we'll use for automatic differentiation. By using CppAD we don't have to manually compute derivatives, which is tedious and prone to error.\n\nIn order to use CppAD effectively, we have to use its types instead of regular `double` or `std::vector` types.\n\nAdditionally math functions must be called from CppAD. Here's an example of calling `pow`:\n\n```cpp\nCppAD::pow(x, 2);\n// instead of \npow(x, 2);\n```\n\nLuckily most elementary math operations are overloaded. So calling `*`, `+`, `-`, `/` will work as intended as long as it's called on `CppAD<double>` instead of `double`. Most of this is done for you and there are examples to draw from in the code we provide.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325935,
+              "key": "54e8c615-ed82-45d1-b6e1-12aedddd5aec",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Code Structure\n\nWe've filled in most of the quiz starter code for you. The goal of this quiz is really just about getting everything to work as intended. \n\nThat said, it may be tricky to decipher some elements of the starter code, so we will walk you through it.\n\nThere are two main components in [`MPC.cpp`](https://github.com/udacity/CarND-MPC-Quizzes/blob/master/mpc_to_line/src/MPC.cpp):\n\n1. `vector<double> MPC::Solve(Eigen::VectorXd x0, Eigen::VectorXd coeffs)` method\n2. `FG_eval` class\n\nThere are also a few small `TODO`s in `main.cpp` which are mostly self-explanatory, so we won't cover them here.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325962,
+              "key": "f9cceb7f-746e-4478-bfd2-94cff22aa19b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### MPC::Solve\n\n`x0` is the initial state <span class=\"mathquill\">[x ,y , \\psi, v, cte, e\\psi]</span>, `coeffs` are the coefficients of the fitting polynomial. The bulk of this method is setting up the vehicle model constraints (`constraints`) and variables (`vars`) for Ipopt.\n\n\n#### Variables\n\n```cpp\ndouble x = x0[0];\ndouble y = x0[1];\ndouble psi = x0[2];\ndouble v = x0[3];\ndouble cte = x0[4];\ndouble epsi = x0[5];\n...\n// Set the initial variable values\nvars[x_start] = x;\nvars[y_start] = y;\nvars[psi_start] = psi;\nvars[v_start] = v;\nvars[cte_start] = cte;\nvars[epsi_start] = epsi;\n```\nNote Ipopt expects all the constraints and variables as vectors. For example, suppose `N` is 5, then the structure of `vars` a 38-element vector:\n\nvars[0],...,vars[4] -> <span class=\"mathquill\">[x_1, ...., x_5]</span>\n\nvars[5],...,vars[9] -> <span class=\"mathquill\">[y_1, ...., y_5]</span>\n\nvars[10],...,vars[14] -> <span class=\"mathquill\">[\\psi_1, ...., \\psi_5]</span>\n\nvars[15],...,vars[19] -> <span class=\"mathquill\">[v_1, ...., v_5]</span>\n\nvars[20],...,vars[24] -> <span class=\"mathquill\">[cte_1, ...., cte_5]</span>\n\nvars[25],...,vars[29] -> <span class=\"mathquill\">[e\\psi_1, ...., e\\psi_5]</span>\n\nvars[30],...,vars[33] -> <span class=\"mathquill\">[\\delta_1, ...., \\delta_4]</span>\n\nvars[34],...,vars[37] -> <span class=\"mathquill\">[a_1, ...., a_4]</span>\n\nWe then set lower and upper bounds on the variables. Here we set the range of values <span class=\"mathquill\">\\delta</span> to [-25, 25] in radians:\n\n```cpp\nfor (int i = delta_start; i < a_start; ++i) {\n    vars_lowerbound[i] = -0.436332;\n    vars_upperbound[i] = 0.436332;\n  }\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325963,
+              "key": "cd73e1ed-f6df-4499-be58-2f34fde130f8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Constraints\n\nNext the we set the lower and upper bounds on the constraints.\n\nConsider, for example:\n\n<div class=\"mathquill\">x_{t+1} = x_t + v_t * cos(\\psi_t) * dt</div>\n\nThis expresses that <span class=\"mathquill\">x_{t+1}</span> **MUST** be equal to <span class=\"mathquill\">x_t + v_t * cos(\\psi_t) * dt</span>. Put differently:\n\n<div class=\"mathquill\">x_{t+1} - (x_t + v_t * cos(\\psi_t) * dt) = 0</div>\n\nThe equation above simplifies the upper and lower bounds of the constraint: both must be 0. \n\nThis can be generalized to the other equations as well:\n\n```cpp\nfor (int i = 0; i < n_constraints; ++i) {\n  constraints_lowerbound[i] = 0;\n  constraints_upperbound[i] = 0;\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325964,
+              "key": "b55a5d90-533e-49b5-b0b6-b11eecbfc4ed",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### FG_eval\n\nThe `FG_eval` class has the constructor:\n\n```cpp\nFG_eval(Eigen::VectorXd coeffs) { this->coeffs = coeffs; }\n```\n\nwhere `coeffs` are the coefficients of the fitted polynomial. `coeffs` will be used by the cross track error and heading error equations.\n\nThe `FG_eval` class has only one method:\n\n```cpp\nvoid operator()(ADvector& fg, const ADvector& vars)\n```\n\n`vars` is the vector of variables (from the previous section) and `fg` is the vector of constraints.\n\nOne complication: `fg[0]` stores the cost value, so the `fg` vector is 1 element larger than it was in `MPC::Solve`. \n\nHere in `operator()` you'll define the cost function and constraints. *x* is already completed:\n\n```cpp\nfor (int t = 1; t < N; ++t) {\n    AD<double> x1 = vars[x_start + t];\n\n    AD<double> x0 = vars[x_start + t - 1];\n    AD<double> psi0 = vars[psi_start + t - 1];\n    AD<double> v0 = vars[v_start + t - 1];\n\n    // Here's `x` to get you started.\n    // The idea here is to constraint this value to be 0.\n    //\n    // NOTE: The use of `AD<double>` and use of `CppAD`!\n    // CppAD can compute derivatives and pass these to the solver.\n\n    /**\n     * TODO: Setup the rest of the model constraints\n     */\n    fg[1 + x_start + t] = x1 - (x0 + v0 * CppAD::cos(psi0) * dt);\n  }\n```\n\nNote that we start the loop at `t=1`, because the values at `t=0` are set to our initial state - those values are not calculated by the solver.\n\nAn `FG_eval` object is created in `MPC::Solve`:\n\n```cpp\nFG_eval fg_eval(coeffs);\n```\n\nThis is then used by Ipopt to find the lowest cost trajectory:\n\n```\n// place to return solution\nCppAD::ipopt::solve_result<Dvector> solution;\n\n// solve the problem\nCppAD::ipopt::solve<Dvector, FG_eval>(\n    options, vars, vars_lowerbound, vars_upperbound, constraints_lowerbound,\n    constraints_upperbound, fg_eval, solution);\n```\n\nThe filled in `vars` vector is stored as `solution.x` and the cost as `solution.obj_value`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325293,
+              "key": "e6d69e80-e97d-4b95-a817-ff23544dd83f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Complete the *Model Predictive Control* quiz from [here](https://github.com/udacity/CarND-MPC-Quizzes).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 325102,
+          "key": "ee21948d-7fad-4821-b61c-0d69bbfcc425",
+          "title": "Solution: Mind The Line",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ee21948d-7fad-4821-b61c-0d69bbfcc425",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 325108,
+              "key": "7de6ddcd-74d8-4f84-ba7a-7c5ff14f2350",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Ok, let's walk through the solution. We'll go through each of the `TODO` tags.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325104,
+              "key": "6d660298-d43d-4c61-82ca-2b80bbf32d4a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# `MPC.cpp`\n\n## N & dt\n```cpp\n/** \n * TODO: Set N and dt\n */\nsize_t N = 25;\ndouble dt = 0.05;\n```\n\nHere we had to assign values to `N` and `dt`. It's likely you set these variables to slightly different values. That's fine as long as the cross track error decreased to 0. It's a good idea to play with different values here. \n\nFor example, if we were to set `N` to 100, the simulation would run much slower. This is because the solver would have to optimize 4 times as many control inputs. Ipopt, the solver, permutes the control input values until it finds the lowest cost. If you were to open up Ipopt and plot the x and y values as the solver mutates them, the plot would look like a worm moving around trying to fit the shape of the reference trajectory.\n\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325107,
+              "key": "195cc5a5-fc02-4bb9-8eca-ac7efa796878",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Cost function\n\n```cpp\n  void operator()(ADvector& fg, const ADvector& vars) {\n    // The cost is stored is the first element of `fg`.\n    // Any additions to the cost should be added to `fg[0]`.\n    fg[0] = 0;\n\n    // Cost function\n    /**\n     * TODO: Define the cost related the reference state and\n     *   anything you think may be beneficial.\n     */\n\n    // The part of the cost based on the reference state.\n    for (int t = 0; t < N; t++) {\n      fg[0] += CppAD::pow(vars[cte_start + t], 2);\n      fg[0] += CppAD::pow(vars[epsi_start + t], 2);\n      fg[0] += CppAD::pow(vars[v_start + t] - ref_v, 2);\n    }\n\n    // Minimize the use of actuators.\n    for (int t = 0; t < N - 1; t++) {\n      fg[0] += CppAD::pow(vars[delta_start + t], 2);\n      fg[0] += CppAD::pow(vars[a_start + t], 2);\n    }\n\n    // Minimize the value gap between sequential actuations.\n    for (int t = 0; t < N - 2; t++) {\n      fg[0] += CppAD::pow(vars[delta_start + t + 1] - vars[delta_start + t], 2);\n      fg[0] += CppAD::pow(vars[a_start + t + 1] - vars[a_start + t], 2);\n    }\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325111,
+              "key": "6438c5b5-1ff2-456b-8838-859e0e698371",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "There's a lot to unwind here.\n\nLet's start with the function arguments: `fg` and `vars`. \n\nThe vector `fg` is where the cost function and vehicle model/constraints is defined. We'll go the `fg` vector in more detail shortly.\n\nThe other function argument is the vector `vars`. This vector contains all variables used by the cost function and model:\n\n<div class=\"mathquill\">\n[x, y, \\psi, v, cte, e\\psi]\n</div>\n\n<div class=\"mathquill\">\n[\\delta, a]\n</div>\n\nThis is all one long vector, so if `N` is 25 then the indices are assigned as follows:\n\nvars[0], ..., vars[24] -> <span class=\"mathquill\">x_1, ..., x_{25}</span>\n\nvars[25], ..., vars[49] -> <span class=\"mathquill\">y_1, ..., y_{25}</span>\n\nvars[50], ..., vars[74] -> <span class=\"mathquill\">\\psi_1, ..., \\psi_{25}</span>\n\nvars[75], ..., vars[99] -> <span class=\"mathquill\">v_1, ..., v_{25}</span>\n\nvars[100], ..., vars[124] -> <span class=\"mathquill\">cte_1, ..., cte_{25}</span>\n\nvars[125], ..., vars[149] -> <span class=\"mathquill\">e\\psi_1, ..., e\\psi_{25}</span>\n\nvars[150], ..., vars[173] -> <span class=\"mathquill\">\\delta_1, ..., \\delta_{24}</span>\n\nvars[174], ..., vars[197] -> <span class=\"mathquill\">a_1, ..., a_{24}</span>\n\nNow let's focus on the actual cost function. Since 0 is the index at which`Ipopt` expects `fg` to store the cost value, we sum all the components of the cost and store them at index 0.\n\nIn each iteration through the loop, we sum three components to reach the aggregate cost: our cross-track error, our heading error, and our velocity error.\n\n```cpp\n// The part of the cost based on the reference state.\nfor (int t = 0; t < N; ++t) {\n  fg[0] += CppAD::pow(vars[cte_start + t] , 2);\n  fg[0] += CppAD::pow(vars[epsi_start + t], 2);\n  fg[0] += CppAD::pow(vars[v_start + t], 2);\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325112,
+              "key": "7ac93738-8a97-4913-acea-ed260cf070d2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We've already taken care of the main objective - to minimize our cross track, heading, and velocity errors. A further enhancement is to constrain erratic control inputs.\n\nFor example, if we're making a turn, we'd like the turn to be smooth, not sharp. Additionally, the vehicle velocity should not change too radically.\n\n```cpp\n// Minimize change-rate.\nfor (int t = 0; t < N - 1; ++t) {\n  fg[0] += CppAD::pow(vars[delta_start + t], 2);\n  fg[0] += CppAD::pow(vars[a_start + t], 2);\n}\n```\n\nThe goal of this final loop is to make control decisions more consistent, or smoother. The next control input should be similar to the current one.\n\n```cpp\n// Minimize the value gap between sequential actuations.\nfor (int t = 0; t < N - 2; ++t) {\n  fg[0] += CppAD::pow(vars[delta_start + t + 1] - vars[delta_start + t], 2);\n  fg[0] += CppAD::pow(vars[a_start + t + 1] - vars[a_start + t], 2);\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325109,
+              "key": "746d640b-a1e5-46db-8496-9cca0a754284",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Initialization & constraints\n\nWe initialize the model to the initial state. Recall `fg[0]` is reserved for the cost value, so the other indices are bumped up by 1.\n\n```cpp\nfg[1 + x_start] = vars[x_start];\nfg[1 + y_start] = vars[y_start];\nfg[1 + psi_start] = vars[psi_start];\nfg[1 + v_start] = vars[v_start];\nfg[1 + cte_start] = vars[cte_start];\nfg[1 + epsi_start] = vars[epsi_start];\n```\n\nAll the other constraints based on the vehicle model:\n\n<span class=\"mathquill\">x_{t+1} = x_t + v_t  cos(\\psi_t) * dt</span>\n\n<span class=\"mathquill\">y_{t+1} = y_t + v_t  sin(\\psi_t) * dt</span>\n\n<span class=\"mathquill\">\\psi_{t+1} = \\psi_t + \\frac {v_t} { L_f}  \\delta_t * dt</span>\n\n<span class=\"mathquill\">v_{t+1} = v_t + a_t * dt</span>\n\n<span class=\"mathquill\">cte_{t+1} = f(x_t) - y_t + (v_t  sin(e\\psi_t)  dt)</span>\n\n<span class=\"mathquill\">e\\psi_{t+1} = \\psi_t  - \\psi{des}_t  + (\\frac{v_t} { L_f}  \\delta_t  dt)</span>\n\nLet's look how to model <span class=\"mathquill\">\\psi</span>. Based on the above equations, we need to constrain the value of <span class=\"mathquill\">\\psi</span> at time t+1:\n\n<span class=\"mathquill\">\\psi_{t+1} = \\psi_t + \\frac {v_t} { L_f}  \\delta_t * dt</span>\n\nWe do that by setting a value within `fg` to the difference of `ps1` and the above formula.\n\nPreviously, we have set the corresponding `constraints_lowerbound` and the `constraints_upperbound` values to 0. That means the solver will force this value of `fg` to always be 0.\n\n```cpp\nfor (int t = 1; t < N ; ++t) {\n  // psi, v, delta at time t\n  AD<double> psi0 = vars[psi_start + t - 1];\n  AD<double> v0 = vars[v_start + t - 1];\n  AD<double> delta0 = vars[delta_start + t - 1];\n\n  // psi at time t+1\n  AD<double> psi1 = vars[psi_start + t];\n  \n  // how psi changes\n  fg[1 + psi_start + t] = psi1 - (psi0 + v0 * delta0 / Lf * dt);\n}\n```\n\nThe oddest line above is probably `fg[1 + psi_start + t]`.\n\n`fg[0]` stores the cost value, so there's always an offset of 1. So `fg[1 + psi_start]` is where we store the initial value of <span class=\"mathquill\">\\psi</span>. Finally, `fg[1 + psi_start + t]` is reserved for the <span class=\"mathquill\">t</span>th of <span class=\"mathquill\">N</span> values of <span class=\"mathquill\">\\psi</span> that the solver computes.\n\nCoding up the other parts of the model is similar.\n\n```cpp\nfor (int t = 1; t < N; ++t) {\n  // The state at time t+1 .\n  AD<double> x1 = vars[x_start + t];\n  AD<double> y1 = vars[y_start + t];\n  AD<double> psi1 = vars[psi_start + t];\n  AD<double> v1 = vars[v_start + t];\n  AD<double> cte1 = vars[cte_start + t];\n  AD<double> epsi1 = vars[epsi_start + t];\n\n  // The state at time t.\n  AD<double> x0 = vars[x_start + t - 1];\n  AD<double> y0 = vars[y_start + t - 1];\n  AD<double> psi0 = vars[psi_start + t - 1];\n  AD<double> v0 = vars[v_start + t - 1];\n  AD<double> cte0 = vars[cte_start + t - 1];\n  AD<double> epsi0 = vars[epsi_start + t - 1];\n\n  // Only consider the actuation at time t.\n  AD<double> delta0 = vars[delta_start + t - 1];\n  AD<double> a0 = vars[a_start + t - 1];\n\n  AD<double> f0 = coeffs[0] + coeffs[1] * x0;\n  AD<double> psides0 = CppAD::atan(coeffs[1]);\n\n  // Here's `x` to get you started.\n  // The idea here is to constraint this value to be 0.\n  //\n  // Recall the equations for the model:\n  // x_[t] = x[t-1] + v[t-1] * cos(psi[t-1]) * dt\n  // y_[t] = y[t-1] + v[t-1] * sin(psi[t-1]) * dt\n  // psi_[t] = psi[t-1] + v[t-1] / Lf * delta[t-1] * dt\n  // v_[t] = v[t-1] + a[t-1] * dt\n  // cte[t] = f(x[t-1]) - y[t-1] + v[t-1] * sin(epsi[t-1]) * dt\n  // epsi[t] = psi[t] - psides[t-1] + v[t-1] * delta[t-1] / Lf * dt\n  fg[1 + x_start + t] = x1 - (x0 + v0 * CppAD::cos(psi0) * dt);\n  fg[1 + y_start + t] = y1 - (y0 + v0 * CppAD::sin(psi0) * dt);\n  fg[1 + psi_start + t] = psi1 - (psi0 + v0 * delta0 / Lf * dt);\n  fg[1 + v_start + t] = v1 - (v0 + a0 * dt);\n  fg[1 + cte_start + t] =\n      cte1 - ((f0 - y0) + (v0 * CppAD::sin(epsi0) * dt));\n  fg[1 + epsi_start + t] =\n      epsi1 - ((psi0 - psides0) + v0 * delta0 / Lf * dt);\n}\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325105,
+              "key": "2450c74c-8b09-4d43-86a1-b1ec1a1a1d87",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# `main.cpp`\n## Fitting a polynomial to the waypoints\n\n```cpp\n/** \n * TODO: fit a polynomial to the above x and y coordinates\n */\nauto coeffs = polyfit(ptsx, ptsy, 1);\n```\nThe x and y coordinates are contained in the `ptsx` and `ptsy` vectors. Since these are 2-element vectors a 1-degree polynomial (straight line) is sufficient.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 325106,
+              "key": "c33ecbfe-758d-4993-94f0-cd726d30844d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Calculating the cross track and orientation error\n\n```cpp\ndouble x = -1;\ndouble y = 10;\ndouble psi = 0;\ndouble v = 10;\n/**\n * TODO: calculate the cross track error\n */\ndouble cte = polyeval(coeffs, x) - y;\n/**\n * TODO: calculate the orientation error\n */\ndouble epsi = psi - atan(coeffs[1]);\n```\n\nThe cross track error is calculated by evaluating at polynomial at `x` (-1) and subtracting `y`. \n\nRecall orientation error is calculated as follows <span class=\"mathquill\">e\\psi = \\psi - \\psi{des}</span>, where <span class=\"mathquill\">\\psi{des}</span> is can be calculated as <span class=\"mathquill\">arctan(f'(x))</span>.\n\n<span class=\"mathquill\">f(x) = a_0 + a_1*x</span>\n\n<span class=\"mathquill\">f'(x) = a_1</span>\n\nhence the solution `double epsi = psi - atan(coeffs[1]);`",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 308518,
+          "key": "d6909689-a76f-4eb9-9439-0e885679ba59",
+          "title": "Tuning MPC",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d6909689-a76f-4eb9-9439-0e885679ba59",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 308520,
+              "key": "5cc5c7f9-7f61-4b36-b84b-3da53f20fb6a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the previous quiz you used Model Predictive Control to minimize the cross track and orientation errors of the vehicle with respect to a line. As a result the cross track error graph looked something like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308541,
+              "key": "d60b78ac-616d-4ce7-a4fa-08b3c2ba39a1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5910cada_cte1/cte1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d60b78ac-616d-4ce7-a4fa-08b3c2ba39a1",
+              "caption": "*N* is set to 25 and *dt* is set to 0.05 for all other graphs in this section unless specified. The simulation is run for 60 iterations.",
+              "alt": null,
+              "width": 600,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 308523,
+              "key": "a3da8b13-b5c8-42f3-b09d-268eb2160483",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This graph looks great! We see the cross track error starts at -11 and within a 30-40 steps it's at 0.\n\nLet's take a look at another graph, the steering angle values:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308542,
+              "key": "c4af774b-7773-445a-afcd-207472f17c37",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5910cb5d_hard-steering/hard-steering.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c4af774b-7773-445a-afcd-207472f17c37",
+              "caption": "",
+              "alt": null,
+              "width": 600,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 308531,
+              "key": "cf43b386-64fd-4390-bcff-7957d1f8a2ba",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Wow! \n\nThe steering starts out at a min value -25 degrees and then jumps, causing a spike in the graph, to 25 degrees. The second spike from 25 degrees to 0 degrees is more gradual but still sudden.\n\nWhile this experiment works out fine in our sample program, on an actual road the vehicle would likely steer off the road and possibly crash. It would be a very unpleasant ride at best!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308535,
+              "key": "ef9cd79b-d2f7-41ef-a23c-75dd105807a2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "An approach to solving this problem is tuning a part of the cost function affecting steering.\n\n```cpp\nfor (int t = 0; t < N - 2; ++t) {\n  // Tune this part!\n  fg[0] += CppAD::pow(vars[delta_start + t + 1] - vars[delta_start + t], 2);\n  fg[0] += CppAD::pow(vars[a_start + t + 1] - vars[a_start + t], 2);\n}\n```\n\nMultiplying that part by a value > 1 will influence the solver into keeping sequential steering values closer together.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308538,
+              "key": "5d26b874-fa91-4a4e-95d7-cc60e927c7cf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```cpp\nfg[0] += 100 * CppAD::pow(vars[delta_start + t + 1] - vars[delta_start + t], 2);\n```\nresults in:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308543,
+              "key": "fd146f97-c894-4e01-850e-c70ede721ad6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5910cb73_steering-angle-100/steering-angle-100.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fd146f97-c894-4e01-850e-c70ede721ad6",
+              "caption": "",
+              "alt": null,
+              "width": 600,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 308539,
+              "key": "258137f7-16de-464e-b563-ba7b32733956",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```cpp\nfg[0] += 500 * CppAD::pow(vars[delta_start + t + 1] - vars[delta_start + t], 2);\n```\nresults in:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 308544,
+              "key": "47e55a2d-f7ca-4bce-8f40-dcd7091da9b8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5910cb86_steering-angle-500/steering-angle-500.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/47e55a2d-f7ca-4bce-8f40-dcd7091da9b8",
+              "caption": "",
+              "alt": null,
+              "width": 600,
+              "height": 400,
+              "instructor_notes": null
+            },
+            {
+              "id": 308546,
+              "key": "efa4821e-acfd-4039-a9f4-18158323b237",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As we can see tuning the steering value in the cost function results in a smoother steering transitions.\n\nIn general, we want the steering angle values to be smooth. If the vehicle is behaving erratically it's likely there will be spikes in the steering angle value graph and its one indication you should tune the cost function.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 780622,
+              "key": "36a92e2b-90cb-4aa8-b655-76ba4c297fcc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### MathWorks MPC Toolbox\n\nMathWorks also has a few videos on MPC and around a toolbox they have created for it, which allows you to try out tuning various constraints. While the toolbox itself does require a license, you might consider checking out their videos [here](https://www.mathworks.com/videos/series/understanding-model-predictive-control.html).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 301430,
+          "key": "e764caa7-3f54-4eda-9e93-8c8872609469",
+          "title": "Outro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e764caa7-3f54-4eda-9e93-8c8872609469",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 306155,
+              "key": "c96c1098-db8f-4c6a-bb59-407e9b7ddcea",
+              "title": "Model Predictive Control Outro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "iEdMInAsjgM",
+                "china_cdn_id": "iEdMInAsjgM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 809771,
+          "key": "3b554168-a2b1-40a8-84fb-9d7525e446f4",
+          "title": "Bonus Round: Control [Optional]",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3b554168-a2b1-40a8-84fb-9d7525e446f4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 809784,
+              "key": "d8210e21-fd25-4e2d-8764-dea0a93b60f2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Resources on Control\n\nNice work reaching the end of the control content! While you still have the project left to do here, we're also providing some additional resources and recent research on the topic that you can come back to if you have time later on.\n\nReading research papers is a great way to get exposure to the latest and greatest in the field, as well as expand your learning. However, just like the project ahead, it's often best to *learn by doing* - if you find a paper that really excites you, try to implement it (or even something better) yourself!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 809785,
+              "key": "a48f0fbb-ff7f-487d-ba00-3d2f6b99443e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "##### Optional Reading\n\nAll of these are completely optional reading - you could spend hours reading through the entirety of these! We suggest moving onto the project first so you have what you’ve learned fresh on your mind, before coming back to check these out. \n\nWe've categorized these papers to hopefully help you narrow down which ones might be of interest, as well as including their *Abstract* section, which summarizes the paper.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 810185,
+              "key": "0f734c72-caa7-4ee8-b7f4-7f10c59d111e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Model Predictive Control (MPC)\n\n[Vision-Based High Speed Driving with a Deep Dynamic Observer](https://arxiv.org/abs/1812.02071) by P. Drews, et. al.\n> **Abstract:** In this paper we present a framework for combining deep learning-based road detection, particle filters, and Model Predictive Control (MPC) to drive aggressively using only a monocular camera, IMU, and wheel speed sensors. This framework uses deep convolutional neural networks combined with LSTMs to learn a local cost map representation of the track in front of the vehicle. A particle filter uses this dynamic observation model to localize in a schematic map, and MPC is used to drive aggressively using this particle filter based state estimate. We show extensive real world testing results, and demonstrate reliable operation of the vehicle at the friction limits on a complex dirt track. We reach speeds above 27 mph (12 m/s) on a dirt track with a 105 foot (32m) long straight using our 1:5 scale test vehicle. [...]\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 810186,
+              "key": "2672f625-148e-45e4-a088-d8558eafc2ad",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Reinforcement Learning-based\n\n[Reinforcement Learning and Deep Learning based Lateral Control for Autonomous Driving](https://arxiv.org/abs/1810.12778) by D. Li, et. al.\n> **Abstract:** This paper investigates the vision-based autonomous driving with deep learning and reinforcement learning methods. Different from the end-to-end learning method, our method breaks the vision-based lateral control system down into a perception module and a control module. The perception module which is based on a multi-task learning neural network first takes a driver-view image as its input and predicts the track features. The control module which is based on reinforcement learning then makes a control decision based on these features. In order to improve the data efficiency, we propose visual TORCS (VTORCS), a deep reinforcement learning environment which is based on the open racing car simulator (TORCS). By means of the provided functions, one can train an agent with the input of an image or various physical sensor measurement, or evaluate the perception algorithm on this simulator. The trained reinforcement learning controller outperforms the linear quadratic regulator (LQR) controller and model predictive control (MPC) controller on different tracks. The experiments demonstrate that the perception module shows promising performance and the controller is capable of controlling the vehicle drive well along the track center with visual input.\n\n---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 810187,
+              "key": "be7bc9da-d942-4d16-a378-9498e5335d81",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Behavioral Cloning\nThe below paper shows one of the techniques Waymo has researched using imitation learning (aka behavioral cloning) to drive a car.\n\n[ChauffeurNet: Learning to Drive by Imitating the Best and Synthesizing the Worst](https://arxiv.org/abs/1812.03079) by M. Bansal, A. Krizhevsky and A. Ogale\n> **Abstract:** Our goal is to train a policy for autonomous driving via imitation learning that is robust enough to drive a real vehicle. We find that standard behavior cloning is insufficient for handling complex driving scenarios, even when we leverage a perception system for preprocessing the input and a controller for executing the output on the car: 30 million examples are still not enough. We propose exposing the learner to synthesized data in the form of perturbations to the expert's driving, which creates interesting situations such as collisions and/or going off the road. Rather than purely imitating all data, we augment the imitation loss with additional losses that penalize undesirable events and encourage progress -- the perturbations then provide an important signal for these losses and lead to robustness of the learned model. We show that the ChauffeurNet model can handle complex situations in simulation, and present ablation experiments that emphasize the importance of each of our proposed changes and show that the model is responding to the appropriate causal factors. Finally, we demonstrate the model driving a car in the real world.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

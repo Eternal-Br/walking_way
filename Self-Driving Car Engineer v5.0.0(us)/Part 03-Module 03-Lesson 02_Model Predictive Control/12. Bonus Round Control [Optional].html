@@ -1,0 +1,342 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Bonus Round: Control [Optional]
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Model Predictive Control
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro.html">
+       01. Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Reference State.html">
+       02. Reference State
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Dealing With Stopping.html">
+       03. Dealing With Stopping
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Additional Cost Considerations.html">
+       04. Additional Cost Considerations
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Length and Duration.html">
+       05. Length and Duration
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Putting It All Together.html">
+       06. Putting It All Together
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Latency.html">
+       07. Latency
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Mind The Line.html">
+       08. Mind The Line
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Solution Mind The Line.html">
+       09. Solution: Mind The Line
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Tuning MPC.html">
+       10. Tuning MPC
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Outro.html">
+       11. Outro
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Bonus Round Control [Optional].html">
+       12. Bonus Round: Control [Optional]
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          12. Bonus Round: Control [Optional]
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="additional-resources-on-control">
+          Additional Resources on Control
+         </h2>
+         <p>
+          Nice work reaching the end of the control content! While you still have the project left to do here, we're also providing some additional resources and recent research on the topic that you can come back to if you have time later on.
+         </p>
+         <p>
+          Reading research papers is a great way to get exposure to the latest and greatest in the field, as well as expand your learning. However, just like the project ahead, it's often best to
+          <em>
+           learn by doing
+          </em>
+          - if you find a paper that really excites you, try to implement it (or even something better) yourself!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h5 id="optional-reading">
+          Optional Reading
+         </h5>
+         <p>
+          All of these are completely optional reading - you could spend hours reading through the entirety of these! We suggest moving onto the project first so you have what you’ve learned fresh on your mind, before coming back to check these out.
+         </p>
+         <p>
+          We've categorized these papers to hopefully help you narrow down which ones might be of interest, as well as including their
+          <em>
+           Abstract
+          </em>
+          section, which summarizes the paper.
+         </p>
+         <hr/>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="model-predictive-control-mpc">
+          Model Predictive Control (MPC)
+         </h3>
+         <p>
+          <a href="https://arxiv.org/abs/1812.02071" rel="noopener noreferrer" target="_blank">
+           Vision-Based High Speed Driving with a Deep Dynamic Observer
+          </a>
+          by P. Drews, et. al.
+         </p>
+         <blockquote>
+          <p>
+           <strong>
+            Abstract:
+           </strong>
+           In this paper we present a framework for combining deep learning-based road detection, particle filters, and Model Predictive Control (MPC) to drive aggressively using only a monocular camera, IMU, and wheel speed sensors. This framework uses deep convolutional neural networks combined with LSTMs to learn a local cost map representation of the track in front of the vehicle. A particle filter uses this dynamic observation model to localize in a schematic map, and MPC is used to drive aggressively using this particle filter based state estimate. We show extensive real world testing results, and demonstrate reliable operation of the vehicle at the friction limits on a complex dirt track. We reach speeds above 27 mph (12 m/s) on a dirt track with a 105 foot (32m) long straight using our 1:5 scale test vehicle. […]
+          </p>
+         </blockquote>
+         <hr/>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="reinforcement-learning-based">
+          Reinforcement Learning-based
+         </h3>
+         <p>
+          <a href="https://arxiv.org/abs/1810.12778" rel="noopener noreferrer" target="_blank">
+           Reinforcement Learning and Deep Learning based Lateral Control for Autonomous Driving
+          </a>
+          by D. Li, et. al.
+         </p>
+         <blockquote>
+          <p>
+           <strong>
+            Abstract:
+           </strong>
+           This paper investigates the vision-based autonomous driving with deep learning and reinforcement learning methods. Different from the end-to-end learning method, our method breaks the vision-based lateral control system down into a perception module and a control module. The perception module which is based on a multi-task learning neural network first takes a driver-view image as its input and predicts the track features. The control module which is based on reinforcement learning then makes a control decision based on these features. In order to improve the data efficiency, we propose visual TORCS (VTORCS), a deep reinforcement learning environment which is based on the open racing car simulator (TORCS). By means of the provided functions, one can train an agent with the input of an image or various physical sensor measurement, or evaluate the perception algorithm on this simulator. The trained reinforcement learning controller outperforms the linear quadratic regulator (LQR) controller and model predictive control (MPC) controller on different tracks. The experiments demonstrate that the perception module shows promising performance and the controller is capable of controlling the vehicle drive well along the track center with visual input.
+          </p>
+         </blockquote>
+         <hr/>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="behavioral-cloning">
+          Behavioral Cloning
+         </h3>
+         <p>
+          The below paper shows one of the techniques Waymo has researched using imitation learning (aka behavioral cloning) to drive a car.
+         </p>
+         <p>
+          <a href="https://arxiv.org/abs/1812.03079" rel="noopener noreferrer" target="_blank">
+           ChauffeurNet: Learning to Drive by Imitating the Best and Synthesizing the Worst
+          </a>
+          by M. Bansal, A. Krizhevsky and A. Ogale
+         </p>
+         <blockquote>
+          <p>
+           <strong>
+            Abstract:
+           </strong>
+           Our goal is to train a policy for autonomous driving via imitation learning that is robust enough to drive a real vehicle. We find that standard behavior cloning is insufficient for handling complex driving scenarios, even when we leverage a perception system for preprocessing the input and a controller for executing the output on the car: 30 million examples are still not enough. We propose exposing the learner to synthesized data in the form of perturbations to the expert's driving, which creates interesting situations such as collisions and/or going off the road. Rather than purely imitating all data, we augment the imitation loss with additional losses that penalize undesirable events and encourage progress -- the perturbations then provide an important signal for these losses and lead to robustness of the learned model. We show that the ChauffeurNet model can handle complex situations in simulation, and present ablation experiments that emphasize the importance of each of our proposed changes and show that the model is responding to the appropriate causal factors. Finally, we demonstrate the model driving a car in the real world.
+          </p>
+         </blockquote>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('12. Bonus Round: Control [Optional]')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
