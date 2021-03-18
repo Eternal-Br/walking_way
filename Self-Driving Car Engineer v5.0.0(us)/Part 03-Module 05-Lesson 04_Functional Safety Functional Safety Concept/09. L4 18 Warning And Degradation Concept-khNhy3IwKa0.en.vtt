@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.279
+For each functional safety requirement,
+
+00:00:02.279 --> 00:00:05.955
+we need to discuss how the driver will be warned of the malfunction.
+
+00:00:05.955 --> 00:00:08.786
+For the lane assistance item malfunctions,
+
+00:00:08.787 --> 00:00:11.230
+we will display a warning on the driver dashboard.
+
+00:00:11.230 --> 00:00:13.530
+If the steering wheel ECU receives
+
+00:00:13.529 --> 00:00:16.929
+a vibrational torque request beyond the allowed maximum,
+
+00:00:16.929 --> 00:00:18.800
+a warning light will turn on.
+
+00:00:18.800 --> 00:00:23.274
+Here is an updated system diagram taking into account the warning lights.
+
+00:00:23.274 --> 00:00:25.079
+Note that we have added a connection from
+
+00:00:25.079 --> 00:00:28.919
+the power steering ECU to the driver display subsystem.
+
+00:00:28.920 --> 00:00:33.375
+We also need to describe what the vehicle system will do after a malfunction occurs.
+
+00:00:33.375 --> 00:00:35.103
+When a malfunction occurs,
+
+00:00:35.103 --> 00:00:39.704
+the system needs to go to a state with a lower acceptable risk level.
+
+00:00:39.704 --> 00:00:42.679
+This lower risk level is called a safe state.
+
+00:00:42.679 --> 00:00:46.469
+We have already said that both the lane departure warning function and the lane
+
+00:00:46.469 --> 00:00:50.820
+keeping the system function will turn off when a safety requirement is violated.
+
+00:00:50.820 --> 00:00:52.950
+Turning a system off can generally be
+
+00:00:52.950 --> 00:00:56.085
+considered a safe state with acceptable risk levels.
+
+00:00:56.085 --> 00:00:59.370
+A warning and degradation concept will include how
+
+00:00:59.369 --> 00:01:03.044
+the driver will be alerted when the system has reduced functionality,
+
+00:01:03.045 --> 00:01:04.920
+or is turned off completely,
+
+00:01:04.920 --> 00:01:08.939
+and how the vehicle will transition to and recover from the safe state.
+
+00:01:08.939 --> 00:01:13.685
+The car manual should include information from the warning a degradation concept as well.
+
+00:01:13.685 --> 00:01:15.933
+For the lane keeping assistance function,
+
+00:01:15.933 --> 00:01:17.940
+the manual would probably include a warning that
+
+00:01:17.939 --> 00:01:20.655
+the functionality is not meant for autonomous driving,
+
+00:01:20.655 --> 00:01:24.719
+and the driver maintains responsibility for the safe operation of.
+

@@ -1,0 +1,118 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.775
+Our lane departure warning system now has two functional safety requirements.
+
+00:00:04.775 --> 00:00:08.550
+One requirement limits the steering wheel vibration frequency,
+
+00:00:08.550 --> 00:00:12.535
+and the other requirement limits the steering wheel amplitude.
+
+00:00:12.535 --> 00:00:15.870
+Now we have to figure out which part of the lane keeping the item will be
+
+00:00:15.869 --> 00:00:19.625
+responsible for limiting the vibration torque and the amplitude.
+
+00:00:19.625 --> 00:00:22.469
+The lane assistance item has three subsystems,
+
+00:00:22.469 --> 00:00:24.779
+the camera, the display,
+
+00:00:24.780 --> 00:00:26.820
+and the electronic power steering.
+
+00:00:26.820 --> 00:00:29.995
+Let's take a look at the architectural diagram.
+
+00:00:29.995 --> 00:00:33.570
+Logically, we could say that both the camera subsystem and
+
+00:00:33.570 --> 00:00:38.060
+electronic steering subsystem could limit the frequency and the amplitude.
+
+00:00:38.060 --> 00:00:42.060
+For instance, we could make a requirement that the camera subsystem
+
+00:00:42.060 --> 00:00:46.500
+can only request a vibrational torque below a maximal threshold.
+
+00:00:46.500 --> 00:00:50.070
+And we could also make a requirement that the power steering system
+
+00:00:50.070 --> 00:00:53.895
+can only output a vibrational torque below the same limit.
+
+00:00:53.895 --> 00:00:57.340
+But we want to reduce the complexity whenever possible.
+
+00:00:57.340 --> 00:00:59.670
+The simpler solution is to only require
+
+00:00:59.670 --> 00:01:04.284
+the power steering to limit the vibration no matter what the camera ask for.
+
+00:01:04.284 --> 00:01:06.599
+Now the only relevant subsystem
+
+00:01:06.599 --> 00:01:10.019
+from a functional safety standpoint is the power steering.
+
+00:01:10.019 --> 00:01:11.944
+For the lane departure warning,
+
+00:01:11.944 --> 00:01:16.184
+the allocation of the requirements to the architecture is straightforward.
+
+00:01:16.185 --> 00:01:21.299
+Only an electronic power steering ECU is involved with limiting the vibration warning.
+
+00:01:21.299 --> 00:01:26.579
+The two functional safety requirements are allocated to the power steering ECU.
+
+00:01:26.579 --> 00:01:30.659
+We will also slightly change the wording in the functional safety requirements,
+
+00:01:30.659 --> 00:01:36.179
+whereas before we said the lane keeping item had to limit the vibrational torque,
+
+00:01:36.180 --> 00:01:39.270
+now we'll be more explicit and say the power steering, ECU,
+
+00:01:39.269 --> 00:01:41.819
+will limit the vibrational torque.
+
+00:01:41.819 --> 00:01:46.594
+Here are the final safety requirements: Functional safety requirement 1.
+
+00:01:46.594 --> 00:01:49.980
+The electronic power steering ECU shall ensure that
+
+00:01:49.980 --> 00:01:55.500
+the lane departure warning oscillating torque amplitude is below max torque amplitude.
+
+00:01:55.500 --> 00:01:57.944
+Functional safety requirement 2.
+
+00:01:57.944 --> 00:02:01.229
+The electronic power steering ECU shall ensure that
+
+00:02:01.230 --> 00:02:06.844
+the lane departure warning oscillating torque frequency is below max torque frequency.
+
+00:02:06.844 --> 00:02:09.219
+We can put the results in a table.
+
+00:02:09.219 --> 00:02:11.984
+Note that we are using a simplified example.
+
+00:02:11.985 --> 00:02:13.170
+Oftentimes, you will have
+
+00:02:13.169 --> 00:02:18.000
+a functional safety requirement that gets allocated to multiple subsystems.
+

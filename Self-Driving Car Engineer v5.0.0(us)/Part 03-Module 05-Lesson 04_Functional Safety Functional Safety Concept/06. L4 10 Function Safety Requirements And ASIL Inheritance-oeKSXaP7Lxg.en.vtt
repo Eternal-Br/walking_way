@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.200
+We need to add ASIL labels to the refined architectural diagram.
+
+00:00:04.200 --> 00:00:11.009
+Otherwise, we won't know which subsystems and elements require analysis under ISO 26262.
+
+00:00:11.009 --> 00:00:12.834
+The general rule is that
+
+00:00:12.835 --> 00:00:17.265
+functional safety requirements inherit the ASIL directly from the safety goal.
+
+00:00:17.265 --> 00:00:20.217
+From the hazard analysis and risk assessment,
+
+00:00:20.217 --> 00:00:24.059
+the lane departure warning safety goal was that the torque had to be limited.
+
+00:00:24.059 --> 00:00:27.239
+We determined that the safety goal had ASIL
+
+00:00:27.239 --> 00:00:30.809
+C. The two functional safety requirements for the lane departure warning
+
+00:00:30.809 --> 00:00:33.929
+would then inherit the ASIL C. Because we allocated
+
+00:00:33.929 --> 00:00:38.054
+these two functional safety requirements to electronic power steering,
+
+00:00:38.054 --> 00:00:42.000
+the entire subsystem inherits the ASIL C classification.
+
+00:00:42.000 --> 00:00:46.090
+But what about the ASIL of the camera in the car display subsystems?
+
+00:00:46.090 --> 00:00:49.260
+We said earlier that the only relevant subsystem from
+
+00:00:49.259 --> 00:00:52.949
+the functional safety standpoint was the electronic power steering.
+
+00:00:52.950 --> 00:00:56.995
+We do not have any functional safety requirements for these two subsystems.
+
+00:00:56.994 --> 00:01:01.169
+Therefore, we can mark the camera in the car display as QM.
+
+00:01:01.170 --> 00:01:05.385
+As a reminder, a QM rating stands for quality management.
+
+00:01:05.385 --> 00:01:09.329
+Any part of the architecture where the QM rating is no longer relevant to
+
+00:01:09.329 --> 00:01:14.730
+a functional safety analysis because the risk is already at acceptable levels.
+
+00:01:14.730 --> 00:01:18.295
+Here's a quick review of what we have accomplished so far.
+
+00:01:18.295 --> 00:01:21.659
+We derived functional safety requirements from the safety goals,
+
+00:01:21.659 --> 00:01:26.069
+refined the architecture and allocated the functional safety requirements to
+
+00:01:26.069 --> 00:01:30.974
+the architecture and we determine the risk levels for the three subsystems.
+
+00:01:30.974 --> 00:01:36.000
+Next, we'll see if there are any ways to lower the ASIL for any of our system elements.
+

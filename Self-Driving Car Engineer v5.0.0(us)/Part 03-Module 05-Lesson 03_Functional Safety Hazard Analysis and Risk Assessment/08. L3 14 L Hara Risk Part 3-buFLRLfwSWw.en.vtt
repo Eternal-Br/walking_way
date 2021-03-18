@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.720
+The final tone for evaluating risk is controllability.
+
+00:00:03.720 --> 00:00:07.259
+Controllability measures how likely the driver will be
+
+00:00:07.259 --> 00:00:11.399
+able to gain control of the vehicle during a hazardous event.
+
+00:00:11.400 --> 00:00:15.169
+Controllability has a scale from C0 to C3,
+
+00:00:15.169 --> 00:00:17.820
+where C3 is a situation
+
+00:00:17.820 --> 00:00:22.304
+where an average driver could not maintain control of the vehicle.
+
+00:00:22.304 --> 00:00:26.399
+If the lane departure warning function causes the steering wheel to
+
+00:00:26.399 --> 00:00:30.209
+vibrate excessively with wild swings of the steering wheel,
+
+00:00:30.210 --> 00:00:35.460
+most drivers would have difficulty controlling the vehicle.
+
+00:00:35.460 --> 00:00:38.359
+We will put the controllability at C3.
+
+00:00:38.359 --> 00:00:41.039
+We are also providing a table to help
+
+00:00:41.039 --> 00:00:44.204
+distinguish between different controllability levels.
+
+00:00:44.204 --> 00:00:47.579
+We can now evaluate the risk of our lane departure.
+
+00:00:47.579 --> 00:00:51.030
+One example, we will combine severity,
+
+00:00:51.030 --> 00:00:55.890
+exposure and controllability into a risk factor called ASIL.
+
+00:00:55.890 --> 00:00:59.000
+Next, we will discuss ASIL in more depth.
+

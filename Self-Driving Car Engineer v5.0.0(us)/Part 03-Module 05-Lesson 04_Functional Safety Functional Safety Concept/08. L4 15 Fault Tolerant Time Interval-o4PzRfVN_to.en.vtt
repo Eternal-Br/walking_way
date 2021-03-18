@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.870
+Deriving functional safety requirements and allocating those requirements to
+
+00:00:03.870 --> 00:00:08.324
+the system architecture is the main part of a functional safety concept.
+
+00:00:08.324 --> 00:00:09.809
+To finish up the lesson,
+
+00:00:09.810 --> 00:00:14.935
+we still need to talk about three more attributes of a functional safety requirement.
+
+00:00:14.935 --> 00:00:16.890
+The fault tolerant time interval,
+
+00:00:16.890 --> 00:00:19.050
+the warning and degradation concept,
+
+00:00:19.050 --> 00:00:22.019
+and the verification of validation acceptance criteria.
+
+00:00:22.019 --> 00:00:25.484
+We'll start with the fault tolerant time interval.
+
+00:00:25.484 --> 00:00:30.684
+We need to define how long the system has to detect and then react to a malfunction.
+
+00:00:30.684 --> 00:00:33.679
+We call this the fault tolerant time interval.
+
+00:00:33.679 --> 00:00:37.284
+Let's look at our ADS lane departure warning as an example.
+
+00:00:37.284 --> 00:00:41.294
+One concern is that the warning vibration amplitude will be too high.
+
+00:00:41.295 --> 00:00:44.820
+If the amplitude does get too high then a malfunction,
+
+00:00:44.820 --> 00:00:47.545
+also called the fault, has occurred.
+
+00:00:47.545 --> 00:00:50.234
+It will take the system a certain amount of time to detect
+
+00:00:50.234 --> 00:00:53.839
+a malfunction and signals travel through the hardware and the software.
+
+00:00:53.840 --> 00:00:56.375
+This is the diagnostic test interval.
+
+00:00:56.375 --> 00:00:58.965
+Once the system detects the high amplitude,
+
+00:00:58.965 --> 00:01:03.300
+it will take time for the vehicle to turn off the lane departure warning function.
+
+00:01:03.299 --> 00:01:05.340
+This is the fault reaction time.
+
+00:01:05.340 --> 00:01:08.549
+Once turned off, the lane assistance system has reached
+
+00:01:08.549 --> 00:01:11.879
+a safe state where risk is at acceptable levels.
+
+00:01:11.879 --> 00:01:16.974
+We want the lane assistance system to reach a safe state before an accident has occurred.
+
+00:01:16.974 --> 00:01:19.679
+So there is a buffer between when the system reaches
+
+00:01:19.680 --> 00:01:22.830
+a safe state and when an accident would have occurred.
+
+00:01:22.829 --> 00:01:25.590
+So fault tolerant time interval equals
+
+00:01:25.590 --> 00:01:28.314
+diagnostic test interval plus fault
+
+00:01:28.314 --> 00:01:32.655
+reaction time plus time in safe state before an accident.
+
+00:01:32.655 --> 00:01:36.665
+Each safety requirement receives a fault tolerant time interval.
+
+00:01:36.665 --> 00:01:39.435
+We will say that the lane departure warning system
+
+00:01:39.435 --> 00:01:43.060
+has a fault tolerant time interval of 50 milliseconds.
+
+00:01:43.060 --> 00:01:48.030
+You can use this value for the two functional safety requirements already discussed.
+
+00:01:48.030 --> 00:01:51.420
+This is an example of value you might see in practice but
+
+00:01:51.420 --> 00:01:55.329
+the real world lane departure warning function might have a different value.
+
+00:01:55.329 --> 00:01:57.659
+The fault tolerant time interval let's us know
+
+00:01:57.659 --> 00:02:00.629
+how much time the vehicle has to react to a malfunction.
+

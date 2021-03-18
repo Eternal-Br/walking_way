@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.889
+In introductory lesson, you already saw
+
+00:00:01.889 --> 00:00:06.205
+basic ideas behind identifying hazards and assessing risks.
+
+00:00:06.205 --> 00:00:12.839
+ISO 26262, formalizes this process with hazard analysis and risk assessment.
+
+00:00:12.839 --> 00:00:15.359
+Remember, that the ultimate goal of
+
+00:00:15.359 --> 00:00:20.280
+functional safety is to reduce risks to levels acceptable by society.
+
+00:00:20.280 --> 00:00:23.382
+In hazard analysis and risk assessment,
+
+00:00:23.382 --> 00:00:26.070
+you will figure out what could go wrong with your item.
+
+00:00:26.070 --> 00:00:31.344
+Then, you will measure the risk associated with it unintended behavior.
+
+00:00:31.344 --> 00:00:36.969
+You will then identify what the item needs to do to remain safe.
+
+00:00:36.969 --> 00:00:40.753
+We will call this unintended behavior, a malfunction.
+
+00:00:40.753 --> 00:00:44.244
+For example, if a lane keeping a system function,
+
+00:00:44.244 --> 00:00:46.364
+don't twist the steering wheel too hard,
+
+00:00:46.365 --> 00:00:49.125
+the driver could loose control of the vehicle.
+
+00:00:49.125 --> 00:00:51.405
+There is a potential for vehicle accident,
+
+00:00:51.405 --> 00:00:55.980
+so excessive torque would be a malfunction that leads to hazardous situation.
+
+00:00:55.979 --> 00:01:00.689
+The hazard analysis and risk assessment contains five parts.
+
+00:01:00.689 --> 00:01:04.995
+Situational analysis, where you identify driving conditions,
+
+00:01:04.995 --> 00:01:06.975
+like city driving in rain.
+
+00:01:06.974 --> 00:01:09.719
+Hazard identification, where you
+
+00:01:09.719 --> 00:01:14.144
+analyze what goes wrong with the item under consideration.
+
+00:01:14.144 --> 00:01:17.129
+Classification of the situation and
+
+00:01:17.129 --> 00:01:22.039
+hazard according to severity and probability of occurrence.
+
+00:01:22.040 --> 00:01:23.925
+Calculating the ASIL.
+
+00:01:23.924 --> 00:01:29.000
+Driving safety goals that identify what the system will do to lower risk.
+

@@ -1,0 +1,545 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Advanced Driver Assistance System
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Functional Safety: Hazard Analysis and Risk Assessment
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction.html">
+       01. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Advanced Driver Assistance System.html">
+       02. Advanced Driver Assistance System
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Item Definition.html">
+       03. Item Definition
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Introduction to Hazard Analysis and Risk Assessment.html">
+       04. Introduction to Hazard Analysis and Risk Assessment
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Sebastian Discussing Hazards.html">
+       05. Sebastian Discussing Hazards
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Situational Analysis.html">
+       06. Situational Analysis
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Identification of Hazards.html">
+       07. Identification of Hazards
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Risk Assessment, Severity, Exposure, Controllability.html">
+       08. Risk Assessment, Severity, Exposure, Controllability
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Automotive Safety Integrity Levels (ASIL).html">
+       09. Automotive Safety Integrity Levels (ASIL)
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Safety Goals.html">
+       10. Safety Goals
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Lesson Summary.html">
+       11. Lesson Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          02. Advanced Driver Assistance System
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="adas-advanced-driver-assistance-system">
+          ADAS (Advanced Driver Assistance System)
+         </h3>
+         <p>
+          For the rest of the functional safety module, we will use an Advanced Driver Assistance System as a concrete example. Advanced Driver Assistance Systems, often called ADAS systems, have two functions:
+         </p>
+         <ul>
+          <li>
+           Alert the driver to potentially dangerous situations
+          </li>
+          <li>
+           Take control over the vehicle to prevent accidents from occurring
+          </li>
+         </ul>
+         <p>
+          You are already familiar with some of the technology used in ADAS systems such as LiDAR, radar, and cameras with computer vision and deep learning algorithms.
+         </p>
+         <p>
+          Because ADAS systems can actually take over control from the driver, these systems represent an intermediate step in the development of fully autonomous vehicles.
+         </p>
+         <p>
+          Here are a few examples of ADAS systems that you can already find in passenger vehicles today:
+         </p>
+         <ul>
+          <li>
+           Adaptive Cruise Control
+          </li>
+          <li>
+           Automatic Parking
+          </li>
+          <li>
+           Blind Spot Monitoring
+          </li>
+          <li>
+           Lane Departure Warning
+          </li>
+          <li>
+           Lane Keeping Assistance
+          </li>
+          <li>
+           Tire Pressure Monitoring
+          </li>
+          <li>
+           Pedestrian Protection
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="lane-assistance-system-functionality">
+          Lane Assistance System Functionality
+         </h3>
+         <p>
+          For the functional safety module, we are going to look at a simplified version of a Lane Assistance System.
+         </p>
+         <p>
+          We want to make sure that you understand how the technology works and what the system architecture looks like.
+         </p>
+         <p>
+          The Lane Assistance System will have two functions:
+         </p>
+         <ol>
+          <li>
+           Lane departure warning
+          </li>
+          <li>
+           Lane keeping assistance
+          </li>
+         </ol>
+         <p>
+          When the driver drifts towards the edge of the lane, two things will happen:
+         </p>
+         <ul>
+          <li>
+           the
+           <strong>
+            lane departure warning function
+           </strong>
+           will vibrate the steering wheel
+          </li>
+          <li>
+           the
+           <strong>
+            lane keeping assistance function
+           </strong>
+           will move the steering wheel so that the wheels turn towards the center of the lane
+          </li>
+         </ul>
+         <p>
+          To state the
+          <strong>
+           lane departure warning
+          </strong>
+          engineering requirement more formally: "the lane departure warning function shall apply an oscillating steering torque to provide the driver a haptic feedback." In other words, the vehicle quickly moves the steering wheel back and forth to create a vibration. You can assume that the engineering requirement came from a product engineering team, and your job will be to add extra requirements to ensure functional safety.
+         </p>
+         <p>
+          The
+          <strong>
+           lane keeping assistance functionality
+          </strong>
+          will automatically
+          <strong>
+           assist
+          </strong>
+          the driver; the steering wheel turns towards the center of the lane. We will formally list the requirement as "the lane keeping assistance function shall apply the steering torque when active in order to stay in ego lane". Ego lane refers to the lane in which the vehicle currently drives.
+         </p>
+         <p>
+          When the camera senses that the vehicle is leaving the lane, the camera sends a signal to the electronic power steering system asking to turn and vibrate the steering wheel.
+         </p>
+         <p>
+          The camera sensor will also request that a warning light turn on in the car display dashboard. That way the driver knows that the lane assistance system is active.
+         </p>
+         <p>
+          What if the driver wants to leave the lane? If the driver uses a turn signal, then the lane assistance system deactivates so that the vehicle can leave the lane. The driver can also turn off the system completely with a button on the dashboard.
+         </p>
+         <p>
+          The driver is still expected to have both hands on the steering wheel at all times. The electronic power steering subsystem has a sensor to detect how much the driver is already turning. The lane keeping assistance function will merely add the extra torque required to get the car back towards center. The extra torque is applied directly to the steering wheel via a motor.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="lane-assistance-system-architecture">
+          Lane Assistance System Architecture
+         </h3>
+         <p>
+          Now we will look at what the system looks like from a bird's eye view.
+          <br/>
+          Take a look at this diagram of the system architecture.
+         </p>
+         <p>
+          An architecture is a block diagram of the main parts of a system. This high level overview allows us to see how the system works without yet needing to know the details of the hardware and software implementations.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/02-advanced-driver-assistance-system-architecture-01.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          ECU stands for Electronic Control Unit. An ECU is a small computer that contains the hardware and software for a specific vehicle functionality. The camera ECU, for example, might have the hardware and software required for deep learning or for computer vision techniques like the Hough transform.
+         </p>
+         <p>
+          To summarize the functionality, the camera system detects lane departures and tells the steering wheel how hard to turn. The driver receives a warning on the vehicle display and also receives a warning via a steering wheel vibrating. Simultaneously, the wheel adds extra steering torque to help the driver move back towards the center of the lane.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="system-hierarchy">
+          System Hierarchy
+         </h3>
+         <p>
+          Notice the system diagram has outlines in three different colors. ISO 26262 has a specific vocabulary for referring to different parts of the system. In the diagram, you can see how ISO 26262 defines the terms “item”, “system” and “subsystem”.
+         </p>
+         <p>
+          An
+          <strong>
+           Item
+          </strong>
+          is just a high level system in the vehicle; in this case, the item is the lane assistance system. For clarity, throughout the lesson, you will see references to the "lane assistance item" rather than the "lane assistance system".
+         </p>
+         <p>
+          According to ISO 26262, a
+          <strong>
+           system
+          </strong>
+          is a set of
+          <strong>
+           elements
+          </strong>
+          that have at least a sensor, controller and an actuator. In the system outline in red, we have two sensors: a camera sensor and a driver steering torque sensor. The ECUs are the controllers, and the actuator is the motor that turns the steering wheel. The sensors, ECUs, and motor would all be considered
+          <strong>
+           elements
+          </strong>
+          .
+          <strong>
+           Element
+          </strong>
+          is a generic term for any part of a system. A system will generally have more than one element.
+         </p>
+         <p>
+          A
+          <strong>
+           sub-system
+          </strong>
+          is a smaller piece of a
+          <strong>
+           system
+          </strong>
+          .
+         </p>
+         <p>
+          So an
+          <strong>
+           item
+          </strong>
+          can be thought of as a system made up of systems made up of systems …. etc.
+         </p>
+         <p>
+          The hierarchy is:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="System Hierarchy" class="img img-fluid" src="img/system-hierarchy-01.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            System Hierarchy
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          And as you can see, these labels are fluid depending on the context. If you were looking at the entire lane assistance item from a bird's eye view, you could call the camera sensor an element.
+         </p>
+         <p>
+          If you looked inside the camera sensor, you would find that the camera sensor has its own internal sensors, controllers and actuators. So you could also think of the camera sensor as a system depending on what level you place your focus.
+         </p>
+         <p>
+          Please note that the there is room for interpretation in the allocation of elements to the ISO hierarchy.  For example, a graphics card is not a hardware component from the perspective of a person developing the components which are on board the graphics card.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="lane-assistance-system-sub-system-architecture">
+          Lane Assistance System: Sub System Architecture
+         </h3>
+         <p>
+          If we dig down further into the power steering ECU sub-system, we divide the ECU into its hardware and software components. We can further subdivide the software and hardware into components, parts, and units as shown in the diagram below. As we traverse down the V model, the architecture diagrams become more focused and detailed.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Subsystem Architecture" class="img img-fluid" src="img/02-advanced-driver-assistance-system-architecture-03-1.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Subsystem Architecture
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Here is a summary how ISO 26262 labels system hierarchies with typical examples for each part:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Full System Hierarchy" class="img img-fluid" src="img/system-hierarchy-03-1.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Full System Hierarchy
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="03. Item Definition.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Advanced Driver Assistance System')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

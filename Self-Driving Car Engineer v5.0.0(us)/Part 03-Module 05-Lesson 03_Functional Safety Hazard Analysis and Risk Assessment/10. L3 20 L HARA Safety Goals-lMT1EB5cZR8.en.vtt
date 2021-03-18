@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.581
+The last step is to derive safety goals,
+
+00:00:03.581 --> 00:00:06.609
+which brings us back to requirements engineering.
+
+00:00:06.610 --> 00:00:12.190
+A safety goal defines what the item does to avoid hazardous situations.
+
+00:00:12.189 --> 00:00:14.834
+So a safety goal is a type of requirement.
+
+00:00:14.835 --> 00:00:17.265
+For the lane departure warning function,
+
+00:00:17.265 --> 00:00:19.795
+the hazardous event description was that
+
+00:00:19.795 --> 00:00:22.500
+the lane departure warning function applies
+
+00:00:22.500 --> 00:00:25.646
+too high an oscillating torque to the steering wheel,
+
+00:00:25.646 --> 00:00:27.744
+which could lead to a crash.
+
+00:00:27.745 --> 00:00:32.935
+What would the lane departure warning function need to do to avoid the situation?
+
+00:00:32.935 --> 00:00:34.940
+Limit the amount of vibration.
+
+00:00:34.939 --> 00:00:38.309
+So the safety goal would be the oscillating steering torque
+
+00:00:38.310 --> 00:00:42.070
+from the lane departure warning function shall be limited.
+
+00:00:42.070 --> 00:00:45.719
+So the safety goal has ASIL C. Limiting
+
+00:00:45.719 --> 00:00:50.579
+the vibrational steering torque would help lower the risk to an acceptable.
+

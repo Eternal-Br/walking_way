@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.955
+Going back to the lane departure warning example.
+
+00:00:02.955 --> 00:00:08.030
+Let's derive a couple of functional safety requirements from our first safety goal.
+
+00:00:08.029 --> 00:00:12.594
+Our malfunction was that the steering wheel warning vibration was too strong.
+
+00:00:12.595 --> 00:00:15.839
+The malfunction led to the safety goal that the oscillating
+
+00:00:15.839 --> 00:00:19.199
+steering torque of a lane departure warning function shall be limited.
+
+00:00:19.199 --> 00:00:22.189
+For the lane departure warning system,
+
+00:00:22.190 --> 00:00:23.480
+it makes sense to define
+
+00:00:23.480 --> 00:00:28.440
+a maximum allowed torque amplitude and a maximum allowed frequency.
+
+00:00:28.440 --> 00:00:29.950
+From the safety goal,
+
+00:00:29.949 --> 00:00:34.589
+we will define two functional safety requirements for the lane warning departure system.
+
+00:00:34.590 --> 00:00:36.750
+Functional safety requirement one.
+
+00:00:36.750 --> 00:00:40.170
+The lane keeping items shall ensure that the lane departure
+
+00:00:40.170 --> 00:00:43.920
+oscillating torque amplitude is below max torque amplitude.
+
+00:00:43.920 --> 00:00:46.844
+Functional safety requirement two.
+
+00:00:46.844 --> 00:00:49.049
+The lane keeping item shall ensure that
+
+00:00:49.049 --> 00:00:54.419
+the lane departure oscillating torque frequency is below max torque frequency.
+
+00:00:54.420 --> 00:00:56.835
+Notice again that we use the term shell,
+
+00:00:56.835 --> 00:00:59.219
+because these are requirements.
+
+00:00:59.219 --> 00:01:01.254
+So what have we done so far?
+
+00:01:01.255 --> 00:01:05.370
+We started with a safety goal requiring the vibration to be limited.
+
+00:01:05.370 --> 00:01:07.740
+We looked at the item architecture and came up with
+
+00:01:07.739 --> 00:01:10.859
+two new requirements that would meet our safety goal.
+
+00:01:10.859 --> 00:01:13.769
+We then figured out that the lane assistance item needed to
+
+00:01:13.769 --> 00:01:17.009
+limit the vibration amplitude and vibration frequency.
+

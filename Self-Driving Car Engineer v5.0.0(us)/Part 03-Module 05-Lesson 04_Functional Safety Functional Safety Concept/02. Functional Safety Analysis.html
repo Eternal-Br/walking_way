@@ -1,0 +1,274 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Functional Safety Analysis
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Functional Safety: Functional Safety Concept
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction.html">
+       01. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Functional Safety Analysis.html">
+       02. Functional Safety Analysis
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Functional Safety Requirements.html">
+       03. Functional Safety Requirements
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Allocation to the Architecture.html">
+       04. Allocation to the Architecture
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Architecture Refinement.html">
+       05. Architecture Refinement
+      </a>
+     </li>
+     <li class="">
+      <a href="06. ASIL Inheritance.html">
+       06. ASIL Inheritance
+      </a>
+     </li>
+     <li class="">
+      <a href="07. ASIL Decomposition.html">
+       07. ASIL Decomposition
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Fault Tolerant Time Interval.html">
+       08. Fault Tolerant Time Interval
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Warning and Degradation Concept.html">
+       09. Warning and Degradation Concept
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Verification and Validation Acceptance Criteria.html">
+       10. Verification and Validation Acceptance Criteria
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Sebastian On Requirements and Testing.html">
+       11. Sebastian On Requirements and Testing
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Summary.html">
+       12. Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          02. Functional Safety Analysis
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="functional-safety-analysis">
+          Functional Safety Analysis
+         </h3>
+         <p>
+          Before we derive safety requirements, let's talk about malfunctions. We've said that the main purpose or function of the lane departure warning and lane keeping assistance is to provide vibrational steering feedback and torque to the driver as haptic feedback. And we had a safety goal to limit the oscillating torque.
+         </p>
+         <p>
+          What would be a malfunction for this? One approach is to use guide words.  ISO 26262 does not provide guidewords, however companies often use these as part of their guidelines. Some example guidewords for this case are:
+         </p>
+         <ul>
+          <li>
+           NO
+          </li>
+          <li>
+           WRONG
+          </li>
+          <li>
+           EARLY
+          </li>
+          <li>
+           MORE
+          </li>
+          <li>
+           LESS
+          </li>
+         </ul>
+         <p>
+          So in the case of the lane departure warning, "MORE" seems like an appropriate guide word; the lane departure warning is giving MORE torque than what is safe. There would be two malfunctions. The oscillating amplitude is too high and the oscillating frequency is too high. Formally, the malfunctions would be:
+         </p>
+         <p>
+          "The lane departure warning function applies an oscillating torque with very high torque amplitude (above limit)"
+         </p>
+         <p>
+          "The lane departure warning function applies an oscillating torque with very high torque frequency (above limit)"
+         </p>
+         <p>
+          For the lane keeping assistance function, "NO" would be an appropriate guide word. The lane keeping assistance keeps the vehicle centered in the lane. The malfunction would be that the assistance has no time limit. The malfunction would be:
+         </p>
+         <p>
+          "The lane keeping assistance function is not limited in time duration which leads to misuse as an autonomous driving function."
+         </p>
+         <p>
+          Notice that the information in the functional safety analysis comes from the hazard analysis and risk assessment. While this exercise might seem trivial, imagine having hundreds of functions each with various malfunctions. The guide words help to analyze functions and malfunctions methodically. These malfunctions are then converted into functional safety requirements
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="03. Functional Safety Requirements.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Functional Safety Analysis')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

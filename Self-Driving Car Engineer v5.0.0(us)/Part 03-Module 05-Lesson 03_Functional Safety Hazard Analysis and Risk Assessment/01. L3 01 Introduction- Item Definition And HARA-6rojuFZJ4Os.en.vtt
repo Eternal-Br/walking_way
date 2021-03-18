@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.785
+Now, we are going to refine how we analyze hazards and assess risks.
+
+00:00:04.785 --> 00:00:10.410
+Before we start, we need to define which part of vehicle will be under consideration.
+
+00:00:10.410 --> 00:00:13.384
+We are going to use an Advanced Driver Assistance System,
+
+00:00:13.384 --> 00:00:16.070
+in short ADAS, as an example.
+
+00:00:16.070 --> 00:00:18.315
+Once we have chosen a system to investigate,
+
+00:00:18.315 --> 00:00:20.609
+we need to brainstorm and come up with
+
+00:00:20.609 --> 00:00:23.129
+different driving scenarios like driving in
+
+00:00:23.129 --> 00:00:26.279
+the snow on a highway or parked in a parking lot.
+
+00:00:26.280 --> 00:00:28.390
+We call this situational analysis.
+
+00:00:28.390 --> 00:00:33.270
+Separately, we'll think about different ways that the vehicle can malfunction.
+
+00:00:33.270 --> 00:00:37.670
+We'll brainstorm again to identify what could go wrong with the ADAS.
+
+00:00:37.670 --> 00:00:39.795
+We will then evaluate malfunctions on
+
+00:00:39.795 --> 00:00:44.295
+the various driving scenarios and calculate a risk factor called ASIL,
+
+00:00:44.295 --> 00:00:47.660
+automotive safety integrity level.
+
+00:00:47.659 --> 00:00:52.169
+The ultimate goal of hazard analysis and risk assessment is to define
+
+00:00:52.170 --> 00:00:58.000
+requirements specifying what ADAS needs to do in order to avoid hazardous situations.
+

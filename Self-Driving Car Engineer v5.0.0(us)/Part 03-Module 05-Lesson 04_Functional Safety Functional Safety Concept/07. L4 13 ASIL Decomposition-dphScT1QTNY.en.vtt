@@ -1,0 +1,124 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.285
+We've already said that the electronic power steering subsystem
+
+00:00:03.285 --> 00:00:07.095
+is ASIL C for the lane departure warning functionality.
+
+00:00:07.094 --> 00:00:10.330
+Although ASIL C is not the highest level of risk,
+
+00:00:10.330 --> 00:00:12.150
+ASIL C still does add
+
+00:00:12.150 --> 00:00:17.120
+many extra testing and verification demands not required by a lower ASIL.
+
+00:00:17.120 --> 00:00:21.675
+Is there any way to lower the ASIL for at least some of the architectural elements?
+
+00:00:21.675 --> 00:00:23.234
+It turns out that there is.
+
+00:00:23.234 --> 00:00:25.684
+It's called ASIL decomposition.
+
+00:00:25.684 --> 00:00:28.859
+Imagine part of our system is label ASIL D. If
+
+00:00:28.859 --> 00:00:32.460
+we create two completely independent but redundant systems,
+
+00:00:32.460 --> 00:00:38.689
+ISO 26262 actually allows us to label each redundant system ASIL B.
+
+00:00:38.689 --> 00:00:41.000
+This comes from basic probability.
+
+00:00:41.000 --> 00:00:45.480
+If the probability of a malfunction equals .8 then the probability that
+
+00:00:45.479 --> 00:00:48.359
+two completely independent redundant systems will fail
+
+00:00:48.359 --> 00:00:52.634
+together is .8 times .8 which equals .64,
+
+00:00:52.634 --> 00:00:55.304
+redundant systems lower risk.
+
+00:00:55.304 --> 00:00:59.179
+What is the benefit of creating independent redundant systems?
+
+00:00:59.179 --> 00:01:04.245
+ASIL B requires less analysis and testing than ASIL D. For reference,
+
+00:01:04.245 --> 00:01:08.216
+we should label the new Independent Systems ASIL B(D),
+
+00:01:08.216 --> 00:01:12.390
+in recognition that the system was originally ASIL D. What are
+
+00:01:12.390 --> 00:01:15.480
+the most common ASIL decompositions is splitting off
+
+00:01:15.480 --> 00:01:20.170
+a single element into a non-safety relevant and safety relevant part.
+
+00:01:20.170 --> 00:01:23.215
+The non-safety relevant block will be QM.
+
+00:01:23.215 --> 00:01:28.920
+The benefit is that ISO 26262 will only apply to part of the original element.
+
+00:01:28.920 --> 00:01:30.894
+Let's see how this works.
+
+00:01:30.894 --> 00:01:33.299
+We are going to decompose the lane departure
+
+00:01:33.299 --> 00:01:36.649
+warning software block inside the power steering ECU.
+
+00:01:36.650 --> 00:01:40.105
+We will split the latest system software into two parts.
+
+00:01:40.105 --> 00:01:43.960
+One software element will contain code for normal functional behavior.
+
+00:01:43.959 --> 00:01:46.049
+We will create a separate software element to
+
+00:01:46.049 --> 00:01:48.640
+take care of our functional safety requirements.
+
+00:01:48.640 --> 00:01:51.769
+Let's look at our system architectural diagram again.
+
+00:01:51.769 --> 00:01:54.420
+The electronic power steering software a block is labeled
+
+00:01:54.420 --> 00:01:57.376
+ASIL C. With ASIL decomposition,
+
+00:01:57.376 --> 00:02:02.859
+the software block that takes care of normal functional behavior now gets a QM(C) label.
+
+00:02:02.859 --> 00:02:07.709
+The software block that takes care of malfunctions inherits the ASIL C. Now we no
+
+00:02:07.709 --> 00:02:13.349
+longer have to apply ISO 26262 to the normal behavior software block.
+
+00:02:13.349 --> 00:02:16.949
+By refining the architecture and determining ASILs,
+
+00:02:16.949 --> 00:02:21.084
+we are figuring out how much risk is in each element and subsystem.
+
+00:02:21.085 --> 00:02:26.030
+Decomposition then allows us to lower the ASIL of some of the architectural elements.
+

@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.075
+We have defined safety requirements at the functional level
+
+00:00:03.075 --> 00:00:06.265
+and then allocated those requirements to the item architecture.
+
+00:00:06.264 --> 00:00:09.869
+We now know what level of risk is contained in the item and we
+
+00:00:09.869 --> 00:00:14.154
+have added extra functionality to make sure that the item behaves in a safe manner.
+
+00:00:14.154 --> 00:00:18.214
+The next step is to look at the safety requirements from a technical perspective.
+
+00:00:18.214 --> 00:00:19.695
+We've said, for example,
+
+00:00:19.695 --> 00:00:24.750
+that the steering wheel warning vibration amplitude and frequency need to be limited.
+
+00:00:24.750 --> 00:00:26.836
+But what software and hardware elements are we
+
+00:00:26.836 --> 00:00:29.355
+going to need in order to limit the vibration?
+
+00:00:29.355 --> 00:00:33.795
+What are those hardware and software elements going to do to ensure functional safety?
+
+00:00:33.795 --> 00:00:35.201
+In the next lesson,
+
+00:00:35.201 --> 00:00:39.240
+we will refine our functional safety requirements and the technical safety requirements.
+

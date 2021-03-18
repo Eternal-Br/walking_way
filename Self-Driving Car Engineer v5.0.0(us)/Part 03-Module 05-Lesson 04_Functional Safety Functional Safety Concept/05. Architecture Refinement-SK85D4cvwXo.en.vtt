@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.399
+Now that we have a better sense of what the system needs to do,
+
+00:00:03.399 --> 00:00:08.099
+we are going to draw all the extra functionality on the architectural diagram.
+
+00:00:08.099 --> 00:00:10.852
+Here is our original system architecture.
+
+00:00:10.852 --> 00:00:13.710
+Let's add more details to the three subsystems.
+
+00:00:13.710 --> 00:00:17.214
+The car display subsystem will need extra software blocks.
+
+00:00:17.214 --> 00:00:21.829
+One controls a light that tells the driver if the lane keeping item is on or off.
+
+00:00:21.829 --> 00:00:23.669
+A second will control a light telling
+
+00:00:23.670 --> 00:00:26.880
+the driver that the lane departure warning is activated.
+
+00:00:26.879 --> 00:00:30.309
+The camera subsystem needs two software blocks, as well.
+
+00:00:30.309 --> 00:00:33.299
+One for lane sensing and a separate block to send
+
+00:00:33.299 --> 00:00:36.939
+a torque request to the electronic power steering subsystem.
+
+00:00:36.939 --> 00:00:40.774
+The electronic power steering subsystem will need three software blocks.
+
+00:00:40.774 --> 00:00:44.170
+The first will sense how much the driver is turning the steering wheel.
+
+00:00:44.170 --> 00:00:45.899
+A second software block will receive
+
+00:00:45.899 --> 00:00:49.379
+the vibrational torque request from the camera subsystem.
+
+00:00:49.380 --> 00:00:52.260
+This is where we will limit the amplitude and frequency to be
+
+00:00:52.259 --> 00:00:55.780
+low max torque amplitude and max torque frequency.
+
+00:00:55.780 --> 00:00:58.560
+The third block will add these torque requests together to
+
+00:00:58.560 --> 00:01:01.789
+output a final torque to the motor that moves the steering wheel.
+
+00:01:01.789 --> 00:01:04.469
+We have now derived functional safety requirements and
+
+00:01:04.469 --> 00:01:07.700
+allocated those requirements to the architectural diagram.
+
+00:01:07.700 --> 00:01:11.460
+In the next step, we will label the architectural diagram with a.
+

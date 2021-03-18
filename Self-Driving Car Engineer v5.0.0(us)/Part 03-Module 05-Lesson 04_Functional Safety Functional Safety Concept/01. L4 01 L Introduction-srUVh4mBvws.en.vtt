@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.480
+Let's emphasize again the ultimate goal of functional safety,
+
+00:00:03.480 --> 00:00:06.804
+avoiding accidents by reducing risk to acceptable levels.
+
+00:00:06.804 --> 00:00:09.449
+First let's figure out what subsystems actually
+
+00:00:09.449 --> 00:00:13.134
+contain high levels of risk and what's needed to prevent accidents.
+
+00:00:13.134 --> 00:00:15.224
+Looking at the items architectural design,
+
+00:00:15.224 --> 00:00:19.530
+you'll figure out which subsystems and elements can be used to meet safety goals.
+
+00:00:19.530 --> 00:00:22.050
+You'll need to further refine these high level goals
+
+00:00:22.050 --> 00:00:24.894
+into what we call functional safety requirements.
+
+00:00:24.894 --> 00:00:26.085
+And then you'll allocate
+
+00:00:26.085 --> 00:00:30.420
+each functional safety requirement to its appropriate place in the item architecture.
+
+00:00:30.420 --> 00:00:32.670
+We take all of this information and put it into
+
+00:00:32.670 --> 00:00:35.280
+a document called the functional safety concept.
+

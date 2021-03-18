@@ -1,0 +1,669 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Automotive Safety Integrity Levels (ASIL)
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Functional Safety: Hazard Analysis and Risk Assessment
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction.html">
+       01. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Advanced Driver Assistance System.html">
+       02. Advanced Driver Assistance System
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Item Definition.html">
+       03. Item Definition
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Introduction to Hazard Analysis and Risk Assessment.html">
+       04. Introduction to Hazard Analysis and Risk Assessment
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Sebastian Discussing Hazards.html">
+       05. Sebastian Discussing Hazards
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Situational Analysis.html">
+       06. Situational Analysis
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Identification of Hazards.html">
+       07. Identification of Hazards
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Risk Assessment, Severity, Exposure, Controllability.html">
+       08. Risk Assessment, Severity, Exposure, Controllability
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Automotive Safety Integrity Levels (ASIL).html">
+       09. Automotive Safety Integrity Levels (ASIL)
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Safety Goals.html">
+       10. Safety Goals
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Lesson Summary.html">
+       11. Lesson Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          09. Automotive Safety Integrity Levels (ASIL)
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="asil">
+          ASIL
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          L3 18 L HARA ASIL Levels
+         </p>
+        </h3>
+        <video controls="">
+         <source src="09. L3 18 L HARA ASIL Levels-l7vx-w06fZw.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="09. L3 18 L HARA ASIL Levels-l7vx-w06fZw.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="CN" src="09. L3 18 L HARA ASIL Levels-l7vx-w06fZw.zh-CN.vtt" srclang="CN"/>
+        </video>
+        <div class="jumbotron" style="margin-top: 50px; margin-bottom: 50px;">
+         <h3>
+          INSTRUCTOR NOTE:
+         </h3>
+         <p>
+          Note: In the video, it's noted that QM implies risk is already below acceptable levels. What should be properly stated is that Quality Management approaches need to be applied to ensure lower level risks are mitigated.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Now, we can evaluate the risk of our lane keeping assistance function's hazardous situation. We combine the severity, exposure and controllability to find the ASIL.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Table for Calculating ASIL" class="img img-fluid" src="img/asil.jpg"/>
+          <figcaption class="figure-caption">
+           <p>
+            Table for Calculating ASIL
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Combining S3, E2 and C3 from the lane keeping assistance example gives ASIL B.
+         </p>
+         <p>
+          ASIL shows how high the risk is above acceptable levels so that you know how much work needs to be done to lower risk. Coming up, we will examine ASIL in more detail and discuss the differences between ASIL A, B, C, and D.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="quiz-calculating-asil">
+          Quiz: Calculating ASIL
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          ASIL
+         </p>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             What is the ASIL for C2, S2, and E4?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1501046031116" name="350837" type="radio" value="a1501046031116"/>
+           <label for="a1501046031116">
+            <p>
+             ASIL A
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1501046086582" name="350837" type="radio" value="a1501046086582"/>
+           <label for="a1501046086582">
+            <p>
+             ASIL B
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1501046086982" name="350837" type="radio" value="a1501046086982"/>
+           <label for="a1501046086982">
+            <p>
+             ASIL C
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1501046093101" name="350837" type="radio" value="a1501046093101"/>
+           <label for="a1501046093101">
+            <p>
+             ASIL D
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1501046267288" name="350837" type="radio" value="a1501046267288"/>
+           <label for="a1501046267288">
+            <p>
+             QM
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          ASIL B
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          ASIL Calculation
+         </p>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             What is the ASIL for E4, C3, and S0?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1501046245285" name="350839" type="radio" value="a1501046245285"/>
+           <label for="a1501046245285">
+            <p>
+             A
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1501046260800" name="350839" type="radio" value="a1501046260800"/>
+           <label for="a1501046260800">
+            <p>
+             B
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1501046261376" name="350839" type="radio" value="a1501046261376"/>
+           <label for="a1501046261376">
+            <p>
+             C
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1501046261880" name="350839" type="radio" value="a1501046261880"/>
+           <label for="a1501046261880">
+            <p>
+             D
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1501046262496" name="350839" type="radio" value="a1501046262496"/>
+           <label for="a1501046262496">
+            <p>
+             QM
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          QM
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="examples-of-how-driving-situations-affect-asil">
+          Examples of How Driving Situations Affect ASIL
+         </h3>
+         <p>
+          To reinforce how severity, exposure, and controllability relate to ASIL, let's look at the lane departure warning example one more time. In the original situational analysis, we said that the vehicle was driving on the highway in the rain at high speed, which led to ASIL C.
+         </p>
+         <p>
+          What about driving on a wet road on a city street at low speed? A low speed collision implies severity of S1. Exposure remains E3 because of the wet road. Controllability would could still remain C3 because the steering wheel jerking back and forth violently would be difficult to control even at lower speeds. S1, E3 and C3 result in ASIL A. The ASIL went down to A whereas originally we had ASIL C. Intuitively, this makes sense; the driver is driving more slowly with all other conditions remaining the same, so the risk has gone down.
+         </p>
+         <p>
+          What about driving on a dry road on a city street at low speed? Severity would stay at S1. Exposure now increases to E4 and controllability remains at C3. ASIL now increases to B. Perhaps counterintuitively, if we consider driving on a dry road instead of a wet road, risk increases. The increased risk comes from the exposure. A driver is more likely to be driving on a dry road than a wet road, so there is a higher probability that a random malfunction will occur on a dry road; hence risk increases for the dry road scenario.
+         </p>
+         <p>
+          What if we had considered high speed highway driving on a dry road? Exposure would go up to E4, severity would be S3, and controllability C3. The ASIL would then increase to ASIL D.
+         </p>
+         <p>
+          When more than one situation maps to the same hazard, you will be conservative and choose the highest ASIL level for the hazard. If we were considering the possibility that the lane departure warning system vibrates too much on wet highways and also dry highways, we would assign ASIL  D.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="analysis-and-testing-for-different-asils">
+          Analysis and Testing for Different ASILs
+         </h3>
+         <p>
+          Higher ASIL levels require more analysis, requirements and testing to reduce risk to acceptable levels. So in the lane assistance example, the first hazardous situation with ASIL C will require more work than the second hazardous situation with ASIL B.
+         </p>
+         <p>
+          Here are a few examples of extra measures that may need to be taken for higher ASILs:
+         </p>
+         <ul>
+          <li>
+           Deductive analysis, an example of which is
+           <a href="https://en.wikipedia.org/wiki/Fault_tree_analysis" rel="noopener noreferrer" target="_blank">
+            Fault Tree Analysis
+           </a>
+           is recommended for ASIL C and ASIL D
+          </li>
+          <li>
+           ASIL D suggests a target for the PMHF metric failure rate of no greater than 10 dangerous, undetected failures per billion hours of operation whereas ASIL B only suggests a failure rate of no more than 100 failures per billion hours
+          </li>
+          <li>
+           For Software units with ASIL D more rigorous testing such as
+           <a href="https://en.wikipedia.org/wiki/Modified_condition/decision_coverage" rel="noopener noreferrer" target="_blank">
+            MC/DC coverage
+           </a>
+           are highly recommended whereas ASIL B only mandates DC coverage.
+          </li>
+         </ul>
+         <p>
+          Compensatory measures like Fault Tree Analysis, and MC/DC coverage are beyond the scope of this module, but you can learn more about them at the links.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="quiz-severity-exposure-and-controllability">
+          Quiz: Severity, Exposure and Controllability
+         </h3>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Vocabulary
+         </p>
+        </h3>
+        <div>
+         <p>
+          <strong>
+           QUIZ QUESTION:
+          </strong>
+          :
+          <p>
+           Match the term on the left with the definition on the right
+          </p>
+         </p>
+         <p>
+          <strong>
+           ANSWER CHOICES:
+          </strong>
+         </p>
+         <button class="btn btn-primary">
+          <p>
+           Exposure
+          </p>
+         </button>
+         <button class="btn btn-primary">
+          <p>
+           Controllability
+          </p>
+         </button>
+         <button class="btn btn-primary">
+          <p>
+           Severity
+          </p>
+         </button>
+         <br/>
+         <br/>
+         <table class="table">
+          <tr class="thead-dark table-hover">
+           <th>
+            <p>
+             Term
+            </p>
+           </th>
+           <th>
+            <p>
+             Definition
+            </p>
+           </th>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             How often a malfunction occurs
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             How often a driving situation occurs
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             How badly a person could be injured
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             How easily a driver would be able to drive the vehicle if a hazardous situation occurred
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+         </table>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <table class="table">
+           <tr class="thead-dark table-hover">
+            <th>
+             <p>
+              Term
+             </p>
+            </th>
+            <th>
+             <p>
+              Definition
+             </p>
+            </th>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              How often a driving situation occurs
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               Exposure
+              </p>
+             </button>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              How badly a person could be injured
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               Severity
+              </p>
+             </button>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              How easily a driver would be able to drive the vehicle if a hazardous situation occurred
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               Controllability
+              </p>
+             </button>
+            </td>
+           </tr>
+          </table>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="10. Safety Goals.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('09. Automotive Safety Integrity Levels (ASIL)')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

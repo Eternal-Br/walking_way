@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.399 --> 00:00:08.865
+Severity, exposure and controllability provide a systematic way for evaluating risk.
+
+00:00:08.865 --> 00:00:12.269
+We take these three factors and combine them into
+
+00:00:12.269 --> 00:00:17.339
+a metric called Automotive Safety Integrity Level or ASIL.
+
+00:00:17.339 --> 00:00:22.126
+ASIL measures the amount of risk of each hazardous situation.
+
+00:00:22.126 --> 00:00:26.210
+Lower risks are classified as ASIL A,
+
+00:00:26.210 --> 00:00:30.260
+whereas the highest risks are classified as ASIL B. ISO 26262
+
+00:00:30.260 --> 00:00:37.630
+provides a table for combining the three terms together into an ASIL.
+
+00:00:37.630 --> 00:00:42.240
+Let's calculate the ASIL for our lane departure warning example.
+
+00:00:42.240 --> 00:00:45.945
+You can see in the table that combining S3,
+
+00:00:45.945 --> 00:00:50.340
+E3 and C3 leads to ASIL C. So
+
+00:00:50.340 --> 00:00:55.445
+excessive steering wheel vibration is a hazard with relatively high risk.
+
+00:00:55.445 --> 00:01:01.424
+This table brings up a couple of points that we haven't covered yet. What is QM?
+
+00:01:01.424 --> 00:01:05.250
+And what happens if a hazard has a severity,
+
+00:01:05.250 --> 00:01:11.075
+controllability or exposure levels of S0, E0 or C0?
+
+00:01:11.075 --> 00:01:14.969
+If the risk assessment contains an S0,
+
+00:01:14.969 --> 00:01:21.209
+E0 or C0, then the risk is automatically marked as QM.
+
+00:01:21.209 --> 00:01:23.909
+QM stands for quality management and
+
+00:01:23.909 --> 00:01:28.289
+implies that the risk is already below acceptable levels.
+
+00:01:28.290 --> 00:01:31.770
+There is no need to apply ISO 26262 to
+
+00:01:31.769 --> 00:01:36.509
+a hazardous situation of QM because risk is already low enough.
+
+00:01:36.510 --> 00:01:40.560
+However, there are other standards that apply including
+
+00:01:40.560 --> 00:01:46.290
+the automotive quality management standard IATF 16949.
+
+00:01:46.290 --> 00:01:49.410
+Now that we know how to evaluate risks,
+
+00:01:49.409 --> 00:01:54.000
+we will discuss what the system needs to do in order to lower the risk.
+

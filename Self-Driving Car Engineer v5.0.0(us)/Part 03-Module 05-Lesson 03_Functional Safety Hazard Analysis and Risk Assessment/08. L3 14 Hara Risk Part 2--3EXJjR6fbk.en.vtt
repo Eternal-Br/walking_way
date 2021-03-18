@@ -1,0 +1,46 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.359
+Now, let's talk about Exposure.
+
+00:00:03.359 --> 00:00:08.865
+Do you remember from the introductory lesson the definition of probability of occurrence,
+
+00:00:08.865 --> 00:00:13.560
+probability of occurrence actually measures how often or
+
+00:00:13.560 --> 00:00:18.774
+how long drivers would find themselves in a specific situation?
+
+00:00:18.774 --> 00:00:23.474
+For example, driving on a freeway parked in a parking lot,
+
+00:00:23.475 --> 00:00:25.275
+or driving on a wet road.
+
+00:00:25.274 --> 00:00:28.649
+Exposure is defined exactly like how
+
+00:00:28.649 --> 00:00:32.600
+we define probability of occurrence in the introductory lesson.
+
+00:00:32.600 --> 00:00:35.745
+Exposure has scale from E0 to E4.
+
+00:00:35.744 --> 00:00:38.640
+For our lane departure warning example,
+
+00:00:38.640 --> 00:00:42.734
+the situation involved highway driving on VicRoads.
+
+00:00:42.734 --> 00:00:45.299
+According to functional safety standard,
+
+00:00:45.299 --> 00:00:48.149
+driving on VicRoads is E3.
+
+00:00:48.149 --> 00:00:53.000
+The chart below gives a sense of how to determine exposure levels.
+

@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.850 --> 00:00:08.040
+It's time to combine situations and hazards together and then evaluate risks.
+
+00:00:08.039 --> 00:00:11.354
+Once we know how high our risks are,
+
+00:00:11.355 --> 00:00:15.720
+we can figure out how to bring risks down to acceptable levels.
+
+00:00:15.720 --> 00:00:18.060
+Back in the introductory lesson,
+
+00:00:18.059 --> 00:00:23.424
+we talked about evaluating risk with the equation risk equal severity,
+
+00:00:23.425 --> 00:00:25.605
+times probability of occurrence.
+
+00:00:25.605 --> 00:00:28.440
+In that lesson, we simplified things a bit.
+
+00:00:28.440 --> 00:00:30.911
+In the ISO 26262 standard,
+
+00:00:30.911 --> 00:00:35.685
+the risk is defined slightly differently with the equation risk
+
+00:00:35.685 --> 00:00:41.940
+equal severity of a malfunction times probability of loss due to a malfunction.
+
+00:00:41.939 --> 00:00:44.594
+You have already seen severity in the introduction.
+
+00:00:44.594 --> 00:00:47.759
+Probability of loss due to a malfunction takes into
+
+00:00:47.759 --> 00:00:52.184
+account two terms called exposure and controllability.
+
+00:00:52.185 --> 00:00:57.829
+Risk then equals severity times exposure, times controllability.
+
+00:00:57.829 --> 00:01:01.184
+Let's discuss each one of these factors in turn.
+
+00:01:01.185 --> 00:01:03.425
+We introduce severity earlier.
+
+00:01:03.424 --> 00:01:08.935
+Severity measures how badly a person could get injured in an accident.
+
+00:01:08.935 --> 00:01:11.594
+In the ISO 26262 standard,
+
+00:01:11.594 --> 00:01:13.813
+severity has four levels,
+
+00:01:13.813 --> 00:01:17.669
+labeled S0, S1, S2 and S3.
+
+00:01:17.670 --> 00:01:24.984
+S0 represents no injuries whereas S3 implies life threatening or fatal injuries.
+
+00:01:24.984 --> 00:01:29.069
+For example, a situation in which the vehicle travels
+
+00:01:29.069 --> 00:01:33.924
+over 40 kilometers per hour would have severity of S3.
+
+00:01:33.924 --> 00:01:37.966
+In the situational analysis for the lane departure warning,
+
+00:01:37.966 --> 00:01:41.429
+we considered that the driver was traveling at a high speed,
+
+00:01:41.430 --> 00:01:43.610
+so the severity would be S3.
+
+00:01:43.609 --> 00:01:46.439
+You can use this table below as a guide for
+
+00:01:46.439 --> 00:01:50.459
+evaluating the severity of the situation under consideration.
+
