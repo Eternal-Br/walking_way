@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.430
+A controller actuates the vehicle to follow
+
+00:00:02.430 --> 00:00:05.650
+the reference trajectory within a set of design requirements.
+
+00:00:05.650 --> 00:00:07.950
+One important requirement is to minimize the area between
+
+00:00:07.950 --> 00:00:10.984
+the reference trajectory and the vehicle's actual path.
+
+00:00:10.984 --> 00:00:14.669
+You can minimize this error by predicting the vehicle's actual path and then adjusting
+
+00:00:14.669 --> 00:00:16.859
+the control inputs to minimize the difference between
+
+00:00:16.859 --> 00:00:19.263
+that prediction and the reference trajectory.
+
+00:00:19.263 --> 00:00:23.129
+That's how to use a kinematic model to predict the vehicle's future state.
+
+00:00:23.129 --> 00:00:25.199
+Next, you'll define the predicted area between
+
+00:00:25.199 --> 00:00:28.010
+the trajectory and that predicted path of the vehicle.
+
+00:00:28.010 --> 00:00:29.760
+Once you've predicted the error you can actuate
+
+00:00:29.760 --> 00:00:32.000
+with the vehicle to minimize the error over time.
+

@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.099
+Tire models aim to model the behavior of the tire as closely as possible.
+
+00:00:04.099 --> 00:00:06.958
+For example, the lateral force generated looks something like
+
+00:00:06.958 --> 00:00:11.070
+this: alpha is this slip angle and F is a lateral force.
+
+00:00:11.070 --> 00:00:14.009
+Race car drivers have a fantastic mental model of this graph and can
+
+00:00:14.009 --> 00:00:18.085
+usually capture optimal longitudinal or lateral force for the situation.
+
+00:00:18.085 --> 00:00:20.010
+The slip angle is just one component used to
+
+00:00:20.010 --> 00:00:22.809
+calculate the longitudinal and lateral forces of tires.
+
+00:00:22.809 --> 00:00:26.144
+There is a breadth of literature dedicated to the study of tire dynamics.
+
+00:00:26.143 --> 00:00:28.919
+We could have an entire course just on tire forces.
+
+00:00:28.920 --> 00:00:31.559
+The most popular model is the Pacejka tire model,
+
+00:00:31.559 --> 00:00:33.579
+also known as the Magic Tire Formula.
+

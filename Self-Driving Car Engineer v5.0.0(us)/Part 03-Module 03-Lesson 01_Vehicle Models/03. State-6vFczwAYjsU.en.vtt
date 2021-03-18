@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.895
+Think about how to keep track of the state of a vehicle.
+
+00:00:02.895 --> 00:00:06.634
+The vehicle is located at a position which we track with x and y.
+
+00:00:06.634 --> 00:00:08.025
+If we're talking about a car,
+
+00:00:08.025 --> 00:00:11.714
+then the vehicle also has an orientation which we'll denote with cy.
+
+00:00:11.714 --> 00:00:13.679
+This is a good model of a stationary vehicle,
+
+00:00:13.679 --> 00:00:15.778
+but what if our vehicle is in motion?
+
+00:00:15.778 --> 00:00:18.018
+In that case, it will also have a velocity which we'll call
+
+00:00:18.018 --> 00:00:20.419
+v. This captures the vehicle's state.
+
+00:00:20.420 --> 00:00:23.940
+So the next task is to model how that state evolves through time.
+
+00:00:23.940 --> 00:00:25.589
+If we know the current state of the vehicle,
+
+00:00:25.588 --> 00:00:27.398
+can we tell where we'll be in the future?
+

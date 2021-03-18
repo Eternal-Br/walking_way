@@ -1,0 +1,34 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.060
+The vehicle dynamics models -- the complex interactions
+
+00:00:03.060 --> 00:00:06.474
+between the tires and the road -- determine the motion of the vehicle.
+
+00:00:06.474 --> 00:00:09.573
+We don't delve too heavily into the mathematical details here.
+
+00:00:09.573 --> 00:00:12.585
+Rather we'll focus more on the intuition of what these forces do.
+
+00:00:12.585 --> 00:00:15.609
+While there are many forces to consider in a dynamic model,
+
+00:00:15.609 --> 00:00:19.698
+they essentially boil down to longitudinal and lateral forces acting on the vehicle.
+
+00:00:19.699 --> 00:00:22.559
+Think of the longitudinal force as a force pushing the vehicle forward or
+
+00:00:22.559 --> 00:00:26.254
+backward and lateral force is a force pushing the vehicle side to side.
+
+00:00:26.254 --> 00:00:28.184
+Tires play a huge role here.
+
+00:00:28.184 --> 00:00:32.250
+The longitudinal and lateral force on the vehicle is the sum of the forces on the tires.
+

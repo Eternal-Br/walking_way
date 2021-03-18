@@ -1,0 +1,398 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Global Kinematic Model
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Vehicle Models
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Intro.html">
+       01. Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Vehicle Models.html">
+       02. Vehicle Models
+      </a>
+     </li>
+     <li class="">
+      <a href="03. State.html">
+       03. State
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Building a Kinematic Model.html">
+       04. Building a Kinematic Model
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Global Kinematic Model.html">
+       05. Global Kinematic Model
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Solution Global Kinematic Model.html">
+       06. Solution: Global Kinematic Model
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Following Trajectories.html">
+       07. Following Trajectories
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Fitting Polynomials.html">
+       08. Fitting Polynomials
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Solution Fitting Polynomials.html">
+       09. Solution: Fitting Polynomials
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Errors.html">
+       10. Errors
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Dynamic Models.html">
+       11. Dynamic Models
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Dynamic Models - Forces.html">
+       12. Dynamic Models - Forces
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Dynamic Models - Slip Angle.html">
+       13. Dynamic Models - Slip Angle
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Dynamic Models - Slip Ratio.html">
+       14. Dynamic Models - Slip Ratio
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Dynamic Models - Tire Models.html">
+       15. Dynamic Models - Tire Models
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Actuator Constraints.html">
+       16. Actuator Constraints
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Outro.html">
+       17. Outro
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. Global Kinematic Model
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Now we’ve developed equations to determine the next state (state at t+1) from our state vector at t and our actuator values. Note that we’ve added a variable to our state called
+          <span class="mathquill ud-math">
+           L_f
+          </span>
+          which measures the distance between the front of the vehicle and its center of gravity. The larger the vehicle , the slower the turn rate.
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \large x_{t+1} = x_t + v_t  cos(\psi_t) * dt
+          </span>
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \large y_{t+1} = y_t + v_t  sin(\psi_t) * dt
+          </span>
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \large \psi_{t+1} = \psi_t + \frac {v_t} { L_f}  \delta * dt
+          </span>
+         </p>
+         <p>
+          <span class="mathquill ud-math">
+           \large v_{t+1} = v_t + a_t * dt
+          </span>
+         </p>
+         <p>
+          <strong>
+           In the quiz below  we will implement the global kinematic model to return the next state vector, given a current state input vector and an actuator vector.
+          </strong>
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="309006-main-cpp" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#309006-main-cpp" id="tab-309006-main-cpp" role="tab">
+            main.cpp
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-309006-main-cpp" class="tab-pane active show" id="309006-main-cpp" role="tabpanel">
+            <pre><code></code>// In this quiz you'll implement the global kinematic model.
+#include &lt;math.h&gt;
+#include &lt;iostream&gt;
+#include "Dense"
+
+using Eigen::VectorXd;
+
+//
+// Helper functions
+//
+constexpr double pi() { return M_PI; }
+double deg2rad(double x) { return x * pi() / 180; }
+double rad2deg(double x) { return x * 180 / pi(); }
+
+const double Lf = 2;
+
+// Return the next state.
+VectorXd globalKinematic(const VectorXd &amp;state, 
+                         const VectorXd &amp;actuators, double dt);
+
+int main() {
+  // [x, y, psi, v]
+  VectorXd state(4);
+  // [delta, v]
+  VectorXd actuators(2);
+
+  state &lt;&lt; 0, 0, deg2rad(45), 1;
+  actuators &lt;&lt; deg2rad(5), 1;
+
+  // should be [0.212132, 0.212132, 0.798488, 1.3]
+  auto next_state = globalKinematic(state, actuators, 0.3);
+
+  std::cout &lt;&lt; next_state &lt;&lt; std::endl;
+}
+
+VectorXd globalKinematic(const VectorXd &amp;state, 
+                         const VectorXd &amp;actuators, double dt) {
+  // Create a new vector for the next state.
+  VectorXd next_state(state.size());
+
+  /**
+   * TODO: Implement the global kinematic model,
+   *   to return the next state from the inputs.
+   */
+
+  // NOTE: state is [x, y, psi, v] and actuators is [delta, a]
+
+  return next_state;
+}</pre>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="jumbotron" style="margin-top: 50px; margin-bottom: 50px;">
+         <h3>
+          INSTRUCTOR NOTE:
+         </h3>
+         <h2 id="code-and-files-for-running-this-quiz-locally-can-be-found-herehttpsgithubcomudacitycarnd-mpc-quizzestreemasterglobal_kinematic_model">
+          Code and files for running this quiz locally can be found
+          <a href="https://github.com/udacity/CarND-MPC-Quizzes/tree/master/global_kinematic_model" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          .
+         </h2>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          <span class="mathquill ud-math">
+           [x, y, \psi, v]
+          </span>
+          is the state of the vehicle,
+          <span class="mathquill ud-math">
+           L_f
+          </span>
+          is a physical characteristic of the vehicle, and
+          <span class="mathquill ud-math">
+           [\delta, a]
+          </span>
+          are the actuators, or control inputs, to our system.
+         </p>
+         <p>
+          This is a good kinematic model!
+         </p>
+         <p>
+          Now that we have this, we can use the model to write a simulation where we can develop a controller to follow a trajectory.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. Solution Global Kinematic Model.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Global Kinematic Model')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

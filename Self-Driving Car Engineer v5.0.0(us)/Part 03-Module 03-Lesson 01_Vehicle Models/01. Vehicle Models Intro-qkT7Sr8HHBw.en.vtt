@@ -1,0 +1,43 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.919
+One approach to writing a good controller is to
+
+00:00:02.919 --> 00:00:06.125
+first model the vehicle's dynamics and constraints.
+
+00:00:06.125 --> 00:00:10.054
+That way, we can analyze and tune the controller more efficiently.
+
+00:00:10.054 --> 00:00:12.289
+In this lesson, you'll learn about vehicle models.
+
+00:00:12.289 --> 00:00:15.129
+The models describe mathematically how the vehicle moves,
+
+00:00:15.130 --> 00:00:17.125
+some models being more realistic than others.
+
+00:00:17.125 --> 00:00:21.390
+Typically, more realistic models are also more complex and more challenging to work with,
+
+00:00:21.390 --> 00:00:22.719
+so there's always a trade-off to make.
+
+00:00:22.719 --> 00:00:27.250
+You'll work with a relatively simple type of model, the kinematic model.
+
+00:00:27.250 --> 00:00:31.464
+Kinematic models ignore many elements like gravity and tire forces,
+
+00:00:31.464 --> 00:00:35.424
+but they're relatively simple to work with and they often perform well.
+
+00:00:35.424 --> 00:00:37.089
+You'll also learn about dynamic models,
+
+00:00:37.090 --> 00:00:39.580
+which capture more realistic forces and accelerations.
+

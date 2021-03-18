@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.110
+Great. You now know how to model the dynamics for a vehicle.
+
+00:00:04.110 --> 00:00:07.230
+One last thing before we move on, actuator constraints.
+
+00:00:07.230 --> 00:00:09.600
+In a real vehicle, actuators are limited by
+
+00:00:09.599 --> 00:00:12.434
+the design of the vehicle in fundamental physics.
+
+00:00:12.435 --> 00:00:16.984
+For example, a vehicle can't have a steering angle of 90 degrees. It's impossible.
+
+00:00:16.984 --> 00:00:20.875
+Thus, it doesn't make sense for us to even consider these kinds of inputs.
+
+00:00:20.875 --> 00:00:23.960
+There's actually a vocabulary for describing this constraint.
+
+00:00:23.960 --> 00:00:25.690
+We call this model nonholonomic,
+
+00:00:25.690 --> 00:00:28.464
+because the vehicle can't move in arbitrary directions.
+
+00:00:28.464 --> 00:00:31.230
+It's limited by its steering angle constraints.
+
+00:00:31.230 --> 00:00:34.605
+We can solve this by setting lower and upper bounds for the actuators.
+
+00:00:34.604 --> 00:00:39.179
+For example, we may set the steering angle to be between minus 30 and 30 degrees,
+
+00:00:39.179 --> 00:00:42.030
+and the acceleration to be between minus one and one.
+
+00:00:42.030 --> 00:00:43.969
+Minus one signifying full brake,
+
+00:00:43.969 --> 00:00:46.259
+and one signifying full acceleration.
+
+00:00:46.259 --> 00:00:48.659
+In practice, the upper and lower bounds
+
+00:00:48.659 --> 00:00:51.349
+should mimic the actual vehicle as closely as possible.
+
