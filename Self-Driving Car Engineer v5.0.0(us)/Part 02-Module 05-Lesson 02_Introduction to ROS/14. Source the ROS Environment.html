@@ -1,0 +1,584 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Source the ROS Environment
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Introduction to ROS
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Communications Between Systems.html">
+       01. Communications Between Systems
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction.html">
+       02. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Welcome to ROS Essentials.html">
+       03. Welcome to ROS Essentials
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Build Robots with ROS.html">
+       04. Build Robots with ROS
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Brief History of ROS.html">
+       05. Brief History of ROS
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Nodes and Topics.html">
+       06. Nodes and Topics
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Message Passing.html">
+       07. Message Passing
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Services.html">
+       08. Services
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Compute Graph.html">
+       09. Compute Graph
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Turtlesim Overview.html">
+       10. Turtlesim Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="11. ROS Workspace Instructions.html">
+       11. ROS Workspace Instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="12. ROS Workspace.html">
+       12. ROS Workspace
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Your Virtual Machine.html">
+       13. Your Virtual Machine
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Source the ROS Environment.html">
+       14. Source the ROS Environment
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Run Turtlesim.html">
+       15. Run Turtlesim
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Turtlesim Comms List Nodes.html">
+       16. Turtlesim Comms: List Nodes
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Turtlesim Comms List Topics.html">
+       17. Turtlesim Comms: List Topics
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Turtlesim Comms Get Topic Info.html">
+       18. Turtlesim Comms: Get Topic Info
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Turtlesim Comms Message Information.html">
+       19. Turtlesim Comms: Message Information
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Turtlesim Comms Echo a Topic.html">
+       20. Turtlesim Comms: Echo a Topic
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Recap.html">
+       21. Recap
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          14. Source the ROS Environment
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Sourcing The ROS Environment
+         </p>
+        </h3>
+        <video controls="">
+         <source src="14. Sourcing The ROS Environment-6cHlu-KVi98.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="14. Sourcing The ROS Environment-6cHlu-KVi98.en.vtt" srclang="en"/>
+         <track default="false" kind="subtitles" label="JP" src="14. Sourcing The ROS Environment-6cHlu-KVi98.ja-JP.vtt" srclang="JP"/>
+         <track default="false" kind="subtitles" label="CN" src="14. Sourcing The ROS Environment-6cHlu-KVi98.zh-CN.vtt" srclang="CN"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="environment-setup">
+          Environment Setup
+         </h1>
+         <p>
+          Before we begin using ROS in a terminal, we must first ensure that all of the environment variables are present. To do this, we must source the setup script provided by ROS:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/source-setup.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Caveat:
+         </p>
+         <p>
+          Make sure you use the bash command
+          <code>
+           source
+          </code>
+          rather than
+          <code>
+           ./
+          </code>
+          . There’s a subtle distinction between the two commands, in that
+          <code>
+           source
+          </code>
+          executes the script in the current session, while
+          <code>
+           ./
+          </code>
+          will start a new session, containing a copy of the current environment. When a script executed via
+          <code>
+           ./
+          </code>
+          is exited, all environment variables set by it will be lost. We don’t want this. For more information on environment variables and terminal sessions, please see
+          <a href="https://help.ubuntu.com/community/EnvironmentVariables" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          .
+         </p>
+         <h3 id="inspecting-the-environment">
+          Inspecting the Environment
+         </h3>
+         <p>
+          You can inspect the changes that it has made to our environment variables by using the Unix command
+          <code>
+           env
+          </code>
+          .
+         </p>
+         <pre><code class="sh language-sh">$ env</code></pre>
+         <p>
+          Depending on your system configuration, there may be quite a few environment variables. One quick way to determine what changes were made to the existing environment is to run the following commands in a new terminal (where
+          <code>
+           /opt/ros/kinetic/setup.bash
+          </code>
+          has not already been sourced).
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/environment-compare.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The Unix
+          <code>
+           diff
+          </code>
+          command compares two files line by line, indicating any differences between them. The lines beginning with a ‘+’ indicate lines that were either added, or changed in
+          <code>
+           newenv.txt
+          </code>
+          . In our case, we can see that the following changes have been made to the environment by
+          <code>
+           setup.bash
+          </code>
+         </p>
+         <pre><code>ROS_ROOT=/opt/ros/kinetic/share/ros
+ROS_PACKAGE_PATH=/opt/ros/kinetic/share
+ROS_MASTER_URI=http://localhost:11311
+LD_LIBRARY_PATH=/opt/ros/kinetic/lib
+PATH=/opt/ros/kinetic/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+ROSLISP_PACKAGE_DIRECTORIES=
+ROS_DISTRO=kinetic
+PYTHONPATH=/opt/ros/kinetic/lib/python2.7/dist-packages
+PKG_CONFIG_PATH=/opt/ros/kinetic/lib/pkgconfig
+CMAKE_PREFIX_PATH=/opt/ros/kinetic
+ROS_ETC_DIR=/opt/ros/kinetic/etc/ros</code></pre>
+         <p>
+          While we won’t be discussing all of the environment variables that have been added or changed, there are a few worth mentioning.
+         </p>
+         <p>
+          <code>
+           ROS_ROOT=/opt/ros/kinetic/share/ros
+          </code>
+          <br/>
+          The path where core ros packages are stored
+         </p>
+         <p>
+          <code>
+           PATH=/opt/ros/kinetic/bin:...
+          </code>
+          <br/>
+          The path to the ROS binaries, which we will be using throughout this lesson.
+         </p>
+         <p>
+          <code>
+           ROS_DISTRO=kinetic
+          </code>
+          <br/>
+          Which distribution of ROS is being used. In this case, we are using kinetic
+         </p>
+         <p>
+          <code>
+           PYTHONPATH=/opt/ros/kinetic/lib/python2.7/dist-packages
+          </code>
+          <br/>
+          The path to the ROS python packages, which we will be using next lesson.
+         </p>
+         <p>
+          More information about the environment variables mentioned above, the ones not mentioned here, and others can be found
+          <a href="http://wiki.ros.org/ROS/EnvironmentVariables" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          .
+         </p>
+         <h2 id="automatically-configuring-the-environment">
+          Automatically Configuring the Environment
+         </h2>
+         <p>
+          Setting up the ROS environment every time you open a new terminal window can be painful and tedious. To avoid the tedium, we can simply add the command to source the workspace to our
+          <code>
+           ~/.bashrc file
+          </code>
+          . This  will cause our environment to be sourced any time a new terminal session is created.
+         </p>
+         <p>
+          Please note that the provided VM already has this configured so there is no need to execute this step!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/echo-to-bashrc.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Which one of the statements below is
+             <em>
+              true
+             </em>
+             regarding the bash
+             <code>
+              source
+             </code>
+             command?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1495219413497" name="322695" type="radio" value="a1495219413497"/>
+           <label for="a1495219413497">
+            <p>
+             Executes the bash script within the existing environment.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1495219519363" name="322695" type="radio" value="a1495219519363"/>
+           <label for="a1495219519363">
+            <p>
+             Executes the command within a new environment.
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          Executes the bash script within the existing environment.
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Which one of the statements below is
+             <em>
+              true
+             </em>
+             regarding the bash
+             <code>
+              ./
+             </code>
+             command?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1495219596866" name="322696" type="radio" value="a1495219596866"/>
+           <label for="a1495219596866">
+            <p>
+             Ensures that any environment variables set by bash script are maintained after the script has finished running.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1495219764573" name="322696" type="radio" value="a1495219764573"/>
+           <label for="a1495219764573">
+            <p>
+             Environment used by the executed command is destroyed when script is done running
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          Environment used by the executed command is destroyed when script is done running
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          We are now ready to begin our next concept!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="15. Run Turtlesim.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('14. Source the ROS Environment')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

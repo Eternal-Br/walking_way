@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.923
+Development of ROS began in the mid-2000s as
+
+00:00:02.923 --> 00:00:06.479
+Project Switchyard in Stanford's Artificial Intelligence Laboratory.
+
+00:00:06.479 --> 00:00:11.054
+In 2007, ROS became a formal entity with support from Willow Garage.
+
+00:00:11.054 --> 00:00:16.410
+Since 2013, the Open Source Robotics Foundation has been maintaining and developing ROS.
+
+00:00:16.410 --> 00:00:19.530
+One of the primary motivations for developing ROS was
+
+00:00:19.530 --> 00:00:22.759
+the recognition that researchers were constantly reinventing the wheel.
+
+00:00:22.759 --> 00:00:25.559
+There weren't many reusable robotics software components
+
+00:00:25.559 --> 00:00:28.254
+that could be used as a starting point for a project.
+
+00:00:28.254 --> 00:00:32.219
+In addition, because different groups were all working on custom solutions,
+
+00:00:32.219 --> 00:00:34.899
+it was difficult for them to share code and ideas.
+
+00:00:34.899 --> 00:00:37.520
+It was also difficult to compare results.
+
+00:00:37.520 --> 00:00:41.895
+ROS aims to facilitate the development process by eliminating these problems.
+
+00:00:41.895 --> 00:00:43.479
+So who uses ROS?
+
+00:00:43.478 --> 00:00:45.570
+Lots of people and lots of companies.
+
+00:00:45.570 --> 00:00:48.450
+There are drones, kinematic arms, wheeled robots,
+
+00:00:48.450 --> 00:00:51.560
+and even bipedal robots out there using ROS, every day.
+

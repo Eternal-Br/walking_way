@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.359 --> 00:00:04.525
+Now that you know how to start the ROS master and are able to run nodes,
+
+00:00:04.525 --> 00:00:07.269
+you can begin to investigate the topics and messages
+
+00:00:07.269 --> 00:00:10.359
+associated with the turtlesim node and the turtle teleop key nodes.
+
+00:00:10.359 --> 00:00:14.095
+We'll be picking up this discussion from where we left off in the last screencast,
+
+00:00:14.095 --> 00:00:15.210
+which is to say roscore,
+
+00:00:15.210 --> 00:00:18.434
+turtlesim node, and the turtle teleop key nodes are all running.
+
+00:00:18.434 --> 00:00:21.625
+Let's investigate exactly what's going on behind the scenes.
+
+00:00:21.625 --> 00:00:23.710
+If you had just stumbled upon this running system,
+
+00:00:23.710 --> 00:00:27.245
+you might be inclined to ask the question, which nodes are running?
+
+00:00:27.245 --> 00:00:31.149
+To answer this you would open a new terminal and use the command rosnode list.
+
+00:00:31.149 --> 00:00:33.700
+This command will query the ROS master for a list of all of
+
+00:00:33.700 --> 00:00:36.850
+the active nodes on the system and print them to the console.
+
+00:00:36.850 --> 00:00:40.490
+And there we have it, a list of three nodes running on the system.
+
+00:00:40.490 --> 00:00:42.969
+Two of these nodes should look relatively familiar as we
+
+00:00:42.969 --> 00:00:45.954
+launched them explicitly just a moment ago. But what's the third?
+
+00:00:45.954 --> 00:00:49.395
+ROSout is a node that's automatically launched by the ROS master.
+
+00:00:49.395 --> 00:00:50.905
+It's responsible for aggregating,
+
+00:00:50.905 --> 00:00:54.250
+filtering, and recording log messages to a text file.
+
+00:00:54.250 --> 00:00:56.859
+We'll learn more about that one later in upcoming projects where we will
+
+00:00:56.859 --> 00:01:00.000
+be getting hands on experience with ROS log messages.
+

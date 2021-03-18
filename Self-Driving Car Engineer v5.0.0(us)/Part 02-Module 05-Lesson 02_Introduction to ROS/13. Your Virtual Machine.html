@@ -1,0 +1,533 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Your Virtual Machine
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Introduction to ROS
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Communications Between Systems.html">
+       01. Communications Between Systems
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction.html">
+       02. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Welcome to ROS Essentials.html">
+       03. Welcome to ROS Essentials
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Build Robots with ROS.html">
+       04. Build Robots with ROS
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Brief History of ROS.html">
+       05. Brief History of ROS
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Nodes and Topics.html">
+       06. Nodes and Topics
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Message Passing.html">
+       07. Message Passing
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Services.html">
+       08. Services
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Compute Graph.html">
+       09. Compute Graph
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Turtlesim Overview.html">
+       10. Turtlesim Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="11. ROS Workspace Instructions.html">
+       11. ROS Workspace Instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="12. ROS Workspace.html">
+       12. ROS Workspace
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Your Virtual Machine.html">
+       13. Your Virtual Machine
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Source the ROS Environment.html">
+       14. Source the ROS Environment
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Run Turtlesim.html">
+       15. Run Turtlesim
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Turtlesim Comms List Nodes.html">
+       16. Turtlesim Comms: List Nodes
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Turtlesim Comms List Topics.html">
+       17. Turtlesim Comms: List Topics
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Turtlesim Comms Get Topic Info.html">
+       18. Turtlesim Comms: Get Topic Info
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Turtlesim Comms Message Information.html">
+       19. Turtlesim Comms: Message Information
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Turtlesim Comms Echo a Topic.html">
+       20. Turtlesim Comms: Echo a Topic
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Recap.html">
+       21. Recap
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          13. Your Virtual Machine
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="your-virtual-machine">
+          Your Virtual Machine
+         </h1>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/screen-shot-2017-05-09-at-4.56.29-pm.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          To follow along with the exercises in these lessons, you will need to be running Ubuntu Linux with ROS installed. So that everyone can follow along in the same environment we are providing you with a virtual machine (VM) that is all setup with everything you need. The only problem is that it's a rather large download (4+GB!). So, find yourself a good internet connection and download the
+          <a href="https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/Udacity_VM_Base_V1.0.0.zip" rel="noopener noreferrer" target="_blank">
+           compressed VM disk image
+          </a>
+          .
+         </p>
+         <p>
+          It is good idea to keep a backup of this VM image to avoid downloading again if you need it. But just in case you do not do that there is a backup snapshot built into the VM that will allow you to restore it to its original state at anytime!
+         </p>
+         <p>
+          To extract the compressed image in Windows:
+         </p>
+         <ol>
+          <li>
+           Download the appropriate version of 7-zip from
+           <a href="http://www.7-zip.org/download.html" rel="noopener noreferrer" target="_blank">
+            here
+           </a>
+          </li>
+          <li>
+           Right-click and select "7-zip" &gt; "Extract Here"
+          </li>
+         </ol>
+         <p>
+          To extract at the command line in macOS or Linux:
+         </p>
+         <ol>
+          <li>
+           Open Terminal and navigate to directory containing the compressed image
+          </li>
+          <li>
+           execute
+           <code>
+            $ unzip Udacity_VM_Base_V1.0.0.zip
+           </code>
+          </li>
+         </ol>
+         <p>
+          In the zipped archive in addition to the VM disk image, there are two other small configuration files that you may or may not need.
+         </p>
+         <p>
+          We recommend using
+          <a href="https://www.virtualbox.org/wiki/Downloads" rel="noopener noreferrer" target="_blank">
+           VirtualBox
+          </a>
+          to run the VM. This will enable you to easily use port forwarding, so you can run the final project simulator in your native operating system (the host) while using the VM for running ROS code.
+         </p>
+         <p>
+          Whichever operating system you're on, download and install the appropriate platform package for your operating system (the host) and then follow the instructions below:
+         </p>
+         <h4 id="import-your-vm-image-to-virtualbox">
+          Import your VM image to VirtualBox
+         </h4>
+         <ol>
+          <li>
+           Download and install VirtualBox.
+          </li>
+          <li>
+           Download the image from supplied link.
+          </li>
+          <li>
+           Unzip the image.
+          </li>
+          <li>
+           Open VirtualBox Application.
+          </li>
+          <li>
+           Click File &gt; Import Appliance..
+          </li>
+          <li>
+           Click the folder icon on the right and navigate to your unzipped image (the
+           <strong>
+            .ovf
+           </strong>
+           file).
+          </li>
+          <li>
+           Follow the prompts to import the image.
+          </li>
+          <li>
+           From the VirtualBox Manager, select your VM and press start.
+          </li>
+         </ol>
+         <p>
+          Before getting your VM up and running, you will need to make sure that you allocate enough resources to allow it to operate efficiently. With your VM shut down, navigate to the VM settings by clicking on the icon in the VirtualBox Manager. In the "System" cateogory Look for tabs labeled "Motherboard" and "Processor"; this is where you will change the amount of RAM and number of cores that you allocate from your own machine to the VM. If you have the resources on your machine, we recommend allocating at least 2 processor cores and 4 GB of RAM. If you are able to allocate more resources, feel free to do so. The more you allocate the better performance you will get! You're now all set to boot up your VM!
+         </p>
+         <p>
+          Upon your first boot you will be prompted to choose a keyboard layout of your choice. Once you select a keyboard you will not be prompted for this again. If you would like to change your option you can reset this feature by entering
+          <code>
+           udacity_reset
+          </code>
+          in a terminal of your choice and restarting the VM.
+         </p>
+         <p>
+          Once you are up and running, you might be asked to input a password to enter the VM.
+          <strong>
+           The password for the VM is
+           <code>
+            udacity-nd
+           </code>
+          </strong>
+         </p>
+         <p>
+          To open a terminal in your VM press
+          <code>
+           ctrl-Alt-t
+          </code>
+          (or
+          <code>
+           ctrl-option-t
+          </code>
+          on a Mac).  You should get a terminal window that looks like this:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/screen-shot-2017-08-18-at-7.42.10-pm.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          You're now ready to follow along in your VM with the the ROS essentials examples!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="troubleshooting-tips">
+          Troubleshooting Tips
+         </h2>
+         <ul>
+          <li>
+           <p>
+            <strong>
+             Keyboard Mappings:
+            </strong>
+            Use of certain keyboards can create issues unless the corresponding keyboard has been set in the VM.  This is due to keyboard mappings.  A frequent issue is special characters in passwords not being entered correctly when logging in.  An example useage for VirtualBox is setting up an Italian keyboard.  To do this, execute the following in a terminal
+            <code>
+             localectl set-keymap it; localectl set-x11-keymap it
+            </code>
+            .
+           </p>
+          </li>
+          <li>
+           <p>
+            <strong>
+             roscore ip:
+            </strong>
+            If the host network interface has multiple addresses (ex: ipv6 enabled)
+            <code>
+             roscore
+            </code>
+            will fail since
+            <code>
+             hostname -I
+            </code>
+            returns multiple ip, resulting into a invalid URL.  One solution to this is to replace this line in
+            <code>
+             .bashrc
+            </code>
+            ,
+            <code>
+             export ROS_IP=`echo $( hostname -I)'
+            </code>
+            <br/>
+            , with this
+            <code>
+             export ROS_IP=$( hostname -I | awk '{print $1}')
+            </code>
+            .
+           </p>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="performing-a-native-install-of-linux-and-ros-unsupported">
+          Performing a Native Install of Linux and ROS (Unsupported)
+         </h2>
+         <p>
+          <p>
+           <p>
+           </p>
+           <p>
+            Some of you may choose not to use the virtual machine for a variety of reasons. If you choose to install ROS (Robot Operating System) on your own, it is recommended that you use
+            <a href="http://releases.ubuntu.com/16.04/" target="_">
+             Ubuntu 16.04 LTS
+            </a>
+            as your operating system. To install ROS, please visit:
+            <a href="http://wiki.ros.org/" target="_">
+             ROS documentation
+            </a>
+           </p>
+           <p>
+            This method is
+            <strong>
+             not
+            </strong>
+            supported by Udacity. If you have trouble performing a native install of ROS, please visit
+            <a href="http://answers.ros.org/questions/" target="_">
+             ROS answers
+            </a>
+            or you can try troubleshooting your install with your fellow students in the Student Hub, or post to
+            <a href="https://knowledge.udacity.com" rel="noopener noreferrer" target="_blank">
+             Knowledge
+            </a>
+            .
+           </p>
+          </p>
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="14. Source the ROS Environment.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('13. Your Virtual Machine')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:05.549 --> 00:00:09.039
+These diagrams of nodes and topics and how they're all
+
+00:00:09.038 --> 00:00:12.154
+connected and are frequently referred to as compute graphs.
+
+00:00:12.154 --> 00:00:16.433
+Visualizing the compute graph is very useful for understanding what nodes exist,
+
+00:00:16.434 --> 00:00:18.964
+and how they communicate with one another.
+
+00:00:18.963 --> 00:00:22.869
+ROS provides a tool called rqt_graph for showing the compute graph of a system.
+
+00:00:22.870 --> 00:00:27.489
+A moderately complex robot will likely have dozens of nodes,
+
+00:00:27.489 --> 00:00:30.684
+even more topics and quite a few services.
+
+00:00:30.684 --> 00:00:35.939
+This is EMBot, a mobile-based demonstration platform developed by electric movement.
+
+00:00:35.939 --> 00:00:38.005
+As far as robotics platforms go,
+
+00:00:38.005 --> 00:00:39.478
+this one is relatively simple,
+
+00:00:39.478 --> 00:00:41.783
+primarily consisting of a lidar unit,
+
+00:00:41.783 --> 00:00:46.548
+a depth camera and four independently driven omni-directional wheels.
+
+00:00:46.548 --> 00:00:49.390
+And here's EMBot's compute graph.
+
+00:00:49.390 --> 00:00:54.359
+It becomes clear pretty quickly why rqt_graph is a handy tool to have around.
+
+00:00:54.359 --> 00:00:56.755
+It allows you to zoom in and pan around the graph,
+
+00:00:56.755 --> 00:01:00.289
+as well as choose exactly what information is displayed.
+
+00:01:00.289 --> 00:01:02.289
+Now that you've been introduced to some of
+
+00:01:02.289 --> 00:01:05.334
+the fundamental components of ROS' communication architecture,
+
+00:01:05.334 --> 00:01:07.450
+it's time to get some hands-on experience
+
+00:01:07.450 --> 00:01:10.000
+with a helpful little simulator called TurtleSim.
+

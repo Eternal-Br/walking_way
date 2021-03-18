@@ -1,0 +1,154 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.350
+Pretty much all the robots we're interested in for this course,
+
+00:00:03.350 --> 00:00:05.974
+share the same basic characteristics.
+
+00:00:05.974 --> 00:00:09.080
+They contain sensors for perceiving the world around them,
+
+00:00:09.080 --> 00:00:11.685
+software for making high level decisions,
+
+00:00:11.685 --> 00:00:14.089
+and motors and controllers for actuation.
+
+00:00:14.089 --> 00:00:17.550
+ROS provides a powerful communications system
+
+00:00:17.550 --> 00:00:20.344
+allowing these different components to communicate with one another.
+
+00:00:20.344 --> 00:00:24.875
+Here, we'll introduce this communication system by considering a generic robot.
+
+00:00:24.875 --> 00:00:26.879
+This robot could be a drone,
+
+00:00:26.879 --> 00:00:30.269
+a mobile base or even a robotic arm.
+
+00:00:30.268 --> 00:00:33.850
+While these robots may be composed of very different physical components,
+
+00:00:33.850 --> 00:00:38.759
+they are all built to perform these same three high level steps of perception,
+
+00:00:38.759 --> 00:00:41.130
+decision making and actuation.
+
+00:00:41.130 --> 00:00:43.350
+On the software side,
+
+00:00:43.350 --> 00:00:46.200
+ROS manages these three complex steps by breaking
+
+00:00:46.200 --> 00:00:50.250
+each of them down into many small unit processes called nodes.
+
+00:00:50.250 --> 00:00:52.859
+Typically, each node on the system is responsible for
+
+00:00:52.859 --> 00:00:57.679
+one small and relatively specific portion of the robot's overall functionality.
+
+00:00:57.679 --> 00:01:01.978
+For example, there may be nodes for each sensor and actuator in the system,
+
+00:01:01.978 --> 00:01:05.084
+as well as nodes for things like position estimation,
+
+00:01:05.084 --> 00:01:07.769
+behavior execution and motor control.
+
+00:01:07.769 --> 00:01:10.379
+At the center of this collection of nodes is
+
+00:01:10.379 --> 00:01:14.194
+the ROS Master which acts as a sort of manager of all the nodes.
+
+00:01:14.194 --> 00:01:18.599
+The ROS Master maintains a registry of all the active nodes on a system.
+
+00:01:18.599 --> 00:01:20.939
+It then allows each node to discover other nodes in
+
+00:01:20.938 --> 00:01:24.199
+the system and establish lines of communication with them.
+
+00:01:24.200 --> 00:01:27.674
+In addition to allowing nodes to locate one another and communicate,
+
+00:01:27.674 --> 00:01:31.065
+the ROS Master also hosts what's called the parameter server.
+
+00:01:31.064 --> 00:01:32.864
+As its name suggests,
+
+00:01:32.864 --> 00:01:35.609
+the parameter server is typically used to store parameters
+
+00:01:35.608 --> 00:01:39.173
+and configuration values that are shared amongst the running nodes.
+
+00:01:39.174 --> 00:01:42.569
+For example, a mobile robot's wheel radius may be used by
+
+00:01:42.569 --> 00:01:46.454
+one node to estimate position and by another to calculate speed.
+
+00:01:46.453 --> 00:01:49.798
+Rather than storing the same information in multiple places,
+
+00:01:49.799 --> 00:01:51.900
+nodes can look up values as needed.
+
+00:01:51.900 --> 00:01:54.390
+Nodes can also share data with one
+
+00:01:54.390 --> 00:01:57.385
+another by passing messages over what are called topics.
+
+00:01:57.385 --> 00:02:00.239
+A topic is simply a named bus which you can think of as
+
+00:02:00.239 --> 00:02:03.304
+a pipe between nodes through which messages flow.
+
+00:02:03.304 --> 00:02:05.272
+In order to send a message on a topic,
+
+00:02:05.272 --> 00:02:07.519
+we say that a node must publish to it.
+
+00:02:07.519 --> 00:02:10.405
+Likewise, to receive a message on a topic,
+
+00:02:10.405 --> 00:02:12.759
+a node must subscribe to it.
+
+00:02:12.758 --> 00:02:14.918
+Here's an example of the topics,
+
+00:02:14.919 --> 00:02:18.615
+publishers and subscribers for the nodes we introduced earlier.
+
+00:02:18.615 --> 00:02:22.689
+The arrows represent message flow from publishers to subscribers.
+
+00:02:22.688 --> 00:02:24.489
+It's important to note that each node may
+
+00:02:24.490 --> 00:02:27.924
+simultaneously publish and subscribe to a wide variety of topics.
+
+00:02:27.924 --> 00:02:31.360
+Taken together, this network of nodes connected by topics is
+
+00:02:31.360 --> 00:02:35.000
+called publish subscribe or a pub sub architecture.
+

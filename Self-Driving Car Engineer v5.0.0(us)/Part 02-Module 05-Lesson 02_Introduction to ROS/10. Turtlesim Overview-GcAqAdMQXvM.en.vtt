@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.990
+Now that we have an understanding of some of the fundamental concepts of ROS,
+
+00:00:03.990 --> 00:00:06.615
+we can drive right into the command line where we will create
+
+00:00:06.615 --> 00:00:09.589
+cute little turtle robots with a package called Turtlesim.
+
+00:00:09.589 --> 00:00:11.200
+Like this?
+
+00:00:11.199 --> 00:00:14.849
+Yeah. Just like this.
+
+00:00:14.849 --> 00:00:16.649
+OK, but hold on a second.
+
+00:00:16.649 --> 00:00:18.420
+We should probably stop and explain
+
+00:00:18.420 --> 00:00:21.629
+what cute little turtles have to do with robotics in the first place.
+
+00:00:21.629 --> 00:00:27.774
+Indeed. Well cuteness aside the use of turtles and robotics goes way back to the 1940s.
+
+00:00:27.774 --> 00:00:30.690
+That's right. Early roboticist William Gray Walter
+
+00:00:30.690 --> 00:00:33.118
+created some of the first autonomous devices,
+
+00:00:33.118 --> 00:00:35.820
+turtle robots which he called Elmer and Elsie.
+
+00:00:35.820 --> 00:00:38.340
+And in the 1960s at MIT,
+
+00:00:38.340 --> 00:00:41.384
+Seymour Papert used turtle robots in robotics education.
+
+00:00:41.384 --> 00:00:44.490
+Seymour's robots could perform a few basic functions.
+
+00:00:44.490 --> 00:00:47.280
+They could move forward or backwards by a given distance,
+
+00:00:47.280 --> 00:00:49.320
+rotate by a given angle,
+
+00:00:49.320 --> 00:00:51.210
+or they could drop the retractable pen on
+
+00:00:51.210 --> 00:00:53.640
+their bellies allowing them to draw as they moved.
+
+00:00:53.640 --> 00:00:56.670
+These primitive functions could be triggered simultaneously allowing
+
+00:00:56.670 --> 00:01:01.484
+the robots to move along complex trajectories and make sophisticated drawings.
+
+00:01:01.484 --> 00:01:05.275
+This connection between robots and turtles continues to this very day.
+
+00:01:05.275 --> 00:01:07.200
+And in your first exercise with ROS,
+
+00:01:07.200 --> 00:01:10.000
+you'll be launching your own turtle robot and simulation.
+

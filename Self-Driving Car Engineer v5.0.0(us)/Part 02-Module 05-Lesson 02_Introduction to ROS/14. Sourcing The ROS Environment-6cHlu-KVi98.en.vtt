@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.129
+In order to launch the turtlesim package,
+
+00:00:02.129 --> 00:00:06.269
+you must first ensure that all of the ROS environment variables have been correctly set.
+
+00:00:06.269 --> 00:00:10.105
+Each ROS distribution provides a handy little script called setup.bash,
+
+00:00:10.105 --> 00:00:12.394
+specifically for this purpose.
+
+00:00:12.394 --> 00:00:15.509
+The script is hidden away in the Opt ROS kinetic directory and you
+
+00:00:15.509 --> 00:00:19.350
+can run it with the bash command source.
+
+00:00:19.350 --> 00:00:21.149
+Among other things,
+
+00:00:21.149 --> 00:00:23.070
+the environment variables tell our bash shell
+
+00:00:23.070 --> 00:00:25.265
+where ROS commands and packages can be found.
+
+00:00:25.265 --> 00:00:27.838
+One simple way to determine if the environment variables have been
+
+00:00:27.838 --> 00:00:31.003
+set is to use the bash tab completion feature,
+
+00:00:31.004 --> 00:00:33.329
+typing ROS followed by double tapping
+
+00:00:33.329 --> 00:00:36.719
+the tab key gives us an extensive list of all commands beginning
+
+00:00:36.719 --> 00:00:43.100
+with the characters R-O-S. And there we go, there's our list.
+
+00:00:43.100 --> 00:00:46.939
+This list would be much shorter had we not sourced as ROSsetup.bash.
+
+00:00:46.939 --> 00:00:52.239
+Later on in this module we'll become more familiar with some of the commands listed here.
+
+00:00:52.240 --> 00:00:54.618
+Having to source the ROSsetup.bash script for
+
+00:00:54.618 --> 00:00:57.673
+each new terminal you open is quickly going to become painful.
+
+00:00:57.673 --> 00:01:03.310
+To combat the monotony we can add the command to sourceSetup.bash to our bash RC file.
+
+00:01:03.310 --> 00:01:05.930
+Bash RC, is simply a shell script that is
+
+00:01:05.930 --> 00:01:09.055
+automatically run whenever you start a bash session.
+
+00:01:09.055 --> 00:01:12.420
+Now, when we open a new terminal and type ROS tab tab,
+
+00:01:12.420 --> 00:01:18.245
+we'll see the long list of ROS core commands.
+
+00:01:18.245 --> 00:01:19.750
+There we go, there is our list.
+
+00:01:19.750 --> 00:01:21.780
+And that's it for setting up your environment.
+
+00:01:21.780 --> 00:01:24.000
+You're now ready to run the turtlesim.
+

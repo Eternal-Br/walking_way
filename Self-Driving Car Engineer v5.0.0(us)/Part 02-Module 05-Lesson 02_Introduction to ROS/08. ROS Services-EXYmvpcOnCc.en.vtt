@@ -1,0 +1,82 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.629
+Passing messages over topics between publishers and subscribers is
+
+00:00:03.629 --> 00:00:07.529
+useful but it's not a one size fits all communications solution.
+
+00:00:07.530 --> 00:00:10.470
+There are times when a request response pattern is useful.
+
+00:00:10.470 --> 00:00:12.230
+For these types of interactions,
+
+00:00:12.230 --> 00:00:14.009
+ROS provides what are called services.
+
+00:00:14.009 --> 00:00:18.975
+Like topics, services allow the passing of messages between nodes.
+
+00:00:18.975 --> 00:00:21.885
+However, unlike topics, a service is not a bus
+
+00:00:21.885 --> 00:00:25.679
+and there are no publishers or subscribers associated with them.
+
+00:00:25.678 --> 00:00:28.648
+Instead, nodes interacting via services do so on
+
+00:00:28.649 --> 00:00:32.728
+a one to one basis using a request and response messages.
+
+00:00:32.728 --> 00:00:36.820
+Let's take a look at how a service might be used in the example we've been developing.
+
+00:00:36.820 --> 00:00:40.849
+Let's say that the behavior executor node wants to capture an image from the camera.
+
+00:00:40.848 --> 00:00:44.718
+We could just have it subscribe to the camera images topic.
+
+00:00:44.719 --> 00:00:49.460
+It would then receive a new image each time the camera node publishes one.
+
+00:00:49.460 --> 00:00:51.600
+However, this might be undesirable if
+
+00:00:51.600 --> 00:00:54.920
+the executor only wants to capture an image every once in a while.
+
+00:00:54.920 --> 00:00:57.789
+Instead of subscribing to the camera images topic here,
+
+00:00:57.789 --> 00:00:59.950
+we'll define a new service for the camera node.
+
+00:00:59.950 --> 00:01:02.295
+Let's call it capture image.
+
+00:01:02.295 --> 00:01:05.790
+The request message definition might be a custom message type
+
+00:01:05.790 --> 00:01:09.810
+called exposure time and the response might just be an image message.
+
+00:01:09.810 --> 00:01:12.947
+By issuing a service call to the capture image service,
+
+00:01:12.947 --> 00:01:16.025
+the behavior executor node or any other node for that matter,
+
+00:01:16.025 --> 00:01:20.518
+is able to request the camera should capture an image with a given exposure time setting.
+
+00:01:20.519 --> 00:01:22.950
+The camera node will then respond to the request
+
+00:01:22.950 --> 00:01:26.168
+by sending a message containing the resulting image.
+
