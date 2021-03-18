@@ -1,0 +1,469 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Project instructions
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Highway Driving
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Planning is Hard.html">
+       01. Planning is Hard
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Getting Started.html">
+       02. Getting Started
+      </a>
+     </li>
+     <li class="">
+      <a href="03. More Complex Paths.html">
+       03. More Complex Paths
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Highway Map.html">
+       04. Highway Map
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Sensor Fusion.html">
+       05. Sensor Fusion
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Project Q&amp;A.html">
+       06. Project Q&amp;A
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Project instructions.html">
+       07. Project instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Workspaces Highway Driving.html">
+       08. Workspaces: Highway Driving
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Share Your Success - Highway Driving.html">
+       09. Share Your Success - Highway Driving
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Highway Driving.html">
+       Project Description - Highway Driving
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Highway Driving.html">
+       Project Rubric - Highway Driving
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          07. Project instructions
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="the-goal-of-this-project">
+          The Goal of this Project
+         </h2>
+         <p>
+          In this project, your goal is to design a path planner that is able to create smooth, safe paths for the car to follow along a 3 lane highway with traffic. A successful path planner will be able to keep inside its lane, avoid hitting other cars, and pass slower moving traffic all by using localization, sensor fusion, and map data.
+         </p>
+         <p>
+          Included in the submission should be a write-up, either in the README or a separate file that details how the project was completed.
+         </p>
+         <p>
+          A great write-up should include the rubric points as well as your description of how you addressed each point.  You should include a detailed description of the code used in each step (with line-number references and code snippets where appropriate) and links to other supporting documents or external references.
+         </p>
+         <p>
+          All that said, please be concise!  We're not looking for you to write a book, just a brief description of how you passed each rubric point, and references to the relevant code :)
+         </p>
+         <h2 id="the-code">
+          The Code
+         </h2>
+         <p>
+          You can use the project version on workspaces
+          <a href="https://classroom.udacity.com/nanodegrees/nd013/parts/30260907-68c1-4f24-b793-89c0c2a0ad32/modules/b74b8e43-47d1-47d6-a4cf-4d64ea3e0b80/lessons/407a2efa-3383-480f-9266-5981440b09b3/concepts/4f9bfd12-9c32-4f91-86b4-4c7a206afaab?contentVersion=2.0.0&amp;contentLocale=en-us" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          or you can find the project repository
+          <a href="https://github.com/udacity/CarND-Path-Planning-Project" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          .
+         </p>
+         <p>
+          If you decide to work in your local setup, you can download the latest simulator
+          <a href="https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          .
+         </p>
+         <p>
+          Your code should stand on its own as redable material.  Explain in code comments, as well as in your write-up, how your code works and why you wrote it that way.
+         </p>
+         <p>
+          Make it easy for a reviewer to understand your code.
+         </p>
+         <h2 id="accessing-and-using-the-workspace">
+          Accessing and using the workspace:
+         </h2>
+         <ul>
+          <li>
+           Navigate to the workspace node. If you need to test your solution, enable the GPU - otherwise, you won't be able to run the simulator. Remember to turn it off when you code your solution so that you don't run out of GPU hours.
+          </li>
+          <li>
+           Navigate to the repository
+           <code>
+            CarND-Path-Planning-Project
+           </code>
+           using menu on the left.
+          </li>
+          <li>
+           Complete the
+           <code>
+            TODO
+           </code>
+           in main.cpp and add any helper files you need using the text editor in the workspace.
+          </li>
+          <li>
+           Navigate to the project repository in the terminal.
+          </li>
+         </ul>
+         <p>
+          <strong>
+           Note
+          </strong>
+          : You can add any necessary helper files within the
+          <code>
+           src
+          </code>
+          (or other) folder by clicking on the
+          <code>
+           +
+          </code>
+          in the top left, selecting
+          <em>
+           Create New File
+          </em>
+          , and then naming your file with the relevant extension (such as
+          <code>
+           .h
+          </code>
+          ,
+          <code>
+           .hpp
+          </code>
+          ,
+          <code>
+           .cpp
+          </code>
+          , etc).
+         </p>
+         <p>
+          In order to build and compile the code, from within the main repository directory, you can:
+         </p>
+         <ul>
+          <li>
+           <code>
+            mkdir build &amp;&amp; cd build
+           </code>
+           to create and enter the build directory
+          </li>
+          <li>
+           <code>
+            cmake .. &amp;&amp; make
+           </code>
+           to compile your project
+          </li>
+          <li>
+           <code>
+            ./path_planning
+           </code>
+           to run your code
+          </li>
+         </ul>
+         <p>
+          Click on the "Simulator" button in the bottom of the Udacity workspace, which will open a new virtual desktop. You should see a "Simulator" icon on the virtual desktop. Double-click the "Simulator" icon in that desktop to start the simulator.
+         </p>
+         <p>
+          <strong>
+           Important:
+          </strong>
+          You need to open a terminal before attempting to run the simulator.
+         </p>
+         <p>
+          All Project instructions can be found in the
+          <a href="https://github.com/udacity/CarND-Path-Planning-Project/blob/master/README.md" rel="noopener noreferrer" target="_blank">
+           README.md
+          </a>
+          (you can view the instruction in an easy-to-read format by visiting the previous link.
+         </p>
+         <h2 id="what-it-takes-to-pass">
+          What It Takes to Pass
+         </h2>
+         <p>
+          Read the
+          <a href="https://review.udacity.com/#!/rubrics/1971/view" rel="noopener noreferrer" target="_blank">
+           project rubric
+          </a>
+          for details on the requirements for a passing submission.
+         </p>
+         <p>
+          There is no starter code provided, but you are welcome to use code from the lesson and quizzes as you like.
+         </p>
+         <h2 id="evaluation">
+          Evaluation
+         </h2>
+         <p>
+          Once you have completed your project, double check the
+          <a href="https://review.udacity.com/#!/rubrics/1971/view" rel="noopener noreferrer" target="_blank">
+           <strong>
+            Project Rubric
+           </strong>
+          </a>
+          to make sure you have addressed all the rubric points. Your project will be evaluated by a Udacity reviewer according to that same rubric.
+         </p>
+         <p>
+          Your project must "meet specifications" in each category in order for your submission to pass for at least one lap around the track.  If you are happy with your submission, then you are ready to submit! If you see room for improvement in
+          <strong>
+           any
+          </strong>
+          category in which you do not meet specifications, keep working!
+         </p>
+         <p>
+          Once you have a path planner that is able to complete at least one loop around the track and pass the rubric specifications, go ahead and submit.
+         </p>
+         <h2 id="commit-to-github">
+          Commit to GitHub
+         </h2>
+         <p>
+          Students are highly encouraged to commit their project to a GitHub repo.  To do this, you must change the upstream of the current repository and add your credentials.  We have supplied a bash script to help you do this.  Please open up a terminal, navigate to the project repository, and enter:
+          <code>
+           ./set_git.sh
+          </code>
+          , then follow the prompts.  This will set the upstream remote to your own repository and add your email and username to the git configuration.  At this time we are not configuring passwords, so you will need to enter your username and password for each push.  Since credentials are not persistent, it will be necessary to run this script each time you open, refresh, or reset the workspace.
+         </p>
+         <h3 id="ready-to-submit">
+          Ready to Submit?
+         </h3>
+         <p>
+          When you are ready to submit, just make sure you have in your files:
+         </p>
+         <ol>
+          <li>
+           Write up
+          </li>
+          <li>
+           A complete solution, with all the files needed to run your project.
+          </li>
+         </ol>
+         <p>
+          If you use
+          <strong>
+           workspaces
+          </strong>
+          click on the button on the right button and follow the instruction.  Alternatively, you may submit a link to your GitHub repo for the project or a zip file with your files in the last item in this lesson.
+         </p>
+         <h3 id="using-github-and-creating-effective-readmes">
+          Using GitHub and Creating Effective READMEs
+         </h3>
+         <p>
+          If you are unfamiliar with GitHub , Udacity has a brief
+          <a href="http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html" rel="noopener noreferrer" target="_blank">
+           GitHub tutorial
+          </a>
+          to get you started. Udacity also provides a more detailed free
+          <a href="https://www.udacity.com/course/how-to-use-git-and-github--ud775" rel="noopener noreferrer" target="_blank">
+           course on git and GitHub
+          </a>
+          .
+         </p>
+         <p>
+          To learn about README files and Markdown, Udacity provides a free
+          <a href="https://www.udacity.com/course/writing-readmes--ud777" rel="noopener noreferrer" target="_blank">
+           course on READMEs
+          </a>
+          , as well.
+         </p>
+         <p>
+          GitHub also provides a
+          <a href="https://guides.github.com/features/mastering-markdown/" rel="noopener noreferrer" target="_blank">
+           tutorial
+          </a>
+          about creating Markdown files.
+         </p>
+         <h2 id="project-support">
+          Project Support
+         </h2>
+         <p>
+          If you are stuck or having difficulties with the project, don't lose hope! Remember to talk to your mentors and fellow students in your Study Group, as well as ask (and answer!) questions on
+          <a href="https://knowledge.udacity.com" rel="noopener noreferrer" target="_blank">
+           Knowledge
+          </a>
+          tagged with the project name. Don't forget to check out the project Q&amp;A from the previous page as well (or visit it
+          <a href="https://youtu.be/7sI3VHFPP0w" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          )!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="08. Workspaces Highway Driving.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Project instructions')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
