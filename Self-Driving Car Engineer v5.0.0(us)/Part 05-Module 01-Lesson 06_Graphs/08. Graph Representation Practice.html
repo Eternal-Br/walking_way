@@ -1,0 +1,507 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Graph Representation Practice
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Graphs
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Graph Introduction.html">
+       01. Graph Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. What Is a Graph.html">
+       02. What Is a Graph?
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Directions and Cycles.html">
+       03. Directions and Cycles
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Connectivity.html">
+       04. Connectivity
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Graph Practice.html">
+       05. Graph Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Graph Representations.html">
+       06. Graph Representations
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Adjacency Matrices.html">
+       07. Adjacency Matrices
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Graph Representation Practice.html">
+       08. Graph Representation Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Graph Traversal.html">
+       09. Graph Traversal
+      </a>
+     </li>
+     <li class="">
+      <a href="10. DFS.html">
+       10. DFS
+      </a>
+     </li>
+     <li class="">
+      <a href="11. BFS.html">
+       11. BFS
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Graph Traversal Practice.html">
+       12. Graph Traversal Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Eulerian Path.html">
+       13. Eulerian Path
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          08. Graph Representation Practice
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Graph Representation Practice
+         </p>
+        </h3>
+        <div>
+         <div>
+          <h4>
+           Question:
+          </h4>
+          <p>
+           <p>
+            You should become comfortable with various graph representations—graphs crop up often in interviews and in computer science in general, and you could need to represent it in any of it's forms.
+            <br/>
+           </p>
+           <p>
+            In this exercise you'll need to add functions to a
+            <code>
+             Graph
+            </code>
+            class to return various representations of the same graph. Your graph will have two different components:
+            <code>
+             Nodes
+            </code>
+            and
+            <code>
+             Edges
+            </code>
+            .
+            <br/>
+           </p>
+           <pre><code>class Node(object):
+    def __init__(self, value):
+        self.value = value
+        self.edges = []</code></pre>
+           <p>
+            Nodes are pretty much the same as they were in trees. Instead of having a set number of children, each node has a list of
+            <code>
+             Edges
+            </code>
+            .
+            <br/>
+           </p>
+           <pre><code>class Edge(object):
+    def __init__(self, value, node_from, node_to):
+        self.value = value
+        self.node_from = node_from
+        self.node_to = node_to</code></pre>
+           <p>
+            Here, we assume that edges have both a value and a direction. An edge points from one node to another—the node it starts at is the
+            <code>
+             node_from
+            </code>
+            and the node it ends at is the
+            <code>
+             node_to
+            </code>
+            . You can envision it as
+            <code>
+             node_from -&gt; node_to
+            </code>
+            .
+            <br/>
+           </p>
+           <p>
+            The base of the
+            <code>
+             Graph
+            </code>
+            class looks something like this:
+           </p>
+           <pre><code>class Graph(object):
+    def __init__(self, nodes=[], edges=[]):
+        self.nodes = nodes
+        self.edges = edges</code></pre>
+           <p>
+            A
+            <code>
+             Graph
+            </code>
+            class contains a list of nodes and edges. You can sometimes get by with just a list of edges, since edges contain references to the nodes they connect to, or vice versa. However, our
+            <code>
+             Graph
+            </code>
+            class is built with both for the following reasons:
+            <br/>
+           </p>
+           <ul>
+            <li>
+             <p>
+              If you're storing a disconnected graph, not every node will be tied to an edge, so you should store a list of nodes.
+             </p>
+            </li>
+            <li>
+             <p>
+              We could probably leave it there, but storing an edge list will make our lives much easier when we're trying to print out different types of graph representations.
+              <br>
+               <br/>
+               <br>
+                Unfortunately, having both makes insertion a bit complicated. We can assume that each value is unique, but we need to be careful about keeping both
+                <code>
+                 nodes
+                </code>
+                and
+                <code>
+                 edges
+                </code>
+                updated when either is inserted. You'll also be given these insertion functions to help you out:
+               </br>
+              </br>
+             </p>
+             <pre><code>def insert_node(self, new_node_val):
+    new_node = Node(new_node_val)
+    self.nodes.append(new_node)
+
+def insert_edge(self, new_edge_val, node_from_val, node_to_val):
+    from_found = None
+    to_found = None
+    for node in self.nodes:
+        if node_from_val == node.value:
+            from_found = node
+        if node_to_val == node.value:
+            to_found = node
+    if from_found == None:
+        from_found = Node(node_from_val)
+        self.nodes.append(from_found)
+    if to_found == None:
+        to_found = Node(node_to_val)
+        self.nodes.append(to_found)
+    new_edge = Edge(new_edge_val, from_found, to_found)
+    from_found.edges.append(new_edge)
+    to_found.edges.append(new_edge)
+    self.edges.append(new_edge)</code></pre>
+            </li>
+           </ul>
+           <p>
+            Alright, time to code the rest!
+           </p>
+          </p>
+         </div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="61430-graph_representation-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#61430-graph_representation-py" id="tab-61430-graph_representation-py" role="tab">
+            graph_representation.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-61430-graph_representation-py" class="tab-pane active show" id="61430-graph_representation-py" role="tabpanel">
+            <pre><code></code>class Node(object):
+    def __init__(self, value):
+        self.value = value
+        self.edges = []
+
+class Edge(object):
+    def __init__(self, value, node_from, node_to):
+        self.value = value
+        self.node_from = node_from
+        self.node_to = node_to
+
+class Graph(object):
+    def __init__(self, nodes=[], edges=[]):
+        self.nodes = nodes
+        self.edges = edges
+
+    def insert_node(self, new_node_val):
+        new_node = Node(new_node_val)
+        self.nodes.append(new_node)
+        
+    def insert_edge(self, new_edge_val, node_from_val, node_to_val):
+        from_found = None
+        to_found = None
+        for node in self.nodes:
+            if node_from_val == node.value:
+                from_found = node
+            if node_to_val == node.value:
+                to_found = node
+        if from_found == None:
+            from_found = Node(node_from_val)
+            self.nodes.append(from_found)
+        if to_found == None:
+            to_found = Node(node_to_val)
+            self.nodes.append(to_found)
+        new_edge = Edge(new_edge_val, from_found, to_found)
+        from_found.edges.append(new_edge)
+        to_found.edges.append(new_edge)
+        self.edges.append(new_edge)
+
+    def get_edge_list(self):
+        """Don't return a list of edge objects!
+        Return a list of triples that looks like this:
+        (Edge Value, From Node Value, To Node Value)"""
+        return []
+
+    def get_adjacency_list(self):
+        """Don't return any Node or Edge objects!
+        You'll return a list of lists.
+        The indecies of the outer list represent
+        "from" nodes.
+        Each section in the list will store a list
+        of tuples that looks like this:
+        (To Node, Edge Value)"""
+        return []
+    
+    def get_adjacency_matrix(self):
+        """Return a matrix, or 2D list.
+        Row numbers represent from nodes,
+        column numbers represent to nodes.
+        Store the edge values in each spot,
+        and a 0 if no edge exists."""
+        return []
+
+graph = Graph()
+graph.insert_edge(100, 1, 2)
+graph.insert_edge(101, 1, 3)
+graph.insert_edge(102, 1, 4)
+graph.insert_edge(103, 3, 4)
+# Should be [(100, 1, 2), (101, 1, 3), (102, 1, 4), (103, 3, 4)]
+print graph.get_edge_list()
+# Should be [None, [(2, 100), (3, 101), (4, 102)], None, [(4, 103)], None]
+print graph.get_adjacency_list()
+# Should be [[0, 0, 0, 0, 0], [0, 0, 100, 101, 102], [0, 0, 0, 0, 0], [0, 0, 0, 0, 103], [0, 0, 0, 0, 0]]
+print graph.get_adjacency_matrix()</pre>
+           </div>
+          </div>
+         </div>
+         <div>
+          <details>
+           <summary>
+            <strong>
+             Solution:
+            </strong>
+           </summary>
+           <div>
+            <p>
+             <p>
+              Here's the solution:
+             </p>
+             <pre><code>def get_edge_list(self):
+    edge_list = []
+    for edge_object in self.edges:
+        edge = (edge_object.value, edge_object.node_from.value, edge_object.node_to.value)
+        edge_list.append(edge)
+    return edge_list
+
+def get_adjacency_list(self):
+    max_index = self.find_max_index()
+    adjacency_list = [None] * (max_index + 1)
+    for edge_object in self.edges:
+        if adjacency_list[edge_object.node_from.value]:
+            adjacency_list[edge_object.node_from.value].append((edge_object.node_to.value, edge_object.value))
+        else:
+            adjacency_list[edge_object.node_from.value] = [(edge_object.node_to.value, edge_object.value)]
+    return adjacency_list
+
+def get_adjacency_matrix(self):
+    max_index = self.find_max_index()
+    adjacency_matrix = [[0 for i in range(max_index + 1)] for j in range(max_index + 1)]
+    for edge_object in self.edges:
+        adjacency_matrix[edge_object.node_from.value][edge_object.node_to.value] = edge_object.value
+    return adjacency_matrix
+
+def find_max_index(self):
+    max_index = -1
+    if len(self.nodes):
+        for node in self.nodes:
+            if node.value &gt; max_index:
+                max_index = node.value
+    return max_index</code></pre>
+            </p>
+           </div>
+          </details>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="09. Graph Traversal.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Graph Representation Practice')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

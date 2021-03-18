@@ -1,0 +1,338 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Graph Practice
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Graphs
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Graph Introduction.html">
+       01. Graph Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. What Is a Graph.html">
+       02. What Is a Graph?
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Directions and Cycles.html">
+       03. Directions and Cycles
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Connectivity.html">
+       04. Connectivity
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Graph Practice.html">
+       05. Graph Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Graph Representations.html">
+       06. Graph Representations
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Adjacency Matrices.html">
+       07. Adjacency Matrices
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Graph Representation Practice.html">
+       08. Graph Representation Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Graph Traversal.html">
+       09. Graph Traversal
+      </a>
+     </li>
+     <li class="">
+      <a href="10. DFS.html">
+       10. DFS
+      </a>
+     </li>
+     <li class="">
+      <a href="11. BFS.html">
+       11. BFS
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Graph Traversal Practice.html">
+       12. Graph Traversal Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Eulerian Path.html">
+       13. Eulerian Path
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. Graph Practice
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Graph Practice
+         </p>
+        </h3>
+        <div>
+         <div>
+          <h4>
+           Question:
+          </h4>
+          <p>
+           <p>
+            Let's discuss a few more definitions that extend on the topics from the last few videos.
+           </p>
+           <p>
+            Talking about connectivity in a directed graph is a bit more complicated than in an undirected graph. Let's look at some more definitions:
+           </p>
+           <h3 id="disconnected">
+            Disconnected
+           </h3>
+           <p>
+            Disconnected graphs are very similar whether the graph's directed or undirected—there is some vertex or group of vertices that have no connection with the rest of the graph.
+           </p>
+           <h3 id="weakly-connected">
+            Weakly Connected
+           </h3>
+           <p>
+            A directed graph is weakly connected when only replacing all of the directed edges with undirected edges can cause it to be connected. Imagine that your graph has several vertices with one outbound edge, meaning an edge that points from it to some other vertex in the graph. There's no way to reach all of those vertices from any other vertex in the graph, but if those edges were changed to be undirected all vertices would be easily accessible.
+           </p>
+           <h3 id="connected">
+            Connected
+           </h3>
+           <p>
+            Here we only use "connected graph" to refer to undirected graphs. In a connected graph, there is some path between one vertex and every other vertex.
+           </p>
+           <h3 id="strongly-connected">
+            Strongly Connected
+           </h3>
+           <p>
+            Strongly connected directed graphs must have a path from every node and every other node. So, there must be a path from A to B
+            <strong>
+             AND
+            </strong>
+            B to A.
+           </p>
+          </p>
+         </div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div style="display: block;">
+           <div style="position: relative;">
+            <img alt="" src="img/7919804788.gif" style="width: 100%; max-height: 100%"/>
+            <div style="
+    position: absolute; top: 42.80764966740577%; left: 50.701371571072315%; width: 45.261845386533665%; height: 7.095343680709535%;
+  ">
+             <input aria-label="" id="text1" name="null" style="width: 100%; height: 100%;" type="text"/>
+            </div>
+            <div style="
+    position: absolute; top: 77.34894678492239%; left: 50.31366895261845%; width: 45.261845386533665%; height: 7.095343680709535%;
+  ">
+             <input aria-label="" id="text2" name="null" style="width: 100%; height: 100%;" type="text"/>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <details>
+           <summary>
+            <strong>
+             Solution:
+            </strong>
+           </summary>
+           <div>
+            <p>
+             <p>
+              Let's take a look at that image again:
+             </p>
+             <p>
+              <img alt="Graph Quiz Image" src="media/unnamed-69567-0.gif"/>
+             </p>
+             <p>
+              First, let's count the cycles:
+             </p>
+             <ul>
+              <li>
+               G-&gt;R-&gt;A-&gt;P-&gt;H-&gt;G
+              </li>
+              <li>
+               R-&gt;A-&gt;P-&gt;R
+              </li>
+              <li>
+               R-&gt;A-&gt;P-&gt;S-&gt;R
+              </li>
+             </ul>
+             <p>
+              Now, let's talk connectivity. There's one vertex, U, that has only inbound edges—meaning only edges that point to it. Thus, the graph can't be strongly connected. Even if every vertex has a path to U, it doesn't have a path to any of them.
+             </p>
+             <p>
+              However, if you converted every edge to an undirected edge, it would be connected. Therefore we can label this graph "weakly connected".
+             </p>
+            </p>
+           </div>
+          </details>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. Graph Representations.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Graph Practice')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
