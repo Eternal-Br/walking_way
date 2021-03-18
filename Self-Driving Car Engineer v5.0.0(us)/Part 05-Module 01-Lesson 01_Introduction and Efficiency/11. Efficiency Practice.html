@@ -1,0 +1,379 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Efficiency Practice
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Introduction and Efficiency
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Course Introduction.html">
+       01. Course Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Course Outline.html">
+       02. Course Outline
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Course Expectations.html">
+       03. Course Expectations
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Syntax.html">
+       04. Syntax
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Python Practice.html">
+       05. Python Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Python The Basics.html">
+       06. Python: The Basics
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Efficiency.html">
+       07. Efficiency
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Notation Intro.html">
+       08. Notation Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Notation Continued.html">
+       09. Notation Continued
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Worst Case and Approximation.html">
+       10. Worst Case and Approximation
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Efficiency Practice.html">
+       11. Efficiency Practice
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          11. Efficiency Practice
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Efficiency Practice
+         </p>
+        </h3>
+        <div>
+         <div>
+          <h4>
+           Question:
+          </h4>
+          <p>
+           <p>
+            Below are some examples of functions in Python. Look at each and take note of the time efficiency. Then, in the quiz, enter those values using the correct notation. Use approximations wherever possible!
+           </p>
+           <pre><code>"""input manatees: a list of "manatees", where one manatee is represented by a dictionary
+a single manatee has properties like "name", "age", et cetera
+n = the number of elements in "manatees"
+m = the number of properties per "manatee" (i.e. the number of keys in a manatee dictionary)"""
+
+def example1(manatees):
+    for manatee in manatees:
+        print manatee['name']
+
+def example2(manatees):
+    print manatees[0]['name']
+    print manatees[0]['age']
+
+def example3(manatees):
+    for manatee in manatees:
+        for manatee_property in manatee:
+            print manatee_property, ": ", manatee[manatee_property]
+
+def example4(manatees):
+    oldest_manatee = "No manatees here!"
+    for manatee1 in manatees:
+        for manatee2 in manatees:
+            if manatee1['age'] &lt; manatee2['age']:
+                oldest_manatee = manatee2['name']
+            else:
+                oldest_manatee = manatee1['name']
+    print oldest_manatee</code></pre>
+          </p>
+         </div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div style="display: block;">
+           <div style="position: relative;">
+            <img alt="" src="img/7883232307.gif" style="width: 100%; max-height: 100%"/>
+            <div style="
+    position: absolute; top: 28.2185421286031%; left: 52.96329488778054%; width: 25.6857855361596%; height: 11.973392461197339%;
+  ">
+             <input aria-label="" id="text1" name="null" style="width: 100%; height: 100%;" type="text"/>
+            </div>
+            <div style="
+    position: absolute; top: 44.5295177383592%; left: 52.936019326683294%; width: 25.6857855361596%; height: 11.751662971175167%;
+  ">
+             <input aria-label="" id="text2" name="null" style="width: 100%; height: 100%;" type="text"/>
+            </div>
+            <div style="
+    position: absolute; top: 60.892461197339244%; left: 52.87951995012469%; width: 25.6857855361596%; height: 11.973392461197339%;
+  ">
+             <input aria-label="" id="text3" name="null" style="width: 100%; height: 100%;" type="text"/>
+            </div>
+            <div style="
+    position: absolute; top: 77.4390243902439%; left: 52.98082917705735%; width: 25.561097256857856%; height: 11.751662971175167%;
+  ">
+             <input aria-label="" id="text4" name="null" style="width: 100%; height: 100%;" type="text"/>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <details>
+           <summary>
+            <strong>
+             Solution:
+            </strong>
+           </summary>
+           <div>
+            <p>
+             <p>
+              Here are the answers and explanations:
+             </p>
+             <h3 id="example-1">
+              Example 1
+             </h3>
+             <p>
+              We iterate over every
+              <code>
+               manatee
+              </code>
+              in the
+              <code>
+               manatees
+              </code>
+              list with the for loop. Since we're given that
+              <code>
+               manatees
+              </code>
+              has n elements, our code will take approximately O(n) time to run.
+             </p>
+             <h3 id="example-2">
+              Example 2
+             </h3>
+             <p>
+              We look at two specific properties of a specific
+              <code>
+               manatee
+              </code>
+              . We aren't iterating over anything - just doing constant-time lookups on lists and dictionaries. Thus the code will complete in constant, or O(1), time.
+             </p>
+             <h3 id="example-3">
+              Example 3
+             </h3>
+             <p>
+              There are two for loops, and nested for loops are a good sign that you need to multiply two runtimes. Here, for every
+              <code>
+               manatee
+              </code>
+              , we check every property. If we had 4
+              <code>
+               manatees
+              </code>
+              , each with 5 properties, then we would need 5+5+5+5 steps. This logic simplifies to the number of
+              <code>
+               manatees
+              </code>
+              times the number of properties, or O(nm).
+             </p>
+             <h3 id="example-4">
+              Example 4
+             </h3>
+             <p>
+              Again we have nested for loops. This time we're iterating over the
+              <code>
+               manatees
+              </code>
+              list twice - every time we see a
+              <code>
+               manatee
+              </code>
+              , we compare it to every other
+              <code>
+               manatee
+              </code>
+              's age. We end up with O(nn), or O(n^2) (which is read as "n squared").
+             </p>
+             <p>
+              Throughout the course, you can reference the
+              <a href="http://bigocheatsheet.com/" rel="noopener noreferrer" target="_blank">
+               Big-O Cheat Sheet
+              </a>
+              to keep track of time complexities for many of the algorithms and data structures we study.
+             </p>
+            </p>
+           </div>
+          </details>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. Efficiency Practice')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

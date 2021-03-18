@@ -1,0 +1,359 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Python: The Basics
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Introduction and Efficiency
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Course Introduction.html">
+       01. Course Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Course Outline.html">
+       02. Course Outline
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Course Expectations.html">
+       03. Course Expectations
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Syntax.html">
+       04. Syntax
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Python Practice.html">
+       05. Python Practice
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Python The Basics.html">
+       06. Python: The Basics
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Efficiency.html">
+       07. Efficiency
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Notation Intro.html">
+       08. Notation Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Notation Continued.html">
+       09. Notation Continued
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Worst Case and Approximation.html">
+       10. Worst Case and Approximation
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Efficiency Practice.html">
+       11. Efficiency Practice
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          06. Python: The Basics
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Python: The Basics
+         </p>
+        </h3>
+        <div>
+         <div>
+          <h4>
+           Question:
+          </h4>
+          <p>
+           <p>
+            Please check off the following topics to confirm that you already understand them! You're only expected to understand the basics of how to manipulate them—details about usage will be explained later if needed. If anything looks unfamiliar, you can check out one of our
+            <a href="https://www.udacity.com/course/programming-foundations-with-python--ud036" rel="noopener noreferrer" target="_blank">
+             introductory Python classes
+            </a>
+            . This course will also default to
+            <a href="https://docs.python.org/2/" rel="noopener noreferrer" target="_blank">
+             Python 2
+            </a>
+            where applicable, though it's very similar to
+            <a href="https://docs.python.org/3/" rel="noopener noreferrer" target="_blank">
+             Python 3
+            </a>
+            !
+           </p>
+           <h3 id="comments">
+            Comments
+           </h3>
+           <pre><code># This is a Python comment - code blocks are so useful!</code></pre>
+           <h3 id="declarationinitialization">
+            Declaration/Initialization
+           </h3>
+           <pre><code># Remember values, not variables, have data types.
+# A variable can be reassigned to contain a different data type.
+answer = 42
+answer = "The answer is 42."</code></pre>
+           <h3 id="data-types">
+            Data Types
+           </h3>
+           <pre><code>boolean = True
+number = 1.1
+string = "Strings can be declared with single or double quotes."
+list = ["Lists can have", 1, 2, 3, 4, "or more types together!"]
+tuple = ("Tuples", "can have", "more than", 2, "elements!")
+dictionary = {'one': 1, 'two': 2, 'three': 3}
+variable_with_zero_data = None</code></pre>
+           <h3 id="simple-logging">
+            Simple Logging
+           </h3>
+           <pre><code>print "Printed!"</code></pre>
+           <h3 id="conditionals">
+            Conditionals
+           </h3>
+           <pre><code>if cake == "delicious":
+    return "Yes please!"
+elif cake == "okay":
+    return "I'll have a small piece."
+else:
+    return "No, thank you."</code></pre>
+           <h3 id="loops">
+            Loops
+           </h3>
+           <pre><code>for item in list:
+    print item
+while (total &lt; max_val):
+    total += values[i]
+    i += 2</code></pre>
+           <h3 id="functions">
+            Functions
+           </h3>
+           <pre><code>def divide(dividend, divisor):
+    quotient = dividend / divisor
+    remainder = dividend % divisor
+    return quotient, remainder
+
+def calculate_stuff(x, y):
+    (q, r) = divide(x,y)
+    print q, r</code></pre>
+           <h3 id="classes">
+            Classes
+           </h3>
+           <pre><code>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age 
+
+    def birthday():
+        self.age += 1</code></pre>
+           <p>
+            You shouldn't need to run Python code outside the classroom, so don't worry if you don't have a development environment set up!
+           </p>
+          </p>
+         </div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="58277-algorithmP1-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#58277-algorithmP1-py" id="tab-58277-algorithmP1-py" role="tab">
+            algorithmP1.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-58277-algorithmP1-py" class="tab-pane active show" id="58277-algorithmP1-py" role="tabpanel">
+            <pre><code></code># Write a function called "show_excitement" where the string
+# "I am super excited for this course!" is returned exactly
+# 5 times, where each sentence is separated by a single space.
+# Return the string with "return".
+# You can only have the string once in your code.
+# Don't just copy/paste it 5 times into a single variable!
+
+
+def show_excitement():
+    # Your code goes here!
+    return ""
+
+print show_excitement()</pre>
+           </div>
+          </div>
+         </div>
+         <div>
+          <details>
+           <summary>
+            <strong>
+             Solution:
+            </strong>
+           </summary>
+           <div>
+            <p>
+             <p>
+              If you thought that quiz was really hard, you likely won't be able to understand the coding examples ahead. The videos are all language agnostic, meaning you don't need to know about a particular coding language to understand them, so you should still be able to watch the videos!
+             </p>
+            </p>
+           </div>
+          </details>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="07. Efficiency.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Python: The Basics')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
