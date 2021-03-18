@@ -1,0 +1,96 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:00.538 --> 00:00:02.068
+Oi. Estou de volta.
+
+00:00:02.102 --> 00:00:06.135
+Só queria frisar a importância
+do que está prestes a aprender.
+
+00:00:06.168 --> 00:00:08.569
+Uma estrutura
+que usa uma função hash
+
+00:00:08.602 --> 00:00:11.702
+permite verificações
+em tempo constante.
+
+00:00:11.736 --> 00:00:13.469
+Processe isso um pouco.
+
+00:00:13.502 --> 00:00:17.836
+Com tudo o que você já aprendeu,
+precisa pesquisar em tempo linear.
+
+00:00:17.868 --> 00:00:19.635
+Numa lista ou num conjunto,
+
+00:00:19.669 --> 00:00:23.335
+você deve pesquisar cada elemento
+para achar o que quer.
+
+00:00:23.369 --> 00:00:27.802
+Em pilhas e filas, você busca rapidamente
+elementos antigos ou recentes.
+
+00:00:27.836 --> 00:00:29.129
+Em filas de prioridade,
+
+00:00:29.162 --> 00:00:32.165
+você acha rapidamente
+o de maior prioridade.
+
+00:00:32.202 --> 00:00:36.669
+Mas, se você quiser outro elemento,
+precisa fazer uma busca linear.
+
+00:00:36.702 --> 00:00:38.702
+Fazer buscas
+de tempo constante
+
+00:00:38.736 --> 00:00:43.068
+tornará mais rápido quase todos
+os algoritmos que você escrever.
+
+00:00:43.102 --> 00:00:45.435
+Todos aqui se animaram
+com o fato
+
+00:00:45.469 --> 00:00:48.469
+de que você iria aprender
+algo crucial hoje.
+
+00:00:48.502 --> 00:00:51.135
+Todos queriam estar aqui
+para explicar.
+
+00:00:51.168 --> 00:00:54.068
+Mas não podiam largar
+o trabalho deles,
+
+00:00:54.102 --> 00:00:58.935
+então mandaram um representante,
+o que estava mais empolgado.
+
+00:00:58.968 --> 00:01:00.968
+Vamos ver
+quem eles mandaram.
+
+00:01:03.402 --> 00:01:08.202
+O Starbucks disse que esse conceito
+aparece sempre em entrevistas.
+
+00:01:08.235 --> 00:01:12.502
+Você pode quase sempre otimizar
+ou aprimorar uma resposta com ele,
+
+00:01:12.535 --> 00:01:16.369
+ou apenas usar uma função hash
+em uma questão complexa.
+
+00:01:16.402 --> 00:01:19.602
+Além disso,
+ele viu um esquilo esta manhã.
+

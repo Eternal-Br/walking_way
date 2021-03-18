@@ -1,0 +1,356 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Python Dictionaries
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Maps and Hashing
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction to Maps.html">
+       01. Introduction to Maps
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Sets and Maps.html">
+       02. Sets and Maps
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Python Dictionaries.html">
+       03. Python Dictionaries
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Introduction to Hashing.html">
+       04. Introduction to Hashing
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Hashing.html">
+       05. Hashing
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Collisions.html">
+       06. Collisions
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Load Factor.html">
+       07. Load Factor
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Hash Maps.html">
+       08. Hash Maps
+      </a>
+     </li>
+     <li class="">
+      <a href="09. String Keys.html">
+       09. String Keys
+      </a>
+     </li>
+     <li class="">
+      <a href="10. String Keys Practice.html">
+       10. String Keys Practice
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          03. Python Dictionaries
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Python Dictionaries
+         </p>
+        </h3>
+        <div>
+         <div>
+          <h4>
+           Question:
+          </h4>
+          <p>
+           <p>
+            In Python, the map concept appears as a built-in data type called a dictionary. A dictionary contains key-value pairs. Dictionaries might soon become your favorite data structure in Python—they're extremely easy to use and useful. Here's a sample of setting up a dictionary
+           </p>
+           <pre><code>udacity = {}
+udacity['u'] = 1
+udacity['d'] = 2
+udacity['a'] = 3
+udacity['c'] = 4
+udacity['i'] = 5
+udacity['t'] = 6
+udacity['y'] = 7
+
+print udacity
+# {'u': 1, 'd': 2, 'a': 3, 'c': 4, 'i': 5, 't': 6, 'y': 7}</code></pre>
+           <p>
+            In this case, the letters in "udacity" were each keys in our dictionary, and the position of that letter in the string was the value. Thus, I can do the following:
+           </p>
+           <pre><code>print udacity['t']
+# 6</code></pre>
+           <p>
+            This statement is saying "go to the key labeled 't' and find it's value, 6".
+           </p>
+           <p>
+            Dictionaries are wonderfully flexible—you can store a wide variety of structures as values. You store another dictionary or a list:
+           </p>
+           <pre><code>dictionary = {}
+dictionary['d'] = [1]
+dictionary['i'] = [2]
+dictionary['c'] = [3]
+dictionary['t'] = [4]
+dictionary['i'].append(5)
+dictionary['o'] = [6]
+dictionary['n'] = [7]
+dictionary['a'] = [8]
+dictionary['r'] = [9]
+dictionary['y'] = [10]
+print udacity
+# {'d': [1], 'i': [2, 5], 'c': [3], 't': [4], 'o': [6], 'n': [7], 'a': [8], 'r': [9], 'y':[10]}</code></pre>
+           <p>
+            You can learn even more about dictionaries in the
+            <a href="https://docs.python.org/2/tutorial/datastructures.html#dictionaries" rel="noopener noreferrer" target="_blank">
+             Python documentation
+            </a>
+            .
+           </p>
+          </p>
+         </div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="99434-alg_dictionaries-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#99434-alg_dictionaries-py" id="tab-99434-alg_dictionaries-py" role="tab">
+            alg_dictionaries.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-99434-alg_dictionaries-py" class="tab-pane active show" id="99434-alg_dictionaries-py" role="tabpanel">
+            <pre><code></code>"""Time to play with Python dictionaries!
+You're going to work on a dictionary that
+stores cities by country and continent.
+One is done for you - the city of Mountain 
+View is in the USA, which is in North America.
+
+You need to add the cities listed below by
+modifying the structure.
+Then, you should print out the values specified
+by looking them up in the structure.
+
+Cities to add:
+Bangalore (India, Asia)
+Atlanta (USA, North America)
+Cairo (Egypt, Africa)
+Shanghai (China, Asia)"""
+
+locations = {'North America': {'USA': ['Mountain View']}}
+
+"""Print the following (using "print").
+1. A list of all cities in the USA in
+alphabetic order.
+2. All cities in Asia, in alphabetic
+order, next to the name of the country.
+In your output, label each answer with a number
+so it looks like this:
+1
+American City
+American City
+2
+Asian City - Country
+Asian City - Country"""</pre>
+           </div>
+          </div>
+         </div>
+         <div>
+          <details>
+           <summary>
+            <strong>
+             Solution:
+            </strong>
+           </summary>
+           <div>
+            <p>
+             <p>
+              Here's the solution:
+             </p>
+             <pre><code>locations = {'North America': {'USA': ['Mountain View']}}
+locations['North America']['USA'].append('Atlanta')
+locations['Asia'] = {'India': ['Bangalore']}
+locations['Asia']['China'] = ['Shanghai']
+locations['Africa'] = {'Egypt': ['Cairo']}
+
+print 1
+usa_sorted = sorted(locations['North America']['USA'])
+for city in usa_sorted:
+    print city
+
+print 2
+asia_cities = []
+for countries, cities in locations['Asia'].iteritems():
+    city_country = cities[0] + " - " + countries 
+    asia_cities.append(city_country)
+asia_sorted = sorted(asia_cities)
+for city in asia_sorted:
+    print city</code></pre>
+            </p>
+           </div>
+          </details>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="04. Introduction to Hashing.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. Python Dictionaries')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

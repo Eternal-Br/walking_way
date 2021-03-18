@@ -1,0 +1,321 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Load Factor
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Maps and Hashing
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction to Maps.html">
+       01. Introduction to Maps
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Sets and Maps.html">
+       02. Sets and Maps
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Python Dictionaries.html">
+       03. Python Dictionaries
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Introduction to Hashing.html">
+       04. Introduction to Hashing
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Hashing.html">
+       05. Hashing
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Collisions.html">
+       06. Collisions
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Load Factor.html">
+       07. Load Factor
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Hash Maps.html">
+       08. Hash Maps
+      </a>
+     </li>
+     <li class="">
+      <a href="09. String Keys.html">
+       09. String Keys
+      </a>
+     </li>
+     <li class="">
+      <a href="10. String Keys Practice.html">
+       10. String Keys Practice
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          07. Load Factor
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Load Factor
+         </p>
+        </h3>
+        <div>
+         <div>
+          <h4>
+           Question:
+          </h4>
+          <p>
+           <p>
+            When we're talking about hash tables, we can define a "load factor":
+           </p>
+           <pre><code>Load Factor = Number of Entries / Number of Buckets</code></pre>
+           <p>
+            The purpose of a load factor is to give us a sense of how "full" a hash table is. For example, if we're trying to store 10 values in a hash table with 1000 buckets, the load factor would be 0.01, and the majority of buckets in the table will be empty. We end up wasting memory by having so many empty buckets, so we may want to rehash, or come up with a new hash function with less buckets. We can use our load factor as an indicator for when to rehash—as the load factor approaches 0, the more empty, or sparse, our hash table is.
+            <br/>
+           </p>
+           <p>
+            On the flip side, the closer our load factor is to 1 (meaning the number of values equals the number of buckets), the better it would be for us to rehash and add more buckets. Any table with a load value greater than 1 is guaranteed to have collisions.
+            <br/>
+           </p>
+          </p>
+         </div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div style="display: block;">
+           <div style="position: relative;">
+            <img alt="" src="img/7905614952.gif" style="width: 100%; max-height: 100%"/>
+            <div style="
+    position: absolute; top: 45.75942350332594%; left: 54.90375623441397%; width: 13.341645885286782%; height: 11.529933481152993%;
+  ">
+             <input aria-label="" id="text1" name="null" style="width: 100%; height: 100%;" type="text"/>
+            </div>
+            <div style="
+    position: absolute; top: 72.52286585365853%; left: 25.060395885286784%; width: 5%; height: 5%;
+  ">
+             <input aria-label="" id="radio1" name="group1" type="radio"/>
+            </div>
+            <div style="
+    position: absolute; top: 83.15548780487805%; left: 25.08182668329177%; width: 5%; height: 5%;
+  ">
+             <input aria-label="" id="radio2" name="group1" type="radio"/>
+            </div>
+            <div style="
+    position: absolute; top: 72.53325942350332%; left: 68.62920822942642%; width: 5%; height: 5%;
+  ">
+             <input aria-label="" id="radio3" name="group1" type="radio"/>
+            </div>
+            <div style="
+    position: absolute; top: 83.13816518847007%; left: 68.60388092269328%; width: 5%; height: 5%;
+  ">
+             <input aria-label="" id="radio4" name="group1" type="radio"/>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <details>
+           <summary>
+            <strong>
+             Solution:
+            </strong>
+           </summary>
+           <div>
+            <p>
+             <p>
+              For the load factor, you should divide the number of values by the number of buckets. There are 100 values, as stated in the question, and 100 buckets (0 to 99). Thus, 100/100 = 1!
+             </p>
+             <p>
+              The answer to the second part is 107. The other values all had something wrong with them:
+             </p>
+             <ul>
+              <li>
+               125 is also a multiple of 5. Dividing a bunch of multiples of 5 by another multiple of 5 will cause a lot of collisions. Here's an example, where 10 is used as the divisor:
+               <ul>
+                <li>
+                 5 % 10 = 5
+                </li>
+                <li>
+                 10 % 10 = 0
+                </li>
+                <li>
+                 15 % 10 = 5
+                </li>
+                <li>
+                 20 % 10 = 0
+                </li>
+               </ul>
+              </li>
+              <li>
+               87 is better than 125, but because it's less than 100 it'll still have collisions.
+              </li>
+              <li>
+               1001 is good, but it'll create a ton of leftover buckets and waste a lot of memory.
+              </li>
+             </ul>
+            </p>
+           </div>
+          </details>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="08. Hash Maps.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Load Factor')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

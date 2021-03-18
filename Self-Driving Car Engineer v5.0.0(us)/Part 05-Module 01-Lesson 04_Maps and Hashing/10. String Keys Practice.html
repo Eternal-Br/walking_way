@@ -1,0 +1,348 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   String Keys Practice
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Maps and Hashing
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction to Maps.html">
+       01. Introduction to Maps
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Sets and Maps.html">
+       02. Sets and Maps
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Python Dictionaries.html">
+       03. Python Dictionaries
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Introduction to Hashing.html">
+       04. Introduction to Hashing
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Hashing.html">
+       05. Hashing
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Collisions.html">
+       06. Collisions
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Load Factor.html">
+       07. Load Factor
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Hash Maps.html">
+       08. Hash Maps
+      </a>
+     </li>
+     <li class="">
+      <a href="09. String Keys.html">
+       09. String Keys
+      </a>
+     </li>
+     <li class="">
+      <a href="10. String Keys Practice.html">
+       10. String Keys Practice
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          10. String Keys Practice
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          String Keys Practice
+         </p>
+        </h3>
+        <div>
+         <div>
+          <h4>
+           Question:
+          </h4>
+          <p>
+           <p>
+            In this quiz, you'll write your own hash table and hash function that uses string keys. Your table will store strings in buckets by their first two letters, according to the formula below:
+           </p>
+           <pre><code>Hash Value = (ASCII Value of First Letter * 100) + ASCII Value of Second Letter </code></pre>
+           <p>
+            You can assume that the string will have at least two letters, and the first two characters are uppercase letters (ASCII values from 65 to 90). You can use the Python function
+            <code>
+             ord()
+            </code>
+            to get the ASCII value of a letter, and
+            <code>
+             chr()
+            </code>
+            to get the letter associated with an ASCII value.
+            <br/>
+           </p>
+           <p>
+            You'll create a HashTable class, methods to store and lookup values, and a helper function to calculate a hash value given a string. You cannot use a Python dictionary—only lists! And remember to store lists at each bucket, and not just the string itself. For example, you can store "UDACITY" at index 8568 as
+            <code>
+             ["UDACITY"]
+            </code>
+            .
+           </p>
+          </p>
+         </div>
+         <h4>
+          Start Quiz:
+         </h4>
+         <div>
+          <div class="nav nav-tabs nav-fill" id="question-tabs" role="tablist">
+           <a aria-controls="69762-alg_string_keys-py" aria-selected="true" class="nav-item nav-link active show" data-toggle="tab" href="#69762-alg_string_keys-py" id="tab-69762-alg_string_keys-py" role="tab">
+            alg_string_keys.py
+           </a>
+          </div>
+          <div class="tab-content" id="question-tab-contents" style="padding: 20px 0;">
+           <div aria-labelledby="tab-69762-alg_string_keys-py" class="tab-pane active show" id="69762-alg_string_keys-py" role="tabpanel">
+            <pre><code></code>"""Write a HashTable class that stores strings
+in a hash table, where keys are calculated
+using the first two letters of the string."""
+
+class HashTable(object):
+    def __init__(self):
+        self.table = [None]*10000
+
+    def store(self, string):
+        """Input a string that's stored in 
+        the table."""
+        pass
+
+    def lookup(self, string):
+        """Return the hash value if the
+        string is already in the table.
+        Return -1 otherwise."""
+        return -1
+
+    def calculate_hash_value(self, string):
+        """Helper function to calulate a
+        hash value from a string."""
+        return -1
+    
+# Setup
+hash_table = HashTable()
+
+# Test calculate_hash_value
+# Should be 8568
+print hash_table.calculate_hash_value('UDACITY')
+
+# Test lookup edge case
+# Should be -1
+print hash_table.lookup('UDACITY')
+
+# Test store
+hash_table.store('UDACITY')
+# Should be 8568
+print hash_table.lookup('UDACITY')
+
+# Test store edge case
+hash_table.store('UDACIOUS')
+# Should be 8568
+print hash_table.lookup('UDACIOUS')
+</pre>
+           </div>
+          </div>
+         </div>
+         <div>
+          <details>
+           <summary>
+            <strong>
+             Solution:
+            </strong>
+           </summary>
+           <div>
+            <p>
+             <p>
+              Here's the solution:
+             </p>
+             <pre><code>class HashTable(object):
+    def __init__(self):
+        self.table = [None]*10000
+
+    def store(self, string):
+        hv = self.calculate_hash_value(string)
+        if hv != -1:
+            if self.table[hv] != None:
+                self.table[hv].append(string)
+            else:
+                self.table[hv] = [string]
+
+    def lookup(self, string):
+        hv = self.calculate_hash_value(string)
+        if hv != -1:
+            if self.table[hv] != None:
+                if string in self.table[hv]:
+                    return hv
+        return -1
+
+    def calculate_hash_value(self, string):
+        value = ord(string[0])*100 + ord(string[1])
+        return value</code></pre>
+            </p>
+           </div>
+          </details>
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('10. String Keys Practice')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
