@@ -1,0 +1,367 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Getting Started
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Highway Driving
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Planning is Hard.html">
+       01. Planning is Hard
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Getting Started.html">
+       02. Getting Started
+      </a>
+     </li>
+     <li class="">
+      <a href="03. More Complex Paths.html">
+       03. More Complex Paths
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Highway Map.html">
+       04. Highway Map
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Sensor Fusion.html">
+       05. Sensor Fusion
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Project Q&amp;A.html">
+       06. Project Q&amp;A
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Project instructions.html">
+       07. Project instructions
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Workspaces Highway Driving.html">
+       08. Workspaces: Highway Driving
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Share Your Success - Highway Driving.html">
+       09. Share Your Success - Highway Driving
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Highway Driving.html">
+       Project Description - Highway Driving
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Highway Driving.html">
+       Project Rubric - Highway Driving
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          02. Getting Started
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The goal of this project is to build a path planner that creates smooth, safe trajectories for the car to follow. The highway track has other vehicles, all going different speeds, but approximately obeying the 50 MPH speed limit.
+         </p>
+         <p>
+          The car transmits its location, along with its sensor fusion data, which estimates the location of all the vehicles on the same side of the road.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Car traversing its given path points" class="img img-fluid" src="img/car-ppc-gif.gif"/>
+          <figcaption class="figure-caption">
+           <p>
+            Car traversing its given path points
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="point-paths">
+          Point Paths
+         </h3>
+         <p>
+          The path planner should output a list of x and y  global map coordinates. Each pair of x and y coordinates is a point, and all of the points together form a trajectory. You can use any number of points that you want, but the x list should be the same length as the y list.
+         </p>
+         <p>
+          Every 20 ms the car moves to the next point on the list. The car's new rotation becomes the line between the previous waypoint and the car's new location.
+         </p>
+         <p>
+          The car moves from point to point perfectly, so you don't have to worry about building a controller for this project.
+         </p>
+         <p>
+          The animation above shows how the car moves and rotates through a given list of points.
+         </p>
+         <h3 id="velocity">
+          Velocity
+         </h3>
+         <p>
+          The velocity of the car depends on the spacing of the points. Because the car moves to a new waypoint every 20ms, the larger the spacing between points, the faster the car will travel. The speed goal is to have the car traveling at (but not above) the 50 MPH speed limit as often as possible. But there will be times when traffic gets in the way.
+         </p>
+         <h3 id="getting-started">
+          Getting Started
+         </h3>
+         <p>
+          Start by simply trying to move the car forward in a straight line at a constant 50 MPH velocity. Use the car's (x, y) localization information and its heading direction to create a simple, straight path that is drawn directly in front of the car.
+         </p>
+         <p>
+          In
+          <code>
+           main.cpp
+          </code>
+          , instead of setting the speed directly, we pass
+          <code>
+           next_x_vals
+          </code>
+          , and
+          <code>
+           next_y_vals
+          </code>
+          to the simulator. We will set the points 0.5 m apart. Since the car moves 50 times a second, a distance of 0.5m per move will create a velocity of 25 m/s. 25 m/s is close to 50 MPH.
+         </p>
+         <pre><code class="cpp language-cpp">double dist_inc = 0.5;
+for (int i = 0; i &lt; 50; ++i) {
+  next_x_vals.push_back(car_x+(dist_inc*i)*cos(deg2rad(car_yaw)));
+  next_y_vals.push_back(car_y+(dist_inc*i)*sin(deg2rad(car_yaw)));
+}</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="A simple test moving the car forward at constant velocity" class="img img-fluid" src="img/car-in-line.gif"/>
+          <figcaption class="figure-caption">
+           <p>
+            A simple test moving the car forward at constant velocity
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Great! With just a couple of lines of code we were able to get the car to drive forward at constant velocity.
+         </p>
+         <p>
+          Notice, however, that the car went from 0 MPH to 56 MPH in a single 20 ms frame, causing a spike in acceleration.
+         </p>
+         <p>
+          Acceleration is calculated by comparing the rate of change of average speed over .2 second intervals. In this case total acceleration at one point was as high as 75 m/s^2. Jerk was also very high. The jerk is calculated as the average acceleration over 1 second intervals. In order for the passenger to have an enjoyable ride both the jerk and the total acceleration should not exceed 10 m/s^2.
+         </p>
+         <p>
+          Part of the total acceleration is the normal component,
+          <em>
+           AccN
+          </em>
+          which measures the centripetal acceleration from turning. The tighter and faster a turn is made, the higher the
+          <em>
+           AccN
+          </em>
+          value will be.
+         </p>
+         <p>
+          In our simple test we were not turning at all, so the value of
+          <em>
+           AccN
+          </em>
+          was zero.
+         </p>
+         <p>
+          Going forward, consider how to minimize total acceleration and jerk by gradually increasing and decreasing point path spacing based on the
+          <code>
+           car_speed
+          </code>
+          variable.
+         </p>
+         <p>
+          To get a better idea of how movement affects the acceleration of the car, click the
+          <em>
+           Manual Mode
+          </em>
+          check box in the top left of the simulator screen to drive the car around yourself.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="03. More Complex Paths.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Getting Started')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,4870 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.740
+Hello. My name is David Silver.
+
+00:00:03.740 --> 00:00:06.720
+I am the team lead for the self-driving car in Nanodegree program here at Udacity.
+
+00:00:06.720 --> 00:00:09.880
+Hey, I'm Aaron Brown.
+
+00:00:09.880 --> 00:00:12.440
+I'm a content developer and I helped built
+
+00:00:12.440 --> 00:00:16.040
+the project that we're going to be walking through today, which is path planning.
+
+00:00:16.040 --> 00:00:19.395
+That's right. This is the walk through for the path planning project,
+
+00:00:19.395 --> 00:00:21.160
+which is the first project in term two.
+
+00:00:21.160 --> 00:00:26.090
+And, the only project in the path planning module of the self-driving car program.
+
+00:00:26.090 --> 00:00:28.220
+So, let's get started.
+
+00:00:28.220 --> 00:00:30.290
+Aaron, you built this.
+
+00:00:30.290 --> 00:00:31.615
+Where do I get started?
+
+00:00:31.615 --> 00:00:33.830
+Should I get started in the classroom?
+
+00:00:33.830 --> 00:00:38.859
+Yeah. So, let's go ahead and get started by checking out the project repository.
+
+00:00:38.859 --> 00:00:42.030
+Okay. All right.
+
+00:00:42.030 --> 00:00:43.173
+Windisk.
+
+00:00:43.173 --> 00:00:50.320
+Udacity path planning project and that should come up on Google, right? Yeah.
+
+00:00:50.320 --> 00:00:51.340
+Yeah. First hit.
+
+00:00:51.340 --> 00:00:52.140
+First hit. Okay.
+
+00:00:52.140 --> 00:00:55.480
+Cool.
+
+00:00:55.480 --> 00:00:57.020
+This will have all the code that we need to get
+
+00:00:57.020 --> 00:01:01.110
+started including the link to download the simulator.
+
+00:01:01.110 --> 00:01:03.495
+Okay. So, let's see.
+
+00:01:03.495 --> 00:01:05.815
+I've already downloaded the simulator.
+
+00:01:05.815 --> 00:01:08.480
+So, we download the simulator.
+
+00:01:08.480 --> 00:01:09.717
+What should we do next?
+
+00:01:09.717 --> 00:01:12.830
+Well, we can actually just clone this repository over.
+
+00:01:12.830 --> 00:01:13.711
+Okay.
+
+00:01:13.711 --> 00:01:17.175
+And, start building some code for our path planner.
+
+00:01:17.175 --> 00:01:20.080
+Got it. So, we could clone the repo.
+
+00:01:20.080 --> 00:01:21.320
+I've already done that as well,
+
+00:01:21.320 --> 00:01:26.045
+here in my terminal.
+
+00:01:26.045 --> 00:01:31.545
+I am in the CarND path planning project directory.
+
+00:01:31.545 --> 00:01:32.770
+Actually, within the source,
+
+00:01:32.770 --> 00:01:34.400
+sub-directory of that project.
+
+00:01:34.400 --> 00:01:35.030
+Okay.
+
+00:01:35.030 --> 00:01:36.656
+So, what next?
+
+00:01:36.656 --> 00:01:42.071
+Well, in source, all your main code will be coming from main.cpp.
+
+00:01:42.071 --> 00:01:42.525
+Okay.
+
+00:01:42.525 --> 00:01:44.930
+There's also some instructions in the Read Me as
+
+00:01:44.930 --> 00:01:47.480
+well for just getting started and, what you, kind of,
+
+00:01:47.480 --> 00:01:53.217
+need to be thinking about when you're going from your simulator to your C++ code.
+
+00:01:53.217 --> 00:01:56.740
+Okay. So here, we talk about cloning the repo,
+
+00:01:56.740 --> 00:02:01.250
+talk about how to build the repo, and how to run it.
+
+00:02:01.250 --> 00:02:02.390
+Yeah.
+
+00:02:02.390 --> 00:02:04.850
+Just to make sure,
+
+00:02:04.850 --> 00:02:08.300
+I'm also, kind of,
+
+00:02:08.300 --> 00:02:09.410
+in an original state.
+
+00:02:09.410 --> 00:02:13.395
+I'll check out main.cpp from the repo. I'll come over here.
+
+00:02:13.395 --> 00:02:16.790
+I've already run CMake.
+
+00:02:16.790 --> 00:02:19.160
+So now, I can just make the project as is.
+
+00:02:19.160 --> 00:02:20.510
+Make sure it compiles.
+
+00:02:20.510 --> 00:02:21.740
+Make sure it compiles.
+
+00:02:21.740 --> 00:02:24.340
+And, I'll run the binary.
+
+00:02:24.340 --> 00:02:26.440
+So now, we're running the path planning binary.
+
+00:02:26.440 --> 00:02:29.870
+I'll swipe over and let's run the simulator.
+
+00:02:29.870 --> 00:02:29.871
+Yeah.
+
+00:02:29.871 --> 00:02:31.220
+So what's going to happen?
+
+00:02:31.220 --> 00:02:33.095
+That car is just going to sit there.
+
+00:02:33.095 --> 00:02:35.450
+It has an empty list of xy points.
+
+00:02:35.450 --> 00:02:36.720
+That seems disappointing.
+
+00:02:36.720 --> 00:02:39.575
+Yeah. So, we need to add some xy points to our planner.
+
+00:02:39.575 --> 00:02:43.065
+Okay. So, how do we do that?
+
+00:02:43.065 --> 00:02:45.460
+Should we go to the classroom? Should we do something else?
+
+00:02:45.460 --> 00:02:49.892
+Well, let's open up main.cpp.
+
+00:02:49.892 --> 00:02:52.896
+When we first open it up,
+
+00:02:52.896 --> 00:02:56.896
+we'll see a number of helper functions that we have at our disposal.
+
+00:02:56.896 --> 00:02:59.790
+Okay. Let's look at those helper functions.
+
+00:02:59.790 --> 00:03:05.275
+Let's look at the helper functions.
+
+00:03:05.275 --> 00:03:07.900
+There's a hasData helper function.
+
+00:03:07.900 --> 00:03:09.280
+Are we going to need this?
+
+00:03:09.280 --> 00:03:11.891
+This is actually something that comes from our uWebSocket template
+
+00:03:11.891 --> 00:03:15.220
+that we've seen in other projects before.
+
+00:03:15.220 --> 00:03:16.070
+Okay.
+
+00:03:16.070 --> 00:03:17.260
+We have distance.
+
+00:03:17.260 --> 00:03:18.580
+So, that could be helpful.
+
+00:03:18.580 --> 00:03:21.240
+So, that's calculating Euclidean distance between two points.
+
+00:03:21.240 --> 00:03:23.998
+Yeah. A lot of geometry is happening in this project.
+
+00:03:23.998 --> 00:03:24.157
+Okay.
+
+00:03:24.157 --> 00:03:25.690
+Closest waypoint.
+
+00:03:25.690 --> 00:03:29.046
+We have a map of all these waypoints around our highway.
+
+00:03:29.046 --> 00:03:29.185
+Okay.
+
+00:03:29.185 --> 00:03:30.958
+We can see which one is closest to us.
+
+00:03:30.958 --> 00:03:31.109
+Okay.
+
+00:03:31.109 --> 00:03:33.368
+We can see which is the next waypoint.
+
+00:03:33.368 --> 00:03:35.680
+What's the difference between closest and the next waypoint?
+
+00:03:35.680 --> 00:03:39.505
+Because you could be right in front of a waypoint,
+
+00:03:39.505 --> 00:03:44.350
+and your angle is telling you that you want to go to this one that's further out,
+
+00:03:44.350 --> 00:03:46.930
+instead of the one that's closer to you but behind you.
+
+00:03:46.930 --> 00:03:50.140
+Got it. It's like on the airplane where the nearest exit might be behind you.
+
+00:03:50.140 --> 00:03:50.598
+Yeah.
+
+00:03:50.598 --> 00:03:52.535
+Got it. Okay.
+
+00:03:52.535 --> 00:03:54.833
+Let's see.
+
+00:03:54.833 --> 00:03:55.716
+GetFrenet.
+
+00:03:55.716 --> 00:03:59.200
+Yeah. So, In the path planning lesson,
+
+00:03:59.200 --> 00:04:01.900
+we talked a lot about frenet coordinates and how
+
+00:04:01.900 --> 00:04:05.105
+they can be really helpful especially in a highway.
+
+00:04:05.105 --> 00:04:09.850
+So, we had these transformations from going from frenet coordinates to xy coordinates.
+
+00:04:09.850 --> 00:04:11.305
+Got it. What are the arguments here?
+
+00:04:11.305 --> 00:04:12.986
+There are five arguments. What are they?
+
+00:04:12.986 --> 00:04:16.395
+Well, we can have the ones that you'd expect like x and y.
+
+00:04:16.395 --> 00:04:19.240
+We also have data because this is helpful for
+
+00:04:19.240 --> 00:04:22.225
+actually doing the transformation if you look at the map.
+
+00:04:22.225 --> 00:04:25.780
+And, we also have these list of
+
+00:04:25.780 --> 00:04:30.180
+x and y waypoints that we calculate at the very beginning.
+
+00:04:30.180 --> 00:04:37.210
+Got it. Okay. So, which of these do we need to worry about and which of these do we just,
+
+00:04:37.210 --> 00:04:40.400
+kind of, pass in without thinking too much about?
+
+00:04:40.400 --> 00:04:41.290
+Xy and theta.
+
+00:04:41.290 --> 00:04:41.465
+Okay.
+
+00:04:41.465 --> 00:04:45.835
+And, basically, just use
+
+00:04:45.835 --> 00:04:50.720
+whatever we calculate at the very beginning for the maps x and maps y.
+
+00:04:50.720 --> 00:04:51.598
+Okay.
+
+00:04:51.598 --> 00:04:54.829
+That comes from a file to the map.
+
+00:04:54.829 --> 00:04:57.430
+And, do we need to worry too much or at all
+
+00:04:57.430 --> 00:05:00.345
+about what's going on inside of getFrenet or do we just use it,
+
+00:05:00.345 --> 00:05:01.645
+kind of, as a black box?
+
+00:05:01.645 --> 00:05:03.370
+You can use it as a black box,
+
+00:05:03.370 --> 00:05:06.395
+but the code is definitely there where you can actually modify it.
+
+00:05:06.395 --> 00:05:09.025
+And, maybe you can even make it better,
+
+00:05:09.025 --> 00:05:12.954
+maybe you have a different idea for how you want to do the transformation.
+
+00:05:12.954 --> 00:05:13.076
+Okay.
+
+00:05:13.076 --> 00:05:15.040
+Yeah. There's a lot of freedom there.
+
+00:05:15.040 --> 00:05:19.200
+Okay. So, let's see.
+
+00:05:19.200 --> 00:05:22.544
+We did getFrenet and this is getXY.
+
+00:05:22.544 --> 00:05:23.040
+Got it.
+
+00:05:23.040 --> 00:05:25.540
+This should be the inverse, except that,
+
+00:05:25.540 --> 00:05:27.612
+Frenet and xy are not, completely.
+
+00:05:27.612 --> 00:05:31.315
+It's not a linear transformation, exactly.
+
+00:05:31.315 --> 00:05:34.960
+Got it. So, instead of passing an x and y,
+
+00:05:34.960 --> 00:05:37.000
+we pass an s and d, which are the Frenet coordinates.
+
+00:05:37.000 --> 00:05:38.215
+And, instead of passing on theta,
+
+00:05:38.215 --> 00:05:42.170
+we pass in this vector maps s.
+
+00:05:42.170 --> 00:05:42.760
+Yes.
+
+00:05:42.760 --> 00:05:44.295
+And then, again, maps x and y.
+
+00:05:44.295 --> 00:05:46.450
+Is maps s something we need to worry about? Or is that just at the beginning?
+
+00:05:46.450 --> 00:05:49.620
+That something that's calculated at the very beginning that we can just feed it.
+
+00:05:49.620 --> 00:05:53.140
+And, that's just used for the map inside the function itself.
+
+00:05:53.140 --> 00:05:55.055
+Got it. Okay. And now, we get to main.
+
+00:05:55.055 --> 00:05:56.646
+So, those are all the helper functions. This is main.
+
+00:05:56.646 --> 00:05:56.673
+Yeah.
+
+00:05:56.673 --> 00:06:03.370
+Look's like there's a lot of variables being declared here.
+
+00:06:03.370 --> 00:06:04.810
+There are a couple of constants.
+
+00:06:04.810 --> 00:06:06.500
+There's the CSV file.
+
+00:06:06.500 --> 00:06:09.280
+There's the link for the track it looks like.
+
+00:06:09.280 --> 00:06:11.570
+Which can be helpful when you're wrapping background.
+
+00:06:11.570 --> 00:06:12.985
+Okay.
+
+00:06:12.985 --> 00:06:16.210
+But, we just go ahead and we open up that text file for a map,
+
+00:06:16.210 --> 00:06:19.750
+and we load up our vector a doubles of x,
+
+00:06:19.750 --> 00:06:22.525
+y, s, dx, and dy.
+
+00:06:22.525 --> 00:06:27.510
+Dx and dy is just that normal component to that waypoint.
+
+00:06:27.510 --> 00:06:30.579
+Got it. Where do we open up the CSV file?
+
+00:06:30.579 --> 00:06:36.985
+It's actually just coming from data and it's called highwaymap.csv.
+
+00:06:36.985 --> 00:06:42.130
+So, we're using our stringstream to actually load that up.
+
+00:06:42.130 --> 00:06:43.990
+Got it. So, that's done for us.
+
+00:06:43.990 --> 00:06:47.480
+Yeah. Then we can just use it throughout the program.
+
+00:06:47.480 --> 00:06:52.135
+Okay. Let's see. So now,
+
+00:06:52.135 --> 00:06:53.618
+there's a message passing.
+
+00:06:53.618 --> 00:06:58.020
+What's going on here?
+
+00:06:58.020 --> 00:07:01.075
+Once we get passed the usual uWebSocket template,
+
+00:07:01.075 --> 00:07:03.610
+we actually get our localization data.
+
+00:07:03.610 --> 00:07:04.017
+Okay.
+
+00:07:04.017 --> 00:07:06.875
+So, the simulator is telling us exactly where
+
+00:07:06.875 --> 00:07:11.380
+the xy and sd Frenet coordinates of the car are at.
+
+00:07:11.380 --> 00:07:12.025
+Okay.
+
+00:07:12.025 --> 00:07:15.390
+Along with the car's angle and the car's speed.
+
+00:07:15.390 --> 00:07:17.204
+Okay.
+
+00:07:17.204 --> 00:07:18.955
+So, there's this,
+
+00:07:18.955 --> 00:07:22.360
+if event equals telemetry function,
+
+00:07:22.360 --> 00:07:24.370
+and is this space to where the action is happening?
+
+00:07:24.370 --> 00:07:27.970
+Yeah. So, this is all the variables that we're going to be working with in
+
+00:07:27.970 --> 00:07:32.290
+order to decide how we want to be creating engineering points.
+
+00:07:32.290 --> 00:07:36.055
+Got it. Okay. So, a bunch of variables getting defined here,
+
+00:07:36.055 --> 00:07:39.393
+some Json stuff getting defined.
+
+00:07:39.393 --> 00:07:41.780
+Sensor fusion is pretty important as well.
+
+00:07:41.780 --> 00:07:43.435
+So, we talked about localization.
+
+00:07:43.435 --> 00:07:47.015
+Sensor fusion's all the other cars on the road with us,
+
+00:07:47.015 --> 00:07:48.625
+that we don't want to crash into,
+
+00:07:48.625 --> 00:07:52.270
+that we want to try to pass when possible.
+
+00:07:52.270 --> 00:07:55.030
+Got it. So, there's this, TODO here and it says,
+
+00:07:55.030 --> 00:07:57.610
+"Define a path made up of (x,y) points that the car
+
+00:07:57.610 --> 00:08:00.565
+will visit sequentially every .02 seconds."
+
+00:08:00.565 --> 00:08:02.840
+And then, underneath the TODO,
+
+00:08:02.840 --> 00:08:07.960
+we are setting some Json variables that looks like equal to our x vals and y vals,
+
+00:08:07.960 --> 00:08:09.455
+or next x vals and xy vals.
+
+00:08:09.455 --> 00:08:11.561
+And, that makes up our path planner.
+
+00:08:11.561 --> 00:08:11.575
+Got it.
+
+00:08:11.575 --> 00:08:13.680
+X and y points.
+
+00:08:13.680 --> 00:08:15.210
+So, in order to get the car to move forward,
+
+00:08:15.210 --> 00:08:17.410
+we have to set these next x vals,
+
+00:08:17.410 --> 00:08:20.160
+next y vals to something because right now we're just declaring them,
+
+00:08:20.160 --> 00:08:22.055
+and immediately, we're using them.
+
+00:08:22.055 --> 00:08:24.333
+Yeah. Hence, the reason our cars are sitting still at the moment.
+
+00:08:24.333 --> 00:08:26.800
+Got it. So, there's nothing in these vectors and so,
+
+00:08:26.800 --> 00:08:27.970
+the car is not going anywhere.
+
+00:08:27.970 --> 00:08:29.087
+Right.
+
+00:08:29.087 --> 00:08:30.860
+Okay. So, how do we make the car go somewhere?
+
+00:08:30.860 --> 00:08:34.940
+Well, there's some starter code in the classroom.
+
+00:08:34.940 --> 00:08:38.170
+I was hoping you would say that. All right.
+
+00:08:38.170 --> 00:08:42.795
+So, this is the first concept in the classroom.
+
+00:08:42.795 --> 00:08:45.420
+There's a, kind of, cool GIF here,
+
+00:08:45.420 --> 00:08:47.815
+talks about the 50-mile an hour speed limit.
+
+00:08:47.815 --> 00:08:50.553
+Yeah. And that's, kind of, illustrating the perfect controller.
+
+00:08:50.553 --> 00:08:53.110
+The car is just going to go exactly at the point that you give
+
+00:08:53.110 --> 00:08:56.203
+it and its angle is going to line up to the points.
+
+00:08:56.203 --> 00:08:57.280
+Got it. Who really cares?
+
+00:08:57.280 --> 00:08:59.487
+I just want to get my car to go somewhere.
+
+00:08:59.487 --> 00:09:00.880
+Well, luckily, it's only,
+
+00:09:00.880 --> 00:09:02.490
+like, six lines of code.
+
+00:09:02.490 --> 00:09:04.240
+Okay. These six lines of code?
+
+00:09:04.240 --> 00:09:04.817
+Yes.
+
+00:09:04.817 --> 00:09:09.820
+These six lines of code. All right. Let's type these and see what we get.
+
+00:09:09.820 --> 00:09:11.500
+Yeah. Go ahead and copy that.
+
+00:09:11.500 --> 00:09:14.016
+Just copy these in.
+
+00:09:14.016 --> 00:09:16.630
+So, maybe I'll put these down here.
+
+00:09:16.630 --> 00:09:22.600
+Maybe I'll just put END here.
+
+00:09:22.600 --> 00:09:38.090
+And, just get the formatting a little bit better.
+
+00:09:38.090 --> 00:09:41.210
+All right. So, let's see, what's going on here?
+
+00:09:41.210 --> 00:09:43.340
+We have a double called, distance increment,
+
+00:09:43.340 --> 00:09:45.630
+I guess, that is 0.5 meters.
+
+00:09:45.630 --> 00:09:49.910
+Yes. So, that's how much the points are going to be spaced apart.
+
+00:09:49.910 --> 00:09:52.215
+Got it. And why 0.5?
+
+00:09:52.215 --> 00:09:54.770
+Is that because this is 50 miles an hour basically?
+
+00:09:54.770 --> 00:09:58.335
+Yes, it's pretty close to 50 miles per hour, it turns out to be.
+
+00:09:58.335 --> 00:10:01.875
+Got it. And then we are iterating through a loop 50 times?
+
+00:10:01.875 --> 00:10:06.220
+Yes. So we're going to be using a constant size of 50 points for a pack planner.
+
+00:10:06.220 --> 00:10:08.570
+Got it. So, the next_x_vals vector and
+
+00:10:08.570 --> 00:10:12.630
+the next_y_vals vector each going to have 50 numbers in them,
+
+00:10:12.630 --> 00:10:16.160
+so that will be 50 points total when you combine the vectors.
+
+00:10:16.160 --> 00:10:21.110
+Each time we're just pushing back kind of this weird calculation
+
+00:10:21.110 --> 00:10:26.590
+(car_x+(dist_ inc*i)*cos(deg2rad(car_yaw). What is that doing?
+
+00:10:26.590 --> 00:10:30.110
+Well, that's just a little bit trigger right there since our car has some angle,
+
+00:10:30.110 --> 00:10:32.955
+we want to be going at that angle constantly,
+
+00:10:32.955 --> 00:10:35.650
+in a straight line with constant velocity.
+
+00:10:35.650 --> 00:10:36.310
+Got it.
+
+00:10:36.310 --> 00:10:39.920
+Constant velocity comes from the fact that we're using the said distance increment.
+
+00:10:39.920 --> 00:10:43.365
+Got it. So, if I make this and run it,
+
+00:10:43.365 --> 00:10:44.780
+the car is going to go in a straight line?
+
+00:10:44.780 --> 00:10:45.160
+Yes.
+
+00:10:45.160 --> 00:10:46.430
+Do you promise?
+
+00:10:46.430 --> 00:10:56.550
+Yes.
+
+00:10:56.550 --> 00:11:00.210
+Let's see, probably should have set up beforehand, all right.
+
+00:11:00.210 --> 00:11:05.725
+So let's run our path planner.
+
+00:11:05.725 --> 00:11:06.150
+Yes.
+
+00:11:06.150 --> 00:11:06.356
+Straight line. Cool.
+
+00:11:06.356 --> 00:11:09.800
+But we're seeing a bunch of red flags popping up. Right?
+
+00:11:09.800 --> 00:11:12.100
+It's alright. We ran through a tree.
+
+00:11:12.100 --> 00:11:14.660
+Okay, first of all,
+
+00:11:14.660 --> 00:11:19.650
+we're going from zero miles per hour instantly to about 50.
+
+00:11:19.650 --> 00:11:21.770
+That's going to create a lot of jerk.
+
+00:11:21.770 --> 00:11:25.675
+Right. Okay, so, what do we do next?
+
+00:11:25.675 --> 00:11:29.465
+Well, now we can actually try to,
+
+00:11:29.465 --> 00:11:32.540
+maybe, either stay in our lane.That would be nice.
+
+00:11:32.540 --> 00:11:33.830
+Staying in the lane is nice.
+
+00:11:33.830 --> 00:11:36.770
+So let's see, could we use Frenet coordinates for that?
+
+00:11:36.770 --> 00:11:37.340
+Sure.
+
+00:11:37.340 --> 00:11:41.200
+So, let's see, we've got, we're creating this.
+
+00:11:41.200 --> 00:11:46.440
+We have this concept list of 50 points.
+
+00:11:46.440 --> 00:11:48.200
+In this list of 50 points.
+
+00:11:48.200 --> 00:11:49.955
+But these are x, y coordinates.
+
+00:11:49.955 --> 00:11:53.120
+And what if instead we're using s, d coordinates?
+
+00:11:53.120 --> 00:11:58.845
+Okay, so, let's try and push
+
+00:11:58.845 --> 00:12:05.055
+new_x_y coordinates onto the vectors
+
+00:12:05.055 --> 00:12:08.690
+that keep us in our way instead of just driving us straight off the road.
+
+00:12:08.690 --> 00:12:13.230
+Right. If we want to try to stay in the lanes Frenet is going to be very helpful to us.
+
+00:12:13.230 --> 00:12:19.110
+Got it. So we could have something like double next_s and that's going to be like get.
+
+00:12:19.110 --> 00:12:20.840
+Or double, sorry.
+
+00:12:20.840 --> 00:12:23.290
+We could start with the cars_s.
+
+00:12:23.290 --> 00:12:24.560
+Okay. Got it.
+
+00:12:24.560 --> 00:12:28.340
+So, we would do double getXY.
+
+00:12:28.340 --> 00:12:34.330
+We'll use getXY a little bit after the next test.
+
+00:12:34.330 --> 00:12:35.130
+Got it.
+
+00:12:35.130 --> 00:12:40.460
+getXY will be actually using our next_s, next_d.
+
+00:12:40.460 --> 00:12:49.169
+Got it. So, we'll do something like car_s+i*dist_inc.
+
+00:12:49.169 --> 00:12:53.310
+So, the car_s got a certain,
+
+00:12:53.310 --> 00:12:55.560
+s coordinate and Frenet coordinates.
+
+00:12:55.560 --> 00:12:57.150
+And as we iterate through this loop,
+
+00:12:57.150 --> 00:13:01.390
+we want to step forward another dist_inc each time. Is that right?
+
+00:13:01.390 --> 00:13:05.430
+Yes, except for instead of just i1 do i+1.
+
+00:13:05.430 --> 00:13:05.431
+Why is that?
+
+00:13:05.431 --> 00:13:08.955
+Otherwise, our first point will be exactly where the car is at,
+
+00:13:08.955 --> 00:13:10.730
+and it won't be transitioning.
+
+00:13:10.730 --> 00:13:11.180
+Got it.
+
+00:13:11.180 --> 00:13:13.505
+And it'll be sitting still.
+
+00:13:13.505 --> 00:13:17.203
+Got it. So, we could do i+1.
+
+00:13:17.203 --> 00:13:19.320
+Got it. Okay.
+
+00:13:19.320 --> 00:13:23.400
+Yes. Now, what do you think about next_d?
+
+00:13:23.400 --> 00:13:27.748
+So, double next_d, next_d.
+
+00:13:27.748 --> 00:13:30.585
+We are in the middle lane,
+
+00:13:30.585 --> 00:13:32.532
+if I remember right.
+
+00:13:32.532 --> 00:13:37.720
+And, the waypoints are measured from the double yellow line in the middle of the road.
+
+00:13:37.720 --> 00:13:41.310
+So, we are like one and a half lanes from where the waypoints are?
+
+00:13:41.310 --> 00:13:42.480
+Yes, that's right.
+
+00:13:42.480 --> 00:13:47.440
+And I think I read in the classroom that the lanes are four meters wide.
+
+00:13:47.440 --> 00:13:52.880
+So, for one and a half lanes away from where the waypoints are,
+
+00:13:52.880 --> 00:13:56.120
+one and a half times four meters wide is six.
+
+00:13:56.120 --> 00:13:56.180
+Yes.
+
+00:13:56.180 --> 00:13:58.290
+So, I'll just set that to six.
+
+00:13:58.290 --> 00:14:00.440
+Yes, that's what's really helpful about Frenet,
+
+00:14:00.440 --> 00:14:04.890
+is if we just want to stay in this constant lane or the d_cons as well.
+
+00:14:04.890 --> 00:14:06.840
+Got it. Okay.
+
+00:14:06.840 --> 00:14:12.160
+Now we're actually ready to create our vector of x, y.
+
+00:14:12.160 --> 00:14:12.670
+Got it.
+
+00:14:12.670 --> 00:14:15.330
+So getXY function will help us with that.
+
+00:14:15.330 --> 00:14:15.810
+Got it.
+
+00:14:15.810 --> 00:14:17.705
+So it may be a vector.
+
+00:14:17.705 --> 00:14:18.955
+Yes, let's go back and look at that,
+
+00:14:18.955 --> 00:14:22.240
+I kind of forgot what the signature of vector getXY function is.
+
+00:14:22.240 --> 00:14:22.630
+Sure.
+
+00:14:22.630 --> 00:14:24.364
+So if we scroll way,
+
+00:14:24.364 --> 00:14:29.970
+way up and we look at getXY.
+
+00:14:29.970 --> 00:14:31.717
+So, it takes s,
+
+00:14:31.717 --> 00:14:32.910
+d, it takes maps_s,
+
+00:14:32.910 --> 00:14:36.865
+maps_x, maps_y and it passes back a vector of doubles.
+
+00:14:36.865 --> 00:14:38.720
+Yes, and we've seen that just two doubles.
+
+00:14:38.720 --> 00:14:40.380
+Yes, just your X and Y.
+
+00:14:40.380 --> 00:14:42.520
+One X, one Y. Okay.
+
+00:14:42.520 --> 00:14:43.398
+So, let's do that.
+
+00:14:43.398 --> 00:14:54.080
+So, we'll have maybe,
+
+00:14:54.080 --> 00:15:02.690
+vector&amp;lt;double&amp;gt; xy = getXY and that's
+
+00:15:02.690 --> 00:15:11.630
+going to be next_s, next_d, maps_s, maps.
+
+00:15:11.630 --> 00:15:16.252
+Of course, it'll be called something all the different than maps_s.
+
+00:15:16.252 --> 00:15:17.930
+You're so tricky.
+
+00:15:17.930 --> 00:15:21.818
+Yes. That was an abbreviation.
+
+00:15:21.818 --> 00:15:24.150
+So, right there, map_waypoints_s.
+
+00:15:24.150 --> 00:15:25.940
+Let's see.
+
+00:15:25.940 --> 00:15:27.390
+Line 195.
+
+00:15:27.390 --> 00:15:30.020
+Just going to look for where you declared it.
+
+00:15:30.020 --> 00:15:32.343
+So you declared map_waypoints_x,
+
+00:15:32.343 --> 00:15:36.940
+map_waypoints_y and maps_waypoints_s. Okay.
+
+00:15:36.940 --> 00:15:40.340
+The function was using an abbreviated handle.
+
+00:15:40.340 --> 00:15:51.800
+Got it. So, map_waypoints_s,
+
+00:15:51.800 --> 00:16:01.742
+map_waypoints_x, map_waypoints_y.
+
+00:16:01.742 --> 00:16:06.420
+Okay, so now I've got X and Y.
+
+00:16:06.420 --> 00:16:07.400
+Cool.
+
+00:16:07.400 --> 00:16:11.895
+And if I just push them on here, so, next_x_vals,
+
+00:16:11.895 --> 00:16:16.725
+just going to be the first element in x y and then we'll push
+
+00:16:16.725 --> 00:16:23.280
+the second element in x y onto the y vector to the next y_vals vector.
+
+00:16:23.280 --> 00:16:25.310
+(xy[1]).
+
+00:16:25.310 --> 00:16:26.200
+Yes.
+
+00:16:26.200 --> 00:16:28.650
+So, we'll save that.
+
+00:16:28.650 --> 00:16:30.493
+So far so good.
+
+00:16:30.493 --> 00:16:32.190
+See, I think it's going to make.
+
+00:16:32.190 --> 00:16:39.480
+The suspense is killing me.
+
+00:16:39.480 --> 00:16:41.190
+All right. Path planning.
+
+00:16:41.190 --> 00:16:44.970
+Yep, let's see how it runs.
+
+00:16:44.970 --> 00:16:45.860
+Let's do it.
+
+00:16:45.860 --> 00:16:49.670
+We expect it to stay in its lane this time.
+
+00:16:49.670 --> 00:16:51.050
+It's staying in its lane.
+
+00:16:51.050 --> 00:16:54.490
+It's still on the red but it is staying in its lane.
+
+00:16:54.490 --> 00:16:57.135
+Yes, so let's kind of talk about what's happening.
+
+00:16:57.135 --> 00:17:01.273
+So, it didn't take too many lines of code just to get to stay in its lane,
+
+00:17:01.273 --> 00:17:05.400
+but it's a very crude representation of these points.
+
+00:17:05.400 --> 00:17:07.040
+We're relying quite a bit on
+
+00:17:07.040 --> 00:17:14.075
+the get_xy function and it works pretty well except on these boundary cases.
+
+00:17:14.075 --> 00:17:23.345
+Our map is made up of these sparse waypoints and we have these corners and line segments.
+
+00:17:23.345 --> 00:17:26.900
+At these corners, these points tend to get kind of bunched
+
+00:17:26.900 --> 00:17:30.250
+up and that's going to cause some acceleration and jerk issues.
+
+00:17:30.250 --> 00:17:32.200
+Got it. It looks like we're violating the speed limit.
+
+00:17:32.200 --> 00:17:34.790
+The speed limit's 55 miles an hour and we're-
+
+00:17:34.790 --> 00:17:38.015
+That's because we're still using 0.5.
+
+00:17:38.015 --> 00:17:40.650
+We could fix that maybe by doing 0.4 but-
+
+00:17:40.650 --> 00:17:42.890
+Let's start with that and see what happens.
+
+00:17:42.890 --> 00:17:45.410
+We're really harassing the other cars on the road as well.
+
+00:17:45.410 --> 00:17:48.300
+You're not a good driver.
+
+00:17:48.300 --> 00:17:52.834
+Okay, so let's take a look at,
+
+00:17:52.834 --> 00:18:01.320
+so if we just shorten distance increment to something like 0.3,
+
+00:18:01.320 --> 00:18:03.680
+is that going to solve our speed limit problems?
+
+00:18:03.680 --> 00:18:08.285
+It will help the average speed.
+
+00:18:08.285 --> 00:18:10.190
+It should be much lower,
+
+00:18:10.190 --> 00:18:12.650
+but there'll still be times and those
+
+00:18:12.650 --> 00:18:15.530
+corner cases where the points may get bunched up and
+
+00:18:15.530 --> 00:18:18.080
+their spacing is a little weird just in
+
+00:18:18.080 --> 00:18:22.645
+that transformation because it's not exactly linear.
+
+00:18:22.645 --> 00:18:24.945
+Got it. So, the average speed is a lot lower,
+
+00:18:24.945 --> 00:18:26.920
+we're at 33 miles an hour now.
+
+00:18:26.920 --> 00:18:27.560
+Yes.
+
+00:18:27.560 --> 00:18:30.405
+And we're not violating the speed limit that often,
+
+00:18:30.405 --> 00:18:34.100
+but every once in a while, it does say we are violating the speed limit.
+
+00:18:34.100 --> 00:18:38.385
+Yes and we can kind of visually see that on those corner cases.
+
+00:18:38.385 --> 00:18:40.535
+It looks like the points are, for the most part,
+
+00:18:40.535 --> 00:18:43.875
+all nicely spaced except there's this edge.
+
+00:18:43.875 --> 00:18:48.636
+Got it. So now we've got the car driving slowly in its lane,
+
+00:18:48.636 --> 00:18:53.740
+but there are this kind of inflection points where all of a sudden the car jerks,
+
+00:18:53.740 --> 00:18:55.400
+maybe even violates the speed limit.
+
+00:18:55.400 --> 00:18:59.120
+What we really need to do is smooth out that path.
+
+00:18:59.120 --> 00:19:01.300
+We need to smooth the path.
+
+00:19:01.300 --> 00:19:03.020
+So, how are we going to do that?
+
+00:19:03.020 --> 00:19:10.325
+There was a lesson on jerk minimization in the trajectory generation lesson.
+
+00:19:10.325 --> 00:19:12.800
+But I saw it in the classroom,
+
+00:19:12.800 --> 00:19:14.720
+you mentioned something about splines.
+
+00:19:14.720 --> 00:19:17.330
+There's this awesome spline library that we
+
+00:19:17.330 --> 00:19:20.205
+can take advantage of and it's not too far-fetched
+
+00:19:20.205 --> 00:19:23.000
+from what we're doing in previous projects like MPC where
+
+00:19:23.000 --> 00:19:26.150
+we're using a polynomial that fit through waypoints.
+
+00:19:26.150 --> 00:19:26.930
+Okay.
+
+00:19:26.930 --> 00:19:29.330
+There's some advantages of a spline over
+
+00:19:29.330 --> 00:19:32.375
+a polynomial where the spline is guaranteed to go through
+
+00:19:32.375 --> 00:19:38.130
+all the points because it's a piecewise function of polynomials.
+
+00:19:38.130 --> 00:19:43.300
+Got it. So, here's the spline library in the classroom.
+
+00:19:43.300 --> 00:19:45.620
+So I remember in college,
+
+00:19:45.620 --> 00:19:48.945
+I took a whole class on numerical analysis,
+
+00:19:48.945 --> 00:19:52.110
+and my memory is like a third of the class was on splines.
+
+00:19:52.110 --> 00:19:52.940
+Okay.
+
+00:19:52.940 --> 00:19:56.120
+There are all sorts of weird ways to calculate splines,
+
+00:19:56.120 --> 00:19:59.096
+piecewise functions that go through points.
+
+00:19:59.096 --> 00:20:02.875
+They're kind of like polynomial fits,
+
+00:20:02.875 --> 00:20:05.240
+except they go through all the points and they're
+
+00:20:05.240 --> 00:20:08.120
+guaranteed to have smooth transitions through the points.
+
+00:20:08.120 --> 00:20:10.240
+Yes, first and second derivatives.
+
+00:20:10.240 --> 00:20:13.160
+Right. Why use splines instead of polynomial fits?
+
+00:20:13.160 --> 00:20:19.290
+Because we have this library here that will make it very easy for us.
+
+00:20:19.290 --> 00:20:20.690
+Got it. So somebody wrote the code,
+
+00:20:20.690 --> 00:20:23.990
+so we're going to use splines instead of polynomial fit.
+
+00:20:23.990 --> 00:20:24.860
+Single header file.
+
+00:20:24.860 --> 00:20:26.065
+To single header file.
+
+00:20:26.065 --> 00:20:29.425
+Okay. So we've got this header file here, we'll download it.
+
+00:20:29.425 --> 00:20:32.110
+I think I've actually already done that.
+
+00:20:32.110 --> 00:20:37.037
+Let's take a look in our source file.
+
+00:20:37.037 --> 00:20:40.360
+Source, spline.
+
+00:20:40.360 --> 00:20:42.568
+Yep, it's already there.
+
+00:20:42.568 --> 00:20:45.690
+So if we come over here,
+
+00:20:45.690 --> 00:20:51.470
+we'll have to add it way up top in our includes list.
+
+00:20:51.470 --> 00:20:53.730
+Yes, include spline.h.
+
+00:20:53.730 --> 00:20:55.128
+Got it.
+
+00:20:55.128 --> 00:20:57.870
+But you could do a polynomial fitting here too.
+
+00:20:57.870 --> 00:21:01.230
+There's a lot of freedom when it comes to building this path planner.
+
+00:21:01.230 --> 00:21:04.190
+Okay. But I like code that someone else wrote for me.
+
+00:21:04.190 --> 00:21:05.970
+Yes, it's kind of nice.
+
+00:21:05.970 --> 00:21:09.320
+Let's see. Do we have spines.h in here anywhere?
+
+00:21:09.320 --> 00:21:11.950
+No, you'll need to include it.
+
+00:21:11.950 --> 00:21:14.417
+Okay, #include.
+
+00:21:14.417 --> 00:21:17.611
+Do you remember if it's spline.h or splines.h?
+
+00:21:17.611 --> 00:21:20.888
+I think it's just spline.h, I would say.
+
+00:21:20.888 --> 00:21:33.110
+Spline.h, okay. I shouldn't have cleared my bash history here,
+
+00:21:33.110 --> 00:21:35.510
+ll_source_spline.h Okay, so now we've included spline.h,
+
+00:21:35.510 --> 00:21:40.475
+and what we need to use spline.h for is
+
+00:21:40.475 --> 00:21:46.115
+smoothing out that kind of disjointed path that the car was following in the simulator.
+
+00:21:46.115 --> 00:21:49.676
+Yes. I really like your solution,
+
+00:21:49.676 --> 00:21:52.900
+but I might try to do something a little bit different.
+
+00:21:52.900 --> 00:21:54.000
+What are you trying to do?
+
+00:21:54.000 --> 00:21:58.150
+Well, I might actually try to create some points,
+
+00:21:58.150 --> 00:22:01.130
+just a couple, that are pretty far spaced,
+
+00:22:01.130 --> 00:22:02.820
+maybe 30 meters or so,
+
+00:22:02.820 --> 00:22:05.480
+and then use a spline to fit that
+
+00:22:05.480 --> 00:22:09.030
+and then actually try to take points inside that spline.
+
+00:22:09.030 --> 00:22:11.340
+Got it.
+
+00:22:11.340 --> 00:22:13.340
+Okay. So let's try that.
+
+00:22:13.340 --> 00:22:17.110
+Okay. I just so happen to send you some code that does that.
+
+00:22:17.110 --> 00:22:22.900
+Oh, my goodness. Okay. Let's switch to your file.
+
+00:22:22.900 --> 00:22:30.375
+I think I saved that in the source directory, aaron.cpp.
+
+00:22:30.375 --> 00:22:41.390
+I don't know why I tried the cd, source aaron.cpp.
+
+00:22:41.390 --> 00:22:43.860
+Now, we'll copy that over to main.
+
+00:22:43.860 --> 00:22:45.908
+So now you've got this main cpp file.
+
+00:22:45.908 --> 00:22:49.840
+I've already got spline.h included in everything.
+
+00:22:49.840 --> 00:22:53.045
+Okay. You're way ahead of me.
+
+00:22:53.045 --> 00:22:56.760
+Okay. So, let's scroll down
+
+00:22:56.760 --> 00:23:00.760
+here and then maybe you can kind of walk us through what's going on.
+
+00:23:00.760 --> 00:23:01.520
+Yes, definitely.
+
+00:23:01.520 --> 00:23:04.570
+...to do or we can just search to do.
+
+00:23:04.570 --> 00:23:05.280
+We're almost there, int main
+
+00:23:05.280 --> 00:23:06.960
+Almost there.
+
+00:23:06.960 --> 00:23:08.670
+We're very close.
+
+00:23:08.670 --> 00:23:14.130
+Okay. We're doing what we're doing last time and collecting all those map waypoints.
+
+00:23:14.130 --> 00:23:15.823
+Let's see.
+
+00:23:15.823 --> 00:23:17.220
+So if telemetry,
+
+00:23:17.220 --> 00:23:19.620
+then you've got some commented code here.
+
+00:23:19.620 --> 00:23:21.135
+Yeah, we'll kind of go through that later.
+
+00:23:21.135 --> 00:23:22.440
+Okay.
+
+00:23:22.440 --> 00:23:25.965
+All right, we'll keep things as simple as possible for right now.
+
+00:23:25.965 --> 00:23:29.280
+All we want the car to do is stay in its lane and go at
+
+00:23:29.280 --> 00:23:33.360
+a constant velocity and try to be as smooth.
+
+00:23:33.360 --> 00:23:33.880
+Okay.
+
+00:23:33.880 --> 00:23:35.970
+Not violate its acceleration and jerk.
+
+00:23:35.970 --> 00:23:37.880
+Got it. So what are you doing here?
+
+00:23:37.880 --> 00:23:42.530
+Well, to start out with,
+
+00:23:42.530 --> 00:23:46.430
+I'm going to actually come up here and define two variables.
+
+00:23:46.430 --> 00:23:47.450
+Okay.
+
+00:23:47.450 --> 00:23:49.805
+These two variables are my lane.
+
+00:23:49.805 --> 00:23:52.165
+So I'm going to start in lane one.
+
+00:23:52.165 --> 00:23:55.955
+I can use this so I can quickly switch to other lanes if I need to.
+
+00:23:55.955 --> 00:23:58.050
+So lane zero is kind of the far left lane,
+
+00:23:58.050 --> 00:23:59.805
+lane one is the middle lane, and lane two is the right lane?
+
+00:23:59.805 --> 00:24:02.520
+Yes, exactly. And then,
+
+00:24:02.520 --> 00:24:05.440
+I'm also going to be telling it some reference velocity.
+
+00:24:05.440 --> 00:24:08.965
+Right here, I just kind of want to go as close to the speed limit as possible.
+
+00:24:08.965 --> 00:24:12.300
+I don't want to go over it, so I'm doing 49.5.
+
+00:24:12.300 --> 00:24:13.825
+Okay.
+
+00:24:13.825 --> 00:24:19.360
+And once I come in here and I get past just getting some of these variables,
+
+00:24:19.360 --> 00:24:22.660
+I'm going to be setting this previous size,
+
+00:24:22.660 --> 00:24:25.535
+which comes from the previous path size.
+
+00:24:25.535 --> 00:24:27.220
+So I had this previous list of
+
+00:24:27.220 --> 00:24:30.580
+points and that can really help me when I'm doing a transition.
+
+00:24:30.580 --> 00:24:33.685
+So this is the last path that the car was following
+
+00:24:33.685 --> 00:24:38.260
+before it does this particular run through of calculating more points?
+
+00:24:38.260 --> 00:24:42.400
+Yes. And the simulator will actually be telling me what that previous path was.
+
+00:24:42.400 --> 00:24:43.770
+Got it. Okay.
+
+00:24:43.770 --> 00:24:47.410
+So, let's kind of scroll down here.
+
+00:24:47.410 --> 00:24:50.260
+So will that be 50 because the path is always 50 points?
+
+00:24:50.260 --> 00:24:53.415
+You could even do 100, you could do 1,000.
+
+00:24:53.415 --> 00:24:58.330
+You have a lot of freedom to have this path planner do as many points ahead as you want.
+
+00:24:58.330 --> 00:24:58.810
+Got it.
+
+00:24:58.810 --> 00:25:01.650
+And there are some advantages and disadvantages to doing that.
+
+00:25:01.650 --> 00:25:02.000
+Okay.
+
+00:25:02.000 --> 00:25:06.030
+If it gets stuck at 1,000 and you're using previous points,
+
+00:25:06.030 --> 00:25:09.110
+maybe there's some sudden change in
+
+00:25:09.110 --> 00:25:10.990
+the environment and it wouldn't be able to react in
+
+00:25:10.990 --> 00:25:13.250
+time because it's stuck using those previous points.
+
+00:25:13.250 --> 00:25:14.565
+Okay.
+
+00:25:14.565 --> 00:25:20.620
+So I was kind of saying that I kind of want to use these sparsely spaced waypoints.
+
+00:25:20.620 --> 00:25:25.525
+So I'm just going to create this vector double list and kind of build from there.
+
+00:25:25.525 --> 00:25:29.190
+Also I want to keep track of my reference state.
+
+00:25:29.190 --> 00:25:32.110
+It's either going to be where the car is at or it's going
+
+00:25:32.110 --> 00:25:36.010
+to be at this previous path's endpoint.
+
+00:25:36.010 --> 00:25:38.945
+So I defined this reference x, y and yaw.
+
+00:25:38.945 --> 00:25:41.575
+So x, y and angle.
+
+00:25:41.575 --> 00:25:45.460
+Now I'm just going to check out what the previous path size was.
+
+00:25:45.460 --> 00:25:47.110
+It's either going to be pretty close to
+
+00:25:47.110 --> 00:25:52.370
+empty or it's going to have some points that I can take advantage of.
+
+00:25:52.370 --> 00:25:53.650
+If it's pretty much empty,
+
+00:25:53.650 --> 00:25:55.730
+I'm just going to use a car state.
+
+00:25:55.730 --> 00:25:58.630
+So right here, I'm interested in
+
+00:25:58.630 --> 00:26:03.510
+creating this path that's tangent to the angle of the car.
+
+00:26:03.510 --> 00:26:08.290
+So I'm going to be looking at where the car is at,
+
+00:26:08.290 --> 00:26:11.620
+and I can just kind of go backwards in time based on
+
+00:26:11.620 --> 00:26:17.335
+its angle and I can generate two points to make sure that path is tangent.
+
+00:26:17.335 --> 00:26:22.860
+So that's if I'm just starting out and I don't really have any previous path points.
+
+00:26:22.860 --> 00:26:25.000
+If I do have some previous path points,
+
+00:26:25.000 --> 00:26:29.140
+I'm just going to be doing the same thing where I'm going to make sure it's tangent by
+
+00:26:29.140 --> 00:26:34.180
+using the last point in that previous path and its second last point.
+
+00:26:34.180 --> 00:26:37.775
+And I'm just going to be adding this to my points x and points y.
+
+00:26:37.775 --> 00:26:42.430
+I'm also going to change this reference x and reference y to
+
+00:26:42.430 --> 00:26:46.225
+the last element in the previous path and then go ahead and
+
+00:26:46.225 --> 00:26:50.800
+calculate it just using our tangent.
+
+00:26:50.800 --> 00:26:51.992
+Got it.
+
+00:26:51.992 --> 00:26:54.790
+So basically what you're doing is you're looking at what were
+
+00:26:54.790 --> 00:27:00.940
+the last couple of points in the previous path that the car was following,
+
+00:27:00.940 --> 00:27:08.115
+and then calculating what angle the car was heading in using those last couple of points.
+
+00:27:08.115 --> 00:27:08.237
+Yeah.
+
+00:27:08.237 --> 00:27:11.675
+Is that right? And then you're pushing them onto a list of previous points?
+
+00:27:11.675 --> 00:27:15.940
+Yeah. So, so far I've pushed two x and two y.
+
+00:27:15.940 --> 00:27:21.630
+Got it. So you've got two points basically on this pair of vectors?
+
+00:27:21.630 --> 00:27:23.220
+Yes.
+
+00:27:23.220 --> 00:27:26.640
+And now that's my starting reference.
+
+00:27:26.640 --> 00:27:28.155
+And then here's some other points.
+
+00:27:28.155 --> 00:27:30.570
+So I'm using Frenet.
+
+00:27:30.570 --> 00:27:32.863
+This is kind of what you were doing before,
+
+00:27:32.863 --> 00:27:36.025
+but I'm just making sure that they are spaced pretty far apart.
+
+00:27:36.025 --> 00:27:40.106
+Got it. So instead of just looking at one distance increment,
+
+00:27:40.106 --> 00:27:45.140
+you're looking out basically 30, 60, 90.
+
+00:27:45.140 --> 00:27:46.860
+And instead of looping through and creating 50
+
+00:27:46.860 --> 00:27:48.830
+of these you're just creating three of them?
+
+00:27:48.830 --> 00:27:49.610
+That's right.
+
+00:27:49.610 --> 00:27:49.703
+Okay.
+
+00:27:49.703 --> 00:27:51.860
+So I'm going to be pushing three more points but instead of
+
+00:27:51.860 --> 00:27:54.600
+just them being 0.5 meter spaced,
+
+00:27:54.600 --> 00:27:56.120
+they're all the way to 30.
+
+00:27:56.120 --> 00:28:01.468
+Got it. And where I had six as the d coordinate you have two plus four times lane,
+
+00:28:01.468 --> 00:28:03.100
+lane here is one.
+
+00:28:03.100 --> 00:28:05.260
+So two plus four times one is going to be six.
+
+00:28:05.260 --> 00:28:05.348
+Yeah.
+
+00:28:05.348 --> 00:28:07.915
+But if you ever change the lane variable that would get to [inaudible].
+
+00:28:07.915 --> 00:28:09.660
+That can be very helpful too.
+
+00:28:09.660 --> 00:28:10.695
+Got it. Okay.
+
+00:28:10.695 --> 00:28:14.350
+Yeah. So go ahead and push those points.
+
+00:28:14.350 --> 00:28:17.155
+So what is this? What are these vectors of points have now?
+
+00:28:17.155 --> 00:28:19.350
+They have the two previous points plus they
+
+00:28:19.350 --> 00:28:25.690
+have the location of the car in 30 meters basically and then in 60 and 90 meters?
+
+00:28:25.690 --> 00:28:26.190
+Yes.
+
+00:28:26.190 --> 00:28:28.590
+So it's got five points on it now, right?
+
+00:28:28.590 --> 00:28:29.060
+Right.
+
+00:28:29.060 --> 00:28:32.370
+Okay.
+
+00:28:32.370 --> 00:28:36.230
+Okay. Now this is something that's actually very helpful to do that I found,
+
+00:28:36.230 --> 00:28:42.180
+and that's doing a transformation to this local car's coordinates.
+
+00:28:42.180 --> 00:28:44.965
+So something that we did at MPC.
+
+00:28:44.965 --> 00:28:48.395
+We shift it so we make sure that the car or
+
+00:28:48.395 --> 00:28:52.128
+that last point of the previous path is at zero,
+
+00:28:52.128 --> 00:28:56.020
+zero, the origin and its angles at zero degrees.
+
+00:28:56.020 --> 00:28:57.830
+And this will come into play later.
+
+00:28:57.830 --> 00:28:59.480
+So just bear with me maybe.
+
+00:28:59.480 --> 00:29:01.245
+Bear with you, okay.
+
+00:29:01.245 --> 00:29:04.145
+So we're taking if the car is heading this way,
+
+00:29:04.145 --> 00:29:05.888
+kind of an xy coordinates,
+
+00:29:05.888 --> 00:29:09.020
+we want to shift this so we're looking in the car's reference frame.
+
+00:29:09.020 --> 00:29:12.000
+So it's just kind of going straight ahead instead of being at
+
+00:29:12.000 --> 00:29:15.750
+45 degrees maybe it should always be at zero degrees.
+
+00:29:15.750 --> 00:29:17.350
+Makes the math much easier to work with.
+
+00:29:17.350 --> 00:29:19.270
+Makes the math easier. Okay.
+
+00:29:19.270 --> 00:29:21.730
+Okay. So we do that transformation here.
+
+00:29:21.730 --> 00:29:23.330
+It's a shift in rotation.
+
+00:29:23.330 --> 00:29:23.580
+Okay.
+
+00:29:23.580 --> 00:29:26.330
+So this is some of the math you might recognize from MPC.
+
+00:29:26.330 --> 00:29:27.690
+Okay.
+
+00:29:27.690 --> 00:29:32.660
+Here is that spline that we've been building up to.
+
+00:29:32.660 --> 00:29:34.000
+Back to the spline, okay.
+
+00:29:34.000 --> 00:29:37.580
+Yeah. So I define a spline s and then I
+
+00:29:37.580 --> 00:29:41.570
+simply set some points x and points y to the spline.
+
+00:29:41.570 --> 00:29:41.770
+Okay.
+
+00:29:41.770 --> 00:29:46.400
+And here is actually
+
+00:29:46.400 --> 00:29:51.250
+where I'm building what we were working with last time xx vowels and xy vowels.
+
+00:29:51.250 --> 00:29:54.055
+These are actual points that the path planner is going to be using.
+
+00:29:54.055 --> 00:29:58.850
+Okay. So we have this one set of x and y points and now we've got
+
+00:29:58.850 --> 00:30:05.000
+this other set that's empty at the moment that we need to build the future path in.
+
+00:30:05.000 --> 00:30:08.395
+Yes. So we're just getting that all set up.
+
+00:30:08.395 --> 00:30:12.020
+We've been talking a lot about the previous path and here's where it comes into play.
+
+00:30:12.020 --> 00:30:12.620
+Okay.
+
+00:30:12.620 --> 00:30:15.590
+So if I have any points from my previous path I'm just
+
+00:30:15.590 --> 00:30:19.640
+going to go ahead and I'm going to add them to my path planner.
+
+00:30:19.640 --> 00:30:19.835
+Got it.
+
+00:30:19.835 --> 00:30:21.905
+This kind of helps out with the transition.
+
+00:30:21.905 --> 00:30:28.445
+So you make sure that instead of recreating the path from scratch every single time,
+
+00:30:28.445 --> 00:30:33.710
+why not just add points onto it and work with what you still had left from last time.
+
+00:30:33.710 --> 00:30:36.320
+Got it. So if the previous path was
+
+00:30:36.320 --> 00:30:41.105
+50 points then there are always going to be 50 points here that we had on?
+
+00:30:41.105 --> 00:30:44.270
+Yeah. That's what we're kind of doing right
+
+00:30:44.270 --> 00:30:47.760
+here where we have 50 minus a previous path x dot size.
+
+00:30:47.760 --> 00:30:51.162
+Got it. Isn't this 50 minus previous path x dot size always going to be zero,
+
+00:30:51.162 --> 00:30:53.930
+it's previous path x dot size is 50?
+
+00:30:53.930 --> 00:30:58.735
+Previous path size will be less than 50.
+
+00:30:58.735 --> 00:31:00.560
+Let's say that you're running an iteration,
+
+00:31:00.560 --> 00:31:02.485
+you generate 50 points.
+
+00:31:02.485 --> 00:31:05.105
+Maybe the simulator goes through three of those points.
+
+00:31:05.105 --> 00:31:09.757
+So you have 47 left over that it's going to report the next time around.
+
+00:31:09.757 --> 00:31:11.300
+So now you have 47.
+
+00:31:11.300 --> 00:31:16.700
+The previous path x dot or previous path x is not the full previous path,
+
+00:31:16.700 --> 00:31:18.725
+it's whatever kind of
+
+00:31:18.725 --> 00:31:23.020
+pac-man nuggets in the previous path didn't get eaten up by the car.
+
+00:31:23.020 --> 00:31:23.810
+Yeah, exactly.
+
+00:31:23.810 --> 00:31:27.320
+So if the car ate up three points out of 50 point path last time,
+
+00:31:27.320 --> 00:31:30.160
+the previous path is going to have the 47 remaining points.
+
+00:31:30.160 --> 00:31:32.090
+So we only need to generate three points.
+
+00:31:32.090 --> 00:31:37.950
+Got it. Or if the car ate up 40 points previous path will have 10 points left.
+
+00:31:37.950 --> 00:31:38.440
+Exactly.
+
+00:31:38.440 --> 00:31:39.760
+Got it. Okay.
+
+00:31:39.760 --> 00:31:41.140
+All right.
+
+00:31:41.140 --> 00:31:47.290
+So we add on our previous path points.
+
+00:31:47.290 --> 00:31:51.370
+And here's where it gets a little bit interesting.
+
+00:31:51.370 --> 00:31:57.650
+I went ahead and I added these points to the spline but I
+
+00:31:57.650 --> 00:32:00.140
+want to figure out how to space
+
+00:32:00.140 --> 00:32:04.770
+these points along the spline so that I go at my desired speed.
+
+00:32:04.770 --> 00:32:06.950
+Wait, where did you add them to the spline?
+
+00:32:06.950 --> 00:32:09.450
+So they're all added right here.
+
+00:32:09.450 --> 00:32:13.600
+I added points x and points y to s.
+
+00:32:13.600 --> 00:32:17.030
+Got it. So these are those five anchor points not the previous path point.
+
+00:32:17.030 --> 00:32:20.915
+Exactly, we're dealing with kind of two sets.
+
+00:32:20.915 --> 00:32:21.190
+Okay.
+
+00:32:21.190 --> 00:32:27.945
+If you will. We're dealing with our far-spaced waypoints that make up the spline,
+
+00:32:27.945 --> 00:32:30.760
+and we deal with our path planning points.
+
+00:32:30.760 --> 00:32:34.365
+Okay. Let's call the first set like the anchor points so I can keep them straight.
+
+00:32:34.365 --> 00:32:39.160
+And then the second set will be like the next x files or future path or something.
+
+00:32:39.160 --> 00:32:39.416
+Yeah.
+
+00:32:39.416 --> 00:32:41.930
+Okay. So you've added the anchor points to the spline,
+
+00:32:41.930 --> 00:32:44.010
+kind of in the middle here.
+
+00:32:44.010 --> 00:32:48.560
+You loaded up the future path with whatever was left of the previous path.
+
+00:32:48.560 --> 00:32:49.220
+Exactly.
+
+00:32:49.220 --> 00:32:51.515
+So there's some continuity, I guess.
+
+00:32:51.515 --> 00:32:55.870
+And now we're back to looking at the spline and the anchor points. Is that right?
+
+00:32:55.870 --> 00:32:56.470
+Yes.
+
+00:32:56.470 --> 00:32:56.830
+Okay.
+
+00:32:56.830 --> 00:32:59.530
+And this would be a great time to bring up some visual aid.
+
+00:32:59.530 --> 00:33:01.480
+Okay. Bring up some visual aid.
+
+00:33:01.480 --> 00:33:02.110
+Yes.
+
+00:33:02.110 --> 00:33:05.340
+Let's see, like that visual aid?
+
+00:33:05.340 --> 00:33:06.280
+Exactly.
+
+00:33:06.280 --> 00:33:08.230
+Okay. That's beautiful. Did you do that?
+
+00:33:08.230 --> 00:33:13.002
+Oh yeah. True artist over here.
+
+00:33:13.002 --> 00:33:17.260
+Here is our car in our local coordinate system.
+
+00:33:17.260 --> 00:33:17.780
+Okay.
+
+00:33:17.780 --> 00:33:20.100
+And you can see it's going at zero degrees.
+
+00:33:20.100 --> 00:33:20.830
+Okay.
+
+00:33:20.830 --> 00:33:23.690
+This is kind of our spline that we have.
+
+00:33:23.690 --> 00:33:24.090
+Okay.
+
+00:33:24.090 --> 00:33:28.580
+What I would love to get is these points that are spaced along
+
+00:33:28.580 --> 00:33:33.705
+the spline and spaced in the way that the car will go at the desired speed.
+
+00:33:33.705 --> 00:33:36.530
+Got it. So you need these points to be kind of
+
+00:33:36.530 --> 00:33:38.625
+the exact right distance aparts if the car is going
+
+00:33:38.625 --> 00:33:41.745
+50 miles an hour or 49.5 miles an hour or whatever?
+
+00:33:41.745 --> 00:33:42.410
+Right.
+
+00:33:42.410 --> 00:33:44.690
+Got it. Can't you just look that up?
+
+00:33:44.690 --> 00:33:47.565
+So I have to do some math.
+
+00:33:47.565 --> 00:33:51.890
+Okay. I'm just going to linearize and actually,
+
+00:33:51.890 --> 00:33:53.160
+it ends up working pretty well.
+
+00:33:53.160 --> 00:33:54.040
+Okay.
+
+00:33:54.040 --> 00:33:57.760
+I'm just going to do that by looking out some horizon value,
+
+00:33:57.760 --> 00:33:59.130
+let's say 30 meters.
+
+00:33:59.130 --> 00:33:59.660
+Okay.
+
+00:33:59.660 --> 00:34:03.765
+And we can figure out where that point lies on the spline
+
+00:34:03.765 --> 00:34:08.755
+because we have this s function and it's just f of x.
+
+00:34:08.755 --> 00:34:12.225
+We give our spline some x and it will give us some y.
+
+00:34:12.225 --> 00:34:18.470
+And we just calculate the distance from the car to this target point that I'm setting.
+
+00:34:18.470 --> 00:34:21.850
+We have this d. Here's where the math comes in.
+
+00:34:21.850 --> 00:34:22.850
+Okay.
+
+00:34:22.850 --> 00:34:26.250
+I want to split this up into n pieces.
+
+00:34:26.250 --> 00:34:29.645
+And it turns out that these n pieces times
+
+00:34:29.645 --> 00:34:34.540
+0.02 because the car will visit a point every 0.02 seconds.
+
+00:34:34.540 --> 00:34:35.100
+Okay.
+
+00:34:35.100 --> 00:34:39.035
+Times the velocity, this is actually my desired velocity,
+
+00:34:39.035 --> 00:34:40.490
+is equal to D.
+
+00:34:40.490 --> 00:34:41.330
+Okay. Okay.
+
+00:34:41.330 --> 00:34:44.170
+That's because this is in seconds.
+
+00:34:44.170 --> 00:34:46.590
+This is in meters per second.
+
+00:34:46.590 --> 00:34:49.310
+This cancels out the seconds, we have meters.
+
+00:34:49.310 --> 00:34:52.130
+In each end piece there's some meters.
+
+00:34:52.130 --> 00:34:53.495
+And when we have all the ends,
+
+00:34:53.495 --> 00:34:54.770
+we get the full distance.
+
+00:34:54.770 --> 00:34:57.785
+Got it. So that's velocity right there.
+
+00:34:57.785 --> 00:34:58.320
+That is.
+
+00:34:58.320 --> 00:35:03.500
+I couldn't quite tell what that was. Okay. That's a vel for velocity?
+
+00:35:03.500 --> 00:35:06.110
+All right. So, what's the takeaway here?
+
+00:35:06.110 --> 00:35:10.115
+The takeaway is that when we do this,
+
+00:35:10.115 --> 00:35:12.695
+we can calculate what n should be.
+
+00:35:12.695 --> 00:35:16.055
+And since this is just a triangle, it turns out that,
+
+00:35:16.055 --> 00:35:19.160
+since this is broken up into n for the hypotenuse,
+
+00:35:19.160 --> 00:35:23.150
+will also be broken up an n for this x axis as well.
+
+00:35:23.150 --> 00:35:23.300
+Okay.
+
+00:35:23.300 --> 00:35:26.585
+And then, once we have these x values,
+
+00:35:26.585 --> 00:35:28.280
+we just tell the spline, "Hey,
+
+00:35:28.280 --> 00:35:30.380
+what's the y value for this x?"
+
+00:35:30.380 --> 00:35:32.090
+And we get these points.
+
+00:35:32.090 --> 00:35:33.799
+So you just tell the spline,
+
+00:35:33.799 --> 00:35:35.300
+"Here's an x value,
+
+00:35:35.300 --> 00:35:38.715
+can you give us the corresponding y value for this x value?"
+
+00:35:38.715 --> 00:35:39.440
+Exactly.
+
+00:35:39.440 --> 00:35:39.790
+Got it.
+
+00:35:39.790 --> 00:35:41.810
+And we just go through that for how many points we
+
+00:35:41.810 --> 00:35:44.720
+need and we get XYs along the spline.
+
+00:35:44.720 --> 00:35:46.800
+Got it. Can you show that in the code?
+
+00:35:46.800 --> 00:35:49.680
+Yes, definitely.
+
+00:35:49.680 --> 00:35:50.294
+Okay.
+
+00:35:50.294 --> 00:35:52.605
+So that's exactly what we're doing right here.
+
+00:35:52.605 --> 00:35:55.940
+That's our horizon going out 30.
+
+00:35:55.940 --> 00:35:56.562
+Got it. There we go. Sorry.
+
+00:35:56.562 --> 00:35:58.920
+Okay.
+
+00:35:58.920 --> 00:36:01.250
+Our target y like I was saying,
+
+00:36:01.250 --> 00:36:04.190
+we just ask the spline what's the y for that given x.
+
+00:36:04.190 --> 00:36:07.790
+Aaron, this is a vm, you don't use the mouse.
+
+00:36:07.790 --> 00:36:09.680
+Very true. And then,
+
+00:36:09.680 --> 00:36:11.510
+we have this target distance.
+
+00:36:11.510 --> 00:36:15.770
+And that is just simply doing this distance calculation
+
+00:36:15.770 --> 00:36:18.620
+from the car whether it be the last point
+
+00:36:18.620 --> 00:36:21.680
+in the previous path or the car itself to that target.
+
+00:36:21.680 --> 00:36:21.920
+Okay.
+
+00:36:21.920 --> 00:36:25.795
+We had this x add-on which starts at zero.
+
+00:36:25.795 --> 00:36:29.390
+And this has to do with two of that local transformation that we did.
+
+00:36:29.390 --> 00:36:30.680
+We started at the origin.
+
+00:36:30.680 --> 00:36:33.569
+Got it. Okay. So here,
+
+00:36:33.569 --> 00:36:38.090
+target x is 30 and then we're getting the y value by simply,
+
+00:36:38.090 --> 00:36:41.990
+we've declared the spline and now all we have to do is pass target x
+
+00:36:41.990 --> 00:36:46.245
+into the spline s. So up here we declare the spline,
+
+00:36:46.245 --> 00:36:48.945
+here we set the anchor points.
+
+00:36:48.945 --> 00:36:53.470
+And now all we have to do is pass in 30 to s and we get back the y value.
+
+00:36:53.470 --> 00:36:56.040
+Pretty easy to use this spline library.
+
+00:36:56.040 --> 00:36:58.740
+I love when people write easy code.
+
+00:36:58.740 --> 00:37:03.920
+So now we're just adding on those points that are along the spline.
+
+00:37:03.920 --> 00:37:04.730
+Okay.
+
+00:37:04.730 --> 00:37:07.600
+This is the math that I was showing in that previous slide.
+
+00:37:07.600 --> 00:37:09.600
+I'm trying to figure out what n should be.
+
+00:37:09.600 --> 00:37:11.500
+I have that target distance,
+
+00:37:11.500 --> 00:37:13.270
+so I have this reference velocity.
+
+00:37:13.270 --> 00:37:17.290
+I'm dividing it by 2.24 because I was saying this was in miles per hour,
+
+00:37:17.290 --> 00:37:19.010
+it needs to be in meters per second.
+
+00:37:19.010 --> 00:37:22.090
+And then, I have this x point.
+
+00:37:22.090 --> 00:37:24.760
+And that's just going to be whatever the x add-on was
+
+00:37:24.760 --> 00:37:27.935
+before plus this target x divided by n.
+
+00:37:27.935 --> 00:37:34.270
+Okay. So n is what you showed us in the diagram.
+
+00:37:34.270 --> 00:37:41.640
+And now, x point is each of those little hash marks on the-
+
+00:37:41.640 --> 00:37:43.897
+On the x axis of that visual.
+
+00:37:43.897 --> 00:37:47.605
+On the x axis of that visual. Okay. So x add-on is kind of where we start.
+
+00:37:47.605 --> 00:37:48.895
+It's going to be zero,
+
+00:37:48.895 --> 00:37:54.580
+and then we're adding on our target x divided by n which is the number of hash marks.
+
+00:37:54.580 --> 00:37:54.927
+Yes.
+
+00:37:54.927 --> 00:37:57.082
+Got it. Okay. And then,
+
+00:37:57.082 --> 00:38:02.795
+to get the y point just ask the s what the y point is from the x point.
+
+00:38:02.795 --> 00:38:05.550
+Got it. And so that tells us on the spline where is
+
+00:38:05.550 --> 00:38:11.015
+each little pearl or pac-man nugget or waypoint actually,
+
+00:38:11.015 --> 00:38:13.960
+such that they are far enough apart that the car goes the right speed.
+
+00:38:13.960 --> 00:38:14.580
+Yes.
+
+00:38:14.580 --> 00:38:16.870
+Got it. Okay. All right.
+
+00:38:16.870 --> 00:38:21.680
+And in our case we want to try to do at 49.5 miles per hour.
+
+00:38:21.680 --> 00:38:21.930
+Got it.
+
+00:38:21.930 --> 00:38:23.785
+So we loop through that.
+
+00:38:23.785 --> 00:38:28.210
+Last thing that we need to remember to do is we're in local coordinates.
+
+00:38:28.210 --> 00:38:28.267
+Okay.
+
+00:38:28.267 --> 00:38:30.460
+We need to go back to the global coordinates.
+
+00:38:30.460 --> 00:38:32.020
+So like the basis transformation.
+
+00:38:32.020 --> 00:38:35.000
+Yes. So we just do the inverse of what we were doing before.
+
+00:38:35.000 --> 00:38:39.220
+So we're doing a shift right here and then a rotation.
+
+00:38:39.220 --> 00:38:40.280
+Got it. Okay.
+
+00:38:40.280 --> 00:38:44.170
+And then, finally, we just push that back to our next x vals and
+
+00:38:44.170 --> 00:38:48.690
+x y vals and we're done.
+
+00:38:48.690 --> 00:38:51.360
+Man, you think it will drive better than my car? It's a lot of work.
+
+00:38:51.360 --> 00:38:53.410
+Yes, let's try it out.
+
+00:38:53.410 --> 00:38:56.130
+Okay.
+
+00:39:03.400 --> 00:39:05.970
+And hopefully,
+
+00:39:05.970 --> 00:39:08.113
+that one was saved and-
+
+00:39:08.113 --> 00:39:10.250
+Did I forget to save it?
+
+00:39:10.250 --> 00:39:11.030
+I don't know.
+
+00:39:11.030 --> 00:39:12.610
+I guess, we'll see.
+
+00:39:12.610 --> 00:39:14.310
+We'll know right away,
+
+00:39:14.310 --> 00:39:17.050
+I guess. Hey, there we go.
+
+00:39:17.050 --> 00:39:18.167
+There we go. All right.
+
+00:39:18.167 --> 00:39:20.835
+So it is driving a little smoother.
+
+00:39:20.835 --> 00:39:23.740
+There was that thing at the beginning about max jerk exceeded.
+
+00:39:23.740 --> 00:39:30.580
+Yes because we're going from zero miles per hour to about 50.02 seconds.
+
+00:39:30.580 --> 00:39:33.700
+Got it. So we're going from a dead stop to 50 miles an hour like that.
+
+00:39:33.700 --> 00:39:34.413
+Yes.
+
+00:39:34.413 --> 00:39:41.520
+Got it. Okay. This is not my daily commuting car.
+
+00:39:41.520 --> 00:39:41.825
+Yes.
+
+00:39:41.825 --> 00:39:43.865
+Okay. So what's going to happen when it hits,
+
+00:39:43.865 --> 00:39:45.550
+is it going to hit the car, is it going to stop?
+
+00:39:45.550 --> 00:39:48.610
+Right now we're not checking if any cars are in front of us.
+
+00:39:48.610 --> 00:39:50.890
+So it will actually just rear-end the sky.
+
+00:39:50.890 --> 00:39:51.970
+Oh, boy. Oh, boy.
+
+00:39:51.970 --> 00:39:53.530
+Can we get a view?
+
+00:39:53.530 --> 00:39:55.760
+Yep. There is the red flag for a collision.
+
+00:39:55.760 --> 00:39:57.970
+Okay. So we've got a few problems, we've got to solve here.
+
+00:39:57.970 --> 00:40:01.952
+One is the cold start.
+
+00:40:01.952 --> 00:40:05.270
+We're breaking our acceleration parameters on the cold start.
+
+00:40:05.270 --> 00:40:07.830
+And the second is checking for cars in front of us.
+
+00:40:07.830 --> 00:40:08.020
+Yes.
+
+00:40:08.020 --> 00:40:09.815
+So, how do we handle that?
+
+00:40:09.815 --> 00:40:11.170
+Well, first of all,
+
+00:40:11.170 --> 00:40:13.340
+it'd be nice not to hit the car in front of us.
+
+00:40:13.340 --> 00:40:14.600
+Okay. All right.
+
+00:40:14.600 --> 00:40:17.830
+Let's avoid doing that if we can.
+
+00:40:17.830 --> 00:40:20.787
+Okay.
+
+00:40:20.787 --> 00:40:24.040
+So let's kind of come up here and you will remember,
+
+00:40:24.040 --> 00:40:25.480
+I had some code commented out.
+
+00:40:25.480 --> 00:40:25.860
+Yes.
+
+00:40:25.860 --> 00:40:27.120
+Now it's going to come into play.
+
+00:40:27.120 --> 00:40:30.000
+I kind of forgotten about all that code you commented out.
+
+00:40:30.000 --> 00:40:38.620
+Yes. So let's talk about sensor fusion now.
+
+00:40:38.620 --> 00:40:39.898
+Okay.
+
+00:40:39.898 --> 00:40:41.870
+Tell me about sensor fusion.
+
+00:40:41.870 --> 00:40:48.480
+Well, the simulator is reporting this kind of list of all the other cars on the road.
+
+00:40:48.480 --> 00:40:55.590
+And all these other cars have some s in d and xy, vx, vy values.
+
+00:40:55.590 --> 00:40:55.753
+Okay.
+
+00:40:55.753 --> 00:41:00.120
+We really want to use that to try to figure out where cars are at,
+
+00:41:00.120 --> 00:41:04.320
+how fast they are going and how we should behave as a result.
+
+00:41:04.320 --> 00:41:04.960
+Okay.
+
+00:41:04.960 --> 00:41:11.630
+So right now, if we want to avoid hitting a car in front of us,
+
+00:41:11.630 --> 00:41:13.610
+we need to actually go through
+
+00:41:13.610 --> 00:41:19.245
+this sensor fusion list and see if a car is in our lane or not.
+
+00:41:19.245 --> 00:41:21.500
+And then, how close that car is to us.
+
+00:41:21.500 --> 00:41:21.714
+Okay.
+
+00:41:21.714 --> 00:41:23.540
+And if it's too close, we do some action.
+
+00:41:23.540 --> 00:41:24.320
+Okay.
+
+00:41:24.320 --> 00:41:30.300
+So, right now, I'm just doing this to help out.
+
+00:41:30.300 --> 00:41:31.880
+I'm looking at the previous size or
+
+00:41:31.880 --> 00:41:34.990
+a previous path size and if I had points to work with,
+
+00:41:34.990 --> 00:41:37.785
+I'm just going to change the car s. So it's actually
+
+00:41:37.785 --> 00:41:41.550
+representative of the previous path laps points s.
+
+00:41:41.550 --> 00:41:41.806
+Okay.
+
+00:41:41.806 --> 00:41:45.135
+So I'm going to be doing this in Frenet because actually,
+
+00:41:45.135 --> 00:41:48.735
+it's quite easy if I work in Frenet for doing this kind of logic.
+
+00:41:48.735 --> 00:41:52.400
+Okay. All right, so show me.
+
+00:41:52.400 --> 00:41:55.290
+Okay. So for instance,
+
+00:41:55.290 --> 00:41:58.190
+I'm going to be looking at a D value here.
+
+00:41:58.190 --> 00:42:02.550
+D, I can think of as saying whether a car is in what lane.
+
+00:42:02.550 --> 00:42:03.768
+Got it.
+
+00:42:03.768 --> 00:42:05.235
+So we're pulling,
+
+00:42:05.235 --> 00:42:09.963
+sensor fusion is the vector of-.
+
+00:42:09.963 --> 00:42:12.810
+It's a vector of double.
+
+00:42:12.810 --> 00:42:18.300
+Got it. And so the outer vector is storing like a list of,
+
+00:42:18.300 --> 00:42:21.515
+basically, car parameters for each car on the road.
+
+00:42:21.515 --> 00:42:23.640
+And then, the inner vector is each of those parameters.
+
+00:42:23.640 --> 00:42:28.435
+So sensor fusion I is going to be the I-F car on the road, is that right?
+
+00:42:28.435 --> 00:42:30.700
+Yes. And also, in the readme,
+
+00:42:30.700 --> 00:42:35.100
+it kind of has this template of how you can access all the different data for that.
+
+00:42:35.100 --> 00:42:39.453
+Got it. So I'm guessing sensor fusion index I,
+
+00:42:39.453 --> 00:42:42.180
+index six is the, well, obviously,
+
+00:42:42.180 --> 00:42:45.045
+that's the sixth value of the I_F car on the road.
+
+00:42:45.045 --> 00:42:49.560
+And the sixth value, I'm assuming is the D value in Frenet coordinates.
+
+00:42:49.560 --> 00:42:51.050
+Yes, and ends up being the D value.
+
+00:42:51.050 --> 00:42:54.255
+Okay. Now, we have the D value and we're going,
+
+00:42:54.255 --> 00:42:56.600
+we're running a four loop over all of these cars.
+
+00:42:56.600 --> 00:42:57.810
+So basically, for each car,
+
+00:42:57.810 --> 00:43:03.210
+we're starting out a block in the loop by saying what's the D value of that car.
+
+00:43:03.210 --> 00:43:03.737
+Right.
+
+00:43:03.737 --> 00:43:04.100
+Okay.
+
+00:43:04.100 --> 00:43:06.940
+The D value will tell us what lane the car is in.
+
+00:43:06.940 --> 00:43:07.473
+Got it.
+
+00:43:07.473 --> 00:43:08.580
+I don't care about the car,
+
+00:43:08.580 --> 00:43:10.380
+in this case, if it's in our lane.
+
+00:43:10.380 --> 00:43:11.680
+Got it.
+
+00:43:11.680 --> 00:43:17.975
+So, we have our lane and we're just trying to see if it's in this range or not.
+
+00:43:17.975 --> 00:43:23.000
+If D is less than two plus four times lane plus two,
+
+00:43:23.000 --> 00:43:27.755
+and D is greater than two plus four times lane minus two.
+
+00:43:27.755 --> 00:43:30.770
+There is this plus two and minus two difference
+
+00:43:30.770 --> 00:43:33.815
+in the range because each lane is four meters.
+
+00:43:33.815 --> 00:43:36.605
+So we're trying to see, for instance,
+
+00:43:36.605 --> 00:43:37.940
+if it's in that center lane,
+
+00:43:37.940 --> 00:43:40.690
+is it between four and eight.
+
+00:43:40.690 --> 00:43:44.782
+Got it. So we could just say is the car at six,
+
+00:43:44.782 --> 00:43:47.060
+but that would only give us the middle lane.
+
+00:43:47.060 --> 00:43:47.890
+Right.
+
+00:43:47.890 --> 00:43:52.060
+We could just say, is the car at two plus four times lane,
+
+00:43:52.060 --> 00:43:55.705
+that would give us any of the lanes but it would only give us the center value basically.
+
+00:43:55.705 --> 00:43:59.099
+Got it. So if the car is kind of in that lane but off center
+
+00:43:59.099 --> 00:44:02.980
+we're going to need to check this range to see where the car is.
+
+00:44:02.980 --> 00:44:05.130
+We could even make it narrow curve if we want.
+
+00:44:05.130 --> 00:44:05.252
+We could make it narrower if we want.
+
+00:44:05.252 --> 00:44:06.830
+Yes.
+
+00:44:06.830 --> 00:44:09.445
+Man, too fast too furious.
+
+00:44:09.445 --> 00:44:12.133
+So if it is in my lane,
+
+00:44:12.133 --> 00:44:15.220
+I'm going to check out the speed of the car.
+
+00:44:15.220 --> 00:44:16.130
+Okay.
+
+00:44:16.130 --> 00:44:18.505
+I can pull that from vx and vy,
+
+00:44:18.505 --> 00:44:21.110
+which is the third and fourth elements,
+
+00:44:21.110 --> 00:44:22.850
+and then check the speed.
+
+00:44:22.850 --> 00:44:26.290
+So I'm just calculating the velocity magnitude of it.
+
+00:44:26.290 --> 00:44:29.581
+Okay, so we're pulling the x velocity,
+
+00:44:29.581 --> 00:44:35.873
+the y velocity and then we're running essentially the distance formula.
+
+00:44:35.873 --> 00:44:37.290
+Well, not quite, yes,
+
+00:44:37.290 --> 00:44:39.440
+essentially the distance formula to get the-
+
+00:44:39.440 --> 00:44:40.950
+Yes, just to get that magnitude of that vector.
+
+00:44:40.950 --> 00:44:41.693
+To get the magnitude of this vector.
+
+00:44:41.693 --> 00:44:44.330
+Because we have the vx, we have the x and y components
+
+00:44:44.330 --> 00:44:47.210
+of that vector but we want to try to get the magnitude of it.
+
+00:44:47.210 --> 00:44:48.995
+Right.
+
+00:44:48.995 --> 00:44:54.290
+And then, we do a check_car_s is equal to sensor fusion of
+
+00:44:54.290 --> 00:44:58.020
+this Fifth Element and that's the s value of that car
+
+00:44:58.020 --> 00:44:59.810
+that's going to be pretty important to know whether
+
+00:44:59.810 --> 00:45:01.970
+that car is really close to us or not.
+
+00:45:01.970 --> 00:45:03.500
+Got it. Now, for each car,
+
+00:45:03.500 --> 00:45:06.560
+we have- if it's in our lane,
+
+00:45:06.560 --> 00:45:09.170
+then we look further and if it's on our lane, then,
+
+00:45:09.170 --> 00:45:13.705
+we will get what it's speed and what it's s coordinate in Frenet coordinates.
+
+00:45:13.705 --> 00:45:14.520
+Yes.
+
+00:45:14.520 --> 00:45:14.714
+Okay.
+
+00:45:14.714 --> 00:45:17.180
+That speed part actually turns out to be
+
+00:45:17.180 --> 00:45:20.690
+helpful for actually predicting where that car will be in the future.
+
+00:45:20.690 --> 00:45:22.320
+Okay.
+
+00:45:22.320 --> 00:45:28.040
+What is this line doing here?
+
+00:45:28.040 --> 00:45:31.597
+This check_car_s+=?
+
+00:45:31.597 --> 00:45:31.842
+Yes.
+
+00:45:31.842 --> 00:45:33.553
+If using the previous points,
+
+00:45:33.553 --> 00:45:36.920
+we can project the s value outwards in time.
+
+00:45:36.920 --> 00:45:39.935
+Okay. All right.
+
+00:45:39.935 --> 00:45:42.590
+Why would we want to project the s value outwards?
+
+00:45:42.590 --> 00:45:47.120
+Because if we're using the previous path points,
+
+00:45:47.120 --> 00:45:50.090
+we're not quite there yet.
+
+00:45:50.090 --> 00:45:50.230
+Okay, got it.
+
+00:45:50.230 --> 00:45:54.880
+Our car is still a little bit under that.
+
+00:45:54.880 --> 00:45:55.174
+Okay.
+
+00:45:55.174 --> 00:45:58.985
+So we actually kind of want to be looking at what the car will look like in the future.
+
+00:45:58.985 --> 00:46:01.325
+Because if we're using the previous path points,
+
+00:46:01.325 --> 00:46:03.620
+our path represents a future,
+
+00:46:03.620 --> 00:46:08.965
+but we're looking at this current snapshot of where our car sits and all the other cars,
+
+00:46:08.965 --> 00:46:11.315
+so from the perspective of the previous path,
+
+00:46:11.315 --> 00:46:14.985
+we want to say where those other cars will look like in the future.
+
+00:46:14.985 --> 00:46:15.680
+Okay.
+
+00:46:15.680 --> 00:46:16.140
+Yes.
+
+00:46:16.140 --> 00:46:18.720
+All right. So we're looking at where the car is in the future.
+
+00:46:18.720 --> 00:46:19.275
+Yes.
+
+00:46:19.275 --> 00:46:20.400
+Okay.
+
+00:46:20.400 --> 00:46:24.080
+And then here we're just doing some more logic to
+
+00:46:24.080 --> 00:46:29.220
+see if our car s is close to this other cars_s.
+
+00:46:29.220 --> 00:46:35.290
+So if the check_car_s is greater than car_s if it's in front of us,
+
+00:46:35.290 --> 00:46:39.080
+and if the gap is smaller than, let's say,
+
+00:46:39.080 --> 00:46:42.905
+30 meters, then we need to take action.
+
+00:46:42.905 --> 00:46:46.070
+Got it. So if our car in the future is going to be
+
+00:46:46.070 --> 00:46:49.505
+within 30 meters of this particular car in the future,
+
+00:46:49.505 --> 00:46:50.945
+then we need to take action.
+
+00:46:50.945 --> 00:46:51.650
+Yes.
+
+00:46:51.650 --> 00:46:52.130
+Got it.
+
+00:46:52.130 --> 00:46:54.305
+So we need to do some logic here.
+
+00:46:54.305 --> 00:46:56.315
+It'd be great to lower our speed.
+
+00:46:56.315 --> 00:46:59.330
+You could even try to flag to say we want to change lanes.
+
+00:46:59.330 --> 00:47:00.446
+Okay.
+
+00:47:00.446 --> 00:47:02.810
+In this simple case,
+
+00:47:02.810 --> 00:47:07.960
+I'm just going to try to set the reference velocity down to 29.5.
+
+00:47:07.960 --> 00:47:10.230
+Okay, all right. All right. Let's try it.
+
+00:47:10.230 --> 00:47:14.900
+All right. Let's go ahead and save that.
+
+00:47:14.900 --> 00:47:25.500
+I
+
+00:47:25.500 --> 00:47:26.860
+don't think you saved it actually.
+
+00:47:26.860 --> 00:47:34.320
+There we go.
+
+00:47:34.320 --> 00:47:37.650
+Awesome. Thank you, David.
+
+00:47:37.650 --> 00:47:40.300
+You're welcome.
+
+00:47:45.390 --> 00:47:56.720
+Okay. Here it is. There you are.
+
+00:47:56.720 --> 00:47:59.735
+Here we go. Okay.
+
+00:47:59.735 --> 00:48:04.040
+Okay. So it's still exceeding the max jerk at the beginning,
+
+00:48:04.040 --> 00:48:07.580
+so it's still going from a cold start to 50 miles an hour, but that's okay.
+
+00:48:07.580 --> 00:48:09.230
+That wasn't the problem we're trying to solve here.
+
+00:48:09.230 --> 00:48:11.190
+The problem we're trying to solve was, the problem was-.
+
+00:48:11.190 --> 00:48:14.470
+Can we stop before we hit that yellow car?
+
+00:48:14.470 --> 00:48:17.740
+Got it. It did say something about a collision there.
+
+00:48:17.740 --> 00:48:19.970
+Yes, it looks like-.
+
+00:48:19.970 --> 00:48:22.665
+It didn't look it hit anything but- okay,
+
+00:48:22.665 --> 00:48:25.660
+so it looks like it got up that yellow car, now it's going down.
+
+00:48:25.660 --> 00:48:25.960
+Yes.
+
+00:48:25.960 --> 00:48:29.820
+It sees that yellow car 30 meters ahead or within 30 meters,
+
+00:48:29.820 --> 00:48:31.385
+and it's slowing down.
+
+00:48:31.385 --> 00:48:33.170
+Yes, it saw that yellow car.
+
+00:48:33.170 --> 00:48:37.160
+We told it to go 29 and we never told it to speed back up again.
+
+00:48:37.160 --> 00:48:38.576
+Got it. Okay.
+
+00:48:38.576 --> 00:48:43.195
+So, we detected it.
+
+00:48:43.195 --> 00:48:47.275
+Okay. Yes. Okay, let's see.
+
+00:48:47.275 --> 00:48:51.030
+I still want to solve the cold start problem.
+
+00:48:51.030 --> 00:48:51.780
+Okay.
+
+00:48:51.780 --> 00:48:53.140
+How do we do that?
+
+00:48:53.140 --> 00:48:57.610
+Well, let's actually look at how we can do that.
+
+00:48:57.610 --> 00:48:59.540
+So here, all along,
+
+00:48:59.540 --> 00:49:04.700
+we've kind of been saying either go the set velocity or change instantly to this.
+
+00:49:04.700 --> 00:49:06.530
+Really what we want to be thinking about it like,
+
+00:49:06.530 --> 00:49:10.790
+"Can we do an incremental change of our velocity?"
+
+00:49:10.790 --> 00:49:11.855
+Okay.
+
+00:49:11.855 --> 00:49:15.140
+Because we want to go at some acceleration,
+
+00:49:15.140 --> 00:49:18.590
+maybe it's five meters per second squared, for instance.
+
+00:49:18.590 --> 00:49:24.100
+Then, we need to be either adding or decrementing onto reference velocity.
+
+00:49:24.100 --> 00:49:28.545
+So instead of just saying we'll go 29.5,
+
+00:49:28.545 --> 00:49:31.460
+I'm going to comment that out and I'm just going to set
+
+00:49:31.460 --> 00:49:34.950
+us a flag here that says, "You're too close."
+
+00:49:34.950 --> 00:49:36.300
+And then down here,
+
+00:49:36.300 --> 00:49:39.070
+I'm going to be looking at that flag.
+
+00:49:39.070 --> 00:49:40.715
+And if it's too close,
+
+00:49:40.715 --> 00:49:43.965
+I'm just going to be subtracting some constant value,
+
+00:49:43.965 --> 00:49:47.030
+0.224, from the reference velocity.
+
+00:49:47.030 --> 00:49:49.694
+And it's not a magic number, well,
+
+00:49:49.694 --> 00:49:52.890
+it ends up being around five meters per second squared,
+
+00:49:52.890 --> 00:49:55.880
+which is under the 10 requirement.
+
+00:49:55.880 --> 00:49:57.370
+Got it.
+
+00:49:57.370 --> 00:50:04.538
+So, I don't fully understand how will this slow down the car at the very beginning.
+
+00:50:04.538 --> 00:50:07.035
+This looks like it only deals with slowing down
+
+00:50:07.035 --> 00:50:10.185
+the car if the car pulls up on another car in front of it.
+
+00:50:10.185 --> 00:50:14.855
+Yes, there's one more thing that we need to do in order to address that,
+
+00:50:14.855 --> 00:50:17.270
+which is to come up here and start at, let's say,
+
+00:50:17.270 --> 00:50:20.520
+zero miles per hour.
+
+00:50:20.520 --> 00:50:22.785
+Got it. So we're going to start at zero.
+
+00:50:22.785 --> 00:50:25.808
+Let's see how we can speed up,
+
+00:50:25.808 --> 00:50:29.060
+and that's actually included in our logic down here.
+
+00:50:29.060 --> 00:50:31.070
+Got it.
+
+00:50:31.070 --> 00:50:33.910
+If the reference velocity is less than let's say 49.5,
+
+00:50:33.910 --> 00:50:36.550
+I'm just going to be adding onto it.
+
+00:50:36.550 --> 00:50:38.164
+Got it. If it's too close,
+
+00:50:38.164 --> 00:50:39.280
+and at the beginning,
+
+00:50:39.280 --> 00:50:41.590
+it's not going to be too close because there won't be anything in front of it,
+
+00:50:41.590 --> 00:50:46.090
+it's just starting from a cold start with a bunch of road in front of it, but then, else,
+
+00:50:46.090 --> 00:50:50.230
+if the reference velocity is below the speed we want to go,
+
+00:50:50.230 --> 00:50:53.050
+then start accelerating but accelerate slowly, basically, is what you are saying.
+
+00:50:53.050 --> 00:50:54.577
+Exactly.
+
+00:50:54.577 --> 00:50:57.960
+Now, this will be doing that increment every cycle.
+
+00:50:57.960 --> 00:51:00.485
+We could be more efficient with that.
+
+00:51:00.485 --> 00:51:03.610
+We could come down to our pack planner where it's
+
+00:51:03.610 --> 00:51:08.090
+going through every point and be changing reference velocity there.
+
+00:51:08.090 --> 00:51:10.870
+Got it. How does the reference velocity
+
+00:51:10.870 --> 00:51:14.475
+here affect the way points that get calculated later?
+
+00:51:14.475 --> 00:51:19.140
+Yes, so that actually affects our end value if we come down here.
+
+00:51:19.140 --> 00:51:21.960
+We pass it to it.
+
+00:51:21.960 --> 00:51:23.850
+It's right here.
+
+00:51:23.850 --> 00:51:25.828
+We're using reference velocity.
+
+00:51:25.828 --> 00:51:27.380
+That was tricky. I didn't even see that.
+
+00:51:27.380 --> 00:51:32.765
+Yes. If we're actually adding or subtracting from reference velocity in this loop,
+
+00:51:32.765 --> 00:51:35.280
+that would actually be a lot more efficient.
+
+00:51:35.280 --> 00:51:37.170
+Got it. Okay. All right.
+
+00:51:37.170 --> 00:51:39.300
+So let's see. Should we run it and see how it goes?
+
+00:51:39.300 --> 00:51:39.790
+Sure.
+
+00:51:39.790 --> 00:51:43.060
+All right.
+
+00:51:45.870 --> 00:51:52.570
+All right. Let's take a look.
+
+00:51:54.280 --> 00:51:57.200
+There it goes.
+
+00:51:57.200 --> 00:51:59.230
+Man, I thought it wasn't going anywhere for a second.
+
+00:51:59.230 --> 00:51:59.463
+Yes.
+
+00:51:59.463 --> 00:52:00.560
+All right. Let's see.
+
+00:52:00.560 --> 00:52:02.990
+But the battery died on it.
+
+00:52:02.990 --> 00:52:05.080
+All right. So here we go. You can kind of see-
+
+00:52:05.080 --> 00:52:11.680
+It's working its way up to that 49.5.
+
+00:52:11.680 --> 00:52:12.350
+Got it. All right.
+
+00:52:12.350 --> 00:52:14.820
+We didn't see any big red flags at the beginning there
+
+00:52:14.820 --> 00:52:18.095
+for exceeding max acceleration or jerk.
+
+00:52:18.095 --> 00:52:19.920
+But now, here is the interesting part.
+
+00:52:19.920 --> 00:52:24.850
+Can we slowly decrease our velocity?
+
+00:52:24.850 --> 00:52:25.610
+Okay.
+
+00:52:25.610 --> 00:52:26.440
+And we are.
+
+00:52:26.440 --> 00:52:29.150
+Our path is getting awfully close to the white car,
+
+00:52:29.150 --> 00:52:31.340
+but the car, the black car,
+
+00:52:31.340 --> 00:52:34.140
+our car, the ego-vehicle, did not-.
+
+00:52:34.140 --> 00:52:36.725
+Did not crash into the white.
+
+00:52:36.725 --> 00:52:38.358
+And there it goes, slowing down again.
+
+00:52:38.358 --> 00:52:41.010
+All right, cool. This is awesome. So if we just waited for 15 minutes,
+
+00:52:41.010 --> 00:52:42.520
+would the car make it all the way around the track?
+
+00:52:42.520 --> 00:52:44.700
+Yes.
+
+00:52:44.700 --> 00:52:46.110
+Awesome. But, of course,
+
+00:52:46.110 --> 00:52:48.525
+it would be better to try and pass this white car.
+
+00:52:48.525 --> 00:52:52.240
+Yes. So maybe let's see how we can start thinking about lane changes.
+
+00:52:52.240 --> 00:52:55.010
+Let's see. How can we start thinking about lane changes?
+
+00:52:55.010 --> 00:52:59.105
+This comes up a point of why I really loved the spline library as well.
+
+00:52:59.105 --> 00:53:05.088
+Okay. Sorry. All right,
+
+00:53:05.088 --> 00:53:06.430
+how do we think about lane changes?
+
+00:53:06.430 --> 00:53:07.930
+When do you want to change lanes?
+
+00:53:07.930 --> 00:53:15.270
+When a car ahead of you is going too slow and it's safe to change lanes.
+
+00:53:15.270 --> 00:53:19.355
+And we have some logic to check if a car is going too slow, right?
+
+00:53:19.355 --> 00:53:21.450
+We do. We slow down. We already showed this.
+
+00:53:21.450 --> 00:53:23.875
+If the car, in the future,
+
+00:53:23.875 --> 00:53:27.685
+is within 30 meters of where we're going to be in the future, then we slow down.
+
+00:53:27.685 --> 00:53:30.580
+Okay, so maybe let's execute some code right there then.
+
+00:53:30.580 --> 00:53:33.220
+Got it. If a car, in the future,
+
+00:53:33.220 --> 00:53:36.965
+is within 30 meters of where we're going to be in the future, change lanes.
+
+00:53:36.965 --> 00:53:37.570
+Yes.
+
+00:53:37.570 --> 00:53:38.390
+Got it. Okay. How do we do that?
+
+00:53:38.390 --> 00:53:48.320
+Here, let's just go ahead and say if lane is greater than zero,
+
+00:53:48.320 --> 00:53:49.844
+we start out at lane 1.
+
+00:53:49.844 --> 00:53:51.500
+Just that center lane.
+
+00:53:51.500 --> 00:53:56.825
+Let's say that lane is equal to zero.
+
+00:53:56.825 --> 00:53:58.700
+So what should that do?
+
+00:53:58.700 --> 00:54:03.455
+That should actually make us do a left turn.
+
+00:54:03.455 --> 00:54:07.270
+So if we are in the middle or the right lane,
+
+00:54:07.270 --> 00:54:11.780
+basically, slam over to the left lane as fast as we can.
+
+00:54:11.780 --> 00:54:13.270
+I can't imagine what could go wrong.
+
+00:54:13.270 --> 00:54:16.450
+In this case, we're just blindly going to be turning left.
+
+00:54:16.450 --> 00:54:16.810
+Got it.
+
+00:54:16.810 --> 00:54:19.355
+Regardless of if there's cars. Yes.
+
+00:54:19.355 --> 00:54:20.590
+Okay. All right. So let's see.
+
+00:54:20.590 --> 00:54:31.150
+So, we're going to make this and okay-.
+
+00:54:34.180 --> 00:54:38.490
+All right, I keep thinking it's not going anywhere.
+
+00:54:38.490 --> 00:54:42.580
+Yeah. Okay, so let's get a good angle.
+
+00:54:42.580 --> 00:54:46.620
+I definitely don't want to take this one to the drag races yet.
+
+00:54:46.620 --> 00:54:49.260
+Not yet. OK, so the car is just doing its thing.
+
+00:54:49.260 --> 00:54:50.735
+We've seen this before.
+
+00:54:50.735 --> 00:54:53.880
+It's just driving in its lane.
+
+00:54:53.880 --> 00:54:55.380
+You think it's still going to pull up behind
+
+00:54:55.380 --> 00:54:57.630
+the white car or it's going to pull up behind a different car this time?
+
+00:54:57.630 --> 00:54:58.860
+Looks like it's that red one.
+
+00:54:58.860 --> 00:55:00.570
+It's going to pull up behind the red car?
+
+00:55:00.570 --> 00:55:03.480
+Yes. Wow. OK. Let's see what happens.
+
+00:55:03.480 --> 00:55:08.880
+Here's the red car and we're pretty close.
+
+00:55:08.880 --> 00:55:11.175
+But that was a pretty good lane change.
+
+00:55:11.175 --> 00:55:14.389
+It didn't violate jerk limitations.
+
+00:55:14.389 --> 00:55:17.340
+It just kind of shifted. The spline really helped out with that.
+
+00:55:17.340 --> 00:55:22.860
+It was interpolating between where the car was and 30 meters ahead in that left lane.
+
+00:55:22.860 --> 00:55:24.655
+Got it. Show me the code where that happened.
+
+00:55:24.655 --> 00:55:28.470
+Where exactly was the spline interpolating the lane change?
+
+00:55:28.470 --> 00:55:35.030
+Definitely. So we changed the lane right here.
+
+00:55:35.120 --> 00:55:39.450
+If we come down here,
+
+00:55:39.450 --> 00:55:48.160
+you'll notice that lane is part of this that we're adding on to for the spline.
+
+00:55:48.160 --> 00:55:51.530
+Instead of saying six is the lane,
+
+00:55:51.530 --> 00:55:54.395
+because you have two plus four times lane,
+
+00:55:54.395 --> 00:55:58.240
+when lane goes from being six to being
+
+00:55:58.240 --> 00:56:02.720
+two because the middle of the zeroth lane is two meters out from the waypoint.
+
+00:56:02.720 --> 00:56:05.920
+So, lane goes to being two.
+
+00:56:05.920 --> 00:56:12.530
+So, two plus four times zero is two.
+
+00:56:12.530 --> 00:56:19.640
+So that's how the d coordinate winds up being two.
+
+00:56:19.640 --> 00:56:21.110
+Exactly. Got it.
+
+00:56:21.110 --> 00:56:24.320
+Okay. And so then the spline waypoints are being set.
+
+00:56:24.320 --> 00:56:30.103
+So maybe the current waypoint of the car is at d equals six, but then,
+
+00:56:30.103 --> 00:56:35.050
+the waypoint 30 and 60 and 90 meters out is going to be at d
+
+00:56:35.050 --> 00:56:38.178
+equals two and the spline will fit a
+
+00:56:38.178 --> 00:56:42.195
+polynomial starting from zero but then shifting over.
+
+00:56:42.195 --> 00:56:44.240
+It will be smooth and continuous.
+
+00:56:44.240 --> 00:56:47.090
+Yeah, and smooth and continuous because of the spacing too.
+
+00:56:47.090 --> 00:56:49.520
+If you were to decrease it from 30 meters,
+
+00:56:49.520 --> 00:56:52.640
+that lane shift could be a lot more aggressive.
+
+00:56:52.640 --> 00:56:54.045
+Got it. Wouldn't want that.
+
+00:56:54.045 --> 00:56:56.345
+Yeah. OK, cool.
+
+00:56:56.345 --> 00:57:02.115
+So this is pretty good. We kind of figured out now how to do a basic lane change.
+
+00:57:02.115 --> 00:57:05.030
+What about some of the finite state machine stuff that
+
+00:57:05.030 --> 00:57:08.150
+we saw in the behavioral planning lesson?
+
+00:57:08.150 --> 00:57:10.400
+Right. How would we incorporate that?
+
+00:57:10.400 --> 00:57:14.670
+We're doing something pretty simple for doing our lane shift.
+
+00:57:14.670 --> 00:57:19.520
+Right. Really. We might actually want to think about looking at other cars
+
+00:57:19.520 --> 00:57:25.265
+in that lane first using similar logic to seeing if there is a car in front of us or not.
+
+00:57:25.265 --> 00:57:27.375
+Going back to Frenet,
+
+00:57:27.375 --> 00:57:31.475
+we can actually just check if a car is in that lane or not and then we can check
+
+00:57:31.475 --> 00:57:36.020
+if it's in some gap range of s. If it is,
+
+00:57:36.020 --> 00:57:38.005
+then it's not safe to do that lane change.
+
+00:57:38.005 --> 00:57:40.280
+And maybe if it's not safe to go left,
+
+00:57:40.280 --> 00:57:43.070
+we can try to go right instead. Got it.
+
+00:57:43.070 --> 00:57:46.100
+So you could have a lane change left,
+
+00:57:46.100 --> 00:57:47.660
+lane change right, keep lane,
+
+00:57:47.660 --> 00:57:51.260
+and you would never enter like lane change left if you
+
+00:57:51.260 --> 00:57:55.520
+saw that there was another car within like 30,
+
+00:57:55.520 --> 00:57:58.930
+maybe 100, meters in front of you or 50 meters behind you or something like that.
+
+00:57:58.930 --> 00:58:01.115
+Or if you're already in that leftmost lane.
+
+00:58:01.115 --> 00:58:02.545
+You don't want to go off the road.
+
+00:58:02.545 --> 00:58:05.120
+Right, OK. So you'd start to add some logic
+
+00:58:05.120 --> 00:58:08.290
+around when do you shift to each of those states in the finite state machine.
+
+00:58:08.290 --> 00:58:09.670
+Exactly. Got it.
+
+00:58:09.670 --> 00:58:14.460
+OK. Cool. That sounds good.
+
+00:58:14.460 --> 00:58:16.805
+I feel like that kind of gives us
+
+00:58:16.805 --> 00:58:20.535
+a good sense of how do we get started with this project.
+
+00:58:20.535 --> 00:58:26.730
+I mean, I think that would be a passing implementation of the project.
+
+00:58:26.730 --> 00:58:29.005
+Some of those lane changes might wind up colliding
+
+00:58:29.005 --> 00:58:31.660
+so you might need to be careful about that.
+
+00:58:31.660 --> 00:58:34.200
+Blind luck. It gets pretty close.
+
+00:58:34.200 --> 00:58:37.055
+So, maybe let's move from that
+
+00:58:37.055 --> 00:58:40.490
+to answering some of the questions that students wrote in about.
+
+00:58:40.490 --> 00:58:44.270
+Yeah. And in the meantime,
+
+00:58:44.270 --> 00:58:53.870
+maybe just watch the car drive.
+
+00:58:53.870 --> 00:58:58.140
+That was weird. Why did it change lanes all of the sudden?
+
+00:58:58.140 --> 00:59:01.565
+Did it see something ahead of it? I wonder.
+
+00:59:01.565 --> 00:59:07.380
+Maybe there was a car behind it that it thought was going to run into it.
+
+00:59:07.380 --> 00:59:11.460
+I mean it wasn't a dead stop because there was a car right behind it.
+
+00:59:11.460 --> 00:59:15.240
+I feel like it's because we didn't reset something on the C++ side.
+
+00:59:15.240 --> 00:59:16.955
+That's probably true.
+
+00:59:16.955 --> 00:59:22.870
+Now we're in the far left lane and we can't do anything.
+
+00:59:22.870 --> 00:59:25.090
+We're stuck because all we know how to do is change
+
+00:59:25.090 --> 00:59:27.650
+lanes left if there is a lane to our left.
+
+00:59:27.650 --> 00:59:32.600
+Yeah. Oh man, so we need a better finite state machine.
+
+00:59:32.600 --> 00:59:34.390
+A good cost function.
+
+00:59:34.390 --> 00:59:37.680
+And a good cost function. Yes, right.
+
+00:59:37.680 --> 00:59:45.300
+Try to look into the future and see what's the best lane to be in five seconds or so.
+
+00:59:45.300 --> 00:59:46.645
+Great. So let's go to questions.
+
+00:59:46.645 --> 00:59:50.035
+We've got similar questions from several people.
+
+00:59:50.035 --> 00:59:55.130
+The first question we got a bunch of times in various forms from Sebastiano in Italy,
+
+00:59:55.130 --> 00:59:56.780
+from Jason, from Chris Edwards,
+
+00:59:56.780 --> 00:59:58.970
+from Nadia in New York,
+
+00:59:58.970 --> 01:00:01.640
+from Francesco Fantause in Italy,
+
+01:00:01.640 --> 01:00:03.640
+from Michael in New York,
+
+01:00:03.640 --> 01:00:08.045
+give a sort of walkthrough in order to face the project.
+
+01:00:08.045 --> 01:00:11.888
+It seems that the lesson and project lacks connection.
+
+01:00:11.888 --> 01:00:16.115
+Even in the lesson, important parts are overlooked and concrete examples are missing.
+
+01:00:16.115 --> 01:00:19.280
+Very disappointed this time in how the course was structured.
+
+01:00:19.280 --> 01:00:21.930
+Lots of expectation, lots of delusion.
+
+01:00:21.930 --> 01:00:28.795
+Well, let it never be said that we don't give you the straight truth from Udacity.
+
+01:00:28.795 --> 01:00:32.110
+We're sorry about the disappointment.
+
+01:00:32.110 --> 01:00:34.890
+We do think it's a really fun project.
+
+01:00:34.890 --> 01:00:37.940
+There may be some work we need to do in order to help
+
+01:00:37.940 --> 01:00:42.915
+connect parts of the lessons to the project.
+
+01:00:42.915 --> 01:00:46.790
+But in general, path planning is one of the most difficult parts,
+
+01:00:46.790 --> 01:00:48.500
+if not the most difficult part,
+
+01:00:48.500 --> 01:00:51.065
+of autonomous vehicle development.
+
+01:00:51.065 --> 01:00:52.585
+And so, it does make sense, it's a lot of work.
+
+01:00:52.585 --> 01:00:55.025
+We want to try and connect it and make it a little easier.
+
+01:00:55.025 --> 01:00:57.500
+Hopefully, the walkthrough we just did kind of gives you
+
+01:00:57.500 --> 01:01:00.800
+a sense of one way to approach the project.
+
+01:01:00.800 --> 01:01:04.165
+There are a bunch of different ways to approach the project.
+
+01:01:04.165 --> 01:01:05.870
+When I did the project,
+
+01:01:05.870 --> 01:01:08.125
+I approached it a little bit differently than Aaron did.
+
+01:01:08.125 --> 01:01:11.560
+Aaron's drawing with the N and the D was a little much for me,
+
+01:01:11.560 --> 01:01:13.460
+so I tried a different approach.
+
+01:01:13.460 --> 01:01:18.005
+But I think at a high level,
+
+01:01:18.005 --> 01:01:20.660
+at least what I wanted to do with the project when I first
+
+01:01:20.660 --> 01:01:23.343
+got hold of it was just get the car moving,
+
+01:01:23.343 --> 01:01:25.964
+and that you can do with the code from the classroom,
+
+01:01:25.964 --> 01:01:27.680
+then get the car to drive in its lane and
+
+01:01:27.680 --> 01:01:30.013
+that turns out to be a surprisingly difficult problem.
+
+01:01:30.013 --> 01:01:34.370
+You can get it driving in its lane pretty well with just Frenet coordinates,
+
+01:01:34.370 --> 01:01:38.503
+and then the somewhat harder problem is smoothing the path,
+
+01:01:38.503 --> 01:01:40.610
+and I think there's a question coming up about
+
+01:01:40.610 --> 01:01:43.100
+smoothing so we'll talk more about smoothing there,
+
+01:01:43.100 --> 01:01:48.230
+but that's what we did with the spline and in this particular walkthrough.
+
+01:01:48.230 --> 01:01:53.375
+And then once you get the car driving in its lane,
+
+01:01:53.375 --> 01:01:56.000
+then you enter a world that looks a little bit
+
+01:01:56.000 --> 01:02:00.614
+like the quiz at the end of the behavioral planning lesson where,
+
+01:02:00.614 --> 01:02:03.290
+basically, you've got your car on a lane and
+
+01:02:03.290 --> 01:02:08.770
+a few other lanes and you're looking at how do you switch between lanes.
+
+01:02:08.770 --> 01:02:10.730
+And one way to do that,
+
+01:02:10.730 --> 01:02:12.795
+probably the preferred way, would be to build a cost function.
+
+01:02:12.795 --> 01:02:13.995
+That's not what we did here.
+
+01:02:13.995 --> 01:02:15.800
+Here we had just a very basic,
+
+01:02:15.800 --> 01:02:18.560
+if you see a car ahead of you, veer to the left.
+
+01:02:18.560 --> 01:02:22.160
+But overall, you probably want some sort of cost function that
+
+01:02:22.160 --> 01:02:25.748
+took into account what the cost of being in each lane is,
+
+01:02:25.748 --> 01:02:29.400
+and then if you kind of work backwards all the way to the prediction lesson,
+
+01:02:29.400 --> 01:02:31.925
+you can actually try and predict out into the future
+
+01:02:31.925 --> 01:02:35.390
+where all these cars are going to be at different points in the future and what's
+
+01:02:35.390 --> 01:02:42.295
+your cost going to be for being in different states and different lanes in the future.
+
+01:02:42.295 --> 01:02:44.720
+And so, that's kind of how you might think about,
+
+01:02:44.720 --> 01:02:47.030
+is kind of start by getting the car moving and
+
+01:02:47.030 --> 01:02:49.765
+that's just trajectory generation basically,
+
+01:02:49.765 --> 01:02:51.710
+and then you start to think about
+
+01:02:51.710 --> 01:02:54.720
+behavior planning and what state do you want to interchange,
+
+01:02:54.720 --> 01:02:55.820
+lanes left, change lanes right,
+
+01:02:55.820 --> 01:02:59.062
+keep your current lane, and then if you make it that far,
+
+01:02:59.062 --> 01:03:00.830
+predicting out into the future and trying
+
+01:03:00.830 --> 01:03:02.920
+to figure out where other vehicles are going to be,
+
+01:03:02.920 --> 01:03:06.710
+would say a Gaussian Naive Bayes classifier or a different type of
+
+01:03:06.710 --> 01:03:12.617
+classifier and using that to decide where you want to be in the future.
+
+01:03:12.617 --> 01:03:14.290
+So, with an actual path planner,
+
+01:03:14.290 --> 01:03:16.763
+the way the data flows in is you get the data,
+
+01:03:16.763 --> 01:03:18.875
+you try and predict where things will be in the future,
+
+01:03:18.875 --> 01:03:22.370
+then you try and make your own decisions in behavior planning,
+
+01:03:22.370 --> 01:03:24.245
+and then ultimately you generate a trajectory.
+
+01:03:24.245 --> 01:03:26.750
+For this project, you might almost want to work backwards and start
+
+01:03:26.750 --> 01:03:29.360
+with building a trajectory and assuming no other vehicles
+
+01:03:29.360 --> 01:03:31.790
+are there and then start to assume
+
+01:03:31.790 --> 01:03:35.123
+other vehicles are there and build a behavior plan but don't worry about the future,
+
+01:03:35.123 --> 01:03:38.360
+and then maybe worry about the future and start predicting
+
+01:03:38.360 --> 01:03:39.740
+out where other vehicles are going to be in
+
+01:03:39.740 --> 01:03:41.930
+the future and I think that is where do you want to go.
+
+01:03:41.930 --> 01:03:44.010
+That's my take on it.
+
+01:03:44.010 --> 01:03:45.480
+What do you have to say, Aaron?
+
+01:03:45.480 --> 01:03:49.345
+No, I think that sounds very good.
+
+01:03:49.345 --> 01:03:52.580
+We were definitely just dealing with the trajectory for the time
+
+01:03:52.580 --> 01:03:56.090
+being but a cost function would be
+
+01:03:56.090 --> 01:03:59.480
+great for dealing with how to change
+
+01:03:59.480 --> 01:04:03.620
+lanes and the quiz is a great place to really get started with that.
+
+01:04:03.620 --> 01:04:07.100
+And Frenet is very helpful for
+
+01:04:07.100 --> 01:04:09.650
+just being able to look at
+
+01:04:09.650 --> 01:04:13.775
+all the other cars on the road and seeing where their s, n, d is at.
+
+01:04:13.775 --> 01:04:16.130
+Frenet gets a little tricky when we're doing
+
+01:04:16.130 --> 01:04:18.620
+just pure trajectory generation that's
+
+01:04:18.620 --> 01:04:21.650
+why I kind of had that spline come into play as well.
+
+01:04:21.650 --> 01:04:25.400
+Got it. Cool. From Tim Tobi in New Jersey.
+
+01:04:25.400 --> 01:04:28.470
+Review implementation of spline.
+
+01:04:28.470 --> 01:04:33.565
+So we mentioned a little bit in the walk through what a spline is.
+
+01:04:33.565 --> 01:04:35.780
+It's basically, a piecewise polynomial function.
+
+01:04:35.780 --> 01:04:37.880
+That's where the pieces are tied together at
+
+01:04:37.880 --> 01:04:40.860
+those anchor points or sometimes they're called Knots.
+
+01:04:40.860 --> 01:04:44.790
+And in some Math is done and tying together those pieces so
+
+01:04:44.790 --> 01:04:47.220
+that the connections with the knot are
+
+01:04:47.220 --> 01:04:51.070
+smooth which is why the spline trajectory looks smooth.
+
+01:04:51.070 --> 01:04:54.060
+I think for the perspective of- from the standpoint of this lesson,
+
+01:04:54.060 --> 01:04:56.215
+you don't really need to know how to implement it.
+
+01:04:56.215 --> 01:05:00.130
+We're really just using it because the code was written in, was there.
+
+01:05:00.130 --> 01:05:01.445
+It was really easy to use.
+
+01:05:01.445 --> 01:05:04.050
+And so, all you really need to know how to do is use it.
+
+01:05:04.050 --> 01:05:06.655
+You want to walk through it just real quick the different parts of using it,
+
+01:05:06.655 --> 01:05:09.630
+there are only like three commands to run when using-.
+
+01:05:09.630 --> 01:05:12.694
+Yes, you just initialize it.
+
+01:05:12.694 --> 01:05:17.640
+Let's actually go here maybe in the code and look really quickly at-.
+
+01:05:17.640 --> 01:05:17.774
+Sure.
+
+01:05:17.774 --> 01:05:19.380
+How you use the spline.
+
+01:05:19.380 --> 01:05:20.200
+Yes.
+
+01:05:20.200 --> 01:05:22.830
+So here this is when you're declaring at-
+
+01:05:22.830 --> 01:05:24.553
+Tk spline s.
+
+01:05:24.553 --> 01:05:29.790
+Right, so we included the header pulse and now we can declare the spline.
+
+01:05:29.790 --> 01:05:31.410
+s.set_points.
+
+01:05:31.410 --> 01:05:32.880
+You're setting the points so these are the-.
+
+01:05:32.880 --> 01:05:33.900
+x and y.
+
+01:05:33.900 --> 01:05:40.080
+The anchor point to the knots around which the spline gets formed, and then-.
+
+01:05:40.080 --> 01:05:46.470
+And then from there it's just S and then some x value.
+
+01:05:46.470 --> 01:05:47.892
+Got it.
+
+01:05:47.892 --> 01:05:51.380
+So you give the spline an x value you get back the corresponding y value on the spline.
+
+01:05:51.380 --> 01:05:52.220
+Yes.
+
+01:05:52.220 --> 01:05:53.663
+Cool.
+
+01:05:53.663 --> 01:05:55.530
+One of the things you do have to be careful
+
+01:05:55.530 --> 01:05:57.450
+about with spline is just like you would have to be careful
+
+01:05:57.450 --> 01:06:03.450
+about with a quintic polynomial or anything else is
+
+01:06:03.450 --> 01:06:07.020
+that if the spline starts to go vertical you can
+
+01:06:07.020 --> 01:06:11.400
+wind up with like multiple x values or multiple y values for the same x value.
+
+01:06:11.400 --> 01:06:13.470
+And that starts to break things.
+
+01:06:13.470 --> 01:06:18.060
+And so that's why Aaron did that basis-.
+
+01:06:18.060 --> 01:06:20.010
+The double polymerization transformation?
+
+01:06:20.010 --> 01:06:20.650
+Right.
+
+01:06:20.650 --> 01:06:21.590
+Yes.
+
+01:06:21.590 --> 01:06:25.500
+So that you're shifting horizontally.
+
+01:06:25.500 --> 01:06:28.000
+Makes the math easy.
+
+01:06:28.000 --> 01:06:32.565
+Yes. That way, if you shift the spline so it runs horizontally instead of vertically.
+
+01:06:32.565 --> 01:06:36.420
+Then, there won't be multiple y values for an x and once you pull
+
+01:06:36.420 --> 01:06:39.862
+out the waypoints you need from the spline you can shift those waypoints back.
+
+01:06:39.862 --> 01:06:40.039
+Yes.
+
+01:06:40.039 --> 01:06:42.069
+And everything will just work.
+
+01:06:42.069 --> 01:06:45.885
+So we have a question from Doug in Redwood City,
+
+01:06:45.885 --> 01:06:47.910
+and also from Juan Pedro in Munich,
+
+01:06:47.910 --> 01:06:49.670
+from Konstantin in San Francisco,
+
+01:06:49.670 --> 01:06:53.825
+and Oliver Hagger in Atlanta.
+
+01:06:53.825 --> 01:06:55.895
+Can you talk about some strategies for
+
+01:06:55.895 --> 01:06:58.630
+smoothing the trajectories between the calculations?
+
+01:06:58.630 --> 01:07:00.930
+I'm able to generate a smooth trajectory by
+
+01:07:00.930 --> 01:07:03.535
+creating a spline based on waypoints around me.
+
+01:07:03.535 --> 01:07:06.630
+However, my jerk often exceeds the threshold when I create
+
+01:07:06.630 --> 01:07:10.950
+a new trajectory in the next calculation. Cool. So why don't you tell-
+
+01:07:10.950 --> 01:07:13.850
+The previous path points I would say is
+
+01:07:13.850 --> 01:07:18.940
+a great way and that really helps you avoid any discontinuities.
+
+01:07:18.940 --> 01:07:24.555
+You've got to be careful when you're purely just creating a new path every single frame.
+
+01:07:24.555 --> 01:07:27.150
+And having those previous path points really
+
+01:07:27.150 --> 01:07:29.830
+helps give you an anchor or reference to work from.
+
+01:07:29.830 --> 01:07:33.390
+And I found that when I was having problems with
+
+01:07:33.390 --> 01:07:37.760
+my jerk that I definitely need to rely more on the previous path points.
+
+01:07:37.760 --> 01:07:41.520
+Got it. So one technique for smoothing is
+
+01:07:41.520 --> 01:07:43.965
+the previous path points or using the previous path points
+
+01:07:43.965 --> 01:07:46.640
+so there's more continuity between the new path and the old path.
+
+01:07:46.640 --> 01:07:47.130
+Yes.
+
+01:07:47.130 --> 01:07:49.815
+There's using the spline itself and picking out
+
+01:07:49.815 --> 01:07:53.620
+waypoints along the spline because those are guaranteed to be smooth.
+
+01:07:53.620 --> 01:07:58.220
+You could do quintic polynomial generation like it's
+
+01:07:58.220 --> 01:08:02.988
+covered in the trajectory generation lesson,
+
+01:08:02.988 --> 01:08:05.535
+that involves a little bit more math.
+
+01:08:05.535 --> 01:08:10.390
+And if you're a lazy engineer that spline header files awfully tempting.
+
+01:08:10.390 --> 01:08:14.435
+In my case, I use the spline as well.
+
+01:08:14.435 --> 01:08:20.700
+But I also, instead of doing this kind of trigonometry that Aaron does
+
+01:08:20.700 --> 01:08:27.695
+with DNN and in projecting from the spline onto a triangle,
+
+01:08:27.695 --> 01:08:30.175
+I basically went through, once I create,
+
+01:08:30.175 --> 01:08:32.970
+once I pulled off the 50 waypoints from the spline,
+
+01:08:32.970 --> 01:08:36.990
+I basically went through and verified that none of them were too far
+
+01:08:36.990 --> 01:08:41.335
+apart to create a velocity that was too high.
+
+01:08:41.335 --> 01:08:43.350
+And if they were then I pulled them back in.
+
+01:08:43.350 --> 01:08:46.599
+That's probably a little bit less efficient than the math Aaron did,
+
+01:08:46.599 --> 01:08:48.300
+but I could wrap my head around it a little more
+
+01:08:48.300 --> 01:08:51.405
+easily and it would- I think it's a little,
+
+01:08:51.405 --> 01:08:53.220
+I think it's guaranteed to work a little better whereas-.
+
+01:08:53.220 --> 01:08:53.520
+Oh, yes.
+
+01:08:53.520 --> 01:08:55.375
+I'm still not convinced this is actually guaranteed.
+
+01:08:55.375 --> 01:08:56.650
+It seems like it does work.
+
+01:08:56.650 --> 01:08:57.060
+Yes.
+
+01:08:57.060 --> 01:09:00.330
+And that's probably 90% of the battle.
+
+01:09:00.330 --> 01:09:00.872
+Good practice.
+
+01:09:00.872 --> 01:09:02.625
+I have to really sit down and go through the math just
+
+01:09:02.625 --> 01:09:05.480
+to convince myself whether it's guaranteed to work or not.
+
+01:09:05.480 --> 01:09:08.175
+From Doug in Redwood City California.
+
+01:09:08.175 --> 01:09:10.200
+When I used the live help feature,
+
+01:09:10.200 --> 01:09:12.420
+one mentor said that I should convert the waypoint map
+
+01:09:12.420 --> 01:09:15.870
+coordinates to vehicle coordinates and use this for all my calculations.
+
+01:09:15.870 --> 01:09:17.361
+Do you think this is a good approach?
+
+01:09:17.361 --> 01:09:20.157
+I couldn't figure out how to do that transformation.
+
+01:09:20.157 --> 01:09:22.140
+Yes. I think that's an awesome approach and that's
+
+01:09:22.140 --> 01:09:25.135
+actually- if you're talking about the local transformation,
+
+01:09:25.135 --> 01:09:27.450
+it's exactly what we did in our walk through here-.
+
+01:09:27.450 --> 01:09:29.330
+Let's see. Can we see the code here?
+
+01:09:29.330 --> 01:09:32.170
+Yes sure. Let's take a look.
+
+01:09:32.170 --> 01:09:33.390
+First we transform back,
+
+01:09:33.390 --> 01:09:35.630
+I know this kind of going to be low.
+
+01:09:35.630 --> 01:09:37.845
+Yes, that's the transform back.
+
+01:09:37.845 --> 01:09:43.380
+But if there's a math the kind of just do the shift and rotation.
+
+01:09:43.380 --> 01:09:45.690
+And I believe that when we're first doing it
+
+01:09:45.690 --> 01:09:48.560
+we're doing the shift first and then the rotation.
+
+01:09:48.560 --> 01:09:52.943
+And we can kind of scroll up here and check that out as well.
+
+01:09:52.943 --> 01:09:54.625
+Yes.
+
+01:09:54.625 --> 01:09:58.435
+So we're doing the shift first here and then the rotation.
+
+01:09:58.435 --> 01:10:03.330
+I found that to be very helpful for a number of reasons.
+
+01:10:03.330 --> 01:10:07.405
+First of all, we're deploying that in MPC,
+
+01:10:07.405 --> 01:10:10.280
+and that made the math a lot easier.
+
+01:10:10.280 --> 01:10:13.260
+And also makes sure that you don't get any functions that are
+
+01:10:13.260 --> 01:10:16.750
+near vertical and that could just kind of explode on you.
+
+01:10:16.750 --> 01:10:19.560
+And for what I was doing to try to fit points to
+
+01:10:19.560 --> 01:10:25.005
+a spline that actually made it a lot easier because,
+
+01:10:25.005 --> 01:10:27.720
+then, I'm just working with the x axis.
+
+01:10:27.720 --> 01:10:31.020
+I don't have to try to create some separate line going
+
+01:10:31.020 --> 01:10:34.882
+at some angle and then work from that.
+
+01:10:34.882 --> 01:10:38.025
+From Hsin-Cheng in Taiwan.
+
+01:10:38.025 --> 01:10:42.990
+How does the Finite State Machine work with hybrid A* in this project?
+
+01:10:42.990 --> 01:10:45.905
+How does the Finite State Machine work with hybrid A* on this project?
+
+01:10:45.905 --> 01:10:49.280
+I think we had a debate about this early on.
+
+01:10:49.280 --> 01:10:51.140
+I think I won that debate. Did I win that debate?
+
+01:10:51.140 --> 01:10:52.110
+Yes, I believe so.
+
+01:10:52.110 --> 01:10:54.896
+Oh, I'm winning. So is hybrid A*,
+
+01:10:54.896 --> 01:10:57.415
+does a hybrid A* makes sense to use for this project?
+
+01:10:57.415 --> 01:11:02.995
+No. Hybrid A* makes sense more so like in a parking lot environment.
+
+01:11:02.995 --> 01:11:05.400
+But, on this kind of highway,
+
+01:11:05.400 --> 01:11:09.095
+a cost function makes more sense.
+
+01:11:09.095 --> 01:11:12.685
+Yes. I mean, the thing about the highway is it's a very sparse environment,
+
+01:11:12.685 --> 01:11:15.570
+so there are just a ton of different maneuvers you could
+
+01:11:15.570 --> 01:11:19.260
+make and you just want to choose the lowest cost maneuver,
+
+01:11:19.260 --> 01:11:23.100
+whereas hybrid A* tends to work a little better in
+
+01:11:23.100 --> 01:11:28.061
+denser environments where you have a more limited number of choices you could make.
+
+01:11:28.061 --> 01:11:32.130
+And also discretized choices.
+
+01:11:32.130 --> 01:11:35.520
+And this is more of a continuous environment.
+
+01:11:35.520 --> 01:11:39.405
+You could like map a grid to the highway and use hybridized star,
+
+01:11:39.405 --> 01:11:40.876
+and maybe it would work,
+
+01:11:40.876 --> 01:11:44.490
+but using a cost function or finite state machine seems to be a better choice here.
+
+01:11:44.490 --> 01:11:46.710
+I think that maybe the broader point is in general,
+
+01:11:46.710 --> 01:11:49.425
+I'm not sure that you would generally use
+
+01:11:49.425 --> 01:11:52.360
+a finite state machine and hybridized star together.
+
+01:11:52.360 --> 01:11:53.880
+Maybe there's some interesting way to do it.
+
+01:11:53.880 --> 01:11:55.860
+There's probably some research paper out there that does it but
+
+01:11:55.860 --> 01:11:58.740
+I can't think of why you would do that off the top of my head.
+
+01:11:58.740 --> 01:12:03.220
+I'd be very interested if someone did use that strategy.
+
+01:12:03.220 --> 01:12:09.440
+Okay. Chris Edwards in San Diego in highway_map.txt why is "s" not redundant?
+
+01:12:09.440 --> 01:12:11.700
+It's so easily calculated, right?
+
+01:12:11.700 --> 01:12:14.400
+Just include it in both, just in case.
+
+01:12:14.400 --> 01:12:19.110
+Also, there's that map waypoints s that we're fetching at the very beginning,
+
+01:12:19.110 --> 01:12:21.530
+so that's used in the helper functions.
+
+01:12:21.530 --> 01:12:25.765
+Okay. That actually seems to me like it might be a little bit of work to calculate it.
+
+01:12:25.765 --> 01:12:28.150
+You definitely could. You'd have to do some vector math though.
+
+01:12:28.150 --> 01:12:31.360
+Or you could use one of the helper functions to get the s.
+
+01:12:31.360 --> 01:12:33.190
+Okay. You're given the helper function.
+
+01:12:33.190 --> 01:12:35.310
+S is included all over the place.
+
+01:12:35.310 --> 01:12:35.364
+Yes, fair point. Fair point.
+
+01:12:35.364 --> 01:12:36.885
+It's in the localization data.
+
+01:12:36.885 --> 01:12:38.820
+It's in the map waypoints.
+
+01:12:38.820 --> 01:12:41.460
+From Ivan Danov in London,
+
+01:12:41.460 --> 01:12:45.795
+can we use Frenet for both trajectory generation and behavior planning?
+
+01:12:45.795 --> 01:12:49.410
+When to convert back to global Cartesian coordinates and how to
+
+01:12:49.410 --> 01:12:54.325
+avoid jerk caused by inaccuracies from the conversion?
+
+01:12:54.325 --> 01:13:02.515
+So I think you can use Frenet for both trajectory generation and behavior planning.
+
+01:13:02.515 --> 01:13:05.220
+For trajectory generation, you're ultimately going to have
+
+01:13:05.220 --> 01:13:08.520
+to convert back to XY global coordinates.
+
+01:13:08.520 --> 01:13:12.570
+And so, how exactly you avoid the jerk
+
+01:13:12.570 --> 01:13:17.250
+gets back to what we're talking about a little earlier, and smoothing operations,
+
+01:13:17.250 --> 01:13:20.775
+and whether how exactly you read off the spline,
+
+01:13:20.775 --> 01:13:27.210
+and what you do to minimize the jerk between the waypoints and the spline.
+
+01:13:27.210 --> 01:13:29.295
+From Juan Pedro in Munich,
+
+01:13:29.295 --> 01:13:34.185
+how to deal with the lack of precise acceleration readings from the simulator?
+
+01:13:34.185 --> 01:13:38.190
+Would inferring it from a set of consecutive points in the trajectory or
+
+01:13:38.190 --> 01:13:42.680
+measuring time between simulator updates and using changes in speed be sufficient?
+
+01:13:42.680 --> 01:13:46.710
+Or are we better off just forcing end/start accelerations to be zero when
+
+01:13:46.710 --> 01:13:52.140
+calculating trajectories and only stitch together trajectories by their ends?
+
+01:13:52.140 --> 01:13:56.115
+Checking out the acceleration values within your code can be really helpful.
+
+01:13:56.115 --> 01:14:01.090
+In the simulator, it's actually just averaging it from like a certain time,
+
+01:14:01.090 --> 01:14:03.635
+maybe say, one-second interval.
+
+01:14:03.635 --> 01:14:07.565
+So it's a little bit of an average right there.
+
+01:14:07.565 --> 01:14:12.765
+But, if you're doing like that trajectory generation itself,
+
+01:14:12.765 --> 01:14:16.365
+such as the quintic polynomial solver,
+
+01:14:16.365 --> 01:14:21.670
+generally, you're using zero acceleration for both the start and the end.
+
+01:14:21.670 --> 01:14:28.080
+Yes. I think in general if you want to guarantee that you're not going to exceed
+
+01:14:28.080 --> 01:14:35.830
+the acceleration limits then calculating it and verifying that in your code is helpful.
+
+01:14:35.830 --> 01:14:36.443
+Yes.
+
+01:14:36.443 --> 01:14:40.290
+But as you saw Aaron's code worked fine
+
+01:14:40.290 --> 01:14:44.800
+assuming some things about the spline, and it just kind of work.
+
+01:14:44.800 --> 01:14:46.215
+From Oleg in Austria,
+
+01:14:46.215 --> 01:14:49.590
+how do we generate trajectory in state transition function (when we
+
+01:14:49.590 --> 01:14:53.490
+want to calculate cost for each possible next state)?
+
+01:14:53.490 --> 01:14:59.580
+If the state is PLCL and we generate trajectory with horizon five,
+
+01:14:59.580 --> 01:15:02.600
+which states should we take for the next steps?
+
+01:15:02.600 --> 01:15:05.010
+If you want to change lanes you can calculate
+
+01:15:05.010 --> 01:15:08.280
+a few different candidates splines by using different anchor points,
+
+01:15:08.280 --> 01:15:11.348
+and you can calculate the jerk on each of those splines,
+
+01:15:11.348 --> 01:15:14.400
+and then select the spline with the least jerk.
+
+01:15:14.400 --> 01:15:20.545
+That's kind of what's gone over in the trajectory generation lesson.
+
+01:15:20.545 --> 01:15:23.925
+You could use jerk minimizing trajectory,
+
+01:15:23.925 --> 01:15:25.770
+which is covered JMT,
+
+01:15:25.770 --> 01:15:27.900
+which is covered in that lesson as well,
+
+01:15:27.900 --> 01:15:32.430
+although that uses a quintic polynomial which is different than what we did here.
+
+01:15:32.430 --> 01:15:35.520
+Do you have any clever answers to how
+
+01:15:35.520 --> 01:15:39.925
+to generate the trajectory first state transition function?
+
+01:15:39.925 --> 01:15:43.560
+Yes. I mean, I like the idea of using several different anchor points and then
+
+01:15:43.560 --> 01:15:48.610
+trying to actually calculate the acceleration change on each of those.
+
+01:15:48.610 --> 01:15:50.460
+That's definitely interesting.
+
+01:15:50.460 --> 01:15:53.040
+From what we're doing right here we're just kind of
+
+01:15:53.040 --> 01:15:56.190
+had some sort of meter distance that we
+
+01:15:56.190 --> 01:15:58.620
+could use to kind of tweak and that would actually
+
+01:15:58.620 --> 01:16:02.630
+change how aggressive our lane change was.
+
+01:16:02.630 --> 01:16:05.480
+That ended up working pretty well for me.
+
+01:16:05.480 --> 01:16:08.550
+But, once you have that working from
+
+01:16:08.550 --> 01:16:12.260
+a low-level then you can kind of build up and define higher states,
+
+01:16:12.260 --> 01:16:16.455
+like keep lane, and prepare lane change left.
+
+01:16:16.455 --> 01:16:19.200
+And then, you're talking about
+
+01:16:19.200 --> 01:16:22.410
+that behavior planning quiz and having
+
+01:16:22.410 --> 01:16:27.095
+a cost function that goes along with that and with the horizon.
+
+01:16:27.095 --> 01:16:27.541
+Got it.
+
+01:16:27.541 --> 01:16:29.781
+From Oleg in Austria,
+
+01:16:29.781 --> 01:16:32.130
+what logic should be implemented
+
+01:16:32.130 --> 01:16:35.715
+behind state PLCL/PLCR (Prepare Lane Change Left/Prepare Lane Change Right)?
+
+01:16:35.715 --> 01:16:40.500
+If target lane's speed higher,
+
+01:16:40.500 --> 01:16:43.515
+then should we increase speed or track gap first?
+
+01:16:43.515 --> 01:16:46.455
+What if we increase speed and collide with a car ahead?
+
+01:16:46.455 --> 01:16:49.080
+If target lane's speed lower,
+
+01:16:49.080 --> 01:16:53.340
+should we decrease speed before a lane change or shift and then decrease speed?
+
+01:16:53.340 --> 01:16:54.620
+There are so many options.
+
+01:16:54.620 --> 01:16:57.810
+I think the safest is to decrease speed, generally.
+
+01:16:57.810 --> 01:17:00.600
+If you're trying to get over in this lane you pick out a car
+
+01:17:00.600 --> 01:17:04.270
+that you want to just kind of merge right behind.
+
+01:17:04.270 --> 01:17:10.950
+Yes. So the main reason you would use Prepare Lane Change is if you
+
+01:17:10.950 --> 01:17:14.040
+want to shift left but you can't because- or shift
+
+01:17:14.040 --> 01:17:17.800
+right but you can't because there's a car where you want to shift.
+
+01:17:17.800 --> 01:17:22.410
+And so that's where predicting out into the future and using what
+
+01:17:22.410 --> 01:17:24.630
+was taught in the prediction lesson becomes helpful because you can
+
+01:17:24.630 --> 01:17:27.310
+see whether that car that,
+
+01:17:27.310 --> 01:17:30.690
+say, sitting off to the left and blocking your ability to shift lanes,
+
+01:17:30.690 --> 01:17:32.295
+is that car speeding up?
+
+01:17:32.295 --> 01:17:35.010
+In which case, If you maintain constant speed a gap will
+
+01:17:35.010 --> 01:17:37.845
+open up for you to slide in or is that car slowing down,
+
+01:17:37.845 --> 01:17:44.410
+in which case, maybe you want to speed up if you can and get around it.
+
+01:17:44.410 --> 01:17:48.540
+But, essentially, you're just kind of predicting out the future and trying to figure
+
+01:17:48.540 --> 01:17:58.255
+out when a gap will open up for you and what the best way to fit into that gap will be.
+
+01:17:58.255 --> 01:18:01.680
+So there are a few different options.
+
+01:18:01.680 --> 01:18:05.760
+Yes. Kind of the meat of the project and really where it can get quite interesting.
+
+01:18:05.760 --> 01:18:07.628
+Right, right. From Clio,
+
+01:18:07.628 --> 01:18:12.075
+I'm confused about some codes from main.cpp where in the function of int NextWaypoint,
+
+01:18:12.075 --> 01:18:18.165
+I don't know what the angle variable represents for,
+
+01:18:18.165 --> 01:18:20.890
+and why the angle has to be larger than pi/4?
+
+01:18:20.890 --> 01:18:22.875
+It would be nice if you could explain a bit about,
+
+01:18:22.875 --> 01:18:25.110
+how does the next waypoint function work?
+
+01:18:25.110 --> 01:18:30.495
+So for that one, the angle is actually the car's angle and that's just telling you,
+
+01:18:30.495 --> 01:18:35.450
+basically, which waypoint the car is looking at.
+
+01:18:35.450 --> 01:18:38.220
+We want to avoid getting a waypoint that's close to
+
+01:18:38.220 --> 01:18:42.210
+the car but that the car is not even looking at it.
+
+01:18:42.210 --> 01:18:50.450
+And basically that pi/4 that 45 degrees is kind of telling you that range to look at.
+
+01:18:50.450 --> 01:18:55.050
+So there's a little bit of trig involved in there for just
+
+01:18:55.050 --> 01:18:59.670
+seeing if that waypoint aligns with that angle or not.
+
+01:18:59.670 --> 01:19:02.220
+From Chris Chan in Detroit,
+
+01:19:02.220 --> 01:19:05.065
+what are the key software components to use for the project?
+
+01:19:05.065 --> 01:19:08.430
+For example, JMT, cost functions, FSM?
+
+01:19:08.430 --> 01:19:11.040
+What do we need to pay special attention to
+
+01:19:11.040 --> 01:19:14.455
+avoid violation of speed acceleration and jerk limit?
+
+01:19:14.455 --> 01:19:19.025
+So the key things that we used were
+
+01:19:19.025 --> 01:19:25.020
+Frenet coordinates and some sort of a path smoother,
+
+01:19:25.020 --> 01:19:28.900
+whether it's a quintic polynomial or a spline or something else.
+
+01:19:28.900 --> 01:19:38.220
+And then, a finite state machine to figure out what maneuvers you want to take.
+
+01:19:38.220 --> 01:19:43.200
+So I think that's probably the minimum set of things you can do but you can get kind of
+
+01:19:43.200 --> 01:19:46.260
+infinitely complex and particularly
+
+01:19:46.260 --> 01:19:49.170
+adding states and trying to navigate through traffic as quickly as possible.
+
+01:19:49.170 --> 01:19:51.940
+From Konstantin in San Francisco,
+
+01:19:51.940 --> 01:19:53.715
+Jean-François, did I say that right?
+
+01:19:53.715 --> 01:19:55.920
+I hope, in San Jose.
+
+01:19:55.920 --> 01:19:59.950
+Can you suggest how JMT and spline should be used together to achieve a solution?
+
+01:19:59.950 --> 01:20:01.480
+I would say it's probably either or. What would you say?
+
+01:20:01.480 --> 01:20:03.500
+Yes. I think it's either or.
+
+01:20:03.500 --> 01:20:04.960
+Basically, you're looking to smooth
+
+01:20:04.960 --> 01:20:07.588
+a path and you can use JMT or a spline to smooth that path.
+
+01:20:07.588 --> 01:20:10.610
+From Frank Schneider in Germany,
+
+01:20:10.610 --> 01:20:14.660
+please explain what to use as data in the getFrenetMethod?
+
+01:20:14.660 --> 01:20:20.560
+The heading of the car produces off s values when more distant coordinates are converted.
+
+01:20:20.560 --> 01:20:23.240
+That's probably because of the non-linearity of
+
+01:20:23.240 --> 01:20:27.680
+the transform and we're seeing that kind of at those certain edge cases of
+
+01:20:27.680 --> 01:20:31.560
+the track where if we have this kind of S and
+
+01:20:31.560 --> 01:20:36.235
+D value they are calculated close to when the car is at that edge.
+
+01:20:36.235 --> 01:20:38.690
+It might just be a little bit off.
+
+01:20:38.690 --> 01:20:42.760
+Got it. I didn't implement that plan, Aaron.
+
+01:20:42.760 --> 01:20:44.870
+You can always change the mask too.
+
+01:20:44.870 --> 01:20:51.260
+From Friederich, how to calculate s_dot_dot?
+
+01:20:51.260 --> 01:20:54.585
+S is going to be our position in Frenet coordinates.
+
+01:20:54.585 --> 01:20:57.025
+S_Dot is going to be our velocity infinite ordinates.
+
+01:20:57.025 --> 01:21:01.310
+S_dot_dot is going to be our acceleration infinite coordinates.
+
+01:21:01.310 --> 01:21:05.210
+So if you think about how to calculate S_dot which is velocity,
+
+01:21:05.210 --> 01:21:09.920
+basically, you want to figure out one point and then another point.
+
+01:21:09.920 --> 01:21:13.130
+And then, we know the vehicle operates at
+
+01:21:13.130 --> 01:21:17.060
+50 points per second or the simulator operates at 50 points per second.
+
+01:21:17.060 --> 01:21:19.477
+So if you divide the distance between
+
+01:21:19.477 --> 01:21:22.880
+one- take the distance from one point to another point, excuse me,
+
+01:21:22.880 --> 01:21:27.635
+and then divide that distance by
+
+01:21:27.635 --> 01:21:34.890
+0.02 which is 50 points per second that should give you the velocity.
+
+01:21:34.890 --> 01:21:37.335
+So that gives you S_dot. And in order to calculate
+
+01:21:37.335 --> 01:21:42.565
+S_dot_dot what you want to do is calculate the change in velocity.
+
+01:21:42.565 --> 01:21:44.900
+So you want to calculate the velocity between one pair of
+
+01:21:44.900 --> 01:21:48.305
+points and the velocity between another pair of points.
+
+01:21:48.305 --> 01:21:53.390
+And then, divide them by the time it takes to get
+
+01:21:53.390 --> 01:21:59.775
+across the entire set of points and that should give you S_dot_dot.
+
+01:21:59.775 --> 01:22:02.390
+And it would be the same in XY coordinates.
+
+01:22:02.390 --> 01:22:04.395
+It's just a coordinate transform.
+
+01:22:04.395 --> 01:22:07.190
+Thanks so much for joining us for the walk through the Path Planning Project.
+
+01:22:07.190 --> 01:22:09.795
+This is a really challenging project.
+
+01:22:09.795 --> 01:22:11.270
+It can also be a really fun project.
+
+01:22:11.270 --> 01:22:14.105
+You can do a lot of neat stuff with it.
+
+01:22:14.105 --> 01:22:17.810
+The work Aaron's done to build the simulator for
+
+01:22:17.810 --> 01:22:22.240
+this project and for a lot of the other projects is really really fantastic, I think.
+
+01:22:22.240 --> 01:22:25.010
+It makes the project a lot more fun than it
+
+01:22:25.010 --> 01:22:29.030
+would be if it were just decimals on a terminal screen.
+
+01:22:29.030 --> 01:22:31.910
+So I hope you have fun with it. I hope the walk through we did here gives you
+
+01:22:31.910 --> 01:22:36.905
+a sense of one or maybe multiple ways to approach the project.
+
+01:22:36.905 --> 01:22:39.860
+And we'll be in Slack and on the forums
+
+01:22:39.860 --> 01:22:44.210
+and amenable to answering more questions if you have them.
+
+01:22:44.210 --> 01:22:46.480
+So, let us know if you do.
+
+01:22:46.480 --> 01:22:49.600
+Yes. Cool! Buh-bye!
+

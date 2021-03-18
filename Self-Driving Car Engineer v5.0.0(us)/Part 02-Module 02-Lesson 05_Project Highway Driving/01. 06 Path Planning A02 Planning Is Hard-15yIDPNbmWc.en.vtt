@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.464
+So, next project is going to be driving a car on a highway.
+
+00:00:03.464 --> 00:00:05.099
+We do path planning on a highway.
+
+00:00:05.099 --> 00:00:06.274
+Highway is simplified.
+
+00:00:06.275 --> 00:00:09.100
+It is not as crazy as some intersections could be,
+
+00:00:09.099 --> 00:00:12.379
+but you can learn a lot of stuff on highways alone.
+
+00:00:12.380 --> 00:00:13.830
+There are some baffling issues,
+
+00:00:13.830 --> 00:00:15.410
+you have to worry about vehicle speed,
+
+00:00:15.410 --> 00:00:16.859
+not colliding with other cars,
+
+00:00:16.859 --> 00:00:19.039
+and things like lane changes, and so on.
+
+00:00:19.039 --> 00:00:21.424
+So, it's going to be fun to do your very first,
+
+00:00:21.425 --> 00:00:23.839
+nice real-world path-finding project.
+
